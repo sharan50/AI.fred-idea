@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>03 Trust and data, AI.fred</title>
+<meta name="description" content="How nobody on our side ever sees a real value: the alias and vault model, the substitution component, the execution surfaces, artefact redaction, the passports, the policy flags, the threat model as named and closed paths, the access ledger, the residency map and the privacy-law skeleton.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">03 Trust and data</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="to-verify">to-verify<small>revised 2026-09-02</small></p>
+    <h1><span class="no">03</span><span class="title">Trust and data</span></h1>
+    <p class="standfirst">Nobody on our side ever sees a real value, and this page says how: a value crosses five boundaries between the user's device and an institution, one small component places it at the last of them, every surface is ours, evidence is masked before it exists anywhere but memory, and every crossing writes a line the user can read. The rails and the law are recorded as they stand and chipped for verification.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>03 Trust and data</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-to-verify">to-verify</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For engineers</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="alias-model"><span class="no">1</span>The alias model</h2>
+        <p>A real value crosses five boundaries between the user's hands and an institution's, and no person on our side stands inside any of them. This section follows a value along that path, boundary by boundary, and states what may exist on each side. <a href="#fig-trust-e2e">Figure 3.1</a> draws the zones; <a href="#substitution">section 2</a> follows one placement; <a href="#surfaces">sections 3</a> and <a href="#redaction">4</a> specify the two boundaries most likely to leak. The named paths by which a person could see a value, and their closure, are gathered in <a href="#threat-model">the threat model</a>. The customer's one-page version is <a href="trust-story.html">the trust story</a>.</p>
+        <h3 id="alias-types"><span class="no">1.1</span>Alias types, classes and their policy</h3>
+        <p>An alias is a typed name, never a disguised value. It is written <code>{{name}}</code> or <code>{{name.qualifier}}</code>: lower-case letters, digits and hyphens, with at most one dot; the name is the type and the qualifier tells instances apart (<code>{{card.primary}}</code>, <code>{{account.hdfc}}</code>). An alias is unique to one user and stable across tasks, so the same string on two users' task cards names two values and carries no character of either. The vault maps it to the current version of the value: a reissued card becomes a new version behind the same alias, and the ledger records that as custody, not as a use. The vault is a bought tokenisation service of the Skyflow, VGS and Basis Theory class, hosted in the region the user's market requires; <a href="../decisions/dr-008-vault-bought.html">DR-008</a> fixes buy over build and the vendor is open in 07, so nothing here asserts what any provider offers <span class="chip chip-to-verify">to-verify</span>. Every alias belongs to one class, and the class is its whole policy: which surfaces may receive it, which partial forms the maskers must expect and cover, and whether an echo from the third party is normal. Class, surface and jurisdiction together are one lookup in <a href="#policy-flags">the policy layer</a>; a request outside the table closes the step <code>refused-policy</code> and nothing is placed.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 3.1</span> Alias classes: the class, not the task, decides where a value may go and what the maskers must cover, so a masker specification is derivable from this table.</caption>
+          <thead><tr><th>Class</th><th>Examples</th><th>Surfaces admitted</th><th>Partial forms masked</th><th>Echo expected</th></tr></thead>
+          <tbody>
+            <tr><td class="key">Identity number</td><td class="mono">{{pan}}, {{aadhaar}}, {{ssn}}, {{ni-number}}, {{nhs-number}}, {{passport}}</td><td>Browser, telephony, relay</td><td>Last four; masked Aadhaar with the first eight hidden; spaced and hyphenated spellings; spoken digit by digit</td><td>Yes: confirmation pages repeat them, often partly masked</td></tr>
+            <tr><td class="key">Payment instrument</td><td class="mono">{{card.primary}}, {{account.hdfc}}, with sub-fields for number, expiry, sort code and IFSC</td><td>Browser, telephony, relay</td><td>Last four; first six; an expiry beside a last-four; spoken digit by digit</td><td>Yes: receipts and IVR read-back</td></tr>
+            <tr><td class="key">Personal fact</td><td class="mono">{{name}}, {{dob}}, {{address.home}}, {{phone}}, {{email}}, {{mother-maiden-name}}</td><td>Browser, telephony, relay</td><td>Every date format; the surname alone in a security-answer context; the postcode alone</td><td>Yes, and low entropy: the digest set is keyed (1.2)</td></tr>
+            <tr><td class="key">Document</td><td class="mono">{{doc.pan-card}}, {{doc.address-proof}}: an uploaded or rail-issued file</td><td>Browser upload field, relay attachment</td><td>The whole file; it is never rendered to a worker</td><td>No</td></tr>
+            <tr><td class="key">Credential</td><td class="mono">{{credential.portal}}: a site login the user has expressly delegated</td><td>Browser only, and only where the jurisdiction flags the identity act as delegated</td><td>None: never echoed, never displayed</td><td>No</td></tr>
+            <tr><td class="key">Never an alias</td><td>OTPs, UPI and card PINs, bank-app passwords, biometrics</td><td>None: the step bounces to the user's device</td><td>Not applicable</td><td>Not applicable; <code>{{otp}}</code> does not exist</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Partial forms are masked as strictly as full ones, because a last-four beside a card that names "Client 4471" is enough to join a value to a person. Where a step must tell two instruments apart, the vault issues a partial under its own alias, <code>{{card.primary.last4}}</code>, and nothing on our side ever cuts a value; the ceiling for that is the strictest rule we operate under, UIDAI's requirement that an organisation processing Aadhaar display no more than its last four digits <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>. The never-ours class is a refusal, not a gap: the RBI cautions the public against sharing logins, KYC copies, card details, PINs, passwords or OTPs with any person or agency <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>, and those acts bounce to the user's device as <a href="#passports">the passports section</a> specifies. Beside the value, the vault record carries the alias's policy fields: type, class, permitted surfaces, the identity-act type its use implies, the residency region, how and when it entered, its version, and whether the user confirmed it. The policy layer and the envelope decide a use at runtime; the substitutor enforces that decision at the moment of use.</p>
+        <h3 id="entry-routes"><span class="no">1.2</span>Boundary one: the three doors a real value enters by</h3>
+        <p>Every real value enters by one of three doors, and each door tokenises before anything else on our side sees it. The first is the user's own input. The intake gateway's first stage is the vault's edge tokeniser: the message body and every attachment go to the vault before parsing, under the three detectors <a href="../02-architecture/#edge-tokenisation">02</a> specifies (identifier patterns, known-value digests, the user's own declaration), and what continues is the message with aliases in place of values and document aliases such as <code>{{doc.pan-card}}</code> in place of uploads. For values we know we need we do not ask in chat: the user's device shows a form whose fields post straight to the vault, and we receive the alias. Closure: no raw body is logged or queued; the model runtime carries a second, separately deployed detector that refuses to plan on a candidate value and returns the message for re-tokenisation; the task card is generated from the tokenised request and screened again before it reaches a console; and the user's channel history stays on their device and the channel provider's servers, which are not ours.</p>
+        <p>The second door is a passport adapter. A rail returns real values by design, so each adapter's response handler runs inside a tokenising boundary: the payload is written to the vault before it is parsed, against a declared schema in which sensitivity is stated per field and never inferred, and an undeclared field is sensitive until it is classified. The adapter emits aliases plus non-sensitive attributes (document type, issuer, dates, whether the name matched). Closure: no payload log, network egress to the rail and the vault only, tokenise rights and never detokenise rights, and a schema reviewed with the market's legal pack so a new rail cannot leak by omission.</p>
+        <p>The third door is a third-party echo: a confirmation page repeating a card number, a voice system reading an account number back, a reply quoting it. It opens on the surfaces and is closed there, by maskers that run before any frame, audio segment or message reaches a person (<a href="#surfaces">section 3</a>). A value we already hold is recognised by keyed digest and replaced with its alias; a new one, such as an account number the institution issues, is tokenised into a new alias with a ledger line. Recognition never compares against the value itself: the vault emits, through the hash service, a keyed digest of each value in every normalised form the class table names, the key lives in the hash service and rotates with the digests, and the maskers digest every candidate window of the same length in whatever they scan. Short values such as a date of birth are weak against guessing, which is why the maskers also mask by coordinate and by field type, why the digest set never leaves the real-value zone, and why the hash service holds no detokenise right.</p>
+        <h3 id="zones"><span class="no">1.3</span>What exists on each side</h3>
+        <p>Boundary two is the edge of the alias zone, the widest boundary in the design: the planner and its model runtime, the classifier, the policy flags, the worker console, the task cards, the context store, the logs, the access ledger, the QA and support tools and the evidence store all live inside it and hold aliases and vault-issued partials only. The vault's client library is not installed in any of them, none holds a credential the vault would accept, and network policy denies them the vault's endpoints and the substitutor's inbound channel. Across that boundary lies the small region where a value may exist: the vault, at rest and regionally hosted; the substitutor, in memory for one placement; a surface, transiently, in a field, on a call leg or in an outbound message at the relay; and the evidence pipeline, in memory until redaction is verified. The accent outline in <a href="#fig-trust-e2e">Figure 3.1</a> is that region's edge. Only dots, tones, aliases and redacted evidence cross it outward, and one more thing: the ledger line the substitutor writes for every use, which the user reads on their own device.</p>
+        <figure class="fig" id="fig-trust-e2e">
+        <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 3.1, the trust architecture end to end, scrollable">
+        <svg viewBox="0 0 720 560" role="img" aria-labelledby="fig-trust-e2e-title fig-trust-e2e-desc">
+        <title id="fig-trust-e2e-title">Trust zones from the user's device to the third party</title>
+        <desc id="fig-trust-e2e-desc">The user's own device at the top left holds the user's real values. An entry boundary across the top tokenises everything on arrival. A large alias zone on the left holds the access ledger, task cards, context store, logs, planner and AI, policy flags, worker console and evidence store, all with aliases only. A narrower real-value zone on the right holds the vault, the substitutor, the execution surfaces and the evidence pipeline; its solid outline is the accent, the last boundary on our side inside which a real value exists. The substitutor writes one ledger line per use into the alias zone, and the user reads the ledger on their device. Below the real-value zone the third party receives the value and may echo it back; only dots, tones, aliases, ledger lines and redacted evidence cross from the real-value zone into the alias zone.</desc>
+        <defs>
+        <marker id="fig-trust-e2e-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+        </defs>
+        <rect class="fg-device" x="8" y="32" width="184" height="48" rx="8"/>
+        <text class="fg-label fg-label-strong" x="20" y="52">User's own device</text>
+        <text class="fg-label-small fg-label-soft" x="20" y="70">the user's real values</text>
+        <rect class="fg-zone" x="216" y="8" width="496" height="80" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="228" y="23">Entry boundary: tokenised on arrival, before anything else sees it</text>
+        <rect class="fg-box" x="228" y="32" width="200" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="240" y="52">Intake gateway</text>
+        <text class="fg-label-small fg-label-soft" x="240" y="70">tokenises user input</text>
+        <rect class="fg-box" x="468" y="32" width="200" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="480" y="52">Passport adapters</text>
+        <text class="fg-label-small fg-label-soft" x="480" y="70">tokenise rail returns</text>
+        <line class="fg-line" x1="192" y1="56" x2="228" y2="56" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <line class="fg-line" x1="276" y1="80" x2="276" y2="140" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="284" y="104">alias</text>
+        <line class="fg-line" x1="560" y1="80" x2="560" y2="140" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="568" y="104">real value</text>
+        <path class="fg-line" d="M120,140 V80" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="128" y="104">the user reads it</text>
+        <rect class="fg-zone" x="8" y="112" width="372" height="384" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="20" y="127">Alias zone</text>
+        <rect class="fg-box" x="20" y="140" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="32" y="160">Access ledger</text>
+        <text class="fg-label-small fg-label-soft" x="32" y="178">plain words, aliases</text>
+        <rect class="fg-box" x="20" y="220" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="32" y="240">Task cards</text>
+        <text class="fg-label-small fg-label-soft" x="32" y="258">need to know only</text>
+        <rect class="fg-box" x="20" y="300" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="32" y="320">Context store</text>
+        <text class="fg-label-small fg-label-soft" x="32" y="338">aliases, provenance</text>
+        <rect class="fg-box" x="20" y="380" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="32" y="400">Logs and metrics</text>
+        <text class="fg-label-small fg-label-soft" x="32" y="418">aliases only</text>
+        <rect class="fg-box" x="208" y="140" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="220" y="160">Planner and AI</text>
+        <text class="fg-label-small fg-label-soft" x="220" y="178">model sees aliases</text>
+        <rect class="fg-box" x="208" y="220" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="220" y="240">Policy flags</text>
+        <text class="fg-label-small fg-label-soft" x="220" y="258">and the envelope</text>
+        <rect class="fg-actor" x="208" y="300" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="220" y="320">Worker console</text>
+        <text class="fg-label-small fg-label-soft" x="220" y="338">the worker sees dots</text>
+        <rect class="fg-box" x="208" y="380" width="160" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="220" y="400">Evidence store</text>
+        <text class="fg-label-small fg-label-soft" x="220" y="418">redacted, verified</text>
+        <rect class="fg-box" x="20" y="440" width="348" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="32" y="464">QA, support and engineering tools: aliases, manifests, counts</text>
+        <rect class="fg-accent" x="456" y="112" width="208" height="384" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="468" y="127">Real-value zone</text>
+        <rect class="fg-box" x="468" y="140" width="184" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="480" y="160">Vault (regional)</text>
+        <text class="fg-label-small fg-label-soft" x="480" y="178">real values at rest</text>
+        <rect class="fg-box" x="468" y="220" width="184" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="480" y="240">Substitutor</text>
+        <text class="fg-label-small fg-label-soft" x="480" y="258">sole detokenise right</text>
+        <rect class="fg-box" x="468" y="300" width="184" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="480" y="320">Execution surfaces</text>
+        <text class="fg-label-small fg-label-soft" x="480" y="338">browser, phone, relay</text>
+        <rect class="fg-box" x="468" y="380" width="184" height="48" rx="2"/>
+        <text class="fg-label fg-label-strong" x="480" y="400">Evidence pipeline</text>
+        <text class="fg-label-small fg-label-soft" x="480" y="418">raw, in memory only</text>
+        <rect class="fg-box" x="468" y="440" width="184" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="480" y="464">Hash service: digests only</text>
+        <line class="fg-line" x1="560" y1="188" x2="560" y2="220" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="568" y="208">real value</text>
+        <line class="fg-line" x1="560" y1="268" x2="560" y2="300" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="568" y="288">placed</text>
+        <line class="fg-line" x1="560" y1="348" x2="560" y2="380" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="568" y="368">raw capture</text>
+        <path class="fg-line" d="M368,164 H428 V244 H468" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="374" y="156">alias, target</text>
+        <path class="fg-line" d="M468,256 H400 V204 H100 V188" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="292" y="215" text-anchor="middle">writes one line per use</text>
+        <line class="fg-line" x1="468" y1="324" x2="368" y2="324" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="418" y="302" text-anchor="middle">dots, tones,</text>
+        <text class="fg-label-small" x="418" y="316" text-anchor="middle">aliases</text>
+        <line class="fg-line" x1="468" y1="404" x2="368" y2="404" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <text class="fg-label-small" x="418" y="382" text-anchor="middle">redacted,</text>
+        <text class="fg-label-small" x="418" y="396" text-anchor="middle">verified</text>
+        <path class="fg-line" d="M652,324 H688 V512" marker-start="url(#fig-trust-e2e-arrow)" marker-end="url(#fig-trust-e2e-arrow)"/>
+        <rect class="fg-box" x="520" y="512" width="192" height="40" rx="2"/>
+        <text class="fg-label fg-label-strong" x="532" y="530">Third party</text>
+        <text class="fg-label-small fg-label-soft" x="532" y="545">gets the value; may echo</text>
+        <text class="fg-label-small fg-label-soft" x="12" y="522">dashed: a zone; dotted: a person; rounded: the user's own device</text>
+        <text class="fg-label-small fg-label-soft" x="12" y="538">accent outline: the last boundary inside which a real value exists</text>
+        <text class="fg-label-small fg-label-soft" x="12" y="554">the alias zone holds no detokenise right and no vault library</text>
+        </svg>
+        </div>
+        <figcaption><span class="fig-no">Figure 3.1</span> Real values exist on our side only inside the accent outline; everything a person can reach holds aliases, what crosses the outline outward is dots, tones, aliases, ledger lines and redacted evidence, and the ledger is what the boundaries produce, not one more box.</figcaption>
+        </figure>
+        <h3 id="ledger-honesty"><span class="no">1.4</span>What each ledger line has to be able to say</h3>
+        <p>"Placed by the system; no person saw it" is not a promise about culture. It is a property of the component that placed the value, of the stream the worker watched and of the pipeline that kept the evidence, and every claim that recurs in the ledger maps to the property that makes it true. "Placed by the system" holds because exactly one non-human component can detokenise, and every placement it makes is bound to a step, a card and a policy check, so a line is never written for a placement without a step. "No person saw it" holds because a worker reaches every surface through a rendered stream that the masker clears before delivery, raw frames exist only inside the accent boundary of <a href="#fig-trust-e2e">Figure 3.1</a>, and the console has no channel that carries a raw frame. "The worker's audio was muted" holds because the mute is applied by our media server on the leg between the far party and the worker, never by the worker's client, and the line is written from the server's own mute record and never from a worker's attestation. "In our browser" and "on our phone line" hold because the site controls in <a href="../04-operations/#site-controls">04</a> keep a worker's own tools out of the room. "Masked before any person saw it" holds because the store accepts an artefact only with the verifier's signature over its hash (<a href="#redaction">section 4</a>). A line the system cannot make true by construction is a line the system is not allowed to write.</p>
+      </section>
