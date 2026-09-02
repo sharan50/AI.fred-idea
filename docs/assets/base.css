@@ -47,6 +47,7 @@ pre {
 pre code { font-size: inherit; }
 .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 .small { font-size: var(--fs-meta); }
+.nobr { white-space: nowrap; }
 .soft { color: var(--ink-soft); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 
