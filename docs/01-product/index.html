@@ -58,7 +58,7 @@
     <div class="doc">
       <section>
         <h2 id="journeys"><span class="no">1</span>User journeys across the six verticals</h2>
-        <p>Every journey has one shape, whatever the vertical. The user asks; the planner returns an ordered plan and proposes an authority envelope; the user confirms both with one tap; steps run, each classed <code>ai</code> (the AI executes), <code>human</code> (a worker executes from a task card) or <code>user</code> (the step bounces to the user's own device); an outcome report arrives with the access ledger attached; the user closes the task with a verdict. Nothing executes before the tap, and nothing irreversible fires outside the envelope. Institutions are named to make the examples concrete; ledger times are illustrative.</p>
+        <p>Every journey has one shape, whatever the vertical. The user asks; the planner returns an ordered plan and proposes an authority envelope; the user confirms both with one tap; steps run, each classed <code>ai</code> (the AI executes), <code>human</code> (a worker executes from a task card) or <code>user</code> (the step bounces to the user's own device); an outcome report arrives with the access ledger attached; the user closes the task with a verdict. Nothing executes before the tap, and nothing irreversible fires outside the envelope. Ledger times are illustrative.</p>
         <p>A step marked <em>dual control</em> is irreversible under the point-of-no-return test and inside the envelope: whichever party executes it, the other checks it against the envelope and the expected outcome before it fires. A <code>user</code> step is the user's own act; the task waits in <code>awaiting-user</code> until they act, with nudges if they go quiet.</p>
 
         <h3 id="journey-banking"><span class="no">1.1</span>Banking and wealth: renew a maturing deposit (India)</h3>
@@ -112,7 +112,7 @@
           <li><code>user</code> Sign the clinic's records-release form.</li>
           <li><code>human</code> Chase the clinic for the transfer. Closes <code>blocked-third-party</code> with a response window.</li>
         </ol>
-        <p>The ledger carries the line the trust story uses: <code>{{dob}}</code> spoken to Max Healthcare's booking line, on our phone line, the worker's audio muted.</p>
+        <p>Ledger: <code>{{dob}}</code> spoken to Max Healthcare's booking line, on our phone line, the worker's audio muted.</p>
 
         <h3 id="journey-family"><span class="no">1.5</span>Family affairs: a parent's repeat prescriptions (UK)</h3>
         <p>The user's mother wants her repeat prescriptions moved to a pharmacy that delivers.</p>
@@ -139,7 +139,7 @@
 
       <section>
         <h2 id="taxonomy"><span class="no">2</span>The task taxonomy</h2>
-        <p>Task types are the unit at which the product is measured. Verdict rates are computed per task type; the nudge schedule is set per task type; the L2 pod that owns the specialist knowledge is chosen by vertical. A task type is therefore a vertical plus a shape of plan, and the shape is defined by three things: where the point of no return sits, which step classes the plan typically needs, and what the envelope must contain.</p>
+        <p>Task types are the unit at which the product is measured. Verdict rates are computed per task type; the nudge schedule is set per task type; the L2 pod that owns the specialist knowledge is chosen by vertical. A task type is therefore a vertical plus a shape of plan: where the point of no return sits, which step classes the plan needs, and what the envelope must contain.</p>
         <p>Reversibility belongs to a step, not to a task. Table 1.1 names the step that carries the point of no return in each type, because that is the step that will be dual-controlled or bounced. A step whose reversibility the classifier cannot decide is treated as irreversible. The classifier and the rule it applies are specified in <a href="../02-architecture/#classifier">the classifier in 02</a>; the taxonomy here is the product's view of its output.</p>
         <div class="table-wrap wide">
         <table class="data">
@@ -168,7 +168,7 @@
           </tbody>
         </table>
         </div>
-        <p>Three patterns in the table drive the design. The irreversible step is almost always a submission or a payment, which is why the envelope names committable acts and a spend cap rather than listing every action. The <code>user</code> steps cluster around factors that are the user's alone (approvals in their own bank app, biometrics, signatures, appearances), which is why the bounce is universal and per-country adapters only change what is delegated around it. The reversible work, most of the minutes in any task, needs neither check nor tap, so the plan's overhead sits exactly where the consequence sits.</p>
+        <p>Three patterns drive the design. The irreversible step is almost always a submission or a payment, which is why the envelope names committable acts and a spend cap rather than every action. The <code>user</code> steps cluster around factors that are the user's alone (bank-app approvals, biometrics, signatures, appearances), which is why the bounce is universal and per-country adapters only change what is delegated around it. The reversible work, most of the minutes in any task, needs neither check nor tap, so the plan's overhead sits where the consequence sits.</p>
       </section>
 
       <section>
@@ -182,7 +182,7 @@
           <li>It acknowledges within the channel and says where the confirmation will arrive. A confirmation, an envelope edit and a verdict are taps on a surface that authenticates the user, whatever channel the conversation runs in.</li>
         </ol>
         <p>The internal request format carries the channel and its message identifier; the resolved user; the task reference, if any; the text or transcript with aliases in place; attachment references; the market and locale; and the received timestamp that starts the planning timer. Its engineering is in <a href="../02-architecture/#intake-gateway">the intake gateway in 02</a>.</p>
-        <p>The amber matters to the product, not only to marketing: the channel decides how a user hands us a document, how a nudge reaches them and how quickly a confirmation is answered. The India cohort will most likely be met where Indian users already run their lives; the US and UK cohorts may not be, and the gateway lets the answer differ per market without a second build.</p>
+        <p>The amber matters to the product, not only to marketing: the channel decides how a user hands us a document, how a nudge reaches them and how quickly a confirmation is answered. The gateway lets the answer differ per market without a second build.</p>
       </section>
 
       <section>
@@ -210,7 +210,7 @@
           <dt>Narrowing</dt>
           <dd>Applies immediately to every step not yet fired. A step in <code>checking</code> is re-checked against the narrowed envelope before it fires. A step that has already fired is reported in the ledger and the outcome report; narrowing cannot unfire it, and we say so rather than imply otherwise.</dd>
         </dl>
-        <p>The rule every step is classified against is the same everywhere in this publication. Irreversible and outside the envelope: bounce to the user's device. Irreversible and inside it: dual control. Reversible and inside it: execute, <code>ai</code> or <code>human</code> per the classifier. Anything outside the envelope that is reversible still cannot be executed by us; it becomes an extension request. Figure 1.1 draws the envelope as the user should picture it.</p>
+        <p>The rule every step is classified against is identical everywhere. Irreversible and outside the envelope: bounce to the user's device. Irreversible and inside it: dual control. Reversible and inside it: execute, <code>ai</code> or <code>human</code> per the classifier. Anything outside the envelope that is reversible still cannot be executed by us; it becomes an extension request. Figure 1.1 draws the envelope as the user should picture it.</p>
         <figure class="fig" id="fig-envelope">
           <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 1.1, the authority envelope, scrollable">
           <svg viewBox="0 0 720 440" role="img" aria-labelledby="fig-envelope-title fig-envelope-desc">
@@ -260,7 +260,7 @@
           </div>
           <figcaption><span class="fig-no">Figure 1.1</span> Inside the envelope we execute, with a second party checking every irreversible step; anything outside it, a user-only act or a breach of a grant, leaves the envelope only as a tap on the user's own device.</figcaption>
         </figure>
-        <p>Where the ledger appears: after every step that used an alias, a plain-words line is written and is readable in the task view at once; the outcome report carries the full ledger; the trust story a customer reads shows the same lines. Its specification is <a href="../03-trust-and-data/#access-ledger">the access ledger in 03</a>, and its example is <a href="../03-trust-and-data/trust-story.html#ledger-example">the ledger example in the trust story</a>.</p>
+        <p>Where the ledger appears: after every step that used an alias, a plain-words line is written and readable in the task view at once; the outcome report carries the full ledger; the trust story shows the same lines. Its specification is <a href="../03-trust-and-data/#access-ledger">the access ledger in 03</a>, and its example is <a href="../03-trust-and-data/trust-story.html#ledger-example">the ledger example in the trust story</a>.</p>
       </section>
 
       <section>
@@ -348,7 +348,7 @@
         <p>A short structured conversation on the user's channel, resumable, aimed at what tasks will need rather than at completeness: the people in the user's life; the institutions the user deals with; the documents that exist and where they are; and the preferences that shape every plan (the name to use with third parties, languages, the hours in which a nudge is welcome, a default spend cap). A sensitive value given during the interview is tokenised at the edge like any other message; the interviewer sees <code>{{pan}}</code>, never the number. Every answer is a fact with source "interview", today's date and confirmed-by-user set, because the user said it themselves.</p>
 
         <h3 id="connectors"><span class="no">6.2</span>Read-only connectors the user chooses</h3>
-        <p>Connectors are optional, read-only by construction, scoped, and revocable from the user's device. They never carry a payment or an identity act; they are how documents and facts reach the context store without retyping. The set differs by market because the rails differ; the passports that carry them are in <a href="../03-trust-and-data/#passports">the passports in 03</a>. The user sees each connector with its scope in plain words, the date consent was given and when it expires, and a switch to revoke it.</p>
+        <p>Connectors are optional, read-only by construction, scoped, and revocable from the user's device; they never carry a payment or an identity act. The set differs by market because the rails differ; the passports that carry them are in <a href="../03-trust-and-data/#passports">the passports in 03</a>. The user sees each connector with its scope in plain words, the date consent was given and when it expires, and a switch to revoke it.</p>
         <ul>
           <li>A mailbox and a calendar, read-only, so that notices, itineraries and appointments surface without forwarding.</li>
           <li>India: issued documents from DigiLocker, where the user authorises us as a requester on DigiLocker's own consent screen, sees and may change the purpose we state, and the consent carries its own expiry <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>; financial information through the Account Aggregator framework, where only a regulated entity can be the information user and the aggregator holds no credentials and supports no transactions, so an assistant joins the journey only as a front end to a regulated partner <span class="chip chip-verified">verified</span> <a class="ref" href="#src-3">[3]</a>, named in 03.</li>
@@ -384,7 +384,7 @@
           <dt>Anything outside the envelope</dt>
           <dd>We cannot execute it, reversible or not: an irreversible step outside the envelope bounces to the user's device, and a reversible one becomes an extension request. The reason is fatal failure two, an irreversible act the user did not want, and the boundary is enforced by construction, not by judgement.</dd>
           <dt>Anything that requires a worker to hold a real value</dt>
-          <dd>A card number read aloud, a PAN typed by hand, an Aadhaar scan on a screen, a transcript with a number in it. The reason is fatal failure one: nobody on our side ever sees the sensitive data they are placing. Every such step runs on a surface of ours with the substitutor placing the value; where no surface of ours fits a third party's process, the step bounces to the user.</dd>
+          <dd>A card number read aloud, a PAN typed by hand, an Aadhaar scan on a screen. The reason is fatal failure one: nobody on our side ever sees the sensitive data they are placing. Every such step runs on a surface of ours with the substitutor placing the value; where no surface of ours fits a third party's process, the step bounces to the user.</dd>
           <dt>OTPs, PINs, passwords and biometrics</dt>
           <dd>They are never ours; <code>{{otp}}</code> is not an alias and there is nothing to place. Each is a factor that belongs to the user alone, and they bounce. India's regulators draw the same line: the RBI has cautioned the public against sharing login details, KYC copies, card details, PINs, passwords or OTPs with any person or agency <span class="chip chip-verified">verified</span> <a class="ref" href="#src-4">[4]</a>, and the UIDAI advises never to share an Aadhaar-linked OTP with anyone <span class="chip chip-verified">verified</span> <a class="ref" href="#src-5">[5]</a>.</dd>
           <dt>Tasks that need the user's credentials</dt>
