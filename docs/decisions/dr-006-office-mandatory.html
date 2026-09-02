@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-006 Office-mandatory 24/7 operation with site controls, AI.fred</title>
+<meta name="description" content="Workers execute only from our office, on our devices, around the clock: a day shift covers India and two night shifts cover the west. Site controls are part of the trust guarantee; remote-safe operation is designed later.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-006</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-006</a></span><span class="title">Office-mandatory 24/7 operation with site controls</span></h1>
+    <p class="standfirst">Workers execute only from our office, on our devices, around the clock: one day shift covers India and two night shifts cover the west. Site controls are part of the trust guarantee. Remote-safe operation is a programme we design later, not a maybe.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-006</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>Operations are office-mandatory and run 24 hours a day, seven days a week. A day shift in Bengaluru covers India's business hours and two night shifts cover the western markets, the UK and the US, as their business days run, so a task in any of the three markets meets a live worker in its own hours. Site controls, meaning the device policy, a clean floor and monitored substitution stations, are part of the trust guarantee we make to the user, not a workplace preference. Remote-safe operation is a designed-later programme, parked in 07 with an owner and a trigger.</p>
+          <h3 id="site-as-control"><span class="no">1.1</span>Why the room is a trust control</h3>
+          <p>The last surface a human can see is a screen and a headset. When the substitutor places a real value, the worker's stream renders the field as dots and the worker's audio is muted while the value is spoken on the call leg. Those are software controls, and they hold on our devices. They say nothing about a phone camera pointed at the screen, a second person in the room, or a household network. <a href="../03-trust-and-data/#threat-model">The threat model in 03</a> is organised as paths by which a human could see a real value, each named and closed; the paths that run through the room can be closed only by controlling the room. So the site controls are entries in the threat model: our devices only, nothing personal on the floor, and the stations at which a substitution is in flight observed and logged. They are specified as operational design in <a href="../04-operations/#site-controls">04</a>.</p>
+          <h3 id="shifts"><span class="no">1.2</span>Shifts and tiers</h3>
+          <p>Every shift draws on the same workforce tiers: an L1 generalist pool, L2 specialist pods per vertical, L3 super-trust, with QA and escalation as standalone functions. Task cards are AI-generated and need-to-know, so a worker on the night shift sees "Client 4471", the aliases the step needs, the script and the expected outcome, and nothing that tells them which market's midnight it is. Handover at shift change is the moment the shift wheel in <a href="../04-operations/#shifts">04</a> marks, because an <code>awaiting-third-party</code> step with a callback window in London hours must have a live desk when the callback comes. No cost model is attached to any of this; economics is deferred by <a href="../05-business/#deferral">05</a>.</p>
+          <h3 id="remote-later"><span class="no">1.3</span>Remote-safe, later</h3>
+          <p>A remote-safe programme would have to close, off-site, every room path the threat model names, with controls we can verify rather than trust. That is a design job, and it is scheduled after the office model has run and the threat model has been exercised against real tasks. It is not a maybe and it is not now; its owner and trigger are in <a href="../07-open/#items">07</a>.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>A remote workforce</dt>
+            <dd>The norm among the human-assisted assistants: Magic's assistants are based in the Philippines and Latin America <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>, and Time etc has clients share logins with a named assistant through password managers <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>. Its cost is that the human-visible surface sits in a room we do not control. The threat model would carry paths we cannot name and close, and the sentence "no person saw it" would rest on trust in a household rather than on a control.</dd>
+            <dt>A hybrid floor: sensitive steps in the office, the rest remote</dt>
+            <dd>The classifier gains a "where" dimension and the console splits in two. Every step's sensitivity must be judged before it runs, and a task whose alias set changes mid-plan moves rooms. Two rule sets drift, and the harder one is the one under least use.</dd>
+            <dt>A day shift only, with western tasks queued to the next Indian morning</dt>
+            <dd>The markets where commercial viability lies would meet a dead desk in their own business hours, and a promised callback from a London institution would ring an empty floor. The 24/7 floor is what makes the three-market shape real.</dd>
+            <dt>Three offices, one per market</dt>
+            <dd>Three sites to control before any market has earned one. The expansion playbook of <a href="dr-007-universal-core-adapters.html">DR-007</a> is adapter plus legal pack plus shift, and the shift is added in the existing building.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A worker executing any step from a personal device, a home or a shared workspace. Every execution surface is ours, and so is the room.</li>
+            <li>A night shift staffed remotely because it is night. The western hours are the sensitive ones.</li>
+            <li>A substitution station that is not monitored, or a floor that is not clean.</li>
+            <li>Site controls described anywhere as a workplace policy rather than a trust control. They belong to the threat model.</li>
+            <li>Remote-safe operation as "never", and remote-safe operation as "now". It is later, with a trigger.</li>
+            <li>A cost model attached to the shift design.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. The shift design, the tiers and the site controls are specified in 04; the remote-safe programme is an open item in 07.</p>
+        </section>
+      </article>
+      <section>
+        <h2 class="unnumbered" id="sources">Sources</h2>
+        <ol class="sources">
+          <li id="src-1">Magic, <cite>Magic home page</cite>, Magic, undated; read via search excerpt on 2 September 2026, corroborated by a Wishup review, 2026. <a class="url" href="https://getmagic.com/">https://getmagic.com/</a></li>
+          <li id="src-2">Time etc, <cite>How to share secure information with your virtual assistant</cite>, Time etc resources, undated; read via search excerpt on 2 September 2026. <a class="url" href="https://www.timeetc.com/resources/how-to-use-a-virtual-assistant/how-to-share-secure-information-with-your-virtual-assistant/">https://www.timeetc.com/resources/how-to-use-a-virtual-assistant/how-to-share-secure-information-with-your-virtual-assistant/</a></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

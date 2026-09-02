@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-005 An explicit task state machine, with lapsed distinct from withdrawn, AI.fred</title>
+<meta name="description" content="Every task lives in an explicit state machine with live timers and recorded transitions; user silence ends in lapsed through visible nudges, lapsed is not withdrawn, and system silence is an exception the watchdog surfaces.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-005</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-005</a></span><span class="title">An explicit task state machine, with lapsed distinct from withdrawn</span></h1>
+    <p class="standfirst">Every task lives in an explicit state machine with named states, live timers and recorded transitions. Silence from the user ends in lapsed, through visible nudges, and lapsed is not withdrawn; silence from the system is an exception the watchdog surfaces.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-005</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>Every task is in exactly one named state, every non-terminal state carries a live timer, and no task reaches a terminal state without an explicit, recorded transition. A user who goes quiet is legitimate: the task moves through visible nudges into <code>lapsed</code>, a terminal state distinct from withdrawn, and a later message from the user revives it. A system that goes quiet is forbidden, as an architectural invariant rather than a procedure: a task with no live timer is an exception, and the watchdog places it on the exceptions board until a person gives it one.</p>
+          <h3 id="states"><span class="no">1.1</span>The states</h3>
+          <p>Seven non-terminal states, each with its own timer: <code>received</code> and <code>planning</code> against a planning deadline; <code>awaiting-authority</code>, <code>awaiting-user</code> and <code>awaiting-verdict</code> against the nudge schedule; <code>active</code> against the earliest step deadline; <code>awaiting-third-party</code> against the third party's expected response window, then escalation. Three terminal states with no timer and no further execution: <code>closed</code>, reached only by the user's verdict; <code>lapsed</code>, reached only by the system after the nudge schedule on one of the three awaiting states is exhausted; and <code>refused</code>, reached only from <code>received</code> or <code>planning</code>, before any step executes, when the request falls under what we refuse to do. Nothing executes before <code>awaiting-authority</code> has been left by the user's own authorisation.</p>
+          <h3 id="transitions"><span class="no">1.2</span>The transitions</h3>
+          <p>Every transition is explicit and recorded, and the full list is in <a href="../02-architecture/#state-machine">02</a>. Three deserve naming here. Nudges are recorded events on the timer of the three awaiting states, visible to the user and on the task's timeline; the schedule is per task type, and the illustrative default is three nudges, then lapse. Revive takes a <code>lapsed</code> task back to <code>planning</code> on a user message that references it, so lapsing costs the user nothing but time. Withdraw is available from any non-terminal state, cancels every step in flight, and reports any irreversible step that has already fired; it is the user's verdict, "withdrawn by me", and the system can never issue it. A redo verdict closes the parent and opens a linked child in <code>planning</code>; a closed task never re-opens.</p>
+          <h3 id="invariant"><span class="no">1.3</span>The invariant</h3>
+          <p>The following text appears, identically, in <a href="../02-architecture/#state-machine-invariant">02</a> and in <a href="../02-architecture/worker-console.html#state-machine-invariant">the worker console specification</a>, and the harness compares the two copies on every pass.</p>
+          <blockquote><p>A task never leaves the system by omission. Every task is in exactly one named state. Every non-terminal state carries a live timer. Every change of state is an explicit, recorded transition, and no task reaches a terminal state without one. Silence from the user is a legitimate way for a task to end: it moves through visible nudges into lapsed, and lapsed is not withdrawn. Silence from the system is forbidden: a task with no live timer is an exception, and the watchdog places it on the exceptions board until a person gives it one.</p></blockquote>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>Implicit states derived from step status and elapsed time</dt>
+            <dd>A task is "done" when its steps are done and "abandoned" after some number of days. Its cost is that a task becomes finished by arithmetic nobody recorded, which is forgetting by omission, the exact failure the invariant names, and nothing in the record distinguishes the user's choice from the system's guess.</dd>
+            <dt>Silence treated as withdrawal</dt>
+            <dd>The system would be filling in the user's verdict on their behalf. "Withdrawn by me" would carry two meanings, the verdict data would misstate withdrawal rates, and the five-option ceiling of <a href="dr-002-verdict-two-loops.html">DR-002</a> would be breached by an invisible sixth. <code>lapsed</code> exists so that the user's silence is recorded as what it is.</dd>
+            <dt>Never lapsing; reminders forever</dt>
+            <dd>A task holding live delegated authority stays open past its validity window, timers never expire so the exceptions board floods and the watchdog loses its meaning, and the user's inbox becomes the store of record. A terminal state that the user can revive is safer than an open task nobody owns.</dd>
+            <dt>A procedure instead of an invariant</dt>
+            <dd>A weekly sweep for stale tasks finds them after the damage, and a procedure can be skipped on the one busy night that matters. The invariant is checked by the watchdog on every task and every timer, always, and the operational duty in <a href="../04-operations/#qa">04</a> is to work the board it produces.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A terminal state reached by timeout, deletion or arithmetic without a recorded transition.</li>
+            <li>A non-terminal state without a live timer. A task without one is an exception by definition, not a backlog item.</li>
+            <li><code>lapsed</code> as a button, a user option or a verdict; and <code>lapsed</code> counted as withdrawn in any measure or make-good rule.</li>
+            <li>A closed task re-opened. Redo spawns a linked child in <code>planning</code>.</li>
+            <li>Any step executing in <code>lapsed</code>, <code>closed</code> or <code>refused</code>.</li>
+            <li>The invariant's text differing, by a word, between 02 and the worker console.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. The machine is drawn in 02, the invariant is carried identically by 02 and the worker console, and the exceptions board is specified in <a href="../02-architecture/worker-console.html#exceptions-board">the worker console</a> and staffed in 04.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>
