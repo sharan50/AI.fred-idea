@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-002 Verdict system split into a control loop and an improvement loop, AI.fred</title>
+<meta name="description" content="Structured outcome codes decide whether a step is closed; the user's one-tap verdict, five options and no more, is the only measure of quality and the only thing that closes a task.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-002</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-002</a></span><span class="title">Verdict system split into a control loop and an improvement loop</span></h1>
+    <p class="standfirst">Two loops, two jobs. A control loop of structured outcome codes decides whether a step is closed and what fires next; the user's one-tap verdict, five options and no more, is the only measure of quality and the only thing that closes a task.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-002</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>We run two loops that never borrow each other's job. The control loop runs before "done" is shown: every step closes with one outcome code from a fixed vocabulary, artefacts attach for audit and dispute only, and dual control applies only to irreversible steps. It is not ground truth of quality. The improvement loop belongs to the user: a one-tap verdict closes every task, chosen from exactly five options, and the verdict joined to the step trace is the measurement against which every product change is judged.</p>
+          <h3 id="control-loop"><span class="no">1.1</span>The control loop</h3>
+          <p>A step is closed when its executor, the AI or a worker, records exactly one of nine codes and the fields that code requires: <code>ok</code>, <code>ok-with-variance</code>, <code>blocked-third-party</code>, <code>blocked-needs-user</code>, <code>blocked-outside-envelope</code>, <code>failed-retryable</code>, <code>failed-final</code>, <code>refused-policy</code> and <code>superseded</code>. The codes drive the machine, not the mood: <code>blocked-needs-user</code> creates a <code>user</code> step, <code>failed-final</code> triggers re-planning, <code>blocked-outside-envelope</code> names the envelope line it would breach and raises an extension request. When every step is closed the task moves to <code>awaiting-verdict</code> and the outcome report is shown. Artefacts, all of them redacted, are attached for audit and dispute; nobody opens one to decide whether a step went well. The full vocabulary, with its required fields, is fixed in <a href="../02-architecture/worker-console.html#outcome-codes">the worker console specification</a>.</p>
+          <h3 id="improvement-loop"><span class="no">1.2</span>The improvement loop</h3>
+          <p>The user closes the task with one tap from five options, in this order and with these words: done, satisfied; done, but rough; wrong outcome, needs redoing; we couldn't complete it; withdrawn by me. <code>lapsed</code> is assigned by the system when the nudge schedule runs out and is never a button, so the ceiling of five holds. A wrong-outcome verdict closes the task and opens a linked child task in <code>planning</code>; the parent never re-opens. Withdrawn by me is available from any non-terminal state and cancels every step in flight.</p>
+          <p>Joined to the step trace, the verdict becomes the measurement: which task types, which routes and which sequences of codes precede a bad verdict. Every product change is judged against verdict rates per task type, and nothing else counts as evidence of quality. The incentive mechanics, a verdict needed to close a task, a small credit for a full-coverage month, an automatic make-good on the two bad verdicts, are assumptions and are chipped as such where <a href="../01-product/#verdicts">01 states them</a>; the make-good policy itself is the founder's open decision in <a href="../07-open/#items">07</a>.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>One loop: the executor's outcome code as the quality signal</dt>
+            <dd>Cheaper to build and worthless as a measure. <code>ok</code> says the form was submitted; it cannot say the user wanted that form. A team judged on its own codes optimises the codes, and we would be marking our own work on exactly the tasks where the customer's judgement is the point.</dd>
+            <dt>Internal QA sampling as the measure of quality</dt>
+            <dd>QA judges against the task card, so it measures compliance with the plan rather than whether the plan was right. It samples, so the measurement has holes precisely where the unusual tasks are. And it widens the set of people who read task detail. QA keeps its job in <a href="../04-operations/#qa">04</a> as an operational duty; it is not the measurement.</dd>
+            <dt>A rating scale or a feedback form</dt>
+            <dd>Five stars carry no action; nothing in the machine can respond to a three. Free text is worse: a user describing what went wrong types the real value into a box, and the improvement data becomes a store of the values the whole design exists to keep out. Five fixed options carry an action each and carry no values.</dd>
+            <dt>Artefacts shown to the user as proof of completion</dt>
+            <dd>A screenshot offered as proof invites people, on our side and the user's, to look at artefacts as a habit. Every artefact is redacted and exists for dispute; a viewing habit turns the sealed evidence store into a leak path, which <a href="../03-trust-and-data/#redaction">03</a> treats it as.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A sixth verdict option, in any market and at any tier. <code>lapsed</code> is never a button.</li>
+            <li>"Done" shown while any step is open, or a step closed without a code from the vocabulary and its required fields.</li>
+            <li>Outcome codes reported as quality; worker or AI self-assessment counting towards quality.</li>
+            <li>An artefact opened for any reason other than audit or dispute.</li>
+            <li>Free text as the primary or required closing signal.</li>
+            <li>A product change justified without a verdict rate per task type.</li>
+            <li>Dual control applied to reversible steps, or skipped on irreversible ones.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. The outcome-code vocabulary lives in 02 and the worker console; the five verdicts and their assumed incentives live in 01; the make-good policy is open in 07.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>
