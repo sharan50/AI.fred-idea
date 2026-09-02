@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-012 The design plan: an engineering dossier, AI.fred</title>
+<meta name="description" content="The visual system for the publication: palette, type, numbering voice, page kinds, components, diagram language and print, critiqued against the generic defaults and fixed.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-012</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-012</a></span><span class="title">The design plan: an engineering dossier</span></h1>
+    <p class="standfirst">The publication is set as an engineering dossier: paper, ink, one accent spent on a stamp and one stroke per figure, a fixed status vocabulary, and diagrams as the memorable element. This record fixes the system after an independent three-lens critique.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-012</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone who edits the publication</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>Every page of the publication is built from one token file, one component set and one diagram language, in the direction the founder agreed: an engineering dossier. The system is fixed as follows.</p>
+          <h3 id="palette"><span class="no">1.1</span>Palette</h3>
+          <p>Six colours from the brief plus two derived neutrals, defined once in <code>tokens.css</code> and nowhere else. The accent never fills an area and appears at most twice on any screen: the stamp and one stroke per figure. Links are ink with an ink underline. Amber and verified are dot and stroke colours only, never text. Line colour never carries meaning inside a figure.</p>
+          <div class="table-wrap">
+          <table class="data">
+            <caption><span class="tab-no">Table D.1</span> The palette, its roles, and the contrast each text colour achieves on both grounds.</caption>
+            <thead><tr><th>Token</th><th>Value</th><th>Role</th><th class="num">On paper</th><th class="num">On paper-2</th></tr></thead>
+            <tbody>
+              <tr><td class="key">paper</td><td class="mono">#FBFAF7</td><td>Page ground</td><td class="num"></td><td class="num"></td></tr>
+              <tr><td class="key">paper-2</td><td class="mono">#F3F1EA</td><td>Block code only</td><td class="num"></td><td class="num"></td></tr>
+              <tr><td class="key">ink</td><td class="mono">#17150E</td><td>All text; all meaningful strokes</td><td class="num">17.5:1</td><td class="num">16.2:1</td></tr>
+              <tr><td class="key">ink-soft</td><td class="mono">#4F4B40</td><td>Captions, control-block labels, secondary diagram labels</td><td class="num">8.3:1</td><td class="num">7.7:1</td></tr>
+              <tr><td class="key">line</td><td class="mono">#D8D4C8</td><td>Hairline rules, table rules, diagram grid only</td><td class="num">non-text</td><td class="num">non-text</td></tr>
+              <tr><td class="key">accent</td><td class="mono">#A8321A</td><td>Stamps and exactly one stroke per figure; nothing else</td><td class="num">6.4:1</td><td class="num">5.9:1</td></tr>
+              <tr><td class="key">amber</td><td class="mono">#946A00</td><td>Amber and to-verify dots and strokes; never text</td><td class="num">4.7:1</td><td class="num">4.3:1</td></tr>
+              <tr><td class="key">verified</td><td class="mono">#2F5D3A</td><td>Verified dots and strokes; never text</td><td class="num">7.3:1</td><td class="num">6.8:1</td></tr>
+            </tbody>
+          </table>
+          </div>
+          <h3 id="type"><span class="no">1.2</span>Type</h3>
+          <p>IBM Plex Sans for prose; IBM Plex Mono for the data voice: chips, control-block values, figure labels, table cells holding codes or values, the ledger, aliases and code. Never body text. Both faces are self-hosted as woff2 under the SIL Open Font Licence, with system fallbacks and no synthesised weights. Hierarchy comes from number, weight and space, not size: body 17px at 1.55; standfirst 1.1875rem; h1 1.625rem Medium; h2 1.25rem Medium with two and a half lines above; h3 at body size, Medium. Meta, chips and figure labels are 13px Mono. The measure is 60ch, about 72 characters. Text is left aligned with manual hyphenation and tabular numerals wherever numbers align.</p>
+          <h3 id="numbering"><span class="no">1.3</span>The numbering voice</h3>
+          <p>One numbering voice runs through the publication. Documents are <code>00</code> to <code>07</code> and <code>DR-001</code> onward, shown as a numeral hanging beside the title. Headings are numbered in the text as hanging numerals, <code>1</code> and <code>1.1</code>, mirrored in the rail. Figures are <code>Figure S.n</code> and tables <code>Table S.n</code>, where S is the section digit (0 for the thesis, i for the index, D for decision records) and n runs across every page of the section. Cross-references are links whose text is the identifier or the document's name.</p>
+          <h3 id="layout"><span class="no">1.4</span>Layout and page kinds</h3>
+          <p>Every page opens with the same masthead, which names the venture in one sentence at every URL, and the same title block: the stamp top right, the numeral hanging in the rail column, the title, the standfirst that states the conclusion, and a document control block (Document, Revised, Status, Reader) closed by an ink rule. The rail carries two lists, the publication map and the page's own headings, so a cold reader always knows what this is, where it sits, how settled it is and where to go next. There are four page kinds, all from one component set and with no per-page CSS: the report (rail plus document column), the ledger (a data table listing rows that link to their pages, never cards), the single sheet (no rail, one column, prints on one page), and the decision record. Figure D.1 shows the anatomy.</p>
+          <figure class="fig" id="fig-page-anatomy">
+            <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure D.1, page anatomy, scrollable">
+            <svg viewBox="0 0 720 520" role="img" aria-labelledby="fig-page-anatomy-title fig-page-anatomy-desc">
+              <title id="fig-page-anatomy-title">Anatomy of a report page</title>
+              <desc id="fig-page-anatomy-desc">A wireframe of one page. A masthead runs across the top. Below it a title block holds the document numeral on the left, the title and standfirst on the right, a control block underneath, and the stamp at the top right; the stamp is the single accent element in the figure. Under the title block the page splits into a rail on the left, carrying the publication list and the page contents, and a document column on the right carrying prose, a figure with its caption, a table, and the sources list. A footer closes the page.</desc>
+              <rect class="fg-box" x="8" y="8" width="704" height="40" rx="2"/>
+              <text class="fg-label fg-label-strong" x="20" y="33">AI.fred</text>
+              <text class="fg-label fg-label-soft" x="84" y="33">Design and planning publication</text>
+              <text class="fg-label" x="580" y="33">03 Trust and data</text>
+              <line class="fg-line" x1="8" y1="64" x2="712" y2="64"/>
+              <text class="fg-label fg-label-strong" x="20" y="96">03</text>
+              <text class="fg-label fg-label-strong" x="200" y="96">Trust and data</text>
+              <text class="fg-label fg-label-soft" x="200" y="120">Nobody on our side ever sees a real value. This page shows how.</text>
+              <text class="fg-label-small fg-label-soft" x="200" y="150">Document</text>
+              <text class="fg-label-small" x="200" y="166">03</text>
+              <text class="fg-label-small fg-label-soft" x="290" y="150">Revised</text>
+              <text class="fg-label-small" x="290" y="166">2026-09-02</text>
+              <text class="fg-label-small fg-label-soft" x="390" y="150">Status</text>
+              <text class="fg-label-small" x="390" y="166">decision</text>
+              <text class="fg-label-small fg-label-soft" x="480" y="150">Reader</text>
+              <text class="fg-label-small" x="480" y="166">For engineers</text>
+              <rect class="fg-box-accent" x="612" y="78" width="88" height="30" rx="2"/>
+              <text class="fg-label-small" x="626" y="97">decision</text>
+              <line class="fg-line" x1="8" y1="184" x2="712" y2="184"/>
+              <rect class="fg-zone" x="8" y="200" width="160" height="260" rx="2"/>
+              <text class="fg-label-small fg-label-soft" x="20" y="220">rail</text>
+              <text class="fg-label-small fg-label-strong" x="20" y="244">In this publication</text>
+              <text class="fg-label-small" x="20" y="262">00  Thesis</text>
+              <text class="fg-label-small" x="20" y="278">01  Product</text>
+              <text class="fg-label-small" x="20" y="294">02  Architecture</text>
+              <text class="fg-label-small fg-label-strong" x="20" y="310">03  Trust and data</text>
+              <text class="fg-label-small" x="20" y="326">04  Operations</text>
+              <text class="fg-label-small fg-label-strong" x="20" y="358">On this page</text>
+              <text class="fg-label-small" x="20" y="376">1  The alias model</text>
+              <text class="fg-label-small" x="20" y="392">2  Substitution</text>
+              <text class="fg-label-small" x="20" y="408">3  Passports</text>
+              <text class="fg-label fg-label-strong" x="200" y="222">1  The alias model</text>
+              <line class="fg-rule" x1="200" y1="240" x2="640" y2="240"/>
+              <line class="fg-rule" x1="200" y1="254" x2="640" y2="254"/>
+              <line class="fg-rule" x1="200" y1="268" x2="560" y2="268"/>
+              <line class="fg-line" x1="200" y1="288" x2="712" y2="288"/>
+              <rect class="fg-box" x="200" y="300" width="512" height="56" rx="2"/>
+              <text class="fg-label-small fg-label-soft" x="212" y="332">inline SVG, 720 units wide, no frame, no fill</text>
+              <text class="fg-label-small" x="200" y="376">Figure 3.1  The takeaway in one line.</text>
+              <line class="fg-rule" x1="200" y1="392" x2="712" y2="392"/>
+              <line class="fg-line" x1="200" y1="408" x2="712" y2="408"/>
+              <text class="fg-label-small" x="200" y="404">Table 3.1  Step type   India   UK   US</text>
+              <line class="fg-rule" x1="200" y1="424" x2="712" y2="424"/>
+              <line class="fg-rule" x1="200" y1="440" x2="712" y2="440"/>
+              <text class="fg-label-small fg-label-strong" x="200" y="462">Sources</text>
+              <text class="fg-label-small" x="200" y="478">[1] Source, publisher, date, address</text>
+              <line class="fg-rule" x1="8" y1="492" x2="712" y2="492"/>
+              <text class="fg-label-small fg-label-soft" x="20" y="510">footer: what AI.fred is; start with the thesis; read the trust story; see the open items</text>
+            </svg>
+            </div>
+            <figcaption><span class="fig-no">Figure D.1</span> One title block, one rail, one document column: every page answers what this is, where it sits, how settled it is and where to go next.</figcaption>
+          </figure>
+          <h3 id="components"><span class="no">1.5</span>Components</h3>
+          <p>Defined once in <code>base.css</code> and composed everywhere: masthead; page header with stamp and control block; rail; status chip; reference link and sources list; stamp; decision record; figure with a focusable scroll region and numbered caption; data table with a numbered caption above, an ink rule under the header, hairlines between rows and no fills; note with hairline rules and a run-in mono label; the invariant, the one place a heavy ink left rule is permitted; the ledger, a mono block with a timestamp column; inline code without a box; block code on the second ground; footer with the colophon and three fixed links. A new layout on a future page means extending tokens and components first.</p>
+          <h3 id="status"><span class="no">1.6</span>Status vocabulary at two levels</h3>
+          <p>Five words, identical everywhere: <span class="chip chip-decision" data-example>decision</span>, <span class="chip chip-assumption" data-example>assumption</span>, <span class="chip chip-amber" data-example>amber</span>, <span class="chip chip-to-verify" data-example>to-verify</span> and <span class="chip chip-verified" data-example>verified</span>. Each chip is an outline in ink with a small dot, filled or hollow, so the status survives print and colour-blindness. A verified chip is always followed by a bracketed reference to a numbered source on the same page, with its date and address in the sources list; a hover title is never the only carrier. At page level the same words mean: amber, the page states an amber decision of its own with a trigger; to-verify, the page carries external claims not yet verified; assumption, the page rests on stated assumptions; decision, the page rests only on fixed decisions. Verified is never a page status. When several apply, the precedence is amber, then to-verify, then assumption, then decision, so a page's status is a function of its own inline chips and the harness checks it. The stamp in the title block carries the same word as the status chip.</p>
+          <h3 id="diagrams"><span class="no">1.7</span>Diagram language</h3>
+          <p>One canvas, 720 units wide on a 40-unit module, no frame and no background. One shape vocabulary: a component is an ink box; a human actor a dotted box; the user's own device a box with rounded corners; a zone or trust boundary a dashed rectangle labelled inside; a terminal state an ink-filled box; a lifeline the only use of line colour. Every distinction is a stroke pattern and a label, never a colour alone: the accent is a 2-unit stroke used exactly once per figure and named in the figure's description; verified is solid with a square end; amber is dashed. Labels are 13-unit mono in ink, 11 on edges. All colour and type come from classes that resolve to tokens; no colour or font attribute appears inside any SVG. Each figure has a title, a description, a focusable scroll region so labels never fall below about 11px on a phone, and a caption stating the takeaway.</p>
+          <h3 id="print"><span class="no">1.8</span>Print</h3>
+          <p>Page size follows the printer (the three markets split between A4 and Letter) with 18mm and 16mm margins, a running head and a page counter where the engine supports page margin boxes. Navigation does not print; the wordmark, title block, control block, page contents and sources do. Figures, table rows, records and notes stay whole; headings keep their next paragraph; external links print their address; the page's own address is never printed, because the unguessable address is the interim access control. Chip dots are drawn as borders, so they print without colour adjustment.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>The first draft: a documentation-site skeleton</dt>
+            <dd>A masthead with a sections menu, a sticky rail of this page's headings only, a previous-and-next footer, a tinted callout with an accent rule, a tinted table header, an oversized heading ladder with a larger index title, and sources hidden in a hover title. It passed the letter of the brief's banned list and failed its spirit: three independent critics found it would read as another generated docs site, would leave the index, the two ledgers and the trust story to default to a hero and a card grid, and would print verified claims bare. Cost of rejecting it: a week of apparatus (numbering, control block, sources list, table rules, page kinds) that the first draft did not need.</dd>
+            <dt>A framework, a UI kit or a CSS library</dt>
+            <dd>Rejected in DR-011; restated here because the critique made the reason concrete: every kit ships the defaults the brief bans.</dd>
+            <dt>Heading numbers by CSS counters</dt>
+            <dd>Counters keep the markup clean but vanish when text is copied, are read unevenly by assistive technology and cannot be checked by the harness. Numerals in the text cost a small authoring discipline and are checked on every pass.</dd>
+            <dt>Source and date in a hover title only</dt>
+            <dd>Invisible in print, on touch and to keyboard users; it would have met the brief's "verified with source and date" for mouse users alone. The numbered reference and sources list cost a few lines per page.</dd>
+            <dt>A dark theme</dt>
+            <dd>A paper document has one look. A second palette would double the contrast work and the diagram classes for no reader the brief names.</dd>
+            <dt>The one permitted moment of motion</dt>
+            <dd>The brief allows one deliberate non-user-triggered moment. We spend none; a dossier that moves is less trusted, not more.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>Per-page styles, inline styles and new colours anywhere but <code>tokens.css</code>. The harness rejects them.</li>
+            <li>The accent as a link colour, a callout rule, a fill or a text colour anywhere but the stamp.</li>
+            <li>Cards, card grids, heroes, shadows, gradients, all-caps labels, tracked-out type, middle-dot meta strings, arrow characters, sticky mastheads, hamburger menus and previous-and-next footers.</li>
+            <li>Any figure outside the 720-unit canvas, any colour or font attribute inside an SVG, any status carried by colour alone.</li>
+            <li>Any verified claim without a numbered, dated, addressed source on the same page.</li>
+            <li>A page whose stamp, status chip and manifest entry disagree.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken during the build on 2026-09-02 after the critique. Revising it means extending tokens and components first and re-running the harness; it does not mean styling a page.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>
