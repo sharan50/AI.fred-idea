@@ -343,7 +343,7 @@ for (const f of htmlFiles) {
   const tableRe = /<table\b([^>]*)>([\s\S]*?)<\/table>/g;
   while ((m = tableRe.exec(t))) {
     const before = t.slice(Math.max(0, m.index - 120), m.index);
-    if (!/class="table-wrap"[^>]*>\s*$/.test(before)) fail(f, lineOf(t, m.index), 'table must be wrapped in <div class="table-wrap">');
+    if (!/class="table-wrap( wide)?"[^>]*>\s*$/.test(before)) fail(f, lineOf(t, m.index), 'table must be wrapped in <div class="table-wrap"> (or "table-wrap wide")');
     if (!/class="data"/.test(m[1])) fail(f, lineOf(t, m.index), 'table must carry class="data"');
     if (!/<caption>\s*<span class="tab-no">Table [A-Za-z0-9]+\.\d+<\/span>/.test(m[2])) fail(f, lineOf(t, m.index), 'table must open with <caption><span class="tab-no">Table S.n</span> takeaway</caption>');
     if (!/<thead>/.test(m[2])) fail(f, lineOf(t, m.index), 'table must have a <thead>');
