@@ -26,7 +26,7 @@
   <header class="page-header">
     <p class="stamp" data-status="amber">amber<small>revised 2026-09-02</small></p>
     <h1><span class="no">01</span><span class="title">Product</span></h1>
-    <p class="standfirst">The product is a plan the user can read, an envelope the user can shrink at any moment, and a verdict the user owns. This page shows a task from the user's side across the six verticals, from intake to verdict, and names what we refuse to do. The front-door channel is the one amber item on it.</p>
+    <p class="standfirst">The product is a plan the user can read, an envelope the user can shrink at any moment, and a verdict the user owns. This page shows a task from the user's side across six verticals, intake to verdict, and names what we refuse to do. The front-door channel is its one amber item.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>01 Product</dd></div>
       <div><dt>Revised</dt><dd>2026-09-02</dd></div>
@@ -58,176 +58,168 @@
     <div class="doc">
       <section>
         <h2 id="journeys"><span class="no">1</span>User journeys across the six verticals</h2>
-        <p>Every journey has one shape, whatever the vertical. The user asks; the planner returns an ordered plan and proposes an authority envelope; the user confirms both with one tap; steps run, each classed <code>ai</code> (the AI executes), <code>human</code> (a worker executes from a task card) or <code>user</code> (the step bounces to the user's own device); an outcome report arrives with the access ledger attached; the user closes the task with a verdict. Nothing executes before the tap, and nothing irreversible fires outside the envelope. Ledger times are illustrative.</p>
-        <p>A step marked <em>dual control</em> is irreversible under the point-of-no-return test and inside the envelope: whichever party executes it, the other checks it against the envelope and the expected outcome before it fires. A <code>user</code> step is the user's own act; the task waits in <code>awaiting-user</code> until they act, with nudges if they go quiet.</p>
+        <p>Every journey has one shape. The user asks; the planner returns an ordered plan and proposes an authority envelope; the user confirms both with one tap on their bound device; steps run, each classed <code>ai</code> (the AI executes), <code>human</code> (a worker executes from a task card) or <code>user</code> (bounced to the user's own device); an outcome report arrives with the access ledger; the user closes the task with a verdict. Nothing executes before the tap. Ledger times are illustrative.</p>
+        <p>A step marked <em>dual control</em> is irreversible under the point-of-no-return test and inside the envelope: whichever party executes it, the other checks it against the envelope and the expected outcome before it fires, and on a browser step the checker sees the surface as the worker's stream shows it, every alias as dots. A <code>user</code> step is an act only the user can perform, or an approval without which an irreversible step cannot fire, and it goes to the bound device; a question seeks information the plan needs and is answered in the conversation; both hold the task in <code>awaiting-user</code> on the nudge schedule.</p>
+        <p>Two rules run through every journey. A third party that asks who is calling is answered in vault aliases: a name is not a secret, but it is the link between Client 4471 and a person, so the user's name and address are aliases, <code>{{name}}</code> and <code>{{address}}</code>, placed by the substitutor like <code>{{dob}}</code> or a security answer while the worker is muted; a task card carries Client 4471, the script and aliases, nothing else. And we hold no login to any account of the user's, so a step that acts on an institution runs by a passport adapter with a consented scope, by the institution's telephone line as a <code>human</code> step with aliases spoken, or by a bounce.</p>
 
         <h3 id="journey-banking"><span class="no">1.1</span>Banking and wealth: renew a maturing deposit (India)</h3>
         <p>The user forwards a maturity notice from HDFC Bank to our relay and asks us to renew the deposit for a longer tenor and add a nominee.</p>
-        <p><strong>Envelope proposed.</strong> Spend cap: nil; the principal stays at the bank. Parties: HDFC Bank. Acts: submit an application, accept terms. Identity acts: state <code>{{pan}}</code> and <code>{{account.hdfc}}</code> in the bank's form. Window: until the maturity date.</p>
+        <p><strong>Envelope proposed.</strong> Spend cap: nil. Parties: HDFC Bank. Acts: submit an application, accept terms. Identity acts: state an identity number (<code>{{account.hdfc}}</code>), answer security questions. Window: until the maturity date.</p>
         <ol>
-          <li><code>ai</code> Read the notice; the gateway tokenised the account number at the edge, so the planner sees <code>{{account.hdfc}}</code>, never the number.</li>
-          <li><code>ai</code> Compare the bank's published tenors in our managed browser.</li>
-          <li><code>ai</code> Fill the renewal and nomination form in our browser; the substitutor places <code>{{pan}}</code> and <code>{{account.hdfc}}</code> at the last boundary and the supervising worker sees dots.</li>
-          <li><code>user</code> Approve in the bank's own app; the task waits in <code>awaiting-user</code>.</li>
-          <li><code>ai</code>, dual control. Submit the renewal: reversing it would need the bank's consent, so a worker checks tenor, amount and nominee against the envelope before it fires. Closes <code>ok</code> with the bank's reference.</li>
+          <li><code>ai</code> Read the notice; the gateway tokenised the account number at the edge, so the planner sees <code>{{account.hdfc}}</code>.</li>
+          <li><code>ai</code> Compare the bank's published tenors in our browser.</li>
+          <li><code>human</code> Call the bank's deposit line on our telephony, India having no consented rail for a renewal instruction. The substitutor speaks <code>{{account.hdfc}}</code>, <code>{{dob}}</code> and the security answers, <code>{{security.hdfc}}</code>, with the worker muted; the worker states the tenor and the nominee.</li>
+          <li><code>user</code> Approve the bank's own confirmation in its app; a bank's factor is always the user's.</li>
+          <li><code>human</code>, dual control. Confirm the instruction: reversing a renewal needs the bank's consent, so the AI checks tenor, amount and nominee against the envelope before the worker says yes. Closes <code>ok</code> with the bank's reference.</li>
         </ol>
-        <p>Had the bank demanded a fresh video KYC, that step would have been <code>user</code> from the start: the RBI reserves video customer identification to the regulated entity's own trained officials, with third parties assisting only at the customer's end <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>. The ledger reads:</p>
-        <ol class="ledger">
-          <li><span class="t">11:04</span><span class="e">{{account.hdfc}} used to identify the deposit on HDFC Bank's renewal form, in our browser. Placed by the system. No person saw it.</span></li>
-          <li><span class="t">11:05</span><span class="e">{{pan}} used to fill HDFC Bank's renewal form, in our browser. Placed by the system. No person saw it.</span></li>
-          <li><span class="t">11:06</span><span class="e">A worker saw the form with {{pan}} shown as dots.</span></li>
-        </ol>
+        <p>Ledger: <code>{{account.hdfc}}</code>, <code>{{dob}}</code> and <code>{{security.hdfc}}</code> spoken to HDFC Bank's deposit line, on our phone line; placed by the system; the worker's audio muted.</p>
 
         <h3 id="journey-legal"><span class="no">1.2</span>Legal and administrative: contest a penalty charge notice (UK)</h3>
         <p>A parking penalty charge notice arrives with a deadline for representations; the user photographs it and the signage and asks us to contest it.</p>
-        <p><strong>Envelope proposed.</strong> Spend cap: nil. Parties: the issuing council. Acts: file a document. Identity acts: state the user's name and address as printed on the notice. Window: the deadline on the notice.</p>
+        <p><strong>Envelope proposed.</strong> Spend cap: nil. Parties: the issuing council. Acts: file a document. Identity acts: present a document, the notice, which carries <code>{{name}}</code> and <code>{{address}}</code>. Window: the deadline on the notice.</p>
         <ol>
           <li><code>ai</code> Read the notice and the photos; extract the reference, the contravention code and the deadline.</li>
-          <li><code>ai</code> Check the council's published grounds and route in our browser, and draft the representation, showing each fact it relies on with its confidence.</li>
+          <li><code>ai</code> Check the council's grounds and its online form in our browser; draft the representation, showing each fact it relies on with its confidence.</li>
           <li><code>user</code> Confirm the statement of facts; we never assert to an authority a fact the user has not confirmed.</li>
-          <li><code>ai</code>, dual control. File it: a filing cannot be withdrawn by our own action, so a worker checks reference, deadline and attachments before it fires. Closes <code>ok</code> with the acknowledgement.</li>
-          <li>The council's decision is a third party's act: <code>awaiting-third-party</code>, with the council's stated response window as the timer.</li>
+          <li><code>ai</code>, dual control. File it on the council's form in our browser, the substitutor placing <code>{{name}}</code> and <code>{{address}}</code>. A filing cannot be withdrawn by our own action, so a worker views the filled form to check reference, deadline and attachments before it fires, seeing the two aliases as dots. Closes <code>ok</code> with the acknowledgement.</li>
+          <li><code>ai</code> Collect the council's decision. Closes <code>blocked-third-party</code> with the council's stated response window; the task waits in <code>awaiting-third-party</code>.</li>
         </ol>
-        <p>No vault alias was used, and the ledger says so in one line; the ledger exists for every task.</p>
+        <ol class="ledger">
+          <li><span class="t">09:12</span><span class="e">{{name}} used to fill the council's representations form, in our browser. Placed by the system. No person saw it.</span></li>
+          <li><span class="t">09:12</span><span class="e">{{address}} used to fill the council's representations form, in our browser. Placed by the system. No person saw it.</span></li>
+          <li><span class="t">09:13</span><span class="e">A worker saw the form with {{name}} and {{address}} shown as dots.</span></li>
+        </ol>
 
         <h3 id="journey-identity"><span class="no">1.3</span>Identity and security: a stolen phone (India)</h3>
-        <p>The user's phone is stolen. They reach us from a friend's laptop through the web front door; the gateway binds the request to their account and the lost channel changes nothing.</p>
-        <p><strong>Envelope proposed.</strong> Spend cap: nil. Parties: the mobile operator, HDFC Bank. Acts: block a SIM, block a card, request reissue, schedule. Identity acts: state <code>{{dob}}</code> and answer the operator's security questions from the context store. Window: twenty-four hours (illustrative).</p>
+        <p>The user's phone is stolen. They reach us from a friend's laptop through the web front door with their login. The bound device, the surface that receives bounces and envelope prompts, is the stolen phone, so the login alone authorises nothing: the task cannot leave <code>awaiting-authority</code> until a new device is bound, and nothing irreversible fires before then. The acknowledgement says so and gives the operator's and the bank's own loss lines, so the user can block the SIM and the card at once without us.</p>
+        <p><strong>Envelope proposed.</strong> Spend cap: nil. Parties: the mobile operator, HDFC Bank. Acts: cancel (the SIM, the card), submit an application (reissue), schedule. Identity acts: answer security questions from the context store, <code>{{dob}}</code> among them. Window: twenty-four hours (illustrative).</p>
         <ol>
-          <li><code>ai</code> Plan the loss response: the SIM, the cards, the sessions the user names.</li>
-          <li><code>human</code>, dual control. Call the operator's blocking line on our telephony. The worker reads the task card, which names the customer as Client 4471; the substitutor speaks <code>{{dob}}</code> while the worker's audio is muted. Reissue needs the operator's consent, so the block is irreversible and the AI checks the request against the envelope before the worker asks for it.</li>
-          <li><code>ai</code>, dual control. Block <code>{{card.primary}}</code> on the bank's card-control page in our browser; a worker checks first.</li>
-          <li><code>user</code> A replacement SIM needs the user in person and a replacement card needs the bank's app: both bounce.</li>
-          <li>Resetting the UPI PIN is refused within the plan, and the report says so: a PIN is never ours.</li>
+          <li><code>user</code> Bind a replacement device. Binding is never a password alone: the user signs in on the new device through an identity rail the India passport adapter accepts, on the rail's own screen (<a href="../03-trust-and-data/#passports">the passports in 03</a>), then confirms the envelope there.</li>
+          <li><code>human</code>, dual control. Call the operator's blocking line on our telephony, unless the user has already blocked the SIM. Every value the operator asks for, <code>{{name}}</code>, <code>{{dob}}</code>, <code>{{address}}</code>, the security answers, is placed by the substitutor with the worker muted. A block is a cancel only the operator can undo, so the AI checks the request against the envelope before the worker asks.</li>
+          <li><code>human</code>, dual control. Call the bank's card line to block <code>{{card.primary}}</code> the same way; we hold no login to the bank's card controls.</li>
+          <li><code>user</code> A replacement SIM needs the user at the operator's counter and a replacement card needs the bank's app: both bounce to the new device.</li>
+          <li><code>user</code> Reset the UPI PIN: a PIN is never ours, so the step bounces and the report records it.</li>
         </ol>
-        <p>Ledger: <code>{{dob}}</code> spoken on our phone line, the worker's audio muted; <code>{{card.primary}}</code> placed in our browser, no person saw it.</p>
+        <p>Ledger: four aliases spoken on our phone line, the worker's audio muted each time; no person saw a value.</p>
 
         <h3 id="journey-health"><span class="no">1.4</span>Health and medical: a specialist appointment and the records (India)</h3>
         <p>A clinic refers the user to a specialist at Max Healthcare; the user uploads the referral and asks us to book the earliest slot, pay the fee and have the records sent across.</p>
-        <p><strong>Envelope proposed.</strong> Spend cap: the consultation fee, at the amount the user sets. Parties: Max Healthcare, the referring clinic. Acts: book, schedule, make a payment under the cap. Identity acts: state <code>{{dob}}</code> on the booking line. Window: two weeks (illustrative).</p>
+        <p><strong>Envelope proposed.</strong> Spend cap: the consultation fee, at the amount the user sets. Parties: Max Healthcare, the referring clinic. Acts: book, schedule, make a payment under the cap. Identity acts: answer security questions from the context store (<code>{{dob}}</code>). Window: two weeks (illustrative).</p>
         <ol>
-          <li><code>ai</code> Read the referral (the gateway tokenised the patient identifiers) and check the specialist's slots on the hospital's portal in our browser.</li>
-          <li><code>human</code> Call the booking line. Booking is cancellable at no cost by our own action, so no dual control; the substitutor speaks <code>{{dob}}</code> with the worker muted. Closes <code>ok-with-variance</code> if the slot differs from the plan.</li>
-          <li><code>ai</code>, dual control. Pay the fee through the payment passport; a non-refundable prepayment fails the point-of-no-return test, so a worker checks amount and payee against the cap first. Where the rail demands the account holder's own approval, that is a <code>user</code> step on their device.</li>
+          <li><code>ai</code> Read the referral (the gateway tokenised the patient identifiers) and check the specialist's slots on the hospital's public portal in our browser.</li>
+          <li><code>human</code> Call the booking line. We can cancel the booking by our own action on the portal at no cost, so no dual control; the substitutor speaks <code>{{name}}</code> and <code>{{dob}}</code> with the worker muted. Closes <code>ok-with-variance</code> if the slot differs from the plan.</li>
+          <li><code>user</code> Pay the fee on their own device: the India flag for a delegated debit is bounce (section 7 gives the reason), so a UPI payment is the user's own act, under the cap. The <code>ai</code> dual-control form of this step is the capability ceiling, applied where a rail permits a delegated debit under the cap, as the card-tokenisation passport does in 1.6.</li>
           <li><code>user</code> Sign the clinic's records-release form.</li>
           <li><code>human</code> Chase the clinic for the transfer. Closes <code>blocked-third-party</code> with a response window.</li>
         </ol>
-        <p>Ledger: <code>{{dob}}</code> spoken to Max Healthcare's booking line, on our phone line, the worker's audio muted.</p>
+        <p>Ledger: <code>{{name}}</code> and <code>{{dob}}</code> spoken to Max Healthcare's booking line, on our phone line, the worker's audio muted.</p>
 
         <h3 id="journey-family"><span class="no">1.5</span>Family affairs: a parent's repeat prescriptions (UK)</h3>
         <p>The user's mother wants her repeat prescriptions moved to a pharmacy that delivers.</p>
-        <p><strong>Envelope proposed.</strong> Spend cap: nil. Parties: the mother, her GP surgery, the pharmacy. Acts: submit an application, schedule. Identity acts: state the mother's <code>{{nhs-number}}</code> on the surgery's line, once she has delegated it herself. Window: one month (illustrative).</p>
+        <p><strong>Envelope proposed.</strong> Spend cap: nil. Parties: the mother, her GP surgery, the pharmacy. Acts: submit an application, schedule. Identity acts: state an identity number, the mother's <code>{{nhs-number}}</code>, once she has delegated it. Window: one month (illustrative).</p>
+        <p>The mother is a second grantor. A dependant is onboarded as a delegator with a bound device and vault entries of their own, and their facts sit in a profile of their own, linked to the user's. The user's tap confirms the envelope without her identity acts; her tap is an extension by a second grantor, recorded with her identity, which re-runs classification for the steps it affects. The policy layer treats a family member as a separate delegator everywhere.</p>
         <ol>
-          <li><code>ai</code> Plan. The mother is a separate person, so her identity acts are hers to delegate: the plan opens with a one-tap delegation on her own device, and until she taps none of her identity acts is in the envelope.</li>
-          <li><code>user</code> (the mother) Delegate. The policy layer treats a family member as a separate delegator in every jurisdiction.</li>
-          <li><code>human</code> Call the surgery to change the nominated pharmacy: reversible by the same call at no cost, so no dual control. The substitutor speaks <code>{{nhs-number}}</code> with the worker muted.</li>
-          <li><code>ai</code> Create the delivery account with the pharmacy in our browser, using the address in the context store, and schedule the repeat-order reminders.</li>
+          <li><code>user</code> (the mother) Delegate <code>{{nhs-number}}</code> from her own bound device.</li>
+          <li><code>human</code>, dual control. Call the surgery to change the nominated pharmacy: undoing it needs the surgery to act, so the AI checks the pharmacy named against the envelope before the worker asks; the substitutor speaks her <code>{{name}}</code> and <code>{{nhs-number}}</code> with the worker muted.</li>
+          <li><code>ai</code> Create the delivery account with the pharmacy in our browser, the substitutor placing her <code>{{name}}</code> and <code>{{address}}</code>; no password is set.</li>
+          <li><code>user</code> (the mother) Set the password from the pharmacy's own link on her device, so we hold no credential.</li>
+          <li><code>ai</code> Schedule the repeat-order reminders.</li>
         </ol>
-        <p>The context store gains two facts, the mother's pharmacy and the surgery's line, each sourced to this task. The ledger shows the single use of <code>{{nhs-number}}</code> and that the mother's delegation preceded it.</p>
+        <p>The mother's profile gains two facts, her pharmacy and the surgery's line, sourced to this task; the ledger shows every use of her aliases, after her delegation.</p>
 
         <h3 id="journey-travel"><span class="no">1.6</span>Travel: rebook a cancelled flight (US)</h3>
         <p>An airline cancels the user's flight the evening before; the cancellation is in the mailbox the user connected read-only. The user asks us to rebook within a budget they name and to move the hotel.</p>
-        <p><strong>Envelope proposed.</strong> Spend cap: the amount named. Parties: the airline, the hotel. Acts: book, cancel, make a payment under the cap. Identity acts: none; the booking reference identifies the trip. Window: until the new departure.</p>
+        <p><strong>Envelope proposed.</strong> Spend cap: the amount named. Parties: the airline, the hotel. Acts: book, cancel, make a payment under the cap. Identity acts: none; the booking reference identifies the trip and the passenger. Window: until the new departure.</p>
         <ol>
           <li><code>ai</code> Read the cancellation and find alternatives within the cap in our browser. Two candidates differ in arrival time, so the plan asks which and waits in <code>awaiting-user</code>: a question, not a bounce.</li>
-          <li><code>ai</code>, dual control. Book the chosen flight: a non-refundable fare is irreversible, so a worker checks date, passenger name and fare against the envelope first; the substitutor places <code>{{card.primary}}</code> through the card passport and the worker sees dots.</li>
-          <li><code>human</code> Call the airline on our telephony for the refund of the cancelled ticket. Closes <code>ok-with-variance</code> if a credit is offered instead; accepting one commits the user, so the choice goes back to them.</li>
+          <li><code>ai</code>, dual control. Book the chosen flight in our browser; a non-refundable fare is irreversible, so a worker checks date, fare and booking reference against the envelope first. The payment runs over the card-tokenisation passport: a token bound to this task and its cap stands in for <code>{{card.primary}}</code>, so the airline never receives the card number and nothing is typed. A per-task token is not a standing authorisation, which is why the US flag for a delegated debit reads delegated on this rail and bounce off it (<a href="../03-trust-and-data/#policy-flags">the policy flags in 03</a>).</li>
+          <li><code>human</code> Call the airline on our telephony for the refund of the cancelled ticket. Closes <code>ok</code> with the refund reference; a credit offered instead closes <code>blocked-outside-envelope</code>, naming accept terms as the line it would breach, and an extension request goes to the user's device.</li>
           <li><code>ai</code> Email the hotel through our relay to move the check-in.</li>
         </ol>
-        <p>Ledger: <code>{{card.primary}}</code> placed on the airline's checkout page in our browser, no person saw it; a worker saw the page with <code>{{card.primary}}</code> shown as dots.</p>
+        <p>Ledger: <code>{{card.primary}}</code> presented to the airline through the card-tokenisation passport as a token bound to this task; placed by the system; no person saw it.</p>
       </section>
 
       <section>
         <h2 id="taxonomy"><span class="no">2</span>The task taxonomy</h2>
-        <p>Task types are the unit at which the product is measured. Verdict rates are computed per task type; the nudge schedule is set per task type; the L2 pod that owns the specialist knowledge is chosen by vertical. A task type is therefore a vertical plus a shape of plan: where the point of no return sits, which step classes the plan needs, and what the envelope must contain.</p>
-        <p>Reversibility belongs to a step, not to a task. Table 1.1 names the step that carries the point of no return in each type, because that is the step that will be dual-controlled or bounced. A step whose reversibility the classifier cannot decide is treated as irreversible. The classifier and the rule it applies are specified in <a href="../02-architecture/#classifier">the classifier in 02</a>; the taxonomy here is the product's view of its output.</p>
+        <p>Task types are the unit at which the product is measured: verdict rates and the nudge schedule are set per task type. A task type is a vertical plus a shape of plan: where the point of no return sits, which step classes the plan needs, and what the envelope must contain.</p>
+        <p>Reversibility belongs to a step, not to a task, so Table 1.1 names the step that carries the point of no return in each type: the one dual-controlled or bounced. The test is applied as written: an act a third party must undo is irreversible even where it would undo it on request; only an undo by our own action at no cost counts, and a step the classifier cannot decide is treated as irreversible (<a href="../02-architecture/#classifier">the classifier in 02</a>).</p>
         <div class="table-wrap wide">
         <table class="data">
-          <caption><span class="tab-no">Table 1.1</span> Task types by vertical: the point of no return is a named step, and it decides who checks and who taps.</caption>
-          <thead><tr><th>Vertical</th><th>Task type</th><th>Point of no return</th><th>Reversibility</th><th>Typical step classes</th></tr></thead>
+          <caption><span class="tab-no">Table 1.1</span> Task types by vertical: the named point of no return decides who checks and who taps.</caption>
+          <thead><tr><th>Vertical</th><th>Task type</th><th>Point of no return</th><th>Reversibility</th><th>Step classes</th></tr></thead>
           <tbody>
-            <tr><td class="key">Banking and wealth</td><td>Account opening, KYC refresh</td><td>Submission of the application; the KYC act itself</td><td>Irreversible; KYC user-only</td><td class="mono">ai, human, user</td></tr>
-            <tr><td class="key">Banking and wealth</td><td>Deposit renewal, nominee, standing instruction</td><td>The submit step</td><td>Irreversible</td><td class="mono">ai, user</td></tr>
-            <tr><td class="key">Banking and wealth</td><td>Payment or bill settlement under a cap</td><td>The debit</td><td>Irreversible</td><td class="mono">ai, user</td></tr>
-            <tr><td class="key">Banking and wealth</td><td>Statement retrieval, rate comparison, dispute drafting</td><td>None</td><td>Reversible</td><td class="mono">ai</td></tr>
-            <tr><td class="key">Legal and administrative</td><td>Representation, appeal, application to an authority</td><td>The filing</td><td>Irreversible</td><td class="mono">ai, user</td></tr>
-            <tr><td class="key">Legal and administrative</td><td>Registrations and address changes across institutions</td><td>Each institution's submission</td><td>Irreversible, per institution</td><td class="mono">ai, human</td></tr>
-            <tr><td class="key">Legal and administrative</td><td>Document assembly, notary or solicitor booking</td><td>None before the appointment</td><td>Reversible</td><td class="mono">ai, human</td></tr>
-            <tr><td class="key">Identity and security</td><td>Loss response: SIM, cards, sessions</td><td>Each block</td><td>Irreversible</td><td class="mono">human, ai, user</td></tr>
-            <tr><td class="key">Identity and security</td><td>Document renewal: passport, licence</td><td>Fee and submission; biometrics user-only</td><td>Irreversible</td><td class="mono">ai, user</td></tr>
-            <tr><td class="key">Identity and security</td><td>Credential hygiene: password resets, second factors</td><td>Every step</td><td>User-only throughout</td><td class="mono">user</td></tr>
-            <tr><td class="key">Health and medical</td><td>Appointment booking and rescheduling</td><td>None (cancellable)</td><td>Reversible</td><td class="mono">ai, human</td></tr>
-            <tr><td class="key">Health and medical</td><td>Prepaid consultation, tests, pharmacy orders</td><td>The payment</td><td>Irreversible</td><td class="mono">ai, user</td></tr>
-            <tr><td class="key">Health and medical</td><td>Records transfer, insurance claim</td><td>The release signature; the claim submission</td><td>Irreversible</td><td class="mono">ai, user, human</td></tr>
-            <tr><td class="key">Family affairs</td><td>Acting for a dependant or a parent</td><td>The dependant's own delegation precedes any identity act</td><td>Mixed</td><td class="mono">user, ai, human</td></tr>
-            <tr><td class="key">Family affairs</td><td>School, care and household applications</td><td>The submission</td><td>Irreversible</td><td class="mono">ai, human</td></tr>
-            <tr><td class="key">Family affairs</td><td>Recurring household arrangements</td><td>None</td><td>Reversible</td><td class="mono">ai</td></tr>
-            <tr><td class="key">Travel</td><td>Booking and rebooking</td><td>The fare purchase</td><td>Irreversible when non-refundable</td><td class="mono">ai, user</td></tr>
-            <tr><td class="key">Travel</td><td>Cancellation and refund</td><td>The cancellation</td><td>Irreversible</td><td class="mono">ai, human</td></tr>
-            <tr><td class="key">Travel</td><td>Check-in, visas, document preparation</td><td>The visa submission and fee</td><td>Visa irreversible; check-in reversible</td><td class="mono">ai, user</td></tr>
+            <tr><td class="key">Banking and wealth</td><td>Account opening, KYC refresh</td><td>Submission of the application</td><td>Irreversible</td><td><code>ai</code>, <code>human</code>, <code>user</code>; the KYC act is <code>user</code> where the flag reserves it</td></tr>
+            <tr><td class="key">Banking and wealth</td><td>Deposit renewal, nominee, standing instruction</td><td>Confirmation of the instruction</td><td>Irreversible</td><td><code>ai</code>, <code>human</code>, <code>user</code></td></tr>
+            <tr><td class="key">Banking and wealth</td><td>Payment or bill settlement under a cap</td><td>The debit</td><td>Irreversible</td><td><code>ai</code>, dual control, where a rail permits a delegated debit; <code>user</code> where the flag says bounce</td></tr>
+            <tr><td class="key">Legal and administrative</td><td>Representation, appeal, application to an authority</td><td>The filing</td><td>Irreversible</td><td><code>ai</code>, <code>user</code></td></tr>
+            <tr><td class="key">Identity and security</td><td>Loss response: SIM, cards, sessions</td><td>Each block</td><td>Irreversible</td><td><code>user</code> first, to bind a device; then <code>human</code>, <code>user</code></td></tr>
+            <tr><td class="key">Identity and security</td><td>Credential hygiene: password resets, second factors</td><td>Each reset, none of them ours</td><td>Irreversible</td><td><code>user</code> throughout; we produce the ordered checklist, nudge, and record completion</td></tr>
+            <tr><td class="key">Health and medical</td><td>Appointment booking and rescheduling</td><td>None where the booking cancels by our own action</td><td>Reversible</td><td><code>ai</code>, <code>human</code></td></tr>
+            <tr><td class="key">Health and medical</td><td>Prepaid consultation, tests, pharmacy orders</td><td>The payment</td><td>Irreversible</td><td><code>user</code> where the flag says bounce; <code>ai</code>, dual control, where a rail permits</td></tr>
+            <tr><td class="key">Family affairs</td><td>Acting for a dependant or a parent</td><td>The change the dependant's delegation unlocks</td><td>Irreversible</td><td><code>user</code> (the dependant) first; then <code>ai</code>, <code>human</code></td></tr>
+            <tr><td class="key">Travel</td><td>Booking and rebooking</td><td>The fare purchase</td><td>Irreversible when non-refundable</td><td><code>ai</code>, <code>user</code></td></tr>
           </tbody>
         </table>
         </div>
-        <p>Three patterns drive the design. The irreversible step is almost always a submission or a payment, which is why the envelope names committable acts and a spend cap rather than every action. The <code>user</code> steps cluster around factors that are the user's alone (bank-app approvals, biometrics, signatures, appearances), which is why the bounce is universal and per-country adapters only change what is delegated around it. The reversible work, most of the minutes in any task, needs neither check nor tap, so the plan's overhead sits where the consequence sits.</p>
       </section>
 
       <section>
         <h2 id="intake"><span class="no">3</span>Intake and the channel-agnostic gateway</h2>
-        <p>The front-door channel is not decided. Underneath it, one decision is fixed: every channel enters through a channel-agnostic intake gateway that normalises WhatsApp, the native app, SMS and iMessage, and the web into one internal request format for text, voice and attachments. The front door is a per-market launch choice, not an architecture commitment, and it stays open until a trigger fires: it is resolved when the first US or UK cohort is scoped <span class="chip chip-amber">amber</span>. The record is <a href="../decisions/dr-001-channel-gateway.html">DR-001</a>; the item sits with an owner in <a href="../07-open/#items">the open items in 07</a>.</p>
-        <p>From the user's side the gateway does four things, each the same on every channel.</p>
+        <p>The front-door channel is not decided. Underneath it, one decision is fixed: every channel enters through a channel-agnostic intake gateway that normalises WhatsApp, the native app, SMS and iMessage, and the web into one internal request format. WhatsApp is the leading candidate for India; nothing is fixed for the US or the UK; one trigger resolves both, and it fires when the first US or UK cohort is scoped <span class="chip chip-amber">amber</span>. The record is <a href="../decisions/dr-001-channel-gateway.html">DR-001</a>; the item has an owner in <a href="../07-open/#items">the open items in 07</a>.</p>
+        <p>From the user's side the gateway does four things on every channel.</p>
         <ol>
-          <li>It identifies the user and binds the message to a task: a new request opens a task in <code>received</code>; a message referencing an existing task attaches to it; one referencing a <code>lapsed</code> task revives it into <code>planning</code>. The stolen-phone journey in 1.3 depends on this.</li>
-          <li>It tokenises at the edge: a PAN typed into a chat, a card photographed, an account number in a forwarded email is replaced by its alias before any model, worker or other component sees the message, and the user sees the alias echoed back in plain words, the first line of the ledger.</li>
-          <li>It normalises voice and attachments: a voice note becomes a transcript with the same masking; a photograph becomes a document reference plus extracted fields; the original is held only as redacted evidence.</li>
-          <li>It acknowledges within the channel and says where the confirmation will arrive. A confirmation, an envelope edit and a verdict are taps on a surface that authenticates the user, whatever channel the conversation runs in.</li>
+          <li>It identifies the user and binds the message to a task: a new request opens a task in <code>received</code>; a message referencing an existing task attaches to it; one referencing a <code>lapsed</code> task revives it into <code>planning</code>.</li>
+          <li>It tokenises at the edge: a PAN typed, a card photographed, an account number in a forwarded email is replaced by its alias before any model, worker or component sees the message, and the ledger opens with the event: "{{pan}} received from you and stored in the vault. No person saw it."</li>
+          <li>It normalises voice and attachments: a voice note becomes a masked transcript, a photograph a document reference plus extracted fields; the original is held only as redacted evidence.</li>
+          <li>It acknowledges within the channel and says where the confirmation will arrive: a confirmation, an envelope edit, a bounce approval and a verdict are taps on the bound device, the authenticated device that receives bounces and envelope prompts, never the chat thread, which receives only the notification that something is waiting.</li>
         </ol>
-        <p>The internal request format carries the channel and its message identifier; the resolved user; the task reference, if any; the text or transcript with aliases in place; attachment references; the market and locale; and the received timestamp that starts the planning timer. Its engineering is in <a href="../02-architecture/#intake-gateway">the intake gateway in 02</a>.</p>
-        <p>The amber matters to the product, not only to marketing: the channel decides how a user hands us a document, how a nudge reaches them and how quickly a confirmation is answered. The gateway lets the answer differ per market without a second build.</p>
+        <p>The internal request format carries the channel and its message identifier; the user as a pseudonymous reference; the task reference, if any; the text or transcript with aliases in place; attachment references; the aliases issued, for the ledger; the device binding; the consent references in force; the market and locale; and the received timestamp that starts the planning timer. Its engineering is in <a href="../02-architecture/#intake-gateway">the intake gateway in 02</a>.</p>
       </section>
 
       <section>
         <h2 id="envelope"><span class="no">4</span>The authority envelope from the user's point of view</h2>
-        <p>The user grants authority once, in one tap, and can take it back at any moment. Delegation is total inside the envelope and impossible outside it, and every irreversible act inside it is checked by a second party before it fires. The decision and the point-of-no-return test are recorded in <a href="../decisions/dr-004-authority-envelope.html">DR-004</a>; the capability ceiling it sits under is <a href="../decisions/dr-003-full-delegation-ceiling.html">DR-003</a>.</p>
+        <p>The user grants authority once, in one tap, and can take it back at any moment. Delegation is total inside the envelope and impossible outside it, and every irreversible act inside it is checked by a second party before it fires. The decision is <a href="../decisions/dr-004-authority-envelope.html">DR-004</a>; the capability ceiling above it is <a href="../decisions/dr-003-full-delegation-ceiling.html">DR-003</a>.</p>
+        <p>While a task is open the user sees the task view: its state; the timeline, with every transition and nudge recorded; the ledger lines as they land; the envelope, with its control for extending and narrowing; and the button "Withdrawn by me", present from the moment the task opens. The nudge schedule is per task type; the default is three nudges, then lapse (illustrative).</p>
 
         <h3 id="envelope-setup"><span class="no">4.1</span>Set-up at task start</h3>
         <p>The planner proposes the envelope with the plan, and the task waits in <code>awaiting-authority</code> until the user confirms. The proposal is least-authority by construction, drawn from the task type and the context store. The one-tap confirmation shows, in this order:</p>
         <ol>
-          <li>The plan in plain words, step by step, each marked as ours to do, a worker's call, or the user's own act.</li>
+          <li>The plan in plain words, each step marked as ours to do, a worker's call, or the user's own act.</li>
           <li>Spend cap: currency and amount for the task, and any per-step sub-cap the plan proposes.</li>
           <li>Contactable parties: the institutions, businesses or people we may contact as the user. Anyone else is outside.</li>
           <li>Committable acts: the act types we may commit the user to (book, cancel, submit an application, accept terms, make a payment under the cap, file a document, schedule).</li>
-          <li>Delegated identity acts: the identity act types the user delegates in this jurisdiction (present a document, state an identity number, answer security questions from the context store, complete a KYC form), filtered by the policy layer before they are shown: an act the jurisdiction flags as bounce appears as "you will do this yourself", never as a box the user can tick. The per-jurisdiction table is <a href="../03-trust-and-data/#policy-flags">the policy flags in 03</a>.</li>
-          <li>Validity window: start and expiry. A task past expiry cannot fire an irreversible step without re-authorisation.</li>
-          <li>Which steps are irreversible and will be dual-controlled, and which will come back to the user's device.</li>
+          <li>Delegated identity acts: the identity act types the user delegates in this jurisdiction (present a document, state an identity number, answer security questions from the context store, complete a KYC form), filtered by the policy layer before they are shown: an act the jurisdiction flags as bounce appears as "you will do this yourself", never as a box to tick (<a href="../03-trust-and-data/#policy-flags">the policy flags in 03</a>).</li>
+          <li>Validity window: start and expiry. Expiry is an envelope line: an irreversible step past it closes <code>blocked-outside-envelope</code> and raises an extension request for a new window, with the task in <code>awaiting-user</code>.</li>
+          <li>Which steps are dual-controlled and which come back to the user's device.</li>
         </ol>
-        <p>Each line can be edited before confirming; an edit sends the task back to <code>planning</code> and a revised proposal returns, and confirming moves the task to <code>active</code>. A user who says nothing is nudged on the task type's schedule and the task lapses if the schedule runs out; <code>lapsed</code> is distinct from withdrawn, and a later message revives it.</p>
+        <p>Both act lists are closed enumerations: the envelope validates every proposed act against them, the journeys use their words (a block is a cancel, a reissue an application, a name and address on a filing a document presented), and adding a type is a decision record. An edit before confirming sends the task back to <code>planning</code>; confirming moves it to <code>active</code>. A user who says nothing is nudged on the schedule and the task lapses if it runs out; <code>lapsed</code> is distinct from withdrawn, and a later message referencing the task revives it.</p>
 
         <h3 id="envelope-edits"><span class="no">4.2</span>Edits mid-task: extend and narrow</h3>
         <p>The user can extend or narrow the envelope at any time from their device, and we can ask for an extension when a step would breach it. The effects are fixed.</p>
         <dl class="def">
           <dt>Extension</dt>
-          <dd>Applies to steps not yet fired and re-runs classification for them. An extension request from us names the exact line it would change (a party, an act, an amount, a date) and arrives on the user's device as a one-tap approval; the user may approve, narrow instead, or withdraw.</dd>
+          <dd>Applies to steps not yet fired and re-runs classification for them. A request from us names the exact line it would change (a party, an act, an amount, a date) and arrives on the user's device as a one-tap approval; the user may approve, narrow, or withdraw.</dd>
           <dt>Narrowing</dt>
-          <dd>Applies immediately to every step not yet fired. A step in <code>checking</code> is re-checked against the narrowed envelope before it fires. A step that has already fired is reported in the ledger and the outcome report; narrowing cannot unfire it, and we say so rather than imply otherwise.</dd>
+          <dd>Applies immediately to every step not yet fired. A step in <code>checking</code> is re-checked against the narrowed envelope before it fires. A step that has already fired is reported in the ledger and the outcome report; narrowing cannot unfire it.</dd>
         </dl>
         <p>The rule every step is classified against is identical everywhere. Irreversible and outside the envelope: bounce to the user's device. Irreversible and inside it: dual control. Reversible and inside it: execute, <code>ai</code> or <code>human</code> per the classifier. Anything outside the envelope that is reversible still cannot be executed by us; it becomes an extension request. Figure 1.1 draws the envelope as the user should picture it.</p>
         <figure class="fig" id="fig-envelope">
           <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 1.1, the authority envelope, scrollable">
-          <svg viewBox="0 0 720 440" role="img" aria-labelledby="fig-envelope-title fig-envelope-desc">
+          <svg viewBox="0 0 720 480" role="img" aria-labelledby="fig-envelope-title fig-envelope-desc">
             <title id="fig-envelope-title">The authority envelope from the user's point of view</title>
-            <desc id="fig-envelope-desc">A bounded region on the left is the authority envelope, drawn with the accent outline; inside it are its five grants (spend cap, contactable parties, committable acts, delegated identity acts, validity window) and the steps we execute, including an irreversible step under dual control. A rounded box on the right is the user's own device. A user-only step bounces out of the envelope to the device and the task resumes when the user acts; a step that would exceed the envelope leaves it as an extension request the user answers with one tap. The accent element is the envelope outline.</desc>
+            <desc id="fig-envelope-desc">A bounded region on the left, drawn with the accent outline, is the authority envelope: inside it are its five grants (spend cap, contactable parties, committable acts, delegated identity acts, validity window) and the steps we execute, with a dotted actor checking the irreversible step before it fires. A rounded box on the right is the user's own device: a user-only step bounces out of the envelope to it and the task resumes when the user acts, and a step that would exceed the envelope leaves it as an extension request that returns, extended, with one tap. The accent element is the envelope outline.</desc>
             <defs>
               <marker id="fig-envelope-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
             </defs>
-            <rect class="fg-box-accent" x="8" y="40" width="416" height="384" rx="2"/>
+            <rect class="fg-box-accent" x="8" y="40" width="416" height="424" rx="2"/>
             <text class="fg-label fg-label-strong" x="20" y="62">authority envelope</text>
             <text class="fg-label-small" x="20" y="88">spend cap</text>
             <text class="fg-label-small" x="20" y="104">contactable parties</text>
             <text class="fg-label-small" x="20" y="120">committable acts</text>
             <text class="fg-label-small" x="20" y="136">delegated identity acts</text>
             <text class="fg-label-small" x="20" y="152">validity window</text>
-            <text class="fg-label-small fg-label-soft" x="20" y="388">inside the envelope: we execute</text>
-            <text class="fg-label-small fg-label-soft" x="20" y="404">irreversible steps: dual control</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="428">inside the envelope: we execute</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="444">irreversible steps: dual control</text>
             <rect class="fg-box" x="220" y="64" width="184" height="48" rx="2"/>
             <text class="fg-label" x="232" y="84">1 read the notice</text>
             <text class="fg-label-small fg-label-soft" x="232" y="100">ai, reversible</text>
@@ -235,13 +227,17 @@
             <rect class="fg-box" x="220" y="136" width="184" height="48" rx="2"/>
             <text class="fg-label" x="232" y="156">2 compare rates</text>
             <text class="fg-label-small fg-label-soft" x="232" y="172">ai, in our browser</text>
+            <rect class="fg-actor" x="20" y="232" width="176" height="48" rx="2"/>
+            <text class="fg-label-small" x="32" y="252">checked by the</text>
+            <text class="fg-label-small" x="32" y="268">other party</text>
+            <line class="fg-line" x1="196" y1="256" x2="220" y2="256" marker-end="url(#fig-envelope-arrow)"/>
             <rect class="fg-box" x="220" y="232" width="184" height="64" rx="2"/>
             <text class="fg-label" x="232" y="252">4 submit the form</text>
             <text class="fg-label-small fg-label-soft" x="232" y="268">irreversible:</text>
             <text class="fg-label-small fg-label-soft" x="232" y="284">dual control</text>
-            <rect class="fg-device" x="456" y="40" width="256" height="384" rx="8"/>
+            <rect class="fg-device" x="456" y="40" width="256" height="424" rx="8"/>
             <text class="fg-label-small fg-label-soft" x="468" y="62">the user's own device</text>
-            <text class="fg-label-small fg-label-soft" x="468" y="412">outside: the user's own tap</text>
+            <text class="fg-label-small fg-label-soft" x="468" y="452">outside: the user's own tap</text>
             <rect class="fg-box" x="528" y="136" width="172" height="48" rx="2"/>
             <text class="fg-label" x="540" y="156">3 approve in app</text>
             <text class="fg-label-small fg-label-soft" x="540" y="172">user, one tap</text>
@@ -253,22 +249,24 @@
             <text class="fg-label-small" x="468" y="152">bounce</text>
             <path class="fg-line" d="M614,184 V264 H404" marker-end="url(#fig-envelope-arrow)"/>
             <text class="fg-label-small" x="468" y="256">resume</text>
-            <path class="fg-line" d="M312,296 V360 H528" marker-end="url(#fig-envelope-arrow)"/>
-            <text class="fg-label-small" x="324" y="336">outside</text>
-            <text class="fg-label-small" x="324" y="352">the cap</text>
+            <path class="fg-line" d="M312,296 V352 H528" marker-end="url(#fig-envelope-arrow)"/>
+            <text class="fg-label-small" x="324" y="328">outside</text>
+            <text class="fg-label-small" x="324" y="344">the cap</text>
+            <line class="fg-line" x1="528" y1="380" x2="424" y2="380" marker-end="url(#fig-envelope-arrow)"/>
+            <text class="fg-label-small" x="468" y="404">extended</text>
           </svg>
           </div>
-          <figcaption><span class="fig-no">Figure 1.1</span> Inside the envelope we execute, with a second party checking every irreversible step; anything outside it, a user-only act or a breach of a grant, leaves the envelope only as a tap on the user's own device.</figcaption>
+          <figcaption><span class="fig-no">Figure 1.1</span> Inside the envelope we execute and the other party checks every irreversible step; anything outside it leaves the envelope only as a tap on the user's own device.</figcaption>
         </figure>
-        <p>Where the ledger appears: after every step that used an alias, a plain-words line is written and readable in the task view at once; the outcome report carries the full ledger; the trust story shows the same lines. Its specification is <a href="../03-trust-and-data/#access-ledger">the access ledger in 03</a>, and its example is <a href="../03-trust-and-data/trust-story.html#ledger-example">the ledger example in the trust story</a>.</p>
+        <p>The ledger's specification is <a href="../03-trust-and-data/#access-ledger">the access ledger in 03</a>; its example is <a href="../03-trust-and-data/trust-story.html#ledger-example">the ledger example in the trust story</a>.</p>
       </section>
 
       <section>
         <h2 id="verdicts"><span class="no">5</span>The verdict system</h2>
-        <p>Two loops, two jobs. The control loop decides whether a task can be shown as done; the improvement loop decides whether it was done well, and only the user can say. Keeping them apart is the decision recorded in <a href="../decisions/dr-002-verdict-two-loops.html">DR-002</a>: a step's outcome code is not ground truth of quality, and a user's verdict is not a gate on execution.</p>
+        <p>Two loops, two jobs. The control loop decides whether a task can be shown as done; the improvement loop decides whether it was done well, and only the user can say. Keeping them apart is <a href="../decisions/dr-002-verdict-two-loops.html">DR-002</a>: an outcome code is not ground truth of quality, and a verdict is not a gate on execution.</p>
 
         <h3 id="control-loop"><span class="no">5.1</span>The control loop, before "done" is shown</h3>
-        <p>Every step closes with exactly one outcome code from a fixed vocabulary and the structured fields that code requires: <code>ok</code>, <code>ok-with-variance</code>, <code>blocked-third-party</code>, <code>blocked-needs-user</code>, <code>blocked-outside-envelope</code>, <code>failed-retryable</code>, <code>failed-final</code>, <code>refused-policy</code>, <code>superseded</code>. The codes drive the state machine: <code>blocked-needs-user</code> creates a <code>user</code> step, <code>blocked-outside-envelope</code> an extension request, <code>failed-final</code> a re-plan. Artefacts (redacted screenshots, transcripts, call metadata) attach for audit and dispute only. Dual control applies to irreversible steps and to nothing else. The vocabulary is specified once, in <a href="../02-architecture/worker-console.html#outcome-codes">the outcome codes in the worker console</a>.</p>
+        <p>Every step closes with exactly one outcome code from a fixed vocabulary and the fields that code requires: <code>ok</code>, <code>ok-with-variance</code>, <code>blocked-third-party</code>, <code>blocked-needs-user</code>, <code>blocked-outside-envelope</code>, <code>failed-retryable</code>, <code>failed-final</code>, <code>refused-policy</code>, <code>superseded</code>, specified once in <a href="../02-architecture/worker-console.html#outcome-codes">the outcome codes in the worker console</a>. The codes drive the state machine: <code>blocked-needs-user</code> creates a <code>user</code> step, <code>blocked-outside-envelope</code> an extension request, <code>failed-final</code> a re-plan. Artefacts attach for audit and dispute only.</p>
         <p>When every step is closed, the outcome report goes to the user and the task waits in <code>awaiting-verdict</code>. The report states what was done, each variance, what did not complete and why, every irreversible act that fired, and the ledger.</p>
 
         <h3 id="improvement-loop"><span class="no">5.2</span>The improvement loop, owned by the user</h3>
@@ -280,98 +278,97 @@
           <li>We couldn't complete it</li>
           <li>Withdrawn by me</li>
         </ol>
-        <p><code>lapsed</code> is system-assigned and is never a button; the five-option ceiling holds. "Withdrawn by me" is available from the task view at any point, not only at the end: steps in flight are cancelled and an irreversible step that has already fired is reported. "Wrong outcome, needs redoing" closes the task with that verdict and opens a linked child task in <code>planning</code>; the parent is not reopened. "We couldn't complete it" is the user's word on a task whose report already says what blocked it.</p>
-        <p>The verdict joined to the step trace is the improvement measurement. Every product change, a new task type, a re-ordered plan, a changed script on a task card, a different nudge schedule, is judged against verdict rates per task type; nothing else is accepted as evidence that the product got better. Figure 1.2 shows both loops.</p>
+        <p><code>lapsed</code> is system-assigned and is never a button; the five-option ceiling holds. "Withdrawn by me" is available from the task view at any point: steps in flight are cancelled and an irreversible step already fired is reported. "Wrong outcome, needs redoing" closes the task with that verdict and opens a linked child task in <code>planning</code>; the parent is not reopened. "We couldn't complete it" is the user's word on a task whose report already says what blocked it.</p>
+        <p>The verdict joined to the step trace is the improvement measurement. Every product change, from a new task type to a changed script, is judged against verdict rates per task type; nothing else counts as evidence of improvement. Figure 1.2 shows both loops.</p>
         <figure class="fig" id="fig-verdict-flow">
           <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 1.2, the two loops of the verdict system, scrollable">
           <svg viewBox="0 0 720 440" role="img" aria-labelledby="fig-verdict-flow-title fig-verdict-flow-desc">
             <title id="fig-verdict-flow-title">The control loop and the improvement loop</title>
-            <desc id="fig-verdict-flow-desc">Three steps run left to right inside a dashed zone labelled control loop; each closes with an outcome code, and the irreversible third step is checked by the other party, drawn as a dotted actor, before it fires. The last step feeds an outcome report, then the user's device where one of five verdicts is tapped, then the terminal state closed. From the device a single accent line runs back through a second dashed zone labelled improvement loop, through the boxes for the verdict joined to the step trace and verdict rates per task type, and up into the first step of the next plan. The accent element is that improvement-loop line.</desc>
+            <desc id="fig-verdict-flow-desc">Three steps run left to right inside a dashed zone labelled control loop; each closes with an outcome code, and the irreversible third step is checked by the other party, drawn as a dotted actor, before it fires. The last step feeds an outcome report, then the user's device where one of five verdicts is tapped, then the terminal state closed. From the device a single accent line, the accent element, runs back through a second dashed zone labelled improvement loop, through the boxes for the verdict joined to the step trace and verdict rates per task type, and up into the first step of the next plan.</desc>
             <defs>
               <marker id="fig-verdict-flow-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
               <marker id="fig-verdict-flow-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
             </defs>
-            <rect class="fg-zone" x="8" y="72" width="488" height="208" rx="2"/>
+            <rect class="fg-zone" x="8" y="72" width="520" height="208" rx="2"/>
             <text class="fg-label-small fg-label-soft" x="20" y="92">control loop: each step closes with an outcome code</text>
-            <rect class="fg-zone" x="8" y="312" width="488" height="104" rx="2"/>
+            <rect class="fg-zone" x="8" y="312" width="520" height="104" rx="2"/>
             <text class="fg-label-small fg-label-soft" x="56" y="332">improvement loop: the verdict judges every change</text>
-            <path class="fg-accent" d="M520,256 H508 V368 H40 V176" marker-end="url(#fig-verdict-flow-arrow-accent)"/>
+            <path class="fg-accent" d="M544,256 H532 V368 H40 V176" marker-end="url(#fig-verdict-flow-arrow-accent)"/>
             <text class="fg-label-small fg-label-soft" x="52" y="300">into the next plan for this task type</text>
-            <rect class="fg-box" x="24" y="112" width="136" height="64" rx="2"/>
-            <text class="fg-label" x="36" y="132">step 1, ai</text>
-            <text class="fg-label-small fg-label-soft" x="36" y="148">reversible</text>
-            <text class="fg-label-small fg-label-soft" x="36" y="164">closes ok</text>
-            <line class="fg-line" x1="160" y1="144" x2="184" y2="144" marker-end="url(#fig-verdict-flow-arrow)"/>
-            <rect class="fg-box" x="184" y="112" width="136" height="64" rx="2"/>
-            <text class="fg-label" x="196" y="132">step 2, human</text>
-            <text class="fg-label-small fg-label-soft" x="196" y="148">reversible</text>
-            <text class="fg-label-small fg-label-soft" x="196" y="164">closes ok</text>
-            <line class="fg-line" x1="320" y1="144" x2="344" y2="144" marker-end="url(#fig-verdict-flow-arrow)"/>
-            <rect class="fg-box" x="344" y="112" width="136" height="64" rx="2"/>
-            <text class="fg-label" x="356" y="132">step 3, ai</text>
-            <text class="fg-label-small fg-label-soft" x="356" y="148">irreversible</text>
-            <text class="fg-label-small fg-label-soft" x="356" y="164">dual control</text>
-            <rect class="fg-actor" x="336" y="200" width="152" height="48" rx="2"/>
-            <text class="fg-label-small" x="348" y="220">checked by the</text>
-            <text class="fg-label-small" x="348" y="236">other party</text>
-            <line class="fg-line" x1="412" y1="200" x2="412" y2="176" marker-end="url(#fig-verdict-flow-arrow)"/>
-            <line class="fg-line" x1="480" y1="144" x2="520" y2="144" marker-end="url(#fig-verdict-flow-arrow)"/>
-            <rect class="fg-box" x="520" y="120" width="192" height="48" rx="2"/>
-            <text class="fg-label" x="532" y="140">outcome report</text>
-            <text class="fg-label-small fg-label-soft" x="532" y="156">done, varied, ledger</text>
-            <line class="fg-line" x1="616" y1="168" x2="616" y2="200" marker-end="url(#fig-verdict-flow-arrow)"/>
-            <rect class="fg-device" x="520" y="200" width="192" height="88" rx="8"/>
-            <text class="fg-label" x="532" y="224">the user's verdict</text>
-            <text class="fg-label-small fg-label-soft" x="532" y="244">one of five, one tap</text>
-            <text class="fg-label-small fg-label-soft" x="532" y="264">lapsed: not a button</text>
-            <line class="fg-line" x1="616" y1="288" x2="616" y2="320" marker-end="url(#fig-verdict-flow-arrow)"/>
-            <rect class="fg-terminal" x="520" y="320" width="192" height="48" rx="2"/>
-            <text class="fg-label fg-label-paper" x="616" y="348" text-anchor="middle"><tspan fill="var(--paper)">closed</tspan></text>
+            <rect class="fg-box" x="16" y="112" width="152" height="64" rx="2"/>
+            <text class="fg-label" x="28" y="132">step 1, ai</text>
+            <text class="fg-label-small fg-label-soft" x="28" y="148">reversible</text>
+            <text class="fg-label-small fg-label-soft" x="28" y="164">closes ok</text>
+            <line class="fg-line" x1="168" y1="144" x2="192" y2="144" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-box" x="192" y="112" width="152" height="64" rx="2"/>
+            <text class="fg-label" x="204" y="132">step 2, human</text>
+            <text class="fg-label-small fg-label-soft" x="204" y="148">reversible</text>
+            <text class="fg-label-small fg-label-soft" x="204" y="164">closes ok</text>
+            <line class="fg-line" x1="344" y1="144" x2="368" y2="144" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-box" x="368" y="112" width="152" height="64" rx="2"/>
+            <text class="fg-label" x="380" y="132">step 3, ai</text>
+            <text class="fg-label-small fg-label-soft" x="380" y="148">irreversible</text>
+            <text class="fg-label-small fg-label-soft" x="380" y="164">dual control</text>
+            <rect class="fg-actor" x="368" y="200" width="152" height="48" rx="2"/>
+            <text class="fg-label-small" x="380" y="220">checked by the</text>
+            <text class="fg-label-small" x="380" y="236">other party</text>
+            <line class="fg-line" x1="444" y1="200" x2="444" y2="176" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <line class="fg-line" x1="520" y1="144" x2="544" y2="144" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-box" x="544" y="120" width="168" height="48" rx="2"/>
+            <text class="fg-label" x="556" y="140">outcome report</text>
+            <text class="fg-label-small fg-label-soft" x="556" y="156">outcomes and ledger</text>
+            <line class="fg-line" x1="628" y1="168" x2="628" y2="200" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-device" x="544" y="200" width="168" height="88" rx="8"/>
+            <text class="fg-label" x="556" y="224">the user's verdict</text>
+            <text class="fg-label-small fg-label-soft" x="556" y="244">one of five, one tap</text>
+            <text class="fg-label-small fg-label-soft" x="556" y="264">lapsed: not a button</text>
+            <line class="fg-line" x1="628" y1="288" x2="628" y2="320" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-terminal" x="544" y="320" width="168" height="48" rx="2"/>
+            <text class="fg-label fg-label-paper" x="628" y="348" text-anchor="middle">closed</text>
             <rect class="fg-box" x="24" y="344" width="208" height="48" rx="2"/>
             <text class="fg-label" x="36" y="364">verdict and step trace</text>
             <text class="fg-label-small fg-label-soft" x="36" y="380">the measurement</text>
-            <rect class="fg-box" x="256" y="344" width="224" height="48" rx="2"/>
+            <rect class="fg-box" x="256" y="344" width="248" height="48" rx="2"/>
             <text class="fg-label" x="268" y="364">verdict rates</text>
             <text class="fg-label-small fg-label-soft" x="268" y="380">per task type</text>
           </svg>
           </div>
-          <figcaption><span class="fig-no">Figure 1.2</span> The control loop closes each step with a code and checks the irreversible ones; the improvement loop closes the task with the user's verdict, and that verdict, joined to the step trace, is the only measure a product change is judged by.</figcaption>
+          <figcaption><span class="fig-no">Figure 1.2</span> The control loop closes each step with a code; the improvement loop closes the task with the user's verdict, the only measure a product change is judged by.</figcaption>
         </figure>
-        <aside class="callout"><p><span class="label">Assumption</span><span class="chip chip-assumption">assumption</span> The incentive mechanics are assumed, not decided: a verdict is needed to close a task; a month in which the user gives a verdict on every task earns a small credit; "Wrong outcome, needs redoing" and "We couldn't complete it" trigger an automatic make-good. What the make-good is remains the founder's open decision, listed in <a href="../07-open/#items">07</a>; nothing in this publication prices it.</p></aside>
+        <aside class="callout"><p><span class="label">Assumption</span><span class="chip chip-assumption">assumption</span> The incentive mechanics are assumed, not decided: a verdict is needed to close a task; a month with a verdict on every task earns a small credit; "Wrong outcome, needs redoing" and "We couldn't complete it" trigger an automatic make-good. What the make-good is remains the founder's open decision in <a href="../07-open/#items">07</a>; nothing here prices it.</p></aside>
       </section>
 
       <section>
         <h2 id="onboarding"><span class="no">6</span>Onboarding and context capture</h2>
-        <p>We learn the user mostly by working for them. Onboarding exists to make the first tasks possible, not to build a profile in advance; the profile fills as tasks run, and every fact in it says where it came from, when, how sure we are, and whether the user has confirmed it. The store is a temporal knowledge graph, specified in <a href="../02-architecture/#context-store">the context store in 02</a> and decided in <a href="../decisions/dr-016-context-store.html">DR-016</a>; sensitive values in it are aliases whose real values live in the vault.</p>
+        <p>We learn the user mostly by working for them. Onboarding makes the first tasks possible rather than building a profile in advance; the profile fills as tasks run, and every fact in it says where it came from, when, how sure we are, and whether the user confirmed it. The store is a temporal knowledge graph (<a href="../02-architecture/#context-store">the context store in 02</a>, <a href="../decisions/dr-016-context-store.html">DR-016</a>); sensitive values in it are aliases.</p>
 
         <h3 id="interview"><span class="no">6.1</span>The interview</h3>
-        <p>A short structured conversation on the user's channel, resumable, aimed at what tasks will need rather than at completeness: the people in the user's life; the institutions the user deals with; the documents that exist and where they are; and the preferences that shape every plan (the name to use with third parties, languages, the hours in which a nudge is welcome, a default spend cap). A sensitive value given during the interview is tokenised at the edge like any other message; the interviewer sees <code>{{pan}}</code>, never the number. Every answer is a fact with source "interview", today's date and confirmed-by-user set, because the user said it themselves.</p>
+        <p>A short structured conversation on the user's channel, resumable, aimed at what tasks will need rather than at completeness: the people in the user's life; the institutions they deal with; the documents that exist and where they are; the preferences that shape every plan (the name to use with third parties, languages, nudge hours, a default spend cap). A sensitive value given in the interview is tokenised at the edge like any message. Every answer is a fact with source "interview", today's date and confirmed-by-user set.</p>
 
         <h3 id="connectors"><span class="no">6.2</span>Read-only connectors the user chooses</h3>
-        <p>Connectors are optional, read-only by construction, scoped, and revocable from the user's device; they never carry a payment or an identity act. The set differs by market because the rails differ; the passports that carry them are in <a href="../03-trust-and-data/#passports">the passports in 03</a>. The user sees each connector with its scope in plain words, the date consent was given and when it expires, and a switch to revoke it.</p>
+        <p>Connectors are optional, read-only by construction, scoped, and revocable from the user's device; they never carry a payment or an identity act. The set differs by market (<a href="../03-trust-and-data/#passports">the passports in 03</a>). The user sees each connector's scope in plain words, the consent date and expiry, and a switch to revoke it.</p>
         <ul>
           <li>A mailbox and a calendar, read-only, so that notices, itineraries and appointments surface without forwarding.</li>
-          <li>India: issued documents from DigiLocker, where the user authorises us as a requester on DigiLocker's own consent screen, sees and may change the purpose we state, and the consent carries its own expiry <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>; financial information through the Account Aggregator framework, where only a regulated entity can be the information user and the aggregator holds no credentials and supports no transactions, so an assistant joins the journey only as a front end to a regulated partner <span class="chip chip-verified">verified</span> <a class="ref" href="#src-3">[3]</a>, named in 03.</li>
-          <li>UK: account information through an open banking provider, and identity credentials as the government's wallet rolls out; both are legal to-verifies, because whether an agent can hold a consent on a customer's behalf has not yet been researched <span class="chip chip-to-verify">to-verify</span>.</li>
+          <li>India: issued documents from DigiLocker, where the user authorises us as a requester on DigiLocker's own consent screen, sees and may change the purpose we state, and the consent carries its own expiry <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>; financial information through the Account Aggregator framework, where only a regulated entity can be the information user and the aggregator holds no credentials and supports no transactions, so an assistant joins the journey only as a front end to a regulated partner <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>, to be named in 03 <span class="chip chip-to-verify">to-verify</span>.</li>
+          <li>UK: account information through an open banking provider, and identity credentials as the government's wallet rolls out; whether an agent can hold a consent for a customer is not yet researched <span class="chip chip-to-verify">to-verify</span>.</li>
           <li>US: bank-data aggregation and tokenised card credentials through a provider <span class="chip chip-to-verify">to-verify</span>.</li>
         </ul>
 
         <h3 id="learning"><span class="no">6.3</span>Learning as a by-product of tasks</h3>
-        <p>Every closed step writes what it learned back to the store: the pharmacy the mother now uses, the surgery's booking line, the bank's renewal reference. Each fact carries the task as its source, so a wrong fact can be traced to the step that produced it. Confidence is set when the fact is learned, falls with time, and rises when a later task uses the fact without contradiction. The plan confirmation shows the facts a plan relies on and a tap confirms them; a fact the user corrects is recorded as a new fact with the old one closed, never overwritten. A fact a step needs whose confidence is below the step's threshold becomes a question rather than a guess, which is how data-quality problems become visible instead of silently wrong.</p>
+        <p>Every closed step writes what it learned back to the store: the pharmacy the mother now uses, the surgery's line, the bank's renewal reference, each fact carrying the task as its source so a wrong one can be traced to the step that produced it. Confidence is set at learning, falls with time, and rises when a later task uses the fact without contradiction. The plan confirmation shows the facts a plan relies on and a tap confirms them; a corrected fact is a new fact with the old one closed; a fact below a step's threshold becomes a question, not a guess.</p>
         <div class="table-wrap">
         <table class="data">
-          <caption><span class="tab-no">Table 1.2</span> The fact schema: every fact carries its provenance, its confidence and whether the user confirmed it.</caption>
+          <caption><span class="tab-no">Table 1.2</span> The fact schema: provenance, confidence and confirmation on every fact.</caption>
           <thead><tr><th>Field</th><th>Meaning</th><th>Example (illustrative)</th></tr></thead>
           <tbody>
-            <tr><td class="key">subject</td><td>The entity the fact is about: the user, a person, an institution, a document</td><td>the user's mother</td></tr>
+            <tr><td class="key">subject</td><td>The entity the fact is about</td><td>the user's mother</td></tr>
             <tr><td class="key">predicate</td><td>The relation or attribute</td><td>nominated pharmacy</td></tr>
             <tr><td class="key">value</td><td>A plain value or, for a sensitive field, an alias</td><td class="mono">{{nhs-number}}</td></tr>
-            <tr><td class="key">source</td><td>interview, connector (which), task (which step), or user statement</td><td class="mono">task 4471-07, step 3</td></tr>
-            <tr><td class="key">observed</td><td>When the fact was learned</td><td class="mono">2026-09-02</td></tr>
-            <tr><td class="key">valid from, valid to</td><td>The interval the fact is believed to hold; a closed interval means superseded</td><td class="mono">2026-09-02, open</td></tr>
-            <tr><td class="key">confidence</td><td>How sure we are, set by source and decayed by time</td><td class="mono">high</td></tr>
+            <tr><td class="key">source</td><td>interview, connector, task step, or user statement</td><td class="mono">task 4471-07, step 2</td></tr>
+            <tr><td class="key">valid from, valid to</td><td>The interval the fact is believed to hold; closed means superseded</td><td class="mono">2026-09-02, open</td></tr>
+            <tr><td class="key">confidence</td><td>Set by source, decayed by time</td><td class="mono">high</td></tr>
             <tr><td class="key">confirmed</td><td>Whether the user confirmed it, and when</td><td class="mono">yes, 2026-09-02</td></tr>
-            <tr><td class="key">sensitivity</td><td>Where the real value lives: with us, or in the vault as an alias</td><td class="mono">vault</td></tr>
+            <tr><td class="key">sensitivity</td><td>Where the real value lives: with us, or in the vault</td><td class="mono">vault</td></tr>
           </tbody>
         </table>
         </div>
@@ -379,38 +376,38 @@
 
       <section>
         <h2 id="refusals"><span class="no">7</span>What we refuse to do</h2>
-        <p>The list is short and definite, and each item has a reason that follows from one of the two fatal failures or from the law of the market. A request that falls under it is refused from <code>received</code> or <code>planning</code>, before any step executes, with a reason code, and the user is told why; a single step that falls under it is not executed, and the plan routes around it or the step bounces.</p>
+        <p>Each item follows from one of the two fatal failures or from the law of the market. A request under it is refused from <code>received</code> or <code>planning</code>, before any step executes, with the item's reason code, and the user is told why; a single step under it is routed around or bounced.</p>
         <dl class="def">
-          <dt>Anything outside the envelope</dt>
-          <dd>We cannot execute it, reversible or not: an irreversible step outside the envelope bounces to the user's device, and a reversible one becomes an extension request. The reason is fatal failure two, an irreversible act the user did not want, and the boundary is enforced by construction, not by judgement.</dd>
-          <dt>Anything that requires a worker to hold a real value</dt>
-          <dd>A card number read aloud, a PAN typed by hand, an Aadhaar scan on a screen. The reason is fatal failure one: nobody on our side ever sees the sensitive data they are placing. Every such step runs on a surface of ours with the substitutor placing the value; where no surface of ours fits a third party's process, the step bounces to the user.</dd>
-          <dt>OTPs, PINs, passwords and biometrics</dt>
-          <dd>They are never ours; <code>{{otp}}</code> is not an alias and there is nothing to place. Each is a factor that belongs to the user alone, and they bounce. India's regulators draw the same line: the RBI has cautioned the public against sharing login details, KYC copies, card details, PINs, passwords or OTPs with any person or agency <span class="chip chip-verified">verified</span> <a class="ref" href="#src-4">[4]</a>, and the UIDAI advises never to share an Aadhaar-linked OTP with anyone <span class="chip chip-verified">verified</span> <a class="ref" href="#src-5">[5]</a>.</dd>
-          <dt>Tasks that need the user's credentials</dt>
-          <dd>We never hold a login to the user's own accounts. A shared credential would make the user liable: under the RBI's liability framework a loss caused by the customer's own negligence, such as sharing payment credentials, falls wholly on the customer <span class="chip chip-verified">verified</span> <a class="ref" href="#src-6">[6]</a>. Where an institution offers no consented access and no rail, the step is the user's.</dd>
-          <dt>Know-your-customer acts reserved to the institution</dt>
-          <dd>Where a jurisdiction reserves an act to the regulated entity's own staff, it is a policy flag, not a delegation: in India, video customer identification may be run only by the regulated entity's specially trained officials, with third parties assisting only at the customer's end <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>. Such steps are shown as the user's at plan time, and the flag table records what we would ask a regulator to permit.</dd>
-          <dt>Anything the policy layer prohibits pending a regulatory answer</dt>
-          <dd>Some step types are prohibited in a jurisdiction until a regulator answers. Delegated spending on UPI runs under UPI Circle limits, and the NPCI admits software profiles only in a closed group and only where each debit is initiated by explicit user action <span class="chip chip-to-verify">to-verify</span>; in the US, whether a standing authorisation given to an agent counts as the consumer's authority under Regulation E is unsettled <span class="chip chip-to-verify">to-verify</span>. A prohibited step closes <code>refused-policy</code> and the user is told the policy reference.</dd>
-          <dt>Illegal tasks, and impersonation without permitted delegation</dt>
-          <dd>We do not execute a task that is illegal in the market it runs in. We act as the user only within the identity acts they delegated and the policy layer permits, disclose where a jurisdiction requires it, and never act as a person who has not delegated to us, a family member included: the mother in 1.5 taps for herself. The UK's competition regulator has said a business remains responsible for what its agent does even where a third party built it <span class="chip chip-verified">verified</span> <a class="ref" href="#src-7">[7]</a>; that is the liability we accept inside the envelope and refuse outside it.</dd>
-          <dt>Regulated advice</dt>
-          <dd>We do not diagnose, give legal advice or recommend investments; we find, book, prepare and follow up the professional who does. The AI is the brain of the plan, not the user's doctor, lawyer or adviser, and a verdict system cannot measure advice.</dd>
+          <dt>Anything outside the envelope <code>refused-outside-envelope</code></dt>
+          <dd>An irreversible step outside the envelope bounces to the user's device; a reversible one becomes an extension request. The reason is fatal failure two, an irreversible act the user did not want.</dd>
+          <dt>Anything that requires a worker to hold a real value <code>refused-real-value</code></dt>
+          <dd>A card number read aloud, a PAN typed by hand, an Aadhaar scan on a screen. The reason is fatal failure one: nobody on our side sees the data they are placing. Where no surface of ours fits a third party's process, the step bounces.</dd>
+          <dt>OTPs, PINs, passwords and biometrics <code>refused-user-factor</code></dt>
+          <dd>They are never ours; <code>{{otp}}</code> is not an alias and there is nothing to place. Each is the user's own factor, and it bounces. India's regulators draw the same line: the RBI has cautioned the public against sharing login details, KYC copies, card details, PINs, passwords or OTPs with any person or agency <span class="chip chip-verified">verified</span> <a class="ref" href="#src-3">[3]</a>, and the UIDAI advises never to share an Aadhaar-linked OTP with anyone <span class="chip chip-verified">verified</span> <a class="ref" href="#src-4">[4]</a>.</dd>
+          <dt>Tasks that need the user's credentials <code>refused-credential</code></dt>
+          <dd>We never hold a login to the user's own accounts; a shared credential would make the user liable, since under the RBI's liability framework a loss caused by the customer's own negligence, such as sharing payment credentials, falls wholly on the customer <span class="chip chip-verified">verified</span> <a class="ref" href="#src-5">[5]</a>. Where an institution offers no consented access and no rail, the step is the user's.</dd>
+          <dt>Know-your-customer acts reserved to the institution <code>refused-reserved-kyc</code></dt>
+          <dd>Where a jurisdiction reserves an act to the regulated entity's own staff, it is a policy flag, not a delegation: in India, video customer identification may be run only by the regulated entity's specially trained officials, with third parties assisting only at the customer's end <span class="chip chip-verified">verified</span> <a class="ref" href="#src-6">[6]</a>. Such steps are shown as the user's at plan time.</dd>
+          <dt>Anything the policy layer prohibits pending a regulatory answer <code>refused-policy-pending</code></dt>
+          <dd>Delegated spending on UPI runs under UPI Circle limits, and the NPCI admits software profiles only in a closed group and only where each debit is initiated by explicit user action <span class="chip chip-to-verify">to-verify</span>; in the US, whether a standing authorisation given to an agent counts as the consumer's authority under Regulation E is unsettled <span class="chip chip-to-verify">to-verify</span>. A prohibited step closes <code>refused-policy</code> and the user is told the policy reference.</dd>
+          <dt>Illegal tasks, and impersonation without permitted delegation <code>refused-illegal</code></dt>
+          <dd>We do not execute a task that is illegal in the market it runs in. We act as the user only within the identity acts they delegated and the policy layer permits, disclose where a jurisdiction requires it, and never act as a person who has not delegated to us: the mother in 1.5 taps for herself. The UK's competition regulator has said a business remains responsible for what its agent does even where a third party built it <span class="chip chip-verified">verified</span> <a class="ref" href="#src-7">[7]</a>; that is the liability we accept inside the envelope and refuse outside it.</dd>
+          <dt>Regulated advice <code>refused-advice</code></dt>
+          <dd>We do not diagnose, give legal advice or recommend investments; we find, book, prepare and follow up the professional who does.</dd>
         </dl>
-        <p>A refused task is still a task: it has a state, a reason code and a record, and the refusal is reviewed when verdict rates for a task type suggest the line is drawn in the wrong place. Moving the line for a jurisdiction is a policy flag; moving it for the product is a decision record.</p>
+        <p>A refused task is still a task, with a state, a reason code and a record. Refusals are measured by counts and reason codes per task type, since a refused task never reaches a verdict, and the line is reviewed when those counts suggest it is drawn in the wrong place; moving it for a jurisdiction is a policy flag, for the product a decision record.</p>
       </section>
 
       <section>
         <h2 class="unnumbered" id="sources">Sources</h2>
-        <p>In this edition, verified means verified against a search-engine excerpt of the named source, because direct page reads were blocked; each source is to be re-read before circulation, as <a href="../decisions/dr-013-verification-standard.html">DR-013</a> records.</p>
+        <p>Verified here means verified against a search-engine excerpt of the named source, since page reads were blocked; each is to be re-read before circulation (<a href="../decisions/dr-013-verification-standard.html">DR-013</a>).</p>
         <ol class="sources">
-          <li id="src-1">Reserve Bank of India, <cite>Master Direction on Know Your Customer, 2016, updated as on 14 August 2025</cite>, paragraph on video-based customer identification, 14 August 2025. <a class="url" href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566">https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566</a></li>
-          <li id="src-2">National e-Governance Division, MeitY, <cite>Requester (Meri Pehchaan) API Specification v2.3</cite>, September 2023, mirrored copy. <a class="url" href="https://github.com/techSaswata/zuup-central-auth/blob/main/mp_spec.txt">https://github.com/techSaswata/zuup-central-auth/blob/main/mp_spec.txt</a></li>
-          <li id="src-3">Reserve Bank of India, <cite>Master Direction, Non-Banking Financial Company, Account Aggregator (Reserve Bank) Directions, 2016</cite>, clauses 3, 5, 6 and 8, updated 9 November 2017. <a class="url" href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598">https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598</a></li>
-          <li id="src-4">Business Standard, <cite>RBI cautions against fraud, warns against sharing OTP and KYC details</cite>, 29 August 2024. <a class="url" href="https://www.business-standard.com/finance/news/rbi-cautions-against-fraud-warns-against-sharing-otp-and-kyc-details-124082901205_1.html">https://www.business-standard.com/finance/news/rbi-cautions-against-fraud-warns-against-sharing-otp-and-kyc-details-124082901205_1.html</a></li>
-          <li id="src-5">India TV, <cite>UIDAI issues Aadhaar security guidelines: five essential steps to protect yourself from scams</cite>, 28 December 2025. <a class="url" href="https://www.indiatvnews.com/technology/news/uidai-issues-aadhaar-security-guidelines-5-essential-steps-to-protect-yourself-from-scams-2025-12-28-1023569">https://www.indiatvnews.com/technology/news/uidai-issues-aadhaar-security-guidelines-5-essential-steps-to-protect-yourself-from-scams-2025-12-28-1023569</a></li>
-          <li id="src-6">Business Standard, <cite>Compensate customers for online frauds, RBI tells banks</cite>, 6 July 2017. <a class="url" href="https://www.business-standard.com/amp/article/economy-policy/compensate-customers-for-online-frauds-rbi-tells-banks-117070601200_1.html">https://www.business-standard.com/amp/article/economy-policy/compensate-customers-for-online-frauds-rbi-tells-banks-117070601200_1.html</a></li>
+          <li id="src-1">National e-Governance Division, MeitY, <cite>Requester (Meri Pehchaan) API Specification v2.3</cite>, September 2023, mirrored copy. <a class="url" href="https://github.com/techSaswata/zuup-central-auth/blob/main/mp_spec.txt">https://github.com/techSaswata/zuup-central-auth/blob/main/mp_spec.txt</a></li>
+          <li id="src-2">Reserve Bank of India, <cite>Master Direction, Non-Banking Financial Company, Account Aggregator (Reserve Bank) Directions, 2016</cite>, clauses 3, 5, 6 and 8, updated 9 November 2017. <a class="url" href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598">https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598</a></li>
+          <li id="src-3">Business Standard, <cite>RBI cautions against fraud, warns against sharing OTP and KYC details</cite>, 29 August 2024. <a class="url" href="https://www.business-standard.com/finance/news/rbi-cautions-against-fraud-warns-against-sharing-otp-and-kyc-details-124082901205_1.html">https://www.business-standard.com/finance/news/rbi-cautions-against-fraud-warns-against-sharing-otp-and-kyc-details-124082901205_1.html</a></li>
+          <li id="src-4">India TV, <cite>UIDAI issues Aadhaar security guidelines: five essential steps to protect yourself from scams</cite>, 28 December 2025. <a class="url" href="https://www.indiatvnews.com/technology/news/uidai-issues-aadhaar-security-guidelines-5-essential-steps-to-protect-yourself-from-scams-2025-12-28-1023569">https://www.indiatvnews.com/technology/news/uidai-issues-aadhaar-security-guidelines-5-essential-steps-to-protect-yourself-from-scams-2025-12-28-1023569</a></li>
+          <li id="src-5">Business Standard, <cite>Compensate customers for online frauds, RBI tells banks</cite>, 6 July 2017. <a class="url" href="https://www.business-standard.com/amp/article/economy-policy/compensate-customers-for-online-frauds-rbi-tells-banks-117070601200_1.html">https://www.business-standard.com/amp/article/economy-policy/compensate-customers-for-online-frauds-rbi-tells-banks-117070601200_1.html</a></li>
+          <li id="src-6">Reserve Bank of India, <cite>Master Direction on Know Your Customer, 2016, updated as on 14 August 2025</cite>, paragraph on video-based customer identification, 14 August 2025. <a class="url" href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566">https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566</a></li>
           <li id="src-7">Cooley, <cite>AI agents and consumer law: what businesses need to know</cite>, on the CMA guidance "Complying with consumer law when using AI agents" of 9 March 2026, 26 March 2026. <a class="url" href="https://www.cooley.com/news/insight/2026/2026-03-26-ai-agents-and-consumer-law-what-businesses-need-to-know">https://www.cooley.com/news/insight/2026/2026-03-26-ai-agents-and-consumer-law-what-businesses-need-to-know</a></li>
         </ol>
       </section>

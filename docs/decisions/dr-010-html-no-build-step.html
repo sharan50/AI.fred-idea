@@ -84,7 +84,7 @@
           <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
           <ul>
             <li>A build command in <code>netlify.toml</code>, a package manifest in the publishing path, or any generated file under the docs directory.</li>
-            <li>Any script other than <code>nav.js</code>, and any fetch, storage, cookie or analytics call inside it; the harness scans for them.</li>
+            <li>Any script other than <code>nav.js</code>, and any network, storage, cookie or dynamic-import call inside it; the harness scans for each by name.</li>
             <li>An external asset load of any kind: font, stylesheet, script or image from any host. External links are allowed in prose only, on an anchor.</li>
             <li>A Markdown or other second copy of any page, and any page absent from <code>manifest.json</code>.</li>
             <li>Raster images, embedded frames and media elements; a diagram is inline SVG or it is prose.</li>
