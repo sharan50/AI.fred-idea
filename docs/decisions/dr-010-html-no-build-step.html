@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-010 Plain HTML with no build step, AI.fred</title>
+<meta name="description" content="The publication is plain static HTML served straight from GitHub by Netlify with no build command, framework, CDN or external asset. HTML is the single canonical source; a static site generator and Markdown-canonical generation were rejected because two representations drift.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-010</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-010</a></span><span class="title">Plain HTML with no build step</span></h1>
+    <p class="standfirst">The publication is plain static HTML under the docs directory, served by Netlify straight from GitHub with no build command, no framework, no CDN and no external asset. HTML is the single canonical source. A static site generator and Markdown-canonical generation were both rejected, because two representations of one document drift.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-010</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>The docs directory is plain static HTML and nothing else is served. Netlify publishes it straight from GitHub; the publish directory is pinned in <code>netlify.toml</code> and there is no build command. HTML is the single canonical source of every page, written as semantic HTML so the site stays machine-readable. Vanilla JavaScript is used for navigation only, in one file. Diagrams are inline SVG. Every page exports cleanly to PDF through a print stylesheet. A <code>manifest.json</code> maps the site for humans and machines. The repository is the venture's vault: design documents now, application code later in the same repository, professional setup after the raise.</p>
+          <h3 id="why-no-build"><span class="no">1.1</span>Why there is no build step</h3>
+          <p>A build step is a second thing that has to be correct. With none, the file in the repository is the file the reader receives; a reviewer reads exactly what an investor will open; and the verification harness checks the served artefact itself rather than an input to a generator. The only tool in the publishing path is <code>tools/verify.mjs</code>, which reads and never writes. A page that passes it is published by a commit, and nothing between the commit and the URL can change it.</p>
+          <h3 id="why-html"><span class="no">1.2</span>Why HTML is canonical</h3>
+          <p>The alternatives put the truth in one representation and the reader in another. What the pages need is not expressible in a lighter source: status chips at clause end, numbered sources with addressed links, figure blocks with a focusable scroll region and a numbered caption, tables with captions and a header row, a stamp that carries a data attribute the harness reads. Each of those would be either raw HTML embedded in Markdown, at which point the Markdown is no longer the simpler form, or a generator extension, at which point the build step has returned by another door. Writing the HTML directly costs an authoring discipline: every page copies one template, numbers its headings in the text, and a change to the masthead is a find-and-replace across the pages. The harness catches every slip, and the page count is small enough that the discipline is cheaper than the machinery.</p>
+          <h3 id="access"><span class="no">1.3</span>Access</h3>
+          <p>A Netlify URL is public by default. Access control is a to-verify item in <a href="../07-open/#items">07</a>, with the interim mitigation of an unguessable site name and a no-index directive on every page; the interim mitigation is not access control, and 07 says so. One further observation is recorded there: the manifest sits at the repository root, outside the published directory, so a machine fetching the site cannot read it until it is copied in.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>A static site generator</dt>
+            <dd>A build step and a dependency tree in the publishing path, templates in a second language, and a generated output nobody reviews because everyone edits the input. The harness would check the input, not what is served, and the generator's own upgrades would change pages nobody touched. The cost of rejecting it is the authoring discipline above.</dd>
+            <dt>Markdown as the canonical source, with HTML generated from it</dt>
+            <dd>Two representations of one document, and they drift: the Markdown lacks the markup the design needs, so the generated HTML acquires hand edits, and within a month the file people read is not the file people edit. Rejected because a design record with two versions is a design record with none.</dd>
+            <dt>A framework or a hosted documentation platform</dt>
+            <dd>A runtime the print stylesheet fights, scripts beyond navigation, external asset loads on every page view, and a URL that cannot stand alone offline or in front of an investor without a vendor's chrome around it. The visual reasons are recorded in <a href="dr-011-token-and-component-system.html">DR-011</a>.</dd>
+            <dt>Fonts or stylesheets from a CDN</dt>
+            <dd>A third party sees every reader of a document that is not yet meant to circulate; the page fails when the CDN does; and the brief forbids the load. The fonts are self-hosted under their open licence instead.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A build command in <code>netlify.toml</code>, a package manifest in the publishing path, or any generated file under the docs directory.</li>
+            <li>Any script other than <code>nav.js</code>, and any fetch, storage, cookie or analytics call inside it; the harness scans for them.</li>
+            <li>An external asset load of any kind: font, stylesheet, script or image from any host. External links are allowed in prose only, on an anchor.</li>
+            <li>A Markdown or other second copy of any page, and any page absent from <code>manifest.json</code>.</li>
+            <li>Raster images, embedded frames and media elements; a diagram is inline SVG or it is prose.</li>
+            <li>Circulating a URL before the access item in 07 is resolved.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. Connecting the repository to Netlify and resolving the access item are the founder's steps after the build loop surfaces; the visual system that sits on this decision is <a href="dr-011-token-and-component-system.html">DR-011</a> and the plan built from it is <a href="dr-012-design-plan.html">DR-012</a>.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>
