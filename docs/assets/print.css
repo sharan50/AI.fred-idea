@@ -27,6 +27,31 @@ body.kind-sheet { font-size: 11pt; }
 .rail nav + nav { margin-top: 0; }
 .doc { max-width: none; }
 h2 .no, h3 .no { position: static; margin-right: 0.6em; }
+h2 { margin: 18pt 0 6pt; }
+h3 { margin: 12pt 0 3pt; }
+h2:first-child, .doc > section > h2:first-child { margin-top: 12pt; }
+
+/* The single-sheet kind (trust story, 05 stub) fits one page */
+body.kind-sheet { page: sheet; font-size: 9pt; line-height: 1.32; }
+@page sheet { margin: 11mm 13mm 12mm; }
+body.kind-sheet .masthead { display: none; }
+body.kind-sheet .page-header { margin-top: 4pt; padding: 4pt 0 6pt; }
+body.kind-sheet .page-header .standfirst { font-size: 10pt; margin-top: 3pt; }
+body.kind-sheet .page-header .meta { margin-top: 6pt; }
+body.kind-sheet p, body.kind-sheet ul, body.kind-sheet ol { margin-bottom: 6pt; }
+body.kind-sheet .fig { margin: 8pt 0; padding-top: 6pt; }
+body.kind-sheet .fig svg { width: 72%; }
+body.kind-sheet .fig figcaption { margin-top: 4pt; }
+body.kind-sheet .ledger { font-size: 8.5pt; line-height: 1.35; margin: 6pt 0; }
+body.kind-sheet .ledger li { padding: 3pt 0; }
+body.kind-sheet .page-footer { display: none; }
+body.kind-sheet .doc, body.kind-sheet p, body.kind-sheet ul, body.kind-sheet ol, body.kind-sheet dl, body.kind-sheet h1, body.kind-sheet h2, body.kind-sheet h3, body.kind-sheet .fig figcaption, body.kind-sheet .page-header .standfirst, body.kind-sheet .callout { max-width: none; }
+body.kind-sheet .fig svg { width: 54%; }
+body.kind-sheet h2 { margin: 10pt 0 3pt; }
+body.kind-sheet li { margin-bottom: 2pt; }
+body.kind-sheet p, body.kind-sheet li { orphans: 2; widows: 2; }
+body.kind-sheet .doc > section > h2:first-child { margin-top: 8pt; }
+body.kind-sheet .ledger { font-size: 8pt; }
 
 /* Keep things whole */
 figure, .fig, .callout, .invariant, .ledger li, pre, tr { break-inside: avoid; }
