@@ -28,7 +28,7 @@
     },
     {
       "key": "03-trust-and-data",
-      "pages": 1
+      "pages": 2
     },
     {
       "key": "04-operations",
@@ -90,6 +90,14 @@
       "section": "02-architecture",
       "status": "decision",
       "summary": "The operator's task-card view, the alias-only rule, the structured outcome codes, dual control from the worker's side, the exceptions board, and the state-machine invariant identical to 02.",
+      "updated": "2026-09-02"
+    },
+    {
+      "path": "03-trust-and-data/index.html",
+      "title": "03 Trust and data",
+      "section": "03-trust-and-data",
+      "status": "to-verify",
+      "summary": "How nobody on our side ever sees a real value: the alias and vault model, the substitution component, the execution surfaces, artefact redaction, the passports, the policy flags, the threat model as named and closed paths, the access ledger, the residency map and the privacy-law skeleton.",
       "updated": "2026-09-02"
     },
     {
