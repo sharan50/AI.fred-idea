@@ -227,7 +227,7 @@
         <p>Every step gets exactly one class, one reversibility and one route, and the rule that produces them is the same in every document of this publication. The three classes are <code>ai</code> (AI-runnable, executed by the harness on a surface without a person), <code>human</code> (human-runnable from a task card by a worker) and <code>user</code> (user-only, bounced to the user's own device as a one-tap approval or an act only the user can perform). The class says who executes; the reversibility and the envelope say how.</p>
         <aside class="callout"><p><span class="label">Test</span>The point-of-no-return test: "Can we return the world to its prior state by our own action, at no cost to the user and without a third party's consent? If not, the step is irreversible."</p></aside>
         <aside class="callout"><p><span class="label">Rule</span>Irreversible and outside the envelope: bounce to the user's device. Irreversible and inside it: dual control. Reversible and inside it: execute (<code>ai</code> or <code>human</code> per classifier). Anything outside the envelope that is reversible still cannot be executed by us; it becomes an extension request.</p></aside>
-        <div class="table-wrap">
+        <div class="table-wrap wide">
         <table class="data">
           <caption><span class="tab-no">Table 2.3</span> The classification rule as a lookup: two questions, four routes, and no route by which we execute outside the envelope.</caption>
           <thead><tr><th>Reversibility</th><th>Against the envelope</th><th>Route</th><th>Who executes</th></tr></thead>
@@ -284,7 +284,7 @@
         <p>A task cannot be forgotten, because forgetting has no transition. The task service holds every task in exactly one named state, gives every non-terminal state a live timer, records every change of state as an explicit event, and hands anything that has lost its timer to the watchdog. The invariant below is the contract; it appears identically on the worker console page because the console is the place where a person is most tempted to leave something for later.</p>
         <blockquote class="invariant" id="state-machine-invariant"><p>A task never leaves the system by omission. Every task is in exactly one named state. Every non-terminal state carries a live timer. Every change of state is an explicit, recorded transition, and no task reaches a terminal state without one. Silence from the user is a legitimate way for a task to end: it moves through visible nudges into lapsed, and lapsed is not withdrawn. Silence from the system is forbidden: a task with no live timer is an exception, and the watchdog places it on the exceptions board until a person gives it one.</p></blockquote>
         <h3 id="states"><span class="no">5.1</span>States</h3>
-        <div class="table-wrap">
+        <div class="table-wrap wide">
         <table class="data">
           <caption><span class="tab-no">Table 2.1</span> Ten states: seven live, each with a timer, and three terminal, each reachable only by a named transition.</caption>
           <thead><tr><th>State</th><th>Kind</th><th>Meaning</th><th>Timer</th></tr></thead>
@@ -303,7 +303,7 @@
         </table>
         </div>
         <h3 id="transitions"><span class="no">5.2</span>Transitions</h3>
-        <div class="table-wrap">
+        <div class="table-wrap wide">
         <table class="data">
           <caption><span class="tab-no">Table 2.2</span> Every transition, explicit and recorded; there is no other way for a task to change state.</caption>
           <thead><tr><th>From</th><th>To</th><th>Transition</th><th>Condition and notes</th></tr></thead>
@@ -651,7 +651,7 @@
         <h3 id="edge-tokenisation"><span class="no">10.1</span>Tokenisation at the edge</h3>
         <p>The gateway is the first of the three ways a real value enters our boundary, and it tokenises before any other component, model or person sees the request. Three detectors run on every message: identifier pattern detection for the value types each market knows (a PAN's form, an Aadhaar number's form, a card number's check digit, a National Insurance number's form), known-value matching against the vault's hashes for values the user has given us before, and user declaration, where the user marks a value as sensitive or answers a structured prompt. Each detected value is sent to the vault, which returns an alias; the message that leaves the gateway carries the alias in the value's place. Attachments are tokenised whole: the document image goes to the vault, and the request carries an alias, the document type and the non-sensitive metadata the planner needs. Voice is transcribed inside the gateway's boundary, and the transcript is tokenised the same way before the audio is handed to the evidence pipeline. A value the detectors miss is the residual risk of this component; the known-value matching on every surface and in the evidence pipeline is the second line, and the threat model in 03 names the path.</p>
         <h3 id="request-format"><span class="no">10.2</span>The internal request format</h3>
-        <div class="table-wrap">
+        <div class="table-wrap wide">
         <table class="data">
           <caption><span class="tab-no">Table 2.4</span> One request format for every channel; the fields a component may rely on and who sets each.</caption>
           <thead><tr><th>Field</th><th>Type</th><th>Meaning</th><th>Set by</th></tr></thead>
