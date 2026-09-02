@@ -1,0 +1,512 @@
+#!/usr/bin/env node
+// AI.fred verification harness. Node only, no dependencies.
+// Implements BUILD_BRIEF.md section 9.2 plus the visual floor of sections 3 and 8.2.
+// Exit code is non-zero on any failure; every failure prints as file:line message.
+
+import { readFileSync, readdirSync, statSync, existsSync } from 'node:fs';
+import { join, relative, dirname, resolve, posix } from 'node:path';
+import { fileURLToPath } from 'node:url';
+
+const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), '..');
+const DOCS = join(ROOT, 'docs');
+const failures = [];
+const rel = (f) => relative(ROOT, f).split('\\').join('/');
+const fail = (file, line, msg) => failures.push({ file: rel(file), line, msg });
+const lineOf = (text, index) => text.slice(0, Math.max(0, index)).split('\n').length;
+
+function walk(dir, out = []) {
+  for (const name of readdirSync(dir).sort()) {
+    const p = join(dir, name);
+    if (statSync(p).isDirectory()) walk(p, out);
+    else out.push(p);
+  }
+  return out;
+}
+
+if (!existsSync(DOCS)) {
+  console.error('docs/ does not exist');
+  process.exit(1);
+}
+
+const files = walk(DOCS);
+const htmlFiles = files.filter((f) => f.endsWith('.html'));
+const cssFiles = files.filter((f) => f.endsWith('.css'));
+const jsFiles = files.filter((f) => f.endsWith('.js'));
+const textFiles = files.filter((f) => /\.(html|css|js|json|svg|txt)$/.test(f));
+const read = (f) => readFileSync(f, 'utf8');
+
+const TOKENS = join(DOCS, 'assets', 'tokens.css');
+const BASE = join(DOCS, 'assets', 'base.css');
+const PRINT = join(DOCS, 'assets', 'print.css');
+const NAV = join(DOCS, 'assets', 'nav.js');
+const MANIFEST = join(ROOT, 'manifest.json');
+
+for (const f of [TOKENS, BASE, PRINT, NAV, MANIFEST]) {
+  if (!existsSync(f)) fail(f, 1, 'required file is missing');
+}
+
+// ---------------------------------------------------------------------------
+// 1. Character and phrase bans (section 4 and the anti-defaults of section 3)
+// ---------------------------------------------------------------------------
+const BANNED_PHRASES = [
+  [/in today[\u2019']s/i, 'banned phrase "In today\'s"'],
+  [/fast-paced world/i, 'banned phrase "fast-paced world"'],
+  [/game-?changer/i, 'banned phrase "game-changer"'],
+  [/cutting-edge/i, 'banned phrase "cutting-edge"'],
+  [/seamless/i, 'banned phrase "seamless"'],
+  [/leverage synergies/i, 'banned phrase "leverage synergies"'],
+  [/it[\u2019']s important to note/i, 'banned phrase "It\'s important to note"'],
+  [/in conclusion/i, 'banned phrase "In conclusion"'],
+];
+
+for (const f of textFiles) {
+  const t = read(f);
+  let i;
+  const re = /\u2014/g;
+  while ((i = re.exec(t))) fail(f, lineOf(t, i.index), 'em-dash (U+2014) is banned');
+  if (f.endsWith('.html')) {
+    const mid = /\u00B7/g;
+    while ((i = mid.exec(t))) fail(f, lineOf(t, i.index), 'middle dot (U+00B7) is banned in meta strings');
+    const arrow = /[\u2192\u2190\u2794\u27A1]/g;
+    while ((i = arrow.exec(t))) fail(f, lineOf(t, i.index), 'arrow character is banned; draw arrows in SVG, write links as words');
+    // Strip tags for phrase scanning so attribute values do not trigger, but keep line structure.
+    const text = t.replace(/<[^>]*>/g, (m) => m.replace(/[^\n]/g, ' '));
+    for (const [rx, msg] of BANNED_PHRASES) {
+      const g = new RegExp(rx.source, 'gi');
+      while ((i = g.exec(text))) fail(f, lineOf(text, i.index), msg);
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 2. Tokens and contrast
+// ---------------------------------------------------------------------------
+const tokens = {};
+if (existsSync(TOKENS)) {
+  const t = read(TOKENS);
+  const re = /--([a-z0-9-]+)\s*:\s*(#[0-9a-fA-F]{6})\b/g;
+  let m;
+  while ((m = re.exec(t))) tokens[m[1]] = m[2];
+  for (const need of ['paper', 'ink', 'line', 'accent', 'amber', 'verified']) {
+    if (!tokens[need]) fail(TOKENS, 1, `token --${need} is not defined`);
+  }
+  // tokens.css may define colours only inside :root custom properties.
+  const stripped = t.replace(/--[a-z0-9-]+\s*:\s*#[0-9a-fA-F]{3,8}\b/g, '');
+  const stray = /#[0-9a-fA-F]{3,8}\b|\brgba?\(|\bhsla?\(/g;
+  while ((m = stray.exec(stripped))) fail(TOKENS, lineOf(stripped, m.index), 'colour outside a custom property in tokens.css');
+}
+
+function luminance(hex) {
+  const c = hex.replace('#', '');
+  const v = [0, 2, 4].map((i) => parseInt(c.slice(i, i + 2), 16) / 255).map((x) => (x <= 0.03928 ? x / 12.92 : ((x + 0.055) / 1.055) ** 2.4));
+  return 0.2126 * v[0] + 0.7152 * v[1] + 0.0722 * v[2];
+}
+function contrast(a, b) {
+  const l1 = luminance(a), l2 = luminance(b);
+  const [hi, lo] = l1 > l2 ? [l1, l2] : [l2, l1];
+  return (hi + 0.05) / (lo + 0.05);
+}
+const textPairs = [
+  ['ink', 'paper'], ['ink', 'paper-2'], ['ink-soft', 'paper'], ['ink-soft', 'paper-2'],
+  ['accent', 'paper'], ['accent', 'paper-2'], ['amber', 'paper'], ['verified', 'paper'],
+];
+for (const [fg, bg] of textPairs) {
+  if (tokens[fg] && tokens[bg]) {
+    const r = contrast(tokens[fg], tokens[bg]);
+    if (r < 4.5) fail(TOKENS, 1, `AA contrast fails for --${fg} on --${bg}: ${r.toFixed(2)}:1 (needs 4.5:1)`);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 3. CSS discipline: colours only in tokens.css; no anti-default constructs
+// ---------------------------------------------------------------------------
+const NAMED_COLOURS = /\b(white|black|red|blue|green|yellow|orange|purple|grey|gray|silver|maroon|navy|teal|olive|lime|aqua|fuchsia|brown|beige|ivory|cream|tan|gold|crimson|coral|salmon|khaki|wheat|linen|snow|mintcream|whitesmoke|gainsboro|lightgray|lightgrey|darkgray|darkgrey|dimgray|dimgrey|slategray|slategrey|tomato|firebrick|darkred|indigo|violet|pink|magenta|cyan|chocolate|sienna|peru)\b/;
+const COLOUR_PROPS = /(?:^|[;{\s])(color|background|background-color|border|border-color|border-top|border-bottom|border-left|border-right|outline|outline-color|fill|stroke|text-decoration-color|caret-color|column-rule|box-shadow)\s*:\s*([^;}]+)/g;
+
+for (const f of cssFiles) {
+  if (f === TOKENS) continue;
+  const t = read(f);
+  let m;
+  const hex = /#[0-9a-fA-F]{3,8}\b/g;
+  while ((m = hex.exec(t))) fail(f, lineOf(t, m.index), `colour literal ${m[0]} outside tokens.css`);
+  const fn = /\b(rgba?|hsla?)\(/g;
+  while ((m = fn.exec(t))) fail(f, lineOf(t, m.index), `colour function ${m[1]}() outside tokens.css`);
+  const props = new RegExp(COLOUR_PROPS.source, 'g');
+  while ((m = props.exec(t))) {
+    const value = m[2];
+    if (NAMED_COLOURS.test(value)) fail(f, lineOf(t, m.index), `named colour in "${m[1]}: ${value.trim()}"; use a token`);
+  }
+  if (/@import\b/.test(t)) fail(f, lineOf(t, t.search(/@import\b/)), '@import is banned (no external or chained loads)');
+  const up = /text-transform\s*:\s*uppercase/g;
+  while ((m = up.exec(t))) fail(f, lineOf(t, m.index), 'text-transform: uppercase is banned (no all-caps labels)');
+  const ls = /letter-spacing\s*:\s*(0?\.\d+|[1-9][\d.]*)(px|em|rem|ch)/g;
+  while ((m = ls.exec(t))) fail(f, lineOf(t, m.index), 'positive letter-spacing is banned (no tracked-out caps)');
+  const grad = /(linear|radial|conic)-gradient\(/g;
+  while ((m = grad.exec(t))) fail(f, lineOf(t, m.index), 'gradients are banned');
+  const shadow = /box-shadow\s*:\s*(?!none)/g;
+  while ((m = shadow.exec(t))) fail(f, lineOf(t, m.index), 'box-shadow is banned (no soft-shadow cards)');
+  const kf = /@keyframes|\banimation(-name)?\s*:/g;
+  while ((m = kf.exec(t))) fail(f, lineOf(t, m.index), 'animation is banned (no non-user-triggered motion)');
+  if (/\btransition\s*:/.test(t) && !/prefers-reduced-motion/.test(t)) {
+    fail(f, lineOf(t, t.search(/\btransition\s*:/)), 'transition used without a prefers-reduced-motion rule');
+  }
+  const urls = /url\(\s*['"]?([^'")]+)['"]?\s*\)/g;
+  while ((m = urls.exec(t))) {
+    const u = m[1].trim();
+    if (/^(https?:)?\/\//i.test(u) || /^data:/i.test(u)) { fail(f, lineOf(t, m.index), `external or data url() in CSS: ${u}`); continue; }
+    const target = resolve(dirname(f), u.split('#')[0].split('?')[0]);
+    if (!existsSync(target)) fail(f, lineOf(t, m.index), `url() target does not exist: ${u}`);
+  }
+}
+
+// print.css content floor
+if (existsSync(PRINT)) {
+  const t = read(PRINT);
+  if (!/@page\b/.test(t)) fail(PRINT, 1, 'print.css must set @page margins');
+  if (!/\.site-nav[^{]*\{[^}]*display\s*:\s*none/s.test(t)) fail(PRINT, 1, 'print.css must hide .site-nav');
+  if (!/break-inside\s*:\s*avoid/.test(t)) fail(PRINT, 1, 'print.css must keep figures and tables whole (break-inside: avoid)');
+}
+
+// base.css must not be empty of the component set
+if (existsSync(BASE)) {
+  const t = read(BASE);
+  for (const sel of ['.page-header', '.chip', '.stamp', '.dr', '.fig', '.fig-scroll', 'table.data', '.callout', '.invariant', '.ledger', '.sources', '.ref', '.masthead', '.rail', '.skip', '@media screen and (max-width: 760px)', ':focus-visible', 'prefers-reduced-motion', '.fg-accent', '.fg-box', '.fg-zone', '.fg-terminal', '.fg-actor', '.fg-device']) {
+    if (!t.includes(sel)) fail(BASE, 1, `base.css does not define ${sel}`);
+  }
+}
+
+// ---------------------------------------------------------------------------
+// 4. JavaScript: navigation only, local only
+// ---------------------------------------------------------------------------
+for (const f of jsFiles) {
+  const t = read(f);
+  if (f !== NAV) fail(f, 1, 'only docs/assets/nav.js is permitted as a script');
+  const m = t.match(/\b(fetch|XMLHttpRequest|WebSocket|import\s*\(|localStorage|sessionStorage|document\.cookie|eval)\b/);
+  if (m) fail(f, lineOf(t, m.index), `nav.js may only do navigation; found ${m[1]}`);
+}
+
+// ---------------------------------------------------------------------------
+// 5. Per-page structure, links, assets, figures
+// ---------------------------------------------------------------------------
+const STATUS = ['verified', 'to-verify', 'amber', 'decision', 'assumption'];
+const MANDATED_FIGURES = ['fig-state-machine', 'fig-substitution', 'fig-envelope', 'fig-trust-e2e', 'fig-shift-wheel', 'fig-adapters'];
+const foundFigures = new Set();
+const pageIds = new Map(); // file -> Set(ids)
+const pageText = new Map();
+
+for (const f of htmlFiles) {
+  const t = read(f);
+  pageText.set(f, t);
+  const ids = new Set();
+  const idRe = /\sid\s*=\s*"([^"]+)"/g;
+  let m;
+  while ((m = idRe.exec(t))) {
+    if (ids.has(m[1])) fail(f, lineOf(t, m.index), `duplicate id "${m[1]}"`);
+    ids.add(m[1]);
+    if (MANDATED_FIGURES.includes(m[1])) foundFigures.add(m[1]);
+  }
+  pageIds.set(f, ids);
+}
+
+for (const f of htmlFiles) {
+  const t = pageText.get(f);
+  const dir = dirname(f);
+  const toAssets = posix.relative(dir.split('\\').join('/'), join(DOCS, 'assets').split('\\').join('/')) || '.';
+  let m;
+
+  if (!/^\s*<!doctype html>/i.test(t)) fail(f, 1, 'missing <!doctype html> at top');
+  if (!/<html\b[^>]*\blang="en-GB"/.test(t)) fail(f, 1, 'html element must carry lang="en-GB"');
+  if (!/<meta\s+charset="utf-8"/i.test(t)) fail(f, 1, 'missing <meta charset="utf-8">');
+  if (!/<meta\s+name="viewport"\s+content="width=device-width[^"]*"/.test(t)) fail(f, 1, 'missing viewport meta (mobile-honest floor)');
+  if (!/<meta\s+name="robots"\s+content="noindex[^"]*"/.test(t)) fail(f, 1, 'missing no-index directive (interim access mitigation, section 1.11)');
+  const title = t.match(/<title>([^<]*)<\/title>/);
+  if (!title || !title[1].trim()) fail(f, 1, 'missing or empty <title>');
+  for (const [name, file] of [['tokens.css', TOKENS], ['base.css', BASE]]) {
+    const re = new RegExp(`<link\\s+rel="stylesheet"\\s+href="${toAssets}/${name}"`);
+    if (!re.test(t)) fail(f, 1, `${name} not linked as <link rel="stylesheet" href="${toAssets}/${name}">`);
+  }
+  const printRe = new RegExp(`<link\\s+rel="stylesheet"\\s+href="${toAssets}/print.css"\\s+media="print"`);
+  if (!printRe.test(t)) fail(f, 1, `print.css not linked with media="print" (expected href="${toAssets}/print.css")`);
+  const navRe = new RegExp(`<script\\s+src="${toAssets}/nav.js"\\s+defer><\\/script>`);
+  if (!navRe.test(t)) fail(f, 1, `nav.js not linked as <script src="${toAssets}/nav.js" defer></script>`);
+  if (/<style\b/i.test(t)) fail(f, lineOf(t, t.search(/<style\b/i)), 'per-page <style> blocks are banned; extend base.css');
+  const inlineStyle = /\sstyle\s*=\s*"/g;
+  while ((m = inlineStyle.exec(t))) fail(f, lineOf(t, m.index), 'inline style attributes are banned; use classes');
+  const inlineScript = /<script\b(?![^>]*\ssrc=)[^>]*>\s*\S/g;
+  while ((m = inlineScript.exec(t))) fail(f, lineOf(t, m.index), 'inline scripts are banned; nav.js only');
+  if (!/<nav\s+class="site-nav"/.test(t)) fail(f, 1, 'site navigation <nav class="site-nav"> is missing');
+  if (!/<body\s+class="kind-(report|ledger|sheet|record)"/.test(t)) fail(f, 1, 'body must declare its page kind: kind-report, kind-ledger, kind-sheet or kind-record');
+  if (!/<header\s+class="masthead"/.test(t)) fail(f, 1, 'masthead <header class="masthead"> is missing');
+  if (!/<meta\s+name="color-scheme"\s+content="light"/.test(t)) fail(f, 1, 'missing <meta name="color-scheme" content="light">');
+  if (!/<aside\s+class="rail"/.test(t)) fail(f, 1, 'rail <aside class="rail"> is missing');
+  if (!/<nav\s+class="contents"[^>]*data-contents/.test(t)) fail(f, 1, 'on-this-page contents <nav class="contents" data-contents> is missing');
+  if (!/<div\s+class="doc">/.test(t)) fail(f, 1, 'document column <div class="doc"> is missing');
+  if (!/<footer\s+class="page-footer"/.test(t)) fail(f, 1, 'page footer is missing');
+  if (!/class="fixed-links"/.test(t)) fail(f, 1, 'footer fixed links are missing');
+  if (!/<a\s+class="skip"\s+href="#main"/.test(t)) fail(f, 1, 'skip link <a class="skip" href="#main"> is missing');
+  if (!/<main\s+id="main"/.test(t)) fail(f, 1, '<main id="main"> is missing');
+
+  // Page header component and document status chip
+  const header = t.match(/<header\s+class="page-header"[\s\S]*?<\/header>/);
+  if (!header) fail(f, 1, 'page header component <header class="page-header"> is missing');
+  else {
+    const chip = header[0].match(/class="chip chip-(verified|to-verify|amber|decision|assumption)"/);
+    if (!chip) fail(f, lineOf(t, header.index), 'document status chip missing from page header');
+    if (!/<h1\b/.test(header[0])) fail(f, lineOf(t, header.index), 'page header must contain the h1');
+    if (!/class="standfirst"/.test(header[0])) fail(f, lineOf(t, header.index), 'page header must contain a standfirst');
+    if (!/class="meta"/.test(header[0])) fail(f, lineOf(t, header.index), 'page header must contain the meta row');
+  }
+
+  // Chips: valid class; verified chips are followed by a reference to a numbered source on the page
+  const chips = /<(\w+)\s+class="chip chip-([a-z-]+)"([^>]*)>/g;
+  const inlineStatuses = new Set();
+  while ((m = chips.exec(t))) {
+    if (!STATUS.includes(m[2])) fail(f, lineOf(t, m.index), `unknown status chip "${m[2]}"`);
+    if (header && m.index > header.index && m.index < header.index + header[0].length) continue; // the document status chip
+    if (/\bdata-example\b/.test(m[3])) continue; // a chip shown as an example of the vocabulary, not a claim
+    inlineStatuses.add(m[2]);
+    if (m[2] === 'verified') {
+      const after = t.slice(m.index, m.index + 200);
+      const ref = after.match(/<\/\w+>\s*<a\s+class="ref"\s+href="#(src-[a-z0-9-]+)"[^>]*>/);
+      if (!ref) { fail(f, lineOf(t, m.index), 'verified chip must be followed by <a class="ref" href="#src-n">[n]</a>'); continue; }
+      const src = t.match(new RegExp(`<li\\s+id="${ref[1]}"[^>]*>([\\s\\S]*?)<\\/li>`));
+      if (!src) fail(f, lineOf(t, m.index), `source ${ref[1]} is not defined in the page's sources list`);
+      else if (!/\b(19|20)\d\d\b/.test(src[1])) fail(f, lineOf(t, m.index), `source ${ref[1]} lacks a date`);
+      else if (!/<a\s+class="url"\s+href="https?:\/\/[^"]+"/.test(src[1])) fail(f, lineOf(t, m.index), `source ${ref[1]} lacks its URL as a link`);
+    }
+  }
+  if (/class="ref"/.test(t) && !/<ol\s+class="sources"/.test(t)) fail(f, 1, 'page uses references but has no <ol class="sources">');
+
+  // Page-level status is a function of the page's own inline chips (design plan, DR-012): amber, then to-verify, then assumption, then decision
+  if (header) {
+    const chip = header[0].match(/class="chip chip-(verified|to-verify|amber|decision|assumption)"/);
+    const expected = inlineStatuses.has('amber') ? 'amber' : inlineStatuses.has('to-verify') ? 'to-verify' : inlineStatuses.has('assumption') ? 'assumption' : 'decision';
+    if (chip && chip[1] !== expected) fail(f, lineOf(t, header.index), `document status is "${chip[1]}" but the page's inline chips imply "${expected}" (precedence: amber, to-verify, assumption, decision)`);
+    const stamp = header[0].match(/<p\s+class="stamp"\s+data-status="([a-z-]+)"[^>]*>([^<]+)/);
+    if (!stamp) fail(f, lineOf(t, header.index), 'page header lacks its stamp <p class="stamp" data-status="...">');
+    else if (chip && (stamp[1] !== chip[1] || !stamp[2].toLowerCase().includes(chip[1]))) fail(f, lineOf(t, header.index), `stamp "${stamp[2].trim()}" does not carry the status word "${chip[1]}"`);
+    const stampCount = (t.match(/class="stamp"/g) || []).length;
+    if (stampCount > 1) fail(f, 1, `page carries ${stampCount} stamps; the accent appears at most twice on a screen (one stamp, one figure stroke)`);
+  }
+
+  // Headings: every h2 in main carries an id and a hanging numeral (or is marked unnumbered)
+  const mainBlock = t.match(/<main[\s\S]*?<\/main>/);
+  if (mainBlock) {
+    const h2 = /<h2\b([^>]*)>([\s\S]*?)<\/h2>/g;
+    while ((m = h2.exec(mainBlock[0]))) {
+      const at = lineOf(t, mainBlock.index + m.index);
+      if (!/\sid="/.test(m[1])) fail(f, at, 'h2 without id');
+      const unnumbered = /class="[^"]*\bunnumbered\b/.test(m[1]);
+      if (!unnumbered && !/^\s*<span class="no">[^<]+<\/span>/.test(m[2])) fail(f, at, 'h2 must start with <span class="no">n</span> or carry class="unnumbered"');
+      if (/[A-Z]{4,}/.test(m[2].replace(/<[^>]*>/g, '').replace(/\b(HDFC|DPDP|GDPR|CCPA|CPRA|NPCI|SEBI|RBI|FCA|ICO|CFPB|KYC|PAN|UPI|OTP|API|SDK|DOM|PDF|HTML|CSS|SVG|URL|NHS|CKYC|VCIP|IDTA|DIATF|JMLSG|GLBA|PCI|SOC|ISO|HIPAA|AWS|VGS|IVR|DTMF|TTS|STT|QA|SLA|MVP|PRD|USA|UK|EU|IST|BST|GMT|EDT|PDT|UTC|AA|FIU|FIP|AIS|PIS|VRP|CIP|BSA|MDL|LPA|CVV|CDN|JS|SSG|DR|L1|L2|L3)\b/g, ''))) fail(f, at, 'heading contains an all-caps run (sentence case headings only)');
+    }
+  }
+  if (mainBlock) {
+    const h3 = /<h3\b([^>]*)>([\s\S]*?)<\/h3>/g;
+    while ((m = h3.exec(mainBlock[0]))) {
+      const unnumbered = /class="[^"]*\bunnumbered\b/.test(m[1]);
+      if (!unnumbered && !/^\s*<span class="no">[^<]+<\/span>/.test(m[2])) fail(f, lineOf(t, mainBlock.index + m.index), 'h3 must start with <span class="no">n.m</span> or carry class="unnumbered"');
+    }
+  }
+
+  // Links and assets
+  const attrRe = /<(a|link|script|img|source|video|audio|iframe|object|embed|use|image)\b([^>]*)>/g;
+  while ((m = attrRe.exec(t))) {
+    const tag = m[1];
+    const attrs = m[2];
+    if (['iframe', 'object', 'embed', 'video', 'audio'].includes(tag)) { fail(f, lineOf(t, m.index), `<${tag}> is banned`); continue; }
+    const hrefM = attrs.match(/\b(href|src|xlink:href)\s*=\s*"([^"]*)"/);
+    if (!hrefM) continue;
+    const url = hrefM[2].trim();
+    if (!url) { fail(f, lineOf(t, m.index), `empty ${hrefM[1]} on <${tag}>`); continue; }
+    if (/^(https?:)?\/\//i.test(url)) {
+      if (tag !== 'a') fail(f, lineOf(t, m.index), `external asset load on <${tag}>: ${url}`);
+      continue;
+    }
+    if (/^(mailto|tel):/i.test(url)) continue;
+    if (/^data:/i.test(url)) { fail(f, lineOf(t, m.index), `data: URL is banned on <${tag}>`); continue; }
+    if (url.startsWith('#')) {
+      const id = url.slice(1);
+      if (id && !pageIds.get(f).has(id)) fail(f, lineOf(t, m.index), `fragment #${id} does not exist on this page`);
+      continue;
+    }
+    const [pathPart, frag] = url.split('#');
+    const clean = pathPart.split('?')[0];
+    let target = clean.startsWith('/') ? join(DOCS, clean) : resolve(dir, clean);
+    if (clean.endsWith('/') || (existsSync(target) && statSync(target).isDirectory())) target = join(target, 'index.html');
+    if (!existsSync(target)) { fail(f, lineOf(t, m.index), `link target does not exist: ${url}`); continue; }
+    if (frag && pageIds.has(target) && !pageIds.get(target).has(frag)) fail(f, lineOf(t, m.index), `fragment #${frag} does not exist in ${rel(target)}`);
+    if (!target.startsWith(DOCS)) fail(f, lineOf(t, m.index), `link escapes docs/: ${url}`);
+  }
+
+  // Tables: wrapped so they scroll on narrow screens, class="data", a caption with the table number
+  const tableRe = /<table\b([^>]*)>([\s\S]*?)<\/table>/g;
+  while ((m = tableRe.exec(t))) {
+    const before = t.slice(Math.max(0, m.index - 120), m.index);
+    if (!/class="table-wrap"[^>]*>\s*$/.test(before)) fail(f, lineOf(t, m.index), 'table must be wrapped in <div class="table-wrap">');
+    if (!/class="data"/.test(m[1])) fail(f, lineOf(t, m.index), 'table must carry class="data"');
+    if (!/<caption>\s*<span class="tab-no">Table [A-Za-z0-9]+\.\d+<\/span>/.test(m[2])) fail(f, lineOf(t, m.index), 'table must open with <caption><span class="tab-no">Table S.n</span> takeaway</caption>');
+    if (!/<thead>/.test(m[2])) fail(f, lineOf(t, m.index), 'table must have a <thead>');
+  }
+
+  // Figures: figure.fig with id, a focusable scroll region, a numbered caption
+  const figRe = /<figure\s+class="fig"([^>]*)>([\s\S]*?)<\/figure>/g;
+  while ((m = figRe.exec(t))) {
+    const at = lineOf(t, m.index);
+    if (!/\sid="fig-[a-z0-9-]+"/.test(m[1])) fail(f, at, 'figure must carry an id of the form fig-name');
+    if (!/<div\s+class="fig-scroll"\s+tabindex="0"\s+role="region"\s+aria-label="[^"]+"/.test(m[2])) fail(f, at, 'figure must wrap its svg in <div class="fig-scroll" tabindex="0" role="region" aria-label="...">');
+    if (!/<figcaption>\s*<span class="fig-no">Figure [A-Za-z0-9]+\.\d+<\/span>/.test(m[2])) fail(f, at, 'figcaption must open with <span class="fig-no">Figure S.n</span> then the takeaway');
+    const accents = (m[2].match(/class="[^"]*\b(fg-accent|fg-box-accent|fg-fill-accent)\b[^"]*"/g) || []).length;
+    if (accents === 0) fail(f, at, 'figure has no accent element; each figure carries exactly one accent stroke (arrowhead marker excepted)');
+  }
+  const svgOutside = /<svg\b/g;
+  while ((m = svgOutside.exec(t))) {
+    const before = t.slice(Math.max(0, m.index - 300), m.index);
+    if (!/class="fig-scroll"[^>]*>\s*$/.test(before)) fail(f, lineOf(t, m.index), 'svg must sit directly inside <div class="fig-scroll"> within a figure');
+  }
+
+  // SVG diagram language
+  const svgRe = /<svg\b([^>]*)>([\s\S]*?)<\/svg>/g;
+  while ((m = svgRe.exec(t))) {
+    const attrs = m[1], body = m[2], at = lineOf(t, m.index);
+    if (!/\bviewBox="0 0 720 \d+"/.test(attrs)) fail(f, at, 'svg viewBox must be "0 0 720 H" (one canvas for every figure)');
+    const vb = attrs.match(/viewBox="0 0 720 (\d+)"/);
+    if (vb && Number(vb[1]) % 40 !== 0) fail(f, at, 'svg viewBox height must be a multiple of 40');
+    if (!/aria-labelledby="/.test(attrs)) fail(f, at, 'svg must carry aria-labelledby pointing at its title and desc');
+    if (/\b(width|height)="\d+(px)?"/.test(attrs)) fail(f, at, 'svg with fixed pixel width or height; use viewBox and CSS');
+    if (!/<title\b/.test(body)) fail(f, at, 'svg without <title>');
+    if (!/<desc\b/.test(body)) fail(f, at, 'svg without <desc>');
+    if (!/\brole="img"/.test(attrs)) fail(f, at, 'svg without role="img"');
+    const colourAttr = /\b(fill|stroke|stop-color|color)="([^"]*)"/g;
+    let c;
+    while ((c = colourAttr.exec(body))) {
+      const v = c[2].trim();
+      if (!/^(none|currentColor|inherit|transparent|var\(--[a-z0-9-]+\)|url\(#[^)]+\))$/.test(v)) {
+        fail(f, lineOf(t, m.index + c.index), `svg ${c[1]}="${v}" is not a token; use var(--token), currentColor or none`);
+      }
+    }
+    const sw = /\bstroke-width="([^"]*)"/g;
+    while ((c = sw.exec(body))) {
+      if (!['1', '1.5', '2'].includes(c[1].trim())) fail(f, lineOf(t, m.index + c.index), `stroke-width ${c[1]} is outside the diagram language (1, 1.5, 2)`);
+    }
+    if (/\bfont-family=/.test(body)) fail(f, at, 'svg sets font-family directly; use the label class');
+    if (/\bfont-size=/.test(body)) fail(f, at, 'svg sets font-size directly; use the label class');
+    const textRe = /<text\b([^>]*)>/g;
+    while ((c = textRe.exec(body))) {
+      if (!/\bclass="/.test(c[1])) fail(f, lineOf(t, m.index + c.index), 'svg <text> without a label class');
+    }
+    if (/<(image|foreignObject)\b/.test(body)) fail(f, at, 'svg <image> and <foreignObject> are banned');
+  }
+}
+
+for (const id of MANDATED_FIGURES) {
+  if (!foundFigures.has(id)) fail(DOCS, 1, `mandated figure id "${id}" not found in any page`);
+}
+
+// ---------------------------------------------------------------------------
+// 6. Section rules: 05 stub, decisions
+// ---------------------------------------------------------------------------
+const biz = join(DOCS, '05-business', 'index.html');
+if (existsSync(biz)) {
+  const t = read(biz).replace(/<[^>]*>/g, ' ');
+  if (!/deferred/i.test(t)) fail(biz, 1, '05-business must state that economics is deferred');
+  if (!/Series A/.test(t)) fail(biz, 1, '05-business must name the post-Series A/B deferral');
+  if (!/trigger/i.test(t)) fail(biz, 1, '05-business must state the trigger for reopening');
+} else fail(biz, 1, '05-business/index.html is missing');
+
+for (const f of htmlFiles.filter((p) => /[\\/]decisions[\\/]dr-[^\\/]+\.html$/.test(p))) {
+  const t = read(f);
+  const h2s = [...t.matchAll(/<h2\b[^>]*>([\s\S]*?)<\/h2>/g)].map((x) => x[1].replace(/<[^>]*>/g, '').trim());
+  if (!h2s.some((h) => /rejected alternative/i.test(h))) fail(f, 1, 'decision record lacks a "Rejected alternative(s)" heading');
+  if (!h2s.some((h) => /closes off/i.test(h))) fail(f, 1, 'decision record lacks a "What this closes off" heading');
+  if (!h2s.some((h) => /^\d+\s*decision$/i.test(h))) fail(f, 1, 'decision record lacks a "Decision" heading');
+  if (!h2s.some((h) => /^\d+\s*status$/i.test(h))) fail(f, 1, 'decision record lacks a "Status" heading');
+  if (!/<article\s+class="dr"/.test(t)) fail(f, 1, 'decision record lacks its <article class="dr"> card');
+  if (!/class="stamp/.test(t)) fail(f, 1, 'decision record lacks its status stamp');
+  if (/Amber decision/.test(t) && !h2s.some((h) => /trigger/i.test(h))) fail(f, 1, 'amber decision record lacks a "Trigger" heading');
+}
+// Index defines the document-status vocabulary once
+{
+  const idx = join(DOCS, 'index.html');
+  if (existsSync(idx)) {
+    const t = read(idx);
+    if (!/<h2[^>]*id="how-to-read"/.test(t)) fail(idx, 1, 'index must carry the "How to read this publication" section (id="how-to-read") defining document status');
+  }
+}
+
+// The state-machine invariant must appear identically in 02-architecture and the worker console
+{
+  const a = join(DOCS, '02-architecture', 'index.html');
+  const b = join(DOCS, '02-architecture', 'worker-console.html');
+  const grab = (f) => {
+    const t = pageText.get(f) || '';
+    const m = t.match(/<blockquote\s+class="invariant"\s+id="state-machine-invariant">([\s\S]*?)<\/blockquote>/);
+    return m ? m[1].replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim() : null;
+  };
+  const ia = grab(a), ib = grab(b);
+  if (existsSync(a) && !ia) fail(a, 1, 'state-machine invariant block <blockquote class="invariant" id="state-machine-invariant"> is missing');
+  if (existsSync(b) && !ib) fail(b, 1, 'state-machine invariant block <blockquote class="invariant" id="state-machine-invariant"> is missing');
+  if (ia && ib && ia !== ib) fail(b, 1, 'state-machine invariant text differs from 02-architecture/index.html');
+}
+
+// Required pages of section 2
+const REQUIRED = ['index.html', '00-thesis/index.html', '01-product/index.html', '02-architecture/index.html', '02-architecture/worker-console.html', '03-trust-and-data/index.html', '03-trust-and-data/trust-story.html', '04-operations/index.html', '05-business/index.html', '06-roadmap/index.html', '07-open/index.html', 'decisions/index.html'];
+for (const p of REQUIRED) if (!existsSync(join(DOCS, p))) fail(join(DOCS, p), 1, 'required page missing');
+
+// Reachability: every page is linked from its section index; every section index from the root index
+const relPages = htmlFiles.map((f) => posix.relative(DOCS.split('\\').join('/'), f.split('\\').join('/')));
+for (const p of relPages) {
+  const parts = p.split('/');
+  if (parts.length === 1) continue;
+  const sectionIndex = join(DOCS, parts[0], 'index.html');
+  if (p.endsWith('/index.html')) {
+    const root = pageText.get(join(DOCS, 'index.html')) || '';
+    if (!new RegExp(`href="${parts[0]}/(index\\.html)?"`).test(root)) fail(join(DOCS, 'index.html'), 1, `section ${parts[0]} is not linked from the root index`);
+    continue;
+  }
+  const sec = pageText.get(sectionIndex);
+  if (!sec) { fail(sectionIndex, 1, 'section index missing'); continue; }
+  if (!new RegExp(`href="(\\./)?${parts.slice(1).join('/')}"`).test(sec)) fail(sectionIndex, 1, `${p} is not linked from its section index`);
+}
+
+// ---------------------------------------------------------------------------
+// 7. manifest.json against the filesystem
+// ---------------------------------------------------------------------------
+if (existsSync(MANIFEST)) {
+  let man;
+  try { man = JSON.parse(read(MANIFEST)); } catch (e) { fail(MANIFEST, 1, `manifest.json is not valid JSON: ${e.message}`); }
+  if (man) {
+    const pages = Array.isArray(man.pages) ? man.pages : [];
+    const listed = new Set(pages.map((p) => p.path));
+    for (const p of relPages) if (!listed.has(p)) fail(MANIFEST, 1, `page on disk not listed in manifest: ${p}`);
+    for (const p of listed) if (!relPages.includes(p)) fail(MANIFEST, 1, `manifest lists a page that does not exist: ${p}`);
+    for (const e of pages) {
+      for (const k of ['path', 'title', 'section', 'status', 'summary', 'updated']) {
+        if (!e[k] || typeof e[k] !== 'string' || !e[k].trim()) fail(MANIFEST, 1, `manifest entry ${e.path || '?'} lacks ${k}`);
+      }
+      if (e.status && !STATUS.includes(e.status)) fail(MANIFEST, 1, `manifest entry ${e.path} has unknown status ${e.status}`);
+      if (e.updated && !/^\d{4}-\d{2}-\d{2}$/.test(e.updated)) fail(MANIFEST, 1, `manifest entry ${e.path} updated must be YYYY-MM-DD`);
+      const file = join(DOCS, e.path || '');
+      const t = pageText.get(file);
+      if (t && e.title) {
+        const ti = t.match(/<title>([^<]*)<\/title>/);
+        if (!ti || !ti[1].startsWith(e.title)) fail(file, 1, `page <title> must start with the manifest title "${e.title}"`);
+        const header = t.match(/<header\s+class="page-header"[\s\S]*?<\/header>/);
+        const chip = header && header[0].match(/class="chip chip-([a-z-]+)"/);
+        if (chip && e.status && chip[1] !== e.status) fail(file, lineOf(t, header.index), `document status chip "${chip[1]}" does not match manifest status "${e.status}"`);
+      }
+    }
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Report
+// ---------------------------------------------------------------------------
+if (failures.length) {
+  failures.sort((a, b) => a.file.localeCompare(b.file) || a.line - b.line);
+  for (const f of failures) console.log(`${f.file}:${f.line}: ${f.msg}`);
+  console.log(`\n${failures.length} failure(s) across ${htmlFiles.length} pages.`);
+  process.exit(1);
+} else {
+  console.log(`verify: clean. ${htmlFiles.length} pages, ${cssFiles.length} stylesheets, ${foundFigures.size}/${MANDATED_FIGURES.length} mandated figures.`);
+}

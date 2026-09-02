@@ -1,0 +1,47 @@
+/* AI.fred print stylesheet. Every page exports cleanly to PDF. Colours come only from tokens.css. */
+@page {
+  size: auto;
+  margin: 18mm 16mm 20mm;
+  @top-left { content: "AI.fred"; font-family: "IBM Plex Mono", monospace; font-size: 9pt; }
+  @bottom-center { content: counter(page) " of " counter(pages); font-family: "IBM Plex Mono", monospace; font-size: 9pt; }
+}
+html { font-size: 10.5pt; }
+body { background: transparent; color: var(--ink); }
+body.kind-sheet { font-size: 11pt; }
+
+/* Navigation and controls do not print; the wordmark, page header and control block do */
+.skip, .masthead .pub-link, .rail-toggle, .site-nav, .page-footer .fixed-links { display: none; }
+.masthead { display: block; padding: 0 0 4pt; border-bottom: var(--hair) solid var(--ink); max-width: none; }
+.masthead .brand { display: inline; }
+.masthead .doc-id { display: inline; margin-left: 1em; }
+.masthead .tagline { display: block; margin-top: 2pt; }
+.page { max-width: none; padding: 0; }
+.page-header { display: block; margin-top: 8pt; }
+.page-header h1 { display: block; }
+.page-header h1 .no { margin-right: 0.5em; }
+.page-header .stamp { float: right; margin: 3px 3px 8pt 12pt; }
+.page-header .meta { grid-template-columns: repeat(4, auto); }
+.body-grid { display: block; padding-bottom: 0; }
+.rail { position: static; max-height: none; overflow: visible; display: block; padding: 6pt 0 0; border: 0; }
+.rail.is-collapsed { display: block; }
+.rail nav + nav { margin-top: 0; }
+.doc { max-width: none; }
+h2 .no, h3 .no { position: static; margin-right: 0.6em; }
+
+/* Keep things whole */
+figure, .fig, .callout, .invariant, .ledger li, pre, tr { break-inside: avoid; }
+h1, h2, h3, h4, figcaption, caption { break-after: avoid; }
+p, li { orphans: 3; widows: 3; }
+thead { display: table-header-group; }
+.fig-scroll, .table-wrap { overflow: visible; }
+.fig svg { min-width: 0; width: 100%; height: auto; max-height: 240mm; }
+table.data { width: 100%; font-size: 9pt; }
+.fig, .table-wrap { margin: 14pt 0; }
+
+/* Links: no underline in print; external citation links print their address; the page's own address is never printed */
+a { text-decoration: none; color: inherit; }
+a[href^="http"]:not(.url)::after { content: " (" attr(href) ")"; font-family: var(--mono); font-size: 8pt; overflow-wrap: anywhere; }
+
+/* Chip dots are borders, so they print without colour adjustment; block code keeps its ground */
+pre { print-color-adjust: exact; }
+.page-footer { max-width: none; padding: 8pt 0 0; margin-top: 18pt; }

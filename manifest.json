@@ -1,0 +1,21 @@
+{
+  "site": "AI.fred design and planning publication",
+  "publish": "docs",
+  "statuses": [
+    "verified",
+    "to-verify",
+    "amber",
+    "decision",
+    "assumption"
+  ],
+  "pages": [
+    {
+      "path": "decisions/dr-012-design-plan.html",
+      "title": "DR-012 The design plan: an engineering dossier",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "The visual system for the publication: palette, type, numbering voice, page kinds, components, diagram language and print, critiqued against the generic defaults and fixed.",
+      "updated": "2026-09-02"
+    }
+  ]
+}

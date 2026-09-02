@@ -1,0 +1,56 @@
+/* AI.fred tokens. The only file in the publication that defines a colour.
+   Contrast ratios (paper / paper-2): ink 17.5 / 16.2; ink-soft 8.3 / 7.7;
+   accent 6.4 / 5.9; amber 4.7 / 4.3; verified 7.3 / 6.8.
+   Rules: the accent never fills an area and appears at most twice on a screen
+   (the stamp and one figure stroke). Amber and verified are dot and stroke
+   colours only, never text. Line colour never carries meaning in a figure. */
+:root {
+  color-scheme: light;
+
+  /* Palette (BUILD_BRIEF section 3) */
+  --paper: #FBFAF7;
+  --paper-2: #F3F1EA;
+  --ink: #17150E;
+  --ink-soft: #4F4B40;
+  --line: #D8D4C8;
+  --accent: #A8321A;
+  --amber: #946A00;
+  --verified: #2F5D3A;
+
+  /* Type */
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
+  --fs-body: 17px;
+  --lh-body: 1.55;
+  --fs-stand: 1.1875rem;
+  --fs-h1: 1.625rem;
+  --fs-h2: 1.25rem;
+  --fs-h3: 1rem;
+  --fs-meta: 13px;
+  --fs-cell: 0.9375rem;
+  --fs-ledger: 15px;
+  --fs-code: 0.875rem;
+  --fs-small: 11px;
+
+  /* Space */
+  --s-1: 0.25rem;
+  --s-2: 0.5rem;
+  --s-3: 0.75rem;
+  --s-4: 1rem;
+  --s-5: 1.5rem;
+  --s-6: 2rem;
+  --s-7: 3rem;
+  --s-8: 4rem;
+
+  /* Layout */
+  --measure: 60ch;
+  --rail-w: 14rem;
+  --gutter: 3rem;
+  --page-max: 66rem;
+  --fig-min: 612px;
+
+  /* Rules */
+  --hair: 1px;
+  --rule: 1.5px;
+  --heavy: 2px;
+}
