@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-007 A universal core with per-country adapters, legal pack and shift, AI.fred</title>
+<meta name="description" content="One country-agnostic harness carries every trust property; each market adds passport adapters to its rails, a legal pack, a data-residency map and a shift, and expansion is that playbook repeated.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-007</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-007</a></span><span class="title">A universal core with per-country adapters, legal pack and shift</span></h1>
+    <p class="standfirst">One harness, built once and country-agnostic, carries every trust property. Each market adds passport adapters to its rails, a legal pack and a data-residency map, plus a shift. Expansion is that playbook repeated, and it never touches the core.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-007</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>We build one universal core and add a thin, named layer per country. The core is country-agnostic: the planner, the classifier, task cards, the alias vault and the substitution component, authority envelopes, the state machine, verification and the evidence pipeline, the worker console, the access ledger and the intake gateway. Per country we add passport adapters to that market's identity and financial rails, a legal pack and a data-residency map; operationally we add a shift. India is the build base, the US and the UK are the commercial ground, and we build for all three from the first line.</p>
+          <h3 id="core"><span class="no">1.1</span>What lives in the core</h3>
+          <p>Everything that makes the two fatal failures structurally impossible, so that each is proven once. The alias type system is universal: <code>{{pan}}</code>, <code>{{ni-number}}</code> and <code>{{ssn}}</code> are three values of one type, so the planner treats an identity number the same way in three countries and the substitutor places it through the same boundary. The policy layer's mechanism is core; the content of its flag table is per country and travels with the legal pack. The rule of classification, the state-machine invariant and the outcome-code vocabulary have one text each, and a country never edits them.</p>
+          <h3 id="adapter"><span class="no">1.2</span>What lives in the adapter</h3>
+          <p>A passport adapter is the per-country integration to a rail, plus the universal device bounce-back that every adapter carries. For India the rails are India Stack: DigiLocker, Account Aggregator and UPI Autopay. For the UK, Open Banking plus the current identity rails. For the US, bank-data aggregation and card tokenisation. Each is researched at write time in <a href="../03-trust-and-data/#passports">03</a>, and each returns values tokenised at the adapter's own boundary, so the planner sees aliases whichever rail produced them.</p>
+          <p>The rails also show why the adapter is a country's and not the core's. DigiLocker's partner API requires the user's own authorisation through an OAuth flow before a partner can list or pull a document <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>, and the RBI's Account Aggregator direction reserves the information-user role to entities regulated by a financial sector regulator and forbids an aggregator from supporting transactions <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>. Whether a rail is reached directly, through a regulated partner, or by a bounce to the user's device is therefore a per-country answer, held as a flag with a legal item behind it, exactly as <a href="dr-003-full-delegation-ceiling.html">DR-003</a> requires.</p>
+          <h3 id="legal-pack"><span class="no">1.3</span>The legal pack and the residency map</h3>
+          <p>The legal pack holds the filled-in flag table, the KYC last-mile items to verify for that jurisdiction, the privacy-law skeleton mapping, and the contractual safeguards the market needs. One safeguard is fixed in the ledger: Bengaluru staff processing UK or EU data is a restricted cross-border transfer needing contractual safeguards, and the vault provider's regional hosting is part of why that layer is bought rather than built, which <a href="dr-008-vault-bought.html">DR-008</a> records. The residency map says where each class of data sits for each market; sensitive values sit in the vault's regional instance, everything else with us. Both are drawn in <a href="../03-trust-and-data/#residency">03</a>.</p>
+          <h3 id="playbook"><span class="no">1.4</span>The playbook</h3>
+          <p>A new country is an adapter, a legal pack and a shift, in that order, as <a href="../06-roadmap/#expansion">06</a> sequences it. If a new country would need a change to the core, the core was not universal, and that is a defect to fix for every market rather than a customisation for one.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>Build for India first, fork for the west later</dt>
+            <dd>The fork carries rupee, Aadhaar and UPI assumptions into the planner and the envelope, and it multiplies: three harnesses, each re-proving the two fatals, with the invariant and the rule of classification drifting between them.</dd>
+            <dt>Build for one market only</dt>
+            <dd>The ledger places commercial viability in the US and the UK. A one-market build defers the markets that carry the business, and the later port is the fork above under another name.</dd>
+            <dt>Adapters that hand real values to the planner</dt>
+            <dd>A second and third entry point for real values into the model runtime. The alias model would be true of the intake gateway and false of every rail, and <a href="../03-trust-and-data/#threat-model">the threat model</a> would gain a path per adapter per country.</dd>
+            <dt>One global deployment with no residency map</dt>
+            <dd>The cross-border transfer question goes unanswered, so the Bengaluru floor cannot lawfully touch UK data, and the vault's regional hosting is paid for and unused.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A component in the core that knows which country it is in. Country is data: in the adapter, the flag table and the residency map.</li>
+            <li>A rail integration that talks to the planner, a worker or the context store in real values.</li>
+            <li>An expansion that requires a change to the core.</li>
+            <li>Sensitive values hosted outside the market's region, or workers processing a market's data before its legal pack is in place.</li>
+            <li>An adapter that bypasses the device bounce-back for an act the flag table says bounces.</li>
+            <li>A second alias type system, or a second text for any rule the core owns.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. The seam between core and adapter is drawn in <a href="../02-architecture/#adapters">02</a>, the rails and the residency map are specified in 03, and the expansion playbook is sequenced in 06.</p>
+        </section>
+      </article>
+      <section>
+        <h2 class="unnumbered" id="sources">Sources</h2>
+        <ol class="sources">
+          <li id="src-1">API Setu, <cite>DigiLocker Authorized Partner API specification, version 1.0.0</cite>, National eGovernance Division, undated; read from the APIs-guru mirror on 2 September 2026. <a class="url" href="https://apisetu.gov.in/api_specification_v8/authpartner.yaml">https://apisetu.gov.in/api_specification_v8/authpartner.yaml</a></li>
+          <li id="src-2">Reserve Bank of India, <cite>Master Direction, Non-Banking Financial Company, Account Aggregator (Reserve Bank) Directions, 2016</cite>, clauses 3, 5 and 8, updated as on 9 November 2017; read from a mirror of the direction text. <a class="url" href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598">https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598</a></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

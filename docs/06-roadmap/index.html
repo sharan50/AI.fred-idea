@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>06 Roadmap, AI.fred</title>
+<meta name="description" content="The harness-first build sequence in eight gated stages, the pilot scoped by capability rather than headcount, the build-versus-buy table with what each purchase commits us to, and the three-part playbook for entering a country.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">06 Roadmap</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="to-verify">to-verify<small>revised 2026-09-02</small></p>
+    <h1><span class="no">06</span><span class="title">Roadmap</span></h1>
+    <p class="standfirst">The harness comes first and the product sits on it. We build the alias vault and the substitutor before anything a customer can see, gate every later stage on the one before it, and open the pilot only when every gate has passed. A new country is an adapter, a legal pack and a shift, and the core does not change.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>06 Roadmap</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-to-verify">to-verify</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For engineers</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="sequence"><span class="no">1</span>The harness-first build sequence</h2>
+        <p>We build the harness in the order the two fatal failures dictate, and we build it before anything a customer can see. The alias vault and the substitutor come first, so that no later component ever handles a real value. The authority envelope and the classifier come second, so that no later executor can fire a step outside its grant. The state machine and the watchdog come third, so that no task can be forgotten once tasks exist. Only then do we build a surface on which a step can run. <a href="#fig-sequence">Figure 6.1</a> draws the eight stages in order, with what each one makes possible.</p>
+        <p>The sequence is ordered by preconditions, not by calendar. Each stage has a gate: a test that must pass before the next stage starts, stated below in terms an engineer can automate. No dates appear on this page because the only honest date is the one a gate produces; a stage that has not passed its gate is not late, it is unfinished.</p>
+        <figure class="fig" id="fig-sequence">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 6.1, harness-first build sequence, scrollable">
+          <svg viewBox="0 0 720 440" role="img" aria-labelledby="fig-sequence-title fig-sequence-desc">
+            <title id="fig-sequence-title">The harness-first build sequence</title>
+            <desc id="fig-sequence-desc">Eight stages in three rows, read left to right and then down: alias vault and substitution; envelope and classifier; state machine and watchdog; managed browser; telephony and mail relay; worker console; access ledger; intake gateway and first adapters; ending in a terminal box, pilot opens. Under each stage three lines state what it makes possible. The fourth stage, the managed browser, carries the accent stroke: it is the first stage at which the substitutor places a real value into a surface.</desc>
+            <defs>
+              <marker id="fig-sequence-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-box" x="8" y="8" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="20" y="28">Stage 1</text>
+            <text class="fg-label" x="20" y="50">Alias vault and</text>
+            <text class="fg-label" x="20" y="66">substitution</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="100">Values in the vault; aliases</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="116">everywhere else; only the</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="132">substitutor can detokenise</text>
+            <line class="fg-line" x1="208" y1="44" x2="248" y2="44" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="248" y="8" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="260" y="28">Stage 2</text>
+            <text class="fg-label" x="260" y="50">Envelope and</text>
+            <text class="fg-label" x="260" y="66">classifier</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="100">Every step has a class and a</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="116">reversibility; nothing runs</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="132">outside its envelope</text>
+            <line class="fg-line" x1="448" y1="44" x2="488" y2="44" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="488" y="8" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="500" y="28">Stage 3</text>
+            <text class="fg-label" x="500" y="50">State machine and</text>
+            <text class="fg-label" x="500" y="66">watchdog</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="100">No task ends by omission;</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="116">lapsed is not withdrawn; the</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="132">exceptions board fills</text>
+            <path class="fg-line" d="M688,44 H700 V144 H108 V156" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box-accent" x="8" y="156" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="20" y="176">Stage 4</text>
+            <text class="fg-label" x="20" y="198">Managed browser</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="248">First real value placed:</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="264">typed into our browser, seen</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="280">by a worker as dots</text>
+            <line class="fg-line" x1="208" y1="192" x2="248" y2="192" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="248" y="156" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="260" y="176">Stage 5</text>
+            <text class="fg-label" x="260" y="198">Telephony and</text>
+            <text class="fg-label" x="260" y="214">mail relay</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="248">Spoken or keyed on our line</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="264">with the worker muted; the</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="280">relay swaps aliases in mail</text>
+            <line class="fg-line" x1="448" y1="192" x2="488" y2="192" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="488" y="156" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="500" y="176">Stage 6</text>
+            <text class="fg-label" x="500" y="198">Worker console</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="248">Human steps run from task</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="264">cards, alias-only; outcome</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="280">codes; the board is staffed</text>
+            <path class="fg-line" d="M688,192 H700 V292 H108 V304" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="8" y="304" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="20" y="324">Stage 7</text>
+            <text class="fg-label" x="20" y="346">Access ledger</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="396">Every use of every alias,</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="412">in plain words, readable by</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="428">the user per task</text>
+            <line class="fg-line" x1="208" y1="340" x2="248" y2="340" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="248" y="304" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="260" y="324">Stage 8</text>
+            <text class="fg-label" x="260" y="346">Intake gateway and</text>
+            <text class="fg-label" x="260" y="362">first adapters</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="396">Any channel, one request</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="412">format; values tokenised at</text>
+            <text class="fg-label-small fg-label-soft" x="260" y="428">the edge; first passports</text>
+            <line class="fg-line" x1="448" y1="340" x2="488" y2="340" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-terminal" x="488" y="304" width="200" height="72" rx="2"/>
+            <text class="fg-label fg-label-strong fg-label-paper" x="588" y="345" text-anchor="middle">Pilot opens</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="396">Every gate passed; scope as</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="412">set in section 2; nothing</text>
+            <text class="fg-label-small fg-label-soft" x="500" y="428">skipped, nothing deferred</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 6.1</span> Eight stages in a fixed order, each gated on the one before; the accent marks the managed browser, the first stage at which the substitutor places a real value, so the redaction pipeline ships inside that stage and not after it.</figcaption>
+        </figure>
+        <p>The alternative order, the one a demo prefers, puts the intake channel and a browser agent first and bolts the vault on afterwards. We reject it because every surface built before the alias rule has handled real values, every log written before it contains them, and <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> would then have to close paths that need never have existed. Building the vault first costs nothing visible for three stages and saves a rebuild at the fourth.</p>
+        <dl class="def">
+          <dt>Stage 1: alias vault and substitution</dt>
+          <dd>The vault is bought (<a href="../decisions/dr-008-vault-bought.html">DR-008</a>) and the substitutor is written: the one small service with detokenise rights, in its own environment, accepting task id, step id, alias, surface and target descriptor, injecting directly into a surface and never returning a value to its caller. The alias grammar (<code>{{pan}}</code>, <code>{{account.hdfc}}</code>) and the two tokenising edges, the intake edge and the adapter boundary, are built as libraries now even though the gateway and the adapters come last. Gate: the vault SDK is absent from every build artefact except the substitutor and the two edges, checked by the build itself; a test proves that no other component can detokenise; the substitutor writes an access ledger entry on every call. What it makes possible: everything downstream is designed against aliases from its first line, and the first fatal is closed before there is anything to leak.</dd>
+          <dt>Stage 2: envelope and classifier</dt>
+          <dd>The envelope schema with its five fields, the point-of-no-return test, the rule of classification and the policy layer as a loaded flag table (the first market's, in draft) are built, and the planner learns to propose an envelope with every plan. Gate: a step library for the pilot's task types in which every step carries a class and a reversibility; a classifier evaluation set the planner is measured against; and an executor-side check, in the substitutor and in every executor, that refuses any step outside the envelope. What it makes possible: the second fatal is closed before a single executor exists, and <a href="../01-product/#envelope">the envelope a user sees in 01</a> is the same object the harness enforces.</dd>
+          <dt>Stage 3: state machine and watchdog</dt>
+          <dd>The states, transitions, timers and nudges of <a href="../02-architecture/#state-machine">the state machine in 02</a>, <code>lapsed</code> as a state the system alone can assign, and the watchdog that feeds the exceptions board. Gate: the invariant survives fault injection (a timer is deleted; the task must appear on the board before anything else happens); every transition is recorded with its cause; no code path reaches a terminal state without a named transition. What it makes possible: tasks can exist at all. A user can go quiet safely, and we cannot forget.</dd>
+          <dt>Stage 4: the managed browser</dt>
+          <dd>The first execution surface, and the accent in the figure: our browser, the substitutor's driver typing the value into the field, the worker's stream rendering it as dots, DOM capture masked by known-value matching. <a href="../02-architecture/#evidence-pipeline">The evidence pipeline</a> (capture, redact, verify, store) ships inside this stage and not after it, because this is the first moment a real value exists outside the vault. Gate: a canary test plants a known value and proves it appears in no stored artefact, no log and no frame a worker can see; the verification pass fails closed; the ledger entry the substitutor has written since stage 1 now names the surface. What it makes possible: <code>ai</code> and <code>human</code> steps on any web form, which is most of the wedge.</dd>
+          <dt>Stage 5: telephony and mail relay</dt>
+          <dd>Our numbers on a bought carrier platform, one call leg per party, the value spoken by synthesised speech or sent as keypad tones on the far leg while the worker's leg is muted and their panel shows "value placed"; transcripts alias-replaced before storage; the mail relay swapping aliases into outbound mail after the worker or the AI has composed it. Gate: the canary test repeated on audio, transcript and mail; a recording that fails the verify pass is destroyed, never stored; the relay holds no raw value at rest. What it makes possible: institutions reached by phone and by mail, which is where booking lines, helplines and applications live.</dd>
+          <dt>Stage 6: worker console</dt>
+          <dd>The task card, alias-only rendering, the outcome-code vocabulary, the dual-control check and the exceptions board, as <a href="../02-architecture/worker-console.html">the worker console page</a> specifies them. Gate: the console cannot render a real value because the vault SDK is not in it and the alias grammar is the only thing it can show; the state-machine invariant appears in it identically to 02; the L1 pool has run a shift on it against synthetic tasks. What it makes possible: <code>human</code> steps at the scale of a pool, and QA and escalation as duties with a screen.</dd>
+          <dt>Stage 7: the access ledger</dt>
+          <dd>The entries have existed since stage 1; this stage renders them per task, in plain words, on the user's device: which alias, used for what, on which surface, placed by whom, seen by whom, as <a href="../03-trust-and-data/#access-ledger">the ledger specification in 03</a> sets out. Gate: every ledger line maps to exactly one substitutor call; the ledger holds aliases and never values, tested against the threat model's evidence paths; a user can read a task's ledger without asking us. What it makes possible: the trust story becomes something a customer checks rather than believes.</dd>
+          <dt>Stage 8: intake gateway and first adapters</dt>
+          <dd>The channel-agnostic gateway normalising every channel into one request format and tokenising any typed or uploaded value at the edge; the universal device bounce-back; and the first market's passport adapters, tokenising at their boundary. The front-door channel is the per-market choice of <a href="../decisions/dr-001-channel-gateway.html">DR-001</a>. Gate: the canary test on intake (a planted value typed by a user is an alias before the planner sees it); adapter conformance (an adapter cannot return a raw value); the bounce-back works with no adapter at all. What it makes possible: a real user, and therefore the pilot.</dd>
+        </dl>
+      </section>
+      <section>
+        <h2 id="pilot"><span class="no">2</span>Pilot scope in capability terms</h2>
+        <p>The pilot is scoped by what the harness can do safely, not by how many people use it or what they pay. Five things define it: the verticals in scope, the step classes and reversibility the harness executes, the identity acts it delegates, the surfaces it runs on, and the market it opens in. The first four are fixed here. The fifth is open, and this page says so rather than guessing.</p>
+        <h3 id="pilot-verticals"><span class="no">2.1</span>Verticals</h3>
+        <p>Three of the six marquee verticals open the pilot: banking and wealth, identity and security, and legal and administrative. They are chosen because every task in them exercises the substitutor and the envelope, so the pilot tests the promise itself and not a proxy for it. Health and medical joins when stage 5 has passed its gate and an L2 health pod exists, because health tasks live on booking lines. Travel and family affairs join last: they carry less consequence, they are where the flat-fee category lives (see <a href="../00-thesis/#landscape">the landscape in 00</a>), and they belong on the roadmap because a household delegates all of its admin to one assistant, not because they prove anything about trust.</p>
+        <h3 id="pilot-steps"><span class="no">2.2</span>Step classes and reversibility</h3>
+        <p>All three step classes exist from the day the classifier does. In the pilot, <code>ai</code> steps run only on the managed browser; <code>human</code> steps run from task cards on every surface that has passed its gate; <code>user</code> steps bounce to the user's device without exception. Reversible steps inside the envelope execute. Irreversible steps inside the envelope execute under dual control, with the L3 super-trust tier as the checking party for the whole pilot, whichever party executes. Irreversible steps outside the envelope bounce; reversible steps outside it become extension requests. Envelope defaults per task type are set narrow and widened by the user deliberately, and a task past its validity window fires nothing irreversible without re-authorisation.</p>
+        <h3 id="pilot-identity"><span class="no">2.3</span>Delegated identity acts</h3>
+        <p>Only the identity act types the first market's policy layer flags as delegated are delegated in the pilot; everything flagged bounce, or prohibited pending a regulatory answer, stays with the user even where the user ticks it. The pilot's flag table is therefore the first draft of that market's lobbying agenda (<a href="../03-trust-and-data/#policy-flags">the policy flags in 03</a>), and every prohibited line is a legal to-verify with an owner in <a href="../07-open/#items">07</a>.</p>
+        <h3 id="pilot-surfaces"><span class="no">2.4</span>Surfaces</h3>
+        <p>The managed browser from the first task; telephony and the mail relay once stage 5 has passed its gate. A worker never uses a tool of their own, in the pilot as afterwards, and <a href="../01-product/#refusals">the refusals in 01</a> apply unchanged.</p>
+        <h3 id="pilot-market"><span class="no">2.5</span>Which market first</h3>
+        <p>Which market the first cohort lives in is an open decision. It is listed in <a href="../07-open/#items">07</a> with an owner and a trigger, and this page does not pre-empt it. What the decision changes is bounded: the adapter set, the legal pack, the shift on the wheel and the front-door channel of <a href="../decisions/dr-001-channel-gateway.html">DR-001</a>. What it does not change is any of the eight stages; the harness is built in Bengaluru whichever way it goes, as <a href="../00-thesis/#markets">the markets section of 00</a> sets out. The pilot therefore has one build and three possible first doors.</p>
+        <p>What the pilot must produce is also fixed: verdict rates per task type joined to step traces, the improvement loop of <a href="../decisions/dr-002-verdict-two-loops.html">DR-002</a>; the exceptions-board history; a ledger for every task; and the operational measurements <a href="../05-business/#when-it-reopens">05</a> names for the day economics reopens. The pilot opens when every stage has passed its gate and a person who did not build the harness has hunted the two fatals through it and found nothing.</p>
+      </section>
+      <section>
+        <h2 id="build-buy"><span class="no">3</span>Build versus buy</h2>
+        <p>We buy what must be boring and audited and build what carries the promise. Four components are bought: the tokenisation vault, telephony, the browser sandbox and the models. Seven are built: the planner, task cards, the substitution component, the authority envelope, the state machine, the worker console and the access ledger. <a href="#tab-build-buy">Table 6.1</a> gives the reason for each and what the choice commits us to. Buying is never free; it is a commitment to someone else's roadmap, regions and outages, and the table says so.</p>
+        <div class="table-wrap wide" id="tab-build-buy">
+        <table class="data">
+          <caption><span class="tab-no">Table 6.1</span> Buy the layers whose value is being audited and boring; build every layer that touches the promise.</caption>
+          <thead><tr><th>Component</th><th>Decision</th><th>Reason</th><th>What it commits us to</th></tr></thead>
+          <tbody>
+            <tr><td class="key">Tokenisation vault</td><td class="mono">buy</td><td>Its job is to hold real values, issue aliases and be audited, regionally hosted and dull. Providers of the Skyflow, VGS and Basis Theory class sell regional hosting and third-party attestations <span class="chip chip-to-verify">to-verify</span>, which we would otherwise have to build and prove. Recorded as <a href="../decisions/dr-008-vault-bought.html">DR-008</a>.</td><td>The provider's regions become the first constraint on <a href="../03-trust-and-data/#residency">the residency map</a>; its SDK is confined to the substitutor and the two edges; its outages are ours; and a re-tokenisation path to a second provider is tested before the pilot opens.</td></tr>
+            <tr><td class="key">Telephony</td><td class="mono">buy</td><td>Carrier interconnect and numbers in three countries are not our business. Programmable-telephony platforms expose per-leg control, muting, keypad tones and synthesised speech on a chosen leg <span class="chip chip-to-verify">to-verify</span>, which is all the substitutor needs.</td><td>A provider whose media path splits per leg; a contract under which the provider never stores a recording we have not redacted; per-country numbers and caller identity; a second carrier behind the same call-leg interface.</td></tr>
+            <tr><td class="key">Browser sandbox</td><td class="mono">buy</td><td>Isolated, streamed browser sessions are a product category <span class="chip chip-to-verify">to-verify</span>. What matters is ours and sits on top: the driver that types the value, the stream that renders dots, the DOM masking.</td><td>The sandbox's isolation guarantees enter the threat model as a named path; the provider must let the substitutor's driver run inside the boundary; no session state persists outside our control; a second sandbox runs behind the same driver.</td></tr>
+            <tr><td class="key">Models</td><td class="mono">buy</td><td>Frontier models are rented, not built. The planner and the classifier are prompts, tools, evaluation sets and guard code around a model that must be swappable.</td><td>Aliases only in every prompt, with the vault SDK never in the model runtime; no training on our data; regional inference where a legal pack demands it, if the provider offers it <span class="chip chip-to-verify">to-verify</span>; a model-swap run against the classifier's evaluation set.</td></tr>
+            <tr><td class="key">Planner</td><td class="mono">build</td><td>The plan is the product: the step vocabulary, re-planning on outcome codes and the envelope proposal are the venture's judgement made executable.</td><td>An evaluation set per task type, judged by verdict rates, that every model swap and every prompt change must pass.</td></tr>
+            <tr><td class="key">Task cards</td><td class="mono">build</td><td>Need-to-know is a design property: a pseudonymised client, only the fields the step needs, as aliases, with the script and a structured result.</td><td>The card generator is the only path to a worker's screen; nothing reaches a worker that the generator did not emit.</td></tr>
+            <tr><td class="key">Substitution component</td><td class="mono">build</td><td>The one component with detokenise rights. It must be small enough to read in an afternoon and audit line by line, and it is specific to our three surfaces, so nobody sells it.</td><td>Isolation; a fixed interface (task id, step id, alias, surface, target descriptor); it never returns a value; it writes the ledger; it checks the envelope and the policy layer before every injection.</td></tr>
+            <tr><td class="key">Authority envelopes</td><td class="mono">build</td><td>The envelope and the point-of-no-return test are the second fatal's mitigation and must be enforced in our code at every executor, not configured in someone else's.</td><td>The envelope check lives in the substitutor, the classifier and the dual-control step; edits mid-task apply exactly as <a href="../decisions/dr-004-authority-envelope.html">DR-004</a> states.</td></tr>
+            <tr><td class="key">State machine</td><td class="mono">build</td><td>The invariant is architectural. A workflow engine's defaults, implicit terminal states and silent timeouts, are exactly what <a href="../decisions/dr-005-state-machine-lapsed.html">DR-005</a> forbids.</td><td>Explicit transitions, a live timer on every non-terminal state, the watchdog and the exceptions board, all under fault-injection tests.</td></tr>
+            <tr><td class="key">Worker console</td><td class="mono">build</td><td>It is the alias-only rule made visible. A generic service desk would render fields we must never render and would need the vault SDK to do its job.</td><td>Alias-only rendering, outcome codes, the exceptions board, and the invariant text identical to 02, checked on every pass.</td></tr>
+            <tr><td class="key">Access ledger</td><td class="mono">build</td><td>The trust story in plain words, written by the substitutor and read by the user. It is the customer-facing proof of the promise and nobody else's product.</td><td>Append-only; one line per alias use; readable per task from the user's device; aliases only, so the ledger itself is not a leak path.</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Every bought component has a swap test before the pilot opens, because a bought component we cannot leave is a built component with worse terms. Nothing built is ever exposed to a bought component's raw output without a tokenising edge in between, and the vault, the sandbox and the carrier each appear as a named path in the threat model rather than as a trusted box.</p>
+      </section>
+      <section>
+        <h2 id="expansion"><span class="no">4</span>The country-expansion playbook</h2>
+        <p>A new country is an adapter, a legal pack and a shift, and nothing else changes. That is the decision of <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a>: the universal core is one build, country-agnostic, and entering a country must not touch it. The checklist below is what we run for each of the three markets and for any fourth. A country is live when every line is ticked, and not before.</p>
+        <h3 id="expansion-adapter"><span class="no">4.1</span>The adapter</h3>
+        <ol>
+          <li>Inventory the country's rails: identity, documents, bank data, payments, signatures, and the institutions the wedge verticals touch.</li>
+          <li>For each rail, choose one of three routes: integrate directly where the rail admits us; integrate through a regulated partner where the rail is reserved to regulated entities; bounce to the user's device where neither is open. The bounce-back is universal and works before any adapter exists.</li>
+          <li>Build the passport adapter behind the adapter boundary, as <a href="../02-architecture/#adapters">the adapter model in 02</a> draws it: it tokenises every value it receives before the planner sees it and returns aliases only.</li>
+          <li>Pass adapter conformance: a planted value cannot cross the boundary, and every consent artefact and its expiry is recorded in the context store as a fact with source and date.</li>
+        </ol>
+        <h3 id="expansion-legal"><span class="no">4.2</span>The legal pack</h3>
+        <ol>
+          <li>Load the policy flag table for the jurisdiction: per step type, delegated, bounce, or prohibited pending a regulatory answer. Every prohibited line becomes a lobbying-agenda entry with its end-user benefit stated.</li>
+          <li>File the KYC last-mile constraints as legal to-verifies with owners in <a href="../07-open/#items">07</a>. Design carries the ceiling; the flags carry the law.</li>
+          <li>Add the country to <a href="../03-trust-and-data/#residency">the data-residency map</a>: vault region, evidence-store region, inference region, and the cross-border safeguards for staff in Bengaluru processing the country's data.</li>
+          <li>Extend <a href="../03-trust-and-data/#privacy-law">the privacy-law skeleton in 03</a> and record the consumer-law liability position, since it is our name on the agent.</li>
+          <li>Settle the contactable-party defaults and the refusals list for the country.</li>
+        </ol>
+        <h3 id="expansion-shift"><span class="no">4.3</span>The shift</h3>
+        <ol>
+          <li>Place the country on <a href="../04-operations/#shifts">the 24/7 wheel in 04</a>: the shift that covers its business hours and the handover on either side of it.</li>
+          <li>Stand up the L2 pods for the verticals opening in that country, with QA and escalation cover on the same shift.</li>
+          <li>Provision the country's numbers, caller identity and languages on our telephony, and the substitution stations under <a href="../04-operations/#site-controls">the site controls</a>, which do not vary by country.</li>
+          <li>Render the ledger in the country's plain words and check that <a href="../03-trust-and-data/trust-story.html">the trust story</a> reads true there.</li>
+        </ol>
+        <p>The three markets are instances of the same list, and their preconditions differ in ways the research to date can state only partly. <a href="#tab-preconditions">Table 6.2</a> records what is known for each, chipped as the evidence allows. Every to-verify line has an owner in 07, and the KYC last mile in the UK and the US has not yet been researched at all, which the table says rather than hides.</p>
+        <div class="table-wrap wide" id="tab-preconditions">
+        <table class="data">
+          <caption><span class="tab-no">Table 6.2</span> What the adapter and the legal pack must absorb in each market, as far as the research to date can say.</caption>
+          <thead><tr><th>Market</th><th>Claim</th><th>Status</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="key">India</td><td>A document pull from DigiLocker needs the user's own authorisation on a DigiLocker consent page, with a stated purpose and a consent expiry: a bounce, then an adapter fetch.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a></td><td>NeGD and MeitY, Requester API specification v2.3, September 2023</td></tr>
+            <tr><td class="key">India</td><td>Only an entity regulated by a financial sector regulator may be an Account Aggregator information user, so bank-data access runs through a regulated partner, never directly.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a></td><td>RBI, Master Direction on Account Aggregators, 2017</td></tr>
+            <tr><td class="key">India</td><td>A regulated entity may rely on third-party customer due diligence only from a regulated third party or the central registry, and video KYC is run only by the entity's own trained officials: a KYC step is a user act, never ours.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-3">[3]</a></td><td>RBI, Master Direction on KYC, updated 14 August 2025</td></tr>
+            <tr><td class="key">India</td><td>Aadhaar authentication by a private entity needs a proposal approved through the sponsoring ministry, UIDAI and MeitY under the January 2025 amendment rules.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-4">[4]</a></td><td>PTI via ThePrint, 31 January 2025</td></tr>
+            <tr><td class="key">India</td><td>Delegated UPI spending runs on UPI Circle at Rs 5,000 per transaction and Rs 15,000 a month, and software profiles are admitted only in a closed user group with each debit initiated by explicit user action.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>NPCI circulars OC 201 and OC 201B, seen only as quoted by third parties</td></tr>
+            <tr><td class="key">UK</td><td>Open banking is moving from Open Banking Limited under the CMA Order to a Future Entity overseen by the FCA, with a consultation on the long-term framework before the end of 2026.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>FCA feedback statement FS25/4, August 2025, seen only in excerpt</td></tr>
+            <tr><td class="key">UK</td><td>Whether a party acting for the customer can hold an account-information or payment-initiation consent has not been researched; the adapter route for bank data is undecided until it is.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Gap: Payment Services Regulations 2017 and the FCA approach document, not yet read</td></tr>
+            <tr><td class="key">UK</td><td>GOV.UK One Login is the sign-in for government services and the Digital Verification Services trust framework 1.0 came into force on 1 September 2026; no delegated access to a One Login account was found.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Government Digital Service and OfDIA announcements, seen only in excerpt</td></tr>
+            <tr><td class="key">UK</td><td>The KYC last mile (reliance under the Money Laundering Regulations 2017, JMLSG guidance, third-party mandates, lasting power of attorney) has not been researched.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Gap: legislation.gov.uk and JMLSG Part I, not yet read</td></tr>
+            <tr><td class="key">UK</td><td>The business is responsible for what its AI agent does even where the technology is supplied by a third party.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-5">[5]</a></td><td>CMA guidance of 9 March 2026, as summarised by Cooley, 26 March 2026</td></tr>
+            <tr><td class="key">UK</td><td>Bengaluru staff processing UK data is a restricted cross-border transfer needing contractual safeguards.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>UK GDPR transfer rules; a legal item in 07</td></tr>
+            <tr><td class="key">US</td><td>Regulation E has no rule for a standing authorisation given to an agent, and no CFPB guidance squarely applies as of August 2026.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Law-firm and trade commentary, 2026; the primary texts not yet read</td></tr>
+            <tr><td class="key">US</td><td>Card networks bind a tokenised credential to a named agent and merchant scope (Mastercard Agent Pay; Visa Trusted Agent Protocol), so an agent never holds the card number.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Trade press, 2025 to 2026; no consumer-liability terms found</td></tr>
+            <tr><td class="key">US</td><td>California AB 316 bars a defendant who used AI from arguing that the AI autonomously caused the harm, from 1 January 2026.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-6">[6]</a></td><td>DataGuidance, October 2025</td></tr>
+            <tr><td class="key">US</td><td>Bank-data aggregation routes and the state privacy laws that apply to the first cohort's states have not been researched.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Gap: to research when the first US cohort is scoped</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+      <section>
+        <h2 class="unnumbered" id="sources">Sources</h2>
+        <p>Verified in this edition means verified against a mirror or a search-engine excerpt of the named document, because direct page reads were blocked; <a href="../decisions/dr-013-verification-standard.html">DR-013</a> records the standard and every source below is to be re-read before circulation.</p>
+        <ol class="sources">
+          <li id="src-1">National e-Governance Division, Ministry of Electronics and Information Technology, <cite>Requester (Meri Pehchaan) API Specification v2.3</cite>, September 2023; read from a public mirror of the specification text. <a class="url" href="https://github.com/techSaswata/zuup-central-auth/blob/main/mp_spec.txt">https://github.com/techSaswata/zuup-central-auth/blob/main/mp_spec.txt</a></li>
+          <li id="src-2">Reserve Bank of India, <cite>Master Direction: Non-Banking Financial Company, Account Aggregator (Reserve Bank) Directions, 2016</cite>, text updated as on 9 November 2017. <a class="url" href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598">https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=10598</a></li>
+          <li id="src-3">Reserve Bank of India, <cite>Master Direction: Know Your Customer (KYC) Direction, 2016</cite>, updated as on 14 August 2025, paragraphs 17 and 18. <a class="url" href="https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566">https://www.rbi.org.in/Scripts/BS_ViewMasDirections.aspx?id=11566</a></li>
+          <li id="src-4">Press Trust of India via ThePrint, <cite>Govt amends norms to restore Aadhaar verification process for private entities</cite>, 31 January 2025. <a class="url" href="https://theprint.in/economy/govt-amends-norms-to-restore-aadhaar-verification-process-for-private-entities/2473903/">https://theprint.in/economy/govt-amends-norms-to-restore-aadhaar-verification-process-for-private-entities/2473903/</a></li>
+          <li id="src-5">Cooley, <cite>AI agents and consumer law: what businesses need to know</cite>, summarising the Competition and Markets Authority guidance of 9 March 2026, 26 March 2026. <a class="url" href="https://www.cooley.com/news/insight/2026/2026-03-26-ai-agents-and-consumer-law-what-businesses-need-to-know">https://www.cooley.com/news/insight/2026/2026-03-26-ai-agents-and-consumer-law-what-businesses-need-to-know</a></li>
+          <li id="src-6">DataGuidance, <cite>California: bill on defences used by AI developers or users signed into law</cite>, October 2025. <a class="url" href="https://www.dataguidance.com/news/california-bill-defenses-used-ai-developers-or-users-1">https://www.dataguidance.com/news/california-bill-defenses-used-ai-developers-or-users-1</a></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>
