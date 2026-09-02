@@ -1,14 +1,65 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "statuses": [
-    "verified",
-    "to-verify",
-    "amber",
-    "decision",
-    "assumption"
+  "updated": "2026-09-02",
+  "statuses": {
+    "verified": "never a page status",
+    "to-verify": "the page carries external claims not yet verified",
+    "amber": "the page states an amber decision of its own with a trigger",
+    "assumption": "the page rests on stated assumptions",
+    "decision": "the page rests only on fixed decisions"
+  },
+  "sections": [
+    {
+      "key": "index",
+      "pages": 0
+    },
+    {
+      "key": "00-thesis",
+      "pages": 0
+    },
+    {
+      "key": "01-product",
+      "pages": 0
+    },
+    {
+      "key": "02-architecture",
+      "pages": 0
+    },
+    {
+      "key": "03-trust-and-data",
+      "pages": 0
+    },
+    {
+      "key": "04-operations",
+      "pages": 0
+    },
+    {
+      "key": "05-business",
+      "pages": 1
+    },
+    {
+      "key": "06-roadmap",
+      "pages": 0
+    },
+    {
+      "key": "07-open",
+      "pages": 0
+    },
+    {
+      "key": "decisions",
+      "pages": 1
+    }
   ],
   "pages": [
+    {
+      "path": "05-business/index.html",
+      "title": "05 Business",
+      "section": "05-business",
+      "status": "decision",
+      "summary": "Economics, pricing and unit costs are deferred to after a Series A or B by the founder's decision. This page states the deferral, the trigger for reopening it, and what will be needed then.",
+      "updated": "2026-09-02"
+    },
     {
       "path": "decisions/dr-012-design-plan.html",
       "title": "DR-012 The design plan: an engineering dossier",
