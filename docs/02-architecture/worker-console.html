@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>Worker console, AI.fred</title>
+<meta name="description" content="The operator's task-card view, the alias-only rule, the structured outcome codes, dual control from the worker's side, the exceptions board, and the state-machine invariant identical to 02.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">02 Worker console</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">02</a></span><span class="title">Worker console</span></h1>
+    <p class="standfirst">A worker sees exactly what one step needs and nothing else: a pseudonym, a script, aliases, an expected outcome and a result form. The console cannot render a real value because none reaches it. This page specifies that view, the codes a step closes with, dual control as the worker meets it, and the board that catches anything without a timer.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>02 Worker console</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For engineers</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="task-card"><span class="no">1</span>The task card</h2>
+        <p>A task card is the whole of a worker's world for the duration of one step, and it is generated, not written. When a <code>human</code> step reaches <code>ready</code>, the task service's card generator projects the step record from <a href="./#step-record">the step record in 02</a> into a card, with the script the planner wrote from the step template, and offers it to the pool the step type's catalogue entry names in its <code>pool</code> field: L1 generalists, an L2 specialist pod for the vertical, or L3 super-trust, per <a href="../04-operations/#tiers">the tiers in 04</a>. Cards are offered in order of earliest step deadline, then plan order, to every signed-in worker whose tier and pod on the shift roster match the pool; a worker's identity is the console sign-in bound to their badge, and their id, <code>w_...</code>, is on every event they cause. A worker claims a card, the step moves to <code>running</code>, and the card is live until the step closes. A claim survives a dropped connection for a grace interval (illustrative: two minutes), after which the card returns to the pool as a recorded step-state event with the surface released; at shift end a live card is handed over by name under the handover rule in <a href="../04-operations/#handover">04</a> or returned the same way, and a call in progress is finished by the worker on it first. Then it is gone: the console keeps no history a worker can open once a step closes, and a worker never holds two live cards at once.</p>
+        <p>The card has six parts, in this order, and nothing else. A header naming the pseudonymous client ("Client 4471"), the task and step position, the pool, and the live step timer. The step, in one sentence. The script: what to say or do, in order, with the moments at which a value is to be placed marked as actions rather than as text. The fields for this step, as aliases, each with a Place control and a masked rendering slot. The expected outcome, which is the test the result is checked against. And the result form, which closes the step with one outcome code and the fields that code requires. Every free-text part of the card, the step sentence, the expected outcome, the facts in clear projected into them, a question and a variance note, is rendered through the same allowlist default paint as an inbound message (section 2.3), after the hash service's screen: a token outside the cleared vocabulary is painted, and a painted token the step needs is requested as a typed field on the user's device or closes the step <code>blocked-needs-user</code>. Figure 2.5 shows the anatomy.</p>
+        <figure class="fig" id="fig-task-card">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 2.5, the anatomy of a task card, scrollable">
+          <svg viewBox="0 0 720 560" role="img" aria-labelledby="fig-task-card-title fig-task-card-desc">
+            <title id="fig-task-card-title">The anatomy of a task card</title>
+            <desc id="fig-task-card-desc">A single card for Client 4471, step three of six, with a live timer: the step in one sentence, a four-line script, two field rows for the name and the date of birth, each with its alias, a masked value cell and a Place control, the surface note, the expected outcome and the result form. Annotations to the right explain each part. The accent element is the outline of the masked value column, which the console cannot render.</desc>
+            <rect class="fg-box" rx="2" x="8" y="16" width="456" height="520"/>
+            <text class="fg-label fg-label-strong" x="24" y="44">Client 4471</text>
+            <text class="fg-label-small" x="140" y="44">task 12, step 3 of 6</text>
+            <text class="fg-label-small" x="300" y="44">L1 pool</text>
+            <text class="fg-label-small" x="372" y="44">timer: live</text>
+            <line class="fg-rule" x1="8" y1="60" x2="464" y2="60"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="80">Step</text>
+            <text class="fg-label-small" x="24" y="96">Book the earliest cardiology appointment next week</text>
+            <text class="fg-label-small" x="24" y="110">with Max Healthcare's booking line, at no fee.</text>
+            <line class="fg-rule" x1="8" y1="126" x2="464" y2="126"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="146">Script</text>
+            <text class="fg-label-small" x="24" y="162">1  Ask for the cardiology desk.</text>
+            <text class="fg-label-small" x="24" y="176">2  When asked for the name or date of birth, press Place.</text>
+            <text class="fg-label-small" x="24" y="190">3  Read the slot back; note the reference was captured.</text>
+            <text class="fg-label-small" x="24" y="204">4  Give no other detail. End the call.</text>
+            <line class="fg-rule" x1="8" y1="220" x2="464" y2="220"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="240">Fields for this step (only these)</text>
+            <rect class="fg-box" rx="2" x="24" y="252" width="116" height="40"/>
+            <text class="fg-label-small" x="36" y="276">name</text>
+            <rect class="fg-box" rx="2" x="144" y="252" width="120" height="40"/>
+            <text class="fg-label-small" x="156" y="276">{{name}}</text>
+            <rect class="fg-box-accent" rx="2" x="268" y="252" width="108" height="88"/>
+            <text class="fg-label-small" text-anchor="middle" x="322" y="276">not rendered</text>
+            <text class="fg-label-small" text-anchor="middle" x="322" y="324">not rendered</text>
+            <rect class="fg-box" rx="2" x="380" y="252" width="64" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="412" y="276">Place</text>
+            <rect class="fg-box" rx="2" x="24" y="300" width="116" height="40"/>
+            <text class="fg-label-small" x="36" y="324">date of birth</text>
+            <rect class="fg-box" rx="2" x="144" y="300" width="120" height="40"/>
+            <text class="fg-label-small" x="156" y="324">{{dob}}</text>
+            <rect class="fg-box" rx="2" x="380" y="300" width="64" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="412" y="324">Place</text>
+            <text class="fg-label-small fg-label-soft" x="24" y="358">surface: our phone line; audio muted while the system places it</text>
+            <line class="fg-rule" x1="8" y1="372" x2="464" y2="372"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="392">Expected outcome</text>
+            <text class="fg-label-small" x="24" y="408">A booked slot next week with a reference number; no fee.</text>
+            <line class="fg-rule" x1="8" y1="424" x2="464" y2="424"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="444">Result: fill in to close the step</text>
+            <text class="fg-label-small" x="24" y="460">code       ok / ok-with-variance / blocked-third-party / ...</text>
+            <text class="fg-label-small" x="24" y="476">reference  set by the controller</text>
+            <text class="fg-label-small" x="24" y="492">party      ______________</text>
+            <text class="fg-label-small" x="24" y="508">variance   ______________</text>
+            <text class="fg-label-small" x="24" y="524">timestamp  set by the console</text>
+            <line class="fg-line-soft" x1="466" y1="40" x2="480" y2="40"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="40">pseudonym only: no name, no</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="54">contact detail, no history</text>
+            <line class="fg-line-soft" x1="466" y1="92" x2="480" y2="92"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="96">the step in one sentence</text>
+            <line class="fg-line-soft" x1="466" y1="158" x2="480" y2="158"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="162">the script: what to say, in</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="176">order, and nothing else</text>
+            <line class="fg-line-soft" x1="466" y1="296" x2="480" y2="296"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="286">aliases: all the console holds</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="300">accent: the values cannot be</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="314">rendered here at all</text>
+            <line class="fg-line-soft" x1="466" y1="404" x2="480" y2="404"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="408">what the result is checked</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="422">against</text>
+            <line class="fg-line-soft" x1="466" y1="456" x2="480" y2="456"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="460">one code from the fixed</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="474">vocabulary closes the step</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="552">illustrative content; a real card carries the fields its step needs and no others</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 2.5</span> Everything a worker needs to place two values on one call, and nothing that would let them know whose values they are; the identifiers are illustrative.</figcaption>
+        </figure>
+        <p>The Place control is the only way a worker cues a value onto a surface, and the value never passes through the console, which never calls the substitution component. Pressing it sends the task service the step and the alias; the task service hands the tap to the step's surface controller, the browser controller, the telephony controller or the mail relay, which alone may write a placement request, naming the task, the step, the alias, the surface and the target (the field's accessibility node and origin in the managed browser, the far leg and the spoken format in telephony, the placeholder occurrences in the mail relay) with the signed step context, as <a href="./#surface-controllers">the surface controllers in 02</a> and <a href="../03-trust-and-data/#substitutor-interface">the substitutor's interface in 03</a> specify. The substitution component runs its checks, performs the placement directly into the surface, writes the ledger entry, and returns a receipt to the controller: <code>placed</code>, <code>not-confirmed</code>, <code>refused</code> naming the check that failed, or <code>failed</code> with a reason class. The controller closes or continues the step and the task service records the outcome; the console renders the receipt in the masked slot and has no route by which the value could arrive. On <code>placed</code> the script continues. On <code>not-confirmed</code> or <code>failed</code> the slot says so and offers Place again, a retry under a token the step runner issues, up to the step's cap, after which the task service closes the step <code>failed-retryable</code> and re-queues it; a committing placement is the exception, a payment instrument or instruction or an alias the catalogue marks consumed on placement, which needs the approval token like a submit, carries the fired marker from its first tone or character and on <code>not-confirmed</code> closes <code>failed-final</code> with the marker and no retry, as <a href="./#surface-controllers">02</a> fixes. On <code>refused</code> the worker chooses nothing: the task service closes the step <code>refused-policy</code> with the check named as the policy reference, the card shows the closure, and the planner re-plans or bounces the act. A worker chooses <code>blocked-outside-envelope</code> whenever the party asks for something the envelope's lines on the card do not cover, a fee the caption reports outside the sub-cap included, before or after a placement; a placement already made stands in the ledger and is not undone by the code. The envelope lines a card carries are presence and comparison only, never a number: a cap of zero reads "spend cap: no spend", any other cap "spend cap: set", and a fee is reported by the caption's comparison line, so no card, caption or check card carries an amount and the hash service's amount-pattern screen holds on every card payload.</p>
+        <p>Beside the card sits the surface panel: the masked video stream of the managed browser, the call panel with its mute indicator, its "value placed" notice, the caption of the re-voiced masked transcript, which is all the worker hears of the far party and which reads "span masked" wherever a tone replaced a span the transcriber did not clear, the comparison line where the step's catalogue entry names an amount field, "fee inside the sub-cap: yes", shown in place of an amount the worker never hears, and the notices of the media server's outbound gate in <a href="./#telephony">02</a>, which on a step holding no approval token delivers only the script's lines with their permitted variants and the non-committing lexicon: "held; off script" when it holds anything else, on which the worker re-phrases, and two raised when it cuts a commitment-form utterance the worker spoke, before the far party hears a word of it: "commitment held; send for check" on an irreversible step not yet checked, which moves the step to <code>checking</code>, and "commitment cut; this step commits nothing" on a reversible step, where the cut is final, the step enters no check and holds no token, and a party who will not proceed without a commitment is answered by closing the step <code>blocked-outside-envelope</code>; or the mail composer with aliases in the text and, for an inbound message, the relay's painted rendering (section 2.3). The card's timer is the step deadline from the state machine, and it is live in the sense the invariant requires: when it expires, the step does not wait for the worker; the task service acts on the tick by the step type's <code>on_timeout</code> in <a href="./#timers">the timers in 02</a>, which re-queues the step with the card revoked, re-plans it or escalates it, and the card tells the worker so. How cards are pseudonymised, and what the floor around a worker looks like, is operational and specified in <a href="../04-operations/#task-cards">task cards in 04</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="alias-only"><span class="no">2</span>The alias-only rule</h2>
+        <p>Aliases are all a worker ever handles, and the console enforces this by what it is built from rather than by what workers are told. The rule has three layers: what a worker can see, what a worker cannot see, and what the console technically cannot render even if someone tried.</p>
+        <h3 id="can-see"><span class="no">2.1</span>What a worker can see</h3>
+        <ul>
+          <li>The pseudonymous client reference, the task and step position, the pool and the timer.</li>
+          <li>The step, the script and the expected outcome, in plain words, generated from the step record.</li>
+          <li>Each field the step needs, as a typed alias such as <code>{{name}}</code> or <code>{{dob}}</code>, and the state of its placement: not yet placed, placed, refused.</li>
+          <li>The non-sensitive facts the step needs, as plain statements ("prefers morning appointments"), drawn from the context store by the planner, written into the step record and projected into the step sentence and the script; they are not a seventh part of the card. A speciality or department is such a fact; a diagnosis is a vaulted class and never one.</li>
+          <li>The surface panel, masked: a browser stream in which every substitution point, every echoed value and every run in a class format renders as dots, a call heard only as the re-voicing of the masked transcript, in which the placement window and every span the transcriber has not cleared are tones, a mail draft that carries aliases and an inbound message rendered with every token outside the cleared vocabulary painted.</li>
+          <li>The result form, the outcome codes and their required fields.</li>
+        </ul>
+        <h3 id="cannot-see"><span class="no">2.2</span>What a worker cannot see</h3>
+        <ul>
+          <li>The user's name, address, phone number or email in the clear, or any other person's: a nominee's or a relative's name and date of birth are aliases of the same class qualified by the person, <code>{{name.nominee}}</code>, <code>{{dob.nominee}}</code>, and the relationship word is the only fact in clear. The user's are vault-held aliases, <code>{{name}}</code>, <code>{{address.home}}</code>, <code>{{phone}}</code> and <code>{{email}}</code>, placed like any other; the user is Client 4471 on every card of this task and a different number on their next task, because the pseudonym is issued per task and never derived from the user id, as <a href="../04-operations/#need-to-know">04</a> fixes, and a party we call is dialled from the envelope, never from a number a worker reads.</li>
+          <li>Any real value, on any surface, at any time. Not in a field, not in a frame, not on the call, not in a draft, not in an artefact.</li>
+          <li>Any other step of the task, the plan, the envelope beyond the lines the step touches, the task's history or the user's verdict. A card carries the one line of context its step needs, and a worker who needs more closes the step <code>failed-final</code> with the reason "script does not fit" and the alternatives tried, or <code>blocked-needs-user</code> where the gap is a fact only the user holds.</li>
+          <li>The context store. A worker never queries it; the planner draws from it into the step record.</li>
+          <li>The evidence store. Redacted artefacts are for audit, dispute and a dual-control check, and viewing them is a logged act by a person in a QA or escalation function or by a checker, never a worker executing a step.</li>
+        </ul>
+        <h3 id="cannot-render"><span class="no">2.3</span>What the console technically cannot render</h3>
+        <p>The console has no vault SDK and no route to the substitution component's output, because that component never returns a value to any caller. Every record the console receives, the step record and the card payload, is screened before it leaves the task service by the hash service's screening call in <a href="./#hash-service">02</a>, which runs the four detectors the vault's edge proxy runs and never hands the task service a digest, because no component in the alias zone computes a known-value match itself; a payload the screen had to tokenise was a defect, and the task service keeps only the screened text and raises an incident; the card's free-text fields are then rendered through the allowlist default paint of section 1, the same as the relay's below, so a term no detector could name is painted rather than read. The browser stream is masked before it is encoded, inside the sandbox, so the unmasked frame never exists on the console's side of the wire. The audio the worker hears is never the far leg: it is the media server's re-voicing of the masked transcript, synthetic speech with the caption, produced behind the delay buffer specified in <a href="./#telephony">telephony in 02</a> at all times, before, during and after any placement, by a transcriber whose default is an allowlist: it delivers only a span it has cleared, the language's common lexicon, the party's terms, the script's expected phrases and a number below the digit-run threshold, and replaces every other span, a known value, a class-format or reference-shaped span, a digit run, an uncleared proper noun, a health or legal term, with a tone; it fails closed when it cannot keep up, and the raw audio reaches only the media server and the evidence pipeline. The placement window mutes the worker's leg in both directions, from the tap until the last tone or syllable plus a guard interval, by the media server and never by the worker's client, and the panel shows "value placed". The mail composer holds aliases, and replacement happens at the relay after the worker is done; while a mail step is live the composer shows the alias draft as sent, the only copy that exists on the worker's side. An inbound message reaches the console as the relay's rendering, tokenised at the vault's edge proxy and then painted by default: every token outside the cleared vocabulary is painted, an out-of-lexicon token, a proper noun that is not a cleared term, a digit run, a class-format match, and the worker reads the painted rendering; a painted token the worker needs is asked for as a typed field sent to the task address, where it is tokenised, or the step closes <code>blocked-needs-user</code>. Copy, paste out, download, print and screenshot are disabled in the console, and the console runs on a locked station under the site controls in <a href="../04-operations/#site-controls">04</a>; the console is designed so that the site controls are the second line, not the first.</p>
+        <p>Two worker actions exist for the residual case, and the task service, never the worker, applies the code, as <a href="../03-trust-and-data/#failure-modes">the failure modes in 03</a> record in the same words. A third party who asks a worker to read out or confirm a real value is answered from the script: we do not hold it, and the system will place it; a worker who is pressed records the demand in the structured result, and the task service closes the step <code>blocked-needs-user</code> where the user can perform the act on their own device, which is where the step type's catalogue entry names a user-act bounce form, and <code>failed-final</code> otherwise, with the ledger saying the demand was refused. A worker who asks to see a value, anywhere, is refused and the step is reassigned, closed <code>refused-policy</code> by the task service. And a worker who sees anything that looks like a real value, a form echo the masker missed or a document rendered in the clear, presses one control: it blanks the surface panel, holds the surface, opens an incident on the queue QA and escalation own, and closes the step: <code>failed-retryable</code> with the error class "possible exposure", so that it is reassigned to another worker, where no fired marker exists, and <code>failed-final</code> with the marker as its evidence where one does, the re-plan issuing a status enquiry before any repeat (section 3); the incident, not the code, carries the report. The path is named and closed in <a href="../03-trust-and-data/#threat-model">the threat model in 03</a>; the console's job is to make the report one press away.</p>
+      </section>
+
+      <section>
+        <h2 id="outcome-codes"><span class="no">3</span>Structured outcome codes</h2>
+        <p>Exactly one code from the fixed vocabulary below closes a step, together with the structured fields that code requires, and the console will not submit a result until those fields are present. The vocabulary is the control loop specified in <a href="./#verification">verification in 02</a>: it decides what the task service does next, it is not a judgement of quality, and the user's verdict remains the only measure of that.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 2.4</span> The nine outcome codes, what each means and the fields the result form demands before it will close the step.</caption>
+          <thead><tr><th>Code</th><th>Meaning</th><th>Required fields</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">ok</td><td>The expected outcome was achieved.</td><td>reference (if any), timestamp, party</td></tr>
+            <tr><td class="mono">ok-with-variance</td><td>Achieved, with a noted difference from the expected outcome (a fee, a date, a condition).</td><td>as <code>ok</code>, plus variance note</td></tr>
+            <tr><td class="mono">blocked-third-party</td><td>A third party prevented completion for now (office closed, system down, callback promised).</td><td>party, response window</td></tr>
+            <tr><td class="mono">blocked-needs-user</td><td>A user-only act or fact is needed. Creates a <code>user</code> step.</td><td>what is needed, why</td></tr>
+            <tr><td class="mono">blocked-outside-envelope</td><td>Continuing would exceed the envelope. Creates an extension request or a <code>user</code> step.</td><td>the envelope line it would breach</td></tr>
+            <tr><td class="mono">failed-retryable</td><td>A transient failure before any committing action; the step can be re-attempted by the same route. Not available once the step's fired marker exists.</td><td>error class</td></tr>
+            <tr><td class="mono">failed-final</td><td>The step cannot be completed by this route, or its committing action fired without confirmation. Triggers re-planning.</td><td>reason, alternatives considered; the fired marker, attached by the task service where one exists</td></tr>
+            <tr><td class="mono">refused-policy</td><td>The executor declined under policy (for example, asked to reveal a real value, or the policy layer prohibits the step type in this jurisdiction).</td><td>policy reference</td></tr>
+            <tr><td class="mono">superseded</td><td>The plan changed and the step is no longer needed.</td><td>superseding step</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>The form is shaped by the code. Choosing <code>ok</code> reveals the reference, timestamp and party fields, with the timestamp set by the console and the party pre-filled from the envelope; choosing <code>blocked-third-party</code> asks for the response window as a choice from the step type's allowed windows rather than a free number; choosing <code>blocked-outside-envelope</code> asks which envelope line, from the lines on the card, and the task service turns it into an extension request whose device prompt offers "do this yourself" where the catalogue names a user-act form, which is the only way that code produces a <code>user</code> step; choosing <code>failed-final</code> asks what alternatives were tried, as a checklist from the step type plus a free line. A step whose controller or substitutor has written a fired marker, a submit issued, a relay release issued, a committing key sent, a committing sentence begun, a committing placement begun, cannot close <code>failed-retryable</code>: the form offers <code>failed-final</code> only, the task service attaches the marker as the evidence, and the re-plan issues a status enquiry before any repeat, so an unconfirmed act is never fired twice, as <a href="./#closing">closing a step in 02</a> fixes. A worker cannot type a value into any field. The reference field, where a third party's booking or case reference goes, is filled by the surface controller with the alias the transcriber captured on the call or the proxy issued for a message, <code>{{reference.max-healthcare}}</code> for task 12, and is never typed by the worker. Every free-text field on the form, the variance note, the failed-final free line, the demand a worker records, is submitted at entry by the console to the hash service's screening call in <a href="./#hash-service">02</a>, which runs the same four detectors the vault's edge proxy runs, identifier pattern, known-value digest, the user's declaration and the dictionary-based health and legal term detector, tokenises any match through its tokenise-only credential, a reference-shaped span under the reference class, a condition under the health and legal class, each with a "received" ledger line, and returns the text with aliases in place; the console stores only what the call returns, and the outcome record carries those aliases thereafter. Scripts still instruct the worker to ask a party that issues a new identifier, an account, policy or application number, to send it by the mail relay or to the user directly rather than read it aloud, but that instruction closes nothing: the worker hears only the re-voicing of the masked transcript, in which the transcriber delivers a span only if it has cleared it and replaces every other span with a tone, the caption reading "reference masked" and then "reference captured as <code>{{reference.max-healthcare}}</code>" for a reference shape and "span masked" for anything else not cleared, as <a href="./#telephony">telephony in 02</a> fixes; a worker who needs a masked span to proceed asks the party to send it to the task address, where it is tokenised, or closes the step <code>blocked-needs-user</code>; the pipeline's second pass, which flags a span the transcriber should not have delivered and opens an incident, is the record, never the closure, and <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> carries the path with the allowlist as its closure. <code>superseded</code> and <code>refused-policy</code> after a refused placement are never chosen by a worker; the task service applies them. Artefacts attach automatically from the evidence pipeline; a worker neither selects nor sees them.</p>
+      </section>
+
+      <section>
+        <h2 id="dual-control"><span class="no">4</span>Dual control from the worker's side</h2>
+        <p>For an irreversible step inside the envelope, whichever party executes, the other checks before it fires, and a worker meets this in two roles. Only an irreversible step enters <code>checking</code>: a reversible step never holds a token, and the outbound gate's cut of a commitment on one is final, "commitment cut; this step commits nothing", and never brings it here (section 1). As executor, and only as an L2 or L3 worker (L3 alone in the pilot; L1 never fires an irreversible step, per <a href="../04-operations/#three-tiers">the tiers in 04</a>), the worker prepares the act from the card as usual, but the control that would fire it reads "Send for check" rather than "Fire"; pressing it moves the step to <code>checking</code>, freezes the prepared act, starts the check deadline and shows the worker a waiting state with the timer. On a call the prepared act is the committing sentence: it stays hidden on the card and the worker's outbound leg stays muted while the telephony controller holds the line, and nothing is placed or committed until the check is on the record. The checker for a worker-executed step is the AI, in a separate model call that receives the act in one sentence, the envelope lines it touches, the expected outcome and, as the evidence, the masked text layer of the live surface for the step or an artefact the store holds after verify, and no conversation history. It answers approve or decline with a reason in a schema the harness validates; a call that errors, times out or fails validation is a decline with the reason "checker unavailable". On approve the step returns to <code>running</code> with an approval token, a record signed by the task service that names the check, the envelope version it was checked against, the checker and its expiry, the step deadline or the envelope's validity window, whichever is sooner; the Fire control is enabled only while a valid token exists and the window is open, the surface and the substitutor refuse an irreversible act without one, the token is single-use and reserves the act's amount against the task's remaining cap, the controller consumes it and writes the step's fired marker before the act leaves the surface, and where the act is a submission the surface fires it for the worker; on a call the card reveals the sentence and the worker reads it as written, or the system speaks it, and the media server records the start and end of the utterance, so a withdrawal or a narrowing that arrives before the end marker stops it at once, and one that arrives after it means the act fired, which the outcome report states from the media server's record and never from the worker's result. The outcome record carries both identities. On decline the card shows the reason and the step returns to <code>ready</code>, or re-plans if the reason is that the route is wrong.</p>
+        <p>As checker, an L3 worker receives a check card for an AI-executed step at the checking seat staffed on every shift. It is smaller than a task card: the act in one sentence, the envelope lines it touches, as presence and comparison like a card's, with the relevant values as aliases and the line "remaining cap: sufficient for this act: yes", computed by the task service from the cap less the task's committed spend and never shown as a number, the expected outcome, the evidence, which is the live masked stream or masked leg of the surface for the step being checked, or an artefact the store holds after verify has passed it, never material from the pipeline before verify, the field-match line the browser controller supplies where the act submits a form carrying an alias, "reference matches the notice: yes", in place of the value the checker sees as dots, as <a href="./#dual-control-mechanics">dual control in 02</a> fixes, and two controls, approve and decline with a reason. The checker's viewing of the stream writes the ledger line "a checker saw the masked stream for step n"; the check itself writes none, because nothing was used. A checker cannot edit anything; a check is a yes or a no against the envelope and the expected outcome, and that is deliberate, because a checker who can adjust the act becomes a second executor with nobody checking them. A check card, which only ever concerns an AI-executed step, never goes to a worker who executed or prepared any step of the same task. It counts as the worker's one live card: a worker holding a task card is not offered a check card until that card closes. A check card has its own deadline; a check that passes it goes to the exceptions board as a pending dual-control check, and the act does not fire in the meantime.</p>
+        <p>Two edge cases are handled by the task service, and the console shows their effect. If the user edits the envelope, or a policy flag the step's act depends on flips, while a step is in <code>checking</code>, the step is re-checked against the new version: the checker sees a fresh check card marked as a re-check and the executor's waiting state says why. If either happens while a step holds an approval token in <code>running</code>, the token and the signed step context are voided and the step returns to <code>ready</code> under the same worker's claim, marked "envelope changed; re-issuing", with the surface paused; a flip also re-classifies the step before it can run again, and a step now flagged bounce leaves the console as a <code>user</code> step. When the fresh context exists the worker sends it for check again, and Fire stays disabled until a new token exists. A placement request already inside its placement window when the edit or the flip lands completes under the version its context names, and nothing more. If the user withdraws the task while a step is in <code>checking</code> or holds a token, the step is cancelled before it fires and both cards close with the cancellation shown. The rule that a worker is checked by the AI and the AI is checked by a worker is recorded in <a href="../decisions/dr-004-authority-envelope.html">DR-004</a>; the mechanics on the system side are in <a href="./#dual-control-mechanics">dual control in 02</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="exceptions-board"><span class="no">5</span>The exceptions board</h2>
+        <p>The exceptions board is where the invariant is enforced by people, and it is a duty, not a dashboard. The watchdog specified in <a href="./#timers">timers, nudges and the watchdog in 02</a> runs on a fixed cycle and places on the board every task that fails one of its four checks; the task service adds a task whose response window or planning deadline expired without a route. The board has four columns, and a card leaves a column only by an action that restores what was missing or by a recorded transition; there is no dismiss.</p>
+        <figure class="fig" id="fig-exceptions">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 2.6, the exceptions board, scrollable">
+          <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig-exceptions-title fig-exceptions-desc">
+            <title id="fig-exceptions-title">The exceptions board</title>
+            <desc id="fig-exceptions-desc">A watchdog box sits at the top left, and beneath it a horizontal accent rule runs the full width: the watchdog's rule, which a task crosses onto the board the moment a column's condition holds. Below the rule are four columns, no live timer, check pending past its deadline, no route on re-plan after a window or a planning deadline expired, and nudges exhausted with no lapse event, each holding two pseudonymous task cards that name the task, its state and the action that clears it. The accent element is the watchdog's rule.</desc>
+            <rect class="fg-box" rx="2" x="12" y="16" width="200" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="112" y="41">Watchdog: scans every task</text>
+            <line class="fg-accent" x1="8" y1="72" x2="712" y2="72"/>
+            <text class="fg-label-small fg-label-soft" text-anchor="end" x="708" y="66">the rule: onto the board the moment a column's condition holds</text>
+            <rect class="fg-box-2" rx="2" x="12" y="88" width="156" height="48"/>
+            <text class="fg-label-small fg-label-strong" text-anchor="middle" x="90" y="108">No live timer</text>
+            <text class="fg-label-small fg-label-soft" text-anchor="middle" x="90" y="124">the invariant itself</text>
+            <rect class="fg-box-2" rx="2" x="192" y="88" width="156" height="48"/>
+            <text class="fg-label-small fg-label-strong" text-anchor="middle" x="270" y="108">Check pending</text>
+            <text class="fg-label-small fg-label-soft" text-anchor="middle" x="270" y="124">past its deadline</text>
+            <rect class="fg-box-2" rx="2" x="372" y="88" width="156" height="48"/>
+            <text class="fg-label-small fg-label-strong" text-anchor="middle" x="450" y="108">No route on re-plan</text>
+            <text class="fg-label-small fg-label-soft" text-anchor="middle" x="450" y="124">window or deadline</text>
+            <rect class="fg-box-2" rx="2" x="552" y="88" width="156" height="48"/>
+            <text class="fg-label-small fg-label-strong" text-anchor="middle" x="630" y="108">Nudges exhausted</text>
+            <text class="fg-label-small fg-label-soft" text-anchor="middle" x="630" y="124">no lapse event</text>
+            <rect class="fg-box" rx="2" x="12" y="152" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="24" y="172">Client 2093, task 4</text>
+            <text class="fg-label-small" x="24" y="186">awaiting-user</text>
+            <text class="fg-label-small" x="24" y="200">no timer: set one</text>
+            <rect class="fg-box" rx="2" x="12" y="228" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="24" y="248">Client 3812, task 7</text>
+            <text class="fg-label-small" x="24" y="262">active</text>
+            <text class="fg-label-small" x="24" y="276">no step deadline</text>
+            <rect class="fg-box" rx="2" x="192" y="152" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="204" y="172">Client 8810, step 5</text>
+            <text class="fg-label-small" x="204" y="186">in checking</text>
+            <text class="fg-label-small" x="204" y="200">checker: none yet</text>
+            <rect class="fg-box" rx="2" x="192" y="228" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="204" y="248">Client 1177, step 1</text>
+            <text class="fg-label-small" x="204" y="262">in checking</text>
+            <text class="fg-label-small" x="204" y="276">reassign checker</text>
+            <rect class="fg-box" rx="2" x="372" y="152" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="384" y="172">Client 3305, step 4</text>
+            <text class="fg-label-small" x="384" y="186">blocked-third-party</text>
+            <text class="fg-label-small" x="384" y="200">chase the party</text>
+            <rect class="fg-box" rx="2" x="372" y="228" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="384" y="248">Client 6021, task 2</text>
+            <text class="fg-label-small" x="384" y="262">planning</text>
+            <text class="fg-label-small" x="384" y="276">supply a route</text>
+            <rect class="fg-box" rx="2" x="552" y="152" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="564" y="172">Client 5562, task 9</text>
+            <text class="fg-label-small" x="564" y="186">awaiting-verdict</text>
+            <text class="fg-label-small" x="564" y="200">lapse not written</text>
+            <rect class="fg-box" rx="2" x="552" y="228" width="156" height="60"/>
+            <text class="fg-label-small fg-label-strong" x="564" y="248">Client 7740, task 3</text>
+            <text class="fg-label-small" x="564" y="262">awaiting-authority</text>
+            <text class="fg-label-small" x="564" y="276">raise incident</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="308">each card: pseudonymous task, state, what fired, and the action that clears it; ids illustrative</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 2.6</span> Four ways for a task to fall silent, each with a column, a condition and a clearing action; the identifiers are illustrative.</figcaption>
+        </figure>
+        <p>The columns and what clears them:</p>
+        <dl class="def">
+          <dt>No live timer</dt>
+          <dd>A live task with no future-dated timer: the invariant's own condition. Cleared by a person assigning a timer of the right kind for the task's state, which is a recorded event; the board will not accept a timer in the past.</dd>
+          <dt>Check pending past its deadline</dt>
+          <dd>A step in <code>checking</code> whose check deadline has passed or that has no checker. Cleared by reassigning the check to a checker who then acts, or by the executor withdrawing the prepared act back to <code>ready</code>. The act never fires while the card is on the board.</dd>
+          <dt>No route on re-plan</dt>
+          <dd>A <code>blocked-third-party</code> step whose response window expired, or a task whose planning deadline expired, and whose re-plan on the tick produced no route. The task service has already set a holding window, a recorded <code>extend-window</code> or <code>extend-planning</code> event, so the task keeps a live timer; the card is here because a person must chase the party or supply a route, which is the escalation desk's, staffed per 04. Cleared by extend window, a recorded timer event carrying the date the party gave; by <code>resume</code> when the party answers; by <code>escalate-resume</code> when a re-plan prompted by what the desk learned finds a route; or by add alternative, which hands the planner a route to try, with a refusal under policy confirmed from here where none exists. The desk's tools are the card's actions, a task card of the market's chase-the-party step type issued on request, so the chase runs on our telephony or relay under the same masks, and the incident queue; nothing else. The same column catches the defect case: an expired window or deadline with none of these events following within one watchdog cycle.</dd>
+          <dt>Nudges exhausted, no lapse event</dt>
+          <dd>A task in <code>awaiting-authority</code>, <code>awaiting-user</code> or <code>awaiting-verdict</code> whose nudge schedule is exhausted without the task service writing the lapse event within one watchdog cycle. Lapse is system-written on the tick, with the state lapsed from, and for <code>awaiting-verdict</code> the task service checks the recorded delivery of the outcome report: the schedule counts from the send time until the bound device's receipt arrives and restarts from that delivery when it does, so an unreachable device never holds a task without a timer, and this column holds a defect, never routine work. Cleared by raising an incident and closing the nudge schedule early, a recorded <code>board-action</code>, after which the task service writes the lapse event on the next tick with the incident as its cause, or by a user message that revives the task; no person writes the lapse event.</dd>
+        </dl>
+        <p>The board belongs to the QA and escalation function, with the shift lead accountable for it being empty at handover, as set out in <a href="../04-operations/#qa">QA and escalation in 04</a> and <a href="../04-operations/#shifts">the shift design in 04</a>. Every card shows who owns it and since when, and every clearing action is an operation of the task service recorded as a <code>board-action</code> event whose actor is a person with a staff id and a role, authorised by role: the shift lead and the escalation desk may set a timer of the right kind for the task's state, reassign a check, extend a window, add an alternative or, with an incident, close the nudge schedule early, after which the system writes the lapse event on the next tick; no person writes a lapse event, nobody may dismiss a card, and the board's history is the audit of how silence was handled. A card cannot be hidden, snoozed or reassigned to nobody. The watchdog checks the board too: a card that has sat unowned for longer than its column's limit in the timer table of <a href="./#timers">02</a> is escalated to the shift lead, and the limits are per column and illustrative until the pilot sets them.</p>
+      </section>
+
+      <section>
+        <h2 id="invariant"><span class="no">6</span>The invariant</h2>
+        <p>Nowhere is a person more tempted to leave a task for later than at the console, so the rule that forbids it is stated here in exactly the words used in <a href="./#state-machine">the state machine in 02</a>. The harness checks that the two are character for character the same.</p>
+        <blockquote class="invariant" id="state-machine-invariant"><p>A task never leaves the system by omission. Every task is in exactly one named state. Every non-terminal state carries a live timer. Every change of state is an explicit, recorded transition, and no task reaches a terminal state without one. Silence from the user is a legitimate way for a task to end: it moves through visible nudges into lapsed, and lapsed is not withdrawn. Silence from the system is forbidden: a task with no live timer is an exception, and the watchdog places it on the exceptions board until a person gives it one.</p></blockquote>
+        <p>For a worker the invariant has three practical consequences. A card never closes without a code, so nothing a worker touches can end by being put down. A check never times out into an act, so nothing irreversible fires because someone was slow. And the board is a duty with an owner, so a task that has fallen silent is somebody's job by name until it is not silent. The decision behind the machine is <a href="../decisions/dr-005-state-machine-lapsed.html">DR-005</a>.</p>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-016 The context store as a temporal knowledge graph, AI.fred</title>
+<meta name="description" content="The user's profile is a temporal knowledge graph in the Graphiti style: every fact carries its source, date, validity interval, confidence and whether the user confirmed it; sensitive fields are aliases held in the vault. A flat profile table and a document store without temporal validity were rejected.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-016</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-016</a></span><span class="title">The context store as a temporal knowledge graph</span></h1>
+    <p class="standfirst">The user's profile is a temporal knowledge graph in the Graphiti style: every fact carries its source, the date it was observed, the interval it is believed to hold, a confidence, and whether the user confirmed it. Sensitive fields are aliases whose real values live in the vault. A flat profile table and a document store without temporal validity were rejected, because both go stale in silence.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-016</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>The context store is a temporal knowledge graph. Every fact in it is a statement about a subject, the user, a person in their life, an institution or a document, and carries the fields Table 1.2 in 01 lists, in the record shape 02 gives: subject, predicate, value or alias, source, the date observed, the interval it is believed to hold, a confidence, whether and when the user confirmed it, and where the real value lives. A fact is never overwritten: a correction closes the old interval and opens a new fact. A user's correction closes the old fact at once; a contradiction a task observes leaves both facts open and flagged, unusable by any step, until the user resolves it. Confidence is set by the source and decays with time, rising again when a later task uses the fact without contradiction. A fact below the threshold a step needs becomes a question to the user rather than a guess, which is how data-quality problems become visible rather than silently wrong. The store is filled mostly as a by-product of doing tasks, topped up by a short onboarding interview and by read-only connectors the user chooses. Sensitive fields hold aliases, <code>{{nhs-number}}</code> and never the number; the real value lives in the vault and the vault SDK is absent from the store's runtime. A fact a step writes, like every free-text field written on our side, a worker's variance note, a failed-final line, a question's free-line answer, an onboarding answer, a connector pull, is submitted by the task service to the hash service's screening call, and the screen runs the same four detectors the vault's proxy runs, identifier pattern, known-value digest, the user's declaration where a field is declared sensitive, and the dictionary-based health and legal term detector, whose policy is one artefact shipped to both; a match is tokenised through the hash service's tokenise-only credential and returned as an alias in place, the task service stores only what the call returns, and the store rejects any value that matches a pattern. The Graphiti style is named in the ledger as the pattern, not as a dependency: what we take from it is stated here in our own terms, and the library question is answered in 1.3.</p>
+          <h3 id="why-provenance"><span class="no">1.1</span>Why every fact carries its provenance</h3>
+          <p>Because the planner asserts facts to institutions on the user's behalf, and the user must be able to see which facts a plan rests on and where each came from. The plan confirmation in <a href="../01-product/#onboarding">01</a> shows those facts with their confidence, and one tap confirms them. A wrong fact traces to the interview answer, the connector or the step that produced it. The access ledger records where an alias was used; the store records where a fact came from; between them the user can audit both what we know and what we did with it.</p>
+          <h3 id="why-temporal"><span class="no">1.2</span>Why temporal</h3>
+          <p>Lives change: an address, an employer, a doctor, a card, a parent's pharmacy. A profile that holds only the current value cannot say when a value changed, cannot revert a bad change, and cannot tell "unknown" from "unchanged". Temporal validity turns staleness into a query: the facts to ask about are the ones whose interval is open and whose confidence has decayed, and a fact that stopped being true is closed rather than deleted, so a dispute about what we believed in March has an answer.</p>
+          <h3 id="where-specified"><span class="no">1.3</span>Where it is specified</h3>
+          <p>The store's place among the components, and its interface to the planner, is in <a href="../02-architecture/#context-store">02</a>; the interview, the connectors and learning as a by-product are in 01 from the user's side; the alias rule that governs its sensitive fields is in <a href="../03-trust-and-data/#alias-model">03</a>. The store is ours to build, and no library is chosen in this edition. It is built against five properties, which are the tests any library must pass: a validity interval on every fact, provenance on every fact, a query made at a point in time, alias-only sensitive fields, and no vault SDK in the runtime. Graphiti is the pattern those properties are taken from. The library is chosen at the stage that builds the store, by those five tests, and the choice does not reopen this record.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>A flat profile table</dt>
+            <dd>One row per user, one column per attribute. Its cost is silent staleness: a value is present or absent, with no date, no source and no confidence, so a wrong value is used with full confidence until an institution rejects it, and the correction overwrites the history a dispute would need.</dd>
+            <dt>A document store without temporal validity</dt>
+            <dd>A profile document, or notes the model reads. No fact-level provenance, so nothing can be cited; facts about the same person or institution are duplicated across documents and diverge; and a value that has changed sits beside the value that replaced it with nothing to say which is current.</dd>
+            <dt>The model's memory as the profile</dt>
+            <dd>A store of past conversations retrieved by similarity. Retrieval is not knowledge: no validity, no confidence, no confirmation, and nothing the user can open, inspect or correct. The user would be asked to trust what we remember rather than shown what we know.</dd>
+            <dt>A complete profile built at onboarding</dt>
+            <dd>A long interview nobody finishes, producing facts that decay before a task uses them. Learning as a by-product captures what tasks need, dated and sourced, at the moment it is needed.</dd>
+            <dt>Real values in the store for convenience</dt>
+            <dd>A second vault, the alias rule broken in the one component every plan reads, and a new path in the threat model.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A fact without a source, a date, a confidence and a confirmation state.</li>
+            <li>Overwriting a fact or deleting its history; a correction is a new fact with the old interval closed. Deletion from the user's device closes the fact as user-withdrawn and keeps its history; erasure, removing the value and its history, is a legal act under the market's legal pack, recorded, and its rules per market are to be verified beside the privacy-law items in 07.</li>
+            <li>A real value in the store, or the vault SDK in its runtime.</li>
+            <li>A plan that relies on a fact below the step's threshold without asking the user.</li>
+            <li>An irreversible step firing on a fact that is neither user-confirmed nor from a passport adapter.</li>
+            <li>A connector that writes, pays or acts, or one the user did not choose and cannot revoke from their own device.</li>
+            <li>A profile field outside the fact schema, including a free-text notes column.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. The store is specified in 02, its user-facing side in 01, and the alias rule for its sensitive fields in 03 and <a href="dr-008-vault-bought.html">DR-008</a>.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

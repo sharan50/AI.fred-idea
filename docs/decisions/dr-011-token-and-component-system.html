@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-011 A visual token-and-component system, AI.fred</title>
+<meta name="description" content="Every colour, type role and spacing value is a token defined once; every component is defined once and composed on every page; no page carries styling of its own. A framework and per-page styling were rejected, and the harness enforces the rule.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-011</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-011</a></span><span class="title">A visual token-and-component system</span></h1>
+    <p class="standfirst">Every colour, type role and spacing value is a token in one file; every component is defined once in one stylesheet and composed on every page; no page carries styling of its own. A framework and per-page styling were rejected. The plan built on this decision is DR-012, and the harness enforces the rule on every pass.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-011</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>The publication has one visual system, held in two files and composed everywhere. <code>tokens.css</code> is the only place a colour is defined: paper, ink, line, accent, amber and verified as the brief gives them, two derived neutrals, and the type scale and spacing steps. <code>base.css</code> defines the reset, the typography and every component once: masthead, page header with stamp and control block, rail, status chip, reference and sources list, decision record, figure block, data table, callout, ledger, invariant and footer. <code>print.css</code> carries the print rules. The diagram language is a set of classes in the same stylesheet, so an SVG carries no colour literal and no font attribute; a colour attribute inside an SVG may only be none, currentColor or a token reference. A page is markup plus class names and nothing more. A new layout on a future page means extending tokens and components first, then using them.</p>
+          <h3 id="why-tokens"><span class="no">1.1</span>Why tokens</h3>
+          <p>One place to refine a value when contrast demands it, and one place for the harness to look. Because every colour is a named token, <code>tools/verify.mjs</code> can compute AA contrast for each text pair and fail the build when a pair falls short, and it can scan every other file for a hex, rgb or hsl literal and reject it. A page cannot invent a colour, so the accent cannot creep from the stamp into a link, and the brief's rule that the accent is spent on stamps and one stroke per figure is a property of the system rather than a request to writers.</p>
+          <h3 id="why-components"><span class="no">1.2</span>Why components once</h3>
+          <p>The founder's bar asks for two things a component set delivers and nothing else does: every page reads as one designed publication, and any single URL stands alone in front of an investor. Both are made by sameness. The same masthead names the venture on every page; the same stamp and control block say how settled the page is; the same chip means the same thing in a thesis and in a threat model; the same figure block and table rule appear wherever there is a figure or a table. Sameness is guaranteed only when there is one definition: each page copies one template and uses the class names, and the design is never in a writer's hands.</p>
+          <h3 id="enforcement"><span class="no">1.3</span>How the rule is enforced</h3>
+          <p>The harness rejects a colour literal outside the token file, a named colour anywhere, an inline style attribute, a per-page style block, and the anti-defaults a scan can catch: uppercase transforms, tracked-out letter-spacing, gradients, box shadows, animation, arrow characters and middle dots. It checks that every page links the two stylesheets and the print stylesheet, that every SVG uses classes for colour and type, with none, currentColor and token references the only colour attributes allowed, and that each figure carries an accent element; the render check is what catches a second one. Style drift is therefore a build failure, found on the pass after it happens.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>A CSS framework, utility library or UI kit</dt>
+            <dd>Every kit ships the defaults the brief bans: rounded cards with soft shadows, gradient washes, all-caps eyebrow labels, and a look shared with every generated documentation site. It arrives as an asset that dwarfs the content and usually wants a build step to trim, which <a href="dr-010-html-no-build-step.html">DR-010</a> forbids. The cost of rejecting it is writing a few hundred lines of our own CSS once.</dd>
+            <dt>Per-page styling</dt>
+            <dd>Each page with its own style block or inline styles. Drift begins with the second page and a fix has to be made as many times as there are pages; the harness cannot compute contrast on values it cannot find; and a single URL stops reading as part of the publication. Within a few pages the visual system becomes archaeology.</dd>
+            <dt>Colours defined where they are used, without a token file</dt>
+            <dd>Custom properties scattered through the stylesheet meet the letter of "one stylesheet" and defeat the scan. The brief names one place for colours, and the harness needs one place to read.</dd>
+            <dt>A design-tool export</dt>
+            <dd>Generated CSS with literal values, opaque to a reader and rejected by the harness on its first pass. The design plan in <a href="dr-012-design-plan.html">DR-012</a> was written as prose and a wireframe so that a person can critique it.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A hex, rgb or hsl value outside <code>tokens.css</code>; a named colour anywhere.</li>
+            <li>Inline style attributes, per-page style blocks and per-page stylesheets.</li>
+            <li>A component used on a page that is not defined in <code>base.css</code>, and a page kind outside the four the design plan fixes.</li>
+            <li>Uppercase transforms, positive letter-spacing, gradients, box shadows and animation.</li>
+            <li>A second type family, a synthesised weight, or a font loaded from anywhere but our own assets directory.</li>
+            <li>A colour literal or a font attribute inside an SVG; a colour attribute there may only be none, currentColor or a token reference.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, set by the brief's visual system and taken at the start of the build on 2026-09-02, before any CSS was written. The plan built on it, critiqued against the generic defaults and fixed, is <a href="dr-012-design-plan.html">DR-012</a>; the harness enforces both on every pass.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

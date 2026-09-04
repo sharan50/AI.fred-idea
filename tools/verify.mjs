@@ -211,7 +211,7 @@ for (const f of htmlFiles) {
 for (const f of htmlFiles) {
   const t = pageText.get(f);
   const dir = dirname(f);
-  const toAssets = posix.relative(dir.split('\\').join('/'), join(DOCS, 'assets').split('\\').join('/')) || '.';
+  const toAssets = posix.relative(dir.split('\\').join('/'), DOCS.split('\\').join('/')) || '.';
   let m;
 
   if (!/^\s*<!doctype html>/i.test(t)) fail(f, 1, 'missing <!doctype html> at top');
@@ -221,14 +221,15 @@ for (const f of htmlFiles) {
   if (!/<meta\s+name="robots"\s+content="noindex[^"]*"/.test(t)) fail(f, 1, 'missing no-index directive (interim access mitigation, section 1.11)');
   const title = t.match(/<title>([^<]*)<\/title>/);
   if (!title || !title[1].trim()) fail(f, 1, 'missing or empty <title>');
+  const assetPrefix = toAssets === '.' ? '(?:\\./)?assets' : `(?:\\./)?${toAssets}/assets`;
   for (const [name, file] of [['tokens.css', TOKENS], ['base.css', BASE]]) {
-    const re = new RegExp(`<link\\s+rel="stylesheet"\\s+href="${toAssets}/${name}"`);
-    if (!re.test(t)) fail(f, 1, `${name} not linked as <link rel="stylesheet" href="${toAssets}/${name}">`);
+    const re = new RegExp(`<link\\s+rel="stylesheet"\\s+href="${assetPrefix}/${name}"`);
+    if (!re.test(t)) fail(f, 1, `${name} not linked as <link rel="stylesheet" href="${toAssets}/assets/${name}">`);
   }
-  const printRe = new RegExp(`<link\\s+rel="stylesheet"\\s+href="${toAssets}/print.css"\\s+media="print"`);
-  if (!printRe.test(t)) fail(f, 1, `print.css not linked with media="print" (expected href="${toAssets}/print.css")`);
-  const navRe = new RegExp(`<script\\s+src="${toAssets}/nav.js"\\s+defer><\\/script>`);
-  if (!navRe.test(t)) fail(f, 1, `nav.js not linked as <script src="${toAssets}/nav.js" defer></script>`);
+  const printRe = new RegExp(`<link\\s+rel="stylesheet"\\s+href="${assetPrefix}/print.css"\\s+media="print"`);
+  if (!printRe.test(t)) fail(f, 1, `print.css not linked with media="print" (expected href="${toAssets}/assets/print.css")`);
+  const navRe = new RegExp(`<script\\s+src="${assetPrefix}/nav.js"\\s+defer><\\/script>`);
+  if (!navRe.test(t)) fail(f, 1, `nav.js not linked as <script src="${toAssets}/assets/nav.js" defer></script>`);
   if (/<style\b/i.test(t)) fail(f, lineOf(t, t.search(/<style\b/i)), 'per-page <style> blocks are banned; extend base.css');
   const inlineStyle = /\sstyle\s*=\s*"/g;
   while ((m = inlineStyle.exec(t))) fail(f, lineOf(t, m.index), 'inline style attributes are banned; use classes');
@@ -343,7 +344,7 @@ for (const f of htmlFiles) {
   const tableRe = /<table\b([^>]*)>([\s\S]*?)<\/table>/g;
   while ((m = tableRe.exec(t))) {
     const before = t.slice(Math.max(0, m.index - 120), m.index);
-    if (!/class="table-wrap"[^>]*>\s*$/.test(before)) fail(f, lineOf(t, m.index), 'table must be wrapped in <div class="table-wrap">');
+    if (!/class="table-wrap( wide)?"[^>]*>\s*$/.test(before)) fail(f, lineOf(t, m.index), 'table must be wrapped in <div class="table-wrap"> (or "table-wrap wide")');
     if (!/class="data"/.test(m[1])) fail(f, lineOf(t, m.index), 'table must carry class="data"');
     if (!/<caption>\s*<span class="tab-no">Table [A-Za-z0-9]+\.\d+<\/span>/.test(m[2])) fail(f, lineOf(t, m.index), 'table must open with <caption><span class="tab-no">Table S.n</span> takeaway</caption>');
     if (!/<thead>/.test(m[2])) fail(f, lineOf(t, m.index), 'table must have a <thead>');
@@ -461,7 +462,7 @@ for (const p of relPages) {
   const sectionIndex = join(DOCS, parts[0], 'index.html');
   if (p.endsWith('/index.html')) {
     const root = pageText.get(join(DOCS, 'index.html')) || '';
-    if (!new RegExp(`href="${parts[0]}/(index\\.html)?"`).test(root)) fail(join(DOCS, 'index.html'), 1, `section ${parts[0]} is not linked from the root index`);
+    if (!new RegExp(`href="(\\./)?${parts[0]}/(index\\.html)?"`).test(root)) fail(join(DOCS, 'index.html'), 1, `section ${parts[0]} is not linked from the root index`);
     continue;
   }
   const sec = pageText.get(sectionIndex);

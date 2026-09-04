@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-004 The authority envelope and the point-of-no-return test, AI.fred</title>
+<meta name="description" content="Every task carries one authority envelope; delegation is total inside it and impossible outside it, and every step is sorted by a point-of-no-return test into execute, dual control or bounce.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-004</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-02</small></p>
+    <h1><span class="no"><a href="./">DR-004</a></span><span class="title">The authority envelope and the point-of-no-return test</span></h1>
+    <p class="standfirst">Every task carries one authority envelope: spend cap, contactable parties, committable acts, delegated identity acts and a validity window. Delegation is total inside it and impossible outside it, and every step is sorted by a point-of-no-return test before anyone acts.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-004</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>Every task carries exactly one authority envelope, confirmed by the user with one tap before any step executes, and every step is classified against a point-of-no-return test. The planner proposes the envelope with the plan, least-authority by construction from the task type and the context store; the user confirms it, which takes the task from <code>awaiting-authority</code> to <code>active</code>, or revises it, which returns the task to <code>planning</code>. Inside the envelope we act without asking again; outside it we cannot act at all, and the test in 1.2 sorts every step into execute, dual control, bounce or extension request.</p>
+          <h3 id="fields"><span class="no">1.1</span>The five fields</h3>
+          <dl class="def">
+            <dt>Spend cap</dt>
+            <dd>Currency and amount for the task, with a per-step sub-cap where the plan proposes one. The cap is tested as a running total, never act by act: the task service keeps a committed-spend total per task, fired acts plus reserved acts; an approval token reserves its act's amount when it is issued, the substitutor and the checker test each act against the remaining cap, and a reservation is released only when the step closes without a fired marker, so two acts each under the cap cannot together exceed it.</dd>
+            <dt>Contactable parties</dt>
+            <dd>The named institutions, businesses and people we may contact as the user. Anyone else is outside, and a call or message to them is an act outside the envelope.</dd>
+            <dt>Committable acts</dt>
+            <dd>The act types we may commit the user to: book, cancel, submit an application, accept terms, make a payment under the cap, file a document, schedule.</dd>
+            <dt>Delegated identity acts</dt>
+            <dd>The identity act types the user delegates in this jurisdiction, filtered by the policy layer of <a href="dr-003-full-delegation-ceiling.html">DR-003</a>: an act the jurisdiction flags as bounce is never delegated even if the user ticks it.</dd>
+            <dt>Validity window</dt>
+            <dd>Start and expiry. Past expiry nothing fires, reversible or not, and five components make that so rather than assert it. The window is a row of the timer table in <a href="../02-architecture/#state-machine">02</a>, Table 2.8, per task, running while the task holds authority, in <code>active</code>, <code>awaiting-user</code> or <code>awaiting-third-party</code>, and set to the envelope's own end: on the tick the task service cancels every step not yet fired, step state <code>cancelled</code> with lapsed as its cause, and moves the task to <code>awaiting-authority</code> with a one-tap request to renew the window, on the nudge schedule, where it nudges and lapses like any other wait; in <code>awaiting-verdict</code> the window's end has no effect, since no step can fire and the verdict waits. The step runner claims a step in <code>ready</code> for a worker or the ai executor only inside the window and under the version the signed step context names, so no step begins after expiry. The dialler checks the window and the version before it resolves a party to a number, so no call is dialled. The signed step context carries the window's end as its own expiry, so it dies at expiry as it dies on an edit, and no substitution is placed. And the window and the version are checked at every committing action, of which there are six: a form submit, a committing click, a committing sentence on a call, a keypad press outside the navigation map and a relay release, each checked by the surface controller, and a committing placement, checked by the substitutor, which checks them at every placement in any case; once the window has closed the action is refused, and a dual-control approval token is valid only while the window is open, so an act that places no value is gated exactly as one that places a value is. A reversible step already <code>running</code> completes what needs no further placement and no committing action, and otherwise stops where it stands, as the step-state rules in 02 fix; a step the controller refuses after the window has closed closes <code>blocked-outside-envelope</code>, naming the window as the line it would breach, and the extension request that closure creates is the task's renewal request, one per task per version, so it attaches to the request already standing from the tick rather than raising a second; an act that fired inside the window is reported in the outcome report. Where a step names a dependant's aliases, its validity is the earlier of this window and her delegation's validity, and an extension of the window never extends past her delegation; her delegation's end is its own row of Table 2.8, delegation validity, not a case of this one, and it is not an <code>expire-authority</code> for the task: it voids the context and token of every step that names her aliases, those steps re-classify, a step now without authority becomes a <code>user</code> step for her, and the task stays in its state, <code>awaiting-user</code> if a step became hers, as 1.3 says.</dd>
+          </dl>
+          <h3 id="test"><span class="no">1.2</span>The test and the rule</h3>
+          <p>The point-of-no-return test is one question, asked of every step at planning and again on every edit: can we return the world to its prior state by our own action, at no cost to the user and without a third party's consent? If not, the step is irreversible. A booking with free cancellation passes; a submitted application, a payment, an instruction the institution executes, or a cancellation that forfeits a deposit does not. An undo route the catalogue names counts only where the envelope admits the undo's act, cancel for that booking; where it does not, the step is irreversible for that task, whatever the catalogue says. An identity act, an identity number stated to an institution among them, is not on that list: it is gated by the policy flag and the envelope's identity-act line, and by dual control only where its step's committable act is irreversible. The rule of classification is then mechanical and identical everywhere: irreversible and outside the envelope, bounce; irreversible and inside, dual control; reversible and inside, execute by <code>ai</code> or <code>human</code> as the classifier says; reversible and outside, an extension request, because even a harmless act outside the grant is not ours to take. Under dual control, whichever party executes, the other checks the step against the envelope and the expected outcome before it fires, and both identities are recorded.</p>
+          <p>Three default rules make the test bite on the surfaces, whatever a step's classification says, and each is a component's gate, not an instruction to a person. On the managed browser a click is a committing action unless the party directory's page map, a field beside the menu map, names the control as navigation: following a link inside the declared domains, scrolling, focusing a field and typing non-sensitive text are navigation by default, and a button, a form submit or any scripted control is committing unless the page map names it. The browser controller treats any form submission or committing click on a party's domain as irreversible unless the step's catalogue entry names the undo route for it, so without one the action needs the approval token, and on a reversible step, which holds none, the controller refuses every click outside the navigation map and every submit, the one action that fires without a token being a submit or click whose undo route the entry names. Telephony mirrors it: the worker's outbound leg runs behind the same delay line as the inbound leg, through the media server's outbound gate, and on a step holding no approval token that gate is an allowlist like the inbound leg's: the media server delivers only an utterance the step's script names, with its permitted variants, or the non-committing lexicon covers, greetings, questions and acknowledgements without agreement words, and every other utterance is held before delivery, so the far party never hears it. Inside that lexicon the catalogue's commitment dictionary, agreement words, amounts, dates and account-changing verbs per language, remains the detector for what counts as agreement: an utterance of commitment form on an irreversible step not yet checked has the caption read "commitment held; send for check" and the step enters <code>checking</code>; on a reversible step the cut is final, the caption reads "commitment cut; this step commits nothing", the step never holds a token, and a party that will not proceed without a commitment has the worker close the step <code>blocked-outside-envelope</code>; any other held utterance reads "held; off script", and the worker re-phrases or sends the step for check. On a step holding a token the revealed committing sentence passes as well. A key pressed on a party's voice menu is a committing action unless the step's catalogue entry names it as navigation: the entry carries a menu map, the keys that navigate, per party, from the party register; the telephony controller sends without a token only the keys the map names as navigation, and a key the map names as committing, or does not name, needs the approval token and the window-and-version check like a submit, so on a reversible step the controller refuses every key outside the navigation map. The mail relay releases a message only if it instantiates the step's catalogue template, fixed sentences with named slots typed non-committing, or the step holds an approval token naming the hash of the message as checked; a message that matches no template is a committing action and needs the token. A reversible step holds no token, so on none of the three surfaces can it commit anything; the script's line telling a worker not to agree a fee stays as an instruction, and the gate is the closure.</p>
+          <p>The approval token is single-use and the act it approves fires at most once. The controller consumes the token before it issues the committing action, and the substitutor refuses a consumed token. Every controller writes a fired marker before it issues a committing action, a submit, a committing click, a committing key, a release, the committing utterance's start marker. A placement can itself be the act the institution executes, with no submit to follow, so a placement whose alias is a payment instrument or a payment instruction, or whose catalogue entry marks it as consumed on placement, is a committing placement: it needs the approval token like a submit, and the substitutor writes the step's fired marker before the first tone or character of it is delivered. The closed list of committing actions is therefore six, a form submit, a committing click, a committing sentence on a call, a keypad press outside the navigation map, a relay release, a committing placement, and it is the same list on every page. A step with a fired marker never closes <code>failed-retryable</code>: an unconfirmed fire, a submit that times out, a call that drops after the committing sentence, a not-confirmed receipt on a committing placement, closes <code>failed-final</code> with the fired marker as its evidence, keeps its reservation against the cap, and the re-plan issues a verification step, a status enquiry, before any repeat. A narrowing that arrives inside a committing placement's window does not stop it, because the marker is already written, and the outcome report says so.</p>
+          <h3 id="edits"><span class="no">1.3</span>Edits</h3>
+          <p>The user can extend or narrow the envelope at any time from their own bound device, and nobody else can. A proposal, version 1 with the plan or a re-proposal after revival, is the planner's unsigned draft and carries no authority; a version is authority only once the user's bound device signs it, and no other device signs one. A dependant onboarded as a delegator, with a bound device and vault entries of their own, is a second delegator and never a second editor, as <a href="../01-product/#journeys">01</a> draws: her one tap, on her own device, signs a delegation record of her own, naming the act types and aliases she delegates and a validity no longer than the envelope's, and the envelope's identity-act line for her references that record and is inert until it exists; the envelope stays the user's, and the user's tap confirms it. Her record is a checked authority, not a note on the line: the substitutor's ordered checks in <a href="../03-trust-and-data/#substitution">03</a> include that every delegation record the alias's owner references is live, and her revocation, from her device like a connector, or her delegation's expiry voids every context and token of every step that names her aliases, exactly as an envelope edit does, and those steps re-classify, a step now without authority becoming a user step for her, while the task stays in its state, <code>awaiting-user</code> if a step became hers. An extension applies to steps not yet fired and re-runs classification for them. Narrowing applies immediately to every step not yet fired: a step in <code>checking</code> is re-checked against the narrowed envelope before it fires, and an irreversible step that has already fired is reported in the access ledger and in the outcome report, because a narrowed envelope cannot undo the world. A bounced <code>user</code> step in progress on the device is the one exception to both: no new version, task-wide or step-scoped, re-classifies it until its bounce record closes, done, declined or expired. The remaining cases, and the user's view of all this, are in <a href="../01-product/#envelope">01</a>.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>A standing mandate at account level</dt>
+            <dd>Set once, applied to every task. Authority stops belonging to a task: a mis-planned or hijacked task inherits everything the user ever granted, and the confirming tap becomes ceremony because it no longer changes anything.</dd>
+            <dt>A spend cap alone</dt>
+            <dd>The human-assisted assistants stop here. Duckbill executes purchases up to $2,500 on a card stored in its app <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>; Fancy Hands caps payments at $200 per request behind a per-payment approval button <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>. Money is one field of five. An application submitted, terms accepted, a call placed to a party the user never named, an identity number stated: none has a price, and a cap sees none of them.</dd>
+            <dt>Confirm every step</dt>
+            <dd>Delegation collapses into supervised execution: the user becomes the bottleneck on the tasks they delegated to escape, and fatigue makes each tap meaningless, so the safety it claims disappears with use. The envelope asks once, properly, then acts.</dd>
+            <dt>Reversibility judged by the executor at the moment of acting</dt>
+            <dd>A judgement made under time pressure by the party with the least context. The test is asked at planning, recorded on the step, and re-asked on every edit; the executor inherits the answer.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>Any step executing before the envelope is confirmed. The state machine has no path from <code>awaiting-authority</code> to <code>active</code> except the user's authorisation.</li>
+            <li>An irreversible act outside the envelope by the AI, a worker, a surface controller, which checks the window and the version at every committing action, or the substitutor, which checks the envelope before every placement.</li>
+            <li>An irreversible act inside the envelope fired by one party alone.</li>
+            <li>An envelope that spans tasks, or a version of it carrying authority without the user's own bound device's signature; a proposal is unsigned and authorises nothing, and a dependant's tap signs a delegation record of her own, never an envelope version.</li>
+            <li>Any step firing after the validity window, or after a dependant's delegation has been revoked or has expired, without re-authorisation, reversible or not, at a placement or at a committing act that places no value.</li>
+            <li>A commitment reaching a party past the surface's gate: a spoken utterance the step's script and the non-committing lexicon do not cover, whatever its form, a click outside the page map's navigation or a submit, a keypad press outside the navigation map, a relay message outside the catalogue template, or a committing placement, on a step holding no approval token.</li>
+            <li>A cap exceeded by acts each under it, an approval token used twice, a step with a fired marker re-queued, or a committing placement repeated because its receipt was not confirmed.</li>
+            <li>Contact with a party the envelope does not name, and a delegated identity act the policy layer flags as bounce.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. The envelope is drawn from the user's side in 01, the classification rule is applied in <a href="../02-architecture/#classifier">02</a> and enforced at the boundary in <a href="../03-trust-and-data/#substitution">03</a>, and the second fatal failure, an irreversible act the user did not want, is closed by this record and <a href="dr-005-state-machine-lapsed.html">DR-005</a> together.</p>
+        </section>
+      </article>
+      <section>
+        <h2 class="unnumbered" id="sources">Sources</h2>
+        <ol class="sources">
+          <li id="src-1">Duckbill, <cite>The do's and don'ts of Duckbill</cite>, Duckbill blog, undated; read via search excerpt on 2 September 2026. <a class="url" href="https://lp.getduckbill.com/blog/the-do-s-and-dont-s-of-duckbill">https://lp.getduckbill.com/blog/the-do-s-and-dont-s-of-duckbill</a></li>
+          <li id="src-2">Fancy Hands, <cite>Payments are back</cite>, Fancy Hands blog, undated; read via search excerpt on 2 September 2026. <a class="url" href="https://www.fancyhands.com/blog/payments-are-back">https://www.fancyhands.com/blog/payments-are-back</a></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a high-trust, human-in-the-gap AI assistant for tasks that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

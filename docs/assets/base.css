@@ -47,6 +47,7 @@ pre {
 pre code { font-size: inherit; }
 .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 .small { font-size: var(--fs-meta); }
+.nobr { white-space: nowrap; }
 .soft { color: var(--ink-soft); }
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 
@@ -240,11 +241,12 @@ body.kind-sheet .doc { max-width: calc(var(--measure) + 6rem); }
 .fig-no, .tab-no { font-family: var(--mono); font-weight: 500; margin-right: 0.75em; }
 
 /* Diagram language: every class resolves to a token */
-.fig svg text, .fg-label { font-family: var(--mono); font-size: 13px; font-weight: 400; fill: var(--ink); }
-.fg-label-small { font-size: 11px; }
-.fg-label-soft { fill: var(--ink-soft); }
-.fg-label-strong { font-weight: 500; }
-.fg-label-paper { fill: var(--paper); }
+.fig text, .fg-label { font-family: var(--mono); font-size: 13px; font-weight: 400; fill: var(--ink); }
+.fig .fg-label-small { font-size: 11px; }
+.fig .fg-label-soft { fill: var(--ink-soft); }
+.fig .fg-label-strong { font-weight: 500; }
+.fig .fg-label-paper { fill: var(--paper); }
+.fig .fg-label-accent { fill: var(--accent); }
 .fg-box { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; }
 .fg-box-2 { fill: var(--paper-2); stroke: var(--ink); stroke-width: 1.5; }
 .fg-actor { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; stroke-dasharray: 1 3; stroke-linecap: round; }
