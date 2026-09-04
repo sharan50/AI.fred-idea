@@ -80,7 +80,7 @@
       "path": "02-architecture/index.html",
       "title": "Architecture",
       "section": "02-architecture",
-      "status": "decision",
+      "status": "assumption",
       "summary": "The harness an engineer builds first: the component map, the planner, the classifier and the step-type catalogue, the execution surfaces and their controllers, the task state machine with its invariant, verification and the evidence pipeline, the context store, the intake gateway behind the vault's edge proxy, and the market adapter model.",
       "updated": "2026-09-02"
     },
