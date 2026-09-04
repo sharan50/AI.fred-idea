@@ -59,7 +59,7 @@
       <section>
         <h2 id="promise"><span class="no">1</span>The promise</h2>
         <p>How this is built is in <a href="./">03 Trust and data</a>; this page is the part we would say to you. You hand us a task that matters: opening a bank account, chasing a hospital appointment, renewing a passport, answering a tax notice, moving a parent's pension. We get it done. An AI plans the work and does what it can. Where a person is needed, one of our staff follows a short, exact instruction. And one thing makes this safe to trust: nobody who works for us ever sees your numbers.</p>
-        <p>Your PAN, your Aadhaar, your card, your account number, your date of birth live in a locked vault run by a specialist company, not on our desks. Our staff and our AI work with labels instead, like <code>{{pan}}</code>. When a form needs the real number, a machine with no screen types it in, and the person watching sees dots. On a phone call, the machine speaks or keys the number while the person's line is muted. Every time that happens, a line is written in your ledger, in words you can read.</p>
+        <p>Your PAN, your Aadhaar, your card, your account number, your date of birth live in a locked vault run by a specialist company, not on our desks. Our staff and our AI work with labels instead, like <code>{{pan}}</code>. When a form needs the real number, a machine with no screen types it in, and the person watching sees dots. On a phone call, the machine speaks or keys the number while the person's line is muted both ways. Every time that happens, a line is written in your ledger, in words you can read.</p>
         <figure class="fig" id="fig-promise">
           <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 3.5, the promise in one drawing, scrollable">
           <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig-promise-title fig-promise-desc">
@@ -102,7 +102,7 @@
             <text class="fg-label-small" x="712" y="226" text-anchor="end">appears outside the vault</text>
             <line class="fg-line" x1="408" y1="192" x2="408" y2="240" marker-end="url(#fig-promise-arrow)"/>
             <text class="fg-label-small fg-label-strong" x="8" y="262">Your ledger</text>
-            <text class="fg-label-small" x="104" y="262">14:32  {{pan}} used to fill the form, in our browser. Placed by the machine. No person saw it.</text>
+            <text class="fg-label-small" x="104" y="262">14:32  {{pan}} used to fill the form, in our browser. Placed by the system. No person saw it.</text>
             <text class="fg-label-small fg-label-soft" x="8" y="304">dotted box: a person; rounded box: your phone; accent arrow: where your number appears outside the vault</text>
           </svg>
           </div>
@@ -124,10 +124,10 @@
       <section>
         <h2 id="what-we-never-do"><span class="no">3</span>What we never do</h2>
         <ul>
-          <li>We never ask you for a one-time code, a PIN or a password, and we never enter one. Those steps come to your own phone.</li>
+          <li>We never ask you for a one-time code, a PIN or a password. Those come to your own phone and you enter them yourself; if a code has to land in a form on our screen, it goes straight from your phone into the form, and the worker sees dots.</li>
           <li>No person who works for us sees your numbers, your documents or your card, at any level. There is no screen on which they could.</li>
           <li>Nothing that cannot be undone happens outside the limits you set. If a task needs more, we ask, and it waits for your tap.</li>
-          <li>If you go quiet, we remind you, then pause the task and tell you so. We never quietly forget it.</li>
+          <li>If you go quiet, we remind you, then mark the task lapsed and tell you so; one message from you brings it back, planned afresh. We never quietly forget it.</li>
           <li>You close every task with one tap: done, satisfied; done, but rough; wrong outcome, needs redoing; we couldn't complete it; withdrawn by me. That answer is how we improve.</li>
         </ul>
       </section>
