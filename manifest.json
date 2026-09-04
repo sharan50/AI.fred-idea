@@ -81,7 +81,7 @@
       "title": "Architecture",
       "section": "02-architecture",
       "status": "decision",
-      "summary": "The harness an engineer builds first: the component map, the planner, the classifier, the execution surfaces, the task state machine with its invariant, verification and the evidence pipeline, the context store, the intake gateway and the market adapter model.",
+      "summary": "The harness an engineer builds first: the component map, the planner, the classifier and the step-type catalogue, the execution surfaces and their controllers, the task state machine with its invariant, verification and the evidence pipeline, the context store, the intake gateway behind the vault's edge proxy, and the market adapter model.",
       "updated": "2026-09-02"
     },
     {
@@ -145,7 +145,7 @@
       "title": "DR-001 Channel-agnostic intake gateway; WhatsApp front door amber",
       "section": "decisions",
       "status": "amber",
-      "summary": "One intake gateway normalises every channel into one internal request format and tokenises at the edge; which channel opens the front door in each market is amber until the first US/UK cohort is scoped.",
+      "summary": "One intake gateway, behind the vault's tokenising edge proxy, normalises every channel into one internal request format; which channel opens the front door in each market is amber until the first US/UK cohort is scoped.",
       "updated": "2026-09-02"
     },
     {
