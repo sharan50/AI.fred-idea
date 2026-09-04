@@ -48,7 +48,7 @@
     },
     {
       "key": "decisions",
-      "pages": 16
+      "pages": 17
     }
   ],
   "pages": [
@@ -242,6 +242,14 @@
       "section": "decisions",
       "status": "decision",
       "summary": "In this edition a verified chip means the claim was checked against a search-engine excerpt of the named, dated source, because the build environment blocked full page reads and capped searches; no page circulates externally before its load-bearing sources are re-read.",
+      "updated": "2026-09-02"
+    },
+    {
+      "path": "decisions/dr-014-substitution-framing.html",
+      "title": "DR-014 The substitution framing: boundary sequence over ledger spine",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "Sections 1 to 4 of 03 are organised as a boundary sequence, one real value followed across five boundaries with Figure 3.2 as the substitution sequence; the ledger-led framing was rejected as the spine and grafted for its best parts.",
       "updated": "2026-09-02"
     },
     {
