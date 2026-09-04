@@ -58,8 +58,8 @@
     <div class="doc">
       <section>
         <h2 id="promise"><span class="no">1</span>The promise</h2>
-        <p>How this is built is in <a href="./">03 Trust and data</a>; this page is the part we would say to you. You hand us a task that matters: opening a bank account, chasing a hospital appointment, renewing a passport, answering a tax notice, moving a parent's pension. We get it done. An AI plans the work and does what it can. Where a person is needed, one of our staff follows a short, exact instruction. And one thing makes this safe to trust: nobody who works for us ever sees your numbers.</p>
-        <p>Your PAN, your Aadhaar, your card, your account number, your date of birth live in a locked vault run by a specialist company, not on our desks. Our staff and our AI work with labels instead, like <code>{{pan}}</code>. When a form needs the real number, a machine with no screen types it in, and the person watching sees dots. On a phone call, the machine speaks or keys the number while the person's line is muted both ways. Every time that happens, a line is written in your ledger, in words you can read.</p>
+        <p>How it is built is in <a href="./">03 Trust and data</a>; this page is what we would say to you. You hand us a task that matters: opening a bank account, chasing a hospital appointment, renewing a passport, answering a tax notice. We get it done. An AI plans the work and does what it can. Where a person is needed, one of our staff follows a short, exact instruction. And one thing makes this safe to trust: nobody who works for us ever sees your numbers.</p>
+        <p>Your PAN, your Aadhaar, your card and your date of birth live in a locked vault run by a specialist company, not on our desks. Our staff and our AI work with labels instead, like <code>{{pan}}</code>. When a form needs the real number, a machine with no screen types it in, and the person watching sees dots. On a phone call, the machine speaks or keys the number while the person's line is muted both ways. Every time that happens, a line is written in your ledger, in words you can read.</p>
         <figure class="fig" id="fig-promise">
           <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 3.5, the promise in one drawing, scrollable">
           <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig-promise-title fig-promise-desc">
@@ -108,26 +108,26 @@
           </div>
           <figcaption><span class="fig-no">Figure 3.5</span> Your number goes once into a vault and comes out once, into the institution's form, by a machine; the people in between only ever see a label or dots.</figcaption>
         </figure>
-        <p>Before we start, you set the limits: how much we may spend, who we may contact, what we may commit you to. Inside them we act. Outside them, nothing happens without a tap from you on your own phone. Anything that cannot be undone, a payment, a submitted application, a signed form, gets a second check before it fires.</p>
+        <p>Before we start, you set the limits: how much we may spend, who we may contact, what we may commit you to. Inside them we act. Outside them, nothing happens without a tap from you on your own phone. Anything that cannot be undone, a payment or a submitted application, gets a second check before it fires.</p>
       </section>
       <section>
         <h2 id="ledger-example"><span class="no">2</span>What your ledger looks like</h2>
-        <p>Every use of one of your numbers is one line in your task's ledger, written by the machine that used it, not by a person. A bank-account task might read:</p>
+        <p>Every use of one of your numbers is one line in your ledger, written by the machine that used it, not by a person. A bank-account task might read:</p>
         <ol class="ledger">
           <li><span class="t">14:02</span><span class="e">{{pan}} received from your message and stored in the vault. No person saw it.</span></li>
           <li><span class="t">14:32</span><span class="e">{{pan}} used to fill HDFC Bank's account-opening form, in our browser. Placed by the system. No person saw it.</span></li>
           <li><span class="t">14:32</span><span class="e">A worker saw the form with {{pan}} shown as dots.</span></li>
           <li><span class="t">14:40</span><span class="e">{{dob}} spoken to Max Healthcare's booking line, on our phone line. Placed by the system. The worker's audio was muted.</span></li>
         </ol>
-        <p>Three things are promised. Every use is written down; the machine cannot use a number without writing the line first. "No person saw it" is not a rule we ask staff to follow; it is what their screen was able to show. And you can read your ledger at any time, for any task. The label in curly brackets is how we refer to your number without holding it; the times above are illustrative.</p>
+        <p>Three things are promised. Every use is written down; the machine cannot use a number without writing the line first. "No person saw it" is not a rule staff follow; it is what their screen could show. And you can read your ledger at any time. The label in brackets names your number without holding it; the times are illustrative.</p>
       </section>
       <section>
         <h2 id="what-we-never-do"><span class="no">3</span>What we never do</h2>
         <ul>
           <li>We never ask you for a one-time code, a PIN or a password. Those come to your own phone and you enter them yourself; if a code has to land in a form on our screen, it goes straight from your phone into the form, and the worker sees dots.</li>
-          <li>No person who works for us sees your numbers, your documents or your card, at any level. There is no screen on which they could.</li>
+          <li>No person who works for us, at any level, sees your numbers, documents or card; there is no screen on which they could.</li>
           <li>Nothing that cannot be undone happens outside the limits you set. If a task needs more, we ask, and it waits for your tap.</li>
-          <li>If you go quiet, we remind you, then mark the task lapsed and tell you so; one message from you brings it back, planned afresh. We never quietly forget it.</li>
+          <li>If you go quiet, we remind you, then mark the task lapsed and say so; one message revives it. We never quietly forget it.</li>
           <li>You close every task with one tap: done, satisfied; done, but rough; wrong outcome, needs redoing; we couldn't complete it; withdrawn by me. That answer is how we improve.</li>
         </ul>
       </section>
