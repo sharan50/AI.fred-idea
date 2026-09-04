@@ -112,7 +112,7 @@
       "path": "04-operations/index.html",
       "title": "04 Operations",
       "section": "04-operations",
-      "status": "decision",
+      "status": "to-verify",
       "summary": "How the floor runs: need-to-know task cards, three worker tiers with dual control, a 24-hour wheel of three shifts from one office, site controls as part of the trust guarantee, QA as a shift duty, and service levels stated qualitatively. No cost model.",
       "updated": "2026-09-02"
     },
@@ -128,7 +128,7 @@
       "path": "06-roadmap/index.html",
       "title": "06 Roadmap",
       "section": "06-roadmap",
-      "status": "to-verify",
+      "status": "amber",
       "summary": "The harness-first build sequence in eight gated stages, the pilot scoped by capability rather than headcount, the build-versus-buy table with what each purchase commits us to, and the three-part playbook for entering a country.",
       "updated": "2026-09-02"
     },
