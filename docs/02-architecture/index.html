@@ -129,16 +129,16 @@
             <path class="fg-line" d="M56,264 V54 H144" marker-end="url(#fig-components-arrow)"/>
             <text class="fg-label-small" x="62" y="48">request</text>
             <line class="fg-line" x1="208" y1="72" x2="208" y2="120" marker-end="url(#fig-components-arrow)"/>
-            <text class="fg-label-small" x="214" y="92">aliases</text>
+            <text class="fg-label-small" x="214" y="89">aliases</text>
             <line class="fg-line" x1="586" y1="72" x2="586" y2="120" marker-end="url(#fig-components-arrow)"/>
-            <text class="fg-label-small" x="592" y="100">tokenise</text>
+            <text class="fg-label-small" x="592" y="89">tokenise</text>
             <line class="fg-line" x1="272" y1="144" x2="296" y2="144" marker-end="url(#fig-components-arrow)"/>
             <path class="fg-line" d="M340,168 V180 H208 V192" marker-end="url(#fig-components-arrow)"/>
             <text class="fg-label-small" x="216" y="178">plan</text>
             <line class="fg-line" x1="380" y1="192" x2="380" y2="168" marker-end="url(#fig-components-arrow)"/>
             <text class="fg-label-small" x="386" y="184">facts</text>
             <line class="fg-line" x1="208" y1="240" x2="208" y2="264" marker-end="url(#fig-components-arrow)"/>
-            <text class="fg-label-small" x="214" y="256">steps</text>
+            <text class="fg-label-small" text-anchor="end" x="204" y="256">steps</text>
             <path class="fg-line" d="M340,264 V252 H232 V240" marker-end="url(#fig-components-arrow)"/>
             <text class="fg-label-small" x="346" y="259">flags</text>
             <line class="fg-line" x1="296" y1="300" x2="272" y2="300" marker-end="url(#fig-components-arrow)"/>
@@ -470,10 +470,10 @@
             <text class="fg-label-small" text-anchor="middle" x="468" y="380">resume,</text>
             <text class="fg-label-small" text-anchor="middle" x="468" y="394">escalate-resume</text>
             <line class="fg-line" x1="360" y1="456" x2="360" y2="528" marker-end="url(#fig-state-machine-arrow)"/>
-            <text class="fg-label-small" x="368" y="476">verdict, redo</text>
+            <text class="fg-label-small" x="368" y="470">verdict, redo</text>
             <circle class="fg-fill-ink" cx="420" cy="480" r="3"/>
             <line class="fg-line" x1="420" y1="480" x2="420" y2="528" marker-end="url(#fig-state-machine-arrow)"/>
-            <text class="fg-label-small" x="428" y="476">withdraw, from any live state</text>
+            <text class="fg-label-small" x="428" y="520">withdraw, from any live state</text>
             <line class="fg-line" x1="144" y1="360" x2="144" y2="528" marker-end="url(#fig-state-machine-arrow)"/>
             <text class="fg-label-small" x="150" y="400">lapse</text>
             <path class="fg-line" d="M280,448 H200 V528" marker-end="url(#fig-state-machine-arrow)"/>
@@ -488,8 +488,8 @@
             <circle class="fg-fill-ink" cx="696" cy="124" r="3"/>
             <text class="fg-label-small" x="448" y="118">refuse</text>
             <path class="fg-line-soft" d="M440,440 H676 V160 H440" marker-end="url(#fig-state-machine-arrow-soft)"/>
-            <text class="fg-label-small" x="448" y="434">redo: the parent closes on the verdict;</text>
-            <text class="fg-label-small" x="448" y="176">a linked child task opens in planning</text>
+            <text class="fg-label-small" x="448" y="434">redo: the parent closes;</text>
+            <text class="fg-label-small" x="448" y="176">a linked child opens in planning</text>
             <text class="fg-label-small fg-label-soft" x="8" y="604">filled box: terminal state, no timer, no further execution</text>
             <text class="fg-label-small fg-label-soft" x="8" y="620">accent rule: crossed only by an explicit, recorded transition</text>
           </svg>
