@@ -19,6 +19,8 @@ find-and-replace pass.
 | `docs/assets/nav.js` | Vanilla JavaScript for navigation only. |
 | `manifest.json` | Machine-readable site map: path, title, section, status, summary, updated. |
 | `tools/verify.mjs` | The verification harness. Never published. |
+| `tools/depmap.mjs` | The dependency map's tool: `extract`, `check`, `impact`, `batch`, `at`, `show`, `list`, `selftest`. Never published (DR-017). |
+| `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `batches/` (one record per batch of proposed changes). |
 | `netlify.toml` | Publish directory pinned to `docs`; no build command. |
 | `SURFACING_REPORT.md` | The loop's closing report against the founder's bar (written at the end of the build). |
 
@@ -46,7 +48,24 @@ Node 18 or later, no dependencies. Non-zero exit on any failure; each failure
 prints as `file:line message`. The harness checks links and assets, the
 per-page floor, token-only colours, AA contrast, mandated figure ids, banned
 characters and phrases, the manifest against the filesystem, the 05 stub, the
-decision-record structure and the print stylesheet.
+decision-record structure and the print stylesheet. Its eighth section runs the
+dependency map's own check, so a map pointer that no longer resolves or a
+restated list that has drifted fails the build too.
+
+The dependency map (DR-017) answers "what else changes if this changes" before
+a page is edited. Before editing a fixed decision, a mechanism stated on more
+than one page, or a closed list:
+
+```
+node tools/depmap.mjs at 02-architecture/index.html#classifier     what this section carries
+node tools/depmap.mjs impact dr-008                                 the closure of a change to one node
+node tools/depmap.mjs batch --change custody=dr-008 --change geography=dr-007
+```
+
+The batch output is the edit plan; save it under `tools/depmap/batches/`.
+After editing, run `node tools/depmap.mjs extract` to refresh the reference
+layer, update `graph.json` for what moved, and run `check`. The vocabularies,
+the locus grammar and the change protocol are in `tools/depmap/SCHEMA.md`.
 
 ## Previewing locally
 

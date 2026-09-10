@@ -1,7 +1,7 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "updated": "2026-09-02",
+  "updated": "2026-09-10",
   "statuses": {
     "verified": "never a page status",
     "to-verify": "the page carries external claims not yet verified",
@@ -48,7 +48,7 @@
     },
     {
       "key": "decisions",
-      "pages": 17
+      "pages": 18
     }
   ],
   "pages": [
@@ -58,7 +58,7 @@
       "section": "index",
       "status": "decision",
       "summary": "The venture in two pages: the promise, the human-in-the-gap model, the two fatal failures and how the design makes them structurally impossible, the three-market shape, what exists today, and how to read this publication.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "00-thesis/index.html",
@@ -269,12 +269,20 @@
       "updated": "2026-09-02"
     },
     {
+      "path": "decisions/dr-017-dependency-map.html",
+      "title": "DR-017 A dependency map of the record, kept as a tool",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory and never as a page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
+      "updated": "2026-09-10"
+    },
+    {
       "path": "decisions/index.html",
       "title": "Decisions",
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     }
   ]
 }
