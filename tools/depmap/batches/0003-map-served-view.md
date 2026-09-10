@@ -45,7 +45,11 @@ as the production deploy at 17:20 UTC on 2026-09-10. No production deploy from
 `main` existed, so the merge of pull request 2 was not visible. The fix is a
 production deploy of `main` and, in the Netlify project's build settings, a
 production branch of `main` with auto-publishing on, so that later merges
-deploy on their own.
+deploy on their own. The deploy could not be run from the session that made
+this batch: its egress policy answered 403 to `api.netlify.com`,
+`netlify-mcp.netlify.app` and the site's own host, so the production deploy of
+`main` is the founder's step, from the Netlify dashboard or the Netlify CLI on
+a machine with access.
 
 ## Checks on the edited record
 
