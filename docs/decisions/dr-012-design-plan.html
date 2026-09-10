@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="dark">
 <title>DR-012 The design plan: an engineering dossier, AI.fred</title>
-<meta name="description" content="The visual system for the publication: palette, type, numbering voice, page kinds, components, diagram language and print, critiqued against the generic defaults and fixed.">
-<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<meta name="description" content="The visual system for the publication: palette, type, numbering voice, page kinds, components, diagram language and print, critiqued against the generic defaults and fixed. Revised 2026-09-10 at the founder's direction: a dark ground, Inter for prose, the diagrams inverted with the ground.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/tokens.css">
 <link rel="stylesheet" href="../assets/base.css">
@@ -26,7 +26,7 @@
   <header class="page-header">
     <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-10</small></p>
     <h1><span class="no"><a href="./">DR-012</a></span><span class="title">The design plan: an engineering dossier</span></h1>
-    <p class="standfirst">The publication is set as an engineering dossier: paper, ink, one accent spent on a stamp and one stroke per figure, a fixed status vocabulary, and diagrams as the memorable element. This record fixes the system after an independent three-lens critique.</p>
+    <p class="standfirst">The publication is set as an engineering dossier on a dark ground: light ink on a near-black paper, Inter for prose, one accent spent on a stamp and one stroke per figure, a fixed status vocabulary, and diagrams as the memorable element, inverted with the ground. This record fixed the system after an independent three-lens critique and was revised on 2026-09-10 at the founder's direction.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>DR-012</dd></div>
       <div><dt>Revised</dt><dd>2026-09-10</dd></div>
@@ -59,27 +59,27 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>Every page of the publication is built from one token file, one component set and one diagram language, in the direction the founder agreed: an engineering dossier. The system is fixed as follows.</p>
+          <p>Every page of the publication is built from one token file, one component set and one diagram language, in the direction the founder agreed: an engineering dossier. The system is fixed as follows. Revised 2026-09-10: the founder judged the paper look too generic and unengaging and directed a dark ground with Inter as the prose face; the tokens, the components and the diagram language are unchanged in structure, so the revision is new values in the token file and new faces in the assets directory, exactly the route 1.1 reserves for a change, and print keeps the paper values so a PDF is still ink on white.</p>
           <h3 id="palette"><span class="no">1.1</span>Palette</h3>
-          <p>Six colours from the brief plus two derived neutrals, defined once in <code>tokens.css</code> and nowhere else. The accent never fills an area and appears at most twice on any screen: the stamp and one stroke per figure. Links are ink with an ink underline. Amber and verified are dot and stroke colours only, never text. Line colour never carries meaning inside a figure.</p>
+          <p>Six colours in the roles the brief gives them, with the dark values the founder directed on 2026-09-10, plus two derived neutrals, defined once in <code>tokens.css</code> and nowhere else. The accent never fills an area and appears at most twice on any screen: the stamp and one stroke per figure. Links are ink with an ink underline. Amber and verified are dot and stroke colours only, never text. Line colour never carries meaning inside a figure.</p>
           <div class="table-wrap">
           <table class="data">
             <caption><span class="tab-no">Table D.1</span> The palette, its roles, and the contrast each text colour achieves on both grounds.</caption>
             <thead><tr><th>Token</th><th>Value</th><th>Role</th><th class="num">On paper</th><th class="num">On paper-2</th></tr></thead>
             <tbody>
-              <tr><td class="key">paper</td><td class="mono">#FBFAF7</td><td>Page ground</td><td class="num"></td><td class="num"></td></tr>
-              <tr><td class="key">paper-2</td><td class="mono">#F3F1EA</td><td>Block code only</td><td class="num"></td><td class="num"></td></tr>
-              <tr><td class="key">ink</td><td class="mono">#17150E</td><td>All text; all meaningful strokes</td><td class="num">17.5:1</td><td class="num">16.2:1</td></tr>
-              <tr><td class="key">ink-soft</td><td class="mono">#4F4B40</td><td>Captions, control-block labels, secondary diagram labels</td><td class="num">8.3:1</td><td class="num">7.7:1</td></tr>
-              <tr><td class="key">line</td><td class="mono">#D8D4C8</td><td>Hairline rules, table rules, diagram grid only</td><td class="num">non-text</td><td class="num">non-text</td></tr>
-              <tr><td class="key">accent</td><td class="mono">#A8321A</td><td>Stamps and exactly one stroke per figure; nothing else</td><td class="num">6.4:1</td><td class="num">5.9:1</td></tr>
-              <tr><td class="key">amber</td><td class="mono">#946A00</td><td>Amber and to-verify dots and strokes; never text</td><td class="num">4.7:1</td><td class="num">4.3:1</td></tr>
-              <tr><td class="key">verified</td><td class="mono">#2F5D3A</td><td>Verified dots and strokes; never text</td><td class="num">7.3:1</td><td class="num">6.8:1</td></tr>
+              <tr><td class="key">paper</td><td class="mono">#13120E</td><td>Page ground, near-black</td><td class="num"></td><td class="num"></td></tr>
+              <tr><td class="key">paper-2</td><td class="mono">#1D1B16</td><td>Block code only</td><td class="num"></td><td class="num"></td></tr>
+              <tr><td class="key">ink</td><td class="mono">#EDE9E0</td><td>All text; all meaningful strokes</td><td class="num">15.5:1</td><td class="num">14.2:1</td></tr>
+              <tr><td class="key">ink-soft</td><td class="mono">#B5AE9F</td><td>Captions, control-block labels, secondary diagram labels</td><td class="num">8.5:1</td><td class="num">7.8:1</td></tr>
+              <tr><td class="key">line</td><td class="mono">#3B3831</td><td>Hairline rules, table rules, diagram grid only</td><td class="num">non-text</td><td class="num">non-text</td></tr>
+              <tr><td class="key">accent</td><td class="mono">#F0785A</td><td>Stamps and exactly one stroke per figure; nothing else</td><td class="num">6.7:1</td><td class="num">6.2:1</td></tr>
+              <tr><td class="key">amber</td><td class="mono">#E2B347</td><td>Amber and to-verify dots and strokes; never text, although it now clears AA</td><td class="num">9.6:1</td><td class="num">8.8:1</td></tr>
+              <tr><td class="key">verified</td><td class="mono">#7CC48A</td><td>Verified dots and strokes; never text</td><td class="num">9.0:1</td><td class="num">8.3:1</td></tr>
             </tbody>
           </table>
           </div>
           <h3 id="type"><span class="no">1.2</span>Type</h3>
-          <p>IBM Plex Sans for prose; IBM Plex Mono for the data voice: chips, control-block values, figure labels, table cells holding codes or values, the ledger, aliases and code. Never body text. Both faces are self-hosted as woff2 under the SIL Open Font Licence, with system fallbacks and no synthesised weights. Hierarchy comes from number, weight and space, not size: body 17px at 1.55; standfirst 1.1875rem; h1 1.625rem Medium; h2 1.25rem Medium with two and a half lines above; h3 at body size, Medium. Meta, chips and figure labels are 13px Mono. The measure is 60ch, about 72 characters. Text is left aligned with manual hyphenation and tabular numerals wherever numbers align.</p>
+          <p>Inter for prose, one variable face carrying every weight; IBM Plex Mono for the data voice: chips, control-block values, figure labels, table cells holding codes or values, the ledger, aliases and code. Never body text. Both faces are self-hosted as woff2 under the SIL Open Font Licence, with system fallbacks and no synthesised weights. Hierarchy comes from number, weight and space, not size: body 17px at 1.55; standfirst 1.1875rem; h1 1.625rem Medium; h2 1.25rem Medium with two and a half lines above; h3 at body size, Medium. Meta, chips and figure labels are 13px Mono. The measure is 60ch, about 72 characters. Text is left aligned with manual hyphenation and tabular numerals wherever numbers align.</p>
           <h3 id="numbering"><span class="no">1.3</span>The numbering voice</h3>
           <p>One numbering voice runs through the publication. Documents are <code>00</code> to <code>07</code> and <code>DR-001</code> onward, shown as a numeral hanging beside the title. Headings are numbered in the text as hanging numerals, <code>1</code> and <code>1.1</code>, mirrored in the rail. Figures are <code>Figure S.n</code> and tables <code>Table S.n</code>, where S is the section digit (0 for the thesis, i for the index, D for decision records) and n runs across every page of the section. Cross-references are links whose text is the identifier or the document's name.</p>
           <h3 id="layout"><span class="no">1.4</span>Layout and page kinds</h3>
@@ -162,7 +162,7 @@
             <dt>Source and date in a hover title only</dt>
             <dd>Invisible in print, on touch and to keyboard users; it would have met the brief's "verified with source and date" for mouse users alone. The numbered reference and sources list cost a few lines per page.</dd>
             <dt>A dark theme</dt>
-            <dd>A paper document has one look. A second palette would double the contrast work and the diagram classes for no reader the brief names.</dd>
+            <dd>A paper document has one look. A second palette would double the contrast work and the diagram classes for no reader the brief names. Reversed on 2026-09-10 by the founder, who found the paper look too generic and unengaging: the publication has one look again, dark on screen, with the print stylesheet keeping paper for the page that is printed. The cost named here was paid once, as one set of token values and one contrast pass, and the diagram classes needed no change because every colour in them is a token.</dd>
             <dt>The one permitted moment of motion</dt>
             <dd>The brief allows one deliberate non-user-triggered moment. We spend none; a dossier that moves is less trusted, not more.</dd>
           </dl>
@@ -180,7 +180,7 @@
         </section>
         <section>
           <h2 id="record-status"><span class="no">4</span>Status</h2>
-          <p>Fixed decision, taken during the build on 2026-09-02 after the critique. Revising it means extending tokens and components first and re-running the harness; it does not mean styling a page.</p>
+          <p>Fixed decision, taken during the build on 2026-09-02 after the critique. Revising it means extending tokens and components first and re-running the harness; it does not mean styling a page. Revised 2026-09-10 by the founder: dark ground, Inter for prose, the diagrams inverted with the ground, recorded as batch 0004 of the dependency map; <a href="dr-011-token-and-component-system.html">DR-011</a> and the brief's visual section were reopened by the change and the brief is left as the instruction set that produced the first edition.</p>
         </section>
       </article>
     </div>

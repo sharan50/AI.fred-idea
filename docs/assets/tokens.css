@@ -1,24 +1,41 @@
 /* AI.fred tokens. The only file in the publication that defines a colour.
-   Contrast ratios (paper / paper-2): ink 17.5 / 16.2; ink-soft 8.3 / 7.7;
-   accent 6.4 / 5.9; amber 4.7 / 4.3; verified 7.3 / 6.8.
+   Dark ground since 2026-09-10 (DR-012, revised): ink is light on a near-black paper, and the diagrams invert
+   with it because every figure colour is one of these tokens. Contrast ratios (paper / paper-2): ink 15.5 / 14.2;
+   ink-soft 8.5 / 7.8; accent 6.7 / 6.2; amber 9.6 / 8.8; verified 9.0 / 8.3.
    Rules: the accent never fills an area and appears at most twice on a screen
    (the stamp and one figure stroke). Amber and verified are dot and stroke
-   colours only, never text. Line colour never carries meaning in a figure. */
+   colours only, never text. Line colour never carries meaning in a figure.
+   Print keeps the paper values, so a PDF is ink on white; that block comes
+   first and wins by specificity, and the screen block below is the one the
+   harness reads for contrast. */
+@media print {
+  html:root {
+    color-scheme: light;
+    --paper: #FBFAF7;
+    --paper-2: #F3F1EA;
+    --ink: #17150E;
+    --ink-soft: #4F4B40;
+    --line: #D8D4C8;
+    --accent: #A8321A;
+    --amber: #946A00;
+    --verified: #2F5D3A;
+  }
+}
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 
-  /* Palette (BUILD_BRIEF section 3) */
-  --paper: #FBFAF7;
-  --paper-2: #F3F1EA;
-  --ink: #17150E;
-  --ink-soft: #4F4B40;
-  --line: #D8D4C8;
-  --accent: #A8321A;
-  --amber: #946A00;
-  --verified: #2F5D3A;
+  /* Palette (DR-012 Table D.1, revised 2026-09-10) */
+  --paper: #13120E;
+  --paper-2: #1D1B16;
+  --ink: #EDE9E0;
+  --ink-soft: #B5AE9F;
+  --line: #3B3831;
+  --accent: #F0785A;
+  --amber: #E2B347;
+  --verified: #7CC48A;
 
   /* Type */
-  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --sans: "Inter", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, "Liberation Mono", monospace;
   --fs-body: 17px;
   --lh-body: 1.55;

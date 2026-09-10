@@ -989,11 +989,11 @@ export function renderView({ root = DEFAULT_ROOT, mode = 'local' } = {}) {
     pages: Object.fromEntries(Object.entries(refs.pages).filter(([p]) => p !== 'depmap/index.html').map(([p, pg]) => [p, pg.title.replace(/, AI\.fred$/, '')])),
   };
   const json = JSON.stringify(data).replace(/<\//g, '<\\/');
-  const faces = [['IBM Plex Sans', 400, 'IBMPlexSans-Regular'], ['IBM Plex Sans', 500, 'IBMPlexSans-Medium'], ['IBM Plex Sans', 600, 'IBMPlexSans-SemiBold'], ['IBM Plex Mono', 400, 'IBMPlexMono-Regular'], ['IBM Plex Mono', 500, 'IBMPlexMono-Medium']];
+  const faces = [['Inter', '100 900', 'inter-latin-wght-normal', 'woff2-variations'], ['IBM Plex Mono', 400, 'IBMPlexMono-Regular', 'woff2'], ['IBM Plex Mono', 500, 'IBMPlexMono-Medium', 'woff2']];
   const fontBase = mode === 'site' ? '../assets/fonts' : '../../docs/assets/fonts';
   const fonts = mode === 'fragment'
-    ? '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">'
-    : `<style>\n${faces.map(([f, w, file]) => `@font-face { font-family: "${f}"; font-weight: ${w}; font-style: normal; font-display: swap; src: url("${fontBase}/${file}.woff2") format("woff2"); }`).join('\n')}\n</style>`;
+    ? '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">'
+    : `<style>\n${faces.map(([f, w, file, fmt]) => `@font-face { font-family: "${f}"; font-weight: ${w}; font-style: normal; font-display: swap; src: url("${fontBase}/${file}.woff2") format("${fmt}"); }`).join('\n')}\n</style>`;
   const back = mode === 'site' ? '<a class="back" href="../">Back to the publication</a>' : '';
   const body = tpl.replace('<!--__FONTS__-->', fonts).replace('<!--__BACK__-->', back).replace('/*__GRAPH__*/', json);
   let page = body;
@@ -1001,7 +1001,7 @@ export function renderView({ root = DEFAULT_ROOT, mode = 'local' } = {}) {
     const head = mode === 'site'
       ? '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<meta name="description" content="The dependency map of the AI.fred record (DR-017) as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json and never edited by hand.">'
       : '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">';
-    page = `<!doctype html>\n<html lang="en-GB">\n<head>\n${head}\n</head>\n<body>\n${body}\n</body>\n</html>\n`;
+    page = `<!doctype html>\n<html lang="en-GB"${mode === 'site' ? ' data-theme="dark"' : ''}>\n<head>\n${head}\n</head>\n<body>\n${body}\n</body>\n</html>\n`;
   }
   return { page, nodes: data.nodes.length, edges: data.edges.length };
 }

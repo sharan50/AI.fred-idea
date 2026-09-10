@@ -242,7 +242,7 @@ for (const f of htmlFiles) {
   if (!/<nav\s+class="site-nav"/.test(t)) fail(f, 1, 'site navigation <nav class="site-nav"> is missing');
   if (!/<body\s+class="kind-(report|ledger|sheet|record)"/.test(t)) fail(f, 1, 'body must declare its page kind: kind-report, kind-ledger, kind-sheet or kind-record');
   if (!/<header\s+class="masthead"/.test(t)) fail(f, 1, 'masthead <header class="masthead"> is missing');
-  if (!/<meta\s+name="color-scheme"\s+content="light"/.test(t)) fail(f, 1, 'missing <meta name="color-scheme" content="light">');
+  if (!/<meta\s+name="color-scheme"\s+content="dark"/.test(t)) fail(f, 1, 'missing <meta name="color-scheme" content="dark"> (dark ground, DR-012 revised 2026-09-10)');
   if (!/<aside\s+class="rail"/.test(t)) fail(f, 1, 'rail <aside class="rail"> is missing');
   if (!/<nav\s+class="contents"[^>]*data-contents/.test(t)) fail(f, 1, 'on-this-page contents <nav class="contents" data-contents> is missing');
   if (!/<div\s+class="doc">/.test(t)) fail(f, 1, 'document column <div class="doc"> is missing');

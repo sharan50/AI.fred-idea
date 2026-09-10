@@ -8805,59 +8805,59 @@
           "rows": [
             [
               "paper",
-              "#fbfaf7",
-              "page ground",
+              "#13120e",
+              "page ground, near-black",
               "",
               ""
             ],
             [
               "paper-2",
-              "#f3f1ea",
+              "#1d1b16",
               "block code only",
               "",
               ""
             ],
             [
               "ink",
-              "#17150e",
+              "#ede9e0",
               "all text; all meaningful strokes",
-              "17.5:1",
-              "16.2:1"
+              "15.5:1",
+              "14.2:1"
             ],
             [
               "ink-soft",
-              "#4f4b40",
+              "#b5ae9f",
               "captions, control-block labels, secondary diagram labels",
-              "8.3:1",
-              "7.7:1"
+              "8.5:1",
+              "7.8:1"
             ],
             [
               "line",
-              "#d8d4c8",
+              "#3b3831",
               "hairline rules, table rules, diagram grid only",
               "non-text",
               "non-text"
             ],
             [
               "accent",
-              "#a8321a",
+              "#f0785a",
               "stamps and exactly one stroke per figure; nothing else",
-              "6.4:1",
-              "5.9:1"
+              "6.7:1",
+              "6.2:1"
             ],
             [
               "amber",
-              "#946a00",
-              "amber and to-verify dots and strokes; never text",
-              "4.7:1",
-              "4.3:1"
+              "#e2b347",
+              "amber and to-verify dots and strokes; never text, although it now clears aa",
+              "9.6:1",
+              "8.8:1"
             ],
             [
               "verified",
-              "#2f5d3a",
+              "#7cc48a",
               "verified dots and strokes; never text",
-              "7.3:1",
-              "6.8:1"
+              "9.0:1",
+              "8.3:1"
             ]
           ],
           "under": "palette"
@@ -8923,6 +8923,10 @@
         {
           "line": 151,
           "to": "07-open/index.html#items"
+        },
+        {
+          "line": 183,
+          "to": "decisions/dr-011-token-and-component-system.html"
         },
         {
           "line": 192,
@@ -10346,84 +10350,84 @@
       "anchors": {
         "sub": {
           "kind": "span",
-          "line": 145,
+          "line": 143,
           "text": "dependency map"
         },
         "q": {
           "kind": "input",
-          "line": 148,
+          "line": 146,
           "text": "overview elevation plan focus cone spin reset view drag to orbit, scroll to zoom"
         },
         "results": {
           "kind": "table-wrap",
-          "line": 149,
+          "line": 147,
           "text": ""
         },
         "kind-chips": {
           "kind": "table-wrap",
-          "line": 151,
+          "line": 149,
           "text": ""
         },
         "btn-focus": {
           "kind": "button",
-          "line": 156,
+          "line": 154,
           "text": "focus cone"
         },
         "btn-spin": {
           "kind": "button",
-          "line": 157,
+          "line": 155,
           "text": "spin"
         },
         "btn-reset": {
           "kind": "button",
-          "line": 158,
+          "line": 156,
           "text": "reset view"
         },
         "stage": {
           "kind": "canvas",
-          "line": 162,
+          "line": 160,
           "text": ""
         },
         "legend": {
           "kind": "table-wrap",
-          "line": 163,
+          "line": 161,
           "text": ""
         },
         "hint": {
           "kind": "p",
-          "line": 164,
+          "line": 162,
           "text": "drag to orbit, scroll to zoom, shift-drag to pan; keys 1, 2, 3 switch views. cli"
         },
         "inspector": {
           "kind": "aside",
-          "line": 165,
+          "line": 163,
           "text": ""
         },
         "ihead": {
           "kind": "table-wrap",
-          "line": 166,
+          "line": 164,
           "text": ""
         },
         "trail": {
           "kind": "table-wrap",
-          "line": 167,
+          "line": 165,
           "text": ""
         },
         "ibody": {
           "kind": "table-wrap",
-          "line": 168,
+          "line": 166,
           "text": ""
         },
         "graph": {
           "kind": "script",
-          "line": 173,
+          "line": 171,
           "text": ""
         }
       },
       "tables": {},
       "links": [
         {
-          "line": 145,
+          "line": 143,
           "to": "index.html"
         }
       ]

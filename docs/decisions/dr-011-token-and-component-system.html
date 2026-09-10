@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="dark">
 <title>DR-011 A visual token-and-component system, AI.fred</title>
 <meta name="description" content="Every colour, type role and spacing value is a token defined once; every component is defined once and composed on every page; no page carries styling of its own. A framework and per-page styling were rejected, and the harness enforces the rule.">
-<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/tokens.css">
 <link rel="stylesheet" href="../assets/base.css">
@@ -59,7 +59,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>The publication has one visual system, held in two files and composed everywhere. <code>tokens.css</code> is the only place a colour is defined: paper, ink, line, accent, amber and verified as the brief gives them, two derived neutrals, and the type scale and spacing steps. <code>base.css</code> defines the reset, the typography and every component once: masthead, page header with stamp and control block, rail, status chip, reference and sources list, decision record, figure block, data table, callout, ledger, invariant and footer. <code>print.css</code> carries the print rules. The diagram language is a set of classes in the same stylesheet, so an SVG carries no colour literal and no font attribute; a colour attribute inside an SVG may only be none, currentColor or a token reference. A page is markup plus class names and nothing more. A new layout on a future page means extending tokens and components first, then using them.</p>
+          <p>The publication has one visual system, held in two files and composed everywhere. <code>tokens.css</code> is the only place a colour is defined: paper, ink, line, accent, amber and verified in the roles the brief gives them, with the dark values the founder set on 2026-09-10 (DR-012), two derived neutrals, and the type scale and spacing steps. <code>base.css</code> defines the reset, the typography and every component once: masthead, page header with stamp and control block, rail, status chip, reference and sources list, decision record, figure block, data table, callout, ledger, invariant and footer. <code>print.css</code> carries the print rules. The diagram language is a set of classes in the same stylesheet, so an SVG carries no colour literal and no font attribute; a colour attribute inside an SVG may only be none, currentColor or a token reference. A page is markup plus class names and nothing more. A new layout on a future page means extending tokens and components first, then using them.</p>
           <h3 id="why-tokens"><span class="no">1.1</span>Why tokens</h3>
           <p>One place to refine a value when contrast demands it, and one place for the harness to look. Because every colour is a named token, <code>tools/verify.mjs</code> can compute AA contrast for each text pair and fail the build when a pair falls short, and it can scan every other file for a hex, rgb or hsl literal and reject it. A page cannot invent a colour, so the accent cannot creep from the stamp into a link, and the brief's rule that the accent is spent on stamps and one stroke per figure is a property of the system rather than a request to writers.</p>
           <h3 id="why-components"><span class="no">1.2</span>Why components once</h3>
@@ -93,7 +93,7 @@
         </section>
         <section>
           <h2 id="record-status"><span class="no">4</span>Status</h2>
-          <p>Fixed decision, set by the brief's visual system and taken at the start of the build on 2026-09-02, before any CSS was written. The plan built on it, critiqued against the generic defaults and fixed, is <a href="dr-012-design-plan.html">DR-012</a>; the harness enforces both on every pass.</p>
+          <p>Fixed decision, set by the brief's visual system and taken at the start of the build on 2026-09-02, before any CSS was written. The plan built on it, critiqued against the generic defaults and fixed, is <a href="dr-012-design-plan.html">DR-012</a>; the harness enforces both on every pass. Confirmed on 2026-09-10 under the founder's revision of the palette and the prose face in DR-012: the system held, because the change was new token values and new font files with no page touched for its look.</p>
         </section>
       </article>
     </div>
