@@ -865,7 +865,7 @@ function args(argv) {
     const a = argv[i];
     if (a.startsWith('--')) {
       const k = a.slice(2);
-      if (['md', 'json', 'links', 'warnings', 'fragment'].includes(k)) opt[k] = true;
+      if (['md', 'json', 'links', 'warnings', 'fragment', 'site'].includes(k)) opt[k] = true;
       else if (k === 'change') { (opt.change = opt.change || []).push(argv[++i]); }
       else opt[k] = argv[++i];
     } else pos.push(a);
@@ -885,7 +885,7 @@ function usage() {
   at <locus>                           every node carrying the locus, plus inbound links
   show <id>                            a node, its loci and its edges
   list [--kind k] [--facet name=value]
-  view [--out file] [--fragment]        bake graph.json into the 3D viewer (tools/depmap/view.html; open it locally)
+  view [--out file] [--fragment|--site]  bake graph.json into the 3D viewer (tools/depmap/view.html; --site writes docs/depmap/index.html, the served view)
 Seeds: node ids separated by commas; a member path vocab-x/m seeds vocab-x.`;
 }
 
@@ -916,23 +916,15 @@ function main() {
       return;
     }
     if (cmd === 'view') {
-      // Bake graph.json into the viewer template. The full page is written for opening locally; --fragment writes the
-      // body-only form (title, style, markup, script) that a hosting wrapper supplies the document skeleton for.
-      const tpl = readFileSync(join(P.dir, 'view.src.html'), 'utf8');
-      const g = readJson(P.graph);
-      const refs = buildRefs(root);
-      const data = {
-        edition: g.edition,
-        nodes: g.nodes.map((n) => ({ id: n.id, kind: n.kind, label: n.label, facets: n.facets || {}, loci: (n.loci || []).map((l) => ({ at: l.at, role: l.role })), note: n.note, source: n.source })),
-        edges: g.edges,
-        pages: Object.fromEntries(Object.entries(refs.pages).map(([p, pg]) => [p, pg.title.replace(/, AI\.fred$/, '')])),
-      };
-      const json = JSON.stringify(data).replace(/<\//g, '<\\/');
-      const body = tpl.replace('/*__GRAPH__*/', json);
-      const outPath = opt.out ? resolve(opt.out) : join(P.dir, opt.fragment ? 'view.fragment.html' : 'view.html');
-      const page = opt.fragment ? body : `<!doctype html>\n<html lang="en-GB">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n</head>\n<body>\n${body}\n</body>\n</html>\n`;
+      // Bake graph.json into the viewer template. Three renderings: the local page (tools/depmap/view.html, ignored by
+      // git), the fragment a hosting wrapper supplies the skeleton for, and the served view at docs/depmap/ (--site),
+      // committed and checked fresh by the harness (DR-017, revised 2026-09-10).
+      const mode = opt.site ? 'site' : opt.fragment ? 'fragment' : 'local';
+      const { page, nodes, edges } = renderView({ root, mode });
+      const outPath = opt.out ? resolve(opt.out) : mode === 'site' ? join(root, 'docs', 'depmap', 'index.html') : join(P.dir, mode === 'fragment' ? 'view.fragment.html' : 'view.html');
+      mkdirSync(dirname(outPath), { recursive: true });
       writeFileSync(outPath, page);
-      console.log(`view: ${data.nodes.length} nodes, ${data.edges.length} edges written to ${rel(root, outPath)}${opt.fragment ? ' (fragment)' : ''}`);
+      console.log(`view: ${nodes} nodes, ${edges} edges written to ${rel(root, outPath)}${mode === 'local' ? '' : ` (${mode})`}`);
       return;
     }
     if (cmd === 'selftest') {
@@ -978,6 +970,40 @@ function main() {
     console.error(`depmap: ${e.message}`);
     process.exit(2);
   }
+}
+
+
+// The viewer, rendered from view.src.html with graph.json baked in. Modes: local (tools/depmap/view.html, fonts from
+// docs/assets), fragment (body only, fonts from Google, for a hosting wrapper), site (docs/depmap/index.html, the served
+// view: self-hosted fonts, a no-index directive, a link back to the publication). Deterministic, so the harness can
+// compare the committed site view against a fresh rendering and fail when it is stale.
+export function renderView({ root = DEFAULT_ROOT, mode = 'local' } = {}) {
+  const P = paths(root);
+  const tpl = readFileSync(join(P.dir, 'view.src.html'), 'utf8');
+  const g = readJson(P.graph);
+  const refs = buildRefs(root);
+  const data = {
+    edition: g.edition,
+    nodes: g.nodes.map((n) => ({ id: n.id, kind: n.kind, label: n.label, facets: n.facets || {}, loci: (n.loci || []).map((l) => ({ at: l.at, role: l.role })), note: n.note, source: n.source })),
+    edges: g.edges,
+    pages: Object.fromEntries(Object.entries(refs.pages).filter(([p]) => p !== 'depmap/index.html').map(([p, pg]) => [p, pg.title.replace(/, AI\.fred$/, '')])),
+  };
+  const json = JSON.stringify(data).replace(/<\//g, '<\\/');
+  const faces = [['IBM Plex Sans', 400, 'IBMPlexSans-Regular'], ['IBM Plex Sans', 500, 'IBMPlexSans-Medium'], ['IBM Plex Sans', 600, 'IBMPlexSans-SemiBold'], ['IBM Plex Mono', 400, 'IBMPlexMono-Regular'], ['IBM Plex Mono', 500, 'IBMPlexMono-Medium']];
+  const fontBase = mode === 'site' ? '../assets/fonts' : '../../docs/assets/fonts';
+  const fonts = mode === 'fragment'
+    ? '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">'
+    : `<style>\n${faces.map(([f, w, file]) => `@font-face { font-family: "${f}"; font-weight: ${w}; font-style: normal; font-display: swap; src: url("${fontBase}/${file}.woff2") format("woff2"); }`).join('\n')}\n</style>`;
+  const back = mode === 'site' ? '<a class="back" href="../">Back to the publication</a>' : '';
+  const body = tpl.replace('<!--__FONTS__-->', fonts).replace('<!--__BACK__-->', back).replace('/*__GRAPH__*/', json);
+  let page = body;
+  if (mode !== 'fragment') {
+    const head = mode === 'site'
+      ? '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<meta name="description" content="The dependency map of the AI.fred record (DR-017) as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json and never edited by hand.">'
+      : '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">';
+    page = `<!doctype html>\n<html lang="en-GB">\n<head>\n${head}\n</head>\n<body>\n${body}\n</body>\n</html>\n`;
+  }
+  return { page, nodes: data.nodes.length, edges: data.edges.length };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) main();

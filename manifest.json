@@ -49,6 +49,10 @@
     {
       "key": "decisions",
       "pages": 20
+    },
+    {
+      "key": "depmap",
+      "pages": 1
     }
   ],
   "pages": [
@@ -273,7 +277,7 @@
       "title": "DR-017 A dependency map of the record, kept as a tool",
       "section": "decisions",
       "status": "decision",
-      "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory and never as a page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
+      "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory, with one served view of it under docs/depmap/ and no other page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
       "updated": "2026-09-10"
     },
     {
@@ -298,6 +302,14 @@
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
+      "updated": "2026-09-10"
+    },
+    {
+      "path": "depmap/index.html",
+      "title": "AI.fred Dependency Map",
+      "section": "depmap",
+      "status": "decision",
+      "summary": "The dependency map of the record (DR-017) served as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json by the map's own tool, committed, and failed by the harness when stale; the one page outside the page floor, by DR-010's exception.",
       "updated": "2026-09-10"
     }
   ]

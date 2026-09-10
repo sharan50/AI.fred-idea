@@ -184,6 +184,13 @@
               "the ledger of decision records: every decision that shapes ai.fred, with what wa",
               "",
               "2026-09-10"
+            ],
+            [
+              "map",
+              "dependency map",
+              "the record's dependency map (dr-017) as a three-dimensional view you can follow:",
+              "",
+              "2026-09-10"
             ]
           ],
           "under": "publication-map"
@@ -351,15 +358,19 @@
           "to": "decisions/index.html"
         },
         {
-          "line": 192,
-          "to": "00-thesis/index.html"
+          "line": 180,
+          "to": "depmap/index.html"
         },
         {
           "line": 193,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 194,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 195,
           "to": "07-open/index.html"
         }
       ]
@@ -8534,6 +8545,10 @@
           "to": "decisions/dr-011-token-and-component-system.html"
         },
         {
+          "line": 86,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
           "line": 96,
           "to": "decisions/dr-011-token-and-component-system.html"
         },
@@ -9601,6 +9616,10 @@
           "to": "07-open/index.html#items"
         },
         {
+          "line": 99,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
           "line": 108,
           "to": "00-thesis/index.html"
         },
@@ -10317,6 +10336,95 @@
         {
           "line": 105,
           "to": "07-open/index.html"
+        }
+      ]
+    },
+    "depmap/index.html": {
+      "title": "AI.fred Dependency Map",
+      "kind": "",
+      "status": "",
+      "anchors": {
+        "sub": {
+          "kind": "span",
+          "line": 145,
+          "text": "dependency map"
+        },
+        "q": {
+          "kind": "input",
+          "line": 148,
+          "text": "overview elevation plan focus cone spin reset view drag to orbit, scroll to zoom"
+        },
+        "results": {
+          "kind": "table-wrap",
+          "line": 149,
+          "text": ""
+        },
+        "kind-chips": {
+          "kind": "table-wrap",
+          "line": 151,
+          "text": ""
+        },
+        "btn-focus": {
+          "kind": "button",
+          "line": 156,
+          "text": "focus cone"
+        },
+        "btn-spin": {
+          "kind": "button",
+          "line": 157,
+          "text": "spin"
+        },
+        "btn-reset": {
+          "kind": "button",
+          "line": 158,
+          "text": "reset view"
+        },
+        "stage": {
+          "kind": "canvas",
+          "line": 162,
+          "text": ""
+        },
+        "legend": {
+          "kind": "table-wrap",
+          "line": 163,
+          "text": ""
+        },
+        "hint": {
+          "kind": "p",
+          "line": 164,
+          "text": "drag to orbit, scroll to zoom, shift-drag to pan; keys 1, 2, 3 switch views. cli"
+        },
+        "inspector": {
+          "kind": "aside",
+          "line": 165,
+          "text": ""
+        },
+        "ihead": {
+          "kind": "table-wrap",
+          "line": 166,
+          "text": ""
+        },
+        "trail": {
+          "kind": "table-wrap",
+          "line": 167,
+          "text": ""
+        },
+        "ibody": {
+          "kind": "table-wrap",
+          "line": 168,
+          "text": ""
+        },
+        "graph": {
+          "kind": "script",
+          "line": 173,
+          "text": ""
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 145,
+          "to": "index.html"
         }
       ]
     }

@@ -19,7 +19,7 @@ find-and-replace pass.
 | `docs/assets/nav.js` | Vanilla JavaScript for navigation only. |
 | `manifest.json` | Machine-readable site map: path, title, section, status, summary, updated. |
 | `tools/verify.mjs` | The verification harness. Never published. |
-| `tools/depmap.mjs` | The dependency map's tool: `extract`, `check`, `impact`, `batch`, `at`, `show`, `list`, `selftest`. Never published (DR-017). |
+| `tools/depmap.mjs` | The dependency map's tool: `extract`, `check`, `impact`, `batch`, `at`, `show`, `list`, `selftest`, `view`. The tool is never published; its served view is (DR-017). |
 | `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `batches/` (one record per batch of changes, proposed or made). |
 | `netlify.toml` | Publish directory pinned to `docs`; no build command. |
 | `SURFACING_REPORT.md` | The loop's closing report against the founder's bar (written at the end of the build). |
@@ -66,7 +66,9 @@ The batch output is the edit plan; save it under `tools/depmap/batches/`.
 `node tools/depmap.mjs view` writes `tools/depmap/view.html`, a self-contained
 three-dimensional view of the map to open locally (altitude is causal depth;
 select a node to see its cone and follow its connections). It is generated
-from `view.src.html`, ignored by git and never published.
+from `view.src.html` and ignored by git. `view --site` writes the same view to
+`docs/depmap/index.html`, which is committed, linked from the index, served with
+the site and failed by the harness when it is stale (DR-017, revised).
 After editing, run `node tools/depmap.mjs extract` to refresh the reference
 layer, update `graph.json` for what moved, and run `check`. The vocabularies,
 the locus grammar and the change protocol are in `tools/depmap/SCHEMA.md`.

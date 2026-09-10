@@ -146,7 +146,7 @@ node tools/depmap.mjs batch <plan.json>       the same from a file: { "changes":
 node tools/depmap.mjs at <locus>              every node carrying the locus, by role, plus inbound links
 node tools/depmap.mjs show <id>               a node with its loci resolved and its edges both ways
 node tools/depmap.mjs list [--kind k] [--facet name=value]
-node tools/depmap.mjs view [--out file] [--fragment]   bake graph.json into the viewer page
+node tools/depmap.mjs view [--out file] [--fragment | --site]   bake graph.json into the viewer page; --site writes docs/depmap/index.html, the served view
 ```
 
 `view` writes `view.html`, a single self-contained page that draws the graph in
@@ -155,7 +155,7 @@ ledger and the records below them, the harness and the closed lists in the
 middle, the open items and residuals at the floor), so up on the screen is
 always upstream. Selecting a node draws its cone by the same direction rules as
 `impact`, and the inspector lists its connections to follow. The page is
-generated from `view.src.html`, is never committed and never published; it
+generated from `view.src.html`, is never committed; the served copy at `docs/depmap/index.html`, written by `view --site` and linked from the index, is committed and the harness fails when it is stale; it
 opens from the file system with no server and no dependency.
 
 Seeds are node ids, separated by commas; a member path seeds its vocabulary and records the member as the reason.

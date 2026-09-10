@@ -1,5 +1,5 @@
 <title>AI.fred Dependency Map</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<!--__FONTS__-->
 <style>
 /* Tokens. Light is the publication's own paper and ink; dark is the same dossier at night. The seven category
    hues are the validated categorical order, stepped per surface; the accent is reserved for selection. */
@@ -37,6 +37,8 @@ body { background: var(--paper); color: var(--ink); font: 14px/1.45 var(--sans);
 button, input { font: inherit; color: inherit; }
 button { background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; padding: 5px 10px; cursor: pointer; }
 button:hover { border-color: var(--ink-soft); }
+.back { margin-left: 12px; font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.back:hover { color: var(--ink); }
 button:focus-visible, input:focus-visible, .row:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
 button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
 button:disabled { opacity: 0.45; cursor: default; }
@@ -125,7 +127,7 @@ canvas#stage.pointing { cursor: pointer; }
 
 <div class="app">
   <header class="bar">
-    <div class="brand"><span class="mark">AI.fred</span><span class="sub" id="sub">Dependency map</span></div>
+    <div class="brand"><span class="mark">AI.fred</span><span class="sub" id="sub">Dependency map</span><!--__BACK__--></div>
     <div class="search">
       <label for="q" class="sr" hidden>Find a node</label>
       <input id="q" type="search" placeholder="Find a node by label or id" autocomplete="off" spellcheck="false">
