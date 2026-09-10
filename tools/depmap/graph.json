@@ -95,6 +95,10 @@
         {
           "at": "00-thesis/index.html#why-now",
           "role": "canonical"
+        },
+        {
+          "at": "03-trust-and-data/index.html#table:3.4!\"Unified Agent Protocol\"",
+          "role": "mentions"
         }
       ]
     },
@@ -4413,7 +4417,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"present a document\"",
           "role": "canonical",
-          "cells": ["delegated", "delegated", "delegated"]
+          "cells": [
+            "delegated",
+            "delegated",
+            "delegated"
+          ]
         }
       ]
     },
@@ -4431,7 +4439,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"state an identity number\"",
           "role": "canonical",
-          "cells": ["delegated", "delegated", "delegated"]
+          "cells": [
+            "delegated",
+            "delegated",
+            "delegated"
+          ]
         }
       ]
     },
@@ -4449,7 +4461,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"complete a KYC form\"",
           "role": "canonical",
-          "cells": ["delegated", "delegated", "delegated"]
+          "cells": [
+            "delegated",
+            "delegated",
+            "delegated"
+          ]
         }
       ]
     },
@@ -4467,7 +4483,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"undergo identification\"",
           "role": "canonical",
-          "cells": ["bounce", "bounce", "bounce"]
+          "cells": [
+            "bounce",
+            "bounce",
+            "bounce"
+          ]
         }
       ]
     },
@@ -4485,7 +4505,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"answer security questions\"",
           "role": "canonical",
-          "cells": ["delegated", "delegated", "delegated"]
+          "cells": [
+            "delegated",
+            "delegated",
+            "delegated"
+          ]
         }
       ]
     },
@@ -4503,7 +4527,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"attest a fact about the user\"",
           "role": "canonical",
-          "cells": ["delegated condition", "delegated condition", "delegated condition"]
+          "cells": [
+            "delegated condition",
+            "delegated condition",
+            "delegated condition"
+          ]
         }
       ]
     },
@@ -4521,7 +4549,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"use a delegated login\"",
           "role": "canonical",
-          "cells": ["delegated condition", "delegated condition", "delegated condition"]
+          "cells": [
+            "delegated condition",
+            "delegated condition",
+            "delegated condition"
+          ]
         }
       ]
     },
@@ -4539,9 +4571,26 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"make a payment under the cap\"",
           "role": "canonical",
-          "cells": ["bounce", "delegated condition", "delegated condition"]
+          "cells": [
+            "bounce",
+            "delegated condition",
+            "delegated condition"
+          ]
+        },
+        {
+          "at": "03-trust-and-data/index.html#policy-flags!\"loaded flag is bounce in every market\"",
+          "role": "mentions"
+        },
+        {
+          "at": "06-roadmap/index.html#pilot-identity!\"sets make a payment under the cap to bounce\"",
+          "role": "mentions"
+        },
+        {
+          "at": "07-open/index.html#items!\"make a payment under the cap to bounce\"",
+          "role": "mentions"
         }
-      ]
+      ],
+      "note": "Pilot runtime value: bounce in every market until a rail admits a registered agent (batch 0002)."
     },
     {
       "id": "flag-sign",
@@ -4557,7 +4606,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"sign or e-sign\"",
           "role": "canonical",
-          "cells": ["bounce", "bounce", "bounce"]
+          "cells": [
+            "bounce",
+            "bounce",
+            "bounce"
+          ]
         }
       ]
     },
@@ -4575,7 +4628,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"book or cancel\"",
           "role": "canonical",
-          "cells": ["delegated", "delegated", "delegated"]
+          "cells": [
+            "delegated",
+            "delegated",
+            "delegated"
+          ]
         }
       ]
     },
@@ -4593,7 +4650,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"share a health record\"",
           "role": "canonical",
-          "cells": ["delegated condition", "delegated condition", "delegated condition"]
+          "cells": [
+            "delegated condition",
+            "delegated condition",
+            "delegated condition"
+          ]
         }
       ]
     },
@@ -4611,7 +4672,11 @@
         {
           "at": "03-trust-and-data/index.html#table:3.5!\"basis, not an act type\"",
           "role": "canonical",
-          "cells": ["delegated", "delegated", "delegated"]
+          "cells": [
+            "delegated",
+            "delegated",
+            "delegated"
+          ]
         }
       ]
     },
@@ -5204,8 +5269,7 @@
         {
           "at": "07-open/index.html#table:7.1",
           "role": "canonical",
-          "check": "none",
-          "drift": "open-07-19"
+          "check": "none"
         }
       ]
     },
@@ -5369,6 +5433,62 @@
         },
         {
           "at": "00-thesis/index.html#us-uk-commercial!\"an OTP is never ours\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-no-financial-credential",
+      "kind": "inv",
+      "label": "We hold no banking or payment credential; the debit is the user's own act",
+      "facets": {
+        "layer": "product",
+        "fixity": "fixed",
+        "fatal": "2"
+      },
+      "loci": [
+        {
+          "at": "01-product/index.html#refusals!\"We hold no banking or payment credential\"",
+          "role": "canonical"
+        },
+        {
+          "at": "01-product/index.html#refusals!\"the debit itself is the user's own act\"",
+          "role": "restates"
+        },
+        {
+          "at": "03-trust-and-data/trust-story.html#what-we-never-do!\"that tap is yours\"",
+          "role": "restates"
+        },
+        {
+          "at": "06-roadmap/index.html#pilot-identity!\"the pilot moves no money\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-envelope-bound-detokenise",
+      "kind": "inv",
+      "label": "No detokenisation without the user's device-signed envelope",
+      "facets": {
+        "layer": "trust",
+        "fixity": "fixed",
+        "fatal": "2"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-008-vault-bought.html#closes-off!\"device has not signed\"",
+          "role": "canonical"
+        },
+        {
+          "at": "03-trust-and-data/index.html#substitutor-interface!\"carries the user's device signature\"",
+          "role": "restates"
+        },
+        {
+          "at": "01-product/index.html#envelope-setup!\"the signature is the key\"",
+          "role": "restates"
+        },
+        {
+          "at": "03-trust-and-data/trust-story.html#promise!\"You hold the key\"",
           "role": "mentions"
         }
       ]
@@ -6474,7 +6594,7 @@
     {
       "id": "vocab-browser-masks",
       "kind": "vocab",
-      "label": "The five masks of the browser-stream masker",
+      "label": "The five stream masks of the browser masker",
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
@@ -6504,7 +6624,6 @@
           "word": "region masks"
         }
       ],
-      "note": "A second list, in the evidence pipeline, is also called \"the five masks\"; the two are different lists and are kept as two nodes on purpose.",
       "loci": [
         {
           "at": "03-trust-and-data/index.html#managed-browser",
@@ -6519,7 +6638,7 @@
     {
       "id": "vocab-redaction-masks",
       "kind": "vocab",
-      "label": "The five masks of the evidence pipeline",
+      "label": "The five artefact masks of the evidence pipeline",
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
@@ -6548,7 +6667,6 @@
           "word": "mask-map masks"
         }
       ],
-      "note": "Shares its name with the browser-stream masker's five; see vocab-browser-masks.",
       "loci": [
         {
           "at": "03-trust-and-data/index.html#redaction-pipeline",
@@ -7279,6 +7397,14 @@
     ["comp-hash-service", "depends-on", "vocab-detectors"],
     ["comp-shift-wheel", "depends-on", "vocab-shifts"],
     ["comp-tiers", "depends-on", "vocab-tiers"],
-    ["open-07-03", "lands-in", "vocab-verticals"]
+    ["open-07-03", "lands-in", "vocab-verticals"],
+    ["fatal-2", "justifies", "inv-no-financial-credential"],
+    ["dr-003", "closes-off", "inv-no-financial-credential"],
+    ["comp-adapters", "depends-on", "inv-no-financial-credential"],
+    ["dr-008", "closes-off", "inv-envelope-bound-detokenise"],
+    ["dr-004", "closes-off", "inv-envelope-bound-detokenise"],
+    ["comp-substitutor", "depends-on", "inv-envelope-bound-detokenise"],
+    ["comp-envelope", "depends-on", "inv-envelope-bound-detokenise"],
+    ["comp-step-context", "depends-on", "inv-envelope-bound-detokenise"]
   ]
 }

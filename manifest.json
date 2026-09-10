@@ -74,7 +74,7 @@
       "section": "01-product",
       "status": "amber",
       "summary": "The product as the user meets it: journeys across six verticals, the task taxonomy, intake through a channel-agnostic gateway (channel amber), the authority envelope, the two-loop verdict system, onboarding and context capture, and what we refuse to do.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "02-architecture/index.html",
@@ -82,7 +82,7 @@
       "section": "02-architecture",
       "status": "assumption",
       "summary": "The harness an engineer builds first: the component map, the planner, the classifier and the step-type catalogue, the execution surfaces and their controllers, the task state machine with its invariant, verification and the evidence pipeline, the context store, the intake gateway behind the vault's edge proxy, and the market adapter model.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "02-architecture/worker-console.html",
@@ -98,7 +98,7 @@
       "section": "03-trust-and-data",
       "status": "to-verify",
       "summary": "How nobody on our side ever sees a real value: the alias and vault model, the substitution component, the execution surfaces, artefact redaction, the passports, the policy flags, the threat model as named and closed paths, the access ledger, the residency map and the privacy-law skeleton.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "03-trust-and-data/trust-story.html",
@@ -106,7 +106,7 @@
       "section": "03-trust-and-data",
       "status": "decision",
       "summary": "One page a customer could read: what AI.fred does, why nobody who works for us ever sees your numbers, what your ledger looks like, and what we never do.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "04-operations/index.html",
@@ -130,7 +130,7 @@
       "section": "06-roadmap",
       "status": "amber",
       "summary": "The harness-first build sequence in eight gated stages, the pilot scoped by capability rather than headcount, the build-versus-buy table with what each purchase commits us to, and the three-part playbook for entering a country.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "07-open/index.html",
@@ -138,7 +138,7 @@
       "section": "07-open",
       "status": "amber",
       "summary": "Every open item with an owner and a trigger: the channel amber, first-cohort sequencing, the legal to-verifies, Netlify access, naming, the make-good policy, remote-safe operations, vendor choices, and the objections formed against fixed decisions during the build.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "decisions/dr-001-channel-gateway.html",
@@ -162,7 +162,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The harness is designed to the full ceiling, identity acts included; a per-jurisdiction policy layer decides at runtime what is delegated, what bounces and what is prohibited. Supersedes the A/B/C capability-tier framing.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "decisions/dr-004-authority-envelope.html",
@@ -202,7 +202,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Real values live in a bought, regionally hosted tokenisation vault of the Skyflow, VGS and Basis Theory class; everything of ours handles aliases. Why the layer is bought, what buying does not delegate, and why no vendor is chosen yet.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "decisions/dr-009-evidence-redaction.html",
@@ -210,7 +210,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every screenshot, recording, transcript and DOM capture is redacted inside the harness before it is stored and verified by a second pass that fails closed; no raw artefact is ever human-viewable, and the evidence system is treated as a leak path.",
-      "updated": "2026-09-02"
+      "updated": "2026-09-10"
     },
     {
       "path": "decisions/dr-010-html-no-build-step.html",

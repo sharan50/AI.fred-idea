@@ -24,12 +24,12 @@
 </header>
 <main id="main" class="page">
   <header class="page-header">
-    <p class="stamp" data-status="amber">amber<small>revised 2026-09-02</small></p>
+    <p class="stamp" data-status="amber">amber<small>revised 2026-09-10</small></p>
     <h1><span class="no">06</span><span class="title">Roadmap</span></h1>
     <p class="standfirst">The harness comes first and the product sits on it. We build the alias vault and the substitutor before anything a customer can see, gate every later stage on the one before it, and open the pilot only when every gate has passed. A new country is an adapter, a legal pack and a shift, and the core does not change.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>06 Roadmap</dd></div>
-      <div><dt>Revised</dt><dd>2026-09-02</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-10</dd></div>
       <div><dt>Status</dt><dd><span class="chip chip-amber">amber</span></dd></div>
       <div><dt>Reader</dt><dd class="sans">For engineers</dd></div>
     </dl>
@@ -166,7 +166,7 @@
         <h3 id="pilot-steps"><span class="no">2.2</span>Step classes and reversibility</h3>
         <p>In the pilot, <code>ai</code> steps run only on the managed browser; <code>human</code> steps run from task cards on every surface; <code>user</code> steps bounce to the user's device without exception. Those restrictions live in one place, the scope block of the first market's legal pack, which section 3.1 of <a href="../02-architecture/#classifier">02</a> fixes: it names the surfaces open to <code>ai</code> steps (the managed browser alone), whether the harness may compose mail (off, so the composition 02 permits is switched off for the pilot as well as the execution), the pool that may execute an irreversible <code>human</code> step (L3 alone) and the verticals open. The classifier and the routing table read the block before any catalogue entry and never this page, so a step that would be <code>ai</code> on a closed surface comes out <code>human</code> without a special case, and lifting a restriction after the pilot is a signed reload of the pack, not a code change. Reversible steps inside the envelope execute. For an irreversible step inside the envelope, whichever party executes, the other checks before it fires: when the AI executes, an L3 worker holds the checking seat; when a worker executes, the AI checks the step against the envelope and the expected outcome, as <a href="../04-operations/#tiers">04</a> and <a href="../decisions/dr-004-authority-envelope.html">DR-004</a> fix it. Human execution of irreversible steps is confined to L3 for the pilot by the scope block's line, which the routing table <a href="../04-operations/#tiers">04</a> owns reads at card issue; the rule is a line of the legal pack, neither a catalogue entry nor a setting of the table itself. Irreversible steps outside the envelope bounce; reversible steps outside it become extension requests. Envelope defaults start narrow and are widened by the user deliberately.</p>
         <h3 id="pilot-identity"><span class="no">2.3</span>Delegated identity acts</h3>
-        <p>Only the identity act types the first market's policy layer flags as delegated are delegated; everything flagged bounce or prohibited stays with the user even where the user ticks it. Two tables are in play and the difference is deliberate: Table 3.5 in 03 records the designed flag per jurisdiction and act type, the ceiling, every cell to-verify; the signed table the pilot runs under is the legal pack's, and for the UK and the US it sets every identity act to bounce until counsel's answer sets the flag, whatever the designed cell reads, as <a href="../07-open/#items">07</a> records. The flag table is the first draft of that market's lobbying agenda (<a href="../03-trust-and-data/#policy-flags">the policy flags in 03</a>), and every prohibited line is a legal to-verify with an owner in <a href="../07-open/#items">07</a>.</p>
+        <p>Only the identity act types the first market's policy layer flags as delegated are delegated; everything flagged bounce or prohibited stays with the user even where the user ticks it. Two tables are in play and the difference is deliberate: Table 3.5 in 03 records the designed flag per jurisdiction and act type, the ceiling, every cell to-verify; the signed table the pilot runs under is the legal pack's, and for the UK and the US it sets every identity act to bounce until counsel's answer sets the flag, whatever the designed cell reads, and it sets make a payment under the cap to bounce in every market, so the pilot moves no money on the user's behalf, as <a href="../07-open/#items">07</a> records. The flag table is the first draft of that market's lobbying agenda (<a href="../03-trust-and-data/#policy-flags">the policy flags in 03</a>), and every prohibited line is a legal to-verify with an owner in <a href="../07-open/#items">07</a>.</p>
         <h3 id="pilot-surfaces"><span class="no">2.4</span>Surfaces</h3>
         <p>All three, from the first task: the managed browser, our telephony and the mail relay have each passed their gate before the pilot opens. A worker never uses a tool of their own, and <a href="../01-product/#refusals">the refusals in 01</a> apply unchanged.</p>
         <h3 id="pilot-market"><span class="no">2.5</span>Which market first</h3>
@@ -268,7 +268,7 @@
     <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
     <li><a href="../07-open/">See the open items</a></li>
   </ul>
-  <p>Revised 2026-09-02. This page prints clean to A4 or Letter.</p>
+  <p>Revised 2026-09-10. This page prints clean to A4 or Letter.</p>
 </footer>
 </body>
 </html>

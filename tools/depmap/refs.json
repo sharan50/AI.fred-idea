@@ -120,14 +120,14 @@
               "product",
               "the product as the user meets it: journeys across six verticals, the task taxono",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "02",
               "architecture",
               "the harness an engineer builds first: the component map, the planner, the classi",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "02",
@@ -141,14 +141,14 @@
               "trust and data",
               "how nobody on our side ever sees a real value: the alias and vault model, the su",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "03",
               "the trust story",
               "one page a customer could read: what ai.fred does, why nobody who works for us e",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "04",
@@ -169,14 +169,14 @@
               "roadmap",
               "the harness-first build sequence in eight gated stages, the pilot scoped by capa",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "07",
               "open items",
               "every open item with an owner and a trigger: the channel amber, first-cohort seq",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "dr",
@@ -1728,6 +1728,14 @@
           "to": "decisions/dr-003-full-delegation-ceiling.html"
         },
         {
+          "line": 198,
+          "to": "03-trust-and-data/index.html#substitutor-interface"
+        },
+        {
+          "line": 198,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
           "line": 204,
           "to": "03-trust-and-data/index.html#policy-flags"
         },
@@ -1818,6 +1826,10 @@
         {
           "line": 408,
           "to": "01-product/index.html#src-5"
+        },
+        {
+          "line": 408,
+          "to": "03-trust-and-data/index.html#passports"
         },
         {
           "line": 408,
@@ -3747,93 +3759,93 @@
         },
         "policy-flags": {
           "kind": "h2",
-          "line": 396,
+          "line": 397,
           "no": "6",
           "text": "The policy flag table and the lobbying agenda"
         },
         "threat-model": {
           "kind": "h2",
-          "line": 420,
+          "line": 421,
           "no": "7",
           "text": "The threat model: paths by which a human could see a real value"
         },
         "fig-threat-paths": {
           "kind": "figure",
-          "line": 422,
+          "line": 423,
           "no": "Figure 3.3",
           "text": "Twenty-six paths, each ending at the property that closes it; the accent is the one boundary every path would have to cr",
           "under": "threat-model"
         },
         "tab-threat": {
           "kind": "table-wrap",
-          "line": 555,
+          "line": 556,
           "no": "Table 3.6",
           "text": "Every path by which a human could see a real value, how it is closed, and what the ledger records; the closure is a comp",
           "under": "threat-model"
         },
         "access-ledger": {
           "kind": "h2",
-          "line": 591,
+          "line": 592,
           "no": "8",
           "text": "The access ledger"
         },
         "ledger-fields": {
           "kind": "h3",
-          "line": 593,
+          "line": 594,
           "no": "8.1",
           "text": "Fields and event types",
           "under": "access-ledger"
         },
         "ledger-wording": {
           "kind": "h3",
-          "line": 595,
+          "line": 596,
           "no": "8.2",
           "text": "Wording rules",
           "under": "access-ledger"
         },
         "ledger-retention": {
           "kind": "h3",
-          "line": 597,
+          "line": 598,
           "no": "8.3",
           "text": "Retention, reading, and what it never contains",
           "under": "access-ledger"
         },
         "ledger-example": {
           "kind": "h3",
-          "line": 599,
+          "line": 600,
           "no": "8.4",
           "text": "One task, as the user reads it",
           "under": "access-ledger"
         },
         "residency": {
           "kind": "h2",
-          "line": 618,
+          "line": 619,
           "no": "9",
           "text": "The data-residency map"
         },
         "fig-residency": {
           "kind": "figure",
-          "line": 620,
+          "line": 621,
           "no": "Figure 3.4",
           "text": "Values rest and are placed in the market's region; the floor in Bengaluru works on aliases from all three; the UK crossi",
           "under": "residency"
         },
         "privacy-law": {
           "kind": "h2",
-          "line": 693,
+          "line": 694,
           "no": "10",
           "text": "The privacy-law skeleton"
         },
         "tab-law": {
           "kind": "table-wrap",
-          "line": 696,
+          "line": 697,
           "no": "Table 3.7",
           "text": "Privacy-law skeleton: what each regime requires of us, the design property that answers it, and the status of the claim.",
           "under": "privacy-law"
         },
         "sources": {
           "kind": "h2",
-          "line": 709,
+          "line": 710,
           "text": "Sources"
         }
       },
@@ -4086,6 +4098,12 @@
               "secondary description; cca guidelines not read"
             ],
             [
+              "india",
+              "reuters reported on 1 september 2026 that npci is preparing a unified agent prot",
+              "",
+              "business recorder (reuters), 1 september 2026"
+            ],
+            [
               "uk",
               "the future entity succeeding open banking limited is a not-for-profit company li",
               "",
@@ -4138,7 +4156,7 @@
           "under": "us-rails"
         },
         "3.5": {
-          "line": 399,
+          "line": 400,
           "caption": "Policy flags by act type and market, with the question to put to each regulator and the end-user benefit of a yes; every",
           "rows": [
             [
@@ -4241,7 +4259,7 @@
           "under": "policy-flags"
         },
         "3.6": {
-          "line": 556,
+          "line": 557,
           "caption": "Every path by which a human could see a real value, how it is closed, and what the ledger records; the closure is a comp",
           "rows": [
             [
@@ -4405,7 +4423,7 @@
           "under": "threat-model"
         },
         "3.7": {
-          "line": 697,
+          "line": 698,
           "caption": "Privacy-law skeleton: what each regime requires of us, the design property that answers it, and the status of the claim.",
           "rows": [
             [
@@ -4861,167 +4879,171 @@
           "to": "03-trust-and-data/index.html#src-13"
         },
         {
-          "line": 386,
+          "line": 383,
+          "to": "03-trust-and-data/index.html#src-16"
+        },
+        {
+          "line": 387,
           "to": "03-trust-and-data/index.html#src-14"
         },
         {
-          "line": 390,
+          "line": 391,
           "to": "03-trust-and-data/index.html#src-5"
         },
         {
-          "line": 397,
+          "line": 398,
           "to": "decisions/dr-003-full-delegation-ceiling.html"
         },
         {
-          "line": 397,
+          "line": 398,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 397,
+          "line": 398,
           "to": "06-roadmap/index.html#pilot"
         },
         {
-          "line": 397,
+          "line": 398,
           "to": "03-trust-and-data/index.html#alias-types"
         },
         {
-          "line": 397,
+          "line": 398,
           "to": "02-architecture/index.html#classifier"
         },
         {
-          "line": 397,
+          "line": 398,
           "to": "01-product/index.html#journey-family"
         },
         {
-          "line": 397,
+          "line": 398,
           "to": "decisions/dr-003-full-delegation-ceiling.html"
         },
         {
-          "line": 408,
+          "line": 409,
           "to": "01-product/index.html#journeys"
         },
         {
-          "line": 412,
+          "line": 413,
           "to": "03-trust-and-data/index.html#tab-rails"
         },
         {
-          "line": 414,
+          "line": 415,
           "to": "02-architecture/index.html#step-catalogue"
         },
         {
-          "line": 421,
+          "line": 422,
           "to": "03-trust-and-data/index.html#fig-threat-paths"
         },
         {
-          "line": 421,
+          "line": 422,
           "to": "03-trust-and-data/index.html#tab-threat"
         },
         {
-          "line": 421,
+          "line": 422,
           "to": "04-operations/index.html#site-controls"
         },
         {
-          "line": 421,
+          "line": 422,
           "to": "06-roadmap/index.html#sequence"
         },
         {
-          "line": 563,
+          "line": 564,
           "to": "02-architecture/worker-console.html#alias-only"
         },
         {
-          "line": 564,
+          "line": 565,
           "to": "04-operations/index.html#site-controls"
         },
         {
-          "line": 571,
+          "line": 572,
           "to": "03-trust-and-data/index.html#access-ledger"
         },
         {
-          "line": 573,
+          "line": 574,
           "to": "decisions/dr-008-vault-bought.html"
         },
         {
-          "line": 575,
+          "line": 576,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 576,
+          "line": 577,
           "to": "06-roadmap/index.html#build-buy"
         },
         {
-          "line": 576,
+          "line": 577,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 585,
+          "line": 586,
           "to": "04-operations/index.html#need-to-know"
         },
         {
-          "line": 592,
+          "line": 593,
           "to": "02-architecture/index.html#overview"
         },
         {
-          "line": 594,
+          "line": 595,
           "to": "02-architecture/index.html#verification"
         },
         {
-          "line": 596,
+          "line": 597,
           "to": "03-trust-and-data/index.html#ledger-write"
         },
         {
-          "line": 598,
+          "line": 599,
           "to": "02-architecture/index.html#envelope-record"
         },
         {
-          "line": 619,
+          "line": 620,
           "to": "04-operations/index.html#shifts"
         },
         {
-          "line": 619,
+          "line": 620,
           "to": "03-trust-and-data/index.html#fig-residency"
         },
         {
-          "line": 619,
+          "line": 620,
           "to": "03-trust-and-data/index.html#failure-modes"
         },
         {
-          "line": 619,
+          "line": 620,
           "to": "decisions/dr-007-universal-core-adapters.html"
         },
         {
-          "line": 619,
+          "line": 620,
           "to": "02-architecture/index.html#adapters"
         },
         {
-          "line": 619,
+          "line": 620,
           "to": "06-roadmap/index.html#expansion"
         },
         {
-          "line": 694,
+          "line": 695,
           "to": "03-trust-and-data/index.html#tab-law"
         },
         {
-          "line": 701,
+          "line": 702,
           "to": "03-trust-and-data/index.html#src-15"
         },
         {
-          "line": 703,
+          "line": 704,
           "to": "03-trust-and-data/index.html#src-5"
         },
         {
-          "line": 710,
+          "line": 711,
           "to": "decisions/dr-013-verification-standard.html"
         },
         {
-          "line": 735,
+          "line": 737,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 736,
+          "line": 738,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 737,
+          "line": 739,
           "to": "07-open/index.html"
         }
       ]
@@ -6490,7 +6512,7 @@
       "tables": {
         "7.1": {
           "line": 63,
-          "caption": "Eighteen open items; none is silently assumed, and each has one owner and one trigger.",
+          "caption": "Nineteen open items; none is silently assumed, and each has one owner and one trigger.",
           "rows": [
             [
               "the front door per market (the channel amber). the intake gateway beneath it is ",
@@ -7983,13 +8005,13 @@
         },
         "record-status": {
           "kind": "h2",
-          "line": 98,
+          "line": 99,
           "no": "4",
           "text": "Status"
         },
         "sources": {
           "kind": "h2",
-          "line": 103,
+          "line": 104,
           "text": "Sources"
         }
       },
@@ -8076,31 +8098,31 @@
           "to": "07-open/index.html#items"
         },
         {
-          "line": 99,
+          "line": 100,
           "to": "03-trust-and-data/index.html#alias-model"
         },
         {
-          "line": 99,
+          "line": 100,
           "to": "06-roadmap/index.html#sequence"
         },
         {
-          "line": 99,
+          "line": 100,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 104,
+          "line": 105,
           "to": "decisions/dr-013-verification-standard.html"
         },
         {
-          "line": 116,
+          "line": 117,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 117,
+          "line": 118,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 118,
+          "line": 119,
           "to": "07-open/index.html"
         }
       ]
@@ -9500,7 +9522,7 @@
               "dr-003",
               "full delegation as the capability ceiling, with per-jurisdiction policy flags",
               "",
-              "2026-09-02",
+              "2026-09-10",
               "a capability the runtime cannot express as a flag."
             ],
             [
@@ -9535,14 +9557,14 @@
               "dr-008",
               "tokenisation vault bought, not built",
               "",
-              "2026-09-02",
+              "2026-09-10",
               "a real value at rest in any store we run."
             ],
             [
               "dr-009",
               "evidence redaction as part of the harness",
               "",
-              "2026-09-02",
+              "2026-09-10",
               "a raw artefact persisted anywhere."
             ],
             [

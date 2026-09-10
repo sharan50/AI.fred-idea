@@ -20,7 +20,7 @@ find-and-replace pass.
 | `manifest.json` | Machine-readable site map: path, title, section, status, summary, updated. |
 | `tools/verify.mjs` | The verification harness. Never published. |
 | `tools/depmap.mjs` | The dependency map's tool: `extract`, `check`, `impact`, `batch`, `at`, `show`, `list`, `selftest`. Never published (DR-017). |
-| `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `batches/` (one record per batch of proposed changes). |
+| `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `batches/` (one record per batch of changes, proposed or made). |
 | `netlify.toml` | Publish directory pinned to `docs`; no build command. |
 | `SURFACING_REPORT.md` | The loop's closing report against the founder's bar (written at the end of the build). |
 
