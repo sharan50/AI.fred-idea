@@ -865,7 +865,7 @@ function args(argv) {
     const a = argv[i];
     if (a.startsWith('--')) {
       const k = a.slice(2);
-      if (['md', 'json', 'links', 'warnings'].includes(k)) opt[k] = true;
+      if (['md', 'json', 'links', 'warnings', 'fragment'].includes(k)) opt[k] = true;
       else if (k === 'change') { (opt.change = opt.change || []).push(argv[++i]); }
       else opt[k] = argv[++i];
     } else pos.push(a);
@@ -885,6 +885,7 @@ function usage() {
   at <locus>                           every node carrying the locus, plus inbound links
   show <id>                            a node, its loci and its edges
   list [--kind k] [--facet name=value]
+  view [--out file] [--fragment]        bake graph.json into the 3D viewer (tools/depmap/view.html; open it locally)
 Seeds: node ids separated by commas; a member path vocab-x/m seeds vocab-x.`;
 }
 
@@ -912,6 +913,26 @@ function main() {
       const ctx = existsSync(P.graph) ? loadContext(root) : null;
       if (r.failures.length) { console.log(`\n${r.failures.length} failure(s).`); process.exit(1); }
       console.log(`check: clean. ${ctx ? ctx.graph.nodes.length : 0} nodes, ${ctx ? (ctx.graph.edges || []).length : 0} edges${r.warnings.length ? `, ${r.warnings.length} warning(s)${opt.warnings ? '' : ' (--warnings)'}` : ''}.`);
+      return;
+    }
+    if (cmd === 'view') {
+      // Bake graph.json into the viewer template. The full page is written for opening locally; --fragment writes the
+      // body-only form (title, style, markup, script) that a hosting wrapper supplies the document skeleton for.
+      const tpl = readFileSync(join(P.dir, 'view.src.html'), 'utf8');
+      const g = readJson(P.graph);
+      const refs = buildRefs(root);
+      const data = {
+        edition: g.edition,
+        nodes: g.nodes.map((n) => ({ id: n.id, kind: n.kind, label: n.label, facets: n.facets || {}, loci: (n.loci || []).map((l) => ({ at: l.at, role: l.role })), note: n.note, source: n.source })),
+        edges: g.edges,
+        pages: Object.fromEntries(Object.entries(refs.pages).map(([p, pg]) => [p, pg.title.replace(/, AI\.fred$/, '')])),
+      };
+      const json = JSON.stringify(data).replace(/<\//g, '<\\/');
+      const body = tpl.replace('/*__GRAPH__*/', json);
+      const outPath = opt.out ? resolve(opt.out) : join(P.dir, opt.fragment ? 'view.fragment.html' : 'view.html');
+      const page = opt.fragment ? body : `<!doctype html>\n<html lang="en-GB">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n</head>\n<body>\n${body}\n</body>\n</html>\n`;
+      writeFileSync(outPath, page);
+      console.log(`view: ${data.nodes.length} nodes, ${data.edges.length} edges written to ${rel(root, outPath)}${opt.fragment ? ' (fragment)' : ''}`);
       return;
     }
     if (cmd === 'selftest') {

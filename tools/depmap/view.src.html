@@ -1,0 +1,661 @@
+<title>AI.fred Dependency Map</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Tokens. Light is the publication's own paper and ink; dark is the same dossier at night. The seven category
+   hues are the validated categorical order, stepped per surface; the accent is reserved for selection. */
+:root {
+  color-scheme: light;
+  --paper: #fbfaf7; --paper-2: #f3f1ea; --ink: #17150e; --ink-soft: #4f4b40; --muted: #8a8578; --line: #d8d4c8;
+  --accent: #a8321a; --panel: rgba(251, 250, 247, 0.94); --pill: rgba(251, 250, 247, 0.88);
+  --node-stroke: rgba(23, 21, 14, 0.55); --edge: 23, 21, 14; --guide: rgba(23, 21, 14, 0.14);
+  --c-found: #eb6834; --c-dr: #2a78d6; --c-comp: #1baf7a; --c-list: #eda100; --c-open: #e87ba4; --c-inv: #008300; --c-stage: #4a3aa7;
+  --up: #a8321a; --down: #17150e; --lat: #b0407a;
+  --sans: "IBM Plex Sans", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #15140f; --paper-2: #1f1d17; --ink: #f1eee6; --ink-soft: #b8b2a4; --muted: #7f7a6d; --line: #3a3730;
+    --accent: #e86a4c; --panel: rgba(21, 20, 15, 0.92); --pill: rgba(21, 20, 15, 0.86);
+    --node-stroke: rgba(241, 238, 230, 0.35); --edge: 241, 238, 230; --guide: rgba(241, 238, 230, 0.14);
+    --c-found: #d95926; --c-dr: #3987e5; --c-comp: #199e70; --c-list: #c98500; --c-open: #d55181; --c-inv: #008300; --c-stage: #9085e9;
+    --up: #e86a4c; --down: #f1eee6; --lat: #d55181;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #15140f; --paper-2: #1f1d17; --ink: #f1eee6; --ink-soft: #b8b2a4; --muted: #7f7a6d; --line: #3a3730;
+  --accent: #e86a4c; --panel: rgba(21, 20, 15, 0.92); --pill: rgba(21, 20, 15, 0.86);
+  --node-stroke: rgba(241, 238, 230, 0.35); --edge: 241, 238, 230; --guide: rgba(241, 238, 230, 0.14);
+  --c-found: #d95926; --c-dr: #3987e5; --c-comp: #199e70; --c-list: #c98500; --c-open: #d55181; --c-inv: #008300; --c-stage: #9085e9;
+  --up: #e86a4c; --down: #f1eee6; --lat: #d55181;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--paper); color: var(--ink); font: 14px/1.45 var(--sans); overflow: hidden; }
+button, input { font: inherit; color: inherit; }
+button { background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; padding: 5px 10px; cursor: pointer; }
+button:hover { border-color: var(--ink-soft); }
+button:focus-visible, input:focus-visible, .row:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+button:disabled { opacity: 0.45; cursor: default; }
+
+.app { position: fixed; inset: 0; display: grid; grid-template-rows: auto 1fr; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--panel); z-index: 3; }
+.brand { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.brand .mark { font-weight: 600; font-size: 16px; letter-spacing: 0.01em; }
+.brand .sub { color: var(--ink-soft); font-size: 12.5px; }
+.search { position: relative; flex: 1 1 220px; max-width: 360px; }
+.search input { width: 100%; padding: 6px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
+.results { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; max-height: 320px; overflow: auto; z-index: 5; box-shadow: none; }
+.results button { display: flex; width: 100%; gap: 8px; align-items: center; text-align: left; border: 0; border-radius: 0; background: transparent; padding: 7px 10px; }
+.results button:hover, .results button.active { background: var(--paper-2); }
+.results .id { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-left: auto; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px 3px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); font-size: 12.5px; }
+.chip[aria-pressed="false"] { opacity: 0.45; }
+.chip[aria-pressed="true"] { background: var(--paper); color: var(--ink); border-color: var(--line); }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+.tools { display: flex; gap: 6px; margin-left: auto; }
+
+.stage-wrap { position: relative; overflow: hidden; }
+canvas#stage { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+canvas#stage.grabbing { cursor: grabbing; }
+canvas#stage.pointing { cursor: pointer; }
+.glyph { width: 16px; height: 16px; flex: none; display: inline-block; vertical-align: middle; }
+
+.legend { position: absolute; left: 16px; bottom: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; font-size: 12.5px; max-width: 250px; z-index: 2; }
+.legend h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 6px; font-weight: 500; }
+.legend h2 + .lrows + h2 { margin-top: 10px; }
+.lrows { display: grid; gap: 3px; }
+.lrow { display: flex; align-items: center; gap: 8px; }
+.lrow canvas { width: 16px; height: 16px; flex: none; cursor: default; }
+.lrow button { border: 0; background: transparent; color: var(--ink); padding: 0; text-align: left; display: flex; align-items: center; gap: 8px; }
+.lrow button[aria-pressed="false"] { opacity: 0.4; text-decoration: line-through; }
+.lrow .k { color: var(--ink-soft); }
+.alt-note { color: var(--muted); font-size: 11.5px; margin: 6px 0 0; }
+.hint { position: absolute; right: 16px; bottom: 16px; margin: 0; color: var(--muted); font-size: 12px; max-width: 340px; text-align: right; z-index: 2; }
+
+.inspector { position: absolute; top: 12px; right: 12px; bottom: 12px; width: 340px; max-width: calc(100% - 24px); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; display: flex; flex-direction: column; z-index: 4; overflow: hidden; }
+.inspector[hidden] { display: none; }
+.ihead { display: flex; align-items: flex-start; gap: 8px; padding: 12px 12px 8px; border-bottom: 1px solid var(--line); }
+.ihead .kind { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
+.ihead h2 { font-size: 16px; line-height: 1.3; margin: 4px 0 2px; font-weight: 600; text-wrap: balance; }
+.ihead .id { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.ihead .close { margin-left: auto; padding: 2px 8px; }
+.facets { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.facets span { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 3px; padding: 1px 5px; }
+.trail { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 12px; }
+.trail:empty { display: none; }
+.trail button { padding: 1px 7px; font-size: 12px; border-radius: 999px; }
+.trail button.here { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.ibody { overflow: auto; padding: 4px 0 12px; }
+.grp { padding: 8px 12px 2px; }
+.grp h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 4px; font-weight: 500; display: flex; align-items: baseline; gap: 8px; }
+.grp h3 .n { font-family: var(--mono); letter-spacing: 0; color: var(--ink-soft); }
+.grp h3 .dir { display: inline-block; width: 10px; height: 3px; border-radius: 2px; }
+.rows { display: grid; gap: 1px; }
+.row { display: grid; grid-template-columns: 18px 1fr auto; align-items: center; gap: 8px; width: 100%; text-align: left; border: 0; background: transparent; padding: 5px 4px; border-radius: 4px; }
+.row:hover { background: var(--paper-2); }
+.row .lbl { line-height: 1.3; }
+.row .via { font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.row canvas { width: 14px; height: 14px; cursor: pointer; }
+.reopens { padding: 8px 12px; margin: 0 12px; background: var(--paper-2); border-radius: 4px; font-size: 12.5px; }
+.reopens b { font-weight: 600; }
+.reopens ul { margin: 4px 0 0; padding-left: 16px; }
+.reopens li { margin: 1px 0; }
+.reopens .id { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.loci { list-style: none; padding: 0 12px; margin: 0; font-family: var(--mono); font-size: 11px; color: var(--ink-soft); display: grid; gap: 3px; }
+.loci .role { display: inline-block; width: 62px; color: var(--muted); }
+.note { padding: 6px 12px 0; font-size: 12.5px; color: var(--ink-soft); }
+.actions { display: flex; gap: 6px; padding: 10px 12px 0; }
+.empty { padding: 4px 12px; color: var(--muted); font-size: 12.5px; }
+
+@media (max-width: 720px) {
+  .bar { gap: 8px 12px; }
+  .brand .sub { display: none; }
+  .tools { margin-left: 0; }
+  .inspector { top: auto; left: 12px; right: 12px; bottom: 12px; width: auto; max-width: none; max-height: 48vh; }
+  .legend { bottom: auto; top: 12px; max-width: 200px; font-size: 11.5px; }
+  .hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="app">
+  <header class="bar">
+    <div class="brand"><span class="mark">AI.fred</span><span class="sub" id="sub">Dependency map</span></div>
+    <div class="search">
+      <label for="q" class="sr" hidden>Find a node</label>
+      <input id="q" type="search" placeholder="Find a node by label or id" autocomplete="off" spellcheck="false">
+      <div class="results" id="results" hidden></div>
+    </div>
+    <div class="chips" id="kind-chips" aria-label="Show or hide kinds"></div>
+    <div class="tools">
+      <button id="btn-focus" aria-pressed="false" disabled title="Hide everything outside the selected node's cone">Focus cone</button>
+      <button id="btn-spin" aria-pressed="false" title="Slowly orbit the map">Spin</button>
+      <button id="btn-reset" title="Return the camera to the opening view">Reset view</button>
+    </div>
+  </header>
+  <div class="stage-wrap">
+    <canvas id="stage" tabindex="0" role="img" aria-label="A three-dimensional map of the record's dependencies. Altitude is causal depth: up is upstream."></canvas>
+    <div class="legend" id="legend"></div>
+    <p class="hint" id="hint">Drag to orbit, scroll to zoom, shift-drag to pan. Click a node for its cone; double-click to fly to it. Up is upstream.</p>
+    <aside class="inspector" id="inspector" hidden aria-label="Selected node">
+      <div class="ihead" id="ihead"></div>
+      <div class="trail" id="trail"></div>
+      <div class="ibody" id="ibody"></div>
+    </aside>
+  </div>
+</div>
+
+<script id="graph" type="application/json">/*__GRAPH__*/</script>
+<script>
+(() => {
+'use strict';
+const DATA = JSON.parse(document.getElementById('graph').textContent);
+
+// ----------------------------------------------------------------- vocabulary of the drawing
+// Altitude is causal depth. Upstream kinds sit higher: the fatal failures at the top, the harness in the middle,
+// the open items at the floor. The bands follow the map's edge directions: a record justifies a list or an
+// invariant, a component depends on both, a stage depends on components, an open item lands somewhere below.
+const KIND = {
+  fatal:   { g: 'found', shape: 'diamond',  r: 9,   band: 72,  name: 'fatal failure' },
+  premise: { g: 'found', shape: 'diamond',  r: 7,   band: 62,  name: 'thesis premise' },
+  ledger:  { g: 'found', shape: 'diamond',  r: 4.5, band: 46,  name: 'ledger item' },
+  dr:      { g: 'dr',    shape: 'circle',   r: 7.5, band: 28,  name: 'decision record' },
+  alt:     { g: 'dr',    shape: 'hollow',   r: 3.5, band: 22,  name: 'rejected alternative' },
+  inv:     { g: 'inv',   shape: 'triangle', r: 5,   band: 8,   name: 'invariant' },
+  vocab:   { g: 'list',  shape: 'hexagon',  r: 5.5, band: 6,   name: 'closed list' },
+  flag:    { g: 'list',  shape: 'hexagon',  r: 4,   band: 3,   name: 'policy flag row' },
+  comp:    { g: 'comp',  shape: 'square',   r: 6,   band: -8,  name: 'component' },
+  stage:   { g: 'stage', shape: 'pentagon', r: 6,   band: -24, name: 'roadmap stage' },
+  open:    { g: 'open',  shape: 'ring',     r: 4.5, band: -38, name: 'open item' },
+  obj:     { g: 'open',  shape: 'ring',     r: 4,   band: -38, name: 'objection' },
+  res:     { g: 'open',  shape: 'ring',     r: 4.5, band: -43, name: 'residual finding' },
+};
+const GROUP = {
+  found: { tok: '--c-found', name: 'Why: the fatal failures, the premises, the ledger', kinds: ['fatal', 'premise', 'ledger'] },
+  dr:    { tok: '--c-dr',    name: 'Decision records, and the alternatives they rejected', kinds: ['dr', 'alt'] },
+  inv:   { tok: '--c-inv',   name: 'Invariants a record closes off', kinds: ['inv'] },
+  list:  { tok: '--c-list',  name: 'Closed lists and policy flag rows', kinds: ['vocab', 'flag'] },
+  comp:  { tok: '--c-comp',  name: 'Components of the harness', kinds: ['comp'] },
+  stage: { tok: '--c-stage', name: 'Roadmap stages', kinds: ['stage'] },
+  open:  { tok: '--c-open',  name: 'Open items, objections, residual findings', kinds: ['open', 'obj', 'res'] },
+};
+const BANDS = [[72, 'fatal failures'], [62, 'premises'], [46, 'the ledger'], [28, 'decision records'], [6, 'invariants and closed lists'], [-8, 'the harness'], [-24, 'stages'], [-40, 'open items and residuals']];
+const EDGE = {
+  'justifies':      { dir: 'down', dash: [],     w: 1.1, name: 'justifies (from is upstream)' },
+  'depends-on':     { dir: 'up',   dash: [],     w: 0.8, name: 'depends on (to is upstream)' },
+  'closes-off':     { dir: 'down', dash: [4, 3], w: 1.0, name: 'closes off (a record forbids)' },
+  'rejects':        { dir: 'lat',  dash: [1, 3], w: 0.9, name: 'rejects (an alternative)' },
+  'conflicts-with': { dir: 'lat',  dash: [6, 3], w: 1.2, name: 'conflicts with (a residual)' },
+  'lands-in':       { dir: 'lat',  dash: [2, 3], w: 0.9, name: 'lands in (an open item)' },
+};
+const HUB_DEPTH = 2;
+
+// ----------------------------------------------------------------- data
+const nodes = DATA.nodes.map((n) => ({ ...n, k: KIND[n.kind] || KIND.comp, x: 0, y: 0, z: 0, deg: 0, sx: 0, sy: 0, s: 1, depth: 0 }));
+const byId = new Map(nodes.map((n) => [n.id, n]));
+const edges = DATA.edges.filter((e) => byId.has(e[0]) && byId.has(e[2])).map(([a, kind, b]) => ({ a: byId.get(a), b: byId.get(b), kind, e: EDGE[kind] || EDGE.justifies }));
+const upOf = new Map(), downOf = new Map(), latOf = new Map();
+const push = (m, k, v) => { if (!m.has(k)) m.set(k, []); m.get(k).push(v); };
+for (const ed of edges) {
+  ed.a.deg++; ed.b.deg++;
+  if (ed.e.dir === 'down') { push(downOf, ed.a.id, { n: ed.b, ed }); push(upOf, ed.b.id, { n: ed.a, ed }); }
+  else if (ed.e.dir === 'up') { push(upOf, ed.a.id, { n: ed.b, ed }); push(downOf, ed.b.id, { n: ed.a, ed }); }
+  else { push(latOf, ed.a.id, { n: ed.b, ed }); push(latOf, ed.b.id, { n: ed.a, ed }); }
+}
+document.getElementById('sub').textContent = `Dependency map, edition ${DATA.edition}: ${nodes.length} nodes, ${edges.length} edges`;
+
+// ----------------------------------------------------------------- layout: a seeded force layout in x and z, altitude by band
+function hash(s) { let h = 2166136261; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); } return h >>> 0; }
+function rng(seed) { let a = seed; return () => { a |= 0; a = a + 0x6D2B79F5 | 0; let t = Math.imul(a ^ a >>> 15, 1 | a); t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t; return ((t ^ t >>> 14) >>> 0) / 4294967296; }; }
+for (const n of nodes) {
+  const r = rng(hash(n.id));
+  const ang = r() * Math.PI * 2, rad = 40 + r() * 90;
+  n.x = Math.cos(ang) * rad; n.z = Math.sin(ang) * rad; n.y = n.k.band + (r() - 0.5) * 3;
+}
+const K = 19;
+let temp = 11;
+const disp = new Float64Array(nodes.length * 2);
+nodes.forEach((n, i) => { n.i = i; });
+function step() {
+  disp.fill(0);
+  for (let i = 0; i < nodes.length; i++) {
+    const a = nodes[i];
+    for (let j = i + 1; j < nodes.length; j++) {
+      const b = nodes[j];
+      let dx = a.x - b.x, dz = a.z - b.z;
+      const d2 = dx * dx + dz * dz + 0.01, d = Math.sqrt(d2);
+      const f = (K * K) / d2 * (Math.abs(a.y - b.y) < 12 ? 1 : 0.35);
+      dx *= f; dz *= f;
+      disp[i * 2] += dx; disp[i * 2 + 1] += dz; disp[j * 2] -= dx; disp[j * 2 + 1] -= dz;
+    }
+  }
+  for (const ed of edges) {
+    const a = ed.a, b = ed.b;
+    const dx = a.x - b.x, dz = a.z - b.z;
+    const d = Math.sqrt(dx * dx + dz * dz) + 0.01;
+    const wgt = ed.e.dir === 'lat' ? (ed.kind === 'rejects' ? 0.9 : 0.35) : 0.7;
+    const f = (d / K) * wgt;
+    disp[a.i * 2] -= dx / d * f; disp[a.i * 2 + 1] -= dz / d * f;
+    disp[b.i * 2] += dx / d * f; disp[b.i * 2 + 1] += dz / d * f;
+  }
+  for (const n of nodes) {
+    let dx = disp[n.i * 2], dz = disp[n.i * 2 + 1];
+    const len = Math.sqrt(dx * dx + dz * dz) + 0.001;
+    const s = Math.min(len, temp) / len;
+    n.x += dx * s - n.x * 0.004; n.z += dz * s - n.z * 0.004;
+    n.y += (n.k.band - n.y) * 0.2;
+  }
+  temp = Math.max(0.4, temp * 0.965);
+}
+const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let settleFrames = reduced ? 0 : 110;
+for (let i = 0; i < (reduced ? 220 : 90); i++) step();
+
+// ----------------------------------------------------------------- camera and projection
+const canvas = document.getElementById('stage');
+const ctx = canvas.getContext('2d');
+const HOME = { yaw: -0.55, pitch: 0.3, dist: 400, tx: 0, ty: 12, tz: 0, ox: 0, oy: 0 };
+const cam = { ...HOME, f: 620 };
+let W = 0, H = 0, dpr = 1;
+function resize() {
+  const r = canvas.parentElement.getBoundingClientRect();
+  dpr = Math.min(2, window.devicePixelRatio || 1);
+  W = Math.max(200, r.width); H = Math.max(200, r.height);
+  canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+  dirty = true;
+}
+function project(p) {
+  const x = p.x - cam.tx, y = p.y - cam.ty, z = p.z - cam.tz;
+  const cy = Math.cos(cam.yaw), sy = Math.sin(cam.yaw);
+  const x1 = x * cy - z * sy, z1 = x * sy + z * cy;
+  const cp = Math.cos(cam.pitch), sp = Math.sin(cam.pitch);
+  const y2 = y * cp - z1 * sp, z2 = y * sp + z1 * cp;
+  const depth = cam.dist + z2;
+  const s = cam.f / Math.max(40, depth);
+  return { sx: W / 2 + x1 * s + cam.ox + shiftX, sy: H / 2 - y2 * s + cam.oy, s, depth };
+}
+// The scene sits centred in the space the legend and the inspector leave free.
+let shiftX = 0;
+
+// ----------------------------------------------------------------- state
+let selected = null, hovered = null, hoverRow = null;
+let hiddenKinds = new Set(), hiddenEdges = new Set();
+let focus = false, spin = false, dirty = true;
+let cone = null; // { up:Set, down:Set, lat:Set, upEdges:Set, downEdges:Set, latEdges:Set, dist:Map }
+const trail = [];
+let fly = null;
+
+function computeCone(seed) {
+  const up = new Set(), down = new Set(), lat = new Set(), upE = new Set(), downE = new Set(), latE = new Set();
+  const dist = new Map([[seed.id, 0]]);
+  let frontier = [seed];
+  while (frontier.length) {
+    const next = [];
+    for (const n of frontier) for (const { n: m, ed } of upOf.get(n.id) || []) {
+      if (hiddenKinds.has(m.kind)) continue;
+      upE.add(ed);
+      if (dist.has(m.id)) continue;
+      dist.set(m.id, dist.get(n.id) + 1); up.add(m.id); next.push(m);
+    }
+    frontier = next;
+  }
+  frontier = [seed];
+  for (let d = 0; d < HUB_DEPTH && frontier.length; d++) {
+    const next = [];
+    for (const n of frontier) for (const { n: m, ed } of downOf.get(n.id) || []) {
+      if (hiddenKinds.has(m.kind)) continue;
+      downE.add(ed);
+      if (dist.has(m.id)) continue;
+      dist.set(m.id, d + 1); down.add(m.id); next.push(m);
+    }
+    frontier = next;
+  }
+  for (const id of [seed.id, ...up, ...down]) for (const { n: m, ed } of latOf.get(id) || []) {
+    if (hiddenKinds.has(m.kind)) continue;
+    latE.add(ed);
+    if (!dist.has(m.id)) { lat.add(m.id); }
+  }
+  return { up, down, lat, upE, downE, latE, dist };
+}
+function inCone(n) { return !cone || n === selected || cone.up.has(n.id) || cone.down.has(n.id) || cone.lat.has(n.id); }
+function visible(n) { return !hiddenKinds.has(n.kind) && !(focus && cone && !inCone(n)); }
+
+// ----------------------------------------------------------------- drawing
+const tokens = {};
+function readTokens() {
+  const cs = getComputedStyle(document.documentElement);
+  for (const t of ['--paper', '--paper-2', '--ink', '--ink-soft', '--muted', '--line', '--accent', '--pill', '--node-stroke', '--edge', '--guide', '--up', '--down', '--lat', ...Object.values(GROUP).map((g) => g.tok)]) tokens[t] = cs.getPropertyValue(t).trim();
+}
+function colourOf(n) { return tokens[GROUP[n.k.g].tok]; }
+function shape(c, sh, x, y, r) {
+  c.beginPath();
+  if (sh === 'circle' || sh === 'hollow') c.arc(x, y, r, 0, Math.PI * 2);
+  else if (sh === 'ring') { c.arc(x, y, r, 0, Math.PI * 2); }
+  else if (sh === 'square') { const q = r * 0.9; c.roundRect ? c.roundRect(x - q, y - q, q * 2, q * 2, r * 0.25) : c.rect(x - q, y - q, q * 2, q * 2); }
+  else if (sh === 'diamond') { c.moveTo(x, y - r * 1.15); c.lineTo(x + r * 1.15, y); c.lineTo(x, y + r * 1.15); c.lineTo(x - r * 1.15, y); c.closePath(); }
+  else if (sh === 'triangle') { c.moveTo(x, y - r * 1.15); c.lineTo(x + r * 1.05, y + r * 0.75); c.lineTo(x - r * 1.05, y + r * 0.75); c.closePath(); }
+  else { const k = sh === 'hexagon' ? 6 : 5; for (let i = 0; i < k; i++) { const a = -Math.PI / 2 + i * Math.PI * 2 / k; const px = x + Math.cos(a) * r * 1.08, py = y + Math.sin(a) * r * 1.08; i ? c.lineTo(px, py) : c.moveTo(px, py); } c.closePath(); }
+}
+function drawNode(c, n, x, y, r, fill, alpha) {
+  c.globalAlpha = alpha;
+  shape(c, n.k.shape, x, y, r);
+  if (n.k.shape === 'hollow' || n.k.shape === 'ring') {
+    c.fillStyle = tokens['--paper']; c.fill();
+    c.lineWidth = n.k.shape === 'ring' ? Math.max(1.5, r * 0.55) : 1.5; c.strokeStyle = fill; c.stroke();
+  } else {
+    c.fillStyle = fill; c.fill();
+    c.lineWidth = 1; c.strokeStyle = tokens['--node-stroke']; c.stroke();
+  }
+}
+function legendGlyph(cv, kind, group) {
+  const c = cv.getContext('2d'); const s = 16 * dpr; cv.width = s; cv.height = s; c.scale(dpr, dpr); c.clearRect(0, 0, 16, 16);
+  const n = { k: KIND[kind] }; drawNode(c, n, 8, 8, 5, tokens[GROUP[group].tok], 1);
+}
+function render() {
+  readTokens();
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = tokens['--paper']; ctx.fillRect(0, 0, W, H);
+  // altitude guides: one ring per band, sized to the cloud, named at its right-hand edge
+  shiftX = W > 900 ? (selected ? -170 : 0) + 110 : 0;
+  let R = 60;
+  for (const n of nodes) R = Math.max(R, Math.hypot(n.x, n.z));
+  R = Math.min(190, R * 1.06);
+  ctx.save();
+  ctx.strokeStyle = tokens['--guide']; ctx.lineWidth = 1; ctx.setLineDash([2, 5]);
+  ctx.font = `500 10.5px ${getComputedStyle(document.body).getPropertyValue('--mono')}`;
+  for (const [y, label] of BANDS) {
+    let right = null;
+    ctx.beginPath();
+    for (let i = 0; i <= 56; i++) {
+      const a = i / 56 * Math.PI * 2;
+      const p = project({ x: Math.cos(a) * R, y, z: Math.sin(a) * R });
+      i ? ctx.lineTo(p.sx, p.sy) : ctx.moveTo(p.sx, p.sy);
+      if (!right || p.sx > right.sx) right = p;
+    }
+    ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = tokens['--muted']; ctx.textAlign = 'left'; ctx.textBaseline = 'middle';
+    ctx.fillText(label, right.sx + 8, right.sy);
+    ctx.setLineDash([2, 5]);
+  }
+  ctx.restore();
+  // project
+  for (const n of nodes) { const p = project(n); n.sx = p.sx; n.sy = p.sy; n.s = p.s; n.depth = p.depth; }
+  const fade = (s) => Math.max(0.18, Math.min(1, 0.15 + (s - 1.2) * 0.9));
+  const emphasis = !!selected;
+  const hi = hovered || hoverRow;
+  // edges
+  for (const ed of edges) {
+    if (!visible(ed.a) || !visible(ed.b) || hiddenEdges.has(ed.kind)) continue;
+    let alpha = 0.32 * fade((ed.a.s + ed.b.s) / 2), colour = `rgba(${tokens['--edge']},`, w = ed.e.w;
+    let cone_dir = null;
+    if (cone) {
+      if (cone.upE.has(ed)) cone_dir = 'up'; else if (cone.downE.has(ed)) cone_dir = 'down'; else if (cone.latE.has(ed)) cone_dir = 'lat';
+      if (cone_dir) { alpha = 0.95; w = ed.e.w + 0.8; }
+      else alpha *= 0.12;
+    }
+    if (hi && (ed.a === hi || ed.b === hi)) { alpha = Math.max(alpha, 0.9); w = ed.e.w + 0.6; }
+    ctx.beginPath(); ctx.moveTo(ed.a.sx, ed.a.sy); ctx.lineTo(ed.b.sx, ed.b.sy);
+    ctx.setLineDash(ed.e.dash); ctx.lineWidth = w;
+    ctx.strokeStyle = cone_dir ? tokens[`--${cone_dir}`] : colour + '1)';
+    ctx.globalAlpha = alpha; ctx.stroke();
+  }
+  ctx.setLineDash([]);
+  // nodes, far first
+  const order = nodes.filter(visible).sort((a, b) => b.depth - a.depth);
+  const labelFont = `500 11px ${getComputedStyle(document.body).getPropertyValue('--sans')}`;
+  const labels = [];
+  for (const n of order) {
+    const r = (n.k.r + Math.min(4, n.deg * 0.12)) * Math.min(1.6, n.s * 0.9);
+    let alpha = fade(n.s);
+    const isSel = n === selected, isHi = n === hi;
+    if (emphasis && !inCone(n)) alpha *= 0.14;
+    if (isSel || isHi) alpha = 1;
+    drawNode(ctx, n, n.sx, n.sy, r, colourOf(n), alpha);
+    if (isSel) { ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(n.sx, n.sy, r + 4, 0, Math.PI * 2); ctx.lineWidth = 2; ctx.strokeStyle = tokens['--accent']; ctx.stroke(); }
+    else if (isHi) { ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(n.sx, n.sy, r + 3, 0, Math.PI * 2); ctx.lineWidth = 1.5; ctx.strokeStyle = tokens['--ink']; ctx.stroke(); }
+    const always = (n.kind === 'fatal' || n.kind === 'premise' || (n.kind === 'dr' && cam.dist < 300)) && !(emphasis && !inCone(n));
+    const inConeNear = cone && (cone.up.has(n.id) || (cone.down.has(n.id) && cone.dist.get(n.id) <= 1) || cone.lat.has(n.id)) && cam.dist < 600;
+    if (isSel || isHi || always || inConeNear) labels.push({ n, r, rank: isSel || isHi ? 0 : always ? 1 : 2 });
+  }
+  // Labels: strongest first, nearest first, and a label that would sit on another is dropped rather than drawn over it.
+  ctx.globalAlpha = 1; ctx.font = labelFont; ctx.textBaseline = 'middle'; ctx.textAlign = 'left';
+  const placed = [];
+  for (const { n, r, rank } of labels.sort((a, b) => a.rank - b.rank || a.n.depth - b.n.depth).slice(0, 220)) {
+    const text = n.kind === 'dr' ? `${n.id.toUpperCase()} ${n.label}` : n.label;
+    const tw = ctx.measureText(text).width;
+    const x = n.sx + r + 6, y = n.sy;
+    const box = [x - 3, y - 8, tw + 6, 16];
+    if (rank > 0 && placed.some((b) => box[0] < b[0] + b[2] && box[0] + box[2] > b[0] && box[1] < b[1] + b[3] && box[1] + box[3] > b[1])) continue;
+    placed.push(box);
+    ctx.fillStyle = tokens['--pill']; ctx.fillRect(...box);
+    ctx.fillStyle = rank === 0 ? tokens['--ink'] : tokens['--ink-soft']; ctx.fillText(text, x, y);
+  }
+  ctx.globalAlpha = 1;
+}
+function frame() {
+  let animating = false;
+  if (settleFrames > 0) { step(); step(); settleFrames--; dirty = true; animating = true; }
+  if (spin) { cam.yaw += 0.0025; dirty = true; animating = true; }
+  if (fly) {
+    const t = Math.min(1, (performance.now() - fly.t0) / fly.ms), e = 1 - Math.pow(1 - t, 3);
+    for (const k of ['tx', 'ty', 'tz', 'dist']) cam[k] = fly.from[k] + (fly.to[k] - fly.from[k]) * e;
+    cam.ox = fly.from.ox * (1 - e); cam.oy = fly.from.oy * (1 - e);
+    if (t >= 1) fly = null;
+    dirty = true; animating = true;
+  }
+  if (dirty) { render(); dirty = false; }
+  if (animating) requestAnimationFrame(frame); else raf = null;
+}
+let raf = null;
+function kick() { if (!raf) raf = requestAnimationFrame(() => { raf = null; frame(); if (settleFrames > 0 || spin || fly) raf = requestAnimationFrame(frame); }); }
+function invalidate() { dirty = true; kick(); }
+
+// ----------------------------------------------------------------- selection and the inspector
+const inspector = document.getElementById('inspector'), ihead = document.getElementById('ihead'), ibody = document.getElementById('ibody'), trailEl = document.getElementById('trail');
+const btnFocus = document.getElementById('btn-focus');
+function el(tag, attrs, ...kids) { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs || {})) { if (k === 'class') e.className = v; else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); } for (const kd of kids) if (kd != null) e.append(kd); return e; }
+function glyph(kind) { const cv = el('canvas', { class: 'glyph', width: 16, height: 16, 'aria-hidden': 'true' }); legendGlyph(cv, kind, KIND[kind].g); return cv; }
+function select(n, { push: pushTrail = true, flyTo = false } = {}) {
+  selected = n;
+  cone = n ? computeCone(n) : null;
+  btnFocus.disabled = !n;
+  if (!n) { focus = false; btnFocus.setAttribute('aria-pressed', 'false'); }
+  if (n && pushTrail && trail[trail.length - 1] !== n.id) { trail.push(n.id); if (trail.length > 10) trail.shift(); }
+  renderInspector();
+  if (n && flyTo) flyToNode(n);
+  invalidate();
+  snapshot();
+}
+function flyToNode(n) {
+  const to = { tx: n.x, ty: n.y, tz: n.z, dist: Math.min(cam.dist, 230) };
+  if (reduced) { Object.assign(cam, to, { ox: 0, oy: 0 }); invalidate(); return; }
+  fly = { t0: performance.now(), ms: 520, from: { tx: cam.tx, ty: cam.ty, tz: cam.tz, dist: cam.dist, ox: cam.ox, oy: cam.oy }, to };
+  kick();
+}
+function rowFor(n, via) {
+  const b = el('button', { class: 'row', type: 'button', onclick: () => select(n, { flyTo: true }), onmouseenter: () => { hoverRow = n; invalidate(); }, onmouseleave: () => { hoverRow = null; invalidate(); } },
+    glyph(n.kind), el('span', { class: 'lbl' }, n.label), el('span', { class: 'via' }, via));
+  return b;
+}
+function group(title, dirTok, rows, count) {
+  if (!rows.length) return null;
+  const h = el('h3', null, el('span', { class: 'dir', style: `background:${tokens[dirTok] || tokens['--ink-soft']}` }), title, el('span', { class: 'n' }, String(count)));
+  return el('div', { class: 'grp' }, h, el('div', { class: 'rows' }, ...rows));
+}
+function renderInspector() {
+  ihead.replaceChildren(); ibody.replaceChildren(); trailEl.replaceChildren();
+  if (!selected) { inspector.hidden = true; return; }
+  inspector.hidden = false;
+  const n = selected;
+  ihead.append(
+    el('div', null,
+      el('span', { class: 'kind' }, glyph(n.kind), n.k.name),
+      el('h2', null, n.label),
+      el('span', { class: 'id' }, n.id),
+      Object.keys(n.facets).length ? el('div', { class: 'facets' }, ...Object.entries(n.facets).map(([k, v]) => el('span', null, `${k}: ${v}`))) : null),
+    el('button', { class: 'close', type: 'button', 'aria-label': 'Clear the selection', onclick: () => select(null) }, '×'));
+  for (const id of trail) trailEl.append(el('button', { type: 'button', class: id === n.id ? 'here' : '', onclick: () => select(byId.get(id), { push: false, flyTo: true }) }, byId.get(id).kind === 'dr' ? id.toUpperCase() : byId.get(id).label.slice(0, 26)));
+  // what a change here reopens
+  const reopen = [...cone.up].map((id) => byId.get(id)).filter((m) => m.kind === 'dr' || (m.kind === 'ledger' && /^ledger-\d+\.\d+\.\d+$/.test(m.id))).sort((a, b) => cone.dist.get(a.id) - cone.dist.get(b.id));
+  if (n.kind === 'dr' || reopen.length) {
+    const items = [n.kind === 'dr' ? n : null, ...reopen].filter(Boolean).slice(0, 8);
+    ibody.append(el('div', { class: 'reopens' }, el('b', null, n.kind === 'dr' || reopen.length ? 'A change here reopens' : ''), el('ul', null, ...items.map((m) => el('li', null, el('span', { class: 'id' }, m.kind === 'dr' ? m.id.toUpperCase() : m.id), ' ', m.label))), reopen.length > 7 ? el('div', { class: 'id' }, `and ${reopen.length - 7} more upstream`) : null));
+  }
+  const neigh = (m, dirs) => dirs.flatMap((d) => (d.get(n.id) || []).map((x) => x));
+  const ups = (upOf.get(n.id) || []).filter((x) => !hiddenKinds.has(x.n.kind));
+  const downs = (downOf.get(n.id) || []).filter((x) => !hiddenKinds.has(x.n.kind));
+  const lats = (latOf.get(n.id) || []).filter((x) => !hiddenKinds.has(x.n.kind));
+  const viaOf = (x) => x.ed.kind;
+  ibody.append(
+    group('Upstream: what justifies this', '--up', ups.map((x) => rowFor(x.n, viaOf(x))), cone.up.size) ,
+    group('Downstream: what depends on this', '--down', downs.map((x) => rowFor(x.n, viaOf(x))), cone.down.size),
+    group('Sideways: alternatives, conflicts, open items', '--lat', lats.map((x) => rowFor(x.n, viaOf(x))), cone.lat.size));
+  if (!ups.length && !downs.length && !lats.length) ibody.append(el('p', { class: 'empty' }, 'No edges touch this node.'));
+  const far = [...cone.down].map((id) => byId.get(id)).filter((m) => cone.dist.get(m.id) === 2 && !downs.some((x) => x.n === m));
+  if (far.length) ibody.append(el('div', { class: 'grp' }, el('h3', null, 'Two steps downstream', el('span', { class: 'n' }, String(far.length))), el('div', { class: 'rows' }, ...far.slice(0, 40).map((m) => rowFor(m, 'via ' + (m.kind))))));
+  if (n.note) ibody.append(el('p', { class: 'note' }, n.note));
+  if (n.source) ibody.append(el('p', { class: 'note' }, n.source));
+  if (n.loci.length) ibody.append(el('div', { class: 'grp' }, el('h3', null, 'Where the pages state it'), el('ul', { class: 'loci' }, ...n.loci.map((l) => el('li', null, el('span', { class: 'role' }, l.role), l.at)))));
+}
+
+// ----------------------------------------------------------------- chips, legend, search, buttons
+const chips = document.getElementById('kind-chips');
+readTokens();
+for (const [g, def] of Object.entries(GROUP)) {
+  const b = el('button', { class: 'chip', type: 'button', 'aria-pressed': 'true', title: def.name, onclick: () => {
+    const on = b.getAttribute('aria-pressed') === 'true';
+    b.setAttribute('aria-pressed', on ? 'false' : 'true');
+    for (const k of def.kinds) on ? hiddenKinds.add(k) : hiddenKinds.delete(k);
+    if (selected && hiddenKinds.has(selected.kind)) select(null); else if (selected) select(selected, { push: false });
+    invalidate(); snapshot();
+  } }, el('span', { class: 'sw', style: `background:${tokens[def.tok]}` }), def.kinds.map((k) => KIND[k].name).join(', '));
+  chips.append(b);
+}
+const legend = document.getElementById('legend');
+function buildLegend() {
+  readTokens();
+  legend.replaceChildren(el('h2', null, 'Nodes, by altitude'));
+  const rows = el('div', { class: 'lrows' });
+  for (const [g, def] of Object.entries(GROUP)) for (const k of def.kinds) rows.append(el('div', { class: 'lrow' }, glyph(k), el('span', null, KIND[k].name, ' ', el('span', { class: 'k' }, `(${nodes.filter((n) => n.kind === k).length})`))));
+  legend.append(rows, el('h2', null, 'Edges (click to hide)'));
+  const erows = el('div', { class: 'lrows' });
+  for (const [kind, def] of Object.entries(EDGE)) {
+    const cv = el('canvas', { class: 'glyph', width: 16, height: 16, 'aria-hidden': 'true' }); const c = cv.getContext('2d'); cv.width = 16 * dpr; cv.height = 16 * dpr; c.scale(dpr, dpr);
+    c.strokeStyle = tokens['--ink']; c.lineWidth = def.w + 0.4; c.setLineDash(def.dash); c.beginPath(); c.moveTo(1, 8); c.lineTo(15, 8); c.stroke();
+    const b = el('button', { type: 'button', 'aria-pressed': hiddenEdges.has(kind) ? 'false' : 'true', onclick: () => { hiddenEdges.has(kind) ? hiddenEdges.delete(kind) : hiddenEdges.add(kind); b.setAttribute('aria-pressed', hiddenEdges.has(kind) ? 'false' : 'true'); invalidate(); } }, cv, el('span', null, def.name));
+    erows.append(el('div', { class: 'lrow' }, b));
+  }
+  legend.append(erows, el('p', { class: 'alt-note' }, 'Selected: upstream edges in the accent, downstream in ink, sideways in magenta. Up is upstream.'));
+}
+buildLegend();
+const q = document.getElementById('q'), results = document.getElementById('results');
+let resultIds = [], active = 0;
+function search() {
+  const s = q.value.trim().toLowerCase();
+  results.replaceChildren(); resultIds = []; active = 0;
+  if (!s) { results.hidden = true; return; }
+  const hits = nodes.filter((n) => !hiddenKinds.has(n.kind) && (n.label.toLowerCase().includes(s) || n.id.includes(s))).sort((a, b) => (b.deg - a.deg)).slice(0, 14);
+  for (const n of hits) { resultIds.push(n.id); results.append(el('button', { type: 'button', onclick: () => { select(n, { flyTo: true }); results.hidden = true; q.value = ''; } }, glyph(n.kind), el('span', null, n.label), el('span', { class: 'id' }, n.id))); }
+  if (!hits.length) results.append(el('div', { class: 'empty' }, 'Nothing matches.'));
+  results.hidden = false;
+  markActive();
+}
+function markActive() { [...results.querySelectorAll('button')].forEach((b, i) => b.classList.toggle('active', i === active)); }
+q.addEventListener('input', search);
+q.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown') { active = Math.min(resultIds.length - 1, active + 1); markActive(); e.preventDefault(); }
+  else if (e.key === 'ArrowUp') { active = Math.max(0, active - 1); markActive(); e.preventDefault(); }
+  else if (e.key === 'Enter' && resultIds[active]) { select(byId.get(resultIds[active]), { flyTo: true }); results.hidden = true; q.value = ''; }
+  else if (e.key === 'Escape') { results.hidden = true; q.blur(); }
+});
+document.addEventListener('click', (e) => { if (!e.target.closest('.search')) results.hidden = true; });
+btnFocus.addEventListener('click', () => { focus = !focus; btnFocus.setAttribute('aria-pressed', String(focus)); invalidate(); });
+const btnSpin = document.getElementById('btn-spin');
+if (reduced) { btnSpin.disabled = true; btnSpin.title = 'Motion is reduced by your system setting'; }
+btnSpin.addEventListener('click', () => { spin = !spin; btnSpin.setAttribute('aria-pressed', String(spin)); kick(); });
+document.getElementById('btn-reset').addEventListener('click', () => { Object.assign(cam, HOME); invalidate(); snapshot(); });
+
+// ----------------------------------------------------------------- pointer, wheel, keys
+let drag = null; const pointers = new Map(); let pinch = null;
+function hit(x, y) {
+  let best = null, bd = 1e9;
+  for (const n of nodes) {
+    if (!visible(n)) continue;
+    const r = (n.k.r + Math.min(4, n.deg * 0.12)) * Math.min(1.6, n.s * 0.9) + 5;
+    const d = Math.hypot(n.sx - x, n.sy - y);
+    if (d < r && d - n.depth * 0.001 < bd) { best = n; bd = d - n.depth * 0.001; }
+  }
+  return best;
+}
+const pos = (e) => { const r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+canvas.addEventListener('pointerdown', (e) => {
+  canvas.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, pos(e));
+  if (pointers.size === 2) { const [a, b] = [...pointers.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), dist: cam.dist }; drag = null; return; }
+  const p = pos(e);
+  drag = { x: p.x, y: p.y, moved: false, pan: e.shiftKey || e.button === 2 || e.button === 1 };
+  canvas.classList.add('grabbing');
+});
+canvas.addEventListener('pointermove', (e) => {
+  const p = pos(e);
+  if (pointers.has(e.pointerId)) pointers.set(e.pointerId, p);
+  if (pinch && pointers.size === 2) { const [a, b] = [...pointers.values()]; const d = Math.hypot(a.x - b.x, a.y - b.y); cam.dist = Math.max(90, Math.min(900, pinch.dist * pinch.d / Math.max(1, d))); invalidate(); return; }
+  if (drag) {
+    const dx = p.x - drag.x, dy = p.y - drag.y;
+    if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
+    if (drag.pan) { cam.ox += dx; cam.oy += dy; }
+    else { cam.yaw += dx * 0.006; cam.pitch = Math.max(-1.3, Math.min(1.3, cam.pitch + dy * 0.006)); }
+    drag.x = p.x; drag.y = p.y; invalidate(); return;
+  }
+  const h = hit(p.x, p.y);
+  if (h !== hovered) { hovered = h; canvas.classList.toggle('pointing', !!h); canvas.title = h ? `${h.label} (${h.k.name})` : ''; invalidate(); }
+});
+function endPointer(e) {
+  pointers.delete(e.pointerId);
+  if (pointers.size < 2) pinch = null;
+  canvas.classList.remove('grabbing');
+  if (!drag) return;
+  const p = pos(e);
+  if (!drag.moved && e.type === 'pointerup') { const h = hit(p.x, p.y); select(h || null); }
+  drag = null; snapshot();
+}
+canvas.addEventListener('pointerup', endPointer);
+canvas.addEventListener('pointercancel', endPointer);
+canvas.addEventListener('dblclick', (e) => { const p = pos(e); const h = hit(p.x, p.y); if (h) { select(h, { flyTo: true }); } });
+canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+canvas.addEventListener('wheel', (e) => { e.preventDefault(); cam.dist = Math.max(90, Math.min(900, cam.dist * Math.exp(e.deltaY * 0.0012))); invalidate(); snapshot(); }, { passive: false });
+canvas.addEventListener('keydown', (e) => {
+  const k = e.key;
+  if (k === 'ArrowLeft') cam.yaw -= 0.08; else if (k === 'ArrowRight') cam.yaw += 0.08;
+  else if (k === 'ArrowUp') cam.pitch = Math.min(1.3, cam.pitch + 0.06); else if (k === 'ArrowDown') cam.pitch = Math.max(-1.3, cam.pitch - 0.06);
+  else if (k === '+' || k === '=') cam.dist = Math.max(90, cam.dist * 0.88); else if (k === '-') cam.dist = Math.min(900, cam.dist * 1.13);
+  else if (k === 'Escape') { select(null); return; } else return;
+  e.preventDefault(); invalidate();
+});
+window.addEventListener('resize', () => { resize(); invalidate(); });
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { buildLegend(); renderInspector(); invalidate(); });
+new MutationObserver(() => { buildLegend(); renderInspector(); invalidate(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+document.fonts && document.fonts.ready.then(() => invalidate());
+
+// ----------------------------------------------------------------- state across a republish
+function snapshot() { try { window.claude?.hot?.snapshot?.({ selected: selected?.id || null, cam: { ...cam }, hidden: [...hiddenKinds], trail: [...trail] }); } catch (e) { /* not hosted */ } }
+function start(state) {
+  resize();
+  if (state && state.cam) Object.assign(cam, state.cam);
+  if (state && state.hidden) { for (const k of state.hidden) hiddenKinds.add(k); for (const b of chips.children) { const def = GROUP[Object.keys(GROUP)[[...chips.children].indexOf(b)]]; if (def.kinds.every((k) => hiddenKinds.has(k))) b.setAttribute('aria-pressed', 'false'); } }
+  if (state && state.trail) trail.push(...state.trail);
+  if (state && state.selected && byId.has(state.selected)) select(byId.get(state.selected), { push: false });
+  else invalidate();
+  kick();
+}
+const hot = window.claude && window.claude.hot;
+hot && hot.ready ? hot.ready(start) : start(hot && hot.data || {});
+})();
+</script>

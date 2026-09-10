@@ -63,6 +63,10 @@ node tools/depmap.mjs batch --change custody=dr-008 --change geography=dr-007
 ```
 
 The batch output is the edit plan; save it under `tools/depmap/batches/`.
+`node tools/depmap.mjs view` writes `tools/depmap/view.html`, a self-contained
+three-dimensional view of the map to open locally (altitude is causal depth;
+select a node to see its cone and follow its connections). It is generated
+from `view.src.html`, ignored by git and never published.
 After editing, run `node tools/depmap.mjs extract` to refresh the reference
 layer, update `graph.json` for what moved, and run `check`. The vocabularies,
 the locus grammar and the change protocol are in `tools/depmap/SCHEMA.md`.

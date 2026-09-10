@@ -146,7 +146,17 @@ node tools/depmap.mjs batch <plan.json>       the same from a file: { "changes":
 node tools/depmap.mjs at <locus>              every node carrying the locus, by role, plus inbound links
 node tools/depmap.mjs show <id>               a node with its loci resolved and its edges both ways
 node tools/depmap.mjs list [--kind k] [--facet name=value]
+node tools/depmap.mjs view [--out file] [--fragment]   bake graph.json into the viewer page
 ```
+
+`view` writes `view.html`, a single self-contained page that draws the graph in
+three dimensions: altitude is causal depth (the fatal failures at the top, the
+ledger and the records below them, the harness and the closed lists in the
+middle, the open items and residuals at the floor), so up on the screen is
+always upstream. Selecting a node draws its cone by the same direction rules as
+`impact`, and the inspector lists its connections to follow. The page is
+generated from `view.src.html`, is never committed and never published; it
+opens from the file system with no server and no dependency.
 
 Seeds are node ids, separated by commas; a member path seeds its vocabulary and records the member as the reason.
 
