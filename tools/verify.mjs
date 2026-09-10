@@ -501,6 +501,12 @@ if (existsSync(MANIFEST)) {
 }
 
 // ---------------------------------------------------------------------------
+// 8. The dependency map (tools/depmap.mjs check, DR-017): every locus resolves,
+//    refs.json is fresh, every restated list and invariant still agrees
+// ---------------------------------------------------------------------------
+for (const x of (await import('./depmap.mjs')).check({ root: ROOT })) fail(join(ROOT, x.file), x.line, x.msg);
+
+// ---------------------------------------------------------------------------
 // Report
 // ---------------------------------------------------------------------------
 if (failures.length) {

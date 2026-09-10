@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="light">
+<title>DR-017 A dependency map of the record, kept as a tool, AI.fred</title>
+<meta name="description" content="The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory and never as a page. A node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it; the harness checks every pointer on every pass.">
+<link rel="preload" href="../assets/fonts/IBMPlexSans-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-017</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-10</small></p>
+    <h1><span class="no"><a href="./">DR-017</a></span><span class="title">A dependency map of the record, kept as a tool</span></h1>
+    <p class="standfirst">Before this publication is changed on purpose, its dependencies are mapped: one graph of typed edges and faceted nodes at the grain of decisions, mechanisms, invariants and closed lists, kept under the repository's tools directory and never published as a page. A node carries a name and the places where the pages state the thing, never a paraphrase of it, and the harness checks every pointer on every pass. A proposed change is run through the map first, so that what must change with it is known before an editor touches a page.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-017</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-10</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the next editor</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>The dependencies inside this publication are mapped, and the map is a tool. It lives under <code>tools/depmap/</code> beside the verification harness, is never served, and has no build step, no framework and no dependency, as <a href="dr-010-html-no-build-step.html">DR-010</a> requires of anything in the publishing path. It is one graph: nodes for the two fatal failures, the thesis premises, the brief's ledger items, every decision record and every alternative it rejected, the components of the harness, the invariants a record closes off, the closed lists the pages restate, the rows of the policy flag table, the roadmap stages, the open items and objections of <a href="../07-open/#items">07</a>, and the residual findings of the seventh adversarial pass; edges of six kinds, each with a stated direction; facets for layer, fixity, fatal failure, surface and market. A node carries a name of at most eighty characters and a list of loci, each a page path and an anchor the harness already resolves, so the HTML stays the single canonical source and the map can never become a second statement of the design. The curated graph and a reference layer regenerated from the pages are both committed, and <code>tools/verify.mjs</code> runs the map's check on every pass: a locus that no longer resolves, a closed list restated in words that have drifted, or a stale reference layer fails the build in the same <code>file:line message</code> form as every other failure. The map's first use is to compute, for a proposed change, everything upstream that justifies the thing being changed, everything downstream that specifies, restates or depends on it, and everything sideways that it would contradict, before any page is edited; several proposed changes are then planned as one batch from the union of their closures. A proposed change is not a node in this edition: the map records the publication as it is.</p>
+          <h3 id="grain"><span class="no">1.1</span>The grain</h3>
+          <p>The unit is the decision, the mechanism, the invariant or the closed list, never the page. At page grain the answer to "what does this touch" is every page, because the publication is dense and self-referential: 03 alone carries more than a hundred and fifty internal links. Its closed lists are restated far more often than the harness had checked: the six committing actions on seven pages, the seven identity acts on five, the nine outcome codes on four, the point-of-no-return question on two, and until this record the harness compared exactly one restatement, the state-machine invariant that <a href="dr-005-state-machine-lapsed.html#invariant">DR-005</a> fixes in 02 and the worker console. The map names every such restatement as a locus on the list's node, holds the expected members once, and checks each locus against them, in the words the page uses, in the code form the tables use, or as a deliberate partial restatement that omits named members. Where the record already disagrees with itself, the locus carries a waiver naming the residual finding or the open item that records the drift, and the waiver fails the moment the drift is fixed, so it cannot linger.</p>
+          <h3 id="what-a-node-carries"><span class="no">1.2</span>What a node may carry</h3>
+          <p>A name, a kind, its facets, its loci with their roles (canonical, restates, partial, mentions, home, evidence), and for a closed list its members and the mode its restatements are checked in. Nothing else about the design: no summary, no rationale, no restatement of a mechanism in the map's own words. A locus points at an anchor and may add a phrase the anchored section must contain, or a table row by its first cell, so that a locus for a flag-table row or a roadmap stage is as precise as one for a heading. The reference layer records every anchor, table and internal link under the docs directory, so a renamed id fails twice, once in the harness's own link check and once in the map's.</p>
+          <h3 id="where-specified"><span class="no">1.3</span>Where it is specified</h3>
+          <p>The closed vocabularies of kinds, roles, facets and edge kinds, the locus grammar, the direction of each edge kind, the check modes and the change protocol are in <code>tools/depmap/SCHEMA.md</code>. The commands are <code>extract</code>, <code>check</code>, <code>impact</code>, <code>batch</code>, <code>at</code>, <code>show</code>, <code>list</code> and <code>selftest</code> in <code>tools/depmap.mjs</code>; the harness calls <code>check</code> as its eighth section. Each batch of proposed changes is recorded under <code>tools/depmap/batches/</code> with the seeds that produced it and the closure the tool returned. The state machine of <a href="../02-architecture/#state-machine">02</a> is the precedent: a rule that nothing checks can drift by a word, and the map extends that precedent to every closed list the record restates.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>A page-level map</dt>
+            <dd>Pages and the links between them are already recorded, and they answer the wrong question. The unit of change is a mechanism stated on five pages, not a page; a page graph reports everything or nothing, and gives the restatement check no grain to work at.</dd>
+            <dt>Several maps, one per dimension</dt>
+            <dd>A map of decisions, a map of components, a map of legal items. The same mechanism appears in each, and the seams between them are where seven adversarial passes found the residual findings. One graph with typed edges and faceted nodes is queried along any dimension without a second copy of anything.</dd>
+            <dt>A wiki, a graph database or a diagram tool</dt>
+            <dd>A second representation of the design that drifts from the first, which is the reason <a href="dr-010-html-no-build-step.html">DR-010</a> rejected a Markdown mirror; a dependency the publishing path must not carry; and a store the harness cannot check without running a service. A JSON file the harness reads costs none of that.</dd>
+            <dt>A published, interactive map page</dt>
+            <dd>DR-010 bans inline scripts and frameworks, so a browsable graph could not be built inside the publication's own rules, and a map that is pleasant to browse invites reading the map instead of the record. A static drawing of the map may earn a place in a later edition; the instrument itself stays a tool.</dd>
+            <dt>The internal links as the map</dt>
+            <dd>Eleven hundred references cannot tell a canonical statement from a mention, a restatement from a citation, or a rejected alternative from a decision. They are kept as the mechanical layer the map's queries consult for inbound links, and are never mistaken for the map.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A map, dependency list or impact table of this publication kept anywhere but <code>tools/depmap/</code>, or in any form the harness does not check.</li>
+            <li>A node label that restates the design in the map's words; a node carries a name and pointers, never a paraphrase.</li>
+            <li>A locus written any way but a page path and an anchor the harness resolves, with a phrase or a table row where an anchor is not precise enough.</li>
+            <li>A closed list checked by eye where the map names it, and a restatement added to a page without its locus added to the list's node.</li>
+            <li>A proposed change modelled as a node in this edition; a change is a set of seeds run through the map, and the map records the record as it stands.</li>
+            <li>A build step, a dependency or a served artefact for the map; it runs on the same Node the harness runs on and nothing else.</li>
+            <li>Editing a fixed decision, a mechanism stated on more than one page, or a closed list without first running the change through the map and recording the batch.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder on 2026-09-10. It postdates the brief's ledger, which fixed the publication's other structural choices, and it reopens none of them. The map is specified in <code>tools/depmap/SCHEMA.md</code>, populated in <code>tools/depmap/graph.json</code>, and checked by <code>tools/verify.mjs</code> on every pass. The residual findings the seventh adversarial pass left, carried as an open item in <a href="../07-open/#items">07</a>, are the map's first curated conflicts, and the drift the map found while it was built is recorded in its first batch under <code>tools/depmap/batches/</code> rather than fixed on the branch that built the map.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, to do in your personal life what the general assistants do, and that can be trusted with the high-value, low-volume tasks you dread a few times a year: the ones that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-10. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>
