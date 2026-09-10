@@ -113,7 +113,7 @@
               "thesis",
               "why ai.fred wins where the flat-fee concierge players cannot follow: the custome",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "01",
@@ -134,7 +134,7 @@
               "worker console",
               "the operator&#x27;s task-card view, the alias-only rule, the structured outcome ",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "03",
@@ -155,14 +155,14 @@
               "operations",
               "how the floor runs: need-to-know task cards, three worker tiers with dual contro",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "05",
               "business",
               "economics, pricing and unit costs are deferred to after a series a or b by the f",
               "",
-              "2026-09-02"
+              "2026-09-10"
             ],
             [
               "06",
@@ -249,6 +249,10 @@
         {
           "line": 63,
           "to": "00-thesis/index.html"
+        },
+        {
+          "line": 63,
+          "to": "decisions/dr-019-the-endgame.html"
         },
         {
           "line": 67,
@@ -535,9 +539,36 @@
           "text": "What the moat is not",
           "under": "moat"
         },
-        "sources": {
+        "endgame": {
           "kind": "h2",
           "line": 263,
+          "no": "6",
+          "text": "The endgame"
+        },
+        "endgame-sequence": {
+          "kind": "h3",
+          "line": 265,
+          "no": "6.1",
+          "text": "The everyday tasks on the same harness",
+          "under": "endgame"
+        },
+        "endgame-asset": {
+          "kind": "h3",
+          "line": 267,
+          "no": "6.2",
+          "text": "The asset",
+          "under": "endgame"
+        },
+        "endgame-upside": {
+          "kind": "h3",
+          "line": 269,
+          "no": "6.3",
+          "text": "The upside, left open",
+          "under": "endgame"
+        },
+        "sources": {
+          "kind": "h2",
+          "line": 274,
           "text": "Sources"
         }
       },
@@ -1299,15 +1330,35 @@
           "to": "07-open/index.html"
         },
         {
-          "line": 339,
+          "line": 264,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 266,
+          "to": "06-roadmap/index.html#expansion-legal"
+        },
+        {
+          "line": 268,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 268,
+          "to": "03-trust-and-data/index.html#privacy-law"
+        },
+        {
+          "line": 270,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 350,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 340,
+          "line": 351,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 341,
+          "line": 352,
           "to": "07-open/index.html"
         }
       ]
@@ -1373,100 +1424,100 @@
         },
         "intake": {
           "kind": "h2",
-          "line": 169,
+          "line": 170,
           "no": "3",
           "text": "Intake and the channel-agnostic gateway"
         },
         "envelope": {
           "kind": "h2",
-          "line": 193,
+          "line": 194,
           "no": "4",
           "text": "The authority envelope from the user's point of view"
         },
         "envelope-setup": {
           "kind": "h3",
-          "line": 197,
+          "line": 198,
           "no": "4.1",
           "text": "Set-up at task start",
           "under": "envelope"
         },
         "envelope-edits": {
           "kind": "h3",
-          "line": 210,
+          "line": 211,
           "no": "4.2",
           "text": "Edits mid-task: extend and narrow",
           "under": "envelope"
         },
         "fig-envelope": {
           "kind": "figure",
-          "line": 221,
+          "line": 222,
           "no": "Figure 1.1",
           "text": "Inside the envelope we execute and the other party checks every irreversible step; anything outside it leaves the envelo",
           "under": "envelope-edits"
         },
         "verdicts": {
           "kind": "h2",
-          "line": 280,
+          "line": 281,
           "no": "5",
           "text": "The verdict system"
         },
         "control-loop": {
           "kind": "h3",
-          "line": 283,
+          "line": 284,
           "no": "5.1",
           "text": "The control loop, before \"done\" is shown",
           "under": "verdicts"
         },
         "improvement-loop": {
           "kind": "h3",
-          "line": 287,
+          "line": 288,
           "no": "5.2",
           "text": "The improvement loop, owned by the user",
           "under": "verdicts"
         },
         "fig-verdict-flow": {
           "kind": "figure",
-          "line": 299,
+          "line": 300,
           "no": "Figure 1.2",
           "text": "The control loop closes each step with a code; the improvement loop closes the task with the user's verdict, the only me",
           "under": "improvement-loop"
         },
         "onboarding": {
           "kind": "h2",
-          "line": 358,
+          "line": 359,
           "no": "6",
           "text": "Onboarding and context capture"
         },
         "interview": {
           "kind": "h3",
-          "line": 361,
+          "line": 362,
           "no": "6.1",
           "text": "The interview",
           "under": "onboarding"
         },
         "connectors": {
           "kind": "h3",
-          "line": 365,
+          "line": 366,
           "no": "6.2",
           "text": "Read-only connectors the user chooses",
           "under": "onboarding"
         },
         "learning": {
           "kind": "h3",
-          "line": 375,
+          "line": 376,
           "no": "6.3",
           "text": "Learning as a by-product of tasks",
           "under": "onboarding"
         },
         "refusals": {
           "kind": "h2",
-          "line": 398,
+          "line": 399,
           "no": "7",
           "text": "What we refuse to do"
         },
         "sources": {
           "kind": "h2",
-          "line": 424,
+          "line": 425,
           "text": "Sources"
         }
       },
@@ -1549,7 +1600,7 @@
           "under": "taxonomy"
         },
         "1.2": {
-          "line": 378,
+          "line": 379,
           "caption": "The fact schema: provenance, confidence and confirmation on every fact, in the record shape the context store in 02 give",
           "rows": [
             [
@@ -1692,183 +1743,199 @@
           "to": "02-architecture/index.html#state-machine"
         },
         {
-          "line": 170,
+          "line": 166,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 171,
           "to": "decisions/dr-001-channel-gateway.html"
         },
         {
-          "line": 170,
+          "line": 171,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 178,
+          "line": 179,
           "to": "02-architecture/index.html"
         },
         {
-          "line": 181,
+          "line": 182,
           "to": "03-trust-and-data/index.html#passports"
         },
         {
-          "line": 185,
+          "line": 186,
           "to": "02-architecture/index.html#classifier"
         },
         {
-          "line": 185,
+          "line": 186,
           "to": "03-trust-and-data/index.html#bounce-back"
         },
         {
-          "line": 189,
+          "line": 190,
           "to": "02-architecture/index.html#intake-gateway"
         },
         {
-          "line": 194,
+          "line": 195,
           "to": "decisions/dr-004-authority-envelope.html"
         },
         {
-          "line": 194,
+          "line": 195,
           "to": "decisions/dr-003-full-delegation-ceiling.html"
         },
         {
-          "line": 198,
+          "line": 199,
           "to": "03-trust-and-data/index.html#substitutor-interface"
         },
         {
-          "line": 198,
+          "line": 199,
           "to": "decisions/dr-008-vault-bought.html"
         },
         {
-          "line": 204,
+          "line": 205,
           "to": "03-trust-and-data/index.html#policy-flags"
         },
         {
-          "line": 205,
+          "line": 206,
           "to": "02-architecture/index.html#state-machine"
         },
         {
-          "line": 208,
+          "line": 209,
           "to": "02-architecture/index.html#verification"
-        },
-        {
-          "line": 218,
-          "to": "02-architecture/index.html#state-machine"
         },
         {
           "line": 219,
+          "to": "02-architecture/index.html#state-machine"
+        },
+        {
+          "line": 220,
           "to": "02-architecture/index.html#verification"
         },
         {
-          "line": 276,
+          "line": 277,
           "to": "03-trust-and-data/index.html#access-ledger"
         },
         {
-          "line": 276,
+          "line": 277,
           "to": "03-trust-and-data/trust-story.html#ledger-example"
         },
         {
-          "line": 281,
+          "line": 282,
           "to": "decisions/dr-002-verdict-two-loops.html"
         },
         {
-          "line": 284,
+          "line": 285,
           "to": "02-architecture/worker-console.html#outcome-codes"
         },
         {
-          "line": 298,
+          "line": 299,
           "to": "06-roadmap/index.html#sequence"
         },
         {
-          "line": 354,
+          "line": 355,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 359,
+          "line": 360,
           "to": "02-architecture/index.html#context-store"
         },
         {
-          "line": 359,
+          "line": 360,
           "to": "decisions/dr-016-context-store.html"
         },
         {
-          "line": 363,
+          "line": 364,
           "to": "02-architecture/index.html#intake-gateway"
         },
         {
-          "line": 363,
+          "line": 364,
           "to": "03-trust-and-data/index.html#alias-model"
         },
         {
-          "line": 366,
+          "line": 367,
           "to": "03-trust-and-data/index.html#passports"
         },
         {
           "line": 369,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 370,
           "to": "01-product/index.html#src-1"
         },
         {
-          "line": 369,
+          "line": 370,
           "to": "01-product/index.html#src-2"
         },
         {
-          "line": 373,
+          "line": 374,
           "to": "02-architecture/index.html#adapters"
         },
         {
-          "line": 406,
+          "line": 377,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 407,
           "to": "03-trust-and-data/index.html#passports"
         },
         {
-          "line": 406,
+          "line": 407,
           "to": "01-product/index.html#src-3"
         },
         {
-          "line": 406,
+          "line": 407,
           "to": "01-product/index.html#src-4"
         },
         {
-          "line": 408,
+          "line": 409,
           "to": "01-product/index.html#src-5"
         },
         {
-          "line": 408,
+          "line": 409,
           "to": "03-trust-and-data/index.html#passports"
         },
         {
-          "line": 408,
+          "line": 409,
           "to": "03-trust-and-data/index.html#alias-model"
         },
         {
-          "line": 410,
+          "line": 411,
           "to": "01-product/index.html#src-6"
         },
         {
-          "line": 412,
+          "line": 413,
           "to": "03-trust-and-data/index.html#policy-flags"
         },
         {
-          "line": 414,
+          "line": 415,
           "to": "01-product/index.html#src-7"
         },
         {
-          "line": 418,
+          "line": 419,
           "to": "02-architecture/index.html#adapters"
         },
         {
-          "line": 418,
+          "line": 419,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 419,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 425,
+          "line": 426,
           "to": "decisions/dr-013-verification-standard.html"
         },
         {
-          "line": 442,
+          "line": 443,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 443,
+          "line": 444,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 444,
+          "line": 445,
           "to": "07-open/index.html"
         }
       ]
@@ -3008,6 +3075,10 @@
           "to": "decisions/dr-003-full-delegation-ceiling.html"
         },
         {
+          "line": 212,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
           "line": 227,
           "to": "03-trust-and-data/index.html#policy-flags"
         },
@@ -3070,6 +3141,10 @@
         {
           "line": 362,
           "to": "06-roadmap/index.html#expansion-shift"
+        },
+        {
+          "line": 364,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
           "line": 370,
@@ -4252,7 +4327,7 @@
               "delegated",
               "delegated",
               "delegated",
-              "the mandate every delegated act on a call rests on, and not a row the lookup key",
+              "the mandate every delegated act on a call, or in a message sent in the user's na",
               "the hold music is ours, not theirs."
             ]
           ],
@@ -4277,7 +4352,7 @@
             [
               "3 an email a worker reads",
               "an inbound reply quoting a value, or an attachment carrying one.",
-              "inbound mail terminates at the vault's edge proxy, with the digest set added, be",
+              "inbound mail, a reply fetched from the user's own mailbox by its connector or fo",
               "{{account.new-hdfc}} received in hdfc bank's reply and stored in the vault. no p"
             ],
             [
@@ -4737,6 +4812,10 @@
         {
           "line": 309,
           "to": "03-trust-and-data/index.html#src-4"
+        },
+        {
+          "line": 311,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
           "line": 311,
@@ -5860,6 +5939,10 @@
           "to": "07-open/index.html"
         },
         {
+          "line": 77,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
           "line": 85,
           "to": "00-thesis/index.html"
         },
@@ -5967,21 +6050,21 @@
         },
         "expansion-shift": {
           "kind": "h3",
-          "line": 227,
+          "line": 228,
           "no": "4.3",
           "text": "The shift",
           "under": "expansion"
         },
         "tab-preconditions": {
           "kind": "table-wrap",
-          "line": 235,
+          "line": 236,
           "no": "Table 6.2",
           "text": "What the adapter and the legal pack must absorb in each market, as far as the research to date can say.",
           "under": "expansion-shift"
         },
         "sources": {
           "kind": "h2",
-          "line": 252,
+          "line": 253,
           "text": "Sources"
         }
       },
@@ -6115,7 +6198,7 @@
           "under": "build-buy"
         },
         "6.2": {
-          "line": 236,
+          "line": 237,
           "caption": "What the adapter and the legal pack must absorb in each market, as far as the research to date can say.",
           "rows": [
             [
@@ -6399,67 +6482,71 @@
           "to": "02-architecture/index.html#adapters"
         },
         {
-          "line": 222,
-          "to": "07-open/index.html#items"
+          "line": 220,
+          "to": "decisions/dr-019-the-endgame.html"
         },
         {
           "line": 223,
-          "to": "03-trust-and-data/index.html#residency"
+          "to": "07-open/index.html#items"
         },
         {
           "line": 224,
+          "to": "03-trust-and-data/index.html#residency"
+        },
+        {
+          "line": 225,
           "to": "03-trust-and-data/index.html#privacy-law"
         },
         {
-          "line": 229,
+          "line": 230,
           "to": "04-operations/index.html#shifts"
         },
         {
-          "line": 231,
+          "line": 232,
           "to": "04-operations/index.html#site-controls"
         },
         {
-          "line": 232,
+          "line": 233,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 234,
+          "line": 235,
           "to": "06-roadmap/index.html#tab-preconditions"
         },
         {
-          "line": 234,
+          "line": 235,
           "to": "03-trust-and-data/index.html#passports"
         },
         {
-          "line": 240,
+          "line": 241,
           "to": "06-roadmap/index.html#src-1"
         },
         {
-          "line": 241,
+          "line": 242,
           "to": "06-roadmap/index.html#src-2"
         },
         {
-          "line": 243,
+          "line": 244,
           "to": "06-roadmap/index.html#src-3"
         },
         {
-          "line": 246,
+          "line": 247,
           "to": "06-roadmap/index.html#src-4"
         },
         {
-          "line": 253,
+          "line": 254,
           "to": "decisions/dr-013-verification-standard.html"
         },
         {
-          "line": 267,
+          "line": 268,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 268,
+          "line": 269,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 269,
+          "line": 270,
           "to": "07-open/index.html"
         }
       ]
@@ -6477,34 +6564,34 @@
         },
         "legal": {
           "kind": "h3",
-          "line": 89,
+          "line": 91,
           "no": "1.1",
           "text": "The legal to-verifies, per jurisdiction",
           "under": "items"
         },
         "naming": {
           "kind": "h3",
-          "line": 99,
+          "line": 101,
           "no": "1.2",
           "text": "Naming, domain and trademark",
           "under": "items"
         },
         "netlify": {
           "kind": "h3",
-          "line": 101,
+          "line": 103,
           "no": "1.3",
           "text": "Netlify access",
           "under": "items"
         },
         "objections": {
           "kind": "h2",
-          "line": 105,
+          "line": 107,
           "no": "2",
           "text": "Objections formed against fixed decisions"
         },
         "left-alone": {
           "kind": "h2",
-          "line": 119,
+          "line": 121,
           "no": "3",
           "text": "What was deliberately left alone"
         }
@@ -6512,7 +6599,7 @@
       "tables": {
         "7.1": {
           "line": 63,
-          "caption": "Nineteen open items; none is silently assumed, and each has one owner and one trigger.",
+          "caption": "Twenty-one open items; none is silently assumed, and each has one owner and one trigger.",
           "rows": [
             [
               "the front door per market (the channel amber). the intake gateway beneath it is ",
@@ -6646,6 +6733,20 @@
               "before the next edition is circulated.",
               "",
               "surfacing_report.md at the repository root; 03 threat model; 02 state machine"
+            ],
+            [
+              "mail providers' delegated send scope: which providers grant a send scope to a de",
+              "founder, with engineering",
+              "the stage 5 gate in 06.",
+              "",
+              "dr-018 ; 02 mail relay"
+            ],
+            [
+              "the data story: what the context store could be worth beyond the user's own task",
+              "founder",
+              "the reopening of 05 after a series a or b, or the first investor conversation th",
+              "",
+              "dr-019 ; 05"
             ]
           ],
           "under": "items"
@@ -6801,15 +6902,31 @@
           "to": "03-trust-and-data/index.html#policy-flags"
         },
         {
-          "line": 134,
-          "to": "00-thesis/index.html"
+          "line": 86,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
-          "line": 135,
-          "to": "03-trust-and-data/trust-story.html"
+          "line": 86,
+          "to": "02-architecture/index.html#mail-relay"
+        },
+        {
+          "line": 87,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 87,
+          "to": "05-business/index.html"
         },
         {
           "line": 136,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 137,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 138,
           "to": "07-open/index.html"
         }
       ]
@@ -6970,6 +7087,10 @@
         {
           "line": 96,
           "to": "07-open/index.html#items"
+        },
+        {
+          "line": 96,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
           "line": 118,
@@ -9182,6 +9303,10 @@
           "to": "decisions/dr-002-verdict-two-loops.html"
         },
         {
+          "line": 93,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
           "line": 102,
           "to": "00-thesis/index.html"
         },
@@ -9319,6 +9444,14 @@
         {
           "line": 99,
           "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 99,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 99,
+          "to": "decisions/dr-019-the-endgame.html"
         },
         {
           "line": 108,
@@ -9481,6 +9614,401 @@
         }
       ]
     },
+    "decisions/dr-018-mail-from-the-users-address.html": {
+      "title": "DR-018 Mail sent from the user's own address, AI.fred",
+      "kind": "record",
+      "status": "decision",
+      "anchors": {
+        "decision": {
+          "kind": "h2",
+          "line": 61,
+          "no": "1",
+          "text": "Decision"
+        },
+        "two-routes": {
+          "kind": "h3",
+          "line": 63,
+          "no": "1.1",
+          "text": "The two routes",
+          "under": "decision"
+        },
+        "send-scope": {
+          "kind": "h3",
+          "line": 65,
+          "no": "1.2",
+          "text": "The send scope is not a connector",
+          "under": "decision"
+        },
+        "inbound-only": {
+          "kind": "h3",
+          "line": 67,
+          "no": "1.3",
+          "text": "The task's relay address, inbound only",
+          "under": "decision"
+        },
+        "basis": {
+          "kind": "h3",
+          "line": 69,
+          "no": "1.4",
+          "text": "The basis for a message in the user's name",
+          "under": "decision"
+        },
+        "where-specified": {
+          "kind": "h3",
+          "line": 71,
+          "no": "1.5",
+          "text": "Where it is specified",
+          "under": "decision"
+        },
+        "rejected": {
+          "kind": "h2",
+          "line": 75,
+          "no": "2",
+          "text": "Rejected alternative(s) and their cost"
+        },
+        "closes-off": {
+          "kind": "h2",
+          "line": 90,
+          "no": "3",
+          "text": "What this closes off"
+        },
+        "record-status": {
+          "kind": "h2",
+          "line": 102,
+          "no": "4",
+          "text": "Status"
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 18,
+          "to": "decisions/dr-018-mail-from-the-users-address.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "decisions/dr-018-mail-from-the-users-address.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 44,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 45,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 46,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 47,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 48,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 49,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 50,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 51,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 64,
+          "to": "01-product/index.html#connectors"
+        },
+        {
+          "line": 64,
+          "to": "03-trust-and-data/index.html#bounce-back"
+        },
+        {
+          "line": 64,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 66,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 70,
+          "to": "03-trust-and-data/index.html#policy-flags"
+        },
+        {
+          "line": 70,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 72,
+          "to": "02-architecture/index.html#mail-relay"
+        },
+        {
+          "line": 72,
+          "to": "03-trust-and-data/index.html#mail-relay"
+        },
+        {
+          "line": 72,
+          "to": "01-product/index.html#connectors"
+        },
+        {
+          "line": 72,
+          "to": "06-roadmap/index.html#sequence"
+        },
+        {
+          "line": 72,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 103,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 103,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 103,
+          "to": "decisions/dr-001-channel-gateway.html"
+        },
+        {
+          "line": 103,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 112,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 113,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 114,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
+    "decisions/dr-019-the-endgame.html": {
+      "title": "DR-019 The endgame: first port of call for everything personal, AI.fred",
+      "kind": "record",
+      "status": "decision",
+      "anchors": {
+        "decision": {
+          "kind": "h2",
+          "line": 61,
+          "no": "1",
+          "text": "Decision"
+        },
+        "sequence": {
+          "kind": "h3",
+          "line": 63,
+          "no": "1.1",
+          "text": "The sequence",
+          "under": "decision"
+        },
+        "asset": {
+          "kind": "h3",
+          "line": 65,
+          "no": "1.2",
+          "text": "The asset",
+          "under": "decision"
+        },
+        "upside": {
+          "kind": "h3",
+          "line": 67,
+          "no": "1.3",
+          "text": "The upside, left open",
+          "under": "decision"
+        },
+        "where-specified": {
+          "kind": "h3",
+          "line": 69,
+          "no": "1.4",
+          "text": "Where it is specified",
+          "under": "decision"
+        },
+        "rejected": {
+          "kind": "h2",
+          "line": 73,
+          "no": "2",
+          "text": "Rejected alternative(s) and their cost"
+        },
+        "closes-off": {
+          "kind": "h2",
+          "line": 86,
+          "no": "3",
+          "text": "What this closes off"
+        },
+        "record-status": {
+          "kind": "h2",
+          "line": 97,
+          "no": "4",
+          "text": "Status"
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 18,
+          "to": "decisions/dr-019-the-endgame.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "decisions/dr-019-the-endgame.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 44,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 45,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 46,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 47,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 48,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 49,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 50,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 51,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 62,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 66,
+          "to": "03-trust-and-data/index.html#privacy-law"
+        },
+        {
+          "line": 66,
+          "to": "00-thesis/index.html#moat-made-of"
+        },
+        {
+          "line": 68,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 70,
+          "to": "00-thesis/index.html#endgame"
+        },
+        {
+          "line": 70,
+          "to": "01-product/index.html#taxonomy"
+        },
+        {
+          "line": 70,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 70,
+          "to": "02-architecture/index.html#context-store"
+        },
+        {
+          "line": 70,
+          "to": "06-roadmap/index.html#expansion-legal"
+        },
+        {
+          "line": 70,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 70,
+          "to": "decisions/dr-015-economics-deferred.html"
+        },
+        {
+          "line": 98,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 98,
+          "to": "00-thesis/index.html#endgame"
+        },
+        {
+          "line": 98,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 98,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 98,
+          "to": "decisions/dr-015-economics-deferred.html"
+        },
+        {
+          "line": 98,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 107,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 108,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 109,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
     "decisions/index.html": {
       "title": "Decisions, AI.fred",
       "kind": "ledger",
@@ -9494,7 +10022,7 @@
         },
         "how-records-work": {
           "kind": "h2",
-          "line": 90,
+          "line": 92,
           "no": "2",
           "text": "How a record works"
         }
@@ -9622,6 +10150,20 @@
               "",
               "2026-09-10",
               "a dependency list of the publication kept anywhere the harness does not check."
+            ],
+            [
+              "dr-018",
+              "mail sent from the user's own address",
+              "",
+              "2026-09-10",
+              "a message to a third party from any address but the user's own."
+            ],
+            [
+              "dr-019",
+              "the endgame: first port of call for everything personal",
+              "",
+              "2026-09-10",
+              "a second harness, or a lighter trust rule, for everyday tasks."
             ]
           ],
           "under": "ledger"
@@ -9749,23 +10291,31 @@
           "to": "decisions/dr-017-dependency-map.html"
         },
         {
-          "line": 87,
+          "line": 84,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 85,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 89,
           "to": "07-open/index.html"
         },
         {
-          "line": 92,
+          "line": 94,
           "to": "07-open/index.html#objections"
         },
         {
-          "line": 101,
+          "line": 103,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 102,
+          "line": 104,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 103,
+          "line": 105,
           "to": "07-open/index.html"
         }
       ]

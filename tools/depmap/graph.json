@@ -147,6 +147,30 @@
       ]
     },
     {
+      "id": "premise-endgame",
+      "kind": "premise",
+      "label": "The endgame: the wedge is the entry, everything personal is the destination",
+      "facets": {
+        "layer": "thesis",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "00-thesis/index.html#endgame",
+          "role": "canonical"
+        },
+        {
+          "at": "index.html#promise!\"The wedge is the entry, not the destination\"",
+          "role": "mentions"
+        },
+        {
+          "at": "00-thesis/index.html#customer-and-wedge!\"The rest of their tasks is the destination\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
       "id": "ledger-1.1",
       "kind": "ledger",
       "label": "Promise and wedge",
@@ -1888,6 +1912,172 @@
       ]
     },
     {
+      "id": "dr-018",
+      "kind": "dr",
+      "label": "Mail sent from the user's own address",
+      "facets": {
+        "layer": "architecture",
+        "fixity": "fixed",
+        "fatal": "both",
+        "surface": "mail"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Mail sent from the user's own address\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-018-a-per-task-address-at",
+      "kind": "alt",
+      "label": "A per-task address at our domain",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#rejected!\"A per-task address at our domain\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-018-an-ai-fred-mailbox-per",
+      "kind": "alt",
+      "label": "An AI.fred mailbox per user",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#rejected!\"An AI.fred mailbox per user\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-018-forwarding-rules-in-the-user",
+      "kind": "alt",
+      "label": "Forwarding rules in the user's mailbox",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#rejected!\"Forwarding rules in the user's mailbox\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-018-the-user-s-mail-credentials",
+      "kind": "alt",
+      "label": "The user's mail credentials held by us",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#rejected!\"The user's mail credentials held by us\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-018-a-bounce-with-no-draft",
+      "kind": "alt",
+      "label": "A bounce with no draft",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#rejected!\"A bounce with no draft\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "dr-019",
+      "kind": "dr",
+      "label": "The endgame: first port of call for everything personal",
+      "facets": {
+        "layer": "thesis",
+        "fixity": "fixed"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"The endgame: first port of call\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-019-staying-a-high-consequence-specialist",
+      "kind": "alt",
+      "label": "Staying a high-consequence specialist",
+      "facets": {
+        "layer": "thesis"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#rejected!\"Staying a high-consequence specialist\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-019-launching-as-a-general-assistant",
+      "kind": "alt",
+      "label": "Launching as a general assistant first",
+      "facets": {
+        "layer": "thesis"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#rejected!\"Launching as a general assistant first\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-019-deciding-the-data-story-now",
+      "kind": "alt",
+      "label": "Deciding the data story now, either way",
+      "facets": {
+        "layer": "thesis"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#rejected!\"Deciding the data story now, either way\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-019-a-separate-everyday-product-or",
+      "kind": "alt",
+      "label": "A separate everyday product or brand",
+      "facets": {
+        "layer": "thesis"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#rejected!\"A separate everyday product or brand\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
       "id": "alt-dr-017-a-page-level-map",
       "kind": "alt",
       "label": "A page-level map",
@@ -3150,7 +3340,8 @@
           "at": "03-trust-and-data/index.html#mail-relay!\"The mail relay\"",
           "role": "mentions"
         }
-      ]
+      ],
+      "note": "Route per DR-018: the user's own address on the relay route (send scope) or the draft route; the per-task address is inbound only."
     },
     {
       "id": "comp-surface-controllers",
@@ -4344,6 +4535,36 @@
       ]
     },
     {
+      "id": "open-07-20",
+      "kind": "open",
+      "label": "Mail providers' delegated send scope",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"delegated send scope\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-21",
+      "kind": "open",
+      "label": "The data story: the context store's worth beyond the user's own tasks",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The data story: what the context store\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
       "id": "obj-07-a",
       "kind": "obj",
       "label": "Objection A: the lobbying agenda for identity acts is long",
@@ -4677,6 +4898,10 @@
             "delegated",
             "delegated"
           ]
+        },
+        {
+          "at": "03-trust-and-data/index.html#mail-relay!\"the last row of Table 3.5 records for a call\"",
+          "role": "mentions"
         }
       ]
     },
@@ -5185,7 +5410,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 19,
+      "count": 21,
       "members": [
         {
           "id": "open-07-01",
@@ -5262,6 +5487,14 @@
         {
           "id": "open-07-19",
           "word": "residual findings of the seventh"
+        },
+        {
+          "id": "open-07-20",
+          "word": "delegated send scope"
+        },
+        {
+          "id": "open-07-21",
+          "word": "the data story"
         }
       ],
       "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
@@ -5489,6 +5722,119 @@
         },
         {
           "at": "03-trust-and-data/trust-story.html#promise!\"You hold the key\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-mail-from-users-own-address",
+      "kind": "inv",
+      "label": "No message to a third party from any address but the user's own",
+      "facets": {
+        "layer": "architecture",
+        "fixity": "fixed",
+        "fatal": "none",
+        "surface": "mail"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#closes-off!\"from any address but the user's own\"",
+          "role": "canonical"
+        },
+        {
+          "at": "02-architecture/index.html#mail-relay!\"No message to a third party leaves from an address of ours\"",
+          "role": "restates"
+        },
+        {
+          "at": "03-trust-and-data/index.html#mail-relay!\"no message to a third party leaves from an address of ours\"",
+          "role": "restates"
+        },
+        {
+          "at": "03-trust-and-data/trust-story.html#promise!\"the email goes from your own address\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-send-scope-not-a-connector",
+      "kind": "inv",
+      "label": "The send scope is the relay's route, never a connector",
+      "facets": {
+        "layer": "product",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-018-mail-from-the-users-address.html#closes-off!\"The send scope used by any component but the relay\"",
+          "role": "canonical"
+        },
+        {
+          "at": "01-product/index.html#connectors!\"The send scope of a connected mailbox is not a connector\"",
+          "role": "restates"
+        },
+        {
+          "at": "decisions/dr-016-context-store.html#record-status!\"is the relay's route and not a connector\"",
+          "role": "mentions"
+        },
+        {
+          "at": "02-architecture/index.html#classifier!\"granted their mailbox's send scope\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-everyday-same-harness",
+      "kind": "inv",
+      "label": "Everyday tasks run on the same harness, never a lighter one",
+      "facets": {
+        "layer": "product",
+        "fixity": "fixed",
+        "fatal": "both"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#closes-off!\"A second harness, or a lighter trust rule\"",
+          "role": "canonical"
+        },
+        {
+          "at": "01-product/index.html#taxonomy!\"on the same harness, the same envelope and the same classifier\"",
+          "role": "restates"
+        },
+        {
+          "at": "00-thesis/index.html#endgame-sequence!\"the same envelope, the same aliases, the same ledger, the same classifier\"",
+          "role": "restates"
+        },
+        {
+          "at": "06-roadmap/index.html#expansion-legal!\"everyday verticals\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-data-story-by-record-only",
+      "kind": "inv",
+      "label": "The store's use beyond the user's tasks is decided only by a decision record",
+      "facets": {
+        "layer": "business",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#closes-off!\"decided anywhere but by a decision record\"",
+          "role": "canonical"
+        },
+        {
+          "at": "00-thesis/index.html#endgame-upside!\"settled only by a decision record\"",
+          "role": "mentions"
+        },
+        {
+          "at": "07-open/index.html#items!\"settled only by a decision record\"",
+          "role": "mentions"
+        },
+        {
+          "at": "05-business/index.html#when-it-reopens!\"by a decision record\"",
           "role": "mentions"
         }
       ]
@@ -7405,6 +7751,30 @@
     ["dr-004", "closes-off", "inv-envelope-bound-detokenise"],
     ["comp-substitutor", "depends-on", "inv-envelope-bound-detokenise"],
     ["comp-envelope", "depends-on", "inv-envelope-bound-detokenise"],
-    ["comp-step-context", "depends-on", "inv-envelope-bound-detokenise"]
+    ["comp-step-context", "depends-on", "inv-envelope-bound-detokenise"],
+    ["dr-018", "rejects", "alt-dr-018-a-per-task-address-at"],
+    ["dr-018", "rejects", "alt-dr-018-an-ai-fred-mailbox-per"],
+    ["dr-018", "rejects", "alt-dr-018-forwarding-rules-in-the-user"],
+    ["dr-018", "rejects", "alt-dr-018-the-user-s-mail-credentials"],
+    ["dr-018", "rejects", "alt-dr-018-a-bounce-with-no-draft"],
+    ["dr-018", "justifies", "comp-mail-relay"],
+    ["dr-019", "rejects", "alt-dr-019-staying-a-high-consequence-specialist"],
+    ["dr-019", "rejects", "alt-dr-019-launching-as-a-general-assistant"],
+    ["dr-019", "rejects", "alt-dr-019-deciding-the-data-story-now"],
+    ["dr-019", "rejects", "alt-dr-019-a-separate-everyday-product-or"],
+    ["premise-endgame", "justifies", "dr-019"],
+    ["dr-018", "closes-off", "inv-mail-from-users-own-address"],
+    ["comp-mail-relay", "depends-on", "inv-mail-from-users-own-address"],
+    ["dr-018", "closes-off", "inv-send-scope-not-a-connector"],
+    ["comp-mail-relay", "depends-on", "inv-send-scope-not-a-connector"],
+    ["dr-019", "closes-off", "inv-everyday-same-harness"],
+    ["comp-legal-pack", "depends-on", "inv-everyday-same-harness"],
+    ["dr-019", "closes-off", "inv-data-story-by-record-only"],
+    ["comp-context-store", "depends-on", "inv-data-story-by-record-only"],
+    ["open-07-20", "lands-in", "comp-mail-relay"],
+    ["open-07-21", "lands-in", "comp-context-store"],
+    ["open-07-21", "lands-in", "dr-015"],
+    ["premise-wedge", "justifies", "dr-019"],
+    ["dr-016", "justifies", "dr-019"]
   ]
 }

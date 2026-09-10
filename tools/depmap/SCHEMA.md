@@ -173,7 +173,7 @@ Seeds are node ids, separated by commas; a member path seeds its vocabulary and 
 
 1. Write the change as seeds, not as prose: which decisions, mechanisms, invariants or lists it touches. If the thing has no node, that is the first finding: add the node (mapping the record as it is), never a node for the proposal.
 2. Run `impact` per change and read the header first. A ledger item or a record in REOPENS means the change reopens a fixed decision, which is the founder's call and nobody else's.
-3. Run `batch` over the changes chosen for one pass. Save the output under `batches/NNNN-<slug>.md` with the seeds that produced it.
+3. Run `batch` over the changes chosen for one pass. A batch is the changes of one session of ideation and iteration, whatever their number or kind; it is not a unit of size. Save the output under `batches/NNNN-<slug>.md` with the seeds that produced it.
 4. Edit the closure, page by page, from the batch's locus list. A record that is reopened gets a new decision record or an amended one, with its rejected alternatives and closes-off list updated first, because everything downstream is re-derived from them.
 5. Run `node tools/verify.mjs`. Then run the fresh-context coherence pass and the adversarial pass of BUILD_BRIEF.md section 9 over the closure's pages only, once per batch.
 6. Update the map for what changed: new nodes, moved loci, edges added or removed, waivers removed as their drift is fixed. `check` tells you what no longer resolves.
