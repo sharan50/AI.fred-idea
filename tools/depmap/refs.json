@@ -7008,107 +7008,1019 @@
           "no": "1",
           "text": "Executive verdict"
         },
-        "fig-sample-bars": {
-          "kind": "figure",
-          "line": 65,
-          "no": "Figure 8.1",
-          "text": "The second bar is the accent.",
-          "under": "executive-verdict"
-        },
-        "fig-sample-stacked": {
-          "kind": "figure",
+        "the-idea-in-one-page": {
+          "kind": "h2",
           "line": 71,
+          "no": "2",
+          "text": "The idea in one page"
+        },
+        "fig-where-the-record-places-aifred": {
+          "kind": "figure",
+          "line": 74,
+          "no": "Figure 8.1",
+          "text": "The wedge is the top-left corner nobody else serves; the endgame is a move to the right that the platforms already occup",
+          "under": "the-idea-in-one-page"
+        },
+        "technology-today": {
+          "kind": "h2",
+          "line": 84,
+          "no": "3",
+          "text": "Technology today: what exists, what is plausible, what is research"
+        },
+        "fig-computer-use-short-against-long": {
+          "kind": "figure",
+          "line": 87,
           "no": "Figure 8.2",
-          "text": "Costs by part.",
-          "under": "executive-verdict"
+          "text": "Short tasks are nearly solved; the long, multi-page institutional task the wedge is made of completes about one time in ",
+          "under": "technology-today"
         },
-        "fig-sample-matrix": {
+        "fig-prompt-injection-attack-success": {
           "kind": "figure",
-          "line": 77,
+          "line": 93,
           "no": "Figure 8.3",
-          "text": "One cell is the accent.",
-          "under": "executive-verdict"
+          "text": "Vendor numbers have fallen to near zero, but every in-band defence broke once the attacker knew it; only the out-of-band",
+          "under": "technology-today"
         },
-        "fig-sample-timeline": {
+        "horizon-threats": {
+          "kind": "h2",
+          "line": 122,
+          "no": "4",
+          "text": "Technologies on the horizon, and how each threatens the idea"
+        },
+        "fig-who-has-which-hand": {
           "kind": "figure",
-          "line": 83,
+          "line": 125,
           "no": "Figure 8.4",
-          "text": "The accent event.",
-          "under": "executive-verdict"
+          "text": "The hands the thesis said the labs lacked are shipping this quarter; the one cell only AI.fred fills is the masking poli",
+          "under": "horizon-threats"
         },
-        "fig-sample-quadrant": {
+        "fig-the-platforms-year": {
           "kind": "figure",
-          "line": 89,
+          "line": 131,
           "no": "Figure 8.5",
-          "text": "The accent point.",
-          "under": "executive-verdict"
+          "text": "Every hand and every rail the thesis said was missing arrived inside twelve months; the one dated event that closes a do",
+          "under": "horizon-threats"
         },
-        "fig-sample-flow": {
+        "regulation-india": {
+          "kind": "h2",
+          "line": 142,
+          "no": "5",
+          "text": "The regulatory landscape: India"
+        },
+        "fig-india-delegated-payment-caps": {
           "kind": "figure",
-          "line": 95,
+          "line": 145,
           "no": "Figure 8.6",
-          "text": "The accent arrow.",
-          "under": "executive-verdict"
+          "text": "Every cap is an everyday-commerce cap; a hospital admission deposit, a property registration fee or an annual premium ab",
+          "under": "regulation-india"
+        },
+        "fig-india-regulatory-calendar": {
+          "kind": "figure",
+          "line": 151,
+          "no": "Figure 8.7",
+          "text": "The heaviest duty, full DPDP compliance, lands in May 2027, inside the runway of any seed raised this winter and before ",
+          "under": "regulation-india"
+        },
+        "regulation-uk": {
+          "kind": "h2",
+          "line": 183,
+          "no": "6",
+          "text": "The regulatory landscape: the United Kingdom"
+        },
+        "fig-uk-when-each-rule-lands": {
+          "kind": "figure",
+          "line": 186,
+          "no": "Figure 8.8",
+          "text": "The regulators are writing the record&#x27;s own agenda, on a clock that ends in 2028; a seed raised this winter runs ou",
+          "under": "regulation-uk"
+        },
+        "regulation-us": {
+          "kind": "h2",
+          "line": 212,
+          "no": "7",
+          "text": "The regulatory landscape: the United States"
+        },
+        "fig-who-carries-the-loss": {
+          "kind": "figure",
+          "line": 215,
+          "no": "Figure 8.9",
+          "text": "On the rail the record hoped would firm in its favour, the user carries the whole loss of an agent&#x27;s overreach; the",
+          "under": "regulation-us"
+        },
+        "market-and-competition": {
+          "kind": "h2",
+          "line": 245,
+          "no": "8",
+          "text": "Market, customer and competition"
+        },
+        "fig-capital-by-posture": {
+          "kind": "figure",
+          "line": 248,
+          "no": "Figure 8.10",
+          "text": "More than a billion dollars went in 2026 to the posture the record argues is unsafe; nothing has yet gone to the posture",
+          "under": "market-and-competition"
+        },
+        "fig-wedge-events-per-hundred-persons": {
+          "kind": "figure",
+          "line": 254,
+          "no": "Figure 8.11",
+          "text": "Multiply by four for a household and the wedge is one or two events a year; only a household with an elder or a care epi",
+          "under": "market-and-competition"
+        },
+        "economics": {
+          "kind": "h2",
+          "line": 283,
+          "no": "9",
+          "text": "Business model and unit economics: the numbers the record defers"
+        },
+        "fig-margin-against-human-minutes": {
+          "kind": "figure",
+          "line": 286,
+          "no": "Figure 8.12",
+          "text": "One variable decides the business, and the record has chosen not to estimate it; the pilot must measure it from the firs",
+          "under": "economics"
+        },
+        "fig-seed-against-cost-to-first-task": {
+          "kind": "figure",
+          "line": 292,
+          "no": "Figure 8.13",
+          "text": "At the high end, the harness alone consumes a median seed before a customer exists, and the floor, the vault, counsel, e",
+          "under": "economics"
+        },
+        "team-and-execution": {
+          "kind": "h2",
+          "line": 321,
+          "no": "10",
+          "text": "Founder, team shape and execution risk"
+        },
+        "fig-eight-gates-before-a-customer": {
+          "kind": "figure",
+          "line": 324,
+          "no": "Figure 8.14",
+          "text": "Nothing a customer can touch exists until the ninth box; the narrower pilot this review recommends opens after the fourt",
+          "under": "team-and-execution"
+        },
+        "security-red-team": {
+          "kind": "h2",
+          "line": 350,
+          "no": "11",
+          "text": "Security and trust: a red-team read of the design"
+        },
+        "fig-where-the-threat-model-looks": {
+          "kind": "figure",
+          "line": 353,
+          "no": "Figure 8.15",
+          "text": "The record spent seven passes on the one class the architecture already closes and none on the eight where the market ha",
+          "under": "security-red-team"
+        },
+        "fig-the-adversarial-loop-did-not-converge": {
+          "kind": "figure",
+          "line": 359,
+          "no": "Figure 8.16",
+          "text": "The count stopped falling after pass three; a prose specification of this size needs invariants a build can test, not an",
+          "under": "security-red-team"
+        },
+        "product-and-gtm": {
+          "kind": "h2",
+          "line": 387,
+          "no": "12",
+          "text": "Product, go-to-market and retention"
+        },
+        "fig-how-much-of-the-envelope-the-pilot-delegates": {
+          "kind": "figure",
+          "line": 390,
+          "no": "Figure 8.17",
+          "text": "Only India exercises the promise in the pilot; a UK or US cohort bounces more than half of the envelope to the user&#x27",
+          "under": "product-and-gtm"
         },
         "pre-mortem": {
           "kind": "h2",
-          "line": 105,
-          "no": "2",
-          "text": "Pre-mortem"
+          "line": 416,
+          "no": "13",
+          "text": "Pre-mortem: what kills it, ranked"
+        },
+        "fig-the-kills-by-likelihood-and-impact": {
+          "kind": "figure",
+          "line": 419,
+          "no": "Figure 8.18",
+          "text": "The top-right corner holds four kills that a pilot can measure by day ninety; none of them is about the harness.",
+          "under": "pre-mortem"
+        },
+        "what-we-would-need-to-see": {
+          "kind": "h2",
+          "line": 448,
+          "no": "14",
+          "text": "What we would need to see before money, and what a Series A would need after it"
         },
         "questions-for-the-founder": {
           "kind": "h2",
-          "line": 127,
-          "no": "3",
+          "line": 468,
+          "no": "15",
           "text": "Questions for the founder"
         },
         "what-the-record-should-change": {
           "kind": "h2",
-          "line": 134,
-          "no": "4",
+          "line": 492,
+          "no": "16",
           "text": "What the record should change"
         },
         "sources": {
           "kind": "h2",
-          "line": 147,
+          "line": 522,
           "text": "Sources"
         }
       },
       "tables": {
         "8.1": {
-          "line": 108,
-          "caption": "A sample table.",
+          "line": 102,
+          "caption": "The load-bearing mechanisms of the harness against what exists in September 2026.",
           "rows": [
             [
-              "1",
-              "2"
+              "tokenisation vault, substitutor as the one detokenising principal",
+              "bought product plus a thin build",
+              "skyflow, vgs and basis theory sell the proxy and role-scoped access ; no vendor ",
+              "stage 1 is buildable; the vendor evaluation is the first job, not a later one"
+            ],
+            [
+              "edge proxy terminating webhooks and voice notes under custom detectors",
+              "not a vendor product",
+              "none of the three describes it",
+              "a company-built component in the real-value zone; redraw figure 2.1 and the thre"
+            ],
+            [
+              "browser ai step on an institutional form",
+              "plausible, short-horizon only",
+              "83.4 per cent short-horizon ; about 20.6 per cent long-horizon ; 40 to 84 per ce",
+              "most institutional steps become human steps or bounces in the pilot; say so in 0"
+            ],
+            [
+              "admission of the managed browser by institutions",
+              "unresolved",
+              "web bot auth registration is open; admission is per site; default agent block fr",
+              "survey the pilot market's top parties from the sandbox's ip ranges before stage "
+            ],
+            [
+              "per-leg telephony control (mute, dtmf, speak to one participant)",
+              "proven",
+              "telnyx and twilio sdks",
+              "keying a value to the far leg with the worker muted is engineering, not research"
+            ],
+            [
+              "re-voiced, delayed, allow-listed transcript in the worker's ear",
+              "research",
+              "named entities missed about one in six; alphanumerics about 85 per cent; 600 mil",
+              "prototype against real booking-line audio before the health vertical; hold a nar"
+            ],
+            [
+              "compositor-level mask and delay line on the browser stream",
+              "bespoke build",
+              "sandbox vendors sell a live-view iframe and record a screencast by default",
+              "a forked chromium and encoder the company operates; a security surface of its ow"
+            ],
+            [
+              "out-of-band injection defence (allow-list, envelope, token outside the model)",
+              "right pattern, utility cost unstated",
+              "in-band defences broken above 90 per cent under adaptive attack ; camel utility ",
+              "describe the runtime detector as a tripwire; measure the human-step share the ru"
+            ],
+            [
+              "model cost and residency",
+              "favourable",
+              "sonnet 5 at us$2 and us$10 per million tokens ; in-country inference in india an",
+              "dollars per ai step at frontier prices; route observe-act loops to a mid-tier mo"
             ]
           ],
-          "under": "pre-mortem"
+          "under": "technology-today"
         },
         "8.2": {
-          "line": 117,
+          "line": 160,
+          "caption": "India: the instruments that bind the design, with dates and what each requires.",
+          "rows": [
+            [
+              "dpdp rules 2025",
+              "13 november 2025; consent managers 13 november 2026; substantive duties 13 may 2",
+              "notice, safeguards, breach reporting, erasure; a consent manager must be an indi",
+              "fiduciary cost from may 2027; purpose limitation constrains the context store; a"
+            ],
+            [
+              "aadhaar offline verification regulations 2025",
+              "9 december 2025",
+              "ovse registration and fees; no retention of plain aadhaar digits; data vault rul",
+              "hold no aadhaar number; the vault vendor's india-region and hsm posture becomes "
+            ],
+            [
+              "rbi kyc directions",
+              "updated 28 november 2025",
+              "video identification by the regulated entity's own officials only; third parties",
+              "the identification act stays the user's own; counsel must say whether a private "
+            ],
+            [
+              "authentication directions 2025",
+              "1 april 2026",
+              "a factor unique to each non-card-present transaction",
+              "most wedge tasks contain at least one bounce to the user's device; the record do"
+            ],
+            [
+              "e-mandate framework 2026",
+              "21 april 2026",
+              "recurring debits without an additional factor to rs 15,000; rs 1 lakh for premiu",
+              "a standing mandate route for the sub-cap recurring spend; not for one-off instit"
+            ],
+            [
+              "upi circle and the unified agent protocol",
+              "circle live; protocol unveiled 10 september 2026",
+              "rs 5,000 a transaction, rs 15,000 a month; a registry of agents on top of circle",
+              "the india payment flag stays at bounce for high-consequence payments; registrati"
+            ],
+            [
+              "account aggregator framework",
+              "current",
+              "a financial information user must be regulated by a financial sector regulator",
+              "bank data reaches the harness only through a regulated partner and for that part"
+            ],
+            [
+              "rbi customer-liability circular of 2017",
+              "6 july 2017",
+              "the customer bears the loss where credentials were shared, until the transaction",
+              "a delegated login or answered security question is, on the bank's reading, the c"
+            ],
+            [
+              "trai commercial-communication regulations",
+              "second amendment 12 february 2025; third amendment in draft",
+              "1600-series numbers, dlt registration, seven-day consent, penalties rs 2 lakh to",
+              "register the telephony before the pilot; take counsel's view on whether a delega"
+            ],
+            [
+              "labour codes and karnataka filings",
+              "21 november 2025; state rules pending",
+              "women's night work with consent and safeguards; eight-hour day; form r and form ",
+              "days of filing, not months of permits; a documented consent path per woman per r"
+            ],
+            [
+              "osp guidelines and the 2026 telecom authorisation rules",
+              "2020 and 2021; 23 june and 22 july 2026",
+              "logs held in india; the toll-bypass bar; carrier authorisation for every pstn le",
+              "the media server is not a licensee; foreign legs run on a carrier's internationa"
+            ],
+            [
+              "telecom cyber security amendment rules 2025",
+              "22 october 2025",
+              "the identifier-user-entity category; identifier data to the department; suspensi",
+              "counsel to classify the company; design the suspend-on-order path into the envel"
+            ],
+            [
+              "it act section 66d and bns section 319",
+              "current",
+              "cheating by personation by a communication device; needs deception and dishonest",
+              "a consented delegate is outside the section, but a terms breach plus a disputed "
+            ]
+          ],
+          "under": "regulation-india"
+        },
+        "8.3": {
+          "line": 195,
+          "caption": "Who may act for a UK consumer today, by route and by who can hold it.",
+          "rows": [
+            [
+              "account information or payment initiation under the psrs 2017",
+              "an authorised or registered provider, or its registered agent",
+              "fca registration; the principal applies for the agent; professional indemnity in",
+              "the only lawful route to account data or a payment; registration, not design, de"
+            ],
+            [
+              "commercial variable recurring payments",
+              "the payee's provider, under the consumer's standing consent",
+              "live since 2 june 2026 for wave 1 sectors",
+              "payee-initiated; not an instruction placed by a consumer-side agent"
+            ],
+            [
+              "third-party bank mandate",
+              "a named natural person",
+              "in branch; terms vary by bank; some exclude telephone and online banking",
+              "person-bound; the company cannot hold it"
+            ],
+            [
+              "lasting power of attorney",
+              "a named attorney",
+              "registered with the office of the public guardian; verified by banks through an ",
+              "person-bound; weeks to register; the right first task for an elder cohort"
+            ],
+            [
+              "nhs proxy access",
+              "a named person",
+              "granted only by the surgery, with photo id for both parties; not through the nhs",
+              "person-bound; the company cannot hold it"
+            ],
+            [
+              "hmrc agent authorisation",
+              "a registered tax adviser",
+              "registration windows from 18 may 2026; a digital handshake from an agent service",
+              "available to a firm that registers; otherwise the tax-notice task is out of uk s"
+            ],
+            [
+              "gov.uk one login",
+              "the individual only",
+              "personal credential",
+              "cannot be delegated; the identity act stays the user's"
+            ]
+          ],
+          "under": "regulation-uk"
+        },
+        "8.4": {
+          "line": 224,
+          "caption": "United States: the instruments the record names and the ones it does not.",
+          "rows": [
+            [
+              "glba section 521, 15 usc 6821 (pretexting)",
+              "in force",
+              "speaking to a bank as the customer, or answering its security questions in the c",
+              "no"
+            ],
+            [
+              "regulation e, 12 cfr 1005.2(m)",
+              "in force",
+              "a transfer by a person furnished with the access device is authorised until the ",
+              "named as a gap; read in the wrong direction"
+            ],
+            [
+              "section 1033 open banking rule",
+              "enjoined 29 october 2025; replacement at oira from 6 august 2026",
+              "the aggregator route is in doubt; a fiduciary-like agent is closer to the statut",
+              "to check only"
+            ],
+            [
+              "all-party recording consent (eleven states; california 632.7)",
+              "in force",
+              "every recorded call needs a disclosure to the far party; run without far-leg cap",
+              "no"
+            ],
+            [
+              "tcpa and the fcc ai-voice ruling",
+              "in force; open to re-litigation since june 2025",
+              "synthesised speech to a wireless number without consent: us$500 to 1,500 a call;",
+              "no"
+            ],
+            [
+              "california ab 316, civil code 1714.46",
+              "1 january 2026",
+              "no defence that the ai acted autonomously; a make-good policy and cover are need",
+              "yes, correctly read"
+            ],
+            [
+              "state privacy and ai statutes",
+              "rolling from 1 january 2026; colorado 1 january 2027",
+              "a legal-pack row per state; the mailbox contents are sensitive data in californi",
+              "california only"
+            ],
+            [
+              "cfpb capacity",
+              "staff cut from 1,723 to a planned 556",
+              "no federal guidance on consumer agents; state attorneys general and the card net",
+              "no"
+            ],
+            [
+              "card-network agent programmes",
+              "live for registered agents at enabled merchants",
+              "a delegated payment only at web checkout; phone-line payments bounce",
+              "yes, as a delegated route; too broadly"
+            ],
+            [
+              "hire act and fcc onshoring proposal",
+              "in committee; proposed rule",
+              "political exposure for the bengaluru floor; a 25 per cent excise sensitivity whe",
+              "no"
+            ],
+            [
+              "gmail restricted scopes",
+              "in force",
+              "an annual security assessment for the read connector dr-018 relies on",
+              "no"
+            ]
+          ],
+          "under": "regulation-us"
+        },
+        "8.5": {
+          "line": 263,
+          "caption": "The comparables: what each charged, where each drew the line, and what happened.",
+          "rows": [
+            [
+              "facebook m (2015 to 2018)",
+              "free, inside messenger",
+              "anything, with humans behind it",
+              "closed january 2018; 70 per cent or more of answers human",
+              "the human share did not shrink"
+            ],
+            [
+              "gobutler, then angel.ai (2015 to 2016)",
+              "free, then flights only",
+              "narrowed to one vertical",
+              "acqui-hired by amazon, no disclosed price",
+              "the base case for a harness sale is a team, not a price"
+            ],
+            [
+              "fin (2016 to 2019)",
+              "us$1 a minute",
+              "anything a human could do by phone or web",
+              "pivoted to b2b workplace analytics",
+              "per-minute pricing exposed the human cost and lost the consumer"
+            ],
+            [
+              "yohana (panasonic, 2021 to 2026)",
+              "us$249 a month, family concierge",
+              "no logins, no financial or legal advice",
+              "closed 30 september 2025 (us), 30 january 2026 (japan); about 4,500 families",
+              "a corporate balance sheet did not fix scale or monetisation"
+            ],
+            [
+              "milo (2020 to 2026)",
+              "about us$40 a month, text-first",
+              "family logistics",
+              "reported closed january 2026 (unconfirmed)",
+              "consumer prices did not cover the human in the loop"
+            ],
+            [
+              "duckbill (2022 to date)",
+              "us$99 for eight credits; us$169 household",
+              "no impersonation; transactions to us$2,500; legal and accounting referred out",
+              "alive; metered its tasks; no round reported since a us$33 million seed in 2023",
+              "the survivor stopped exactly at the line the thesis crosses"
+            ],
+            [
+              "faff, hulp, m (india, 2024 to 2026)",
+              "rs 1,999 a month unlimited; invite-only; whatsapp thread",
+              "government and banking tasks listed, no masking policy",
+              "small rounds; m rs 102 crore; no large-scale adoption shown",
+              "the india price anchor for an episodic task is a flat fee"
+            ],
+            [
+              "instinct and hark (2025 to 2026)",
+              "free in beta; a reported us$35 tier",
+              "acts inside the user's accounts and sees everything",
+              "us$350 million at us$2.5 billion; us$700 million at us$6 billion",
+              "capital sits in the exposure posture the record calls unsafe"
+            ],
+            [
+              "ten lifestyle group (listed)",
+              "about £175 per active member a year, paid by banks and card issuers",
+              "concierge, not delegation of identity acts",
+              "436,000 active members; £33.7 million half-year revenue",
+              "the payer that works is institutional"
+            ]
+          ],
+          "under": "market-and-competition"
+        },
+        "8.6": {
+          "line": 301,
+          "caption": "The cost lines the design already fixes, with this review's estimates and their inputs.",
+          "rows": [
+            [
+              "fixed floor: 24 to 43 heads across three shifts",
+              "rs 2.9 to 6.8 crore a year (us$330,000 to 780,000) [est]",
+              "tier-1 voice ctc up to rs 5 lakh, statutory burden 18 to 22 per cent, night diff",
+              "dr-006 and the shift wheel in 04; the two-person l3 zone"
+            ],
+            [
+              "labour per task at pilot utilisation",
+              "us$40 to 75 [est]",
+              "200 households, four tasks a month, 45 human-minutes",
+              "utilisation of 11 to 19 per cent; falls to about us$8 to 16 at 70 per cent utili"
+            ],
+            [
+              "technology per task",
+              "us$2 to 8 [est]",
+              "sonnet 5 at us$2 and us$10 per million tokens ; sandbox us$0.10 to 0.12 an hour",
+              "tool calls per task; frontier against mid-tier routing"
+            ],
+            [
+              "bought vault, three regions",
+              "us$150,000 to 450,000 a year [est]",
+              "basis theory starter us$995 a month, us-only; enterprise tier for regions and pi",
+              "dr-008's per-region rule; one region for a pilot cuts it by two-thirds"
+            ],
+            [
+              "legal pack per market",
+              "us$150,000 to 400,000 [est]",
+              "counsel per act type, dpdp gap work, registrations",
+              "three markets against one"
+            ],
+            [
+              "certification",
+              "us$20,000 to 50,000 in year one [est]",
+              "soc 2 type i then type ii; iso 27001 for uk counterparties",
+              "company-level, once"
+            ],
+            [
+              "liability cover and make-good reserve",
+              "unknown; limits to us$25 million exist, premiums unpublished",
+              "a lloyd's coverholder product; standard technology cover will not answer for act",
+              "the identity-act scope and the spend cap the insurer will write"
+            ],
+            [
+              "customer acquisition, direct",
+              "us$1,340 to 2,140",
+              "consumer fintech benchmark",
+              "a sponsor channel pays per member instead"
+            ],
+            [
+              "gross margin at us$149 a month",
+              "27 per cent at 90 minutes; 57 at 45; 77 at 15 [est]",
+              "us$9 blended labour hour, 70 per cent utilisation, 15 per cent supervision, 2 pe",
+              "human minutes per task"
+            ],
+            [
+              "capital to the first paying task",
+              "us$2.5 to 4.5 million [est]",
+              "eight stages, eight to ten engineers, one vault region, floor, counsel in one ma",
+              "the harness-first order in 06"
+            ]
+          ],
+          "under": "economics"
+        },
+        "8.7": {
+          "line": 333,
+          "caption": "The hires the plan needs before a customer, whether they exist in Bengaluru, and what they cost.",
+          "rows": [
+            [
+              "technical co-founder with a shipped tokenisation or pci boundary",
+              "substitutor, hash service, vault integration; the stage 1 gate",
+              "yes, scarce; security premium 20 to 40 per cent",
+              "rs 42 to 98 lakh, or near-equal equity",
+              "before the round"
+            ],
+            [
+              "senior agent engineer",
+              "planner, classifier, evaluation sets; the stage 2 gate",
+              "yes",
+              "rs 35 to 70 lakh",
+              "month 1"
+            ],
+            [
+              "real-time media masking engineer",
+              "compositor mask, delay line, allow-list transcriber, re-voicing; stages 4 and 5",
+              "unverified; no market data found",
+              "unknown; hire abroad if needed",
+              "month 1 to 4, or buy for the pilot"
+            ],
+            [
+              "evidence verifier owner (separate team by 03)",
+              "the verifier that shares no code with the redactor",
+              "yes, or contracted",
+              "rs 35 to 70 lakh, or a fixed-scope contract",
+              "before stage 7"
+            ],
+            [
+              "operations lead with a 24-hour attested floor behind them",
+              "floor, vetting standard, roster, site controls; the stage 6 gate",
+              "yes, in quantity",
+              "below engineering bands",
+              "before the lease"
+            ],
+            [
+              "counsel per market (retained)",
+              "the flag table, the legal pack, the identity rows",
+              "yes",
+              "us$150,000 to 400,000 a pack [est]",
+              "india now; uk and us for scoping only"
+            ],
+            [
+              "external security firm",
+              "the fatal hunt an outsider must run before the pilot opens",
+              "yes",
+              "fixed scope",
+              "before stage 8"
+            ]
+          ],
+          "under": "team-and-execution"
+        },
+        "8.8": {
+          "line": 368,
+          "caption": "What a security lead requires before a real user's task runs, and where the record stands.",
+          "rows": [
+            [
+              "attacker-centric threat model with named invariants as executable tests",
+              "table 3.6 is insider-only; 26 paths, all visibility",
+              "weeks of design work; the largest single change to 03"
+            ],
+            [
+              "indirect-injection gate beside the canary test, per party page and mail template",
+              "the canary scans for planted values, not for steered acts; no residual rate stat",
+              "a harness in stage 2 and 4; ai steps on financial portals excluded until near ze"
+            ],
+            [
+              "penetration test centred on the task service and its signing key",
+              "07 scopes the hunt on the two fatals; the signing key is unexamined",
+              "an external firm before stage 8"
+            ],
+            [
+              "disclosed agency as the default call and message script",
+              "the basis row is undisclosed by default; one disclosed line in the health card",
+              "a change to the outbound gate and party register; a measured fall in completion "
+            ],
+            [
+              "cooling-off, out-of-band notice and velocity limits on re-binding",
+              "a new device unbinds the old at once; no fraud screening",
+              "schema and flow changes in 01 and 02 before stage 8"
+            ],
+            [
+              "vendor assessments: lawful access, regional hsm, aadhaar data vault, breach noti",
+              "dr-008 names four contractual controls; no vendor evaluated",
+              "the first job of stage 1"
+            ],
+            [
+              "make-good policy, reserve and cover with an endorsement for acts done as the cus",
+              "open in 07; no reserve line; ab 316 in force",
+              "indicative terms before the pilot; 1 to 3 per cent of revenue reserved [est]"
+            ],
+            [
+              "soc 2 type i before the pilot, type ii within twelve months",
+              "not planned",
+              "us$20,000 to 50,000 in year one [est]"
+            ],
+            [
+              "close the sixteen open findings by hand before external circulation",
+              "open in 07, item 19",
+              "days; a condition of showing the trust story to a customer"
+            ]
+          ],
+          "under": "security-red-team"
+        },
+        "8.9": {
+          "line": 399,
+          "caption": "Three markets on the pilot's own rules: what a first cohort can test, and what it costs.",
+          "rows": [
+            [
+              "can the pilot exercise a delegated identity act?",
+              "yes, if counsel signs the india column; every cell is to-verify [rec]",
+              "no: every identity act bounces until counsel answers",
+              "no: every identity act bounces; the lawful shape is an agent with a mandate"
+            ],
+            [
+              "can the pilot make a payment?",
+              "no: bounce; agent rails capped at rs 15,000 a month",
+              "no: commercial vrp is payee-initiated; regime aimed at end 2028",
+              "no: agentic tokens are web-checkout rails; regulation e puts the loss on the use"
+            ],
+            [
+              "price anchor",
+              "faff, rs 1,999 a month unlimited",
+              "samwise, £25 a month, no human operators",
+              "duckbill, us$99 to 169 a month, metered"
+            ],
+            [
+              "cost to serve",
+              "us$40 to 75 labour per task at pilot utilisation [est]",
+              "same floor, plus international carrier minutes",
+              "same floor, plus international carrier minutes"
+            ],
+            [
+              "channel and door",
+              "whatsapp; digilocker and aadhaar rails for binding",
+              "whatsapp at 90 per cent of adults ; identity rails mid-rollout",
+              "no dominant door; no named identity rail in the record"
+            ],
+            [
+              "legal pack and entities",
+              "dpdp fiduciary from may 2027; ovse; dlt; a consent-manager entity if that route ",
+              "registered agent of an fca principal, or device-only ; idta and transfer risk as",
+              "agent-with-mandate design; recording consent; a state chosen for its statutes"
+            ],
+            [
+              "role in a seed round",
+              "the only pilot market",
+              "counsel questions, a demand test among nri households, a series a narrative",
+              "counsel questions and a series a narrative"
+            ]
+          ],
+          "under": "product-and-gtm"
+        },
+        "8.10": {
+          "line": 427,
           "caption": "The risks, ranked as a partner would rank them, with what would change each.",
           "rows": [
             [
               "1",
-              "sample risk",
+              "frequency: the wedge is a few tasks a year by the record's own words, so no habi",
               "high",
               "fatal",
               "12 months",
-              "evidence."
+              "leading indicator: tasks per household per month in the pilot. kill: fewer than "
+            ],
+            [
+              "2",
+              "human minutes and unit economics: dual control and a 24-hour floor before any mi",
+              "high",
+              "fatal",
+              "12 months",
+              "indicator: minutes of l1 to l3 time per task from the step trace, from the first"
+            ],
+            [
+              "3",
+              "no co-founder and no founding engineer: a solo founder whose shipped code is age",
+              "medium",
+              "fatal",
+              "now",
+              "indicator: a signed technical co-founder with a shipped security boundary. kill:"
+            ],
+            [
+              "4",
+              "seed spent on the harness before a customer: eight gated stages precede the firs",
+              "high",
+              "fatal",
+              "24 months",
+              "indicator: cumulative burn at each gate. kill: more than 70 per cent of the seed"
+            ],
+            [
+              "5",
+              "institutional admission and the legal ceiling: the pilot bounces every uk and us",
+              "high",
+              "serious",
+              "12 months",
+              "indicator: share of pilot tasks whose committing step bounces; per-institution a"
+            ],
+            [
+              "6",
+              "onboarding abandonment: binding, interview, connectors and envelope exceed what ",
+              "high",
+              "serious",
+              "now",
+              "indicator: step completion and time to first task; binding completion by age. ki"
+            ],
+            [
+              "7",
+              "model vendor policy: the usage policy already requires a qualified professional ",
+              "medium",
+              "serious",
+              "12 months",
+              "indicator: a vendor's written answer on the l3 worker as the reviewer. kill: bot"
+            ],
+            [
+              "8",
+              "vault vendor: no provider passes dr-008's six tests in an indian region with an ",
+              "medium",
+              "serious",
+              "12 months",
+              "indicator: written responses to a request for proposals from three vendors. kill"
+            ],
+            [
+              "9",
+              "a confirmed leak in the pilot: the seventh pass left two paths open on which a p",
+              "low",
+              "fatal",
+              "24 months",
+              "indicator: canary results per surface and an outsider's hunt. kill: any confirme"
+            ],
+            [
+              "10",
+              "retention: a dreaded-task service has no retention proof; the one surviving comp",
+              "medium",
+              "serious",
+              "24 months",
+              "indicator: ninety-day repeat-task rate. kill: fewer than 40 per cent of pilot ho"
+            ],
+            [
+              "11",
+              "the two hardest hires unfilled: senior security talent runs rs 42 to 98 lakh wit",
+              "medium",
+              "serious",
+              "12 months",
+              "indicator: offers accepted by month four after the seed. kill: either hire unfil"
+            ],
+            [
+              "12",
+              "night-shift consent, transport and filings for the two western shifts prove cost",
+              "low",
+              "notable",
+              "24 months",
+              "indicator: form r and form s filed; per-woman consent recorded; a worker-facing "
             ]
           ],
           "under": "pre-mortem"
         },
-        "8.3": {
-          "line": 137,
+        "8.11": {
+          "line": 454,
+          "caption": "Milestones for a Series A, each with the way it can fail.",
+          "rows": [
+            [
+              "one indian cohort of at least 200 households with verdict rates joined to step t",
+              "the ledger and the step trace; an external red-team report on the two fatals",
+              "median human minutes per task above 45; fewer than one task per household per mo"
+            ],
+            [
+              "the signed india flag table and a decided data route",
+              "counsel's opinions per identity-act row; a consent-manager or account aggregator",
+              "identity rows come back as bounce; no regulated partner will front the assistant"
+            ],
+            [
+              "one contracted channel that pays for outcomes",
+              "a bank's nri desk, an insurer or a benefits platform paying per member or per ta",
+              "no sponsor signs; the only revenue is consumer subscription below the a bar"
+            ],
+            [
+              "a vault swap test passed and a domicile recorded",
+              "re-tokenisation to a second provider with a canary on every surface; a board min",
+              "the swap fails; the parent must be reversed at a tax cost"
+            ],
+            [
+              "a unit model with measured inputs",
+              "minutes per step class, utilisation, price per event, make-good rate",
+              "the margin at the measured minutes sits below 35 per cent at any price the marke"
+            ]
+          ],
+          "under": "what-we-would-need-to-see"
+        },
+        "8.12": {
+          "line": 495,
           "caption": "What this review asks the record to change, page by page.",
           "rows": [
             [
-              "00",
-              "change.",
-              "why."
+              "00 thesis, 1 and 2",
+              "describe the customer by count as well as by task: events per household per year",
+              "the record carries no demand-side figure; frequency is the first kill."
+            ],
+            [
+              "00 thesis, 2.1 and 5.2",
+              "replace the claims that the labs found the ceiling and have no hands with the se",
+              "both claims are out of date ."
+            ],
+            [
+              "00 thesis, 3 and 06, 2.5",
+              "resolve the first market: india first, defined as indian institutions first, wit",
+              "under the pilot's own rules only india can exercise the promise."
+            ],
+            [
+              "dr-015 and 05",
+              "reopen the deferral to the extent of a range-based seed model: floor, vault regi",
+              "the series a will be raised on these numbers; the comparables died on them."
+            ],
+            [
+              "dr-006 and 04, 2",
+              "narrow the pilot to one day shift and one market; state the office as auditabili",
+              "the room is, in the record's own words, never the closure; it is the largest fix"
+            ],
+            [
+              "dr-019 and 00, 6",
+              "hold the everyday endgame as a hypothesis with a dated kill criterion (repeat us",
+              "the platforms hold the context at zero price; the wedge alone must clear the ret"
+            ],
+            [
+              "06, 1 and 2",
+              "add a narrower stage 4 pilot as a signed scope: managed browser only, draft mail",
+              "the seed is otherwise spent before a customer; the ai share will be small ."
+            ],
+            [
+              "03, table 3.6 and 02, 3.4",
+              "replace the insider-only threat model with an attacker-centric one: compromised ",
+              "twenty-six paths cover the one class the architecture closes ."
+            ],
+            [
+              "03, 1.3 and 2",
+              "name the task service and its signing key as the crown jewel; centre the penetra",
+              "the envelope names parties and act types, not fields; the step record is the all"
+            ],
+            [
+              "03, table 3.4 and 3.7 (india)",
+              "hold no aadhaar number; add ovse registration, the data vault rules, the 2017 li",
+              "the silences are consequential ."
+            ],
+            [
+              "03, table 3.4 and 3.5 (uk)",
+              "correct commercial vrp (live 2 june 2026 under the uk payments initiative, payee",
+              "the uk cell of the payment row does not describe how the rail works ."
+            ],
+            [
+              "03, table 3.4, 3.5 and 3.7 (us)",
+              "rewrite the basis row for the us as a disclosed agent with a power of attorney w",
+              "the record reads regulation e in the wrong direction and never names the pretext"
+            ],
+            [
+              "01, 3 and 02, 4.6",
+              "add an assisted binding ceremony, a capacity attestation on the dependant's dele",
+              "the recommended cohort is an elder cohort and the record does not mention age, c"
+            ],
+            [
+              "01, 3 and 6",
+              "add an onboarding funnel with a completion target per step, and defer everything",
+              "the stack is heavier than a bank account opening and the benchmark abandonment i"
+            ],
+            [
+              "trust story, 1 and 3",
+              "distinguish proven from designed in the sentence that says nobody sees your numb",
+              "two open paths in 07 contradict the absolute; a diligent buyer will catch it."
+            ],
+            [
+              "06, table 6.1 and dr-008",
+              "move the edge proxy, the compositor mask and the media server to built; run the ",
+              "no vendor sells the proxy the record assigns to it ."
+            ],
+            [
+              "07, table 7.1",
+              "add the open items this review raises: the vendor's written position on the qual",
+              "each is a gate the pilot cannot pass without an answer ."
+            ],
+            [
+              "dr-013 and index, 5",
+              "read the deciding instruments at source before the pilot (the psrs 2017, glba 68",
+              "the record's verification standard is an excerpt standard, and this review inher"
             ]
           ],
           "under": "what-the-record-should-change"
@@ -7172,27 +8084,1375 @@
           "to": "decisions/index.html"
         },
         {
-          "line": 63,
+          "line": 65,
+          "to": "06-roadmap/index.html#pilot-identity"
+        },
+        {
+          "line": 65,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 65,
           "to": "08-review/index.html#src-1"
         },
         {
-          "line": 63,
+          "line": 65,
           "to": "08-review/index.html#src-2"
+        },
+        {
+          "line": 72,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 72,
+          "to": "00-thesis/index.html#labs-ceiling"
+        },
+        {
+          "line": 72,
+          "to": "00-thesis/index.html#moat"
+        },
+        {
+          "line": 73,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 73,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 73,
+          "to": "decisions/dr-006-office-mandatory.html"
+        },
+        {
+          "line": 73,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 73,
+          "to": "decisions/dr-015-economics-deferred.html"
+        },
+        {
+          "line": 73,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 73,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 80,
+          "to": "06-roadmap/index.html#sequence"
+        },
+        {
+          "line": 80,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 80,
+          "to": "00-thesis/index.html#markets"
+        },
+        {
+          "line": 81,
+          "to": "decisions/dr-013-verification-standard.html"
+        },
+        {
+          "line": 85,
+          "to": "02-architecture/index.html#classifier"
+        },
+        {
+          "line": 85,
+          "to": "08-review/index.html#src-3"
+        },
+        {
+          "line": 85,
+          "to": "08-review/index.html#src-4"
+        },
+        {
+          "line": 85,
+          "to": "08-review/index.html#src-5"
+        },
+        {
+          "line": 86,
+          "to": "08-review/index.html#src-6"
+        },
+        {
+          "line": 86,
+          "to": "08-review/index.html#src-7"
+        },
+        {
+          "line": 86,
+          "to": "08-review/index.html#src-8"
+        },
+        {
+          "line": 86,
+          "to": "02-architecture/index.html#ai-executor"
+        },
+        {
+          "line": 86,
+          "to": "08-review/index.html#src-9"
+        },
+        {
+          "line": 86,
+          "to": "08-review/index.html#src-10"
+        },
+        {
+          "line": 86,
+          "to": "08-review/index.html#src-11"
+        },
+        {
+          "line": 99,
+          "to": "08-review/index.html#src-12"
+        },
+        {
+          "line": 99,
+          "to": "08-review/index.html#src-13"
+        },
+        {
+          "line": 99,
+          "to": "02-architecture/index.html#telephony"
+        },
+        {
+          "line": 99,
+          "to": "03-trust-and-data/index.html#telephony"
+        },
+        {
+          "line": 99,
+          "to": "08-review/index.html#src-14"
+        },
+        {
+          "line": 100,
+          "to": "08-review/index.html#src-15"
+        },
+        {
+          "line": 100,
+          "to": "08-review/index.html#src-16"
+        },
+        {
+          "line": 100,
+          "to": "02-architecture/index.html#edge-tokenisation"
+        },
+        {
+          "line": 100,
+          "to": "08-review/index.html#src-17"
+        },
+        {
+          "line": 106,
+          "to": "08-review/index.html#src-15"
+        },
+        {
+          "line": 106,
+          "to": "08-review/index.html#src-16"
+        },
+        {
+          "line": 107,
+          "to": "08-review/index.html#src-15"
+        },
+        {
+          "line": 108,
+          "to": "08-review/index.html#src-3"
+        },
+        {
+          "line": 108,
+          "to": "08-review/index.html#src-4"
+        },
+        {
+          "line": 108,
+          "to": "08-review/index.html#src-5"
+        },
+        {
+          "line": 109,
+          "to": "08-review/index.html#src-20"
+        },
+        {
+          "line": 109,
+          "to": "08-review/index.html#src-21"
+        },
+        {
+          "line": 110,
+          "to": "08-review/index.html#src-12"
+        },
+        {
+          "line": 110,
+          "to": "08-review/index.html#src-13"
+        },
+        {
+          "line": 111,
+          "to": "08-review/index.html#src-14"
         },
         {
           "line": 112,
+          "to": "08-review/index.html#src-17"
+        },
+        {
+          "line": 113,
+          "to": "08-review/index.html#src-9"
+        },
+        {
+          "line": 113,
+          "to": "08-review/index.html#src-11"
+        },
+        {
+          "line": 114,
+          "to": "08-review/index.html#src-18"
+        },
+        {
+          "line": 114,
+          "to": "08-review/index.html#src-19"
+        },
+        {
+          "line": 118,
+          "to": "08-review/index.html#src-18"
+        },
+        {
+          "line": 118,
+          "to": "08-review/index.html#src-19"
+        },
+        {
+          "line": 118,
+          "to": "08-review/index.html#src-20"
+        },
+        {
+          "line": 118,
+          "to": "08-review/index.html#src-21"
+        },
+        {
+          "line": 123,
+          "to": "00-thesis/index.html#labs-stop"
+        },
+        {
+          "line": 123,
+          "to": "00-thesis/index.html#labs-ceiling"
+        },
+        {
+          "line": 123,
+          "to": "08-review/index.html#src-22"
+        },
+        {
+          "line": 123,
+          "to": "08-review/index.html#src-23"
+        },
+        {
+          "line": 123,
+          "to": "08-review/index.html#src-24"
+        },
+        {
+          "line": 123,
+          "to": "08-review/index.html#src-8"
+        },
+        {
+          "line": 124,
+          "to": "08-review/index.html#src-25"
+        },
+        {
+          "line": 124,
+          "to": "08-review/index.html#src-26"
+        },
+        {
+          "line": 124,
+          "to": "08-review/index.html#src-27"
+        },
+        {
+          "line": 124,
+          "to": "08-review/index.html#src-28"
+        },
+        {
+          "line": 124,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 124,
+          "to": "08-review/index.html#src-29"
+        },
+        {
+          "line": 124,
+          "to": "08-review/index.html#src-30"
+        },
+        {
+          "line": 124,
+          "to": "08-review/index.html#src-31"
+        },
+        {
+          "line": 124,
+          "to": "00-thesis/index.html#trust-layer-bought"
+        },
+        {
+          "line": 137,
+          "to": "08-review/index.html#src-32"
+        },
+        {
+          "line": 137,
+          "to": "08-review/index.html#src-20"
+        },
+        {
+          "line": 137,
+          "to": "08-review/index.html#src-21"
+        },
+        {
+          "line": 137,
+          "to": "00-thesis/index.html#moat-made-of"
+        },
+        {
+          "line": 137,
+          "to": "08-review/index.html#src-33"
+        },
+        {
+          "line": 138,
+          "to": "08-review/index.html#src-34"
+        },
+        {
+          "line": 138,
+          "to": "08-review/index.html#src-35"
+        },
+        {
+          "line": 138,
+          "to": "08-review/index.html#src-36"
+        },
+        {
+          "line": 138,
+          "to": "08-review/index.html#src-37"
+        },
+        {
+          "line": 138,
+          "to": "08-review/index.html#src-37"
+        },
+        {
+          "line": 143,
+          "to": "08-review/index.html#src-38"
+        },
+        {
+          "line": 143,
+          "to": "08-review/index.html#src-39"
+        },
+        {
+          "line": 143,
+          "to": "08-review/index.html#src-40"
+        },
+        {
+          "line": 143,
+          "to": "08-review/index.html#src-41"
+        },
+        {
+          "line": 143,
+          "to": "08-review/index.html#src-42"
+        },
+        {
+          "line": 143,
+          "to": "08-review/index.html#src-43"
+        },
+        {
+          "line": 144,
+          "to": "08-review/index.html#src-29"
+        },
+        {
+          "line": 144,
+          "to": "08-review/index.html#src-30"
+        },
+        {
+          "line": 157,
+          "to": "08-review/index.html#src-44"
+        },
+        {
+          "line": 157,
+          "to": "08-review/index.html#src-45"
+        },
+        {
+          "line": 157,
+          "to": "08-review/index.html#src-46"
+        },
+        {
+          "line": 157,
+          "to": "08-review/index.html#src-47"
+        },
+        {
+          "line": 157,
+          "to": "08-review/index.html#src-38"
+        },
+        {
+          "line": 157,
+          "to": "08-review/index.html#src-48"
+        },
+        {
+          "line": 158,
+          "to": "08-review/index.html#src-49"
+        },
+        {
+          "line": 158,
+          "to": "08-review/index.html#src-50"
+        },
+        {
+          "line": 158,
+          "to": "08-review/index.html#src-51"
+        },
+        {
+          "line": 158,
+          "to": "08-review/index.html#src-52"
+        },
+        {
+          "line": 158,
+          "to": "08-review/index.html#src-53"
+        },
+        {
+          "line": 164,
+          "to": "08-review/index.html#src-38"
+        },
+        {
+          "line": 165,
+          "to": "08-review/index.html#src-44"
+        },
+        {
+          "line": 166,
+          "to": "08-review/index.html#src-39"
+        },
+        {
+          "line": 167,
+          "to": "08-review/index.html#src-40"
+        },
+        {
+          "line": 168,
+          "to": "08-review/index.html#src-41"
+        },
+        {
+          "line": 169,
+          "to": "08-review/index.html#src-42"
+        },
+        {
+          "line": 169,
+          "to": "08-review/index.html#src-29"
+        },
+        {
+          "line": 169,
+          "to": "08-review/index.html#src-30"
+        },
+        {
+          "line": 170,
+          "to": "08-review/index.html#src-43"
+        },
+        {
+          "line": 171,
+          "to": "08-review/index.html#src-45"
+        },
+        {
+          "line": 172,
+          "to": "08-review/index.html#src-47"
+        },
+        {
+          "line": 173,
+          "to": "08-review/index.html#src-49"
+        },
+        {
+          "line": 173,
+          "to": "08-review/index.html#src-50"
+        },
+        {
+          "line": 174,
+          "to": "08-review/index.html#src-51"
+        },
+        {
+          "line": 174,
+          "to": "08-review/index.html#src-52"
+        },
+        {
+          "line": 175,
+          "to": "08-review/index.html#src-53"
+        },
+        {
+          "line": 176,
+          "to": "08-review/index.html#src-54"
+        },
+        {
+          "line": 180,
+          "to": "08-review/index.html#src-54"
+        },
+        {
+          "line": 184,
+          "to": "08-review/index.html#src-55"
+        },
+        {
+          "line": 184,
+          "to": "08-review/index.html#src-56"
+        },
+        {
+          "line": 184,
+          "to": "08-review/index.html#src-57"
+        },
+        {
+          "line": 184,
+          "to": "08-review/index.html#src-58"
+        },
+        {
+          "line": 184,
+          "to": "08-review/index.html#src-59"
+        },
+        {
+          "line": 185,
+          "to": "07-open/index.html#legal"
+        },
+        {
+          "line": 185,
+          "to": "08-review/index.html#src-60"
+        },
+        {
+          "line": 185,
+          "to": "08-review/index.html#src-61"
+        },
+        {
+          "line": 185,
+          "to": "08-review/index.html#src-62"
+        },
+        {
+          "line": 185,
+          "to": "08-review/index.html#src-63"
+        },
+        {
+          "line": 185,
+          "to": "08-review/index.html#src-64"
+        },
+        {
+          "line": 192,
+          "to": "08-review/index.html#src-65"
+        },
+        {
+          "line": 192,
+          "to": "08-review/index.html#src-58"
+        },
+        {
+          "line": 192,
+          "to": "08-review/index.html#src-66"
+        },
+        {
+          "line": 192,
+          "to": "08-review/index.html#src-67"
+        },
+        {
+          "line": 193,
+          "to": "08-review/index.html#src-59"
+        },
+        {
+          "line": 193,
+          "to": "08-review/index.html#src-55"
+        },
+        {
+          "line": 199,
+          "to": "08-review/index.html#src-60"
+        },
+        {
+          "line": 199,
+          "to": "08-review/index.html#src-61"
+        },
+        {
+          "line": 200,
+          "to": "08-review/index.html#src-62"
+        },
+        {
+          "line": 201,
+          "to": "08-review/index.html#src-64"
+        },
+        {
+          "line": 202,
+          "to": "08-review/index.html#src-64"
+        },
+        {
+          "line": 203,
+          "to": "08-review/index.html#src-64"
+        },
+        {
+          "line": 204,
+          "to": "08-review/index.html#src-63"
+        },
+        {
+          "line": 205,
+          "to": "08-review/index.html#src-63"
+        },
+        {
+          "line": 209,
+          "to": "08-review/index.html#src-68"
+        },
+        {
+          "line": 213,
+          "to": "00-thesis/index.html#rules-moving"
+        },
+        {
+          "line": 213,
+          "to": "00-thesis/index.html#us-uk-commercial"
+        },
+        {
+          "line": 213,
+          "to": "08-review/index.html#src-69"
+        },
+        {
+          "line": 213,
+          "to": "08-review/index.html#src-70"
+        },
+        {
+          "line": 214,
+          "to": "08-review/index.html#src-71"
+        },
+        {
+          "line": 214,
+          "to": "07-open/index.html#objections"
+        },
+        {
+          "line": 221,
+          "to": "03-trust-and-data/index.html#threat-model"
+        },
+        {
+          "line": 221,
+          "to": "08-review/index.html#src-72"
+        },
+        {
+          "line": 221,
+          "to": "08-review/index.html#src-73"
+        },
+        {
+          "line": 221,
+          "to": "08-review/index.html#src-27"
+        },
+        {
+          "line": 222,
+          "to": "08-review/index.html#src-74"
+        },
+        {
+          "line": 222,
+          "to": "08-review/index.html#src-75"
+        },
+        {
+          "line": 222,
+          "to": "08-review/index.html#src-76"
+        },
+        {
+          "line": 222,
+          "to": "08-review/index.html#src-77"
+        },
+        {
+          "line": 222,
+          "to": "08-review/index.html#src-78"
+        },
+        {
+          "line": 222,
+          "to": "08-review/index.html#src-79"
+        },
+        {
+          "line": 222,
+          "to": "08-review/index.html#src-80"
+        },
+        {
+          "line": 228,
+          "to": "08-review/index.html#src-71"
+        },
+        {
+          "line": 229,
+          "to": "08-review/index.html#src-70"
+        },
+        {
+          "line": 230,
+          "to": "08-review/index.html#src-69"
+        },
+        {
+          "line": 231,
+          "to": "08-review/index.html#src-72"
+        },
+        {
+          "line": 232,
+          "to": "08-review/index.html#src-73"
+        },
+        {
+          "line": 233,
+          "to": "08-review/index.html#src-77"
+        },
+        {
+          "line": 234,
+          "to": "08-review/index.html#src-75"
+        },
+        {
+          "line": 234,
+          "to": "08-review/index.html#src-76"
+        },
+        {
+          "line": 235,
+          "to": "08-review/index.html#src-74"
+        },
+        {
+          "line": 236,
+          "to": "08-review/index.html#src-27"
+        },
+        {
+          "line": 236,
+          "to": "08-review/index.html#src-28"
+        },
+        {
+          "line": 237,
+          "to": "08-review/index.html#src-79"
+        },
+        {
+          "line": 238,
+          "to": "08-review/index.html#src-80"
+        },
+        {
+          "line": 242,
+          "to": "08-review/index.html#src-32"
+        },
+        {
+          "line": 242,
+          "to": "08-review/index.html#src-33"
+        },
+        {
+          "line": 246,
+          "to": "08-review/index.html#src-81"
+        },
+        {
+          "line": 246,
+          "to": "08-review/index.html#src-82"
+        },
+        {
+          "line": 246,
+          "to": "08-review/index.html#src-36"
+        },
+        {
+          "line": 246,
+          "to": "08-review/index.html#src-83"
+        },
+        {
+          "line": 246,
+          "to": "08-review/index.html#src-84"
+        },
+        {
+          "line": 246,
+          "to": "08-review/index.html#src-39"
+        },
+        {
+          "line": 246,
+          "to": "08-review/index.html#src-85"
+        },
+        {
+          "line": 247,
+          "to": "08-review/index.html#src-1"
+        },
+        {
+          "line": 247,
+          "to": "08-review/index.html#src-86"
+        },
+        {
+          "line": 247,
           "to": "08-review/index.html#src-2"
         },
         {
-          "line": 159,
+          "line": 247,
+          "to": "08-review/index.html#src-87"
+        },
+        {
+          "line": 247,
+          "to": "00-thesis/index.html#landscape"
+        },
+        {
+          "line": 260,
+          "to": "08-review/index.html#src-37"
+        },
+        {
+          "line": 260,
+          "to": "08-review/index.html#src-82"
+        },
+        {
+          "line": 260,
+          "to": "08-review/index.html#src-88"
+        },
+        {
+          "line": 260,
+          "to": "00-thesis/index.html#landscape"
+        },
+        {
+          "line": 260,
+          "to": "08-review/index.html#src-89"
+        },
+        {
+          "line": 260,
+          "to": "00-thesis/index.html#us-uk-commercial"
+        },
+        {
+          "line": 261,
+          "to": "08-review/index.html#src-90"
+        },
+        {
+          "line": 261,
+          "to": "08-review/index.html#src-91"
+        },
+        {
+          "line": 261,
+          "to": "01-product/index.html#journey-family"
+        },
+        {
+          "line": 261,
+          "to": "08-review/index.html#src-92"
+        },
+        {
+          "line": 261,
+          "to": "08-review/index.html#src-93"
+        },
+        {
+          "line": 267,
+          "to": "08-review/index.html#src-1"
+        },
+        {
+          "line": 268,
+          "to": "08-review/index.html#src-86"
+        },
+        {
+          "line": 270,
+          "to": "08-review/index.html#src-2"
+        },
+        {
+          "line": 271,
+          "to": "08-review/index.html#src-87"
+        },
+        {
+          "line": 272,
+          "to": "08-review/index.html#src-81"
+        },
+        {
+          "line": 273,
+          "to": "08-review/index.html#src-82"
+        },
+        {
+          "line": 274,
+          "to": "08-review/index.html#src-36"
+        },
+        {
+          "line": 274,
+          "to": "08-review/index.html#src-37"
+        },
+        {
+          "line": 275,
+          "to": "08-review/index.html#src-89"
+        },
+        {
+          "line": 280,
+          "to": "06-roadmap/index.html#pilot-identity"
+        },
+        {
+          "line": 284,
+          "to": "05-business/index.html#deferral"
+        },
+        {
+          "line": 284,
+          "to": "04-operations/index.html#shifts"
+        },
+        {
+          "line": 284,
+          "to": "08-review/index.html#src-50"
+        },
+        {
+          "line": 285,
+          "to": "08-review/index.html#src-87"
+        },
+        {
+          "line": 285,
+          "to": "08-review/index.html#src-2"
+        },
+        {
+          "line": 285,
+          "to": "08-review/index.html#src-81"
+        },
+        {
+          "line": 285,
+          "to": "08-review/index.html#src-94"
+        },
+        {
+          "line": 298,
+          "to": "08-review/index.html#src-18"
+        },
+        {
+          "line": 298,
+          "to": "08-review/index.html#src-17"
+        },
+        {
+          "line": 298,
+          "to": "08-review/index.html#src-15"
+        },
+        {
+          "line": 298,
+          "to": "08-review/index.html#src-38"
+        },
+        {
+          "line": 298,
+          "to": "08-review/index.html#src-95"
+        },
+        {
+          "line": 299,
+          "to": "08-review/index.html#src-96"
+        },
+        {
+          "line": 299,
+          "to": "08-review/index.html#src-89"
+        },
+        {
+          "line": 299,
+          "to": "08-review/index.html#src-97"
+        },
+        {
+          "line": 299,
+          "to": "08-review/index.html#src-98"
+        },
+        {
+          "line": 299,
+          "to": "08-review/index.html#src-97"
+        },
+        {
+          "line": 305,
+          "to": "08-review/index.html#src-50"
+        },
+        {
+          "line": 307,
+          "to": "08-review/index.html#src-18"
+        },
+        {
+          "line": 307,
+          "to": "08-review/index.html#src-17"
+        },
+        {
+          "line": 308,
+          "to": "08-review/index.html#src-15"
+        },
+        {
+          "line": 311,
+          "to": "08-review/index.html#src-95"
+        },
+        {
+          "line": 312,
+          "to": "08-review/index.html#src-96"
+        },
+        {
+          "line": 318,
+          "to": "08-review/index.html#src-99"
+        },
+        {
+          "line": 322,
+          "to": "index.html"
+        },
+        {
+          "line": 323,
+          "to": "08-review/index.html#src-13"
+        },
+        {
+          "line": 323,
+          "to": "08-review/index.html#src-100"
+        },
+        {
+          "line": 323,
+          "to": "08-review/index.html#src-101"
+        },
+        {
+          "line": 330,
+          "to": "08-review/index.html#src-102"
+        },
+        {
+          "line": 331,
+          "to": "08-review/index.html#src-103"
+        },
+        {
+          "line": 331,
+          "to": "08-review/index.html#src-104"
+        },
+        {
+          "line": 331,
+          "to": "08-review/index.html#src-105"
+        },
+        {
+          "line": 337,
+          "to": "08-review/index.html#src-100"
+        },
+        {
+          "line": 338,
+          "to": "08-review/index.html#src-100"
+        },
+        {
+          "line": 347,
+          "to": "08-review/index.html#src-106"
+        },
+        {
+          "line": 347,
+          "to": "08-review/index.html#src-43"
+        },
+        {
+          "line": 347,
+          "to": "06-roadmap/index.html#expansion-legal"
+        },
+        {
+          "line": 351,
+          "to": "03-trust-and-data/index.html#threat-model"
+        },
+        {
+          "line": 352,
+          "to": "02-architecture/index.html#ai-executor"
+        },
+        {
+          "line": 352,
+          "to": "08-review/index.html#src-107"
+        },
+        {
+          "line": 352,
+          "to": "08-review/index.html#src-6"
+        },
+        {
+          "line": 352,
+          "to": "08-review/index.html#src-108"
+        },
+        {
+          "line": 365,
+          "to": "08-review/index.html#src-45"
+        },
+        {
+          "line": 365,
+          "to": "08-review/index.html#src-77"
+        },
+        {
+          "line": 366,
+          "to": "08-review/index.html#src-109"
+        },
+        {
+          "line": 366,
+          "to": "08-review/index.html#src-110"
+        },
+        {
+          "line": 366,
+          "to": "08-review/index.html#src-111"
+        },
+        {
+          "line": 378,
+          "to": "08-review/index.html#src-77"
+        },
+        {
+          "line": 388,
+          "to": "06-roadmap/index.html#pilot-identity"
+        },
+        {
+          "line": 388,
+          "to": "01-product/index.html#onboarding"
+        },
+        {
+          "line": 388,
+          "to": "08-review/index.html#src-112"
+        },
+        {
+          "line": 388,
+          "to": "08-review/index.html#src-113"
+        },
+        {
+          "line": 388,
+          "to": "08-review/index.html#src-114"
+        },
+        {
+          "line": 388,
+          "to": "08-review/index.html#src-115"
+        },
+        {
+          "line": 389,
+          "to": "03-trust-and-data/trust-story.html#promise"
+        },
+        {
+          "line": 389,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 389,
+          "to": "08-review/index.html#src-116"
+        },
+        {
+          "line": 396,
+          "to": "08-review/index.html#src-117"
+        },
+        {
+          "line": 397,
+          "to": "08-review/index.html#src-118"
+        },
+        {
+          "line": 397,
+          "to": "08-review/index.html#src-68"
+        },
+        {
+          "line": 397,
+          "to": "08-review/index.html#src-119"
+        },
+        {
+          "line": 404,
+          "to": "08-review/index.html#src-30"
+        },
+        {
+          "line": 404,
+          "to": "08-review/index.html#src-62"
+        },
+        {
+          "line": 404,
+          "to": "08-review/index.html#src-56"
+        },
+        {
+          "line": 404,
+          "to": "08-review/index.html#src-70"
+        },
+        {
+          "line": 407,
+          "to": "08-review/index.html#src-93"
+        },
+        {
+          "line": 407,
+          "to": "08-review/index.html#src-116"
+        },
+        {
+          "line": 408,
+          "to": "08-review/index.html#src-38"
+        },
+        {
+          "line": 408,
+          "to": "08-review/index.html#src-44"
+        },
+        {
+          "line": 408,
+          "to": "08-review/index.html#src-60"
+        },
+        {
+          "line": 408,
+          "to": "08-review/index.html#src-65"
+        },
+        {
+          "line": 408,
+          "to": "08-review/index.html#src-71"
+        },
+        {
+          "line": 408,
+          "to": "08-review/index.html#src-72"
+        },
+        {
+          "line": 431,
+          "to": "08-review/index.html#src-2"
+        },
+        {
+          "line": 432,
+          "to": "08-review/index.html#src-1"
+        },
+        {
+          "line": 432,
+          "to": "08-review/index.html#src-2"
+        },
+        {
+          "line": 433,
+          "to": "08-review/index.html#src-102"
+        },
+        {
+          "line": 433,
+          "to": "08-review/index.html#src-103"
+        },
+        {
+          "line": 434,
+          "to": "08-review/index.html#src-98"
+        },
+        {
+          "line": 434,
+          "to": "08-review/index.html#src-97"
+        },
+        {
+          "line": 435,
+          "to": "08-review/index.html#src-45"
+        },
+        {
+          "line": 435,
+          "to": "08-review/index.html#src-71"
+        },
+        {
+          "line": 435,
+          "to": "08-review/index.html#src-21"
+        },
+        {
+          "line": 436,
+          "to": "08-review/index.html#src-112"
+        },
+        {
+          "line": 437,
+          "to": "08-review/index.html#src-105"
+        },
+        {
+          "line": 438,
+          "to": "08-review/index.html#src-15"
+        },
+        {
+          "line": 438,
+          "to": "08-review/index.html#src-16"
+        },
+        {
+          "line": 440,
+          "to": "08-review/index.html#src-87"
+        },
+        {
+          "line": 441,
+          "to": "08-review/index.html#src-100"
+        },
+        {
+          "line": 441,
+          "to": "08-review/index.html#src-101"
+        },
+        {
+          "line": 442,
+          "to": "08-review/index.html#src-49"
+        },
+        {
+          "line": 442,
+          "to": "08-review/index.html#src-122"
+        },
+        {
+          "line": 450,
+          "to": "08-review/index.html#src-97"
+        },
+        {
+          "line": 450,
+          "to": "08-review/index.html#src-120"
+        },
+        {
+          "line": 451,
+          "to": "08-review/index.html#src-121"
+        },
+        {
+          "line": 451,
+          "to": "08-review/index.html#src-86"
+        },
+        {
+          "line": 452,
+          "to": "08-review/index.html#src-38"
+        },
+        {
+          "line": 452,
+          "to": "08-review/index.html#src-60"
+        },
+        {
+          "line": 460,
+          "to": "08-review/index.html#src-97"
+        },
+        {
+          "line": 461,
+          "to": "08-review/index.html#src-120"
+        },
+        {
+          "line": 500,
+          "to": "08-review/index.html#src-22"
+        },
+        {
+          "line": 500,
+          "to": "08-review/index.html#src-8"
+        },
+        {
+          "line": 503,
+          "to": "08-review/index.html#src-49"
+        },
+        {
+          "line": 503,
+          "to": "08-review/index.html#src-122"
+        },
+        {
+          "line": 505,
+          "to": "08-review/index.html#src-4"
+        },
+        {
+          "line": 505,
+          "to": "08-review/index.html#src-21"
+        },
+        {
+          "line": 506,
+          "to": "08-review/index.html#src-107"
+        },
+        {
+          "line": 506,
+          "to": "08-review/index.html#src-108"
+        },
+        {
+          "line": 506,
+          "to": "08-review/index.html#src-109"
+        },
+        {
+          "line": 508,
+          "to": "08-review/index.html#src-44"
+        },
+        {
+          "line": 508,
+          "to": "08-review/index.html#src-45"
+        },
+        {
+          "line": 508,
+          "to": "08-review/index.html#src-47"
+        },
+        {
+          "line": 508,
+          "to": "08-review/index.html#src-53"
+        },
+        {
+          "line": 508,
+          "to": "08-review/index.html#src-54"
+        },
+        {
+          "line": 509,
+          "to": "08-review/index.html#src-62"
+        },
+        {
+          "line": 509,
+          "to": "08-review/index.html#src-60"
+        },
+        {
+          "line": 509,
+          "to": "08-review/index.html#src-63"
+        },
+        {
+          "line": 510,
+          "to": "08-review/index.html#src-70"
+        },
+        {
+          "line": 510,
+          "to": "08-review/index.html#src-71"
+        },
+        {
+          "line": 510,
+          "to": "08-review/index.html#src-72"
+        },
+        {
+          "line": 510,
+          "to": "08-review/index.html#src-73"
+        },
+        {
+          "line": 511,
+          "to": "08-review/index.html#src-117"
+        },
+        {
+          "line": 511,
+          "to": "08-review/index.html#src-118"
+        },
+        {
+          "line": 512,
+          "to": "08-review/index.html#src-112"
+        },
+        {
+          "line": 514,
+          "to": "08-review/index.html#src-15"
+        },
+        {
+          "line": 514,
+          "to": "08-review/index.html#src-17"
+        },
+        {
+          "line": 515,
+          "to": "08-review/index.html#src-105"
+        },
+        {
+          "line": 515,
+          "to": "08-review/index.html#src-52"
+        },
+        {
+          "line": 515,
+          "to": "08-review/index.html#src-95"
+        },
+        {
+          "line": 654,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 160,
+          "line": 655,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 161,
+          "line": 656,
           "to": "07-open/index.html"
         }
       ]
