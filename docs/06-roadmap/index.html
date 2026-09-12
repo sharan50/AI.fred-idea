@@ -24,12 +24,12 @@
 </header>
 <main id="main" class="page">
   <header class="page-header">
-    <p class="stamp" data-status="amber">amber<small>revised 2026-09-10</small></p>
+    <p class="stamp" data-status="amber">amber<small>revised 2026-09-13</small></p>
     <h1><span class="no">06</span><span class="title">Roadmap</span></h1>
     <p class="standfirst">The harness comes first and the product sits on it. We build the alias vault and the substitutor before anything a customer can see, gate every later stage on the one before it, and open the pilot only when every gate has passed. A new country is an adapter, a legal pack and a shift, and the core does not change.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>06 Roadmap</dd></div>
-      <div><dt>Revised</dt><dd>2026-09-10</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
       <div><dt>Status</dt><dd><span class="chip chip-amber">amber</span></dd></div>
       <div><dt>Reader</dt><dd class="sans">For engineers</dd></div>
     </dl>
@@ -170,7 +170,7 @@
         <h3 id="pilot-surfaces"><span class="no">2.4</span>Surfaces</h3>
         <p>All three, from the first task: the managed browser, our telephony and the mail relay have each passed their gate before the pilot opens. A worker never uses a tool of their own, and <a href="../01-product/#refusals">the refusals in 01</a> apply unchanged.</p>
         <h3 id="pilot-market"><span class="no">2.5</span>Which market first</h3>
-        <p>The first market is not chosen here: the item sits in <a href="../07-open/#items">07</a>, owned by the founder, with the scoping of this pilot as its trigger, and this page does not pre-empt it <span class="chip chip-amber">amber</span>. What the decision changes is bounded: which of the three flag tables the pilot runs under, which adapters stage 8 builds first, the legal pack, the shift on the wheel and the front door of <a href="../decisions/dr-001-channel-gateway.html">DR-001</a>. It changes neither the order of the eight stages nor their gates; the harness is built in Bengaluru whichever way it goes, as <a href="../00-thesis/#markets">the markets section of 00</a> sets out. One build, three possible first doors.</p>
+        <p>The pilot runs in India, because that is where the floor, the library and the flag table with delegated identity rows are; the commercial sequence beyond it is section 4.1 and <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a>, with the United Kingdom between months 8 and 14 <span class="chip chip-amber">amber</span>. What the decision changes is bounded: which of the three flag tables the pilot runs under, which adapters stage 8 builds first, the legal pack, the shift on the wheel and the front door of <a href="../decisions/dr-001-channel-gateway.html">DR-001</a>. It changes neither the order of the eight stages nor their gates; the harness is built in Bengaluru whichever way it goes, as <a href="../00-thesis/#markets">the markets section of 00</a> sets out. One build, three possible first doors.</p>
         <p>What the pilot must produce is fixed too: verdict rates per task type joined to step traces, the improvement loop of <a href="../decisions/dr-002-verdict-two-loops.html">DR-002</a>; the exceptions-board history; a ledger for every task; and the step trace and verdict record from which the second and third inputs of <a href="../05-business/#funding">05</a> fall out of operation rather than estimation. The pilot opens on three conditions: every gate passed; the first market's legal pack complete, meaning a signed flag table, keyed by jurisdiction and act type, with every line marked delegated, bounce or prohibited, its condition where one applies, and a legal item behind every prohibited line, the market's residency-map entry and its refusals list; and a person who did not build the harness having hunted the two fatals through it and found nothing.</p>
       </section>
       <section>
@@ -208,16 +208,20 @@
       </section>
       <section>
         <h2 id="expansion"><span class="no">4</span>The country-expansion playbook</h2>
-        <p>A new country is an adapter, a legal pack and a shift, and nothing else changes: that is <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a>, the universal core as one country-agnostic build that entering a country must not touch. The checklist below runs for each of the three markets and any fourth. A country is live when every line is ticked, not before.</p>
-        <h3 id="expansion-adapter"><span class="no">4.1</span>The adapter</h3>
+        <p>A new country is an adapter, a legal pack and a shift, and nothing else changes: that is <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a>, the universal core as one country-agnostic build that entering a country must not touch. The checklist below runs for each market. A country is live when every line is ticked, not before.</p>
+        <h3 id="expansion-sequence"><span class="no">4.1</span>The sequence, and the gates</h3>
+        <p>The sequence is not the one the previous edition carried, and the reason is arithmetic rather than ambition. The United Kingdom opens between months 8 and 14, with acquisition genuinely moved there rather than treated as secondary, because the modelling says a late, secondary expansion is worse than not expanding at all: the standing cost of a foreign entity arrives long before its users do, which nearly triples the conservative cash requirement while lowering the probability of profitability (<span class="chip chip-assumption">assumption</span> <a href="../05-business/#geography">05, 7</a>). India is then the delivery base, the workflow laboratory and a secondary revenue market, not the first of three equal markets: the floor, the library and the measurement all live there, and its revenue is real but is not what the plan turns on.</p>
+        <p>Two gates govern any market, and they are gates rather than forecasts: <strong>400 users in the United Kingdom and 600 in the United States</strong> to carry the local cost base. No market is opened that cannot plausibly reach 500 users within twelve months of entry, and no second market is opened until the first has cleared its gate. Below the gate a market is a drag; above it each user is the purchasing-power arbitrage the expansion is for. <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a> fixes the sequence and the gates, and is amber <span class="chip chip-amber">amber</span>: its trigger is a priced United Kingdom waiting list aimed at non-resident households, measured for conversion, because the case rests on acquiring abroad from a standing start with no brand and no local team.</p>
+        <p>The United States follows the same test rather than a date, and the playbook below is what either market has to absorb.</p>
+        <h3 id="expansion-adapter"><span class="no">4.2</span>The adapter</h3>
         <ol>
           <li>Inventory the country's rails: identity, documents, bank data, payments, signatures, and the institutions the wedge touches.</li>
           <li>For each rail, choose one of three routes: direct where the rail admits us; through a regulated partner where it is reserved to regulated entities; bounce to the user's device where neither is open.</li>
           <li>Build the passport adapter behind the boundary <a href="../02-architecture/#adapters">the adapter model in 02</a> draws: the rail's response terminates at the vault's edge proxy in front of it, so the adapter receives aliases only and holds no raw byte.</li>
           <li>Pass adapter conformance: a planted value cannot cross the boundary; every consent artefact and its expiry is a dated fact in the context store.</li>
         </ol>
-        <h3 id="expansion-legal"><span class="no">4.2</span>The legal pack</h3>
-        <p>The pack's verticals line also opens a market's everyday verticals after the pilot's gate, on the same harness and by no build, as <a href="../decisions/dr-019-the-endgame.html">DR-019</a> records.</p>
+        <h3 id="expansion-legal"><span class="no">4.3</span>The legal pack</h3>
+        <p>The pack's verticals line governs identity and institutional acts, which are the consequential tasks; the everyday work is in scope from the first day and waits on no pack, as <a href="../decisions/dr-019-the-endgame.html">DR-019</a> and DR-020 record.</p>
         <ol>
           <li>Load the policy flag table, keyed by jurisdiction and act type: delegated, bounce, or prohibited pending a regulatory answer, with a condition line where one applies; a missing row evaluates to bounce; every line that is not delegated becomes a lobbying-agenda entry with its end-user benefit stated.</li>
           <li>File the KYC last-mile constraints as legal to-verifies with owners in <a href="../07-open/#items">07</a>. Design carries the ceiling; the flags carry the law.</li>
@@ -225,7 +229,7 @@
           <li>Extend <a href="../03-trust-and-data/#privacy-law">the privacy-law skeleton in 03</a> and record the consumer-law liability position: it is our name on the agent.</li>
           <li>Settle the contactable-party defaults and the refusals list for the country.</li>
         </ol>
-        <h3 id="expansion-shift"><span class="no">4.3</span>The shift</h3>
+        <h3 id="expansion-shift"><span class="no">4.4</span>The shift</h3>
         <ol>
           <li>Place the country on <a href="../04-operations/#shifts">the 24/7 wheel in 04</a>: the shift covering its business hours and the handovers either side.</li>
           <li>Stand up the L2 pods for the verticals opening there, with QA and escalation cover on the same shift.</li>
@@ -269,7 +273,7 @@
     <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
     <li><a href="../07-open/">See the open items</a></li>
   </ul>
-  <p>Revised 2026-09-10. This page prints clean to A4 or Letter.</p>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
 </footer>
 </body>
 </html>
