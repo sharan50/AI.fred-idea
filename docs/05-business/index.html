@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="dark">
 <title>05 Business, AI.fred</title>
-<meta name="description" content="Economics, pricing and unit costs are deferred to after a Series A or B by the founder's decision. This page states the deferral, the trigger for reopening it, and what will be needed then.">
+<meta name="description" content="The unit economics of AI.fred on modelled priors: the five-tier task model, human minutes per user per month against revenue per user, the cost split, twenty thousand simulated paths over sixty months, the funding plan, the geography gates and the commerce layer.">
 <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/tokens.css">
@@ -24,14 +24,14 @@
 </header>
 <main id="main" class="page">
   <header class="page-header">
-    <p class="stamp" data-status="decision">Deferred by decision<small>revised 2026-09-10</small></p>
+    <p class="stamp" data-status="assumption">Modelled throughout, every number an assumption<small>revised 2026-09-13</small></p>
     <h1><span class="no">05</span><span class="title">Business</span></h1>
-    <p class="standfirst">Economics is deferred. Pricing, unit costs and pool sizing are a post-Series A or B problem by the founder's decision, and nothing in this publication carries a number for them. This page says why, when the question reopens, and what will be needed then.</p>
+    <p class="standfirst">The economics are no longer deferred. This page holds the task model that sets cost, the one ratio that decides the company, the cost split, the sixty-month trajectory, the funding plan and the geography gates. Every number on it is modelled rather than measured, and the measurement protocol beside it is the instrument that replaces the priors.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>05 Business</dd></div>
-      <div><dt>Revised</dt><dd>2026-09-10</dd></div>
-      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
-      <div><dt>Reader</dt><dd class="sans">For the founder</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-assumption">assumption</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the founder and investors</dd></div>
     </dl>
   </header>
   <div class="body-grid">
@@ -57,24 +57,124 @@
     </aside>
     <div class="doc">
       <section>
-        <h2 id="deferral"><span class="no">1</span>The deferral</h2>
-        <p>Task economics, pricing and unit costs are deferred. The founder has ruled them a post-Series A or B problem, and the ruling is recorded as <a href="../decisions/dr-015-economics-deferred.html">DR-015</a>. This publication therefore carries no price point, no cost per task, no margin, no headcount model and no market-size claim of our own. The thesis in <a href="../00-thesis/">00</a> carries its argument without them: the wedge is high-consequence tasks, and the trust architecture is the moat, whatever the price turns out to be.</p>
-        <p>Two things stay in the publication that a reader might mistake for economics. The 24/7 shift design and the site controls in <a href="../04-operations/">04</a> are operational design: they describe how the floor runs and why office-mandatory operation is part of the trust guarantee. No cost model is attached to them. The build-versus-buy table in <a href="../06-roadmap/">06</a> records what we build and what we buy and why; it carries no vendor prices.</p>
+        <h2 id="why-this-page"><span class="no">1</span>Why this page exists now</h2>
+        <p>The previous edition deferred economics until after a Series A or B. That position was wrong and has been withdrawn. A seed process asks for the shape of the unit economics before it asks for anything else, and a plan whose cost per task might exceed its price per task cannot be tested by waiting. The engine is still unchosen, but an engine is a set of parameters, and a model built on parameters tells you which capability differences are worth paying for. That is the order this page now works in.</p>
+        <p>Everything below rests on informed priors, not on customers. The company has none yet.</p>
+        <aside class="callout"><p><span class="label">Assumption</span><span class="chip chip-assumption">assumption</span> Every number on this page is modelled rather than measured. The simulation, its scenarios and its limits are described on <a href="./model.html">the model page</a>, which names the run, the seed and the date the figures are quoted from; the instrument that replaces the priors is <a href="./measurement-protocol.html">the measurement protocol</a>, which is thirty tasks and about a week of work.</p></aside>
       </section>
+
       <section>
-        <h2 id="trigger"><span class="no">2</span>The trigger for reopening</h2>
-        <p>The question reopens when a Series A or Series B closes, whichever the founder names as the point at which the venture must price and cost itself against its pilot's verdict data. Until that trigger fires, an economics section is not written, and any number that appears in a design page is labelled illustrative and carries no pricing meaning.</p>
-        <p>The trigger is the founder's to fire, and it is stated here with its owner; <a href="../07-open/">07</a> does not repeat it.</p>
+        <h2 id="task-model"><span class="no">2</span>The task model</h2>
+        <p>Every task resolves into one of five outcomes, and the mix is what sets the cost base.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.1</span> Every task resolves to one of five outcomes; the mix sets the cost base. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th>Tier</th><th>What it is</th><th>Share, working assumption</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">AI-only</span></td><td>The agent reached the acceptance artefact with no human action</td><td>45 per cent</td></tr>
+            <tr><td><span class="key">Assisted</span></td><td>The agent did the bulk; a person executed bounded steps</td><td>50 per cent</td></tr>
+            <tr><td><span class="key">Human-led</span></td><td>A person owned the task; the AI supported</td><td>5 per cent</td></tr>
+            <tr><td><span class="key">Bounced</span></td><td>Completion required an act only the user can perform</td><td>recorded separately</td></tr>
+            <tr><td><span class="key">Failed</span></td><td>No acceptance artefact, and not because of a bounce</td><td>recorded separately</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Bounced is deliberately not folded into human-led. It costs almost no labour and therefore barely moves headcount, but it is the outcome that spends the product promise, because the user is handed the task back. It is a product metric, not a cost metric.</p>
       </section>
+
       <section>
-        <h2 id="when-it-reopens"><span class="no">3</span>What will be needed when it reopens</h2>
-        <p>Three inputs, none of which exists honestly before a pilot has run:</p>
-        <ol>
-          <li>Price points per market and per task type, set against what the verdict rates in each vertical show customers value.</li>
-          <li>Minutes per task, measured from the step trace: minutes of worker time per step class, per vertical, per market, including dual-control checks and exceptions handling.</li>
-          <li>Pool sizing against the 24/7 floor: the smallest L1, L2 and L3 complement that keeps every shift on the wheel staffed, and the utilisation that floor implies at pilot volumes.</li>
-        </ol>
-        <p>The step trace and the verdict record that the harness produces are designed so that the second and third inputs fall out of operation rather than out of estimation. That is the only economic design choice this publication makes. The data story that <a href="../decisions/dr-019-the-endgame.html">DR-019</a> names and leaves open, what the context store could be worth beyond the user's own tasks, reopens with the economics and by a decision record, as 07 records.</p>
+        <h2 id="the-ratio"><span class="no">3</span>The one ratio that decides everything</h2>
+        <p>Delivery cost scales with <em>usage</em>, not with users. The governing number is therefore human minutes per user per month, which is the product of promised task volume and blended handling time, set against average revenue per user.</p>
+        <p>At 158 minutes a month against a $37 average there is no scale at which the arithmetic recovers, because a generalist minute fully loaded costs roughly Rs 7 to Rs 16 depending on seniority mix and year, and the subscription buys only a few of them. At 59 minutes against a $64 average the business is a normal, capital-light services-plus-software company. <span class="chip chip-assumption">assumption</span></p>
+        <p>Four parameters move it, and only four.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.2</span> The four levers that move the governing ratio, and where each has to be. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th>Lever</th><th>Where the record was</th><th>Where it has to be</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">Tasks per user per month</span></td><td>46</td><td>26, by allowance rather than unlimited</td></tr>
+            <tr><td><span class="key">Blended revenue per user, India</span></td><td>$30</td><td>$52</td></tr>
+            <tr><td><span class="key">Automation ceiling</span></td><td>72 per cent</td><td>80 per cent, reached faster</td></tr>
+            <tr><td><span class="key">Assisted handling floor</span></td><td>2.8 minutes</td><td>1.7 minutes, by tooling</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>The assisted-tier handling time is reduced by automating hold and menu navigation so a worker is handed a connected call, and by replacing free browsing with the structured task cards of <a href="../decisions/dr-022-structured-task-cards.html">DR-022</a>. It is not reduced by human practice alone, because practice saturates and leaves with attrition. The allowance and the priced tail are <a href="../decisions/dr-024-metered-pricing.html">DR-024</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="cost-split"><span class="no">4</span>The cost split</h2>
+        <p>At 1,000 users and 60,000 tasks a month, on the earlier and now superseded task mix, the split ran labour 73 per cent, tokens 24 per cent, everything else 3 per cent. <span class="chip chip-assumption">assumption</span> Two things follow and both are durable.</p>
+        <p>First, the intuition that tokens are the dominant cost is wrong at current prices. Token cost per task falls with model prices but rises with agent loop length and context size, and in the modelling those two roughly cancel for around two years. Tokens are never the largest line in any scenario.</p>
+        <p>Second, fixed overhead is trivial. Space and connectivity are about two per cent of cost, which is why the cheap-rent argument never moved the answer. The step costs that do move it are the foreign entities in section 7, and the floor that carries them, which is staged in <a href="../decisions/dr-006-office-mandatory.html">DR-006</a> and priced as a step in <a href="../04-operations/">04</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="trajectory"><span class="no">5</span>The trajectory</h2>
+        <p>Twenty thousand simulated paths, sixty months, every driver sampled rather than assumed. Conservative and optimistic lines are drawn from coherent families of paths, ranked by outcome, rather than by blending unrelated percentiles. The planning line weights them 65 to 35, conservative to optimistic.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.3</span> The trajectory as specified against the trajectory with the four levers, twenty thousand paths over sixty months. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th></th><th>As previously specified</th><th>With the four levers</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">Paths profitable by month 36</span></td><td>0.9 per cent</td><td>53.6 per cent</td></tr>
+            <tr><td><span class="key">Paths profitable by month 60</span></td><td>12.9 per cent</td><td>89.0 per cent</td></tr>
+            <tr><td><span class="key">Labour as a share of revenue at month 36</span></td><td>85 per cent</td><td>18 per cent</td></tr>
+            <tr><td><span class="key">Cash trough</span></td><td>not reached by month 60</td><td>month 28</td></tr>
+            <tr><td><span class="key">Peak cash, planning line</span></td><td>$23.5m</td><td>$1.95m</td></tr>
+            <tr><td><span class="key">Peak cash, conservative line</span></td><td>$31.8m</td><td>$5.6m</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>One result is worth stating because it is easy to miss. In the previously specified configuration, the paths that end with the best cash position are the ones that grew slowly. A model in which growth is the thing that hurts you is the formal statement of negative unit economics.</p>
+      </section>
+
+      <section>
+        <h2 id="funding"><span class="no">6</span>Funding</h2>
+        <p>Sized as window burn times a 1.3 buffer. Raise against the conservative line, plan against the planning line, and never against the optimistic one.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.4</span> The funding plan: what each round is sized for and what it has to buy. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th>Round</th><th>Timing</th><th>Raise</th><th>What it must buy</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">Seed</span></td><td>now, 18 to 24 months of runway</td><td>$2.5m to $3m</td><td>Measured unit economics: automation share, minutes per user per month, twelve-month churn, a first cohort that renews</td></tr>
+            <tr><td><span class="key">Series A</span></td><td>month 18 to 22</td><td>$6m to $10m</td><td>Contribution positive per user, a workflow library that generalises, a second geography open and past its threshold</td></tr>
+            <tr><td><span class="key">Series B</span></td><td>month 34 to 40, optional</td><td>$15m to $25m</td><td>Bought to accelerate, not to survive</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>The arithmetic asks for less than that. Raise more because rounds are priced against milestones rather than burn, because an eighteen-month seed leaves no room for one bad quarter, and because a Series A sized for survival signals a company that has stopped trying to grow. In the viable configuration Series B is genuinely optional: the planning line needs no capital after month 36.</p>
+      </section>
+
+      <section>
+        <h2 id="geography"><span class="no">7</span>Geography</h2>
+        <p>Purchasing power is the argument for expansion and it holds: a US user paying $105 costs the same to serve as an Indian user paying $52, because the delivery floor is in Bengaluru either way. <span class="chip chip-assumption">assumption</span></p>
+        <p>Three things qualify it. Acquisition cost tracks competition for attention rather than purchasing power, running ten times the Indian figure against a two times price difference. Staff serving those hours carry a night and language premium. And automation share is worse abroad at entry, because the workflow library is built against Indian institutions.</p>
+        <p>The decisive finding is about timing rather than principle.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.5</span> Four sequencing scenarios, twenty thousand paths each: late secondary expansion is worse than not expanding. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th></th><th>India only</th><th>Expand late</th><th>Foreign led</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">Profitable by month 36</span></td><td>62 per cent</td><td>44 per cent</td><td>82 per cent</td></tr>
+            <tr><td><span class="key">Peak cash, conservative</span></td><td>$3.66m</td><td>$8.78m</td><td>$4.86m</td></tr>
+            <tr><td><span class="key">Revenue per user at month 36</span></td><td>$59</td><td>$63</td><td>$107</td></tr>
+            <tr><td><span class="key">Contribution at month 36</span></td><td>Rs 1.67 crore a month</td><td>Rs 0.51 crore a month</td><td>Rs 8.0 crore a month</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Late, secondary expansion is worse than not expanding, because the standing cost of a foreign entity arrives long before the users do. The thresholds are therefore gates rather than forecasts: 400 users in the United Kingdom and 600 in the United States to carry the local cost base. Below them a market is a drag; above them each user is the arbitrage. The sequence and the gates are <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a>, which is amber, and the roadmap carries the dates in <a href="../06-roadmap/#expansion">06</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="commerce"><span class="no">8</span>The commerce layer</h2>
+        <p>The company already executes purchases the user asked for. Routing them through channels that pay a take rate is a margin on the existing business rather than a new one, worth roughly 1.2 per cent of routed spend once the share of transactions with a payable channel is allowed for. It reaches around twelve per cent of revenue by month 60, but because it is close to pure margin it more than doubles contribution at month 36. <span class="chip chip-assumption">assumption</span> It needs merchant leverage rather than users, which arrives somewhere around 4,000 to 7,500 subscribers.</p>
+        <p>It is constrained by one rule that is not negotiable: a merchant may never pay for placement in a recommendation. The moment they can, the assistant stops being the user's agent, which is the property the subscription is bought for. The rule is recorded in <a href="../decisions/dr-024-metered-pricing.html">DR-024</a> and the withdrawal of data sold as an asset is in <a href="../decisions/dr-019-the-endgame.html">DR-019</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="what-replaces"><span class="no">9</span>What replaces this page</h2>
+        <p>Nothing here is evidence. In descending order of how much they move the answer, the four things that must be measured are: minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises. The first is answered by <a href="./measurement-protocol.html">the measurement protocol</a>, which is thirty tasks and about a week of work. The second and third need a pilot cohort and a priced waiting list. The fourth is visible only over time, in whether the tenth institution costs less to add than the second. All four are open items with owners in <a href="../07-open/#items">07</a>.</p>
       </section>
     </div>
   </div>
@@ -86,7 +186,7 @@
     <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
     <li><a href="../07-open/">See the open items</a></li>
   </ul>
-  <p>Revised 2026-09-10. This page prints clean to A4 or Letter.</p>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
 </footer>
 </body>
 </html>

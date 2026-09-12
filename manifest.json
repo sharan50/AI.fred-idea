@@ -1,7 +1,7 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "updated": "2026-09-10",
+  "updated": "2026-09-13",
   "statuses": {
     "verified": "never a page status",
     "to-verify": "the page carries external claims not yet verified",
@@ -36,7 +36,7 @@
     },
     {
       "key": "05-business",
-      "pages": 1
+      "pages": 3
     },
     {
       "key": "06-roadmap",
@@ -124,9 +124,25 @@
       "path": "05-business/index.html",
       "title": "05 Business",
       "section": "05-business",
-      "status": "decision",
-      "summary": "Economics, pricing and unit costs are deferred to after a Series A or B by the founder's decision. This page states the deferral, the trigger for reopening it, and what will be needed then.",
-      "updated": "2026-09-10"
+      "status": "assumption",
+      "summary": "The economics, no longer deferred: the five-tier task model that sets cost, human minutes per user per month as the governing ratio, the cost split, sixty months of simulated paths, the round plan and the geography gates. Every number modelled rather than measured.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "05-business/measurement-protocol.html",
+      "title": "Measurement protocol",
+      "section": "05-business",
+      "status": "assumption",
+      "summary": "The thirty-task instrument that replaces the priors in 05: the five-outcome rubric scored on positive evidence, the timing definitions, the task set, the run protocol, the learning-curve sub-test and the decision thresholds set in advance.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "05-business/model.html",
+      "title": "The model",
+      "section": "05-business",
+      "status": "assumption",
+      "summary": "A short description of the unit model and the Monte Carlo simulation behind 05: the scenarios, the run and seed the publication quotes, where the files sit, and the limits of the method.",
+      "updated": "2026-09-13"
     },
     {
       "path": "06-roadmap/index.html",
@@ -262,7 +278,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Task economics, pricing and unit costs are deferred by the founder's ruling to after a Series A or B. The 05 stub states the deferral and its trigger; no other page carries a price, a cost or a margin. Modelling now was rejected because every number would be invented.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-016-context-store.html",

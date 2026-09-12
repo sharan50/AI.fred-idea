@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>The model, AI.fred</title>
+<meta name="description" content="A short description of the unit model and the Monte Carlo simulation behind 05: the scenarios, the run and seed the publication quotes, where the files sit, and the limits of the method.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">05 The model</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="assumption">The instrument behind the numbers, on assumptions<small>revised 2026-09-13</small></p>
+    <h1><span class="no"><a href="./">05</a></span><span class="title">The model</span></h1>
+    <p class="standfirst">The two instruments behind every number in 05: a deterministic unit model whose capture sheet the measurement protocol fills, and a sixty-month Monte Carlo run over twenty thousand paths. What each scenario holds fixed, which run the publication quotes, and the four limits that keep a simulation from being read as a forecast.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>05 The model</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-assumption">assumption</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the founder and investors</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="what-it-is"><span class="no">1</span>What the model is</h2>
+        <p>Two instruments sit behind every number in <a href="./">05</a>. The first is a deterministic unit model: set the assumptions, fill the capture sheet from <a href="./measurement-protocol.html">the measurement protocol</a>, and headcount, cost per task and margin fall out, with a thirty-six-month trajectory sheet that applies improving automation, a learning curve and user growth. The second is a Monte Carlo simulation over sixty months, which samples every driver rather than assuming it and reports the share of paths that reach profitability, the cash trough and the peak cash requirement.</p>
+        <p>Neither is a forecast. A simulation inherits the shape of its priors, and the priors here are informed guesses made by one person with no customers. What the simulation is good for is the ordering of the levers: which parameter, moved by a plausible amount, changes the answer most. That ordering is what section 3 of <a href="./#the-ratio">05</a> reports, and it is stable across seeds even where the levels are not.</p>
+      </section>
+
+      <section>
+        <h2 id="scenarios"><span class="no">2</span>The scenarios</h2>
+        <p>Two configurations of the unit economics, and four of the geography, each run as twenty thousand paths.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.8</span> The scenarios the publication quotes, and what each one holds fixed. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th>Scenario</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">as specified</span></td><td>The product as the previous edition described it: 46 tasks a user a month, unlimited, at a $37 blended revenue per user</td></tr>
+            <tr><td><span class="key">viable</span></td><td>The four levers of 05, section 3, at their stated values: 26 tasks by allowance, $52 in India, an 80 per cent automation ceiling reached faster, a 1.7 minute assisted floor</td></tr>
+            <tr><td><span class="key">india only</span></td><td>No foreign entity; India as delivery base and revenue market</td></tr>
+            <tr><td><span class="key">expansion</span></td><td>The published sequence: the United Kingdom around month 20, the United States around month 36, both as secondary markets</td></tr>
+            <tr><td><span class="key">expansion commerce</span></td><td>As above, with the commerce take rate of 05, section 8</td></tr>
+            <tr><td><span class="key">foreign led</span></td><td>The United Kingdom between months 8 and 14 with acquisition genuinely moved there, under the gates of <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 id="the-run"><span class="no">3</span>The run the publication quotes</h2>
+        <p>Every figure on <a href="./">05</a> comes from a run of twenty thousand paths at seed 20260913, dated 13 September 2026. The bands move slightly between seeds, so the seed and the date are quoted wherever a number appears, and a figure re-derived from a different run is a different number. <span class="chip chip-assumption">assumption</span></p>
+        <p>The files sit in <code>models/</code> at the root of the repository, outside the publication, because they are working instruments rather than pages: the two workbooks, the two simulation scripts, the rationale that explains why each distribution is shaped the way it is, the geography and data-layer note, and the raw monthly output of each quoted run as comma-separated values. The directory's own readme names each file and carries the command that reproduces a run. The spreadsheets are deliberately not linked from a page and not pasted into one; a number that matters enough to quote is stated here, with its scenario and its seed.</p>
+      </section>
+
+      <section>
+        <h2 id="limits"><span class="no">4</span>The limits</h2>
+        <p>Four limits are worth stating plainly, because a model presented without them invites more weight than it can carry.</p>
+        <dl class="def">
+          <dt>The priors are not evidence</dt>
+          <dd>No customer has been served. Four measurements replace the priors, in the order they move the answer: minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises. Each is an open item with an owner in <a href="../07-open/#items">07</a>.</dd>
+          <dt>Correlations are asserted, not fitted</dt>
+          <dd>The families of paths that make up the conservative and optimistic lines are constructed by ranking coherent runs, not by blending unrelated percentiles, which avoids the worst artefact of percentile arithmetic but does not measure how the drivers actually co-move.</dd>
+          <dt>The foreign-led case carries the heaviest assumption</dt>
+          <dd>It assumes acquisition abroad at 1.6 times the Indian growth rate from a standing start with no brand and no local team. A comparable service in the United States, backed by a large corporate, reached a few thousand households and closed in 2025. That is why <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a> is amber rather than fixed.</dd>
+          <dt>Token prices cut both ways and cancel</dt>
+          <dd>Cost per task falls with model prices and rises with agent loop length and context size; the model lets the two offset for about two years, and in no scenario are tokens the largest line. If either side of that moves sharply, the cost split in <a href="./#cost-split">05, 4</a> is the first thing to re-derive.</dd>
+        </dl>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

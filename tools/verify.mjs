@@ -414,9 +414,12 @@ for (const id of MANDATED_FIGURES) {
 const biz = join(DOCS, '05-business', 'index.html');
 if (existsSync(biz)) {
   const t = read(biz).replace(/<[^>]*>/g, ' ');
-  if (!/deferred/i.test(t)) fail(biz, 1, '05-business must state that economics is deferred');
-  if (!/Series A/.test(t)) fail(biz, 1, '05-business must name the post-Series A/B deferral');
-  if (!/trigger/i.test(t)) fail(biz, 1, '05-business must state the trigger for reopening');
+  // The deferral is withdrawn (2026-09-13): the page now carries a modelled economics, so the harness
+  // checks that it says so, names the round plan, and points at the instrument that replaces the priors.
+  if (!/modelled rather than measured/i.test(t)) fail(biz, 1, '05-business must say its numbers are modelled rather than measured');
+  if (!/Series A/.test(t)) fail(biz, 1, '05-business must carry the round plan');
+  if (!/measurement protocol/i.test(t)) fail(biz, 1, '05-business must point to the measurement protocol that replaces the priors');
+  if (/deferred to|economics is deferred/i.test(t)) fail(biz, 1, '05-business still states the withdrawn deferral');
 } else fail(biz, 1, '05-business/index.html is missing');
 
 for (const f of htmlFiles.filter((p) => /[\\/]decisions[\\/]dr-[^\\/]+\.html$/.test(p))) {
