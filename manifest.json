@@ -109,7 +109,7 @@
       "title": "The trust story",
       "section": "03-trust-and-data",
       "status": "decision",
-      "summary": "One page a customer could read: what AI.fred does, why nobody who works for us ever sees your numbers, what your ledger looks like, and what we never do.",
+      "summary": "One page a customer could read: what AI.fred does, why no person who works for us ever sees a value from your vault, where the line actually falls on a phone call, what your ledger looks like, and what we never do.",
       "updated": "2026-09-13"
     },
     {
@@ -166,7 +166,7 @@
       "section": "decisions",
       "status": "amber",
       "summary": "One intake gateway, behind the vault's tokenising edge proxy, normalises every channel into one internal request format; which channel opens the front door in each market is amber until the first US/UK cohort is scoped.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-002-verdict-two-loops.html",
@@ -174,7 +174,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Structured outcome codes decide whether a step is closed; the user's one-tap verdict, five options and no more, is the only measure of quality and the only thing that closes a task.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-003-full-delegation-ceiling.html",
@@ -182,7 +182,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The harness is designed to the full ceiling, identity acts included; a per-jurisdiction policy layer decides at runtime what is delegated, what bounces and what is prohibited. Supersedes the A/B/C capability-tier framing.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-004-authority-envelope.html",
@@ -198,7 +198,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every task lives in an explicit state machine with live timers and recorded transitions; user silence ends in lapsed through visible nudges, lapsed is not withdrawn, and system silence is an exception the watchdog surfaces.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-006-office-mandatory.html",
@@ -214,7 +214,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "One country-agnostic harness carries every trust property; each market adds passport adapters to its rails, a legal pack, a data-residency map and a shift, and expansion is that playbook repeated.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-008-vault-bought.html",
@@ -222,7 +222,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Real values live in a bought, regionally hosted tokenisation vault of the Skyflow, VGS and Basis Theory class; everything of ours handles aliases. Why the layer is bought, what buying does not delegate, and why no vendor is chosen yet.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-009-evidence-redaction.html",
@@ -230,7 +230,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every screenshot, recording, transcript and DOM capture is redacted inside the harness before it is stored and verified by a second pass that fails closed; no raw artefact is ever human-viewable, and the evidence system is treated as a leak path.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-010-html-no-build-step.html",
@@ -238,7 +238,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The publication is plain static HTML served straight from GitHub by Netlify with no build command, framework, CDN or external asset. HTML is the single canonical source; a static site generator and Markdown-canonical generation were rejected because two representations drift.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-011-token-and-component-system.html",
@@ -246,7 +246,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every colour, type role and spacing value is a token defined once; every component is defined once and composed on every page; no page carries styling of its own. A framework and per-page styling were rejected, and the harness enforces the rule.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-012-design-plan.html",
@@ -254,7 +254,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The visual system for the publication: palette, type, numbering voice, page kinds, components, diagram language and print, critiqued against the generic defaults and fixed.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-013-verification-standard.html",
@@ -262,7 +262,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "In this edition a verified chip means the claim was checked against a search-engine excerpt of the named, dated source, because the build environment blocked full page reads and capped searches; no page circulates externally before its load-bearing sources are re-read.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-014-substitution-framing.html",
@@ -286,7 +286,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The user's profile is a temporal knowledge graph in the Graphiti style: every fact carries its source, date, validity interval, confidence and whether the user confirmed it; sensitive fields are aliases held in the vault. A flat profile table and a document store without temporal validity were rejected.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-017-dependency-map.html",
@@ -294,7 +294,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory, with one served view of it under docs/depmap/ and no other page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-018-mail-from-the-users-address.html",
@@ -302,7 +302,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every email a third party receives for a user comes from the user's own address: sent by the relay under a send scope the user grants, or written by the harness and sent by the user from their own mail app; replies reach us by the read connector or the user's forward, and the per-task address at our domain is inbound only.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-019-the-endgame.html",
@@ -366,7 +366,7 @@
       "section": "depmap",
       "status": "decision",
       "summary": "The dependency map of the record (DR-017) served as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json by the map's own tool, committed, and failed by the harness when stale; the one page outside the page floor, by DR-010's exception.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     }
   ]
 }

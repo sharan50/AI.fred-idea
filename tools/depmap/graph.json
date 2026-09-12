@@ -149,7 +149,7 @@
     {
       "id": "premise-endgame",
       "kind": "premise",
-      "label": "The endgame: the wedge is the entry, everything personal is the destination",
+      "label": "The endgame is the starting scope",
       "facets": {
         "layer": "thesis",
         "fixity": "fixed",
@@ -157,15 +157,11 @@
       },
       "loci": [
         {
-          "at": "00-thesis/index.html#endgame",
+          "at": "00-thesis/index.html#endgame!\"the starting scope, not a later phase\"",
           "role": "canonical"
         },
         {
-          "at": "index.html#promise!\"The wedge is the entry, not the destination\"",
-          "role": "mentions"
-        },
-        {
-          "at": "00-thesis/index.html#customer-and-wedge!\"The rest of their tasks is the destination\"",
+          "at": "index.html#promise!\"It is not the boundary of the product\"",
           "role": "mentions"
         }
       ]
@@ -2005,7 +2001,7 @@
     {
       "id": "dr-019",
       "kind": "dr",
-      "label": "The endgame: first port of call for everything personal",
+      "label": "The endgame is the starting scope",
       "facets": {
         "layer": "thesis",
         "fixity": "fixed"
@@ -2016,64 +2012,8 @@
           "role": "canonical"
         },
         {
-          "at": "decisions/index.html#ledger!\"The endgame: first port of call\"",
+          "at": "decisions/index.html#ledger!\"The endgame is the starting scope\"",
           "role": "mentions"
-        }
-      ]
-    },
-    {
-      "id": "alt-dr-019-staying-a-high-consequence-specialist",
-      "kind": "alt",
-      "label": "Staying a high-consequence specialist",
-      "facets": {
-        "layer": "thesis"
-      },
-      "loci": [
-        {
-          "at": "decisions/dr-019-the-endgame.html#rejected!\"Staying a high-consequence specialist\"",
-          "role": "canonical"
-        }
-      ]
-    },
-    {
-      "id": "alt-dr-019-launching-as-a-general-assistant",
-      "kind": "alt",
-      "label": "Launching as a general assistant first",
-      "facets": {
-        "layer": "thesis"
-      },
-      "loci": [
-        {
-          "at": "decisions/dr-019-the-endgame.html#rejected!\"Launching as a general assistant first\"",
-          "role": "canonical"
-        }
-      ]
-    },
-    {
-      "id": "alt-dr-019-deciding-the-data-story-now",
-      "kind": "alt",
-      "label": "Deciding the data story now, either way",
-      "facets": {
-        "layer": "thesis"
-      },
-      "loci": [
-        {
-          "at": "decisions/dr-019-the-endgame.html#rejected!\"Deciding the data story now, either way\"",
-          "role": "canonical"
-        }
-      ]
-    },
-    {
-      "id": "alt-dr-019-a-separate-everyday-product-or",
-      "kind": "alt",
-      "label": "A separate everyday product or brand",
-      "facets": {
-        "layer": "thesis"
-      },
-      "loci": [
-        {
-          "at": "decisions/dr-019-the-endgame.html#rejected!\"A separate everyday product or brand\"",
-          "role": "canonical"
         }
       ]
     },
@@ -2196,10 +2136,6 @@
           "at": "03-trust-and-data/index.html#substitutor-interface",
           "role": "restates",
           "check": "members"
-        },
-        {
-          "at": "03-trust-and-data/index.html#telephony",
-          "role": "restates"
         },
         {
           "at": "04-operations/index.html#dual-control",
@@ -3244,10 +3180,6 @@
         {
           "at": "03-trust-and-data/index.html#telephony",
           "role": "canonical"
-        },
-        {
-          "at": "03-trust-and-data/index.html#table:3.6!\"the transcriber's default\"",
-          "role": "mentions"
         }
       ]
     },
@@ -3316,8 +3248,8 @@
           "role": "mentions"
         },
         {
-          "at": "03-trust-and-data/index.html#telephony!\"placement window\"",
-          "role": "mentions"
+          "at": "03-trust-and-data/index.html#telephony!\"Nothing from the vault goes onto a call\"",
+          "role": "restates"
         }
       ]
     },
@@ -4417,14 +4349,14 @@
     {
       "id": "open-07-12",
       "kind": "open",
-      "label": "Telephony, browser sandbox and model vendors",
+      "label": "Browser sandbox and model vendors",
       "facets": {
         "layer": "open",
         "fixity": "amber"
       },
       "loci": [
         {
-          "at": "07-open/index.html#items!\"telephony, browser sandbox and model vendors\"",
+          "at": "07-open/index.html#items!\"Browser sandbox and model vendors\"",
           "role": "home"
         }
       ]
@@ -4552,14 +4484,14 @@
     {
       "id": "open-07-21",
       "kind": "open",
-      "label": "The data story: the context store's worth beyond the user's own tasks",
+      "label": "The data story, settled by DR-019",
       "facets": {
         "layer": "open",
         "fixity": "assumption"
       },
       "loci": [
         {
-          "at": "07-open/index.html#items!\"The data story: what the context store\"",
+          "at": "07-open/index.html#items!\"The data story is settled by\"",
           "role": "home"
         }
       ]
@@ -4917,7 +4849,7 @@
       "source": "SURFACING_REPORT.md section 3, residual finding 1 of round 7 (hunt one)",
       "loci": [
         {
-          "at": "03-trust-and-data/index.html#telephony!\"common lexicon\"",
+          "at": "03-trust-and-data/index.html#telephony!\"no streaming transcriber in the live path\"",
           "role": "evidence"
         },
         {
@@ -4929,7 +4861,7 @@
           "role": "evidence"
         },
         {
-          "at": "03-trust-and-data/index.html#table:3.6!\"default is an allowlist\"",
+          "at": "03-trust-and-data/index.html#table:3.6!\"closes by not entering the channel\"",
           "role": "evidence"
         }
       ]
@@ -5078,7 +5010,7 @@
           "role": "evidence"
         },
         {
-          "at": "03-trust-and-data/index.html#telephony!\"dates with month names\"",
+          "at": "03-trust-and-data/index.html#telephony!\"scoped to non-authenticating calls\"",
           "role": "evidence"
         },
         {
@@ -5119,11 +5051,11 @@
       "source": "SURFACING_REPORT.md section 3, residual finding 7 of round 7 (hunt three)",
       "loci": [
         {
-          "at": "04-operations/index.html#card-script!\"cannot agree a fee\"",
+          "at": "04-operations/index.html#card-script!\"carries no committing sentence\"",
           "role": "evidence"
         },
         {
-          "at": "03-trust-and-data/index.html#telephony!\"cannot commit the user\"",
+          "at": "03-trust-and-data/index.html#telephony!\"no media function\"",
           "role": "evidence"
         },
         {
@@ -5131,7 +5063,7 @@
           "role": "evidence"
         },
         {
-          "at": "02-architecture/index.html#telephony!\"commitment dictionary\"",
+          "at": "02-architecture/index.html#telephony!\"nothing in the path to cut a committing utterance\"",
           "role": "evidence"
         },
         {
@@ -5392,7 +5324,7 @@
           "role": "evidence"
         },
         {
-          "at": "04-operations/index.html#card-script!\"fee inside the sub-cap\"",
+          "at": "04-operations/index.html#card-script!\"compares it with the envelope's cap line\"",
           "role": "evidence"
         },
         {
@@ -5410,7 +5342,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 21,
+      "count": 28,
       "members": [
         {
           "id": "open-07-01",
@@ -5458,7 +5390,7 @@
         },
         {
           "id": "open-07-12",
-          "word": "telephony, browser sandbox and model vendors"
+          "word": "browser sandbox and model vendors"
         },
         {
           "id": "open-07-13",
@@ -5494,7 +5426,35 @@
         },
         {
           "id": "open-07-21",
-          "word": "the data story"
+          "word": "the data story is settled by"
+        },
+        {
+          "id": "open-07-22",
+          "word": "the thirty-task measurement"
+        },
+        {
+          "id": "open-07-23",
+          "word": "twelve-month churn on a paying cohort"
+        },
+        {
+          "id": "open-07-24",
+          "word": "willingness to pay above $50 in india"
+        },
+        {
+          "id": "open-07-25",
+          "word": "blended acquisition cost in the united kingdom"
+        },
+        {
+          "id": "open-07-26",
+          "word": "whether the engineering headcount exponent falls"
+        },
+        {
+          "id": "open-07-27",
+          "word": "the headcount threshold at which the attested"
+        },
+        {
+          "id": "open-07-28",
+          "word": "the founder's position at faff"
         }
       ],
       "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
@@ -5786,7 +5746,7 @@
     {
       "id": "inv-everyday-same-harness",
       "kind": "inv",
-      "label": "Everyday tasks run on the same harness, never a lighter one",
+      "label": "Everyday tasks run on the same harness and wait on no legal pack",
       "facets": {
         "layer": "product",
         "fixity": "fixed",
@@ -5794,47 +5754,19 @@
       },
       "loci": [
         {
-          "at": "decisions/dr-019-the-endgame.html#closes-off!\"A second harness, or a lighter trust rule\"",
+          "at": "decisions/dr-020-everyday-tasks-day-one.html#closes-off!\"A staged product plan\"",
           "role": "canonical"
         },
         {
-          "at": "01-product/index.html#taxonomy!\"on the same harness, the same envelope and the same classifier\"",
+          "at": "01-product/index.html#taxonomy!\"they run on the same envelope and the same classifier\"",
           "role": "restates"
         },
         {
-          "at": "00-thesis/index.html#endgame-sequence!\"the same envelope, the same aliases, the same ledger, the same classifier\"",
+          "at": "00-thesis/index.html#endgame-sequence!\"they run on the harness built for what sits above it\"",
           "role": "restates"
         },
         {
-          "at": "06-roadmap/index.html#expansion-legal!\"everyday verticals\"",
-          "role": "mentions"
-        }
-      ]
-    },
-    {
-      "id": "inv-data-story-by-record-only",
-      "kind": "inv",
-      "label": "The store's use beyond the user's tasks is decided only by a decision record",
-      "facets": {
-        "layer": "business",
-        "fixity": "fixed",
-        "fatal": "none"
-      },
-      "loci": [
-        {
-          "at": "decisions/dr-019-the-endgame.html#closes-off!\"decided anywhere but by a decision record\"",
-          "role": "canonical"
-        },
-        {
-          "at": "00-thesis/index.html#endgame-upside!\"settled only by a decision record\"",
-          "role": "mentions"
-        },
-        {
-          "at": "07-open/index.html#items!\"settled only by a decision record\"",
-          "role": "mentions"
-        },
-        {
-          "at": "05-business/index.html#when-it-reopens!\"by a decision record\"",
+          "at": "06-roadmap/index.html#expansion-legal!\"governs identity and institutional acts\"",
           "role": "mentions"
         }
       ]
@@ -6828,8 +6760,8 @@
           "code": "echo-masked"
         },
         {
-          "id": "read-back-muted",
-          "word": "read-back-muted",
+          "id": "exposure-recorded",
+          "word": "exposure-recorded",
           "code": "read-back-muted"
         },
         {
@@ -7197,6 +7129,649 @@
         {
           "at": "04-operations/index.html#shift-wheel",
           "role": "restates"
+        }
+      ]
+    },
+    {
+      "id": "dr-020",
+      "kind": "dr",
+      "label": "Everyday tasks in scope from day one",
+      "facets": {
+        "layer": "product",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-020-everyday-tasks-day-one.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Everyday tasks in scope from day one\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "dr-021",
+      "kind": "dr",
+      "label": "Telephony masking dropped; no value is ever spoken",
+      "facets": {
+        "layer": "architecture",
+        "fixity": "fixed",
+        "fatal": "both"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-021-no-value-spoken.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Telephony masking dropped; no value is ever spoken\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "dr-022",
+      "kind": "dr",
+      "label": "Structured task cards replace pixel masking",
+      "facets": {
+        "layer": "architecture",
+        "fixity": "fixed",
+        "fatal": "1"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-022-structured-task-cards.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Structured task cards replace pixel masking\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "dr-023",
+      "kind": "dr",
+      "label": "Geography sequencing and the entity thresholds",
+      "facets": {
+        "layer": "roadmap",
+        "fixity": "amber",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-023-geography-sequencing.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Geography sequencing and the entity thresholds\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "dr-024",
+      "kind": "dr",
+      "label": "Pricing is metered, and the tail is priced",
+      "facets": {
+        "layer": "business",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-024-metered-pricing.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Pricing is metered, and the tail is priced\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-019-a-staged-product",
+      "kind": "alt",
+      "label": "A staged product, three or four hard tasks a year first",
+      "facets": {
+        "layer": "thesis"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#rejected!\"A staged product, three or four hard tasks a year first\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-019-data-sold-as-an-asset",
+      "kind": "alt",
+      "label": "Data sold as an asset once the base is large enough",
+      "facets": {
+        "layer": "thesis"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#rejected!\"Data sold as an asset once the base is large enough\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-019-leaving-the-data-story-open",
+      "kind": "alt",
+      "label": "Deciding nothing and leaving the data story open",
+      "facets": {
+        "layer": "thesis"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#rejected!\"Deciding nothing and leaving the data story open\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-020-a-wedge-first-sequence",
+      "kind": "alt",
+      "label": "A wedge-first sequence, everyday tasks later",
+      "facets": {
+        "layer": "product"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-020-everyday-tasks-day-one.html#rejected!\"A wedge-first sequence, everyday tasks later\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-020-two-products-or-two-brands",
+      "kind": "alt",
+      "label": "Two products, or two brands",
+      "facets": {
+        "layer": "product"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-020-everyday-tasks-day-one.html#rejected!\"Two products, or two brands\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-020-everyday-as-an-unpriced-extra",
+      "kind": "alt",
+      "label": "Everyday tasks as an unpriced extra on the consequential plan",
+      "facets": {
+        "layer": "product"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-020-everyday-tasks-day-one.html#rejected!\"Everyday tasks as an unpriced extra on the consequential plan\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-021-the-audio-masking-pipeline",
+      "kind": "alt",
+      "label": "The audio masking pipeline",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-021-no-value-spoken.html#rejected!\"The audio masking pipeline\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-021-the-mute-for-placements-only",
+      "kind": "alt",
+      "label": "Keeping the mute for placements only",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-021-no-value-spoken.html#rejected!\"Keeping the mute for placements only\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-021-a-worker-reading-a-value-aloud",
+      "kind": "alt",
+      "label": "Letting a worker read a value aloud under dual control",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-021-no-value-spoken.html#rejected!\"Letting a worker read a value aloud under dual control\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-022-a-bespoke-browser-build",
+      "kind": "alt",
+      "label": "A bespoke browser build with a mask and a delay line as a founding component",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-022-structured-task-cards.html#rejected!\"A bespoke browser build with a mask and a delay line as a founding component\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-022-an-unmasked-page",
+      "kind": "alt",
+      "label": "Letting a worker drive an unmasked page and trusting the floor",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-022-structured-task-cards.html#rejected!\"Letting a worker drive an unmasked page and trusting the floor\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-022-streaming-everything",
+      "kind": "alt",
+      "label": "Modelling nothing and streaming everything",
+      "facets": {
+        "layer": "architecture"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-022-structured-task-cards.html#rejected!\"Modelling nothing and streaming everything\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-023-the-published-sequence",
+      "kind": "alt",
+      "label": "The published sequence, both markets secondary",
+      "facets": {
+        "layer": "roadmap"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-023-geography-sequencing.html#rejected!\"The published sequence\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-023-india-only",
+      "kind": "alt",
+      "label": "India only, no foreign entity",
+      "facets": {
+        "layer": "roadmap"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-023-geography-sequencing.html#rejected!\"India only, no foreign entity\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-023-both-markets-at-once",
+      "kind": "alt",
+      "label": "Opening both foreign markets at once",
+      "facets": {
+        "layer": "roadmap"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-023-geography-sequencing.html#rejected!\"Opening both foreign markets at once\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-024-unlimited-flat-fee",
+      "kind": "alt",
+      "label": "Unlimited flat-fee pricing",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-024-metered-pricing.html#rejected!\"Unlimited flat-fee pricing\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-024-mass-privileged-vip",
+      "kind": "alt",
+      "label": "The previous tier structure of mass, privileged and VIP",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-024-metered-pricing.html#rejected!\"The previous tier structure of mass, privileged and VIP\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-024-per-task-no-subscription",
+      "kind": "alt",
+      "label": "Per-task pricing with no subscription",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-024-metered-pricing.html#rejected!\"Per-task pricing with no subscription\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-024-merchant-funded",
+      "kind": "alt",
+      "label": "A merchant-funded model, with placement for sale",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-024-metered-pricing.html#rejected!\"A merchant-funded model, with placement for sale\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "inv-no-data-sold",
+      "kind": "inv",
+      "label": "No sale of user data or insight derived from it, at any scale",
+      "facets": {
+        "layer": "business",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-019-the-endgame.html#closes-off!\"any sale of user data or insight\"",
+          "role": "canonical"
+        },
+        {
+          "at": "00-thesis/index.html#endgame-upside!\"Data sold as an asset is withdrawn entirely\"",
+          "role": "restates"
+        },
+        {
+          "at": "07-open/index.html#items!\"data sold as an asset is withdrawn\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "comp-workflow-library",
+      "kind": "comp",
+      "label": "The workflow library, per counterparty and step type",
+      "facets": {
+        "layer": "architecture",
+        "fixity": "fixed",
+        "surface": "browser"
+      },
+      "loci": [
+        {
+          "at": "02-architecture/index.html#workflow-library",
+          "role": "canonical"
+        },
+        {
+          "at": "04-operations/index.html#workflow-tickets!\"library ticket\"",
+          "role": "restates"
+        },
+        {
+          "at": "05-business/index.html#the-ratio!\"structured task cards\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-no-value-spoken",
+      "kind": "inv",
+      "label": "No value from the vault is ever on a call, in either direction",
+      "facets": {
+        "layer": "architecture",
+        "fixity": "fixed",
+        "fatal": "both"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-021-no-value-spoken.html#closes-off!\"A placement of any kind on a call\"",
+          "role": "canonical"
+        },
+        {
+          "at": "02-architecture/index.html#telephony!\"No value from the vault is placed on a call\"",
+          "role": "restates"
+        },
+        {
+          "at": "03-trust-and-data/index.html#telephony!\"Nothing from the vault goes onto a call, in either direction\"",
+          "role": "restates"
+        },
+        {
+          "at": "04-operations/index.html#phone-scope!\"No value from the vault is placed on a call\"",
+          "role": "mentions"
+        },
+        {
+          "at": "03-trust-and-data/trust-story.html#the-boundary!\"no value from your vault is ever spoken on a call\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-card-over-pixels",
+      "kind": "inv",
+      "label": "A modelled workflow is worked as a structured card, not as pixels",
+      "facets": {
+        "layer": "architecture",
+        "fixity": "fixed",
+        "fatal": "1"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-022-structured-task-cards.html#closes-off!\"cannot be worked as a card\"",
+          "role": "canonical"
+        },
+        {
+          "at": "02-architecture/index.html#managed-browser!\"the worker never sees the page\"",
+          "role": "restates"
+        },
+        {
+          "at": "03-trust-and-data/index.html#managed-browser!\"structured task card derived from it\"",
+          "role": "restates"
+        }
+      ]
+    },
+    {
+      "id": "inv-metered-allowance",
+      "kind": "inv",
+      "label": "No unlimited promise; the allowance is stated and the tail is priced",
+      "facets": {
+        "layer": "business",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-024-metered-pricing.html#closes-off!\"An unlimited promise anywhere in the record\"",
+          "role": "canonical"
+        },
+        {
+          "at": "05-business/index.html#the-ratio!\"by allowance rather than unlimited\"",
+          "role": "restates"
+        }
+      ]
+    },
+    {
+      "id": "inv-no-paid-placement",
+      "kind": "inv",
+      "label": "A merchant may never pay for placement in a recommendation",
+      "facets": {
+        "layer": "business",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-024-metered-pricing.html#closes-off!\"merchant payment for placement in a recommendation\"",
+          "role": "canonical"
+        },
+        {
+          "at": "05-business/index.html#commerce!\"never pay for placement in a recommendation\"",
+          "role": "restates"
+        },
+        {
+          "at": "decisions/dr-019-the-endgame.html#data-layer!\"never pay for placement in a recommendation\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "inv-market-gates",
+      "kind": "inv",
+      "label": "No market opened without its user gate, and no second before the first clears",
+      "facets": {
+        "layer": "roadmap",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-023-geography-sequencing.html#closes-off!\"A market opened on optimism rather than on its gate\"",
+          "role": "canonical"
+        },
+        {
+          "at": "06-roadmap/index.html#expansion-sequence!\"400 users in the United Kingdom and 600 in the United States\"",
+          "role": "restates"
+        },
+        {
+          "at": "05-business/index.html#geography!\"gates rather than forecasts\"",
+          "role": "restates"
+        }
+      ]
+    },
+    {
+      "id": "open-07-22",
+      "kind": "open",
+      "label": "The thirty-task measurement",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The thirty-task measurement\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-23",
+      "kind": "open",
+      "label": "Twelve-month churn on a paying cohort",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Twelve-month churn on a paying cohort\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-24",
+      "kind": "open",
+      "label": "Willingness to pay above $50 in India",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Willingness to pay above $50 in India\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-25",
+      "kind": "open",
+      "label": "Blended acquisition cost in the UK and the US",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Blended acquisition cost in the United Kingdom\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-26",
+      "kind": "open",
+      "label": "Whether the engineering headcount exponent falls",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Whether the engineering headcount exponent falls\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-27",
+      "kind": "open",
+      "label": "The headcount threshold for the attested site",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The headcount threshold at which the attested\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-28",
+      "kind": "open",
+      "label": "The founder's position at Faff",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The founder's position at Faff\"",
+          "role": "home"
         }
       ]
     }
@@ -7758,10 +8333,6 @@
     ["dr-018", "rejects", "alt-dr-018-the-user-s-mail-credentials"],
     ["dr-018", "rejects", "alt-dr-018-a-bounce-with-no-draft"],
     ["dr-018", "justifies", "comp-mail-relay"],
-    ["dr-019", "rejects", "alt-dr-019-staying-a-high-consequence-specialist"],
-    ["dr-019", "rejects", "alt-dr-019-launching-as-a-general-assistant"],
-    ["dr-019", "rejects", "alt-dr-019-deciding-the-data-story-now"],
-    ["dr-019", "rejects", "alt-dr-019-a-separate-everyday-product-or"],
     ["premise-endgame", "justifies", "dr-019"],
     ["dr-018", "closes-off", "inv-mail-from-users-own-address"],
     ["comp-mail-relay", "depends-on", "inv-mail-from-users-own-address"],
@@ -7769,12 +8340,46 @@
     ["comp-mail-relay", "depends-on", "inv-send-scope-not-a-connector"],
     ["dr-019", "closes-off", "inv-everyday-same-harness"],
     ["comp-legal-pack", "depends-on", "inv-everyday-same-harness"],
-    ["dr-019", "closes-off", "inv-data-story-by-record-only"],
-    ["comp-context-store", "depends-on", "inv-data-story-by-record-only"],
     ["open-07-20", "lands-in", "comp-mail-relay"],
     ["open-07-21", "lands-in", "comp-context-store"],
     ["open-07-21", "lands-in", "dr-015"],
     ["premise-wedge", "justifies", "dr-019"],
-    ["dr-016", "justifies", "dr-019"]
+    ["dr-016", "justifies", "dr-019"],
+    ["dr-019", "rejects", "alt-dr-019-a-staged-product"],
+    ["dr-019", "rejects", "alt-dr-019-data-sold-as-an-asset"],
+    ["dr-019", "rejects", "alt-dr-019-leaving-the-data-story-open"],
+    ["dr-020", "rejects", "alt-dr-020-a-wedge-first-sequence"],
+    ["dr-020", "rejects", "alt-dr-020-two-products-or-two-brands"],
+    ["dr-020", "rejects", "alt-dr-020-everyday-as-an-unpriced-extra"],
+    ["dr-021", "rejects", "alt-dr-021-the-audio-masking-pipeline"],
+    ["dr-021", "rejects", "alt-dr-021-the-mute-for-placements-only"],
+    ["dr-021", "rejects", "alt-dr-021-a-worker-reading-a-value-aloud"],
+    ["dr-022", "rejects", "alt-dr-022-a-bespoke-browser-build"],
+    ["dr-022", "rejects", "alt-dr-022-an-unmasked-page"],
+    ["dr-022", "rejects", "alt-dr-022-streaming-everything"],
+    ["dr-023", "rejects", "alt-dr-023-the-published-sequence"],
+    ["dr-023", "rejects", "alt-dr-023-india-only"],
+    ["dr-023", "rejects", "alt-dr-023-both-markets-at-once"],
+    ["dr-024", "rejects", "alt-dr-024-unlimited-flat-fee"],
+    ["dr-024", "rejects", "alt-dr-024-mass-privileged-vip"],
+    ["dr-024", "rejects", "alt-dr-024-per-task-no-subscription"],
+    ["dr-024", "rejects", "alt-dr-024-merchant-funded"],
+    ["dr-019", "closes-off", "inv-no-data-sold"],
+    ["dr-022", "justifies", "comp-workflow-library"],
+    ["comp-workflow-library", "depends-on", "comp-managed-browser"],
+    ["dr-021", "closes-off", "inv-no-value-spoken"],
+    ["dr-022", "closes-off", "inv-card-over-pixels"],
+    ["dr-024", "closes-off", "inv-metered-allowance"],
+    ["dr-024", "closes-off", "inv-no-paid-placement"],
+    ["dr-023", "closes-off", "inv-market-gates"],
+    ["open-07-22", "lands-in", "dr-024"],
+    ["open-07-25", "lands-in", "dr-023"],
+    ["open-07-27", "lands-in", "dr-006"],
+    ["open-07-26", "lands-in", "comp-workflow-library"],
+    ["dr-019", "justifies", "dr-020"],
+    ["dr-020", "justifies", "dr-024"],
+    ["dr-021", "justifies", "comp-telephony"],
+    ["dr-022", "justifies", "comp-managed-browser"],
+    ["premise-endgame", "justifies", "dr-020"]
   ]
 }
