@@ -48,7 +48,7 @@
     },
     {
       "key": "decisions",
-      "pages": 20
+      "pages": 25
     },
     {
       "key": "depmap",
@@ -306,11 +306,51 @@
     },
     {
       "path": "decisions/dr-019-the-endgame.html",
-      "title": "DR-019 The endgame: first port of call for everything personal",
+      "title": "DR-019 The endgame is the starting scope",
+      "section": "decisions",
+      "status": "assumption",
+      "summary": "What the previous record called the endgame is the starting scope: the whole of a personal economic life from the first day, with the consequential tasks as the hook. Data sold as an asset is withdrawn; product improvement and a commerce take rate survive.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-020-everyday-tasks-day-one.html",
+      "title": "DR-020 Everyday tasks in scope from day one",
       "section": "decisions",
       "status": "decision",
-      "summary": "The wedge is the entry; the destination is an AI that builds the user's context, task by task, to do in their personal life what the general assistants do, trusted with the high-value, low-volume tasks they dread. Everyday tasks run on the same harness once a market's legal pack opens them; the context store is the asset, and its upside beyond the user's own tasks is named and left open.",
-      "updated": "2026-09-10"
+      "summary": "The product serves the user's everyday economic life and their consequential institutional tasks from launch, in one subscription, without staging.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-021-no-value-spoken.html",
+      "title": "DR-021 Telephony masking dropped; no value is ever spoken",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "No value held in the vault is ever spoken on a call, in either direction; the audio masking pipeline, the media server and the specialist hire are dropped, and phone work covers non-authenticating calls only.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-022-structured-task-cards.html",
+      "title": "DR-022 Structured task cards replace pixel masking",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "For modelled workflows the worker is given a structured task card rather than a stream of pixels, with values placed at submit; pixel streaming is deferred as the fallback and the workflow library becomes load-bearing.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-023-geography-sequencing.html",
+      "title": "DR-023 Geography sequencing and the entity thresholds",
+      "section": "decisions",
+      "status": "amber",
+      "summary": "The United Kingdom opens between months 8 and 14 with acquisition moved there, India is the delivery base, and two gates govern any market: 400 users in the UK and 600 in the US.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-024-metered-pricing.html",
+      "title": "DR-024 Pricing is metered, and the tail is priced",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "Subscriptions carry a stated monthly allowance rather than an unlimited promise, the consequential tier is priced explicitly, and a merchant may never pay for placement in a recommendation.",
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/index.html",
@@ -318,7 +358,7 @@
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "depmap/index.html",
