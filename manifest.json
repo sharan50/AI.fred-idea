@@ -62,7 +62,7 @@
       "section": "index",
       "status": "decision",
       "summary": "The venture in two pages: the promise, the human-in-the-gap model, the two fatal failures and how the design makes them structurally impossible, the three-market shape, what exists today, and how to read this publication.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "00-thesis/index.html",
@@ -70,7 +70,7 @@
       "section": "00-thesis",
       "status": "to-verify",
       "summary": "Why AI.fred wins where the flat-fee concierge players cannot follow: the customer and the high-consequence wedge, why now, India as build base with the US and UK as commercial ground, the researched landscape in India, the US and the UK, and the trust architecture as the moat.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "01-product/index.html",
@@ -78,7 +78,7 @@
       "section": "01-product",
       "status": "amber",
       "summary": "The product as the user meets it: journeys across six verticals, the task taxonomy, intake through a channel-agnostic gateway (channel amber), the authority envelope, the two-loop verdict system, onboarding and context capture, and what we refuse to do.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "02-architecture/index.html",
@@ -86,7 +86,7 @@
       "section": "02-architecture",
       "status": "assumption",
       "summary": "The harness an engineer builds first: the component map, the planner, the classifier and the step-type catalogue, the execution surfaces and their controllers, the task state machine with its invariant, verification and the evidence pipeline, the context store, the intake gateway behind the vault's edge proxy, and the market adapter model.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "02-architecture/worker-console.html",
@@ -94,7 +94,7 @@
       "section": "02-architecture",
       "status": "decision",
       "summary": "The operator's task-card view, the alias-only rule, the structured outcome codes, dual control from the worker's side, the exceptions board, and the state-machine invariant identical to 02.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "03-trust-and-data/index.html",
@@ -102,7 +102,7 @@
       "section": "03-trust-and-data",
       "status": "to-verify",
       "summary": "How nobody on our side ever sees a real value: the alias and vault model, the substitution component, the execution surfaces, artefact redaction, the passports, the policy flags, the threat model as named and closed paths, the access ledger, the residency map and the privacy-law skeleton.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "03-trust-and-data/trust-story.html",
@@ -110,7 +110,7 @@
       "section": "03-trust-and-data",
       "status": "decision",
       "summary": "One page a customer could read: what AI.fred does, why nobody who works for us ever sees your numbers, what your ledger looks like, and what we never do.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "04-operations/index.html",
@@ -118,7 +118,7 @@
       "section": "04-operations",
       "status": "to-verify",
       "summary": "How the floor runs: need-to-know task cards, three worker tiers with dual control, a 24-hour wheel of three shifts from one office, site controls as part of the trust guarantee, QA as a shift duty, and service levels stated qualitatively. No cost model.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "05-business/index.html",
@@ -150,7 +150,7 @@
       "section": "06-roadmap",
       "status": "amber",
       "summary": "The harness-first build sequence in eight gated stages, the pilot scoped by capability rather than headcount, the build-versus-buy table with what each purchase commits us to, and the three-part playbook for entering a country.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "07-open/index.html",
@@ -190,7 +190,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every task carries one authority envelope; delegation is total inside it and impossible outside it, and every step is sorted by a point-of-no-return test into execute, dual control or bounce.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-005-state-machine-lapsed.html",
@@ -204,9 +204,9 @@
       "path": "decisions/dr-006-office-mandatory.html",
       "title": "DR-006 Office-mandatory 24/7 operation with site controls",
       "section": "decisions",
-      "status": "decision",
-      "summary": "Workers execute only from our office, on our devices, around the clock: a day shift covers India and two night shifts cover the west. Site controls are part of the trust guarantee; remote-safe operation is designed later.",
-      "updated": "2026-09-10"
+      "status": "amber",
+      "summary": "Workers execute only from premises of ours, on our devices. The attested 24-hour site with three shifts is the shape at scale: a small controlled room carries the pilot, and the site arrives when a foreign market goes live or the floor passes a headcount threshold the founder has yet to set. Site controls remain part of the trust guarantee.",
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-007-universal-core-adapters.html",
@@ -270,7 +270,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Sections 1 to 4 of 03 are organised as a boundary sequence, one real value followed across five boundaries with Figure 3.2 as the substitution sequence; the ledger-led framing was rejected as the spine and grafted for its best parts.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-015-economics-deferred.html",
