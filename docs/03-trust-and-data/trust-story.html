@@ -6,7 +6,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="color-scheme" content="dark">
 <title>The trust story, AI.fred</title>
-<meta name="description" content="One page a customer could read: what AI.fred does, why nobody who works for us ever sees your numbers, what your ledger looks like, and what we never do.">
+<meta name="description" content="One page a customer could read: what AI.fred does, why no person who works for us ever sees a value from your vault, where the line actually falls on a phone call, what your ledger looks like, and what we never do.">
 <link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../assets/tokens.css">
@@ -24,12 +24,12 @@
 </header>
 <main id="main" class="page">
   <header class="page-header">
-    <p class="stamp" data-status="decision">decision<small>revised 2026-09-10</small></p>
+    <p class="stamp" data-status="decision">decision<small>revised 2026-09-13</small></p>
     <h1><span class="no"><a href="./">03</a></span><span class="title">The trust story</span></h1>
-    <p class="standfirst">We do the tasks that matter, the ones with your money, your identity and your institutions in them. Nobody who works for us ever sees your numbers, and you can read every use of them in plain words.</p>
+    <p class="standfirst">We do the tasks that matter, the ones with your money, your identity and your institutions in them. No person who works for us ever sees a value from your vault, and you can read every use of one in plain words.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>03 The trust story</dd></div>
-      <div><dt>Revised</dt><dd>2026-09-10</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
       <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
       <div><dt>Reader</dt><dd class="sans">For customers</dd></div>
     </dl>
@@ -59,8 +59,8 @@
     <div class="doc">
       <section>
         <h2 id="promise"><span class="no">1</span>The promise</h2>
-        <p>How it is built is in <a href="./">03 Trust and data</a>; this page is what we would say to you. You hand us a task that matters: opening a bank account, chasing a hospital appointment, renewing a passport, answering a tax notice. We get it done. An AI plans the work and does what it can. Where a person is needed, one of our staff follows a short, exact instruction. And one thing makes this safe to trust: nobody who works for us ever sees your numbers.</p>
-        <p>Your PAN, your Aadhaar, your card and your date of birth live in a locked vault run by a specialist company, not on our desks. Our staff and our AI work with labels instead, like <code>{{pan}}</code>. When a form needs the real number, a machine with no screen types it in, and the person watching sees dots. On a phone call, the machine speaks or keys the number while the person's line is muted both ways. Every time that happens, a line is written in your ledger, in words you can read. When we write to an institution for you, the email goes from your own address, either sent by us with your permission or written by us and sent by you, so the reply lands in your inbox and you see the whole exchange. You never move your email to us.</p>
+        <p>How it is built is in <a href="./">03 Trust and data</a>; this page is what we would say to you. You hand us a task that matters: opening a bank account, chasing a hospital appointment, renewing a passport, answering a tax notice. We get it done. An AI plans the work and does what it can. Where a person is needed, one of our staff follows a short, exact instruction. And one thing makes this safe to trust: no person who works for us ever sees a value from your vault.</p>
+        <p>Your PAN, your Aadhaar, your card and your date of birth live in a locked vault run by a specialist company, not on our desks. Our staff and our AI work with labels instead, like <code>{{pan}}</code>. When a form needs the real number, a machine with no screen types it in, and the person watching sees dots. A call never carries one of your numbers at all: if a task cannot go on without one, it moves to a form or it comes back to you. Every time that happens, a line is written in your ledger, in words you can read. When we write to an institution for you, the email goes from your own address, either sent by us with your permission or written by us and sent by you, so the reply lands in your inbox and you see the whole exchange. You never move your email to us.</p>
         <figure class="fig" id="fig-promise">
           <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 3.5, the promise in one drawing, scrollable">
           <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig-promise-title fig-promise-desc">
@@ -118,12 +118,18 @@
           <li><span class="t">14:02</span><span class="e">{{pan}} received from your message and stored in the vault. No person saw it.</span></li>
           <li><span class="t">14:32</span><span class="e">{{pan}} used to fill HDFC Bank's account-opening form, in our browser. Placed by the system. No person saw it.</span></li>
           <li><span class="t">14:32</span><span class="e">A worker saw the form with {{pan}} shown as dots.</span></li>
-          <li><span class="t">14:40</span><span class="e">{{dob}} spoken to Max Healthcare's booking line, on our phone line. Placed by the system. The worker's audio was muted.</span></li>
+          <li><span class="t">14:40</span><span class="e">{{dob}} spoken to Max Healthcare's appointment form, in a browser we run. Placed by the system. No person saw it.</span></li>
         </ol>
         <p>Three promises. Every use is written down; the machine cannot use a number without writing the line first. "No person saw it" is what their screen could show, not a rule staff follow. And you can read your ledger at any time; the times are illustrative.</p>
       </section>
       <section>
-        <h2 id="what-we-never-do"><span class="no">3</span>What we never do</h2>
+        <h2 id="the-boundary"><span class="no">3</span>Where the line actually falls</h2>
+        <p>No person who works for us ever sees a value from your vault. Your card numbers, your account numbers, your identity numbers and your passwords are held in a vault we bought rather than built, and our people and our software work with labels instead: <code>{{pan}}</code>, <code>{{dob}}</code>. One small isolated component places the real value at the last moment, into a form in a browser we run, rendered as dots, or into an email through our relay. Every surface is ours; nobody ever uses their own.</p>
+        <p>Where a task needs a phone call, one of our people makes it, and here is the honest boundary: no value from your vault is ever spoken on a call, by us or at the institution's request. If a call cannot proceed without one, it stops and moves to a channel where the value can be placed without a person hearing it, or it comes back to you. A person placing a booking on your behalf will hear the other end use your name and the details of the thing being booked. They will never hear a number that could be used to become you.</p>
+        <p>This is a narrower promise than the one the previous edition made, and it is the one we can actually keep. It is fixed in <a href="../decisions/dr-021-no-value-spoken.html">DR-021</a>, and what a worker does see, a pseudonym and the fields one step needs, is in <a href="../04-operations/#task-cards">04</a>.</p>
+      </section>
+      <section>
+        <h2 id="what-we-never-do"><span class="no">4</span>What we never do</h2>
         <ul>
           <li>We never ask you for a one-time code, a PIN or a bank password; those come to your own phone and you enter them yourself, and where one must go into a form on our screen, the worker sees dots. For a payment we do everything up to the tap that moves the money, and that tap is yours, on your own phone. A login to a non-bank website you choose to give us goes into a form that posts straight to the vault, and we only ever see a placeholder.</li>
           <li>No person who works for us, at any level, sees your numbers, documents or card: every screen and every line they work with is built to show only placeholders, and if a failure ever put a value where a person could see it, your ledger tells you.</li>
@@ -136,13 +142,13 @@
   </div>
 </main>
 <footer class="page-footer">
-  <p>AI.fred is a personal AI that builds your context, task by task, to do in your personal life what the general assistants do, and that can be trusted with the high-value, low-volume tasks you dread a few times a year: the ones that carry real consequence. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
   <ul class="fixed-links">
     <li><a href="../00-thesis/">Start with the thesis</a></li>
     <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
     <li><a href="../07-open/">See the open items</a></li>
   </ul>
-  <p>Revised 2026-09-10. This page prints clean to A4 or Letter.</p>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
 </footer>
 </body>
 </html>

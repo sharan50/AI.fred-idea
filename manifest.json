@@ -1,7 +1,7 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "updated": "2026-09-10",
+  "updated": "2026-09-13",
   "statuses": {
     "verified": "never a page status",
     "to-verify": "the page carries external claims not yet verified",
@@ -36,7 +36,7 @@
     },
     {
       "key": "05-business",
-      "pages": 1
+      "pages": 3
     },
     {
       "key": "06-roadmap",
@@ -52,7 +52,7 @@
     },
     {
       "key": "decisions",
-      "pages": 20
+      "pages": 25
     },
     {
       "key": "depmap",
@@ -66,7 +66,7 @@
       "section": "index",
       "status": "decision",
       "summary": "The venture in two pages: the promise, the human-in-the-gap model, the two fatal failures and how the design makes them structurally impossible, the three-market shape, what exists today, and how to read this publication.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "00-thesis/index.html",
@@ -74,7 +74,7 @@
       "section": "00-thesis",
       "status": "to-verify",
       "summary": "Why AI.fred wins where the flat-fee concierge players cannot follow: the customer and the high-consequence wedge, why now, India as build base with the US and UK as commercial ground, the researched landscape in India, the US and the UK, and the trust architecture as the moat.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "01-product/index.html",
@@ -82,7 +82,7 @@
       "section": "01-product",
       "status": "amber",
       "summary": "The product as the user meets it: journeys across six verticals, the task taxonomy, intake through a channel-agnostic gateway (channel amber), the authority envelope, the two-loop verdict system, onboarding and context capture, and what we refuse to do.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "02-architecture/index.html",
@@ -90,7 +90,7 @@
       "section": "02-architecture",
       "status": "assumption",
       "summary": "The harness an engineer builds first: the component map, the planner, the classifier and the step-type catalogue, the execution surfaces and their controllers, the task state machine with its invariant, verification and the evidence pipeline, the context store, the intake gateway behind the vault's edge proxy, and the market adapter model.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "02-architecture/worker-console.html",
@@ -98,7 +98,7 @@
       "section": "02-architecture",
       "status": "decision",
       "summary": "The operator's task-card view, the alias-only rule, the structured outcome codes, dual control from the worker's side, the exceptions board, and the state-machine invariant identical to 02.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "03-trust-and-data/index.html",
@@ -106,15 +106,15 @@
       "section": "03-trust-and-data",
       "status": "to-verify",
       "summary": "How nobody on our side ever sees a real value: the alias and vault model, the substitution component, the execution surfaces, artefact redaction, the passports, the policy flags, the threat model as named and closed paths, the access ledger, the residency map and the privacy-law skeleton.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "03-trust-and-data/trust-story.html",
       "title": "The trust story",
       "section": "03-trust-and-data",
       "status": "decision",
-      "summary": "One page a customer could read: what AI.fred does, why nobody who works for us ever sees your numbers, what your ledger looks like, and what we never do.",
-      "updated": "2026-09-10"
+      "summary": "One page a customer could read: what AI.fred does, why no person who works for us ever sees a value from your vault, where the line actually falls on a phone call, what your ledger looks like, and what we never do.",
+      "updated": "2026-09-13"
     },
     {
       "path": "04-operations/index.html",
@@ -122,15 +122,31 @@
       "section": "04-operations",
       "status": "to-verify",
       "summary": "How the floor runs: need-to-know task cards, three worker tiers with dual control, a 24-hour wheel of three shifts from one office, site controls as part of the trust guarantee, QA as a shift duty, and service levels stated qualitatively. No cost model.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "05-business/index.html",
       "title": "05 Business",
       "section": "05-business",
-      "status": "decision",
-      "summary": "Economics, pricing and unit costs are deferred to after a Series A or B by the founder's decision. This page states the deferral, the trigger for reopening it, and what will be needed then.",
-      "updated": "2026-09-10"
+      "status": "assumption",
+      "summary": "The economics, no longer deferred: the five-tier task model that sets cost, human minutes per user per month as the governing ratio, the cost split, sixty months of simulated paths, the round plan and the geography gates. Every number modelled rather than measured.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "05-business/measurement-protocol.html",
+      "title": "Measurement protocol",
+      "section": "05-business",
+      "status": "assumption",
+      "summary": "The thirty-task instrument that replaces the priors in 05: the five-outcome rubric scored on positive evidence, the timing definitions, the task set, the run protocol, the learning-curve sub-test and the decision thresholds set in advance.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "05-business/model.html",
+      "title": "The model",
+      "section": "05-business",
+      "status": "assumption",
+      "summary": "A short description of the unit model and the Monte Carlo simulation behind 05: the scenarios, the run and seed the publication quotes, where the files sit, and the limits of the method.",
+      "updated": "2026-09-13"
     },
     {
       "path": "06-roadmap/index.html",
@@ -138,7 +154,7 @@
       "section": "06-roadmap",
       "status": "amber",
       "summary": "The harness-first build sequence in eight gated stages, the pilot scoped by capability rather than headcount, the build-versus-buy table with what each purchase commits us to, and the three-part playbook for entering a country.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "07-open/index.html",
@@ -146,7 +162,7 @@
       "section": "07-open",
       "status": "amber",
       "summary": "Every open item with an owner and a trigger: the channel amber, first-cohort sequencing, the legal to-verifies, Netlify access, naming, the make-good policy, remote-safe operations, vendor choices, and the objections formed against fixed decisions during the build.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "08-review/index.html",
@@ -162,7 +178,7 @@
       "section": "decisions",
       "status": "amber",
       "summary": "One intake gateway, behind the vault's tokenising edge proxy, normalises every channel into one internal request format; which channel opens the front door in each market is amber until the first US/UK cohort is scoped.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-002-verdict-two-loops.html",
@@ -170,7 +186,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Structured outcome codes decide whether a step is closed; the user's one-tap verdict, five options and no more, is the only measure of quality and the only thing that closes a task.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-003-full-delegation-ceiling.html",
@@ -178,7 +194,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The harness is designed to the full ceiling, identity acts included; a per-jurisdiction policy layer decides at runtime what is delegated, what bounces and what is prohibited. Supersedes the A/B/C capability-tier framing.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-004-authority-envelope.html",
@@ -186,7 +202,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every task carries one authority envelope; delegation is total inside it and impossible outside it, and every step is sorted by a point-of-no-return test into execute, dual control or bounce.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-005-state-machine-lapsed.html",
@@ -194,15 +210,15 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every task lives in an explicit state machine with live timers and recorded transitions; user silence ends in lapsed through visible nudges, lapsed is not withdrawn, and system silence is an exception the watchdog surfaces.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-006-office-mandatory.html",
       "title": "DR-006 Office-mandatory 24/7 operation with site controls",
       "section": "decisions",
-      "status": "decision",
-      "summary": "Workers execute only from our office, on our devices, around the clock: a day shift covers India and two night shifts cover the west. Site controls are part of the trust guarantee; remote-safe operation is designed later.",
-      "updated": "2026-09-10"
+      "status": "amber",
+      "summary": "Workers execute only from premises of ours, on our devices. The attested 24-hour site with three shifts is the shape at scale: a small controlled room carries the pilot, and the site arrives when a foreign market goes live or the floor passes a headcount threshold the founder has yet to set. Site controls remain part of the trust guarantee.",
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-007-universal-core-adapters.html",
@@ -210,7 +226,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "One country-agnostic harness carries every trust property; each market adds passport adapters to its rails, a legal pack, a data-residency map and a shift, and expansion is that playbook repeated.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-008-vault-bought.html",
@@ -218,7 +234,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Real values live in a bought, regionally hosted tokenisation vault of the Skyflow, VGS and Basis Theory class; everything of ours handles aliases. Why the layer is bought, what buying does not delegate, and why no vendor is chosen yet.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-009-evidence-redaction.html",
@@ -226,7 +242,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every screenshot, recording, transcript and DOM capture is redacted inside the harness before it is stored and verified by a second pass that fails closed; no raw artefact is ever human-viewable, and the evidence system is treated as a leak path.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-010-html-no-build-step.html",
@@ -234,7 +250,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The publication is plain static HTML served straight from GitHub by Netlify with no build command, framework, CDN or external asset. HTML is the single canonical source; a static site generator and Markdown-canonical generation were rejected because two representations drift.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-011-token-and-component-system.html",
@@ -242,7 +258,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every colour, type role and spacing value is a token defined once; every component is defined once and composed on every page; no page carries styling of its own. A framework and per-page styling were rejected, and the harness enforces the rule.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-012-design-plan.html",
@@ -250,7 +266,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The visual system for the publication: palette, type, numbering voice, page kinds, components, diagram language and print, critiqued against the generic defaults and fixed.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-013-verification-standard.html",
@@ -258,7 +274,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "In this edition a verified chip means the claim was checked against a search-engine excerpt of the named, dated source, because the build environment blocked full page reads and capped searches; no page circulates externally before its load-bearing sources are re-read.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-014-substitution-framing.html",
@@ -266,7 +282,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Sections 1 to 4 of 03 are organised as a boundary sequence, one real value followed across five boundaries with Figure 3.2 as the substitution sequence; the ledger-led framing was rejected as the spine and grafted for its best parts.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-015-economics-deferred.html",
@@ -274,7 +290,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Task economics, pricing and unit costs are deferred by the founder's ruling to after a Series A or B. The 05 stub states the deferral and its trigger; no other page carries a price, a cost or a margin. Modelling now was rejected because every number would be invented.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-016-context-store.html",
@@ -282,7 +298,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The user's profile is a temporal knowledge graph in the Graphiti style: every fact carries its source, date, validity interval, confidence and whether the user confirmed it; sensitive fields are aliases held in the vault. A flat profile table and a document store without temporal validity were rejected.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-017-dependency-map.html",
@@ -290,7 +306,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory, with one served view of it under docs/depmap/ and no other page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-018-mail-from-the-users-address.html",
@@ -298,15 +314,55 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every email a third party receives for a user comes from the user's own address: sent by the relay under a send scope the user grants, or written by the harness and sent by the user from their own mail app; replies reach us by the read connector or the user's forward, and the per-task address at our domain is inbound only.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/dr-019-the-endgame.html",
-      "title": "DR-019 The endgame: first port of call for everything personal",
+      "title": "DR-019 The endgame is the starting scope",
+      "section": "decisions",
+      "status": "assumption",
+      "summary": "What the previous record called the endgame is the starting scope: the whole of a personal economic life from the first day, with the consequential tasks as the hook. Data sold as an asset is withdrawn; product improvement and a commerce take rate survive.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-020-everyday-tasks-day-one.html",
+      "title": "DR-020 Everyday tasks in scope from day one",
       "section": "decisions",
       "status": "decision",
-      "summary": "The wedge is the entry; the destination is an AI that builds the user's context, task by task, to do in their personal life what the general assistants do, trusted with the high-value, low-volume tasks they dread. Everyday tasks run on the same harness once a market's legal pack opens them; the context store is the asset, and its upside beyond the user's own tasks is named and left open.",
-      "updated": "2026-09-10"
+      "summary": "The product serves the user's everyday economic life and their consequential institutional tasks from launch, in one subscription, without staging.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-021-no-value-spoken.html",
+      "title": "DR-021 Telephony masking dropped; no value is ever spoken",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "No value held in the vault is ever spoken on a call, in either direction; the audio masking pipeline, the media server and the specialist hire are dropped, and phone work covers non-authenticating calls only.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-022-structured-task-cards.html",
+      "title": "DR-022 Structured task cards replace pixel masking",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "For modelled workflows the worker is given a structured task card rather than a stream of pixels, with values placed at submit; pixel streaming is deferred as the fallback and the workflow library becomes load-bearing.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-023-geography-sequencing.html",
+      "title": "DR-023 Geography sequencing and the entity thresholds",
+      "section": "decisions",
+      "status": "amber",
+      "summary": "The United Kingdom opens between months 8 and 14 with acquisition moved there, India is the delivery base, and two gates govern any market: 400 users in the UK and 600 in the US.",
+      "updated": "2026-09-13"
+    },
+    {
+      "path": "decisions/dr-024-metered-pricing.html",
+      "title": "DR-024 Pricing is metered, and the tail is priced",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "Subscriptions carry a stated monthly allowance rather than an unlimited promise, the consequential tier is priced explicitly, and a merchant may never pay for placement in a recommendation.",
+      "updated": "2026-09-13"
     },
     {
       "path": "decisions/index.html",
@@ -314,7 +370,7 @@
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     },
     {
       "path": "depmap/index.html",
@@ -322,7 +378,7 @@
       "section": "depmap",
       "status": "decision",
       "summary": "The dependency map of the record (DR-017) served as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json by the map's own tool, committed, and failed by the harness when stale; the one page outside the page floor, by DR-010's exception.",
-      "updated": "2026-09-10"
+      "updated": "2026-09-13"
     }
   ]
 }
