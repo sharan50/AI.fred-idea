@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "edition": "2026-09-02",
+  "edition": "2026-09-13",
   "nodes": [
     {
       "id": "fatal-1",
@@ -5040,43 +5040,6 @@
       ]
     },
     {
-      "id": "res-07-07",
-      "kind": "res",
-      "label": "A reversible phone booking cannot close ok under the outbound gate as specified",
-      "facets": {
-        "layer": "open",
-        "fixity": "amber",
-        "fatal": "none"
-      },
-      "source": "SURFACING_REPORT.md section 3, residual finding 7 of round 7 (hunt three)",
-      "loci": [
-        {
-          "at": "04-operations/index.html#card-script!\"carries no committing sentence\"",
-          "role": "evidence"
-        },
-        {
-          "at": "03-trust-and-data/index.html#telephony!\"no media function\"",
-          "role": "evidence"
-        },
-        {
-          "at": "decisions/dr-004-authority-envelope.html#test!\"holds no token\"",
-          "role": "evidence"
-        },
-        {
-          "at": "02-architecture/index.html#telephony!\"nothing in the path to cut a committing utterance\"",
-          "role": "evidence"
-        },
-        {
-          "at": "02-architecture/index.html#step-record!\"book-appointment-by-phone\"",
-          "role": "evidence"
-        },
-        {
-          "at": "01-product/index.html#journey-health!\"no dual control\"",
-          "role": "evidence"
-        }
-      ]
-    },
-    {
       "id": "res-07-08",
       "kind": "res",
       "label": "Every submit is refused on a reversible step, and an undo-route submit fires on ",
@@ -5168,126 +5131,6 @@
       ]
     },
     {
-      "id": "res-07-11",
-      "kind": "res",
-      "label": "DR-013 says why-now, US rails and privacy law are to-verify; the pages carry ver",
-      "facets": {
-        "layer": "open",
-        "fixity": "amber",
-        "fatal": "none"
-      },
-      "source": "SURFACING_REPORT.md section 3, residual finding 11 of round 7 (hunt three)",
-      "loci": [
-        {
-          "at": "decisions/dr-013-verification-standard.html#what-verified-means!\"were not reached\"",
-          "role": "evidence"
-        },
-        {
-          "at": "00-thesis/index.html#table:0.1!\"agentic UPI payments\"",
-          "role": "evidence"
-        },
-        {
-          "at": "03-trust-and-data/index.html#table:3.7!\"rules' dates\"",
-          "role": "evidence"
-        },
-        {
-          "at": "03-trust-and-data/index.html#us-rails!\"California's AB 316\"",
-          "role": "evidence"
-        },
-        {
-          "at": "03-trust-and-data/index.html#table:3.4!\"california ab 316\"",
-          "role": "evidence"
-        }
-      ]
-    },
-    {
-      "id": "res-07-12",
-      "kind": "res",
-      "label": "HM Treasury's consultation is verified in 00 and to-verify in 03",
-      "facets": {
-        "layer": "open",
-        "fixity": "amber",
-        "fatal": "none"
-      },
-      "source": "SURFACING_REPORT.md section 3, residual finding 12 of round 7 (hunt three)",
-      "loci": [
-        {
-          "at": "00-thesis/index.html#table:0.1!\"HM Treasury's consultation\"",
-          "role": "evidence"
-        },
-        {
-          "at": "03-trust-and-data/index.html#table:3.4!\"Mills Review\"",
-          "role": "evidence"
-        },
-        {
-          "at": "03-trust-and-data/index.html#uk-rails!\"every UK claim is to-verify\"",
-          "role": "evidence"
-        },
-        {
-          "at": "decisions/dr-012-design-plan.html#status!\"identical everywhere\"",
-          "role": "evidence"
-        }
-      ]
-    },
-    {
-      "id": "res-07-13",
-      "kind": "res",
-      "label": "Pages with verified chips open their sources lists without the edition's standar",
-      "facets": {
-        "layer": "open",
-        "fixity": "amber",
-        "fatal": "none"
-      },
-      "source": "SURFACING_REPORT.md section 3, residual finding 13 of round 7 (hunt three)",
-      "loci": [
-        {
-          "at": "decisions/dr-013-verification-standard.html#what-verified-means!\"opens with one line\"",
-          "role": "evidence"
-        },
-        {
-          "at": "decisions/dr-013-verification-standard.html#closes-off!\"sources list does not state\"",
-          "role": "evidence"
-        },
-        {
-          "at": "00-thesis/index.html#sources!\"Medianama, Razorpay, NPCI\"",
-          "role": "evidence"
-        },
-        {
-          "at": "04-operations/index.html#sources!\"Business Standard\"",
-          "role": "evidence"
-        }
-      ]
-    },
-    {
-      "id": "res-07-14",
-      "kind": "res",
-      "label": "Objection A's every-cell-delegated against Table 3.5's sign row",
-      "facets": {
-        "layer": "open",
-        "fixity": "amber",
-        "fatal": "none"
-      },
-      "source": "SURFACING_REPORT.md section 3, residual finding 14 of round 7 (hunt three)",
-      "loci": [
-        {
-          "at": "07-open/index.html#objections!\"delegated in every identity-act cell\"",
-          "role": "evidence"
-        },
-        {
-          "at": "07-open/index.html#items!\"records the designed flag\"",
-          "role": "evidence"
-        },
-        {
-          "at": "03-trust-and-data/index.html#table:3.5!\"sign or e-sign\"",
-          "role": "evidence"
-        },
-        {
-          "at": "02-architecture/index.html#class-selection!\"reads bounce today\"",
-          "role": "evidence"
-        }
-      ]
-    },
-    {
       "id": "res-07-15",
       "kind": "res",
       "label": "A withdrawn committing utterance closes cancelled although the step has fired",
@@ -5342,7 +5185,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 38,
+      "count": 39,
       "members": [
         {
           "id": "open-07-01",
@@ -5495,6 +5338,10 @@
         {
           "id": "open-07-38",
           "word": "a withdrawal that lands inside a placement window"
+        },
+        {
+          "id": "open-07-39",
+          "word": "two external facts the review dates past the record"
         }
       ],
       "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
@@ -7992,6 +7839,21 @@
           "role": "mentions"
         }
       ]
+    },
+    {
+      "id": "open-07-39",
+      "kind": "open",
+      "label": "Two external facts the review dates past the record",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Two external facts the review dates past the record\"",
+          "role": "home"
+        }
+      ]
     }
   ],
   "edges": [
@@ -10066,16 +9928,6 @@
       "comp-transcriber"
     ],
     [
-      "res-07-07",
-      "conflicts-with",
-      "comp-telephony"
-    ],
-    [
-      "res-07-07",
-      "conflicts-with",
-      "comp-task-cards"
-    ],
-    [
       "res-07-08",
       "conflicts-with",
       "dr-004"
@@ -10099,36 +9951,6 @@
       "res-07-10",
       "conflicts-with",
       "vocab-states"
-    ],
-    [
-      "res-07-11",
-      "conflicts-with",
-      "dr-013"
-    ],
-    [
-      "res-07-12",
-      "conflicts-with",
-      "dr-013"
-    ],
-    [
-      "res-07-12",
-      "conflicts-with",
-      "dr-012"
-    ],
-    [
-      "res-07-13",
-      "conflicts-with",
-      "dr-013"
-    ],
-    [
-      "res-07-14",
-      "conflicts-with",
-      "flag-sign"
-    ],
-    [
-      "res-07-14",
-      "conflicts-with",
-      "open-07-18"
     ],
     [
       "res-07-15",
@@ -11064,6 +10886,11 @@
       "open-07-38",
       "lands-in",
       "dr-004"
+    ],
+    [
+      "open-07-39",
+      "lands-in",
+      "flag-basis-speak-as-customer"
     ]
   ]
 }

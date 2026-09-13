@@ -153,3 +153,56 @@ withdrawal that lands inside a placement window, where the state machine and
 the step context give opposite answers and the justification offered for the
 carve-out is a marker that has not yet been written. Table 7.1 holds
 thirty-eight.
+
+## Round two of the coherence pass, and the residual register
+
+The coherence pass returned forty-five findings, of which the telephony cluster
+overlapped the adversarial pass and had already been closed. Of the rest, five
+were errors of this session's own and the others were sites the propagation had
+not reached.
+
+**Errors of this session.** A blanket date replacement on DR-012 and DR-017
+rewrote not only their stamps but the in-prose dates recording when the founder
+directed the dark ground and asked for the map to be reachable, moving both
+from 10 to 13 September. Both are restored; only the stamp and the footer carry
+the edit date. The open register's caption claimed two rows recorded as closed
+where one is. Table 5.2 listed "80 per cent, reached faster" as a lever the plan
+commits to, while section 5 lists the speed of approach among the six
+parameters that are commitments nowhere; the cell now carries the ceiling
+alone. And the trust story qualified one absolute and left two standing.
+
+**The propagation's remaining sites.** Five pages said three surface
+controllers may write a placement request where two may. The ledger's fixed
+event types still admitted a placement "on a phone line". The threat table's
+room paths still had masking and muting happening server-side, path 26's ledger
+line still had a value "spoken to" a portal, and the canary gate still tested
+audio masking. 01, 04 and the console still had someone comparing a fee to a
+cap that no component can compare. Four references of the form "sections 4.2,
+4.4 and 4.5" survived the renumbering because the pass that moved them matched
+only the singular form.
+
+**Structural and count defects.** DR-015 is withdrawn and its ledger row said
+only that it was fixed; it claimed 07 carries a closed economics item, which 07
+does not. DR-023 carried Trigger before Status against the format the decisions
+index states, and DR-006, amber since the revision, had no Trigger section at
+all; it has one now, with the headcount threshold as its trigger. Stage 4 of the
+roadmap built the masked stream that stage 5 and DR-022 defer. The model page
+named the previous edition's geography sequence "the published sequence" when
+DR-023 lists it as a rejected alternative. 05 priced the earlier edition at
+60,000 tasks a month for 1,000 users where its own lever table says 46.
+
+**The residual register, recounted.** Five of round 7's eleven declared pairs
+are closed by this batch: the reversible phone booking under an outbound gate
+that no longer exists, DR-013's account of what was verified, the HM Treasury
+consultation chipped two ways, the six sources lists that opened without the
+edition's standard, and objection A's claim that every identity-act cell reads
+delegated. `SURFACING_REPORT.md` marks each as closed and keeps round 7's own
+words after it, because a report edited to look clean is evidence of nothing.
+Eleven residuals stand: two paths on hunt one, three on hunt two, six pairs.
+07's item 19 and the report's exit statement both say so.
+
+Two external facts are recorded rather than resolved: the review dates NPCI's
+Unified Agent Protocol as unveiled where 00 has it expected, and commercial
+variable recurring payments as live in June where 03 has them due in the first
+quarter. Neither page has been re-read against a primary source, and this
+session cannot reach one. Table 7.1 holds thirty-nine.

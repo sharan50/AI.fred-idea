@@ -4521,13 +4521,13 @@
             [
               "5 the photograph or note",
               "a phone camera, a notebook, or the clipboard, capturing dots, a card or a masked",
-              "masking and muting happen server-side before encoding, so what a camera, a noteb",
+              "the browser stream's masking happens server-side before encoding, and a call has",
               "nothing on the ledger; a badge and camera record on the floor."
             ],
             [
               "6 tampering with a station or a masking client",
               "developer tools on the console, a capture device on the video path before the ma",
-              "masking and muting happen server-side before encoding, so no client-side tamper ",
+              "the browser stream's masking happens server-side before encoding, and a call has",
               "nothing on the ledger; a station-integrity event on the incident queue qa and es"
             ],
             [
@@ -4648,7 +4648,7 @@
               "26 a third party's personal data in the context store",
               "a nominee's, a relative's or a contact's name, date of birth, identifier, contac",
               "the personal-fact class covers every natural person in the context store: a peop",
-              "{{dob.nominee}} spoken to hdfc bank's deposits portal, in a browser we run. plac"
+              "{{dob.nominee}} typed into hdfc bank's deposits portal, in a browser we run. pla"
             ]
           ],
           "id": "tab-threat",
@@ -6063,15 +6063,19 @@
           "to": "06-roadmap/index.html#pilot"
         },
         {
-          "line": 377,
-          "to": "00-thesis/index.html"
+          "line": 367,
+          "to": "decisions/dr-013-verification-standard.html"
         },
         {
           "line": 378,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 379,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 380,
           "to": "07-open/index.html"
         }
       ]
@@ -6220,7 +6224,7 @@
             [
               "automation ceiling",
               "72 per cent",
-              "80 per cent, reached faster"
+              "80 per cent; the speed of approach is not a commitment, see section 5"
             ],
             [
               "assisted handling floor",
@@ -6755,7 +6759,7 @@
             ],
             [
               "expansion",
-              "the published sequence: the united kingdom around month 20, the united states ar"
+              "the previous edition's sequence, which dr-023 rejected: the united kingdom aroun"
             ],
             [
               "expansion commerce",
@@ -7075,7 +7079,7 @@
             [
               "access ledger",
               "build",
-              "the trust story in plain words, written at every placement, view and mute and re",
+              "the trust story in plain words, written at every placement, view and exposure an",
               "append-only; one line per placement, view or exposure, placement lines written b"
             ],
             [
@@ -7523,34 +7527,34 @@
         },
         "legal": {
           "kind": "h3",
-          "line": 109,
+          "line": 110,
           "no": "1.1",
           "text": "The legal to-verifies, per jurisdiction",
           "under": "items"
         },
         "naming": {
           "kind": "h3",
-          "line": 119,
+          "line": 120,
           "no": "1.2",
           "text": "Naming, domain and trademark",
           "under": "items"
         },
         "netlify": {
           "kind": "h3",
-          "line": 121,
+          "line": 122,
           "no": "1.3",
           "text": "Netlify access",
           "under": "items"
         },
         "objections": {
           "kind": "h2",
-          "line": 125,
+          "line": 126,
           "no": "2",
           "text": "Objections formed against fixed decisions"
         },
         "left-alone": {
           "kind": "h2",
-          "line": 139,
+          "line": 140,
           "no": "3",
           "text": "What was deliberately left alone"
         }
@@ -7558,7 +7562,7 @@
       "tables": {
         "7.1": {
           "line": 64,
-          "caption": "Thirty-eight open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed by",
+          "caption": "Thirty-nine open items; none is silently assumed, and each has one owner and one trigger. One is recorded as closed by t",
           "rows": [
             [
               "the front door per market (the channel amber). the intake gateway beneath it is ",
@@ -7687,7 +7691,7 @@
               "03 policy flags ; objection a below"
             ],
             [
-              "residual findings of the seventh fresh-context adversarial pass: two paths on wh",
+              "residual findings of the seventh fresh-context adversarial pass, as they stand a",
               "the next editor",
               "before the next edition is circulated.",
               "",
@@ -7741,6 +7745,13 @@
               "before the first investor conversation.",
               "",
               "00, 5.1"
+            ],
+            [
+              "two external facts the review dates past the record. 00 has npci's unified agent",
+              "founder",
+              "before the next edition is circulated, and before any upi or vrp step is scoped.",
+              "",
+              "00, table 0.1 ; 03, table 3.4 ; 08"
             ],
             [
               "a party-issued reference, heard on a call. a booking or case reference is an ide",
@@ -8033,110 +8044,122 @@
         },
         {
           "line": 94,
-          "to": "03-trust-and-data/index.html#entry-routes"
+          "to": "00-thesis/index.html#tab-why-now"
         },
         {
           "line": 94,
-          "to": "02-architecture/index.html#telephony"
+          "to": "03-trust-and-data/index.html#tab-rails"
+        },
+        {
+          "line": 94,
+          "to": "08-review/index.html#horizon-threats"
         },
         {
           "line": 95,
+          "to": "03-trust-and-data/index.html#entry-routes"
+        },
+        {
+          "line": 95,
+          "to": "02-architecture/index.html#telephony"
+        },
+        {
+          "line": 96,
           "to": "02-architecture/index.html#step-catalogue"
         },
         {
-          "line": 95,
+          "line": 96,
           "to": "03-trust-and-data/index.html#policy-flags"
         },
         {
-          "line": 96,
+          "line": 97,
           "to": "02-architecture/index.html#step-context"
         },
         {
-          "line": 96,
+          "line": 97,
           "to": "02-architecture/index.html#transitions"
         },
         {
-          "line": 97,
+          "line": 98,
           "to": "04-operations/index.html#card-generation"
         },
         {
-          "line": 97,
+          "line": 98,
           "to": "01-product/index.html#journeys"
         },
         {
-          "line": 98,
+          "line": 99,
           "to": "04-operations/index.html#card-script"
         },
         {
-          "line": 98,
+          "line": 99,
           "to": "03-trust-and-data/index.html#tab-alias"
         },
         {
-          "line": 99,
+          "line": 100,
           "to": "02-architecture/index.html#telephony"
         },
         {
-          "line": 99,
+          "line": 100,
           "to": "02-architecture/index.html#closing"
         },
         {
-          "line": 100,
+          "line": 101,
           "to": "03-trust-and-data/index.html#alias-types"
         },
         {
-          "line": 100,
+          "line": 101,
           "to": "01-product/index.html#journey-family"
         },
         {
-          "line": 101,
+          "line": 102,
           "to": "08-review/index.html#regulation-us"
         },
         {
-          "line": 101,
+          "line": 102,
           "to": "decisions/dr-008-vault-bought.html"
         },
         {
-          "line": 102,
+          "line": 103,
           "to": "05-business/index.html#how-users-arrive"
         },
         {
-          "line": 103,
+          "line": 104,
           "to": "05-business/model.html#limits"
         },
         {
-          "line": 103,
+          "line": 104,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 104,
+          "line": 105,
           "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
-          "line": 104,
+          "line": 105,
           "to": "02-architecture/index.html#mail-relay"
         },
         {
-          "line": 105,
+          "line": 106,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 105,
+          "line": 106,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 105,
+          "line": 106,
           "to": "05-business/index.html#commerce"
         },
         {
-          "line": 154,
+          "line": 155,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 155,
+          "line": 156,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 156,
+          "line": 157,
           "to": "07-open/index.html"
         }
       ]
@@ -10808,15 +10831,19 @@
           "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
-          "line": 119,
-          "to": "00-thesis/index.html"
+          "line": 106,
+          "to": "decisions/dr-013-verification-standard.html"
         },
         {
           "line": 120,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 121,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 122,
           "to": "07-open/index.html"
         }
       ]
@@ -11124,15 +11151,19 @@
           "to": "02-architecture/index.html#classifier"
         },
         {
-          "line": 114,
-          "to": "00-thesis/index.html"
+          "line": 104,
+          "to": "decisions/dr-013-verification-standard.html"
         },
         {
           "line": 115,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 116,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 117,
           "to": "07-open/index.html"
         }
       ]
@@ -11300,15 +11331,19 @@
           "to": "decisions/dr-005-state-machine-lapsed.html"
         },
         {
-          "line": 128,
-          "to": "00-thesis/index.html"
+          "line": 117,
+          "to": "decisions/dr-013-verification-standard.html"
         },
         {
           "line": 129,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 130,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 131,
           "to": "07-open/index.html"
         }
       ]
@@ -11518,9 +11553,15 @@
           "no": "4",
           "text": "Status"
         },
-        "sources": {
+        "trigger": {
           "kind": "h2",
           "line": 101,
+          "no": "5",
+          "text": "Trigger"
+        },
+        "sources": {
+          "kind": "h2",
+          "line": 106,
           "text": "Sources"
         }
       },
@@ -11651,15 +11692,23 @@
           "to": "decisions/dr-021-no-value-spoken.html"
         },
         {
-          "line": 113,
+          "line": 102,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 107,
+          "to": "decisions/dr-013-verification-standard.html"
+        },
+        {
+          "line": 119,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 114,
+          "line": 120,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 115,
+          "line": 121,
           "to": "07-open/index.html"
         }
       ]
@@ -11838,15 +11887,19 @@
           "to": "02-architecture/index.html#adapters"
         },
         {
-          "line": 116,
-          "to": "00-thesis/index.html"
+          "line": 105,
+          "to": "decisions/dr-013-verification-standard.html"
         },
         {
           "line": 117,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 118,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 119,
           "to": "07-open/index.html"
         }
       ]
@@ -14228,17 +14281,17 @@
           "no": "3",
           "text": "What this closes off"
         },
-        "trigger": {
+        "record-status": {
           "kind": "h2",
           "line": 86,
           "no": "4",
-          "text": "Trigger"
-        },
-        "record-status": {
-          "kind": "h2",
-          "line": 90,
-          "no": "5",
           "text": "Status"
+        },
+        "trigger": {
+          "kind": "h2",
+          "line": 91,
+          "no": "5",
+          "text": "Trigger"
         }
       },
       "tables": {},
@@ -14313,26 +14366,26 @@
         },
         {
           "line": 87,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 87,
-          "to": "06-roadmap/index.html#expansion-sequence"
-        },
-        {
-          "line": 91,
           "to": "decisions/dr-006-office-mandatory.html"
         },
         {
-          "line": 100,
-          "to": "00-thesis/index.html"
+          "line": 92,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 92,
+          "to": "06-roadmap/index.html#expansion-sequence"
         },
         {
           "line": 101,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 102,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 103,
           "to": "07-open/index.html"
         }
       ]
@@ -14590,7 +14643,7 @@
             ],
             [
               "dr-015",
-              "economics deferred to post-series a/b",
+              "economics deferred to post-series a/b, withdrawn 2026-09-13",
               "",
               "2026-09-02",
               "a price, a cost per task, a margin or a headcount model anywhere but 05."
