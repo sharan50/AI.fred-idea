@@ -6118,7 +6118,7 @@
           "kind": "figure",
           "line": 122,
           "no": "Figure 5.2",
-          "text": "The lines cross at month 29 on the planning line: before it every month consumes cash, after it every month makes it. as",
+          "text": "The lines cross at month 29 on the planning line: before it every month consumes cash, after it every month makes it. Tw",
           "under": "trajectory"
         },
         "fig-labour-share": {
@@ -6130,33 +6130,39 @@
         },
         "fig-cumulative-cash": {
           "kind": "figure",
-          "line": 149,
+          "line": 152,
           "no": "Figure 5.4",
-          "text": "The trough is the money the company has to raise: about 17.3 crore on the planning line and 49.6 on the conservative one",
+          "text": "The trough is what the planning line asks for: about 17.3 crore, and 49.6 on the conservative one, which at the model&#x",
           "under": "trajectory"
+        },
+        "how-users-arrive": {
+          "kind": "h2",
+          "line": 161,
+          "no": "6",
+          "text": "How users arrive"
         },
         "funding": {
           "kind": "h2",
-          "line": 158,
-          "no": "6",
+          "line": 171,
+          "no": "7",
           "text": "Funding"
         },
         "geography": {
           "kind": "h2",
-          "line": 175,
-          "no": "7",
+          "line": 188,
+          "no": "8",
           "text": "Geography"
         },
         "commerce": {
           "kind": "h2",
-          "line": 195,
-          "no": "8",
+          "line": 208,
+          "no": "9",
           "text": "The commerce layer"
         },
         "what-replaces": {
           "kind": "h2",
-          "line": 201,
-          "no": "9",
+          "line": 214,
+          "no": "10",
           "text": "What replaces this page"
         }
       },
@@ -6258,7 +6264,7 @@
           "under": "trajectory"
         },
         "5.4": {
-          "line": 161,
+          "line": 174,
           "caption": "The funding plan: what each round is sized for and what it has to buy. assumption",
           "rows": [
             [
@@ -6283,7 +6289,7 @@
           "under": "funding"
         },
         "5.5": {
-          "line": 180,
+          "line": 193,
           "caption": "Four sequencing scenarios, twenty thousand paths each: late secondary expansion is worse than not expanding. assumption",
           "rows": [
             [
@@ -6412,39 +6418,59 @@
           "to": "05-business/index.html#fig-cumulative-cash"
         },
         {
-          "line": 191,
-          "to": "decisions/dr-023-geography-sequencing.html"
-        },
-        {
-          "line": 191,
-          "to": "06-roadmap/index.html#expansion"
-        },
-        {
-          "line": 197,
+          "line": 151,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 197,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 202,
-          "to": "05-business/measurement-protocol.html"
-        },
-        {
-          "line": 202,
+          "line": 151,
           "to": "07-open/index.html#items"
         },
         {
+          "line": 166,
+          "to": "08-review/index.html#economics"
+        },
+        {
+          "line": 167,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 167,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 204,
+          "to": "decisions/dr-023-geography-sequencing.html"
+        },
+        {
+          "line": 204,
+          "to": "06-roadmap/index.html#expansion"
+        },
+        {
           "line": 210,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 210,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 215,
+          "to": "05-business/measurement-protocol.html"
+        },
+        {
+          "line": 215,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 223,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 211,
+          "line": 224,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 212,
+          "line": 225,
           "to": "07-open/index.html"
         }
       ]
@@ -6729,7 +6755,7 @@
             ],
             [
               "expansion commerce",
-              "as above, with the commerce take rate of 05, section 8"
+              "as above, with the commerce take rate of 05, section 9"
             ],
             [
               "foreign led",
@@ -6809,6 +6835,10 @@
           "to": "05-business/index.html#the-ratio"
         },
         {
+          "line": 74,
+          "to": "05-business/index.html#trajectory"
+        },
+        {
           "line": 78,
           "to": "decisions/dr-023-geography-sequencing.html"
         },
@@ -6826,18 +6856,30 @@
         },
         {
           "line": 101,
+          "to": "05-business/index.html#trajectory"
+        },
+        {
+          "line": 103,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 105,
+          "to": "05-business/index.html#how-users-arrive"
+        },
+        {
+          "line": 107,
           "to": "05-business/index.html#cost-split"
         },
         {
-          "line": 110,
+          "line": 116,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 111,
+          "line": 117,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 112,
+          "line": 118,
           "to": "07-open/index.html"
         }
       ]
@@ -7477,34 +7519,34 @@
         },
         "legal": {
           "kind": "h3",
-          "line": 99,
+          "line": 101,
           "no": "1.1",
           "text": "The legal to-verifies, per jurisdiction",
           "under": "items"
         },
         "naming": {
           "kind": "h3",
-          "line": 109,
+          "line": 111,
           "no": "1.2",
           "text": "Naming, domain and trademark",
           "under": "items"
         },
         "netlify": {
           "kind": "h3",
-          "line": 111,
+          "line": 113,
           "no": "1.3",
           "text": "Netlify access",
           "under": "items"
         },
         "objections": {
           "kind": "h2",
-          "line": 115,
+          "line": 117,
           "no": "2",
           "text": "Objections formed against fixed decisions"
         },
         "left-alone": {
           "kind": "h2",
-          "line": 129,
+          "line": 131,
           "no": "3",
           "text": "What was deliberately left alone"
         }
@@ -7512,7 +7554,7 @@
       "tables": {
         "7.1": {
           "line": 64,
-          "caption": "Twenty-eight open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed by",
+          "caption": "Thirty open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed by the r",
           "rows": [
             [
               "the front door per market (the channel amber). the intake gateway beneath it is ",
@@ -7659,7 +7701,7 @@
               "founder",
               "twelve months after the first paying cohort starts.",
               "",
-              "05, 9"
+              "05, 10"
             ],
             [
               "willingness to pay above $50 in india, tested by a priced waiting list rather th",
@@ -7673,7 +7715,7 @@
               "founder",
               "dr-023's priced waiting list, measured for conversion.",
               "",
-              "05, 7 ; dr-023"
+              "05, 8 ; dr-023"
             ],
             [
               "whether the engineering headcount exponent falls as the workflow library general",
@@ -7697,6 +7739,20 @@
               "00, 5.1"
             ],
             [
+              "the acquisition channel, and what a user costs through it. the model assumes use",
+              "founder",
+              "before the pilot cohort is recruited, because how the first hundred are found is",
+              "",
+              "05, 6"
+            ],
+            [
+              "the three mechanisms the trajectory model does not have: no spend buys a user, r",
+              "founder, with whoever rebuilds the model",
+              "before the model is rebuilt for the series a, and immediately if a number from i",
+              "",
+              "05 the model ; dr-024"
+            ],
+            [
               "mail providers' delegated send scope: which providers grant a send scope to a de",
               "founder, with engineering",
               "the stage 5 gate in 06.",
@@ -7708,7 +7764,7 @@
               "founder",
               "closed; no trigger.",
               "",
-              "dr-019 ; 05, 8"
+              "dr-019 ; 05, 9"
             ]
           ],
           "under": "items"
@@ -7917,34 +7973,46 @@
         },
         {
           "line": 94,
+          "to": "05-business/index.html#how-users-arrive"
+        },
+        {
+          "line": 95,
+          "to": "05-business/model.html#limits"
+        },
+        {
+          "line": 95,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 96,
           "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
-          "line": 94,
+          "line": 96,
           "to": "02-architecture/index.html#mail-relay"
         },
         {
-          "line": 95,
+          "line": 97,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 95,
+          "line": 97,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 95,
+          "line": 97,
           "to": "05-business/index.html#commerce"
         },
         {
-          "line": 144,
+          "line": 146,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 145,
+          "line": 147,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 146,
+          "line": 148,
           "to": "07-open/index.html"
         }
       ]
@@ -9027,6 +9095,10 @@
         {
           "line": 47,
           "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 50,
+          "to": "05-business/index.html#how-users-arrive"
         },
         {
           "line": 57,
@@ -14240,6 +14312,10 @@
         {
           "line": 91,
           "to": "05-business/index.html"
+        },
+        {
+          "line": 91,
+          "to": "07-open/index.html#items"
         },
         {
           "line": 91,

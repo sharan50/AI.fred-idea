@@ -71,10 +71,10 @@
           <thead><tr><th>Scenario</th><th>What it is</th></tr></thead>
           <tbody>
             <tr><td><span class="key">as specified</span></td><td>The product as the previous edition described it: 46 tasks a user a month, unlimited, at a $37 blended revenue per user</td></tr>
-            <tr><td><span class="key">viable</span></td><td>The four levers of 05, section 3, at their stated values: 26 tasks by allowance, $52 in India, an 80 per cent automation ceiling reached faster, a 1.7 minute assisted floor</td></tr>
+            <tr><td><span class="key">viable</span></td><td>The four levers of 05, section 3, at their stated values: 26 tasks by allowance, $52 in India, an 80 per cent automation ceiling reached faster, a 1.7 minute assisted floor. The run also improves six parameters that are not levers and not commitments: the churn floor, the engineering headcount exponent, the tail handling floor, the speed of approach to the ceiling and both foreign prices, which is set out in <a href="./#trajectory">05, 5</a></td></tr>
             <tr><td><span class="key">india only</span></td><td>No foreign entity; India as delivery base and revenue market</td></tr>
             <tr><td><span class="key">expansion</span></td><td>The published sequence: the United Kingdom around month 20, the United States around month 36, both as secondary markets</td></tr>
-            <tr><td><span class="key">expansion commerce</span></td><td>As above, with the commerce take rate of 05, section 8</td></tr>
+            <tr><td><span class="key">expansion commerce</span></td><td>As above, with the commerce take rate of 05, section 9</td></tr>
             <tr><td><span class="key">foreign led</span></td><td>The United Kingdom between months 8 and 14 with acquisition genuinely moved there, under the gates of <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a></td></tr>
           </tbody>
         </table>
@@ -89,7 +89,7 @@
 
       <section>
         <h2 id="limits"><span class="no">4</span>The limits</h2>
-        <p>Four limits are worth stating plainly, because a model presented without them invites more weight than it can carry.</p>
+        <p>Seven limits are worth stating plainly, because a model presented without them invites more weight than it can carry. The last three were found by interrogating the model rather than by reading it, and the working is in <code>models/AIfred_model_critique.md</code> beside the model itself.</p>
         <dl class="def">
           <dt>The priors are not evidence</dt>
           <dd>No customer has been served. Four measurements replace the priors, in the order they move the answer: minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises. Each is an open item with an owner in <a href="../07-open/#items">07</a>.</dd>
@@ -97,6 +97,12 @@
           <dd>The families of paths that make up the conservative and optimistic lines are constructed by ranking coherent runs, not by blending unrelated percentiles, which avoids the worst artefact of percentile arithmetic but does not measure how the drivers actually co-move.</dd>
           <dt>The foreign-led case carries the heaviest assumption</dt>
           <dd>It assumes acquisition abroad at 1.6 times the Indian growth rate from a standing start with no brand and no local team. A comparable service in the United States, backed by a large corporate, reached a few thousand households and closed in 2025. That is why <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a> is amber rather than fixed.</dd>
+          <dt>The summary statistics are the optimistic end of what they describe</dt>
+          <dd>The planning and conservative lines are averages taken within a family of paths, month by month. An average of paths is not a path, and the minimum of an average is shallower than the average of minimums: the planning trough sits at the thirty-first percentile of what a path in this model needs, and the crossing of the two averaged lines falls eleven months before the median path&#x27;s. The distribution is quoted in <a href="./#trajectory">05, 5</a>. Reporting per-path statistics rather than statistics of a line would remove this, and costs nothing but a rewrite of the output.</dd>
+          <dt>The levers are free, and the price lever is the one that matters</dt>
+          <dd>Nothing in the model makes a higher price cost retention or word of mouth, and nothing makes a higher automation ceiling cost engineering. Charging the price a penalty in both and re-running, the move to $52 stops being worth taking once it costs about a tenth of retention and growth together, measured by the odds of ever turning profitable. That number decides the pricing of <a href="../decisions/dr-024-metered-pricing.html">DR-024</a> and the model as written cannot produce it.</dd>
+          <dt>Nothing in it buys a user, and bad months cannot persist</dt>
+          <dd>Acquisition cost is charged for every user who arrives, but no spend causes one to arrive, so the model&#x27;s largest driver has no mechanism; see <a href="./#how-users-arrive">05, 6</a>. The monthly churn and growth shocks are independent draws, so over sixty months they average out and the model contains no sustained bad run, which is the failure mode that ends companies. Revenue is users times price with no usage term, so the metered allowance earns nothing here.</dd>
           <dt>Token prices cut both ways and cancel</dt>
           <dd>Cost per task falls with model prices and rises with agent loop length and context size; the model lets the two offset for about two years, and in no scenario are tokens the largest line. If either side of that moves sharply, the cost split in <a href="./#cost-split">05, 4</a> is the first thing to re-derive.</dd>
         </dl>

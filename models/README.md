@@ -22,7 +22,7 @@ The publication quotes runs of 20,000 paths at seed 20260913, dated 13 September
 
 ## Health warning
 
-These are informed priors, not evidence. The company has no customers. The four measurements that replace them, in order of how much they move the answer, are minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises.
+These are informed priors, not evidence. The company has no customers. Five measurements replace them, in the order the sensitivity puts them rather than the order this directory first stated: the rate at which users arrive and what it costs to make them arrive, minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises. The first owns more of the outcome than the other four together and is the one the model has no mechanism for.
 
 ## The sensitivity
 

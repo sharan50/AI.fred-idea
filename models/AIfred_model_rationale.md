@@ -18,7 +18,7 @@ One consequence is worth naming early. In the as-specified scenario, the conserv
 
 **As specified** is the venture as written up: two tasks a day, $20 to $40 tiers, India first, UK and US later.
 
-**Viable** moves four parameters, and only four, to where the earlier analysis said they would have to be:
+**Viable** moves four parameters to where the earlier analysis said they would have to be:
 
 | Lever | As specified | Viable | Why this one |
 |---|---|---|---|
@@ -27,7 +27,13 @@ One consequence is worth naming early. In the as-specified scenario, the conserv
 | Automation ceiling | 72% | 80%, reached faster | Workflow library plus routing, not model capability alone. |
 | Assisted handling floor | 2.8 min | 1.7 min | Achieved by automating hold and IVR and by structured task cards, not by human practice. |
 
-Nothing else differs. The gap between the two scenarios is the plan.
+Six other parameters differ as well, and this document originally said they did not. Besides the four levers, the
+viable run also lowers the churn floor from a 3.2 per cent mode to 2.4, the engineering headcount exponent from 0.34
+to 0.27, the tail handling floor from 26 minutes to 20 and the automation half-life from 15 months to 11, and it
+raises both foreign prices. Two of those carry real weight: putting the churn floor back costs 1.9 crore of peak cash
+and 4.6 points of the chance of ever turning profitable, and putting the engineering exponent back costs 6.6 crore and
+5.6 points, which is more than either automation lever is worth. So the gap between the two scenarios is the plan plus
+two assumptions nobody has committed to, and section 7 is where they belong.
 
 ---
 
@@ -116,9 +122,15 @@ Seed $3.4m, Series A $10.3m, Series B $27.6m on the conservative line, and the c
 
 ## 7. What would falsify this
 
-The model is a set of informed priors, and priors are what you replace. In order of how much they move the answer:
+The model is a set of informed priors, and priors are what you replace. In order of how much they move the answer,
+with the first added after the sensitivity was run and the rest demoted by one:
 
-1. **Minutes per user per month.** The thirty-task measurement gives you handling times; a pilot cohort gives you usage. This one number carries more of the outcome than everything else combined.
+0. **The rate at which users arrive, and what it costs to make them arrive.** It owns a third of the variance of the
+   cash need and forty per cent of whether the business ever turns profitable, more than every driver on the delivery
+   side combined, and the model has no mechanism behind it: acquisition cost is charged for each user who arrives but
+   no spend makes one arrive. Nothing in the plan measures it. This list originally began at item 1 below, which is
+   the clearest evidence that the record was arguing about the ratio and not about the business.
+1. **Minutes per user per month.** The thirty-task measurement gives you handling times; a pilot cohort gives you usage. It decides which regime you are in, and whether the arithmetic can work at all; inside the viable configuration it then owns about one and a half per cent of the cash need, which is the distinction the original wording missed.
 2. **Twelve-month churn on a paying cohort.** Every growth path in the model is conditional on it.
 3. **Willingness to pay above $50.** The viable scenario needs Indian ARPU near $52. A priced waiting list settles it in weeks and costs nothing.
 4. **The engineering exponent.** Watch whether new institutions get cheaper to add. If the tenth costs what the second cost, you have an agency.
@@ -130,3 +142,7 @@ The model is a set of informed priors, and priors are what you replace. In order
 Growth is modelled as a decaying rate against the installed base with a market ceiling, not as a function of marketing spend, so in this model you cannot buy growth. Competitive response is absent: no price war, no incumbent bundling this into an existing app. Funding is not modelled as a constraint on the path, so a path that needs cash at month 30 is assumed to have it. Dilution and valuation are outside the model entirely. And the distributions are priors informed by comparable businesses and by the analysis in the workspace, not by evidence from your own customers, which does not exist yet.
 
 That last sentence is the most important one in this document. Everything above is a structured way of being wrong until the measurement replaces it.
+
+Three further limits were found later, by interrogating the model rather than reading it, and they are set out in
+`AIfred_model_critique.md`: the summary statistics are the optimistic end of what they describe, the levers cost
+nothing to pull, and the dominant driver has no mechanism behind it. Read that memo beside this one.

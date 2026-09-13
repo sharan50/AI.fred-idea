@@ -5342,7 +5342,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 28,
+      "count": 30,
       "members": [
         {
           "id": "open-07-01",
@@ -5455,6 +5455,14 @@
         {
           "id": "open-07-28",
           "word": "the founder's position at faff"
+        },
+        {
+          "id": "open-07-29",
+          "word": "the acquisition channel, and what a user costs"
+        },
+        {
+          "id": "open-07-30",
+          "word": "the three mechanisms the trajectory model does not have"
         }
       ],
       "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
@@ -7774,612 +7782,3076 @@
           "role": "home"
         }
       ]
+    },
+    {
+      "id": "open-07-29",
+      "kind": "open",
+      "label": "The acquisition channel and what a user costs through it",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The acquisition channel, and what a user costs through it\"",
+          "role": "home"
+        },
+        {
+          "at": "05-business/index.html#how-users-arrive!\"What this record does not have is a channel\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "open-07-30",
+      "kind": "open",
+      "label": "The three mechanisms the trajectory model does not have",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The three mechanisms the trajectory model does not have\"",
+          "role": "home"
+        },
+        {
+          "at": "05-business/model.html#limits!\"Nothing in it buys a user, and bad months cannot persist\"",
+          "role": "mentions"
+        }
+      ]
     }
   ],
   "edges": [
-    ["ledger-1.1", "justifies", "ledger-1.1.1"],
-    ["ledger-1.1", "justifies", "ledger-1.1.2"],
-    ["ledger-1.1", "justifies", "ledger-1.1.3"],
-    ["ledger-1.2", "justifies", "ledger-1.2.1"],
-    ["ledger-1.2", "justifies", "ledger-1.2.2"],
-    ["ledger-1.2", "justifies", "ledger-1.2.3"],
-    ["ledger-1.3", "justifies", "ledger-1.3.1"],
-    ["ledger-1.3", "justifies", "ledger-1.3.2"],
-    ["ledger-1.3", "justifies", "ledger-1.3.3"],
-    ["ledger-1.3", "justifies", "ledger-1.3.4"],
-    ["ledger-1.3", "justifies", "ledger-1.3.5"],
-    ["ledger-1.3", "justifies", "ledger-1.3.6"],
-    ["ledger-1.3", "justifies", "ledger-1.3.7"],
-    ["ledger-1.4", "justifies", "ledger-1.4.1"],
-    ["ledger-1.4", "justifies", "ledger-1.4.2"],
-    ["ledger-1.4", "justifies", "ledger-1.4.3"],
-    ["ledger-1.5", "justifies", "ledger-1.5.1"],
-    ["ledger-1.5", "justifies", "ledger-1.5.2"],
-    ["ledger-1.5", "justifies", "ledger-1.5.3"],
-    ["ledger-1.5", "justifies", "ledger-1.5.4"],
-    ["ledger-1.6", "justifies", "ledger-1.6.1"],
-    ["ledger-1.6", "justifies", "ledger-1.6.2"],
-    ["ledger-1.7", "justifies", "ledger-1.7.1"],
-    ["ledger-1.7", "justifies", "ledger-1.7.2"],
-    ["ledger-1.7", "justifies", "ledger-1.7.3"],
-    ["ledger-1.7", "justifies", "ledger-1.7.4"],
-    ["ledger-1.8", "justifies", "ledger-1.8.1"],
-    ["ledger-1.8", "justifies", "ledger-1.8.2"],
-    ["ledger-1.8", "justifies", "ledger-1.8.3"],
-    ["ledger-1.9", "justifies", "ledger-1.9.1"],
-    ["ledger-1.9", "justifies", "ledger-1.9.2"],
-    ["ledger-1.10", "justifies", "ledger-1.10.1"],
-    ["ledger-1.11", "justifies", "ledger-1.11.1"],
-    ["ledger-1.11", "justifies", "ledger-1.11.2"],
-    ["ledger-1.11", "justifies", "ledger-1.11.3"],
-    ["ledger-1.11", "justifies", "ledger-1.11.4"],
-    ["ledger-1.11", "justifies", "ledger-1.11.5"],
-    ["fatal-1", "justifies", "ledger-1.3.1"],
-    ["fatal-1", "justifies", "ledger-1.3.2"],
-    ["fatal-1", "justifies", "ledger-1.3.3"],
-    ["fatal-1", "justifies", "ledger-1.3.4"],
-    ["fatal-1", "justifies", "ledger-1.3.5"],
-    ["fatal-2", "justifies", "ledger-1.3.6"],
-    ["fatal-2", "justifies", "ledger-1.3.7"],
-    ["premise-wedge", "justifies", "ledger-1.1"],
-    ["premise-moat", "justifies", "ledger-1.1"],
-    ["premise-india-build-base", "justifies", "ledger-1.7"],
-    ["premise-why-now", "justifies", "ledger-1.2"],
-    ["ledger-1.6.1", "justifies", "dr-001"],
-    ["ledger-1.6.2", "justifies", "dr-001"],
-    ["dr-001", "rejects", "alt-dr-001-a-whatsapp-native-product"],
-    ["dr-001", "rejects", "alt-dr-001-a-native-app-only"],
-    ["dr-001", "rejects", "alt-dr-001-per-channel-intake-built-as"],
-    ["ledger-1.5.1", "justifies", "dr-002"],
-    ["ledger-1.5.2", "justifies", "dr-002"],
-    ["ledger-1.5.3", "justifies", "dr-002"],
-    ["ledger-1.5.4", "justifies", "dr-002"],
-    ["dr-002", "rejects", "alt-dr-002-one-loop-the-executor-s"],
-    ["dr-002", "rejects", "alt-dr-002-internal-qa-sampling-as-the"],
-    ["dr-002", "rejects", "alt-dr-002-a-rating-scale-or-a"],
-    ["dr-002", "rejects", "alt-dr-002-artefacts-shown-to-the-user"],
-    ["ledger-1.2.1", "justifies", "dr-003"],
-    ["ledger-1.2.2", "justifies", "dr-003"],
-    ["ledger-1.2.3", "justifies", "dr-003"],
-    ["dr-003", "rejects", "alt-dr-003-the-a-b-c-capability"],
-    ["dr-003", "rejects", "alt-dr-003-design-to-the-most-restrictive"],
-    ["dr-003", "rejects", "alt-dr-003-no-policy-layer-a-fork"],
-    ["dr-003", "rejects", "alt-dr-003-the-full-ceiling-as-launch"],
-    ["ledger-1.3.6", "justifies", "dr-004"],
-    ["ledger-1.3.7", "justifies", "dr-004"],
-    ["dr-004", "rejects", "alt-dr-004-a-standing-mandate-at-account"],
-    ["dr-004", "rejects", "alt-dr-004-a-spend-cap-alone"],
-    ["dr-004", "rejects", "alt-dr-004-confirm-every-step"],
-    ["dr-004", "rejects", "alt-dr-004-reversibility-judged-by-the-executor"],
-    ["ledger-1.4.1", "justifies", "dr-005"],
-    ["ledger-1.4.2", "justifies", "dr-005"],
-    ["ledger-1.4.3", "justifies", "dr-005"],
-    ["dr-005", "rejects", "alt-dr-005-implicit-states-derived-from-step"],
-    ["dr-005", "rejects", "alt-dr-005-silence-treated-as-withdrawal"],
-    ["dr-005", "rejects", "alt-dr-005-never-lapsing-reminders-forever"],
-    ["dr-005", "rejects", "alt-dr-005-a-procedure-instead-of-an"],
-    ["ledger-1.8.1", "justifies", "dr-006"],
-    ["ledger-1.8.2", "justifies", "dr-006"],
-    ["ledger-1.8.3", "justifies", "dr-006"],
-    ["dr-006", "rejects", "alt-dr-006-a-remote-workforce"],
-    ["dr-006", "rejects", "alt-dr-006-a-hybrid-floor-sensitive-steps"],
-    ["dr-006", "rejects", "alt-dr-006-a-day-shift-only-with"],
-    ["dr-006", "rejects", "alt-dr-006-three-offices-one-per-market"],
-    ["ledger-1.7.1", "justifies", "dr-007"],
-    ["ledger-1.7.2", "justifies", "dr-007"],
-    ["ledger-1.7.3", "justifies", "dr-007"],
-    ["ledger-1.7.4", "justifies", "dr-007"],
-    ["dr-007", "rejects", "alt-dr-007-build-for-india-first-fork"],
-    ["dr-007", "rejects", "alt-dr-007-build-for-one-market-only"],
-    ["dr-007", "rejects", "alt-dr-007-adapters-that-hand-real-values"],
-    ["dr-007", "rejects", "alt-dr-007-one-global-deployment-with-no"],
-    ["ledger-1.3.1", "justifies", "dr-008"],
-    ["ledger-1.7.3", "justifies", "dr-008"],
-    ["dr-008", "rejects", "alt-dr-008-build-the-vault-ourselves"],
-    ["dr-008", "rejects", "alt-dr-008-encrypt-fields-in-place-in"],
-    ["dr-008", "rejects", "alt-dr-008-rely-on-the-rails-own"],
-    ["dr-008", "rejects", "alt-dr-008-choose-the-vendor-now"],
-    ["ledger-1.3.4", "justifies", "dr-009"],
-    ["dr-009", "rejects", "alt-dr-009-redaction-as-an-operational-policy"],
-    ["dr-009", "rejects", "alt-dr-009-redact-at-display-time"],
-    ["dr-009", "rejects", "alt-dr-009-keep-no-evidence-at-all"],
-    ["dr-009", "rejects", "alt-dr-009-one-redaction-pass-no-independent"],
-    ["dr-009", "rejects", "alt-dr-009-artefacts-as-customer-facing-proof"],
-    ["ledger-1.11.1", "justifies", "dr-010"],
-    ["ledger-1.11.2", "justifies", "dr-010"],
-    ["ledger-1.11.3", "justifies", "dr-010"],
-    ["ledger-1.11.4", "justifies", "dr-010"],
-    ["ledger-1.11.5", "justifies", "dr-010"],
-    ["dr-010", "rejects", "alt-dr-010-a-static-site-generator"],
-    ["dr-010", "rejects", "alt-dr-010-markdown-as-the-canonical-source"],
-    ["dr-010", "rejects", "alt-dr-010-a-framework-or-a-hosted"],
-    ["dr-010", "rejects", "alt-dr-010-fonts-or-stylesheets-from-a"],
-    ["ledger-3", "justifies", "dr-011"],
-    ["dr-011", "rejects", "alt-dr-011-a-css-framework-utility-library"],
-    ["dr-011", "rejects", "alt-dr-011-per-page-styling"],
-    ["dr-011", "rejects", "alt-dr-011-colours-defined-where-they-are"],
-    ["dr-011", "rejects", "alt-dr-011-a-design-tool-export"],
-    ["ledger-3", "justifies", "dr-012"],
-    ["dr-012", "rejects", "alt-dr-012-the-first-draft-a-documentation"],
-    ["dr-012", "rejects", "alt-dr-012-a-framework-a-ui-kit"],
-    ["dr-012", "rejects", "alt-dr-012-heading-numbers-by-css-counters"],
-    ["dr-012", "rejects", "alt-dr-012-source-and-date-in-a"],
-    ["dr-012", "rejects", "alt-dr-012-a-dark-theme"],
-    ["dr-012", "rejects", "alt-dr-012-the-one-permitted-moment-of"],
-    ["ledger-5", "justifies", "dr-013"],
-    ["dr-013", "rejects", "alt-dr-013-mark-everything-external-to-verify"],
-    ["dr-013", "rejects", "alt-dr-013-assert-from-memory"],
-    ["dr-013", "rejects", "alt-dr-013-wait-for-page-reads-to"],
-    ["dr-013", "rejects", "alt-dr-013-call-the-excerpt-verified-without"],
-    ["ledger-1.3.2", "justifies", "dr-014"],
-    ["ledger-9.1", "justifies", "dr-014"],
-    ["dr-014", "rejects", "alt-dr-014-framing-b-ledger-led-what"],
-    ["dr-014", "rejects", "alt-dr-014-the-cost-a-read-back"],
-    ["dr-014", "rejects", "alt-dr-014-the-cost-its-figures"],
-    ["dr-014", "rejects", "alt-dr-014-the-cost-drift-from-the"],
-    ["ledger-1.9.1", "justifies", "dr-015"],
-    ["ledger-1.9.2", "justifies", "dr-015"],
-    ["dr-015", "rejects", "alt-dr-015-model-the-economics-now"],
-    ["dr-015", "rejects", "alt-dr-015-use-the-flat-fee-players"],
-    ["dr-015", "rejects", "alt-dr-015-a-placeholder-model-labelled-illustrative"],
-    ["dr-015", "rejects", "alt-dr-015-omit-the-business-section-altogether"],
-    ["ledger-1.10.1", "justifies", "dr-016"],
-    ["dr-016", "rejects", "alt-dr-016-a-flat-profile-table"],
-    ["dr-016", "rejects", "alt-dr-016-a-document-store-without-temporal"],
-    ["dr-016", "rejects", "alt-dr-016-the-model-s-memory-as"],
-    ["dr-016", "rejects", "alt-dr-016-a-complete-profile-built-at"],
-    ["dr-016", "rejects", "alt-dr-016-real-values-in-the-store"],
-    ["ledger-1.11.3", "justifies", "dr-017"],
-    ["dr-017", "rejects", "alt-dr-017-a-page-level-map"],
-    ["dr-017", "rejects", "alt-dr-017-several-maps-one-per-dimension"],
-    ["dr-017", "rejects", "alt-dr-017-a-wiki-a-graph-database"],
-    ["dr-017", "rejects", "alt-dr-017-a-published-interactive-map-page"],
-    ["dr-017", "rejects", "alt-dr-017-the-internal-links-as-the"],
-    ["dr-004", "justifies", "vocab-committing-actions"],
-    ["dr-004", "justifies", "vocab-committable-acts"],
-    ["dr-004", "justifies", "vocab-routes"],
-    ["dr-004", "justifies", "inv-point-of-no-return-test"],
-    ["dr-002", "justifies", "vocab-outcome-codes"],
-    ["dr-002", "justifies", "vocab-verdicts"],
-    ["dr-003", "justifies", "vocab-flag-values"],
-    ["dr-003", "justifies", "vocab-identity-acts"],
-    ["dr-005", "justifies", "vocab-states"],
-    ["dr-005", "justifies", "vocab-transitions"],
-    ["dr-008", "justifies", "vocab-alias-classes"],
-    ["ledger-1.5.1", "justifies", "vocab-outcome-codes"],
-    ["ledger-1.5.2", "justifies", "vocab-verdicts"],
-    ["ledger-1.3.7", "justifies", "inv-point-of-no-return-test"],
-    ["comp-substitutor", "depends-on", "comp-vault"],
-    ["comp-substitutor", "depends-on", "comp-step-context"],
-    ["comp-substitutor", "depends-on", "comp-envelope"],
-    ["comp-substitutor", "depends-on", "comp-approval-token"],
-    ["comp-substitutor", "depends-on", "comp-fired-marker"],
-    ["comp-substitutor", "depends-on", "vocab-committing-actions"],
-    ["comp-substitutor", "depends-on", "vocab-alias-classes"],
-    ["comp-substitutor", "depends-on", "comp-policy-layer"],
-    ["comp-edge-proxy", "depends-on", "comp-vault"],
-    ["comp-hash-service", "depends-on", "comp-vault"],
-    ["comp-channel-connector", "depends-on", "comp-edge-proxy"],
-    ["comp-intake-gateway", "depends-on", "comp-edge-proxy"],
-    ["comp-intake-gateway", "depends-on", "comp-device-surface"],
-    ["comp-adapters", "depends-on", "comp-edge-proxy"],
-    ["comp-adapters", "depends-on", "comp-legal-pack"],
-    ["comp-adapters", "depends-on", "comp-device-surface"],
-    ["comp-adapter-in", "depends-on", "comp-adapters"],
-    ["comp-adapter-uk", "depends-on", "comp-adapters"],
-    ["comp-adapter-us", "depends-on", "comp-adapters"],
-    ["comp-legal-pack", "depends-on", "comp-policy-layer"],
-    ["comp-legal-pack", "depends-on", "comp-residency-map"],
-    ["comp-legal-pack", "depends-on", "vocab-refusal-codes"],
-    ["comp-residency-map", "depends-on", "comp-vault"],
-    ["comp-classifier", "depends-on", "comp-step-catalogue"],
-    ["comp-classifier", "depends-on", "comp-policy-layer"],
-    ["comp-classifier", "depends-on", "comp-envelope"],
-    ["comp-classifier", "depends-on", "inv-point-of-no-return-test"],
-    ["comp-classifier", "depends-on", "vocab-classes"],
-    ["comp-classifier", "depends-on", "vocab-routes"],
-    ["comp-classifier", "depends-on", "vocab-bounce-forms"],
-    ["comp-planner", "depends-on", "comp-context-store"],
-    ["comp-planner", "depends-on", "comp-step-catalogue"],
-    ["comp-planner", "depends-on", "comp-envelope"],
-    ["comp-ai-executor", "depends-on", "comp-managed-browser"],
-    ["comp-ai-executor", "depends-on", "comp-step-context"],
-    ["comp-surface-controllers", "depends-on", "comp-managed-browser"],
-    ["comp-surface-controllers", "depends-on", "comp-telephony"],
-    ["comp-surface-controllers", "depends-on", "comp-mail-relay"],
-    ["comp-surface-controllers", "depends-on", "comp-substitutor"],
-    ["comp-surface-controllers", "depends-on", "comp-approval-token"],
-    ["comp-surface-controllers", "depends-on", "comp-fired-marker"],
-    ["comp-surface-controllers", "depends-on", "vocab-committing-actions"],
-    ["comp-task-service", "depends-on", "comp-state-machine"],
-    ["comp-task-service", "depends-on", "comp-surface-controllers"],
-    ["comp-task-service", "depends-on", "comp-hash-service"],
-    ["comp-task-service", "depends-on", "vocab-outcome-codes"],
-    ["comp-task-service", "depends-on", "vocab-refusal-codes"],
-    ["comp-managed-browser", "depends-on", "comp-browser-masker"],
-    ["comp-managed-browser", "depends-on", "comp-substitutor"],
-    ["comp-managed-browser", "depends-on", "comp-party-directory"],
-    ["comp-telephony", "depends-on", "comp-transcriber"],
-    ["comp-telephony", "depends-on", "comp-substitutor"],
-    ["comp-telephony", "depends-on", "comp-party-directory"],
-    ["comp-mail-relay", "depends-on", "comp-substitutor"],
-    ["comp-mail-relay", "depends-on", "comp-channel-connector"],
-    ["comp-browser-masker", "depends-on", "comp-hash-service"],
-    ["comp-transcriber", "depends-on", "comp-hash-service"],
-    ["comp-evidence-pipeline", "depends-on", "comp-verifier"],
-    ["comp-evidence-pipeline", "depends-on", "comp-hash-service"],
-    ["comp-verifier", "depends-on", "comp-hash-service"],
-    ["comp-state-machine", "depends-on", "vocab-states"],
-    ["comp-state-machine", "depends-on", "vocab-transitions"],
-    ["comp-state-machine", "depends-on", "comp-watchdog"],
-    ["comp-watchdog", "depends-on", "comp-exceptions-board"],
-    ["comp-exceptions-board", "depends-on", "comp-worker-console"],
-    ["comp-worker-console", "depends-on", "comp-task-cards"],
-    ["comp-worker-console", "depends-on", "vocab-outcome-codes"],
-    ["comp-worker-console", "depends-on", "comp-state-machine"],
-    ["comp-task-cards", "depends-on", "comp-hash-service"],
-    ["comp-task-cards", "depends-on", "comp-envelope"],
-    ["comp-task-cards", "depends-on", "comp-tiers"],
-    ["comp-access-ledger", "depends-on", "comp-substitutor"],
-    ["comp-access-ledger", "depends-on", "comp-evidence-pipeline"],
-    ["comp-context-store", "depends-on", "comp-hash-service"],
-    ["comp-context-store", "depends-on", "comp-vault"],
-    ["comp-device-surface", "depends-on", "comp-envelope"],
-    ["comp-device-surface", "depends-on", "vocab-bounce-forms"],
-    ["comp-envelope", "depends-on", "vocab-identity-acts"],
-    ["comp-envelope", "depends-on", "vocab-committable-acts"],
-    ["comp-approval-token", "depends-on", "comp-envelope"],
-    ["comp-step-context", "depends-on", "comp-envelope"],
-    ["comp-step-context", "depends-on", "comp-policy-layer"],
-    ["comp-party-directory", "depends-on", "comp-legal-pack"],
-    ["comp-site-controls", "depends-on", "comp-threat-model"],
-    ["comp-threat-model", "depends-on", "comp-substitutor"],
-    ["comp-threat-model", "depends-on", "comp-evidence-pipeline"],
-    ["comp-threat-model", "depends-on", "comp-access-ledger"],
-    ["comp-tiers", "depends-on", "vocab-identity-acts"],
-    ["dr-001", "justifies", "comp-intake-gateway"],
-    ["dr-003", "justifies", "comp-policy-layer"],
-    ["dr-004", "justifies", "comp-envelope"],
-    ["dr-004", "justifies", "comp-approval-token"],
-    ["dr-004", "justifies", "comp-fired-marker"],
-    ["dr-004", "justifies", "comp-step-context"],
-    ["dr-004", "justifies", "comp-classifier"],
-    ["dr-005", "justifies", "comp-state-machine"],
-    ["dr-005", "justifies", "comp-watchdog"],
-    ["dr-005", "justifies", "comp-exceptions-board"],
-    ["dr-006", "justifies", "comp-shift-wheel"],
-    ["dr-006", "justifies", "comp-site-controls"],
-    ["dr-006", "justifies", "comp-tiers"],
-    ["dr-006", "justifies", "comp-task-cards"],
-    ["dr-007", "justifies", "comp-adapters"],
-    ["dr-007", "justifies", "comp-legal-pack"],
-    ["dr-007", "justifies", "comp-residency-map"],
-    ["dr-007", "justifies", "comp-adapter-in"],
-    ["dr-007", "justifies", "comp-adapter-uk"],
-    ["dr-007", "justifies", "comp-adapter-us"],
-    ["dr-008", "justifies", "comp-vault"],
-    ["dr-008", "justifies", "comp-edge-proxy"],
-    ["dr-008", "justifies", "comp-hash-service"],
-    ["dr-008", "justifies", "comp-channel-connector"],
-    ["dr-009", "justifies", "comp-evidence-pipeline"],
-    ["dr-009", "justifies", "comp-verifier"],
-    ["dr-009", "justifies", "comp-browser-masker"],
-    ["dr-009", "justifies", "comp-transcriber"],
-    ["dr-014", "justifies", "comp-substitutor"],
-    ["dr-014", "justifies", "comp-threat-model"],
-    ["dr-016", "justifies", "comp-context-store"],
-    ["ledger-1.3.2", "justifies", "comp-substitutor"],
-    ["ledger-1.3.3", "justifies", "comp-managed-browser"],
-    ["ledger-1.3.3", "justifies", "comp-telephony"],
-    ["ledger-1.3.3", "justifies", "comp-mail-relay"],
-    ["ledger-1.3.5", "justifies", "comp-threat-model"],
-    ["ledger-1.1.2", "justifies", "comp-access-ledger"],
-    ["ledger-1.7.2", "justifies", "comp-planner"],
-    ["ledger-1.7.2", "justifies", "comp-classifier"],
-    ["ledger-1.7.2", "justifies", "comp-task-cards"],
-    ["ledger-1.7.2", "justifies", "comp-substitutor"],
-    ["ledger-1.7.2", "justifies", "comp-envelope"],
-    ["ledger-1.7.2", "justifies", "comp-state-machine"],
-    ["ledger-1.7.2", "justifies", "comp-worker-console"],
-    ["ledger-1.7.2", "justifies", "comp-access-ledger"],
-    ["ledger-1.7.2", "justifies", "comp-intake-gateway"],
-    ["ledger-1.8.3", "justifies", "comp-task-cards"],
-    ["ledger-1.8.2", "justifies", "comp-tiers"],
-    ["ledger-1.8.1", "justifies", "comp-shift-wheel"],
-    ["ledger-1.8.1", "justifies", "comp-site-controls"],
-    ["stage-1", "depends-on", "comp-vault"],
-    ["stage-1", "depends-on", "comp-substitutor"],
-    ["stage-1", "depends-on", "comp-hash-service"],
-    ["stage-1", "depends-on", "comp-edge-proxy"],
-    ["stage-2", "depends-on", "stage-1"],
-    ["stage-2", "depends-on", "comp-envelope"],
-    ["stage-2", "depends-on", "comp-classifier"],
-    ["stage-2", "depends-on", "comp-planner"],
-    ["stage-2", "depends-on", "comp-step-catalogue"],
-    ["stage-2", "depends-on", "comp-policy-layer"],
-    ["stage-3", "depends-on", "stage-2"],
-    ["stage-3", "depends-on", "comp-state-machine"],
-    ["stage-3", "depends-on", "comp-watchdog"],
-    ["stage-3", "depends-on", "comp-context-store"],
-    ["stage-4", "depends-on", "stage-3"],
-    ["stage-4", "depends-on", "comp-managed-browser"],
-    ["stage-4", "depends-on", "comp-browser-masker"],
-    ["stage-4", "depends-on", "comp-evidence-pipeline"],
-    ["stage-5", "depends-on", "stage-4"],
-    ["stage-5", "depends-on", "comp-telephony"],
-    ["stage-5", "depends-on", "comp-transcriber"],
-    ["stage-5", "depends-on", "comp-mail-relay"],
-    ["stage-6", "depends-on", "stage-5"],
-    ["stage-6", "depends-on", "comp-worker-console"],
-    ["stage-6", "depends-on", "comp-task-cards"],
-    ["stage-6", "depends-on", "comp-exceptions-board"],
-    ["stage-7", "depends-on", "stage-6"],
-    ["stage-7", "depends-on", "comp-access-ledger"],
-    ["stage-8", "depends-on", "stage-7"],
-    ["stage-8", "depends-on", "comp-intake-gateway"],
-    ["stage-8", "depends-on", "comp-device-surface"],
-    ["stage-8", "depends-on", "comp-adapters"],
-    ["fatal-1", "justifies", "stage-1"],
-    ["fatal-2", "justifies", "stage-2"],
-    ["fatal-2", "justifies", "stage-3"],
-    ["fatal-1", "justifies", "stage-4"],
-    ["fatal-1", "justifies", "stage-5"],
-    ["fatal-1", "justifies", "stage-6"],
-    ["fatal-1", "justifies", "stage-7"],
-    ["fatal-2", "justifies", "stage-8"],
-    ["open-07-01", "lands-in", "dr-001"],
-    ["open-07-01", "lands-in", "comp-intake-gateway"],
-    ["open-07-02", "lands-in", "dr-007"],
-    ["open-07-03", "lands-in", "stage-8"],
-    ["open-07-04", "lands-in", "comp-policy-layer"],
-    ["open-07-04", "lands-in", "comp-adapters"],
-    ["open-07-05", "lands-in", "comp-residency-map"],
-    ["open-07-06", "lands-in", "comp-shift-wheel"],
-    ["open-07-07", "lands-in", "dr-010"],
-    ["open-07-09", "lands-in", "dr-002"],
-    ["open-07-10", "lands-in", "dr-006"],
-    ["open-07-11", "lands-in", "dr-008"],
-    ["open-07-11", "lands-in", "comp-vault"],
-    ["open-07-12", "lands-in", "comp-telephony"],
-    ["open-07-12", "lands-in", "comp-managed-browser"],
-    ["open-07-13", "lands-in", "dr-013"],
-    ["open-07-14", "lands-in", "dr-010"],
-    ["open-07-15", "lands-in", "comp-watchdog"],
-    ["open-07-16", "lands-in", "comp-state-machine"],
-    ["open-07-16", "lands-in", "vocab-verdicts"],
-    ["open-07-17", "lands-in", "comp-envelope"],
-    ["open-07-17", "lands-in", "comp-policy-layer"],
-    ["open-07-18", "lands-in", "comp-policy-layer"],
-    ["open-07-18", "lands-in", "dr-003"],
-    ["obj-07-a", "lands-in", "dr-003"],
-    ["obj-07-b", "lands-in", "dr-011"],
-    ["obj-07-c", "lands-in", "dr-012"],
-    ["obj-07-d", "lands-in", "dr-010"],
-    ["dr-003", "justifies", "flag-present-document"],
-    ["flag-present-document", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-state-identity-number"],
-    ["flag-state-identity-number", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-complete-kyc-form"],
-    ["flag-complete-kyc-form", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-undergo-identification"],
-    ["flag-undergo-identification", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-answer-security-questions"],
-    ["flag-answer-security-questions", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-attest-fact"],
-    ["flag-attest-fact", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-use-delegated-login"],
-    ["flag-use-delegated-login", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-pay-under-cap"],
-    ["flag-pay-under-cap", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-sign"],
-    ["flag-sign", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-book-or-cancel"],
-    ["flag-book-or-cancel", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-share-health-record"],
-    ["flag-share-health-record", "depends-on", "comp-policy-layer"],
-    ["dr-003", "justifies", "flag-basis-speak-as-customer"],
-    ["flag-basis-speak-as-customer", "depends-on", "comp-policy-layer"],
-    ["res-07-01", "conflicts-with", "comp-transcriber"],
-    ["res-07-01", "conflicts-with", "vocab-alias-classes"],
-    ["res-07-02", "conflicts-with", "comp-party-directory"],
-    ["res-07-02", "conflicts-with", "comp-envelope"],
-    ["res-07-03", "conflicts-with", "comp-substitutor"],
-    ["res-07-03", "conflicts-with", "comp-envelope"],
-    ["res-07-04", "conflicts-with", "comp-watchdog"],
-    ["res-07-04", "conflicts-with", "comp-fired-marker"],
-    ["res-07-05", "conflicts-with", "dr-004"],
-    ["res-07-05", "conflicts-with", "comp-managed-browser"],
-    ["res-07-06", "conflicts-with", "comp-browser-masker"],
-    ["res-07-06", "conflicts-with", "comp-transcriber"],
-    ["res-07-07", "conflicts-with", "comp-telephony"],
-    ["res-07-07", "conflicts-with", "comp-task-cards"],
-    ["res-07-08", "conflicts-with", "dr-004"],
-    ["res-07-08", "conflicts-with", "comp-managed-browser"],
-    ["res-07-09", "conflicts-with", "comp-step-catalogue"],
-    ["res-07-10", "conflicts-with", "comp-state-machine"],
-    ["res-07-10", "conflicts-with", "vocab-states"],
-    ["res-07-11", "conflicts-with", "dr-013"],
-    ["res-07-12", "conflicts-with", "dr-013"],
-    ["res-07-12", "conflicts-with", "dr-012"],
-    ["res-07-13", "conflicts-with", "dr-013"],
-    ["res-07-14", "conflicts-with", "flag-sign"],
-    ["res-07-14", "conflicts-with", "open-07-18"],
-    ["res-07-15", "conflicts-with", "comp-state-machine"],
-    ["res-07-15", "conflicts-with", "comp-fired-marker"],
-    ["res-07-16", "conflicts-with", "comp-task-cards"],
-    ["res-07-16", "conflicts-with", "comp-envelope"],
-    ["dr-001", "closes-off", "inv-no-channel-branch"],
-    ["dr-001", "closes-off", "inv-one-request-format"],
-    ["dr-001", "closes-off", "inv-approval-needs-authenticated-device"],
-    ["dr-002", "closes-off", "inv-five-option-ceiling"],
-    ["dr-002", "closes-off", "inv-outcome-code-closes-step"],
-    ["dr-002", "closes-off", "inv-dual-control-irreversible-only"],
-    ["dr-003", "closes-off", "inv-missing-row-is-bounce"],
-    ["dr-003", "closes-off", "inv-otp-never-ours"],
-    ["dr-003", "closes-off", "inv-flag-filters-envelope"],
-    ["dr-003", "closes-off", "inv-no-design-constraint-from-jurisdiction"],
-    ["dr-004", "closes-off", "inv-no-step-before-envelope"],
-    ["dr-004", "closes-off", "inv-no-irreversible-outside-envelope"],
-    ["dr-004", "closes-off", "inv-irreversible-inside-dual-control"],
-    ["dr-004", "closes-off", "inv-at-most-once"],
-    ["dr-004", "closes-off", "inv-nothing-past-validity-window"],
-    ["dr-005", "closes-off", "inv-no-terminal-without-transition"],
-    ["dr-005", "closes-off", "inv-live-timer-on-every-live-state"],
-    ["dr-005", "closes-off", "inv-lapsed-never-withdrawn"],
-    ["dr-005", "closes-off", "inv-state-machine-invariant-identical"],
-    ["dr-006", "closes-off", "inv-no-step-off-site"],
-    ["dr-006", "closes-off", "inv-site-controls-are-trust-controls"],
-    ["dr-007", "closes-off", "inv-core-country-agnostic"],
-    ["dr-007", "closes-off", "inv-adapter-never-raw"],
-    ["dr-007", "closes-off", "inv-one-text-per-core-rule"],
-    ["dr-008", "closes-off", "inv-no-real-value-at-rest"],
-    ["dr-008", "closes-off", "inv-vault-sdk-two-places"],
-    ["dr-008", "closes-off", "inv-no-raw-byte-in-our-process"],
-    ["dr-008", "closes-off", "inv-region-per-market"],
-    ["dr-009", "closes-off", "inv-no-raw-artefact"],
-    ["dr-009", "closes-off", "inv-verify-before-view"],
-    ["dr-009", "closes-off", "inv-no-export-path"],
-    ["dr-010", "closes-off", "inv-no-build-step"],
-    ["dr-010", "closes-off", "inv-no-second-copy"],
-    ["dr-011", "closes-off", "inv-colours-only-in-tokens"],
-    ["dr-012", "closes-off", "inv-status-agree"],
-    ["dr-013", "closes-off", "inv-no-upgrade-on-secondary-source"],
-    ["dr-013", "closes-off", "inv-reread-before-circulation"],
-    ["dr-014", "closes-off", "inv-boundary-sequence-fixed"],
-    ["dr-015", "closes-off", "inv-no-economics-anywhere"],
-    ["dr-016", "closes-off", "inv-fact-provenance"],
-    ["dr-016", "closes-off", "inv-no-real-value-in-store"],
-    ["dr-016", "closes-off", "inv-connectors-read-only"],
-    ["dr-005", "closes-off", "inv-state-machine-invariant"],
-    ["dr-006", "closes-off", "inv-never-a-closure"],
-    ["ledger-1.4.1", "justifies", "inv-system-forgetting-forbidden"],
-    ["ledger-1.4.3", "justifies", "inv-state-machine-invariant-identical"],
-    ["ledger-1.3.1", "justifies", "inv-alias-only-outside-zone"],
-    ["ledger-1.2.3", "justifies", "inv-no-design-constraint-from-jurisdiction"],
-    ["comp-surface-controllers", "depends-on", "inv-at-most-once"],
-    ["comp-surface-controllers", "depends-on", "inv-no-irreversible-outside-envelope"],
-    ["comp-surface-controllers", "depends-on", "inv-irreversible-inside-dual-control"],
-    ["comp-classifier", "depends-on", "inv-missing-row-is-bounce"],
-    ["comp-classifier", "depends-on", "inv-otp-never-ours"],
-    ["comp-policy-layer", "depends-on", "inv-missing-row-is-bounce"],
-    ["comp-policy-layer", "depends-on", "inv-flag-filters-envelope"],
-    ["comp-policy-layer", "depends-on", "inv-no-design-constraint-from-jurisdiction"],
-    ["comp-state-machine", "depends-on", "inv-no-terminal-without-transition"],
-    ["comp-state-machine", "depends-on", "inv-live-timer-on-every-live-state"],
-    ["comp-state-machine", "depends-on", "inv-system-forgetting-forbidden"],
-    ["comp-state-machine", "depends-on", "inv-state-machine-invariant"],
-    ["comp-state-machine", "depends-on", "inv-lapsed-never-withdrawn"],
-    ["comp-worker-console", "depends-on", "inv-state-machine-invariant"],
-    ["comp-worker-console", "depends-on", "inv-alias-only-outside-zone"],
-    ["comp-vault", "depends-on", "inv-no-real-value-at-rest"],
-    ["comp-vault", "depends-on", "inv-region-per-market"],
-    ["comp-edge-proxy", "depends-on", "inv-no-raw-byte-in-our-process"],
-    ["comp-hash-service", "depends-on", "inv-vault-sdk-two-places"],
-    ["comp-substitutor", "depends-on", "inv-vault-sdk-two-places"],
-    ["comp-substitutor", "depends-on", "inv-alias-only-outside-zone"],
-    ["comp-evidence-pipeline", "depends-on", "inv-no-raw-artefact"],
-    ["comp-evidence-pipeline", "depends-on", "inv-verify-before-view"],
-    ["comp-evidence-pipeline", "depends-on", "inv-no-export-path"],
-    ["comp-adapters", "depends-on", "inv-adapter-never-raw"],
-    ["comp-adapters", "depends-on", "inv-core-country-agnostic"],
-    ["comp-context-store", "depends-on", "inv-fact-provenance"],
-    ["comp-context-store", "depends-on", "inv-no-real-value-in-store"],
-    ["comp-context-store", "depends-on", "inv-connectors-read-only"],
-    ["comp-site-controls", "depends-on", "inv-never-a-closure"],
-    ["comp-site-controls", "depends-on", "inv-site-controls-are-trust-controls"],
-    ["comp-site-controls", "depends-on", "inv-no-step-off-site"],
-    ["comp-intake-gateway", "depends-on", "inv-one-request-format"],
-    ["comp-intake-gateway", "depends-on", "inv-no-channel-branch"],
-    ["comp-intake-gateway", "depends-on", "inv-approval-needs-authenticated-device"],
-    ["comp-device-surface", "depends-on", "inv-approval-needs-authenticated-device"],
-    ["comp-envelope", "depends-on", "inv-no-step-before-envelope"],
-    ["comp-envelope", "depends-on", "inv-nothing-past-validity-window"],
-    ["comp-task-service", "depends-on", "inv-outcome-code-closes-step"],
-    ["vocab-verdicts", "depends-on", "inv-five-option-ceiling"],
-    ["comp-legal-pack", "depends-on", "inv-one-text-per-core-rule"],
-    ["comp-legal-pack", "depends-on", "inv-core-country-agnostic"],
-    ["ledger-1.1.3", "justifies", "vocab-verticals"],
-    ["ledger-1.8.2", "justifies", "vocab-tiers"],
-    ["premise-moat", "justifies", "vocab-moat-properties"],
-    ["dr-008", "justifies", "vocab-doors"],
-    ["dr-008", "justifies", "vocab-detectors"],
-    ["dr-009", "justifies", "vocab-redaction-masks"],
-    ["fatal-1", "justifies", "vocab-browser-masks"],
-    ["dr-007", "justifies", "vocab-core-components"],
-    ["dr-005", "justifies", "vocab-timers"],
-    ["ledger-1.1.2", "justifies", "vocab-ledger-events"],
-    ["dr-012", "justifies", "vocab-status-words"],
-    ["dr-006", "justifies", "vocab-shifts"],
-    ["comp-access-ledger", "depends-on", "vocab-ledger-events"],
-    ["comp-watchdog", "depends-on", "vocab-timers"],
-    ["comp-browser-masker", "depends-on", "vocab-browser-masks"],
-    ["comp-evidence-pipeline", "depends-on", "vocab-redaction-masks"],
-    ["comp-edge-proxy", "depends-on", "vocab-detectors"],
-    ["comp-hash-service", "depends-on", "vocab-detectors"],
-    ["comp-shift-wheel", "depends-on", "vocab-shifts"],
-    ["comp-tiers", "depends-on", "vocab-tiers"],
-    ["open-07-03", "lands-in", "vocab-verticals"],
-    ["fatal-2", "justifies", "inv-no-financial-credential"],
-    ["dr-003", "closes-off", "inv-no-financial-credential"],
-    ["comp-adapters", "depends-on", "inv-no-financial-credential"],
-    ["dr-008", "closes-off", "inv-envelope-bound-detokenise"],
-    ["dr-004", "closes-off", "inv-envelope-bound-detokenise"],
-    ["comp-substitutor", "depends-on", "inv-envelope-bound-detokenise"],
-    ["comp-envelope", "depends-on", "inv-envelope-bound-detokenise"],
-    ["comp-step-context", "depends-on", "inv-envelope-bound-detokenise"],
-    ["dr-018", "rejects", "alt-dr-018-a-per-task-address-at"],
-    ["dr-018", "rejects", "alt-dr-018-an-ai-fred-mailbox-per"],
-    ["dr-018", "rejects", "alt-dr-018-forwarding-rules-in-the-user"],
-    ["dr-018", "rejects", "alt-dr-018-the-user-s-mail-credentials"],
-    ["dr-018", "rejects", "alt-dr-018-a-bounce-with-no-draft"],
-    ["dr-018", "justifies", "comp-mail-relay"],
-    ["premise-endgame", "justifies", "dr-019"],
-    ["dr-018", "closes-off", "inv-mail-from-users-own-address"],
-    ["comp-mail-relay", "depends-on", "inv-mail-from-users-own-address"],
-    ["dr-018", "closes-off", "inv-send-scope-not-a-connector"],
-    ["comp-mail-relay", "depends-on", "inv-send-scope-not-a-connector"],
-    ["dr-019", "closes-off", "inv-everyday-same-harness"],
-    ["comp-legal-pack", "depends-on", "inv-everyday-same-harness"],
-    ["open-07-20", "lands-in", "comp-mail-relay"],
-    ["open-07-21", "lands-in", "comp-context-store"],
-    ["open-07-21", "lands-in", "dr-015"],
-    ["premise-wedge", "justifies", "dr-019"],
-    ["dr-016", "justifies", "dr-019"],
-    ["dr-019", "rejects", "alt-dr-019-a-staged-product"],
-    ["dr-019", "rejects", "alt-dr-019-data-sold-as-an-asset"],
-    ["dr-019", "rejects", "alt-dr-019-leaving-the-data-story-open"],
-    ["dr-020", "rejects", "alt-dr-020-a-wedge-first-sequence"],
-    ["dr-020", "rejects", "alt-dr-020-two-products-or-two-brands"],
-    ["dr-020", "rejects", "alt-dr-020-everyday-as-an-unpriced-extra"],
-    ["dr-021", "rejects", "alt-dr-021-the-audio-masking-pipeline"],
-    ["dr-021", "rejects", "alt-dr-021-the-mute-for-placements-only"],
-    ["dr-021", "rejects", "alt-dr-021-a-worker-reading-a-value-aloud"],
-    ["dr-022", "rejects", "alt-dr-022-a-bespoke-browser-build"],
-    ["dr-022", "rejects", "alt-dr-022-an-unmasked-page"],
-    ["dr-022", "rejects", "alt-dr-022-streaming-everything"],
-    ["dr-023", "rejects", "alt-dr-023-the-published-sequence"],
-    ["dr-023", "rejects", "alt-dr-023-india-only"],
-    ["dr-023", "rejects", "alt-dr-023-both-markets-at-once"],
-    ["dr-024", "rejects", "alt-dr-024-unlimited-flat-fee"],
-    ["dr-024", "rejects", "alt-dr-024-mass-privileged-vip"],
-    ["dr-024", "rejects", "alt-dr-024-per-task-no-subscription"],
-    ["dr-024", "rejects", "alt-dr-024-merchant-funded"],
-    ["dr-019", "closes-off", "inv-no-data-sold"],
-    ["dr-022", "justifies", "comp-workflow-library"],
-    ["comp-workflow-library", "depends-on", "comp-managed-browser"],
-    ["dr-021", "closes-off", "inv-no-value-spoken"],
-    ["dr-022", "closes-off", "inv-card-over-pixels"],
-    ["dr-024", "closes-off", "inv-metered-allowance"],
-    ["dr-024", "closes-off", "inv-no-paid-placement"],
-    ["dr-023", "closes-off", "inv-market-gates"],
-    ["open-07-22", "lands-in", "dr-024"],
-    ["open-07-25", "lands-in", "dr-023"],
-    ["open-07-27", "lands-in", "dr-006"],
-    ["open-07-26", "lands-in", "comp-workflow-library"],
-    ["dr-019", "justifies", "dr-020"],
-    ["dr-020", "justifies", "dr-024"],
-    ["dr-021", "justifies", "comp-telephony"],
-    ["dr-022", "justifies", "comp-managed-browser"],
-    ["premise-endgame", "justifies", "dr-020"]
+    [
+      "ledger-1.1",
+      "justifies",
+      "ledger-1.1.1"
+    ],
+    [
+      "ledger-1.1",
+      "justifies",
+      "ledger-1.1.2"
+    ],
+    [
+      "ledger-1.1",
+      "justifies",
+      "ledger-1.1.3"
+    ],
+    [
+      "ledger-1.2",
+      "justifies",
+      "ledger-1.2.1"
+    ],
+    [
+      "ledger-1.2",
+      "justifies",
+      "ledger-1.2.2"
+    ],
+    [
+      "ledger-1.2",
+      "justifies",
+      "ledger-1.2.3"
+    ],
+    [
+      "ledger-1.3",
+      "justifies",
+      "ledger-1.3.1"
+    ],
+    [
+      "ledger-1.3",
+      "justifies",
+      "ledger-1.3.2"
+    ],
+    [
+      "ledger-1.3",
+      "justifies",
+      "ledger-1.3.3"
+    ],
+    [
+      "ledger-1.3",
+      "justifies",
+      "ledger-1.3.4"
+    ],
+    [
+      "ledger-1.3",
+      "justifies",
+      "ledger-1.3.5"
+    ],
+    [
+      "ledger-1.3",
+      "justifies",
+      "ledger-1.3.6"
+    ],
+    [
+      "ledger-1.3",
+      "justifies",
+      "ledger-1.3.7"
+    ],
+    [
+      "ledger-1.4",
+      "justifies",
+      "ledger-1.4.1"
+    ],
+    [
+      "ledger-1.4",
+      "justifies",
+      "ledger-1.4.2"
+    ],
+    [
+      "ledger-1.4",
+      "justifies",
+      "ledger-1.4.3"
+    ],
+    [
+      "ledger-1.5",
+      "justifies",
+      "ledger-1.5.1"
+    ],
+    [
+      "ledger-1.5",
+      "justifies",
+      "ledger-1.5.2"
+    ],
+    [
+      "ledger-1.5",
+      "justifies",
+      "ledger-1.5.3"
+    ],
+    [
+      "ledger-1.5",
+      "justifies",
+      "ledger-1.5.4"
+    ],
+    [
+      "ledger-1.6",
+      "justifies",
+      "ledger-1.6.1"
+    ],
+    [
+      "ledger-1.6",
+      "justifies",
+      "ledger-1.6.2"
+    ],
+    [
+      "ledger-1.7",
+      "justifies",
+      "ledger-1.7.1"
+    ],
+    [
+      "ledger-1.7",
+      "justifies",
+      "ledger-1.7.2"
+    ],
+    [
+      "ledger-1.7",
+      "justifies",
+      "ledger-1.7.3"
+    ],
+    [
+      "ledger-1.7",
+      "justifies",
+      "ledger-1.7.4"
+    ],
+    [
+      "ledger-1.8",
+      "justifies",
+      "ledger-1.8.1"
+    ],
+    [
+      "ledger-1.8",
+      "justifies",
+      "ledger-1.8.2"
+    ],
+    [
+      "ledger-1.8",
+      "justifies",
+      "ledger-1.8.3"
+    ],
+    [
+      "ledger-1.9",
+      "justifies",
+      "ledger-1.9.1"
+    ],
+    [
+      "ledger-1.9",
+      "justifies",
+      "ledger-1.9.2"
+    ],
+    [
+      "ledger-1.10",
+      "justifies",
+      "ledger-1.10.1"
+    ],
+    [
+      "ledger-1.11",
+      "justifies",
+      "ledger-1.11.1"
+    ],
+    [
+      "ledger-1.11",
+      "justifies",
+      "ledger-1.11.2"
+    ],
+    [
+      "ledger-1.11",
+      "justifies",
+      "ledger-1.11.3"
+    ],
+    [
+      "ledger-1.11",
+      "justifies",
+      "ledger-1.11.4"
+    ],
+    [
+      "ledger-1.11",
+      "justifies",
+      "ledger-1.11.5"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "ledger-1.3.1"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "ledger-1.3.2"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "ledger-1.3.3"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "ledger-1.3.4"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "ledger-1.3.5"
+    ],
+    [
+      "fatal-2",
+      "justifies",
+      "ledger-1.3.6"
+    ],
+    [
+      "fatal-2",
+      "justifies",
+      "ledger-1.3.7"
+    ],
+    [
+      "premise-wedge",
+      "justifies",
+      "ledger-1.1"
+    ],
+    [
+      "premise-moat",
+      "justifies",
+      "ledger-1.1"
+    ],
+    [
+      "premise-india-build-base",
+      "justifies",
+      "ledger-1.7"
+    ],
+    [
+      "premise-why-now",
+      "justifies",
+      "ledger-1.2"
+    ],
+    [
+      "ledger-1.6.1",
+      "justifies",
+      "dr-001"
+    ],
+    [
+      "ledger-1.6.2",
+      "justifies",
+      "dr-001"
+    ],
+    [
+      "dr-001",
+      "rejects",
+      "alt-dr-001-a-whatsapp-native-product"
+    ],
+    [
+      "dr-001",
+      "rejects",
+      "alt-dr-001-a-native-app-only"
+    ],
+    [
+      "dr-001",
+      "rejects",
+      "alt-dr-001-per-channel-intake-built-as"
+    ],
+    [
+      "ledger-1.5.1",
+      "justifies",
+      "dr-002"
+    ],
+    [
+      "ledger-1.5.2",
+      "justifies",
+      "dr-002"
+    ],
+    [
+      "ledger-1.5.3",
+      "justifies",
+      "dr-002"
+    ],
+    [
+      "ledger-1.5.4",
+      "justifies",
+      "dr-002"
+    ],
+    [
+      "dr-002",
+      "rejects",
+      "alt-dr-002-one-loop-the-executor-s"
+    ],
+    [
+      "dr-002",
+      "rejects",
+      "alt-dr-002-internal-qa-sampling-as-the"
+    ],
+    [
+      "dr-002",
+      "rejects",
+      "alt-dr-002-a-rating-scale-or-a"
+    ],
+    [
+      "dr-002",
+      "rejects",
+      "alt-dr-002-artefacts-shown-to-the-user"
+    ],
+    [
+      "ledger-1.2.1",
+      "justifies",
+      "dr-003"
+    ],
+    [
+      "ledger-1.2.2",
+      "justifies",
+      "dr-003"
+    ],
+    [
+      "ledger-1.2.3",
+      "justifies",
+      "dr-003"
+    ],
+    [
+      "dr-003",
+      "rejects",
+      "alt-dr-003-the-a-b-c-capability"
+    ],
+    [
+      "dr-003",
+      "rejects",
+      "alt-dr-003-design-to-the-most-restrictive"
+    ],
+    [
+      "dr-003",
+      "rejects",
+      "alt-dr-003-no-policy-layer-a-fork"
+    ],
+    [
+      "dr-003",
+      "rejects",
+      "alt-dr-003-the-full-ceiling-as-launch"
+    ],
+    [
+      "ledger-1.3.6",
+      "justifies",
+      "dr-004"
+    ],
+    [
+      "ledger-1.3.7",
+      "justifies",
+      "dr-004"
+    ],
+    [
+      "dr-004",
+      "rejects",
+      "alt-dr-004-a-standing-mandate-at-account"
+    ],
+    [
+      "dr-004",
+      "rejects",
+      "alt-dr-004-a-spend-cap-alone"
+    ],
+    [
+      "dr-004",
+      "rejects",
+      "alt-dr-004-confirm-every-step"
+    ],
+    [
+      "dr-004",
+      "rejects",
+      "alt-dr-004-reversibility-judged-by-the-executor"
+    ],
+    [
+      "ledger-1.4.1",
+      "justifies",
+      "dr-005"
+    ],
+    [
+      "ledger-1.4.2",
+      "justifies",
+      "dr-005"
+    ],
+    [
+      "ledger-1.4.3",
+      "justifies",
+      "dr-005"
+    ],
+    [
+      "dr-005",
+      "rejects",
+      "alt-dr-005-implicit-states-derived-from-step"
+    ],
+    [
+      "dr-005",
+      "rejects",
+      "alt-dr-005-silence-treated-as-withdrawal"
+    ],
+    [
+      "dr-005",
+      "rejects",
+      "alt-dr-005-never-lapsing-reminders-forever"
+    ],
+    [
+      "dr-005",
+      "rejects",
+      "alt-dr-005-a-procedure-instead-of-an"
+    ],
+    [
+      "ledger-1.8.1",
+      "justifies",
+      "dr-006"
+    ],
+    [
+      "ledger-1.8.2",
+      "justifies",
+      "dr-006"
+    ],
+    [
+      "ledger-1.8.3",
+      "justifies",
+      "dr-006"
+    ],
+    [
+      "dr-006",
+      "rejects",
+      "alt-dr-006-a-remote-workforce"
+    ],
+    [
+      "dr-006",
+      "rejects",
+      "alt-dr-006-a-hybrid-floor-sensitive-steps"
+    ],
+    [
+      "dr-006",
+      "rejects",
+      "alt-dr-006-a-day-shift-only-with"
+    ],
+    [
+      "dr-006",
+      "rejects",
+      "alt-dr-006-three-offices-one-per-market"
+    ],
+    [
+      "ledger-1.7.1",
+      "justifies",
+      "dr-007"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "dr-007"
+    ],
+    [
+      "ledger-1.7.3",
+      "justifies",
+      "dr-007"
+    ],
+    [
+      "ledger-1.7.4",
+      "justifies",
+      "dr-007"
+    ],
+    [
+      "dr-007",
+      "rejects",
+      "alt-dr-007-build-for-india-first-fork"
+    ],
+    [
+      "dr-007",
+      "rejects",
+      "alt-dr-007-build-for-one-market-only"
+    ],
+    [
+      "dr-007",
+      "rejects",
+      "alt-dr-007-adapters-that-hand-real-values"
+    ],
+    [
+      "dr-007",
+      "rejects",
+      "alt-dr-007-one-global-deployment-with-no"
+    ],
+    [
+      "ledger-1.3.1",
+      "justifies",
+      "dr-008"
+    ],
+    [
+      "ledger-1.7.3",
+      "justifies",
+      "dr-008"
+    ],
+    [
+      "dr-008",
+      "rejects",
+      "alt-dr-008-build-the-vault-ourselves"
+    ],
+    [
+      "dr-008",
+      "rejects",
+      "alt-dr-008-encrypt-fields-in-place-in"
+    ],
+    [
+      "dr-008",
+      "rejects",
+      "alt-dr-008-rely-on-the-rails-own"
+    ],
+    [
+      "dr-008",
+      "rejects",
+      "alt-dr-008-choose-the-vendor-now"
+    ],
+    [
+      "ledger-1.3.4",
+      "justifies",
+      "dr-009"
+    ],
+    [
+      "dr-009",
+      "rejects",
+      "alt-dr-009-redaction-as-an-operational-policy"
+    ],
+    [
+      "dr-009",
+      "rejects",
+      "alt-dr-009-redact-at-display-time"
+    ],
+    [
+      "dr-009",
+      "rejects",
+      "alt-dr-009-keep-no-evidence-at-all"
+    ],
+    [
+      "dr-009",
+      "rejects",
+      "alt-dr-009-one-redaction-pass-no-independent"
+    ],
+    [
+      "dr-009",
+      "rejects",
+      "alt-dr-009-artefacts-as-customer-facing-proof"
+    ],
+    [
+      "ledger-1.11.1",
+      "justifies",
+      "dr-010"
+    ],
+    [
+      "ledger-1.11.2",
+      "justifies",
+      "dr-010"
+    ],
+    [
+      "ledger-1.11.3",
+      "justifies",
+      "dr-010"
+    ],
+    [
+      "ledger-1.11.4",
+      "justifies",
+      "dr-010"
+    ],
+    [
+      "ledger-1.11.5",
+      "justifies",
+      "dr-010"
+    ],
+    [
+      "dr-010",
+      "rejects",
+      "alt-dr-010-a-static-site-generator"
+    ],
+    [
+      "dr-010",
+      "rejects",
+      "alt-dr-010-markdown-as-the-canonical-source"
+    ],
+    [
+      "dr-010",
+      "rejects",
+      "alt-dr-010-a-framework-or-a-hosted"
+    ],
+    [
+      "dr-010",
+      "rejects",
+      "alt-dr-010-fonts-or-stylesheets-from-a"
+    ],
+    [
+      "ledger-3",
+      "justifies",
+      "dr-011"
+    ],
+    [
+      "dr-011",
+      "rejects",
+      "alt-dr-011-a-css-framework-utility-library"
+    ],
+    [
+      "dr-011",
+      "rejects",
+      "alt-dr-011-per-page-styling"
+    ],
+    [
+      "dr-011",
+      "rejects",
+      "alt-dr-011-colours-defined-where-they-are"
+    ],
+    [
+      "dr-011",
+      "rejects",
+      "alt-dr-011-a-design-tool-export"
+    ],
+    [
+      "ledger-3",
+      "justifies",
+      "dr-012"
+    ],
+    [
+      "dr-012",
+      "rejects",
+      "alt-dr-012-the-first-draft-a-documentation"
+    ],
+    [
+      "dr-012",
+      "rejects",
+      "alt-dr-012-a-framework-a-ui-kit"
+    ],
+    [
+      "dr-012",
+      "rejects",
+      "alt-dr-012-heading-numbers-by-css-counters"
+    ],
+    [
+      "dr-012",
+      "rejects",
+      "alt-dr-012-source-and-date-in-a"
+    ],
+    [
+      "dr-012",
+      "rejects",
+      "alt-dr-012-a-dark-theme"
+    ],
+    [
+      "dr-012",
+      "rejects",
+      "alt-dr-012-the-one-permitted-moment-of"
+    ],
+    [
+      "ledger-5",
+      "justifies",
+      "dr-013"
+    ],
+    [
+      "dr-013",
+      "rejects",
+      "alt-dr-013-mark-everything-external-to-verify"
+    ],
+    [
+      "dr-013",
+      "rejects",
+      "alt-dr-013-assert-from-memory"
+    ],
+    [
+      "dr-013",
+      "rejects",
+      "alt-dr-013-wait-for-page-reads-to"
+    ],
+    [
+      "dr-013",
+      "rejects",
+      "alt-dr-013-call-the-excerpt-verified-without"
+    ],
+    [
+      "ledger-1.3.2",
+      "justifies",
+      "dr-014"
+    ],
+    [
+      "ledger-9.1",
+      "justifies",
+      "dr-014"
+    ],
+    [
+      "dr-014",
+      "rejects",
+      "alt-dr-014-framing-b-ledger-led-what"
+    ],
+    [
+      "dr-014",
+      "rejects",
+      "alt-dr-014-the-cost-a-read-back"
+    ],
+    [
+      "dr-014",
+      "rejects",
+      "alt-dr-014-the-cost-its-figures"
+    ],
+    [
+      "dr-014",
+      "rejects",
+      "alt-dr-014-the-cost-drift-from-the"
+    ],
+    [
+      "ledger-1.9.1",
+      "justifies",
+      "dr-015"
+    ],
+    [
+      "ledger-1.9.2",
+      "justifies",
+      "dr-015"
+    ],
+    [
+      "dr-015",
+      "rejects",
+      "alt-dr-015-model-the-economics-now"
+    ],
+    [
+      "dr-015",
+      "rejects",
+      "alt-dr-015-use-the-flat-fee-players"
+    ],
+    [
+      "dr-015",
+      "rejects",
+      "alt-dr-015-a-placeholder-model-labelled-illustrative"
+    ],
+    [
+      "dr-015",
+      "rejects",
+      "alt-dr-015-omit-the-business-section-altogether"
+    ],
+    [
+      "ledger-1.10.1",
+      "justifies",
+      "dr-016"
+    ],
+    [
+      "dr-016",
+      "rejects",
+      "alt-dr-016-a-flat-profile-table"
+    ],
+    [
+      "dr-016",
+      "rejects",
+      "alt-dr-016-a-document-store-without-temporal"
+    ],
+    [
+      "dr-016",
+      "rejects",
+      "alt-dr-016-the-model-s-memory-as"
+    ],
+    [
+      "dr-016",
+      "rejects",
+      "alt-dr-016-a-complete-profile-built-at"
+    ],
+    [
+      "dr-016",
+      "rejects",
+      "alt-dr-016-real-values-in-the-store"
+    ],
+    [
+      "ledger-1.11.3",
+      "justifies",
+      "dr-017"
+    ],
+    [
+      "dr-017",
+      "rejects",
+      "alt-dr-017-a-page-level-map"
+    ],
+    [
+      "dr-017",
+      "rejects",
+      "alt-dr-017-several-maps-one-per-dimension"
+    ],
+    [
+      "dr-017",
+      "rejects",
+      "alt-dr-017-a-wiki-a-graph-database"
+    ],
+    [
+      "dr-017",
+      "rejects",
+      "alt-dr-017-a-published-interactive-map-page"
+    ],
+    [
+      "dr-017",
+      "rejects",
+      "alt-dr-017-the-internal-links-as-the"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "vocab-committing-actions"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "vocab-committable-acts"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "vocab-routes"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "inv-point-of-no-return-test"
+    ],
+    [
+      "dr-002",
+      "justifies",
+      "vocab-outcome-codes"
+    ],
+    [
+      "dr-002",
+      "justifies",
+      "vocab-verdicts"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "vocab-flag-values"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "vocab-identity-acts"
+    ],
+    [
+      "dr-005",
+      "justifies",
+      "vocab-states"
+    ],
+    [
+      "dr-005",
+      "justifies",
+      "vocab-transitions"
+    ],
+    [
+      "dr-008",
+      "justifies",
+      "vocab-alias-classes"
+    ],
+    [
+      "ledger-1.5.1",
+      "justifies",
+      "vocab-outcome-codes"
+    ],
+    [
+      "ledger-1.5.2",
+      "justifies",
+      "vocab-verdicts"
+    ],
+    [
+      "ledger-1.3.7",
+      "justifies",
+      "inv-point-of-no-return-test"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "comp-vault"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "comp-step-context"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "comp-approval-token"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "comp-fired-marker"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "vocab-committing-actions"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "vocab-alias-classes"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "comp-edge-proxy",
+      "depends-on",
+      "comp-vault"
+    ],
+    [
+      "comp-hash-service",
+      "depends-on",
+      "comp-vault"
+    ],
+    [
+      "comp-channel-connector",
+      "depends-on",
+      "comp-edge-proxy"
+    ],
+    [
+      "comp-intake-gateway",
+      "depends-on",
+      "comp-edge-proxy"
+    ],
+    [
+      "comp-intake-gateway",
+      "depends-on",
+      "comp-device-surface"
+    ],
+    [
+      "comp-adapters",
+      "depends-on",
+      "comp-edge-proxy"
+    ],
+    [
+      "comp-adapters",
+      "depends-on",
+      "comp-legal-pack"
+    ],
+    [
+      "comp-adapters",
+      "depends-on",
+      "comp-device-surface"
+    ],
+    [
+      "comp-adapter-in",
+      "depends-on",
+      "comp-adapters"
+    ],
+    [
+      "comp-adapter-uk",
+      "depends-on",
+      "comp-adapters"
+    ],
+    [
+      "comp-adapter-us",
+      "depends-on",
+      "comp-adapters"
+    ],
+    [
+      "comp-legal-pack",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "comp-legal-pack",
+      "depends-on",
+      "comp-residency-map"
+    ],
+    [
+      "comp-legal-pack",
+      "depends-on",
+      "vocab-refusal-codes"
+    ],
+    [
+      "comp-residency-map",
+      "depends-on",
+      "comp-vault"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "comp-step-catalogue"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "inv-point-of-no-return-test"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "vocab-classes"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "vocab-routes"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "vocab-bounce-forms"
+    ],
+    [
+      "comp-planner",
+      "depends-on",
+      "comp-context-store"
+    ],
+    [
+      "comp-planner",
+      "depends-on",
+      "comp-step-catalogue"
+    ],
+    [
+      "comp-planner",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "comp-ai-executor",
+      "depends-on",
+      "comp-managed-browser"
+    ],
+    [
+      "comp-ai-executor",
+      "depends-on",
+      "comp-step-context"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "comp-managed-browser"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "comp-telephony"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "comp-mail-relay"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "comp-substitutor"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "comp-approval-token"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "comp-fired-marker"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "vocab-committing-actions"
+    ],
+    [
+      "comp-task-service",
+      "depends-on",
+      "comp-state-machine"
+    ],
+    [
+      "comp-task-service",
+      "depends-on",
+      "comp-surface-controllers"
+    ],
+    [
+      "comp-task-service",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "comp-task-service",
+      "depends-on",
+      "vocab-outcome-codes"
+    ],
+    [
+      "comp-task-service",
+      "depends-on",
+      "vocab-refusal-codes"
+    ],
+    [
+      "comp-managed-browser",
+      "depends-on",
+      "comp-browser-masker"
+    ],
+    [
+      "comp-managed-browser",
+      "depends-on",
+      "comp-substitutor"
+    ],
+    [
+      "comp-managed-browser",
+      "depends-on",
+      "comp-party-directory"
+    ],
+    [
+      "comp-telephony",
+      "depends-on",
+      "comp-transcriber"
+    ],
+    [
+      "comp-telephony",
+      "depends-on",
+      "comp-substitutor"
+    ],
+    [
+      "comp-telephony",
+      "depends-on",
+      "comp-party-directory"
+    ],
+    [
+      "comp-mail-relay",
+      "depends-on",
+      "comp-substitutor"
+    ],
+    [
+      "comp-mail-relay",
+      "depends-on",
+      "comp-channel-connector"
+    ],
+    [
+      "comp-browser-masker",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "comp-transcriber",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "comp-evidence-pipeline",
+      "depends-on",
+      "comp-verifier"
+    ],
+    [
+      "comp-evidence-pipeline",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "comp-verifier",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "vocab-states"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "vocab-transitions"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "comp-watchdog"
+    ],
+    [
+      "comp-watchdog",
+      "depends-on",
+      "comp-exceptions-board"
+    ],
+    [
+      "comp-exceptions-board",
+      "depends-on",
+      "comp-worker-console"
+    ],
+    [
+      "comp-worker-console",
+      "depends-on",
+      "comp-task-cards"
+    ],
+    [
+      "comp-worker-console",
+      "depends-on",
+      "vocab-outcome-codes"
+    ],
+    [
+      "comp-worker-console",
+      "depends-on",
+      "comp-state-machine"
+    ],
+    [
+      "comp-task-cards",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "comp-task-cards",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "comp-task-cards",
+      "depends-on",
+      "comp-tiers"
+    ],
+    [
+      "comp-access-ledger",
+      "depends-on",
+      "comp-substitutor"
+    ],
+    [
+      "comp-access-ledger",
+      "depends-on",
+      "comp-evidence-pipeline"
+    ],
+    [
+      "comp-context-store",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "comp-context-store",
+      "depends-on",
+      "comp-vault"
+    ],
+    [
+      "comp-device-surface",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "comp-device-surface",
+      "depends-on",
+      "vocab-bounce-forms"
+    ],
+    [
+      "comp-envelope",
+      "depends-on",
+      "vocab-identity-acts"
+    ],
+    [
+      "comp-envelope",
+      "depends-on",
+      "vocab-committable-acts"
+    ],
+    [
+      "comp-approval-token",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "comp-step-context",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "comp-step-context",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "comp-party-directory",
+      "depends-on",
+      "comp-legal-pack"
+    ],
+    [
+      "comp-site-controls",
+      "depends-on",
+      "comp-threat-model"
+    ],
+    [
+      "comp-threat-model",
+      "depends-on",
+      "comp-substitutor"
+    ],
+    [
+      "comp-threat-model",
+      "depends-on",
+      "comp-evidence-pipeline"
+    ],
+    [
+      "comp-threat-model",
+      "depends-on",
+      "comp-access-ledger"
+    ],
+    [
+      "comp-tiers",
+      "depends-on",
+      "vocab-identity-acts"
+    ],
+    [
+      "dr-001",
+      "justifies",
+      "comp-intake-gateway"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "comp-envelope"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "comp-approval-token"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "comp-fired-marker"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "comp-step-context"
+    ],
+    [
+      "dr-004",
+      "justifies",
+      "comp-classifier"
+    ],
+    [
+      "dr-005",
+      "justifies",
+      "comp-state-machine"
+    ],
+    [
+      "dr-005",
+      "justifies",
+      "comp-watchdog"
+    ],
+    [
+      "dr-005",
+      "justifies",
+      "comp-exceptions-board"
+    ],
+    [
+      "dr-006",
+      "justifies",
+      "comp-shift-wheel"
+    ],
+    [
+      "dr-006",
+      "justifies",
+      "comp-site-controls"
+    ],
+    [
+      "dr-006",
+      "justifies",
+      "comp-tiers"
+    ],
+    [
+      "dr-006",
+      "justifies",
+      "comp-task-cards"
+    ],
+    [
+      "dr-007",
+      "justifies",
+      "comp-adapters"
+    ],
+    [
+      "dr-007",
+      "justifies",
+      "comp-legal-pack"
+    ],
+    [
+      "dr-007",
+      "justifies",
+      "comp-residency-map"
+    ],
+    [
+      "dr-007",
+      "justifies",
+      "comp-adapter-in"
+    ],
+    [
+      "dr-007",
+      "justifies",
+      "comp-adapter-uk"
+    ],
+    [
+      "dr-007",
+      "justifies",
+      "comp-adapter-us"
+    ],
+    [
+      "dr-008",
+      "justifies",
+      "comp-vault"
+    ],
+    [
+      "dr-008",
+      "justifies",
+      "comp-edge-proxy"
+    ],
+    [
+      "dr-008",
+      "justifies",
+      "comp-hash-service"
+    ],
+    [
+      "dr-008",
+      "justifies",
+      "comp-channel-connector"
+    ],
+    [
+      "dr-009",
+      "justifies",
+      "comp-evidence-pipeline"
+    ],
+    [
+      "dr-009",
+      "justifies",
+      "comp-verifier"
+    ],
+    [
+      "dr-009",
+      "justifies",
+      "comp-browser-masker"
+    ],
+    [
+      "dr-009",
+      "justifies",
+      "comp-transcriber"
+    ],
+    [
+      "dr-014",
+      "justifies",
+      "comp-substitutor"
+    ],
+    [
+      "dr-014",
+      "justifies",
+      "comp-threat-model"
+    ],
+    [
+      "dr-016",
+      "justifies",
+      "comp-context-store"
+    ],
+    [
+      "ledger-1.3.2",
+      "justifies",
+      "comp-substitutor"
+    ],
+    [
+      "ledger-1.3.3",
+      "justifies",
+      "comp-managed-browser"
+    ],
+    [
+      "ledger-1.3.3",
+      "justifies",
+      "comp-telephony"
+    ],
+    [
+      "ledger-1.3.3",
+      "justifies",
+      "comp-mail-relay"
+    ],
+    [
+      "ledger-1.3.5",
+      "justifies",
+      "comp-threat-model"
+    ],
+    [
+      "ledger-1.1.2",
+      "justifies",
+      "comp-access-ledger"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-planner"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-classifier"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-task-cards"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-substitutor"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-envelope"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-state-machine"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-worker-console"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-access-ledger"
+    ],
+    [
+      "ledger-1.7.2",
+      "justifies",
+      "comp-intake-gateway"
+    ],
+    [
+      "ledger-1.8.3",
+      "justifies",
+      "comp-task-cards"
+    ],
+    [
+      "ledger-1.8.2",
+      "justifies",
+      "comp-tiers"
+    ],
+    [
+      "ledger-1.8.1",
+      "justifies",
+      "comp-shift-wheel"
+    ],
+    [
+      "ledger-1.8.1",
+      "justifies",
+      "comp-site-controls"
+    ],
+    [
+      "stage-1",
+      "depends-on",
+      "comp-vault"
+    ],
+    [
+      "stage-1",
+      "depends-on",
+      "comp-substitutor"
+    ],
+    [
+      "stage-1",
+      "depends-on",
+      "comp-hash-service"
+    ],
+    [
+      "stage-1",
+      "depends-on",
+      "comp-edge-proxy"
+    ],
+    [
+      "stage-2",
+      "depends-on",
+      "stage-1"
+    ],
+    [
+      "stage-2",
+      "depends-on",
+      "comp-envelope"
+    ],
+    [
+      "stage-2",
+      "depends-on",
+      "comp-classifier"
+    ],
+    [
+      "stage-2",
+      "depends-on",
+      "comp-planner"
+    ],
+    [
+      "stage-2",
+      "depends-on",
+      "comp-step-catalogue"
+    ],
+    [
+      "stage-2",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "stage-3",
+      "depends-on",
+      "stage-2"
+    ],
+    [
+      "stage-3",
+      "depends-on",
+      "comp-state-machine"
+    ],
+    [
+      "stage-3",
+      "depends-on",
+      "comp-watchdog"
+    ],
+    [
+      "stage-3",
+      "depends-on",
+      "comp-context-store"
+    ],
+    [
+      "stage-4",
+      "depends-on",
+      "stage-3"
+    ],
+    [
+      "stage-4",
+      "depends-on",
+      "comp-managed-browser"
+    ],
+    [
+      "stage-4",
+      "depends-on",
+      "comp-browser-masker"
+    ],
+    [
+      "stage-4",
+      "depends-on",
+      "comp-evidence-pipeline"
+    ],
+    [
+      "stage-5",
+      "depends-on",
+      "stage-4"
+    ],
+    [
+      "stage-5",
+      "depends-on",
+      "comp-telephony"
+    ],
+    [
+      "stage-5",
+      "depends-on",
+      "comp-transcriber"
+    ],
+    [
+      "stage-5",
+      "depends-on",
+      "comp-mail-relay"
+    ],
+    [
+      "stage-6",
+      "depends-on",
+      "stage-5"
+    ],
+    [
+      "stage-6",
+      "depends-on",
+      "comp-worker-console"
+    ],
+    [
+      "stage-6",
+      "depends-on",
+      "comp-task-cards"
+    ],
+    [
+      "stage-6",
+      "depends-on",
+      "comp-exceptions-board"
+    ],
+    [
+      "stage-7",
+      "depends-on",
+      "stage-6"
+    ],
+    [
+      "stage-7",
+      "depends-on",
+      "comp-access-ledger"
+    ],
+    [
+      "stage-8",
+      "depends-on",
+      "stage-7"
+    ],
+    [
+      "stage-8",
+      "depends-on",
+      "comp-intake-gateway"
+    ],
+    [
+      "stage-8",
+      "depends-on",
+      "comp-device-surface"
+    ],
+    [
+      "stage-8",
+      "depends-on",
+      "comp-adapters"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "stage-1"
+    ],
+    [
+      "fatal-2",
+      "justifies",
+      "stage-2"
+    ],
+    [
+      "fatal-2",
+      "justifies",
+      "stage-3"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "stage-4"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "stage-5"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "stage-6"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "stage-7"
+    ],
+    [
+      "fatal-2",
+      "justifies",
+      "stage-8"
+    ],
+    [
+      "open-07-01",
+      "lands-in",
+      "dr-001"
+    ],
+    [
+      "open-07-01",
+      "lands-in",
+      "comp-intake-gateway"
+    ],
+    [
+      "open-07-02",
+      "lands-in",
+      "dr-007"
+    ],
+    [
+      "open-07-03",
+      "lands-in",
+      "stage-8"
+    ],
+    [
+      "open-07-04",
+      "lands-in",
+      "comp-policy-layer"
+    ],
+    [
+      "open-07-04",
+      "lands-in",
+      "comp-adapters"
+    ],
+    [
+      "open-07-05",
+      "lands-in",
+      "comp-residency-map"
+    ],
+    [
+      "open-07-06",
+      "lands-in",
+      "comp-shift-wheel"
+    ],
+    [
+      "open-07-07",
+      "lands-in",
+      "dr-010"
+    ],
+    [
+      "open-07-09",
+      "lands-in",
+      "dr-002"
+    ],
+    [
+      "open-07-10",
+      "lands-in",
+      "dr-006"
+    ],
+    [
+      "open-07-11",
+      "lands-in",
+      "dr-008"
+    ],
+    [
+      "open-07-11",
+      "lands-in",
+      "comp-vault"
+    ],
+    [
+      "open-07-12",
+      "lands-in",
+      "comp-telephony"
+    ],
+    [
+      "open-07-12",
+      "lands-in",
+      "comp-managed-browser"
+    ],
+    [
+      "open-07-13",
+      "lands-in",
+      "dr-013"
+    ],
+    [
+      "open-07-14",
+      "lands-in",
+      "dr-010"
+    ],
+    [
+      "open-07-15",
+      "lands-in",
+      "comp-watchdog"
+    ],
+    [
+      "open-07-16",
+      "lands-in",
+      "comp-state-machine"
+    ],
+    [
+      "open-07-16",
+      "lands-in",
+      "vocab-verdicts"
+    ],
+    [
+      "open-07-17",
+      "lands-in",
+      "comp-envelope"
+    ],
+    [
+      "open-07-17",
+      "lands-in",
+      "comp-policy-layer"
+    ],
+    [
+      "open-07-18",
+      "lands-in",
+      "comp-policy-layer"
+    ],
+    [
+      "open-07-18",
+      "lands-in",
+      "dr-003"
+    ],
+    [
+      "obj-07-a",
+      "lands-in",
+      "dr-003"
+    ],
+    [
+      "obj-07-b",
+      "lands-in",
+      "dr-011"
+    ],
+    [
+      "obj-07-c",
+      "lands-in",
+      "dr-012"
+    ],
+    [
+      "obj-07-d",
+      "lands-in",
+      "dr-010"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-present-document"
+    ],
+    [
+      "flag-present-document",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-state-identity-number"
+    ],
+    [
+      "flag-state-identity-number",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-complete-kyc-form"
+    ],
+    [
+      "flag-complete-kyc-form",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-undergo-identification"
+    ],
+    [
+      "flag-undergo-identification",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-answer-security-questions"
+    ],
+    [
+      "flag-answer-security-questions",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-attest-fact"
+    ],
+    [
+      "flag-attest-fact",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-use-delegated-login"
+    ],
+    [
+      "flag-use-delegated-login",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-pay-under-cap"
+    ],
+    [
+      "flag-pay-under-cap",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-sign"
+    ],
+    [
+      "flag-sign",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-book-or-cancel"
+    ],
+    [
+      "flag-book-or-cancel",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-share-health-record"
+    ],
+    [
+      "flag-share-health-record",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "dr-003",
+      "justifies",
+      "flag-basis-speak-as-customer"
+    ],
+    [
+      "flag-basis-speak-as-customer",
+      "depends-on",
+      "comp-policy-layer"
+    ],
+    [
+      "res-07-01",
+      "conflicts-with",
+      "comp-transcriber"
+    ],
+    [
+      "res-07-01",
+      "conflicts-with",
+      "vocab-alias-classes"
+    ],
+    [
+      "res-07-02",
+      "conflicts-with",
+      "comp-party-directory"
+    ],
+    [
+      "res-07-02",
+      "conflicts-with",
+      "comp-envelope"
+    ],
+    [
+      "res-07-03",
+      "conflicts-with",
+      "comp-substitutor"
+    ],
+    [
+      "res-07-03",
+      "conflicts-with",
+      "comp-envelope"
+    ],
+    [
+      "res-07-04",
+      "conflicts-with",
+      "comp-watchdog"
+    ],
+    [
+      "res-07-04",
+      "conflicts-with",
+      "comp-fired-marker"
+    ],
+    [
+      "res-07-05",
+      "conflicts-with",
+      "dr-004"
+    ],
+    [
+      "res-07-05",
+      "conflicts-with",
+      "comp-managed-browser"
+    ],
+    [
+      "res-07-06",
+      "conflicts-with",
+      "comp-browser-masker"
+    ],
+    [
+      "res-07-06",
+      "conflicts-with",
+      "comp-transcriber"
+    ],
+    [
+      "res-07-07",
+      "conflicts-with",
+      "comp-telephony"
+    ],
+    [
+      "res-07-07",
+      "conflicts-with",
+      "comp-task-cards"
+    ],
+    [
+      "res-07-08",
+      "conflicts-with",
+      "dr-004"
+    ],
+    [
+      "res-07-08",
+      "conflicts-with",
+      "comp-managed-browser"
+    ],
+    [
+      "res-07-09",
+      "conflicts-with",
+      "comp-step-catalogue"
+    ],
+    [
+      "res-07-10",
+      "conflicts-with",
+      "comp-state-machine"
+    ],
+    [
+      "res-07-10",
+      "conflicts-with",
+      "vocab-states"
+    ],
+    [
+      "res-07-11",
+      "conflicts-with",
+      "dr-013"
+    ],
+    [
+      "res-07-12",
+      "conflicts-with",
+      "dr-013"
+    ],
+    [
+      "res-07-12",
+      "conflicts-with",
+      "dr-012"
+    ],
+    [
+      "res-07-13",
+      "conflicts-with",
+      "dr-013"
+    ],
+    [
+      "res-07-14",
+      "conflicts-with",
+      "flag-sign"
+    ],
+    [
+      "res-07-14",
+      "conflicts-with",
+      "open-07-18"
+    ],
+    [
+      "res-07-15",
+      "conflicts-with",
+      "comp-state-machine"
+    ],
+    [
+      "res-07-15",
+      "conflicts-with",
+      "comp-fired-marker"
+    ],
+    [
+      "res-07-16",
+      "conflicts-with",
+      "comp-task-cards"
+    ],
+    [
+      "res-07-16",
+      "conflicts-with",
+      "comp-envelope"
+    ],
+    [
+      "dr-001",
+      "closes-off",
+      "inv-no-channel-branch"
+    ],
+    [
+      "dr-001",
+      "closes-off",
+      "inv-one-request-format"
+    ],
+    [
+      "dr-001",
+      "closes-off",
+      "inv-approval-needs-authenticated-device"
+    ],
+    [
+      "dr-002",
+      "closes-off",
+      "inv-five-option-ceiling"
+    ],
+    [
+      "dr-002",
+      "closes-off",
+      "inv-outcome-code-closes-step"
+    ],
+    [
+      "dr-002",
+      "closes-off",
+      "inv-dual-control-irreversible-only"
+    ],
+    [
+      "dr-003",
+      "closes-off",
+      "inv-missing-row-is-bounce"
+    ],
+    [
+      "dr-003",
+      "closes-off",
+      "inv-otp-never-ours"
+    ],
+    [
+      "dr-003",
+      "closes-off",
+      "inv-flag-filters-envelope"
+    ],
+    [
+      "dr-003",
+      "closes-off",
+      "inv-no-design-constraint-from-jurisdiction"
+    ],
+    [
+      "dr-004",
+      "closes-off",
+      "inv-no-step-before-envelope"
+    ],
+    [
+      "dr-004",
+      "closes-off",
+      "inv-no-irreversible-outside-envelope"
+    ],
+    [
+      "dr-004",
+      "closes-off",
+      "inv-irreversible-inside-dual-control"
+    ],
+    [
+      "dr-004",
+      "closes-off",
+      "inv-at-most-once"
+    ],
+    [
+      "dr-004",
+      "closes-off",
+      "inv-nothing-past-validity-window"
+    ],
+    [
+      "dr-005",
+      "closes-off",
+      "inv-no-terminal-without-transition"
+    ],
+    [
+      "dr-005",
+      "closes-off",
+      "inv-live-timer-on-every-live-state"
+    ],
+    [
+      "dr-005",
+      "closes-off",
+      "inv-lapsed-never-withdrawn"
+    ],
+    [
+      "dr-005",
+      "closes-off",
+      "inv-state-machine-invariant-identical"
+    ],
+    [
+      "dr-006",
+      "closes-off",
+      "inv-no-step-off-site"
+    ],
+    [
+      "dr-006",
+      "closes-off",
+      "inv-site-controls-are-trust-controls"
+    ],
+    [
+      "dr-007",
+      "closes-off",
+      "inv-core-country-agnostic"
+    ],
+    [
+      "dr-007",
+      "closes-off",
+      "inv-adapter-never-raw"
+    ],
+    [
+      "dr-007",
+      "closes-off",
+      "inv-one-text-per-core-rule"
+    ],
+    [
+      "dr-008",
+      "closes-off",
+      "inv-no-real-value-at-rest"
+    ],
+    [
+      "dr-008",
+      "closes-off",
+      "inv-vault-sdk-two-places"
+    ],
+    [
+      "dr-008",
+      "closes-off",
+      "inv-no-raw-byte-in-our-process"
+    ],
+    [
+      "dr-008",
+      "closes-off",
+      "inv-region-per-market"
+    ],
+    [
+      "dr-009",
+      "closes-off",
+      "inv-no-raw-artefact"
+    ],
+    [
+      "dr-009",
+      "closes-off",
+      "inv-verify-before-view"
+    ],
+    [
+      "dr-009",
+      "closes-off",
+      "inv-no-export-path"
+    ],
+    [
+      "dr-010",
+      "closes-off",
+      "inv-no-build-step"
+    ],
+    [
+      "dr-010",
+      "closes-off",
+      "inv-no-second-copy"
+    ],
+    [
+      "dr-011",
+      "closes-off",
+      "inv-colours-only-in-tokens"
+    ],
+    [
+      "dr-012",
+      "closes-off",
+      "inv-status-agree"
+    ],
+    [
+      "dr-013",
+      "closes-off",
+      "inv-no-upgrade-on-secondary-source"
+    ],
+    [
+      "dr-013",
+      "closes-off",
+      "inv-reread-before-circulation"
+    ],
+    [
+      "dr-014",
+      "closes-off",
+      "inv-boundary-sequence-fixed"
+    ],
+    [
+      "dr-015",
+      "closes-off",
+      "inv-no-economics-anywhere"
+    ],
+    [
+      "dr-016",
+      "closes-off",
+      "inv-fact-provenance"
+    ],
+    [
+      "dr-016",
+      "closes-off",
+      "inv-no-real-value-in-store"
+    ],
+    [
+      "dr-016",
+      "closes-off",
+      "inv-connectors-read-only"
+    ],
+    [
+      "dr-005",
+      "closes-off",
+      "inv-state-machine-invariant"
+    ],
+    [
+      "dr-006",
+      "closes-off",
+      "inv-never-a-closure"
+    ],
+    [
+      "ledger-1.4.1",
+      "justifies",
+      "inv-system-forgetting-forbidden"
+    ],
+    [
+      "ledger-1.4.3",
+      "justifies",
+      "inv-state-machine-invariant-identical"
+    ],
+    [
+      "ledger-1.3.1",
+      "justifies",
+      "inv-alias-only-outside-zone"
+    ],
+    [
+      "ledger-1.2.3",
+      "justifies",
+      "inv-no-design-constraint-from-jurisdiction"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "inv-at-most-once"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "inv-no-irreversible-outside-envelope"
+    ],
+    [
+      "comp-surface-controllers",
+      "depends-on",
+      "inv-irreversible-inside-dual-control"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "inv-missing-row-is-bounce"
+    ],
+    [
+      "comp-classifier",
+      "depends-on",
+      "inv-otp-never-ours"
+    ],
+    [
+      "comp-policy-layer",
+      "depends-on",
+      "inv-missing-row-is-bounce"
+    ],
+    [
+      "comp-policy-layer",
+      "depends-on",
+      "inv-flag-filters-envelope"
+    ],
+    [
+      "comp-policy-layer",
+      "depends-on",
+      "inv-no-design-constraint-from-jurisdiction"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "inv-no-terminal-without-transition"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "inv-live-timer-on-every-live-state"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "inv-system-forgetting-forbidden"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "inv-state-machine-invariant"
+    ],
+    [
+      "comp-state-machine",
+      "depends-on",
+      "inv-lapsed-never-withdrawn"
+    ],
+    [
+      "comp-worker-console",
+      "depends-on",
+      "inv-state-machine-invariant"
+    ],
+    [
+      "comp-worker-console",
+      "depends-on",
+      "inv-alias-only-outside-zone"
+    ],
+    [
+      "comp-vault",
+      "depends-on",
+      "inv-no-real-value-at-rest"
+    ],
+    [
+      "comp-vault",
+      "depends-on",
+      "inv-region-per-market"
+    ],
+    [
+      "comp-edge-proxy",
+      "depends-on",
+      "inv-no-raw-byte-in-our-process"
+    ],
+    [
+      "comp-hash-service",
+      "depends-on",
+      "inv-vault-sdk-two-places"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "inv-vault-sdk-two-places"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "inv-alias-only-outside-zone"
+    ],
+    [
+      "comp-evidence-pipeline",
+      "depends-on",
+      "inv-no-raw-artefact"
+    ],
+    [
+      "comp-evidence-pipeline",
+      "depends-on",
+      "inv-verify-before-view"
+    ],
+    [
+      "comp-evidence-pipeline",
+      "depends-on",
+      "inv-no-export-path"
+    ],
+    [
+      "comp-adapters",
+      "depends-on",
+      "inv-adapter-never-raw"
+    ],
+    [
+      "comp-adapters",
+      "depends-on",
+      "inv-core-country-agnostic"
+    ],
+    [
+      "comp-context-store",
+      "depends-on",
+      "inv-fact-provenance"
+    ],
+    [
+      "comp-context-store",
+      "depends-on",
+      "inv-no-real-value-in-store"
+    ],
+    [
+      "comp-context-store",
+      "depends-on",
+      "inv-connectors-read-only"
+    ],
+    [
+      "comp-site-controls",
+      "depends-on",
+      "inv-never-a-closure"
+    ],
+    [
+      "comp-site-controls",
+      "depends-on",
+      "inv-site-controls-are-trust-controls"
+    ],
+    [
+      "comp-site-controls",
+      "depends-on",
+      "inv-no-step-off-site"
+    ],
+    [
+      "comp-intake-gateway",
+      "depends-on",
+      "inv-one-request-format"
+    ],
+    [
+      "comp-intake-gateway",
+      "depends-on",
+      "inv-no-channel-branch"
+    ],
+    [
+      "comp-intake-gateway",
+      "depends-on",
+      "inv-approval-needs-authenticated-device"
+    ],
+    [
+      "comp-device-surface",
+      "depends-on",
+      "inv-approval-needs-authenticated-device"
+    ],
+    [
+      "comp-envelope",
+      "depends-on",
+      "inv-no-step-before-envelope"
+    ],
+    [
+      "comp-envelope",
+      "depends-on",
+      "inv-nothing-past-validity-window"
+    ],
+    [
+      "comp-task-service",
+      "depends-on",
+      "inv-outcome-code-closes-step"
+    ],
+    [
+      "vocab-verdicts",
+      "depends-on",
+      "inv-five-option-ceiling"
+    ],
+    [
+      "comp-legal-pack",
+      "depends-on",
+      "inv-one-text-per-core-rule"
+    ],
+    [
+      "comp-legal-pack",
+      "depends-on",
+      "inv-core-country-agnostic"
+    ],
+    [
+      "ledger-1.1.3",
+      "justifies",
+      "vocab-verticals"
+    ],
+    [
+      "ledger-1.8.2",
+      "justifies",
+      "vocab-tiers"
+    ],
+    [
+      "premise-moat",
+      "justifies",
+      "vocab-moat-properties"
+    ],
+    [
+      "dr-008",
+      "justifies",
+      "vocab-doors"
+    ],
+    [
+      "dr-008",
+      "justifies",
+      "vocab-detectors"
+    ],
+    [
+      "dr-009",
+      "justifies",
+      "vocab-redaction-masks"
+    ],
+    [
+      "fatal-1",
+      "justifies",
+      "vocab-browser-masks"
+    ],
+    [
+      "dr-007",
+      "justifies",
+      "vocab-core-components"
+    ],
+    [
+      "dr-005",
+      "justifies",
+      "vocab-timers"
+    ],
+    [
+      "ledger-1.1.2",
+      "justifies",
+      "vocab-ledger-events"
+    ],
+    [
+      "dr-012",
+      "justifies",
+      "vocab-status-words"
+    ],
+    [
+      "dr-006",
+      "justifies",
+      "vocab-shifts"
+    ],
+    [
+      "comp-access-ledger",
+      "depends-on",
+      "vocab-ledger-events"
+    ],
+    [
+      "comp-watchdog",
+      "depends-on",
+      "vocab-timers"
+    ],
+    [
+      "comp-browser-masker",
+      "depends-on",
+      "vocab-browser-masks"
+    ],
+    [
+      "comp-evidence-pipeline",
+      "depends-on",
+      "vocab-redaction-masks"
+    ],
+    [
+      "comp-edge-proxy",
+      "depends-on",
+      "vocab-detectors"
+    ],
+    [
+      "comp-hash-service",
+      "depends-on",
+      "vocab-detectors"
+    ],
+    [
+      "comp-shift-wheel",
+      "depends-on",
+      "vocab-shifts"
+    ],
+    [
+      "comp-tiers",
+      "depends-on",
+      "vocab-tiers"
+    ],
+    [
+      "open-07-03",
+      "lands-in",
+      "vocab-verticals"
+    ],
+    [
+      "fatal-2",
+      "justifies",
+      "inv-no-financial-credential"
+    ],
+    [
+      "dr-003",
+      "closes-off",
+      "inv-no-financial-credential"
+    ],
+    [
+      "comp-adapters",
+      "depends-on",
+      "inv-no-financial-credential"
+    ],
+    [
+      "dr-008",
+      "closes-off",
+      "inv-envelope-bound-detokenise"
+    ],
+    [
+      "dr-004",
+      "closes-off",
+      "inv-envelope-bound-detokenise"
+    ],
+    [
+      "comp-substitutor",
+      "depends-on",
+      "inv-envelope-bound-detokenise"
+    ],
+    [
+      "comp-envelope",
+      "depends-on",
+      "inv-envelope-bound-detokenise"
+    ],
+    [
+      "comp-step-context",
+      "depends-on",
+      "inv-envelope-bound-detokenise"
+    ],
+    [
+      "dr-018",
+      "rejects",
+      "alt-dr-018-a-per-task-address-at"
+    ],
+    [
+      "dr-018",
+      "rejects",
+      "alt-dr-018-an-ai-fred-mailbox-per"
+    ],
+    [
+      "dr-018",
+      "rejects",
+      "alt-dr-018-forwarding-rules-in-the-user"
+    ],
+    [
+      "dr-018",
+      "rejects",
+      "alt-dr-018-the-user-s-mail-credentials"
+    ],
+    [
+      "dr-018",
+      "rejects",
+      "alt-dr-018-a-bounce-with-no-draft"
+    ],
+    [
+      "dr-018",
+      "justifies",
+      "comp-mail-relay"
+    ],
+    [
+      "premise-endgame",
+      "justifies",
+      "dr-019"
+    ],
+    [
+      "dr-018",
+      "closes-off",
+      "inv-mail-from-users-own-address"
+    ],
+    [
+      "comp-mail-relay",
+      "depends-on",
+      "inv-mail-from-users-own-address"
+    ],
+    [
+      "dr-018",
+      "closes-off",
+      "inv-send-scope-not-a-connector"
+    ],
+    [
+      "comp-mail-relay",
+      "depends-on",
+      "inv-send-scope-not-a-connector"
+    ],
+    [
+      "dr-019",
+      "closes-off",
+      "inv-everyday-same-harness"
+    ],
+    [
+      "comp-legal-pack",
+      "depends-on",
+      "inv-everyday-same-harness"
+    ],
+    [
+      "open-07-20",
+      "lands-in",
+      "comp-mail-relay"
+    ],
+    [
+      "open-07-21",
+      "lands-in",
+      "comp-context-store"
+    ],
+    [
+      "open-07-21",
+      "lands-in",
+      "dr-015"
+    ],
+    [
+      "premise-wedge",
+      "justifies",
+      "dr-019"
+    ],
+    [
+      "dr-016",
+      "justifies",
+      "dr-019"
+    ],
+    [
+      "dr-019",
+      "rejects",
+      "alt-dr-019-a-staged-product"
+    ],
+    [
+      "dr-019",
+      "rejects",
+      "alt-dr-019-data-sold-as-an-asset"
+    ],
+    [
+      "dr-019",
+      "rejects",
+      "alt-dr-019-leaving-the-data-story-open"
+    ],
+    [
+      "dr-020",
+      "rejects",
+      "alt-dr-020-a-wedge-first-sequence"
+    ],
+    [
+      "dr-020",
+      "rejects",
+      "alt-dr-020-two-products-or-two-brands"
+    ],
+    [
+      "dr-020",
+      "rejects",
+      "alt-dr-020-everyday-as-an-unpriced-extra"
+    ],
+    [
+      "dr-021",
+      "rejects",
+      "alt-dr-021-the-audio-masking-pipeline"
+    ],
+    [
+      "dr-021",
+      "rejects",
+      "alt-dr-021-the-mute-for-placements-only"
+    ],
+    [
+      "dr-021",
+      "rejects",
+      "alt-dr-021-a-worker-reading-a-value-aloud"
+    ],
+    [
+      "dr-022",
+      "rejects",
+      "alt-dr-022-a-bespoke-browser-build"
+    ],
+    [
+      "dr-022",
+      "rejects",
+      "alt-dr-022-an-unmasked-page"
+    ],
+    [
+      "dr-022",
+      "rejects",
+      "alt-dr-022-streaming-everything"
+    ],
+    [
+      "dr-023",
+      "rejects",
+      "alt-dr-023-the-published-sequence"
+    ],
+    [
+      "dr-023",
+      "rejects",
+      "alt-dr-023-india-only"
+    ],
+    [
+      "dr-023",
+      "rejects",
+      "alt-dr-023-both-markets-at-once"
+    ],
+    [
+      "dr-024",
+      "rejects",
+      "alt-dr-024-unlimited-flat-fee"
+    ],
+    [
+      "dr-024",
+      "rejects",
+      "alt-dr-024-mass-privileged-vip"
+    ],
+    [
+      "dr-024",
+      "rejects",
+      "alt-dr-024-per-task-no-subscription"
+    ],
+    [
+      "dr-024",
+      "rejects",
+      "alt-dr-024-merchant-funded"
+    ],
+    [
+      "dr-019",
+      "closes-off",
+      "inv-no-data-sold"
+    ],
+    [
+      "dr-022",
+      "justifies",
+      "comp-workflow-library"
+    ],
+    [
+      "comp-workflow-library",
+      "depends-on",
+      "comp-managed-browser"
+    ],
+    [
+      "dr-021",
+      "closes-off",
+      "inv-no-value-spoken"
+    ],
+    [
+      "dr-022",
+      "closes-off",
+      "inv-card-over-pixels"
+    ],
+    [
+      "dr-024",
+      "closes-off",
+      "inv-metered-allowance"
+    ],
+    [
+      "dr-024",
+      "closes-off",
+      "inv-no-paid-placement"
+    ],
+    [
+      "dr-023",
+      "closes-off",
+      "inv-market-gates"
+    ],
+    [
+      "open-07-22",
+      "lands-in",
+      "dr-024"
+    ],
+    [
+      "open-07-25",
+      "lands-in",
+      "dr-023"
+    ],
+    [
+      "open-07-27",
+      "lands-in",
+      "dr-006"
+    ],
+    [
+      "open-07-26",
+      "lands-in",
+      "comp-workflow-library"
+    ],
+    [
+      "dr-019",
+      "justifies",
+      "dr-020"
+    ],
+    [
+      "dr-020",
+      "justifies",
+      "dr-024"
+    ],
+    [
+      "dr-021",
+      "justifies",
+      "comp-telephony"
+    ],
+    [
+      "dr-022",
+      "justifies",
+      "comp-managed-browser"
+    ],
+    [
+      "premise-endgame",
+      "justifies",
+      "dr-020"
+    ],
+    [
+      "open-07-29",
+      "lands-in",
+      "dr-019"
+    ],
+    [
+      "open-07-30",
+      "lands-in",
+      "dr-024"
+    ]
   ]
 }

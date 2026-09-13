@@ -139,7 +139,7 @@ figs.append(figure('fig-revenue-cost', 2,
  'about 10.4 by month 60. Revenue starts at 0.115, is below cost for the first twenty-eight months, crosses it at '
  'month 29, and ends at about 23.3 crore a month, the accent line.',
  'The lines cross at month 29 on the planning line: before it every month consumes cash, after it every month makes '
- 'it.', h, body))
+ 'it. Two averaged lines cross earlier than the paths beneath them; the median path crosses at month 40.', h, body))
 
 h, body = frame({'labour as a share of revenue': S['labour_share']}, lambda t: f'{t:g}%', 'per cent of revenue',
  [(1, 'labour as a share of revenue', '73% at m1', True), (36, 'labour as a share of revenue', '18% at m36', True),
@@ -162,8 +162,9 @@ figs.append(figure('fig-cumulative-cash', 4,
  'Two lines in rupees crore, cumulative, against a zero line. The planning line, the accent, falls to a trough of '
  'about minus 17.3 crore at month 28 and is back above zero by month 39. The conservative line falls further and '
  'later, to about minus 49.6 crore at month 56, and has not returned to zero by month 60.',
- 'The trough is the money the company has to raise: about 17.3 crore on the planning line and 49.6 on the '
- 'conservative one, which at the model\'s rate of 89 rupees to the dollar are the $1.95m and $5.6m of section 5.',
+ 'The trough is what the planning line asks for: about 17.3 crore, and 49.6 on the conservative one, which at the '
+ 'model\'s rate of 89 rupees to the dollar are the $1.95m and $5.6m of section 5. The median path needs more, 24.5 '
+ 'crore, because the trough of an average is shallower than the average of troughs.',
  h, body))
 
 out = R / 'docs/05-business/_figures.html'
