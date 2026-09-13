@@ -47,6 +47,10 @@
       "pages": 1
     },
     {
+      "key": "08-review",
+      "pages": 1
+    },
+    {
       "key": "decisions",
       "pages": 20
     },
@@ -143,6 +147,14 @@
       "status": "amber",
       "summary": "Every open item with an owner and a trigger: the channel amber, first-cohort sequencing, the legal to-verifies, Netlify access, naming, the make-good policy, remote-safe operations, vendor choices, and the objections formed against fixed decisions during the build.",
       "updated": "2026-09-10"
+    },
+    {
+      "path": "08-review/index.html",
+      "title": "Full Review 11/09",
+      "section": "08-review",
+      "status": "to-verify",
+      "summary": "An independent, partner-level review of the venture as the record stood on 11 September 2026: the technology today, the technologies on the horizon, the regulatory landscape in India, the UK and the US, the market, the economics the record defers, the team the plan needs, a red-team read of the trust design, the product and its path to customers, a pre-mortem and what would need to be true before money.",
+      "updated": "2026-09-11"
     },
     {
       "path": "decisions/dr-001-channel-gateway.html",
