@@ -2152,28 +2152,28 @@
         "workflow-library": {
           "kind": "h3",
           "line": 369,
-          "no": "4.5",
+          "no": "4.4",
           "text": "The workflow library",
           "under": "surfaces"
         },
         "surface-controllers": {
           "kind": "h3",
           "line": 372,
-          "no": "4.6",
+          "no": "4.5",
           "text": "The surface controllers and the step runner",
           "under": "surfaces"
         },
         "step-context": {
           "kind": "h3",
           "line": 375,
-          "no": "4.5",
+          "no": "4.6",
           "text": "The signed step context",
           "under": "surfaces"
         },
         "device-surface": {
           "kind": "h3",
           "line": 377,
-          "no": "4.6",
+          "no": "4.7",
           "text": "The device surface",
           "under": "surfaces"
         },
@@ -2545,7 +2545,7 @@
             [
               "script_template, expected_outcome_template, placement_cues",
               "text",
-              "the planner's template inputs, with alias slots, cue markers and, per spoken lin",
+              "the planner's template inputs, with alias slots, and cue markers; versioned by t",
               "per market"
             ],
             [
@@ -2569,19 +2569,19 @@
             [
               "surface_settings",
               "reference",
-              "not values of the catalogue's own: the browser stream's delay line, the telephon",
+              "not values of the catalogue's own: the browser stream's delay line, the digit-ru",
               "per market, in 03's surface settings"
             ],
             [
-              "spoken_format, tts_voice",
+              "spoken_format, tts_voice, withdrawn",
               "per language",
-              "how a value of each class is spoken or keyed on a call, per language of the mark",
+              "withdrawn with the media path (dr-021): no value of any class is spoken or keyed",
               "per market"
             ],
             [
               "commitment_dictionary, non_committing_lexicon",
               "per language",
-              "the outbound gate's two lists (section 4.2). on a step holding no approval token",
+              "withdrawn with the outbound gate (dr-021). on a step holding no approval token t",
               "per market"
             ],
             [
@@ -2621,7 +2621,7 @@
               "reversible; undo: cancel on the same line, no fee",
               "human",
               "telephony",
-              "personal fact",
+              "none; a call carries no value (dr-021)",
               "recording, transcript"
             ],
             [
@@ -2969,7 +2969,7 @@
               "context-issued, context-voided",
               "step",
               "context id, envelope version, expiry",
-              "the signed step context, section 4.5."
+              "the signed step context, section 4.6."
             ],
             [
               "placement",
@@ -3476,7 +3476,7 @@
           "kind": "figure",
           "line": 64,
           "no": "Figure 2.5",
-          "text": "Everything a worker needs to place two values on one call, and nothing that would let them know whose values they are; t",
+          "text": "Everything a worker needs to place two values in one form, and nothing that would let them know whose values they are; t",
           "under": "task-card"
         },
         "alias-only": {
@@ -4005,7 +4005,7 @@
           "kind": "figure",
           "line": 427,
           "no": "Figure 3.3",
-          "text": "Twenty-six paths, each ending at the property that closes it; the accent is the one boundary every path would have to cr",
+          "text": "Twenty-six paths, each ending at the property that closes it; the accent is the one boundary a path would have to cross ",
           "under": "threat-model"
         },
         "tab-threat": {
@@ -4089,7 +4089,7 @@
             [
               "identity number",
               "{{pan}}, {{aadhaar}}, {{ssn}}, {{ni-number}}, {{nhs-number}}, {{passport}}; and ",
-              "browser, telephony, relay. {{aadhaar}} is the exception: never placed in full on",
+              "browser and relay only; never a call (dr-021). {{aadhaar}} is the exception: nev",
               "pan: five letters, four digits, one letter. aadhaar: twelve digits, grouped 4-4-",
               "last four; the aadhaar partial with the first eight hidden; spaced and hyphenate",
               "yes: confirmation pages repeat them, often partly masked"
@@ -4097,7 +4097,7 @@
             [
               "payment instrument",
               "{{card.primary}}, {{account.hdfc}}, with sub-fields for number, expiry, sort cod",
-              "browser, telephony, relay",
+              "browser and relay only; never a call (dr-021)",
               "card: thirteen to nineteen digits, grouped by four or unspaced. expiry: two digi",
               "last four; first six; an expiry beside a last-four",
               "yes: receipts and ivr read-back"
@@ -4105,7 +4105,7 @@
             [
               "financial fact",
               "{{balance.hdfc}}, {{amount.fee}}, {{amount.n}}: a balance, a transaction, a loan",
-              "browser, telephony, relay, placed like any other value where a step's field list",
+              "browser and relay only; never a call (dr-021), and placed like any other value w",
               "a currency amount in written or spoken form: a number with a currency word or sy",
               "the rounded or approximate amount; the figure alone beside a balance, fee, loan ",
               "yes, and low entropy: a balance page, a statement line or a fee read aloud; the "
@@ -4113,7 +4113,7 @@
             [
               "personal fact",
               "{{name}}, {{dob}}, {{address.home}}, {{phone}}, {{email}}, {{mother-maiden-name}",
-              "browser, telephony, relay",
+              "browser and relay only; never a call (dr-021)",
               "dates in every numeric order and with month names, spoken or written. a name as ",
               "the surname alone in a security-answer context; the postcode alone; the year alo",
               "yes, and low entropy: the digest set is keyed and the key never leaves the hash "
@@ -4129,7 +4129,7 @@
             [
               "health and legal matter",
               "{{health.condition}}, {{health.medication}}, {{health.result}}, {{legal.matter}}",
-              "browser, telephony, relay, where the line \"share a health record\" in table 3.5 r",
+              "browser and relay only; never a call (dr-021), where the line \"share a health re",
               "a dictionary of condition, procedure, medication, result and legal-matter terms ",
               "the term alone; an abbreviation; a drug's brand or generic name; a case or claim",
               "yes, and low entropy: a confirmation repeats the reason for a visit or a claim; "
@@ -4227,7 +4227,7 @@
             ],
             [
               "the dual-control checker",
-              "the live masked stream, or the masked leg, for the step being checked, as the ex",
+              "the live masked stream, or or the masked artefact, for the step being checked, a",
               "during the check of an irreversible step, from the check card ( verification in ",
               "a checker saw the masked stream for step 2."
             ],
@@ -4618,7 +4618,7 @@
               "21 ivr read-back, or a far party speaking a value",
               "a voice system or an agent reading a number back, issuing a new one aloud, or sp",
               "this is the path the previous edition closed with a masker and the one this edit",
-              "the booking line read {{dob}} back. replaced by a tone before the worker heard i"
+              "the booking line asked for a date of birth. not given on a call; the step went t"
             ],
             [
               "22 the user pasting a real value into chat",
@@ -6290,7 +6290,7 @@
         },
         "5.5": {
           "line": 193,
-          "caption": "Four sequencing scenarios, twenty thousand paths each: late secondary expansion is worse than not expanding. assumption",
+          "caption": "Three of the four sequencing scenarios, twenty thousand paths each: late secondary expansion is worse than not expanding",
           "rows": [
             [
               "profitable by month 36",
@@ -7072,7 +7072,7 @@
               "access ledger",
               "build",
               "the trust story in plain words, written at every placement, view and mute and re",
-              "append-only; one line per placement, view or mute, placement lines written by th"
+              "append-only; one line per placement, view or exposure, placement lines written b"
             ],
             [
               "intake gateway",
@@ -7519,34 +7519,34 @@
         },
         "legal": {
           "kind": "h3",
-          "line": 101,
+          "line": 106,
           "no": "1.1",
           "text": "The legal to-verifies, per jurisdiction",
           "under": "items"
         },
         "naming": {
           "kind": "h3",
-          "line": 111,
+          "line": 116,
           "no": "1.2",
           "text": "Naming, domain and trademark",
           "under": "items"
         },
         "netlify": {
           "kind": "h3",
-          "line": 113,
+          "line": 118,
           "no": "1.3",
           "text": "Netlify access",
           "under": "items"
         },
         "objections": {
           "kind": "h2",
-          "line": 117,
+          "line": 122,
           "no": "2",
           "text": "Objections formed against fixed decisions"
         },
         "left-alone": {
           "kind": "h2",
-          "line": 131,
+          "line": 136,
           "no": "3",
           "text": "What was deliberately left alone"
         }
@@ -7554,7 +7554,7 @@
       "tables": {
         "7.1": {
           "line": 64,
-          "caption": "Thirty open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed by the r",
+          "caption": "Thirty-five open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed by ",
           "rows": [
             [
               "the front door per market (the channel amber). the intake gateway beneath it is ",
@@ -7722,7 +7722,7 @@
               "founding engineer; interim owner the founder",
               "visible only over time: whether the tenth institution costs less to add than the",
               "",
-              "05 the model ; 02, 4.5"
+              "05 the model ; 02, 4.4"
             ],
             [
               "the headcount threshold at which the attested 24-hour site replaces the pilot's ",
@@ -7737,6 +7737,41 @@
               "before the first investor conversation.",
               "",
               "00, 5.1"
+            ],
+            [
+              "a given name on a task card. the need-to-know filter admits no person's name, an",
+              "founder",
+              "before the first card is generated against a live party.",
+              "",
+              "04, 1.2 ; 01, 1"
+            ],
+            [
+              "a fee quoted on a call has nothing to compare it with. an amount reaches no card",
+              "founder, with engineering",
+              "before a step with a sub-cap runs on a call in the pilot.",
+              "",
+              "04, 1.4 ; 03, table 3.1"
+            ],
+            [
+              "at most once, on a call step that never receives a marker. the fired marker is w",
+              "founder, with engineering",
+              "before the state machine's retry path is built.",
+              "",
+              "02, 4.2 ; 02, 7.1"
+            ],
+            [
+              "a dependant's aliases placed under the user's envelope. a people node is not a d",
+              "founder, with counsel",
+              "before a step places any alias qualified by a person reference.",
+              "",
+              "03, 1.1 ; 01, 1"
+            ],
+            [
+              "three findings of the review that the record contradicts rather than answers: th",
+              "founder, with counsel for the first and engineering for the second",
+              "before the vault and proxy vendor is chosen, and before any us payment step is s",
+              "",
+              "08 ; dr-008"
             ],
             [
               "the acquisition channel, and what a user costs through it. the model assumes use",
@@ -7973,46 +8008,86 @@
         },
         {
           "line": 94,
+          "to": "04-operations/index.html#card-generation"
+        },
+        {
+          "line": 94,
+          "to": "01-product/index.html#journeys"
+        },
+        {
+          "line": 95,
+          "to": "04-operations/index.html#card-script"
+        },
+        {
+          "line": 95,
+          "to": "03-trust-and-data/index.html#tab-alias"
+        },
+        {
+          "line": 96,
+          "to": "02-architecture/index.html#telephony"
+        },
+        {
+          "line": 96,
+          "to": "02-architecture/index.html#closing"
+        },
+        {
+          "line": 97,
+          "to": "03-trust-and-data/index.html#alias-types"
+        },
+        {
+          "line": 97,
+          "to": "01-product/index.html#journey-family"
+        },
+        {
+          "line": 98,
+          "to": "08-review/index.html#regulation-us"
+        },
+        {
+          "line": 98,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 99,
           "to": "05-business/index.html#how-users-arrive"
         },
         {
-          "line": 95,
+          "line": 100,
           "to": "05-business/model.html#limits"
         },
         {
-          "line": 95,
+          "line": 100,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 96,
+          "line": 101,
           "to": "decisions/dr-018-mail-from-the-users-address.html"
         },
         {
-          "line": 96,
+          "line": 101,
           "to": "02-architecture/index.html#mail-relay"
         },
         {
-          "line": 97,
+          "line": 102,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 97,
+          "line": 102,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 97,
+          "line": 102,
           "to": "05-business/index.html#commerce"
         },
         {
-          "line": 146,
+          "line": 151,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 147,
+          "line": 152,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 148,
+          "line": 153,
           "to": "07-open/index.html"
         }
       ]
@@ -12848,6 +12923,10 @@
         {
           "line": 91,
           "to": "decisions/dr-012-design-plan.html"
+        },
+        {
+          "line": 91,
+          "to": "decisions/dr-021-no-value-spoken.html"
         },
         {
           "line": 100,

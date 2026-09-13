@@ -5342,7 +5342,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 30,
+      "count": 35,
       "members": [
         {
           "id": "open-07-01",
@@ -5463,6 +5463,26 @@
         {
           "id": "open-07-30",
           "word": "the three mechanisms the trajectory model does not have"
+        },
+        {
+          "id": "open-07-31",
+          "word": "a given name on a task card"
+        },
+        {
+          "id": "open-07-32",
+          "word": "a fee quoted on a call has nothing to compare it with"
+        },
+        {
+          "id": "open-07-33",
+          "word": "at most once, on a call step that never receives a marker"
+        },
+        {
+          "id": "open-07-34",
+          "word": "a dependant's aliases placed under the user's envelope"
+        },
+        {
+          "id": "open-07-35",
+          "word": "three findings of the review that the record contradicts"
         }
       ],
       "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
@@ -7818,6 +7838,93 @@
         {
           "at": "05-business/model.html#limits!\"Nothing in it buys a user, and bad months cannot persist\"",
           "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "open-07-31",
+      "kind": "open",
+      "label": "A given name on a task card",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"A given name on a task card\"",
+          "role": "home"
+        },
+        {
+          "at": "04-operations/index.html#card-generation!\"with one exception the cards in section 1.4 already use\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "open-07-32",
+      "kind": "open",
+      "label": "A fee quoted on a call has nothing to compare it with",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"A fee quoted on a call has nothing to compare it with\"",
+          "role": "home"
+        },
+        {
+          "at": "03-trust-and-data/index.html#tab-alias!\"has no controller to compare it\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "open-07-33",
+      "kind": "open",
+      "label": "At most once, on a call step that never receives a marker",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"At most once, on a call step that never receives a marker\"",
+          "role": "home"
+        },
+        {
+          "at": "02-architecture/index.html#telephony!\"a reversible step's script carries no committing sentence\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "open-07-34",
+      "kind": "open",
+      "label": "A dependant's aliases placed under the user's envelope",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"A dependant's aliases placed under the user's envelope\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-35",
+      "kind": "open",
+      "label": "Three findings of the review the record contradicts",
+      "facets": {
+        "layer": "open",
+        "fixity": "to-verify"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Three findings of the review that the record contradicts rather than answers\"",
+          "role": "home"
         }
       ]
     }
@@ -10852,6 +10959,31 @@
       "open-07-30",
       "lands-in",
       "dr-024"
+    ],
+    [
+      "open-07-31",
+      "lands-in",
+      "comp-envelope"
+    ],
+    [
+      "open-07-32",
+      "lands-in",
+      "dr-004"
+    ],
+    [
+      "open-07-33",
+      "lands-in",
+      "dr-005"
+    ],
+    [
+      "open-07-34",
+      "lands-in",
+      "dr-004"
+    ],
+    [
+      "open-07-35",
+      "lands-in",
+      "dr-008"
     ]
   ]
 }

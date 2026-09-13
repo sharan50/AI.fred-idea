@@ -128,7 +128,8 @@ figs.append(figure('fig-cost-factors', 1,
  'Tokens never leave the floor of the scale, ending at 0.26. Everything else, which is compliance, sales, general and '
  'administrative and one-time costs, rises from 0.24 to 2.3.',
  'Labour is the line that grows with usage; engineering is the larger line for the first four years; tokens never '
- 'become the largest line in any month.', h, body))
+ 'become the largest line in any month. The four panels are the cost base except payment fees and make-goods, '
+ 'which are charged on revenue and reach 1.2 crore a month by m60.', h, body))
 
 h, body = frame({'revenue': [v / CR for v in S['revenue']], 'cost': [v / CR for v in S['total_cost']]},
  lambda t: f'{t:g}', 'Rs crore a month', [(29, 'revenue', 'revenue passes cost at m29', True, -12, -34, 'end')],
