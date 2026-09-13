@@ -1,0 +1,534 @@
+{
+  "scenario": "viable",
+  "paths": 20000,
+  "sweep_paths": 6000,
+  "seed": 20260913,
+  "reporting_fx": 89.0,
+  "median": {
+    "peak_need_cr": 24.501623941795344,
+    "trough_month": 36.0,
+    "crossover_month": 40.0,
+    "profitable_by_m60": 1.0,
+    "profitable_by_m36": 0.0,
+    "m60_contribution_cr": 9.326182655433408,
+    "m60_users": 29784.998703883848,
+    "m36_minutes_per_user": 56.322404190011326,
+    "m36_labour_share": 0.1705630309552179
+  },
+  "share_profitable_by_m60": 0.8904,
+  "share_profitable_by_m36": 0.34305,
+  "peak_need_cr": {
+    "10": 10.09896846476085,
+    "25": 15.200102720158107,
+    "50": 24.501623941795344,
+    "75": 39.6325391621533,
+    "90": 57.77039597546249,
+    "95": 70.03007186203435
+  },
+  "variance_owned_by_top_five": {
+    "peak_need_cr": {
+      "add_rate_0": 0.3411,
+      "gna0": 0.1613,
+      "eng0": 0.0688,
+      "price_ind": 0.0494,
+      "eng_ctc": 0.0424
+    },
+    "crossover_month": {
+      "add_rate_0": 0.6007,
+      "seed_users": 0.0468,
+      "churn_0": 0.0306,
+      "add_decay": 0.0286,
+      "cap_ind": 0.0269
+    },
+    "m60_contribution_cr": {
+      "add_rate_0": 0.3378,
+      "cap_ind": 0.181,
+      "add_decay": 0.0386,
+      "price_ind": 0.0138,
+      "seed_users": 0.0128
+    },
+    "profitable_by_m60": {
+      "add_rate_0": 0.3998,
+      "add_decay": 0.0278,
+      "seed_users": 0.0176,
+      "churn_0": 0.0123,
+      "churn_halflife": 0.0092
+    },
+    "m36_minutes_per_user": {
+      "tasks_day": 0.4065,
+      "tail_floor": 0.2064,
+      "learn_hl": 0.0842,
+      "tail_min_0": 0.0722,
+      "tail_floor_min": 0.0557
+    },
+    "m60_users": {
+      "add_rate_0": 0.331,
+      "cap_ind": 0.2315,
+      "add_decay": 0.0353,
+      "churn_0": 0.0107,
+      "seed_users": 0.0106
+    }
+  },
+  "failure_profile": {
+    "share_never_profitable_by_m60": 0.1096,
+    "drivers": {
+      "tasks_day": {
+        "reads_as": "tasks a user runs a day",
+        "median_all": 0.8764452811125317,
+        "median_in_failures": 0.8965783391241432,
+        "shift_in_p10_p90_widths": 0.04575521473438732
+      },
+      "price_ind": {
+        "reads_as": "India price, $ a month",
+        "median_all": 53.46926072381208,
+        "median_in_failures": 52.21204597936072,
+        "shift_in_p10_p90_widths": -0.06715801661175877
+      },
+      "price_uk": {
+        "reads_as": "UK price, $ a month",
+        "median_all": 87.43819488133038,
+        "median_in_failures": 87.30552317131962,
+        "shift_in_p10_p90_widths": -0.004011863127961095
+      },
+      "price_us": {
+        "reads_as": "US price, $ a month",
+        "median_all": 108.71440932247245,
+        "median_in_failures": 108.41814511406848,
+        "shift_in_p10_p90_widths": -0.0071737513089781295
+      },
+      "auto_ceil": {
+        "reads_as": "automation ceiling, share of tasks",
+        "median_all": 0.8001355075856731,
+        "median_in_failures": 0.7998750887715255,
+        "shift_in_p10_p90_widths": -0.0019707782420138866
+      },
+      "auto_hl": {
+        "reads_as": "months to half the automation gap",
+        "median_all": 11.77066516058592,
+        "median_in_failures": 11.890033563085225,
+        "shift_in_p10_p90_widths": 0.019616672728251853
+      },
+      "auto_0": {
+        "reads_as": "automation at month 1",
+        "median_all": 0.4147391449149191,
+        "median_in_failures": 0.41503030563104926,
+        "shift_in_p10_p90_widths": 0.0023887035777913103
+      },
+      "assist_floor": {
+        "reads_as": "assisted task floor, minutes",
+        "median_all": 1.7517940617275896,
+        "median_in_failures": 1.758581094376364,
+        "shift_in_p10_p90_widths": 0.007744360379794075
+      },
+      "assist_0": {
+        "reads_as": "assisted task at month 1, minutes",
+        "median_all": 7.378745969871751,
+        "median_in_failures": 7.329385344444143,
+        "shift_in_p10_p90_widths": -0.01370186842611908
+      },
+      "tail_floor_min": {
+        "reads_as": "tail task floor, minutes",
+        "median_all": 20.56165282599684,
+        "median_in_failures": 20.715104592403392,
+        "shift_in_p10_p90_widths": 0.015338435723684162
+      },
+      "tail_min_0": {
+        "reads_as": "tail task at month 1, minutes",
+        "median_all": 52.98706718523516,
+        "median_in_failures": 53.19384754502612,
+        "shift_in_p10_p90_widths": 0.006715193354588579
+      },
+      "tail_0": {
+        "reads_as": "tail share at month 1",
+        "median_all": 0.09774834025655316,
+        "median_in_failures": 0.09779888147525576,
+        "shift_in_p10_p90_widths": 0.0008319322877822198
+      },
+      "tail_floor": {
+        "reads_as": "tail share floor",
+        "median_all": 0.0474998554452118,
+        "median_in_failures": 0.048316833448463874,
+        "shift_in_p10_p90_widths": 0.024363292139488686
+      },
+      "churn_0": {
+        "reads_as": "churn at month 1",
+        "median_all": 0.09529587994012362,
+        "median_in_failures": 0.10155829092518673,
+        "shift_in_p10_p90_widths": 0.14055284453902706
+      },
+      "churn_floor": {
+        "reads_as": "churn floor",
+        "median_all": 0.025628376723960566,
+        "median_in_failures": 0.027396431469425733,
+        "shift_in_p10_p90_widths": 0.12308442412761425
+      },
+      "churn_halflife": {
+        "reads_as": "months to half the churn gap",
+        "median_all": 15.05940942867615,
+        "median_in_failures": 16.062344974530234,
+        "shift_in_p10_p90_widths": 0.11331959057579087
+      },
+      "churn_vol": {
+        "reads_as": "churn sensitivity to saturation",
+        "median_all": 0.21290499413543912,
+        "median_in_failures": 0.21462557450632383,
+        "shift_in_p10_p90_widths": 0.01236499953564808
+      },
+      "seed_users": {
+        "reads_as": "users at month 1",
+        "median_all": 221.78111353402554,
+        "median_in_failures": 198.15493148839116,
+        "shift_in_p10_p90_widths": -0.1322181770500046
+      },
+      "add_rate_0": {
+        "reads_as": "referral and growth rate at month 1",
+        "median_all": 0.19099417880664812,
+        "median_in_failures": 0.1363456990083512,
+        "shift_in_p10_p90_widths": -0.49231479310189014
+      },
+      "add_decay": {
+        "reads_as": "monthly decay of that rate",
+        "median_all": 0.9915060998226737,
+        "median_in_failures": 0.9901759865578568,
+        "shift_in_p10_p90_widths": -0.19881716695313634
+      },
+      "cap_ind": {
+        "reads_as": "India ceiling, users",
+        "median_all": 78865.6912404465,
+        "median_in_failures": 67576.62018945976,
+        "shift_in_p10_p90_widths": -0.05047172523552207
+      },
+      "cap_uk": {
+        "reads_as": "UK ceiling, users",
+        "median_all": 26555.200502205025,
+        "median_in_failures": 26173.8863853149,
+        "shift_in_p10_p90_widths": -0.004640213695554394
+      },
+      "cap_us": {
+        "reads_as": "US ceiling, users",
+        "median_all": 48875.21082054714,
+        "median_in_failures": 48952.47475584649,
+        "shift_in_p10_p90_widths": 0.0004058092520972836
+      },
+      "cac_0": {
+        "reads_as": "cost to acquire a user, Rs",
+        "median_all": 1144.4735567327125,
+        "median_in_failures": 1156.6236559554256,
+        "shift_in_p10_p90_widths": 0.007591016228802768
+      },
+      "cac_growth": {
+        "reads_as": "monthly growth in that cost",
+        "median_all": 1.0127902386723513,
+        "median_in_failures": 1.0128397015139736,
+        "shift_in_p10_p90_widths": 0.0052579318399150615
+      },
+      "tok0": {
+        "reads_as": "tokens a task at month 1, $",
+        "median_all": 0.31482846662958863,
+        "median_in_failures": 0.31722960657760413,
+        "shift_in_p10_p90_widths": 0.010511384771773534
+      },
+      "tok_decline": {
+        "reads_as": "monthly decline in token price",
+        "median_all": 0.05487447788783334,
+        "median_in_failures": 0.05455740632522742,
+        "shift_in_p10_p90_widths": -0.011345148394044272
+      },
+      "tok_usage_growth": {
+        "reads_as": "monthly growth in tokens a task",
+        "median_all": 0.021392179069266732,
+        "median_in_failures": 0.021343318593360763,
+        "shift_in_p10_p90_widths": -0.0025178106102461584
+      },
+      "gen_ctc": {
+        "reads_as": "generalist cost to company, Rs a year",
+        "median_all": 527051.3666036772,
+        "median_in_failures": 529747.1205849794,
+        "shift_in_p10_p90_widths": 0.021228020840197846
+      },
+      "sup_mult": {
+        "reads_as": "supervisor and QA cost multiple",
+        "median_all": 2.554377185670771,
+        "median_in_failures": 2.5642092688023563,
+        "shift_in_p10_p90_widths": 0.014701447208573743
+      },
+      "sup_ratio": {
+        "reads_as": "supervisors per generalist",
+        "median_all": 0.15480967031204718,
+        "median_in_failures": 0.15569243112414627,
+        "shift_in_p10_p90_widths": 0.013135200959362617
+      },
+      "qa_ratio": {
+        "reads_as": "QA per generalist",
+        "median_all": 0.05752501040247297,
+        "median_in_failures": 0.05758422830747469,
+        "shift_in_p10_p90_widths": 0.0017616094104463095
+      },
+      "prod_min": {
+        "reads_as": "productive minutes a person a month",
+        "median_all": 375.9104110997507,
+        "median_in_failures": 375.6855946433376,
+        "shift_in_p10_p90_widths": -0.004791535558886538
+      },
+      "util": {
+        "reads_as": "utilisation",
+        "median_all": 0.7096617183553762,
+        "median_in_failures": 0.7079872709127617,
+        "shift_in_p10_p90_widths": -0.016825738040362283
+      },
+      "eng0": {
+        "reads_as": "engineers at 100 users",
+        "median_all": 5.2540427720609735,
+        "median_in_failures": 5.466655272585524,
+        "shift_in_p10_p90_widths": 0.07622106919469297
+      },
+      "eng_exp": {
+        "reads_as": "engineering scaling exponent",
+        "median_all": 0.2751945130830169,
+        "median_in_failures": 0.2833509006058338,
+        "shift_in_p10_p90_widths": 0.07404088552499262
+      },
+      "eng_ctc": {
+        "reads_as": "engineer cost to company, Rs a year",
+        "median_all": 3763675.80080169,
+        "median_in_failures": 3868345.6824163864,
+        "shift_in_p10_p90_widths": 0.07286417685915743
+      },
+      "uk_m": {
+        "reads_as": "UK launch month",
+        "median_all": 21.0,
+        "median_in_failures": 21.0,
+        "shift_in_p10_p90_widths": 0.0
+      },
+      "us_m": {
+        "reads_as": "US launch month",
+        "median_all": 37.0,
+        "median_in_failures": 37.0,
+        "shift_in_p10_p90_widths": 0.0
+      },
+      "uk_entry": {
+        "reads_as": "UK entry cost, Rs",
+        "median_all": 13344733.3902121,
+        "median_in_failures": 13658379.809024973,
+        "shift_in_p10_p90_widths": 0.013236487054089223
+      },
+      "us_entry": {
+        "reads_as": "US entry cost, Rs",
+        "median_all": 28972656.165298074,
+        "median_in_failures": 28961031.105074234,
+        "shift_in_p10_p90_widths": -0.00019817651851321394
+      },
+      "fric0": {
+        "reads_as": "new-market friction at launch",
+        "median_all": 0.2300135770486218,
+        "median_in_failures": 0.2304497843918167,
+        "shift_in_p10_p90_widths": 0.003277069964834871
+      },
+      "fric_hl": {
+        "reads_as": "months to half that friction",
+        "median_all": 13.004650166343636,
+        "median_in_failures": 13.189658922958039,
+        "shift_in_p10_p90_widths": 0.02074681955569688
+      },
+      "fx": {
+        "reads_as": "rupees to the dollar",
+        "median_all": 89.51870110521861,
+        "median_in_failures": 89.41913793027925,
+        "shift_in_p10_p90_widths": -0.014778129643845476
+      },
+      "gna0": {
+        "reads_as": "G&A at 100 users, Rs a month",
+        "median_all": 1154392.7763664902,
+        "median_in_failures": 1292363.7308691407,
+        "shift_in_p10_p90_widths": 0.08536102591505668
+      },
+      "gna_exp": {
+        "reads_as": "G&A scaling exponent",
+        "median_all": 0.38268508673095614,
+        "median_in_failures": 0.3850042382633466,
+        "shift_in_p10_p90_widths": 0.015500985255376949
+      },
+      "replat1_c": {
+        "reads_as": "first replatform, Rs",
+        "median_all": 7920147.138896896,
+        "median_in_failures": 7795694.424392423,
+        "shift_in_p10_p90_widths": -0.008673577309456431
+      },
+      "replat2_c": {
+        "reads_as": "second replatform, Rs",
+        "median_all": 18854377.594674084,
+        "median_in_failures": 19012785.57271378,
+        "shift_in_p10_p90_widths": 0.0043356430769556815
+      },
+      "soc2_c": {
+        "reads_as": "SOC 2, Rs",
+        "median_all": 4767822.3737148605,
+        "median_in_failures": 4808442.375023898,
+        "shift_in_p10_p90_widths": 0.0062126820593726055
+      },
+      "audit": {
+        "reads_as": "annual audit, Rs",
+        "median_all": 2457903.066517523,
+        "median_in_failures": 2518471.257436749,
+        "shift_in_p10_p90_widths": 0.01609336699853647
+      },
+      "inc_cost": {
+        "reads_as": "cost of an incident, Rs",
+        "median_all": 1924692.8209510194,
+        "median_in_failures": 1925570.997271137,
+        "shift_in_p10_p90_widths": 0.00010090916539121292
+      },
+      "inc_rate": {
+        "reads_as": "incidents a month",
+        "median_all": 0.029147619123642853,
+        "median_in_failures": 0.029491503642284318,
+        "shift_in_p10_p90_widths": 0.013614422647023295
+      },
+      "psp": {
+        "reads_as": "payment fees, share of revenue",
+        "median_all": 0.026791625845730166,
+        "median_in_failures": 0.026805787881853296,
+        "shift_in_p10_p90_widths": 0.0017038966513223644
+      },
+      "makegood": {
+        "reads_as": "make-goods, share of revenue",
+        "median_all": 0.025024607961769127,
+        "median_in_failures": 0.025377883845410787,
+        "shift_in_p10_p90_widths": 0.018066264975498878
+      },
+      "attrition": {
+        "reads_as": "annual attrition of the floor",
+        "median_all": 0.3830349277119118,
+        "median_in_failures": 0.3831951402367239,
+        "shift_in_p10_p90_widths": 0.0008805959476263166
+      },
+      "learn_hl": {
+        "reads_as": "months to half the learning gap",
+        "median_all": 15.073125773367202,
+        "median_in_failures": 15.306112430438557,
+        "shift_in_p10_p90_widths": 0.02636284884026853
+      },
+      "oncost": {
+        "reads_as": "employer on-costs",
+        "median_all": 0.21541485202984667,
+        "median_in_failures": 0.21587413903111152,
+        "shift_in_p10_p90_widths": 0.006964857228628812
+      },
+      "eng_infl": {
+        "reads_as": "eng_infl",
+        "median_all": 0.15224974072709374,
+        "median_in_failures": 0.1559586656379115,
+        "shift_in_p10_p90_widths": 0.061163082124720124
+      },
+      "gen_infl": {
+        "reads_as": "gen_infl",
+        "median_all": 0.09774773659139308,
+        "median_in_failures": 0.09836570038077022,
+        "shift_in_p10_p90_widths": 0.01863701623711291
+      },
+      "insur_1k": {
+        "reads_as": "insur_1k",
+        "median_all": 20094.29003316517,
+        "median_in_failures": 20780.65975175643,
+        "shift_in_p10_p90_widths": 0.019098846968539303
+      },
+      "jump_rate": {
+        "reads_as": "jump_rate",
+        "median_all": 0.04750674737596061,
+        "median_in_failures": 0.04765181225162421,
+        "shift_in_p10_p90_widths": 0.004371009392833298
+      },
+      "jump_size": {
+        "reads_as": "jump_size",
+        "median_all": 0.03265997243126868,
+        "median_in_failures": 0.03246542321693563,
+        "shift_in_p10_p90_widths": -0.007008681749685324
+      },
+      "legal_base": {
+        "reads_as": "legal_base",
+        "median_all": 355356.38022002217,
+        "median_in_failures": 351886.0447770402,
+        "shift_in_p10_p90_widths": -0.006678065194501529
+      },
+      "mgmt_infl": {
+        "reads_as": "mgmt_infl",
+        "median_all": 0.1475980254986765,
+        "median_in_failures": 0.14744388782127388,
+        "shift_in_p10_p90_widths": -0.0027843161222746754
+      },
+      "mgmt_scale": {
+        "reads_as": "mgmt_scale",
+        "median_all": 0.06516984749679944,
+        "median_in_failures": 0.06614027411458502,
+        "shift_in_p10_p90_widths": 0.012360863703016653
+      },
+      "perks": {
+        "reads_as": "perks",
+        "median_all": 1258.2433392767418,
+        "median_in_failures": 1266.0400618709314,
+        "shift_in_p10_p90_widths": 0.00699530217330751
+      },
+      "price_drift": {
+        "reads_as": "price_drift",
+        "median_all": 0.0027599279173920184,
+        "median_in_failures": 0.0026052543135381564,
+        "shift_in_p10_p90_widths": -0.046229042229526535
+      },
+      "replat1_m": {
+        "reads_as": "replat1_m",
+        "median_all": 20.551077504331005,
+        "median_in_failures": 20.590759149363898,
+        "shift_in_p10_p90_widths": 0.005093000618977949
+      },
+      "replat2_m": {
+        "reads_as": "replat2_m",
+        "median_all": 38.522329568587566,
+        "median_in_failures": 38.46877164471969,
+        "shift_in_p10_p90_widths": -0.005374476137076973
+      },
+      "seat0": {
+        "reads_as": "seat0",
+        "median_all": 3355.895519644961,
+        "median_in_failures": 3329.834094644785,
+        "shift_in_p10_p90_widths": -0.01818231479838458
+      },
+      "seat_scale": {
+        "reads_as": "seat_scale",
+        "median_all": 1.4895809158884827,
+        "median_in_failures": 1.4886926867627936,
+        "shift_in_p10_p90_widths": -0.002107210179980768
+      },
+      "soc2_m": {
+        "reads_as": "soc2_m",
+        "median_all": 16.522344774030472,
+        "median_in_failures": 16.470466601640652,
+        "shift_in_p10_p90_widths": -0.00663068181297033
+      },
+      "tok_plateau": {
+        "reads_as": "tok_plateau",
+        "median_all": 31.629170515796595,
+        "median_in_failures": 31.531680450409876,
+        "shift_in_p10_p90_widths": -0.005851194108840133
+      },
+      "uk_legal": {
+        "reads_as": "uk_legal",
+        "median_all": 750798.119552979,
+        "median_in_failures": 771991.5477196036,
+        "shift_in_p10_p90_widths": 0.016920840403703216
+      },
+      "us_legal": {
+        "reads_as": "us_legal",
+        "median_all": 1560908.4953970844,
+        "median_in_failures": 1612524.4981739786,
+        "shift_in_p10_p90_widths": 0.018537114455678856
+      }
+    }
+  },
+  "plan_trough_cr": 17.34,
+  "plan_trough_percentile_of_path_need": 0.3142,
+  "peak_need_usd_at_reporting_fx": {
+    "50": 2752991.4541343083,
+    "75": 4453094.287882393,
+    "90": 6491055.727580056
+  }
+}

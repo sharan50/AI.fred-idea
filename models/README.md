@@ -24,6 +24,34 @@ The publication quotes runs of 20,000 paths at seed 20260913, dated 13 September
 
 These are informed priors, not evidence. The company has no customers. The four measurements that replace them, in order of how much they move the answer, are minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises.
 
+## The sensitivity
+
+`aifred_sensitivity.py` asks of `aifred_model.py` which drivers the answer actually turns on. It does not restate
+the model: it splits that file at its own section markers and executes the pieces, so the drivers and the month loop
+are literally the code that produced `sim_viable.csv`, and its self test rebuilds that file character for character
+before it will write anything.
+
+Three things come out of it, each as a CSV:
+
+- `sensitivity_viable.csv`, one row per driver: first-order Sobol indices for six outcomes, on the raw values and on
+  ranks, and the median outcome in the driver's bottom and top decile. Every driver in the model is drawn
+  independently of every other, so a conditional median at a given driver value is already that driver's partial
+  effect; there is nothing to hold constant.
+- `sensitivity_sweeps_viable.csv` and `sensitivity_thresholds_viable.csv`: each driver pinned to a value across the
+  whole sample and the model re-run, nine values across its own support. The pin is applied after the draws, so
+  every run in a sweep shares its random numbers with every other and the difference is the driver's alone. The
+  thresholds file reads the crossings off those sweeps.
+- `sensitivity_reversion_viable.csv`: what the business looks like with one parameter put back where the
+  as-specified run had it, one at a time and in groups, including the four the record calls the levers.
+- `sensitivity_two_way_viable.csv`: the growth rate against G&A, the two that own the most variance, on a grid.
+
+`summary_sensitivity_viable.json` carries the headline: the distribution of what a path actually needs, which
+drivers own the variance of each outcome, and what the paths that never turn profitable have in common.
+
+One limit worth stating, since it bounds what the sweeps mean. `aifred_model.py` prices a user, not a task:
+revenue is users times price, and the task allowance enters only as cost. The metered allowance the publication now
+specifies is not in it, so the sweep over tasks a day is a pure cost sweep and understates what that lever does.
+
 ## Where the publication quotes these
 
 `/05-business/` carries the numbers, `/05-business/model.html` describes the instruments, the scenarios and the
