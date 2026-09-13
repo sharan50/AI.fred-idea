@@ -1,0 +1,167 @@
+{
+  "paths": 20000,
+  "seed": 20260913,
+  "correlations": {
+    "price_ind x churn_floor": {
+      "rho": 0.4,
+      "because": "a higher price is bought with retention"
+    },
+    "price_ind x add_rate_0": {
+      "rho": -0.4,
+      "because": "and with word of mouth"
+    },
+    "tasks_day x churn_0": {
+      "rho": -0.3,
+      "because": "heavy users stay"
+    },
+    "add_rate_0 x churn_0": {
+      "rho": -0.3,
+      "because": "a product people like grows and retains"
+    },
+    "auto_ceil x eng_exp": {
+      "rho": 0.4,
+      "because": "automation is bought with engineers"
+    },
+    "assist_floor x eng_exp": {
+      "rho": -0.3,
+      "because": "so is a lower handling floor"
+    },
+    "gna0 x eng0": {
+      "rho": 0.3,
+      "because": "overhead discipline is one habit, not several"
+    }
+  },
+  "dependence": [
+    {
+      "case": "independent, as published",
+      "need_p50_cr": 24.501623941795344,
+      "need_p75_cr": 39.6325391621533,
+      "need_p90_cr": 57.77039597546249,
+      "need_p95_cr": 70.03007186203435,
+      "share_profitable_by_m60": 0.8904,
+      "median_crossover_month": 40.0
+    },
+    {
+      "case": "correlated",
+      "need_p50_cr": 24.527236519590105,
+      "need_p75_cr": 39.42304905375003,
+      "need_p90_cr": 58.133223628694545,
+      "need_p95_cr": 70.67372129696804,
+      "share_profitable_by_m60": 0.88985,
+      "median_crossover_month": 41.0
+    }
+  ],
+  "price_feedback": [
+    {
+      "case": "the price left at $30, no penalty",
+      "need_p50_cr": 48.08954890088941,
+      "need_p75_cr": 68.61239666923956,
+      "need_p90_cr": 90.21232050966445,
+      "need_p95_cr": 105.92363111114419,
+      "share_profitable_by_m60": 0.74445,
+      "median_crossover_month": 48.0,
+      "penalty": NaN,
+      "worse_than_leaving_the_price_at_30": NaN
+    },
+    {
+      "case": "$52 costing 0% churn and 0% growth",
+      "need_p50_cr": 24.501623941795344,
+      "need_p75_cr": 39.6325391621533,
+      "need_p90_cr": 57.77039597546249,
+      "need_p95_cr": 70.03007186203435,
+      "share_profitable_by_m60": 0.8904,
+      "median_crossover_month": 40.0,
+      "penalty": 0.0,
+      "worse_than_leaving_the_price_at_30": false
+    },
+    {
+      "case": "$52 costing 5% churn and 5% growth",
+      "need_p50_cr": 28.47048980303517,
+      "need_p75_cr": 45.355725924224394,
+      "need_p90_cr": 63.850319835335846,
+      "need_p95_cr": 75.23213552508633,
+      "share_profitable_by_m60": 0.83315,
+      "median_crossover_month": 43.0,
+      "penalty": 0.05,
+      "worse_than_leaving_the_price_at_30": false
+    },
+    {
+      "case": "$52 costing 10% churn and 10% growth",
+      "need_p50_cr": 33.318093108696345,
+      "need_p75_cr": 51.46729311329709,
+      "need_p90_cr": 69.00174085134789,
+      "need_p95_cr": 79.92750399665793,
+      "share_profitable_by_m60": 0.75825,
+      "median_crossover_month": 45.0,
+      "penalty": 0.1,
+      "worse_than_leaving_the_price_at_30": false
+    },
+    {
+      "case": "$52 costing 15% churn and 15% growth",
+      "need_p50_cr": 38.90610619421119,
+      "need_p75_cr": 56.91263655018489,
+      "need_p90_cr": 73.24505085413854,
+      "need_p95_cr": 83.43807011629173,
+      "share_profitable_by_m60": 0.6631,
+      "median_crossover_month": 49.0,
+      "penalty": 0.15,
+      "worse_than_leaving_the_price_at_30": false
+    },
+    {
+      "case": "$52 costing 20% churn and 20% growth",
+      "need_p50_cr": 45.05629162252637,
+      "need_p75_cr": 61.57958615635215,
+      "need_p90_cr": 76.3258183571676,
+      "need_p95_cr": 86.06807568822,
+      "share_profitable_by_m60": 0.55505,
+      "median_crossover_month": 56.0,
+      "penalty": 0.2,
+      "worse_than_leaving_the_price_at_30": false
+    },
+    {
+      "case": "$52 costing 25% churn and 25% growth",
+      "need_p50_cr": 50.4792635280796,
+      "need_p75_cr": 64.91589036797468,
+      "need_p90_cr": 78.43307778639486,
+      "need_p95_cr": 87.45142228927607,
+      "share_profitable_by_m60": 0.42875,
+      "median_crossover_month": 61.0,
+      "penalty": 0.25,
+      "worse_than_leaving_the_price_at_30": true
+    },
+    {
+      "case": "$52 costing 30% churn and 30% growth",
+      "need_p50_cr": 54.569967360991754,
+      "need_p75_cr": 67.22956460147051,
+      "need_p90_cr": 80.01054989421444,
+      "need_p95_cr": 88.17629399763346,
+      "share_profitable_by_m60": 0.3044,
+      "median_crossover_month": 61.0,
+      "penalty": 0.3,
+      "worse_than_leaving_the_price_at_30": true
+    },
+    {
+      "case": "$52 costing 40% churn and 40% growth",
+      "need_p50_cr": 58.74657452930198,
+      "need_p75_cr": 69.22299937611977,
+      "need_p90_cr": 80.13844117812154,
+      "need_p95_cr": 87.22229078136758,
+      "share_profitable_by_m60": 0.10165,
+      "median_crossover_month": 61.0,
+      "penalty": 0.4,
+      "worse_than_leaving_the_price_at_30": true
+    },
+    {
+      "case": "$52 costing 50% churn and 50% growth",
+      "need_p50_cr": 58.81834189968484,
+      "need_p75_cr": 67.94099476416208,
+      "need_p90_cr": 77.53341430630061,
+      "need_p95_cr": 83.83708580302992,
+      "share_profitable_by_m60": 0.0133,
+      "median_crossover_month": 61.0,
+      "penalty": 0.5,
+      "worse_than_leaving_the_price_at_30": true
+    }
+  ],
+  "price_break_even_penalty": 0.25
+}

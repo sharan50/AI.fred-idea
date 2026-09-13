@@ -16,174 +16,32 @@ This does not restate the trajectory. It asks of the same model three questions:
      the same random numbers as every other and the differences are the driver's
      alone.
 
-It reuses `aifred_model.py` rather than restating it: the file is split at its
-own section markers and the pieces are executed in order, so the drivers and the
-month loop here are literally the code that produced `sim_viable.csv`. The self
-test rebuilds that file and compares, and refuses to write anything if it differs.
+The model itself is reached through `aifred_harness.py`, which executes
+`aifred_model.py` in pieces rather than restating it, and which refuses to run
+unless it can rebuild `sim_viable.csv` character for character.
 
 Usage:  python aifred_sensitivity.py [scenario] [n_paths] [sweep_paths] [seed]
 """
 
 import json
-import pathlib
 import sys
 
 import numpy as np
 import pandas as pd
 
-HERE = pathlib.Path(__file__).resolve().parent
-SRC = (HERE / "aifred_model.py").read_text()
-MARK_KEYS = "KEYS = ["
-MARK_BANDS = "# --------------------------------------------------- coherent outcome bands"
-MARK_FUND = "# --------------------------------------------------------- funding schedule"
-PART_DRIVERS = SRC[: SRC.index(MARK_KEYS)]
-PART_LOOP = SRC[SRC.index(MARK_KEYS) : SRC.index(MARK_BANDS)]
-PART_BANDS = SRC[SRC.index(MARK_BANDS) : SRC.index(MARK_FUND)]
+from aifred_harness import (CR, FX_REPORT, HERE, LABELS, LEVERS, MONTHS,
+                            PLAN_TROUGH_CR, bands, decile, outcomes, rank, run, s1)
 
 SCENARIO = sys.argv[1] if len(sys.argv) > 1 else "viable"
 N = int(sys.argv[2]) if len(sys.argv) > 2 else 20000
 NSW = int(sys.argv[3]) if len(sys.argv) > 3 else 6000
 SEED = int(sys.argv[4]) if len(sys.argv) > 4 else 20260913
-MONTHS = 60
-CR = 1e7
-FX_REPORT = 89.0  # the reporting rate, as in the publication
-
-# The drivers worth naming: the model's own variable names, with the words the
-# record uses for them. Anything not listed is still scored, under its own name.
-LABELS = {
-    "tasks_day": "tasks a user runs a day",
-    "price_ind": "India price, $ a month",
-    "price_uk": "UK price, $ a month",
-    "price_us": "US price, $ a month",
-    "auto_ceil": "automation ceiling, share of tasks",
-    "auto_hl": "months to half the automation gap",
-    "auto_0": "automation at month 1",
-    "assist_floor": "assisted task floor, minutes",
-    "assist_0": "assisted task at month 1, minutes",
-    "tail_floor_min": "tail task floor, minutes",
-    "tail_min_0": "tail task at month 1, minutes",
-    "tail_0": "tail share at month 1",
-    "tail_floor": "tail share floor",
-    "churn_0": "churn at month 1",
-    "churn_floor": "churn floor",
-    "churn_halflife": "months to half the churn gap",
-    "churn_vol": "churn sensitivity to saturation",
-    "seed_users": "users at month 1",
-    "add_rate_0": "referral and growth rate at month 1",
-    "add_decay": "monthly decay of that rate",
-    "cap_ind": "India ceiling, users",
-    "cap_uk": "UK ceiling, users",
-    "cap_us": "US ceiling, users",
-    "cac_0": "cost to acquire a user, Rs",
-    "cac_growth": "monthly growth in that cost",
-    "tok0": "tokens a task at month 1, $",
-    "tok_decline": "monthly decline in token price",
-    "tok_usage_growth": "monthly growth in tokens a task",
-    "gen_ctc": "generalist cost to company, Rs a year",
-    "sup_mult": "supervisor and QA cost multiple",
-    "sup_ratio": "supervisors per generalist",
-    "qa_ratio": "QA per generalist",
-    "prod_min": "productive minutes a person a month",
-    "util": "utilisation",
-    "eng0": "engineers at 100 users",
-    "eng_exp": "engineering scaling exponent",
-    "eng_ctc": "engineer cost to company, Rs a year",
-    "uk_m": "UK launch month",
-    "us_m": "US launch month",
-    "uk_entry": "UK entry cost, Rs",
-    "us_entry": "US entry cost, Rs",
-    "fric0": "new-market friction at launch",
-    "fric_hl": "months to half that friction",
-    "fx": "rupees to the dollar",
-    "gna0": "G&A at 100 users, Rs a month",
-    "gna_exp": "G&A scaling exponent",
-    "replat1_c": "first replatform, Rs",
-    "replat2_c": "second replatform, Rs",
-    "soc2_c": "SOC 2, Rs",
-    "audit": "annual audit, Rs",
-    "inc_cost": "cost of an incident, Rs",
-    "inc_rate": "incidents a month",
-    "psp": "payment fees, share of revenue",
-    "makegood": "make-goods, share of revenue",
-    "attrition": "annual attrition of the floor",
-    "learn_hl": "months to half the learning gap",
-    "oncost": "employer on-costs",
-}
-# The four the record calls the levers, in the order it states them.
-LEVERS = ["tasks_day", "price_ind", "auto_ceil", "assist_floor"]
-
-
-def run(n, seed, overrides=None):
-    """Execute the published model's own driver block and month loop."""
-    argv = sys.argv
-    sys.argv = ["aifred_model.py", SCENARIO, str(n), str(seed)]
-    ns = {"__name__": "aifred_model_sensitivity"}
-    try:
-        exec(compile(PART_DRIVERS, "aifred_model.py", "exec"), ns)
-        drivers = {k: v for k, v in ns.items()
-                   if isinstance(v, np.ndarray) and v.shape == (n,)}
-        if overrides:
-            for k, v in overrides.items():
-                if k not in drivers:
-                    raise KeyError(f"{k} is not a driver of this model")
-                ns[k] = np.full(n, v, dtype=float) if np.isscalar(v) else np.asarray(v, float)
-        exec(compile(PART_LOOP, "aifred_model.py", "exec"), ns)
-    finally:
-        sys.argv = argv
-    return drivers, ns
-
-
-def outcomes(ns):
-    """Per-path outcomes, in the units the record reports."""
-    cum = ns["out"]["cum_cash"]
-    contrib = ns["out"]["contribution"]
-    pos = contrib > 0
-    any_neg = (~pos).any(0)
-    last_nonpos = np.where(any_neg, MONTHS - 1 - np.argmax((~pos)[::-1], 0), -1)
-    crossover = last_nonpos + 2  # first month of the final unbroken positive run
-    return {
-        "peak_need_cr": -np.minimum(cum.min(0), 0) / CR,
-        "trough_month": (cum.argmin(0) + 1).astype(float),
-        "crossover_month": crossover.astype(float),
-        "profitable_by_m60": (crossover <= MONTHS).astype(float),
-        "profitable_by_m36": (crossover <= 36).astype(float),
-        "m60_contribution_cr": contrib[-1] / CR,
-        "m60_users": ns["out"]["users"][-1],
-        "m36_minutes_per_user": ns["out"]["min_per_user_month"][35],
-        "m36_labour_share": ns["out"]["labour"][35] / np.maximum(ns["out"]["revenue"][35], 1),
-    }
-
-
-def s1(x, y, bins=25):
-    """First-order Sobol index, binned on the driver's rank."""
-    if y.var() == 0:
-        return 0.0
-    parts = np.array_split(y[np.argsort(x, kind="stable")], bins)
-    means = np.array([p.mean() for p in parts])
-    weights = np.array([len(p) for p in parts], float)
-    return float(np.average((means - y.mean()) ** 2, weights=weights) / y.var())
-
-
-def rank(a):
-    r = np.empty(len(a))
-    r[np.argsort(a, kind="stable")] = np.arange(len(a))
-    return r
-
-
-def decile(x, y, which):
-    q = np.quantile(x, 0.1 if which == "lo" else 0.9)
-    sel = x <= q if which == "lo" else x >= q
-    return float(np.median(y[sel]))
-
 
 # ------------------------------------------------------------------ self test
-drivers, ns = run(N, SEED)
-bands = dict(ns)
-exec(compile(PART_BANDS, "aifred_model.py", "exec"), bands)
+drivers, ns = run(N, SEED, scenario=SCENARIO)
 published = HERE / f"sim_{SCENARIO}.csv"
 if published.exists() and N == 20000 and SEED == 20260913:
-    # Character for character, through the same writer that produced the file.
-    if bands["df"].to_csv(index=False) != published.read_text():
+    if bands(ns).to_csv(index=False) != published.read_text():
         raise SystemExit(f"self test failed: this run does not rebuild {published.name}")
     print(f"self test: rebuilds {published.name} exactly")
 
@@ -220,7 +78,7 @@ for name in top:
     x = drivers[name]
     lo, hi = np.quantile(x, 0.02), np.quantile(x, 0.98)
     for v in np.linspace(lo, hi, 9):
-        _, nsv = run(NSW, SEED, overrides={name: v})
+        _, nsv = run(NSW, SEED, overrides={name: v}, scenario=SCENARIO)
         yv = outcomes(nsv)
         sw.append({"driver": name, "reads_as": LABELS.get(name, name), "pinned_at": float(v),
                    "median_peak_need_cr": float(np.median(yv["peak_need_cr"])),
@@ -240,7 +98,7 @@ AS_SPEC = {"tasks_day": (0.9, 1.5, 2.4), "price_ind": (22, 30, 44),
            "churn_floor": (0.020, 0.032, 0.055), "eng_exp": (0.22, 0.34, 0.48),
            "price_uk": (38, 55, 85), "price_us": (45, 70, 110)}
 rev_rng = np.random.default_rng(SEED + 1)
-base = outcomes(run(NSW, SEED)[1])
+base = outcomes(run(NSW, SEED, scenario=SCENARIO)[1])
 rv = [{"reverted": "nothing, the viable line", "n": NSW,
        "median_peak_need_cr": float(np.median(base["peak_need_cr"])),
        "median_crossover_month": float(np.median(base["crossover_month"])),
@@ -255,7 +113,7 @@ groups = ([(k, [k]) for k in AS_SPEC]
              ("every as-specified parameter", list(AS_SPEC))])
 for label, keys in groups:
     ov = {k: rev_rng.triangular(*AS_SPEC[k], NSW) for k in keys}
-    yv = outcomes(run(NSW, SEED, overrides=ov)[1])
+    yv = outcomes(run(NSW, SEED, overrides=ov, scenario=SCENARIO)[1])
     rv.append({"reverted": LABELS.get(label, label) if label in LABELS else label, "n": NSW,
                "median_peak_need_cr": float(np.median(yv["peak_need_cr"])),
                "median_crossover_month": float(np.median(yv["crossover_month"])),
@@ -276,7 +134,6 @@ def crossing(xs, ys, level, rising):
     return float("nan") if (ys.min() > level) == rising else float("nan")
 
 
-PLAN_TROUGH_CR = 17.34  # the planning line's own trough, from sim_viable.csv
 th = []
 for name, g in sweeps.groupby("driver", sort=False):
     g = g.sort_values("pinned_at")
@@ -299,7 +156,7 @@ PAIR = ("add_rate_0", "gna0")
 grid = []
 for va in np.linspace(*np.quantile(drivers[PAIR[0]], [0.02, 0.98]), 11):
     for vb in np.quantile(drivers[PAIR[1]], [0.1, 0.5, 0.9]):
-        yv = outcomes(run(NSW, SEED, overrides={PAIR[0]: va, PAIR[1]: vb})[1])
+        yv = outcomes(run(NSW, SEED, overrides={PAIR[0]: va, PAIR[1]: vb}, scenario=SCENARIO)[1])
         grid.append({"driver_a": PAIR[0], "a": float(va), "driver_b": PAIR[1], "b": float(vb),
                      "median_peak_need_cr": float(np.median(yv["peak_need_cr"])),
                      "share_profitable_by_m60": float(yv["profitable_by_m60"].mean()),

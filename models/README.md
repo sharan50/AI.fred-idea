@@ -45,6 +45,16 @@ Three things come out of it, each as a CSV:
   as-specified run had it, one at a time and in groups, including the four the record calls the levers.
 - `sensitivity_two_way_viable.csv`: the growth rate against G&A, the two that own the most variance, on a grid.
 
+`aifred_harness.py` is what both of those run on: it executes `aifred_model.py` in pieces so that anything built on
+top of it runs the published code rather than a restatement of it, and it refuses to be believed unless it can
+rebuild `sim_viable.csv` character for character. `aifred_structural_probes.py` uses the same bench to measure two
+things the model cannot say: what imposing dependence between the drivers is worth, preserving every marginal
+exactly, and what the $52 price may cost in retention and word of mouth before it stops being worth taking. Its
+outputs are `probe_dependence.csv`, `probe_price_feedback.csv` and `summary_probes.json`.
+
+`AIfred_model_critique.md` reads the model against itself: what its summary statistics do to its own numbers, what
+it leaves out, and what to change first. Read it beside the rationale, not instead of it.
+
 `summary_sensitivity_viable.json` carries the headline: the distribution of what a path actually needs, which
 drivers own the variance of each outcome, and what the paths that never turn profitable have in common.
 
