@@ -5342,7 +5342,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 35,
+      "count": 38,
       "members": [
         {
           "id": "open-07-01",
@@ -5478,11 +5478,23 @@
         },
         {
           "id": "open-07-34",
-          "word": "a dependant's aliases placed under the user's envelope"
+          "word": "a dependant's delegation record, which nothing creates"
         },
         {
           "id": "open-07-35",
           "word": "three findings of the review that the record contradicts"
+        },
+        {
+          "id": "open-07-36",
+          "word": "a party-issued reference, heard on a call"
+        },
+        {
+          "id": "open-07-37",
+          "word": "only one act type per step is flag-checked"
+        },
+        {
+          "id": "open-07-38",
+          "word": "a withdrawal that lands inside a placement window"
         }
       ],
       "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
@@ -7901,14 +7913,14 @@
     {
       "id": "open-07-34",
       "kind": "open",
-      "label": "A dependant's aliases placed under the user's envelope",
+      "label": "A dependant's delegation record, which nothing creates",
       "facets": {
         "layer": "open",
         "fixity": "to-verify"
       },
       "loci": [
         {
-          "at": "07-open/index.html#items!\"A dependant's aliases placed under the user's envelope\"",
+          "at": "07-open/index.html#items!\"A dependant's delegation record, which nothing creates\"",
           "role": "home"
         }
       ]
@@ -7925,6 +7937,59 @@
         {
           "at": "07-open/index.html#items!\"Three findings of the review that the record contradicts rather than answers\"",
           "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-36",
+      "kind": "open",
+      "label": "A party-issued reference, heard on a call",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"A party-issued reference, heard on a call\"",
+          "role": "home"
+        },
+        {
+          "at": "03-trust-and-data/index.html#entry-routes!\"On a call it is not closed\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "open-07-37",
+      "kind": "open",
+      "label": "Only one act type per step is flag-checked",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Only one act type per step is flag-checked\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-38",
+      "kind": "open",
+      "label": "A withdrawal that lands inside a placement window",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"A withdrawal that lands inside a placement window\"",
+          "role": "home"
+        },
+        {
+          "at": "02-architecture/index.html#transitions!\"except a placement already inside its window\"",
+          "role": "mentions"
         }
       ]
     }
@@ -10984,6 +11049,21 @@
       "open-07-35",
       "lands-in",
       "dr-008"
+    ],
+    [
+      "open-07-36",
+      "lands-in",
+      "comp-telephony"
+    ],
+    [
+      "open-07-37",
+      "lands-in",
+      "comp-policy-layer"
+    ],
+    [
+      "open-07-38",
+      "lands-in",
+      "dr-004"
     ]
   ]
 }

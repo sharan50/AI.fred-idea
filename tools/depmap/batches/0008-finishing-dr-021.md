@@ -109,3 +109,47 @@ rather than as a closure. It did not edit batch 0006's record, which states the
 decision as it was given that day. And the number-word table in `depmap.mjs`
 was extended past thirty so the open register could be counted at all, which is
 the first time the tool has had to grow for the record rather than the reverse.
+
+## Round two of the same passes, and what it caught
+
+The two passes were re-run against the corrected record, as the loop requires.
+The adversarial pass came back with the residue of the same cluster and with
+two errors this batch had introduced. Both are recorded here because a batch
+record that only lists successes is not evidence of anything.
+
+**What the first round missed.** One script in this session asserted its way
+down a list and aborted on an early mismatch, which discarded the whole batch
+of edits that followed it in the same file: Table 3.2's dropped-call row and
+the one-time-code read-back sentence were reported as corrected and were not.
+They are corrected now, and every edit after that point was applied and
+verified one at a time. Five further sites carried the same deleted mechanism
+and had not been reached at all: 02's own copy of the redaction specification
+in section 8.1, Table 3.6's paths 9 and 10, the console's spliced sentence in
+2.3, which asserted the live transcriber in the middle of denying it, and the
+console's tone caption.
+
+**Two errors of this batch's own.** The console was made to say that a
+party-issued reference is "not a value of the user's", which Table 3.1
+contradicts: a booking or case reference is an identity-number-class value,
+tokenised at the third door. The justification was invented to make the
+sentence comfortable and it has been removed. And the open item for a
+dependant's aliases asserted that a people node is not a delegator, which the
+policy layer in 03, 6 flatly contradicts; the real gap is narrower and worse,
+that both mechanisms assume a delegation record which nothing in the
+publication creates.
+
+**What the record now says about the reference.** There is no masker on a call,
+so a worker hears a booking reference read out and types it into the result,
+where it is tokenised on arrival. Three places said otherwise, one of them
+claiming the third door is closed "by maskers that run before any frame, audio
+segment or message reaches a person". It is closed on two surfaces and open on
+the third, and that is now what 03, 1.2, 02, 3.2 and the console say, with the
+exposure as an open item.
+
+Three further items are recorded rather than fixed: the reference heard on a
+call; the policy lookup keyed on one act type, so an identity act a market
+flags bounce can ride on a step whose committable act reads delegated; and a
+withdrawal that lands inside a placement window, where the state machine and
+the step context give opposite answers and the justification offered for the
+carve-out is a marker that has not yet been written. Table 7.1 holds
+thirty-eight.
