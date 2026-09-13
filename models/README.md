@@ -31,3 +31,10 @@ limits, and `/05-business/measurement-protocol.html` is `AIfred_task_measurement
 own conventions. Nothing here is linked from a page: the published site is `docs/` only, so a page that needs a
 number states it with its scenario and its seed instead. When a figure on a page and a figure here disagree, this
 directory is right and the page is stale.
+
+Figures 5.1 to 5.4 on `/05-business/` are drawn from `sim_viable.csv` alone, on the planning line: the cost base by
+factor from `labour_plan`, `eng_plan`, `tokens_plan` and the sum of `compliance_plan`, `sales_plan`, `gna_plan` and
+`onetime_plan`; revenue against cost from `revenue_plan` and `total_cost_plan`; the labour share from `labour_plan`
+over `revenue_plan`; the cash curves from `cum_cash_plan` and `cum_cash_cons`. They are in rupees crore at the
+model's own rate of 89 rupees to the dollar. Regenerating the CSV means regenerating the figures; no value in them
+is entered by hand.

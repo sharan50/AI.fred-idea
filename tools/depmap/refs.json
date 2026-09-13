@@ -6101,33 +6101,61 @@
           "no": "4",
           "text": "The cost split"
         },
+        "fig-cost-factors": {
+          "kind": "figure",
+          "line": 109,
+          "no": "Figure 5.1",
+          "text": "Labour is the line that grows with usage; engineering is the larger line for the first four years; tokens never become t",
+          "under": "cost-split"
+        },
         "trajectory": {
           "kind": "h2",
-          "line": 114,
+          "line": 120,
           "no": "5",
           "text": "The trajectory"
         },
+        "fig-revenue-cost": {
+          "kind": "figure",
+          "line": 122,
+          "no": "Figure 5.2",
+          "text": "The lines cross at month 29 on the planning line: before it every month consumes cash, after it every month makes it. as",
+          "under": "trajectory"
+        },
+        "fig-labour-share": {
+          "kind": "figure",
+          "line": 128,
+          "no": "Figure 5.3",
+          "text": "This is the ratio the four levers move: the same curve sits at 85 per cent at month 36 in the configuration the record p",
+          "under": "trajectory"
+        },
+        "fig-cumulative-cash": {
+          "kind": "figure",
+          "line": 149,
+          "no": "Figure 5.4",
+          "text": "The trough is the money the company has to raise: about 17.3 crore on the planning line and 49.6 on the conservative one",
+          "under": "trajectory"
+        },
         "funding": {
           "kind": "h2",
-          "line": 134,
+          "line": 158,
           "no": "6",
           "text": "Funding"
         },
         "geography": {
           "kind": "h2",
-          "line": 151,
+          "line": 175,
           "no": "7",
           "text": "Geography"
         },
         "commerce": {
           "kind": "h2",
-          "line": 171,
+          "line": 195,
           "no": "8",
           "text": "The commerce layer"
         },
         "what-replaces": {
           "kind": "h2",
-          "line": 177,
+          "line": 201,
           "no": "9",
           "text": "What replaces this page"
         }
@@ -6193,7 +6221,7 @@
           "under": "the-ratio"
         },
         "5.3": {
-          "line": 117,
+          "line": 135,
           "caption": "The trajectory as specified against the trajectory with the four levers, twenty thousand paths over sixty months. assump",
           "rows": [
             [
@@ -6230,7 +6258,7 @@
           "under": "trajectory"
         },
         "5.4": {
-          "line": 137,
+          "line": 161,
           "caption": "The funding plan: what each round is sized for and what it has to buy. assumption",
           "rows": [
             [
@@ -6255,7 +6283,7 @@
           "under": "funding"
         },
         "5.5": {
-          "line": 156,
+          "line": 180,
           "caption": "Four sequencing scenarios, twenty thousand paths each: late secondary expansion is worse than not expanding. assumption",
           "rows": [
             [
@@ -6360,47 +6388,63 @@
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 110,
+          "line": 108,
+          "to": "05-business/index.html#fig-cost-factors"
+        },
+        {
+          "line": 116,
           "to": "decisions/dr-006-office-mandatory.html"
         },
         {
-          "line": 110,
+          "line": 116,
           "to": "04-operations/index.html"
         },
         {
-          "line": 167,
+          "line": 121,
+          "to": "05-business/index.html#fig-revenue-cost"
+        },
+        {
+          "line": 121,
+          "to": "05-business/index.html#fig-labour-share"
+        },
+        {
+          "line": 121,
+          "to": "05-business/index.html#fig-cumulative-cash"
+        },
+        {
+          "line": 191,
           "to": "decisions/dr-023-geography-sequencing.html"
         },
         {
-          "line": 167,
+          "line": 191,
           "to": "06-roadmap/index.html#expansion"
         },
         {
-          "line": 173,
+          "line": 197,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 173,
+          "line": 197,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 178,
+          "line": 202,
           "to": "05-business/measurement-protocol.html"
         },
         {
-          "line": 178,
+          "line": 202,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 186,
+          "line": 210,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 187,
+          "line": 211,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 188,
+          "line": 212,
           "to": "07-open/index.html"
         }
       ]
