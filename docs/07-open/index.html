@@ -24,12 +24,12 @@
 </header>
 <main id="main" class="page">
   <header class="page-header">
-    <p class="stamp" data-status="amber">amber<small>revised 2026-09-13</small></p>
+    <p class="stamp" data-status="amber">amber<small>revised 2026-09-14</small></p>
     <h1><span class="no">07</span><span class="title">Open items</span></h1>
     <p class="standfirst">Nothing in this publication is silently assumed. Every question the design leaves open is listed here with an owner and the trigger that resolves it, and every objection the build formed against a fixed decision is recorded with how the build complied.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>07 Open items</dd></div>
-      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-14</dd></div>
       <div><dt>Status</dt><dd><span class="chip chip-amber">amber</span></dd></div>
       <div><dt>Reader</dt><dd class="sans">For the founder</dd></div>
     </dl>
@@ -62,7 +62,7 @@
         <p>An item is open when the design has stated its position and a decision, a legal answer or a piece of evidence is still needed before that position is final. Amber items are decisions with a named trigger. To-verify items are legal or factual questions to be answered from the primary source. Assumption items are working defaults the pilot will replace with measurement. Where an item was resolved in the design by taking the smallest reasonable decision, the page that took it is named so the founder can reverse it.</p>
         <div class="table-wrap wide">
           <table class="data">
-            <caption><span class="tab-no">Table 7.1</span> Thirty-nine open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed and kept in place, because a reader of the previous edition will look for them, and one more is closed for telephony alone and open otherwise.</caption>
+            <caption><span class="tab-no">Table 7.1</span> Forty open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed and kept in place, because a reader of the previous edition will look for them, and one more is closed for telephony alone and open otherwise.</caption>
             <thead><tr><th>Item</th><th>Owner</th><th>Trigger</th><th>Status</th><th>Where it lives</th></tr></thead>
             <tbody>
               <tr><td class="key">The front door per market (the channel amber). The intake gateway beneath it is fixed.</td><td>Founder</td><td>Resolve when the first US/UK cohort is scoped.</td><td><span class="chip chip-amber">amber</span></td><td><a href="../decisions/dr-001-channel-gateway.html">DR-001</a>; <a href="../01-product/#intake">01 intake</a></td></tr>
@@ -87,7 +87,8 @@
               <tr><td class="key">The thirty-task measurement: automation share on positive evidence, human minutes per assisted task including wrap, and handling time on the human-led tail. It is the gating item for everything in 05.</td><td>Founder</td><td>None. It runs first, before a floor is leased or an engine is chosen.</td><td><span class="chip chip-assumption">assumption</span></td><td><a href="../05-business/measurement-protocol.html">05 measurement protocol</a></td></tr>
               <tr><td class="key">Twelve-month churn on a paying cohort. The model is acutely churn-sensitive and no cohort exists.</td><td>Founder</td><td>Twelve months after the first paying cohort starts.</td><td><span class="chip chip-assumption">assumption</span></td><td><a href="../05-business/#what-replaces">05, 10</a></td></tr>
               <tr><td class="key">Willingness to pay above $50 in India, tested by a priced waiting list rather than asserted from the comparables.</td><td>Founder</td><td>Before the pilot cohort is priced.</td><td><span class="chip chip-assumption">assumption</span></td><td><a href="../05-business/#the-ratio">05, 3</a></td></tr>
-              <tr><td class="key">Blended acquisition cost in the United Kingdom and the United States, which the model treats as ten times the Indian figure against a two times price difference.</td><td>Founder</td><td>DR-023's priced waiting list, measured for conversion.</td><td><span class="chip chip-assumption">assumption</span></td><td><a href="../05-business/#geography">05, 8</a>; <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a></td></tr>
+              <tr><td class="key">Blended acquisition cost in the United Kingdom and the United States, which the model treats as ten times the Indian figure against a two times price difference. The same ratio now prices the media abroad, about $885 a paid arrival in the United Kingdom and $1,165 in the United States, so one wrong ratio is wrong in the referral cost and in the media cost at once.</td><td>Founder</td><td>DR-023's priced waiting list, measured for conversion.</td><td><span class="chip chip-assumption">assumption</span></td><td><a href="../05-business/#geography">05, 8</a>; <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a></td></tr>
+              <tr><td class="key">How a media budget is allocated across live markets. The model splits it evenly, which buys about seven times as many Indian arrivals per rupee and thins the foreign mix a foreign-led sequence exists for; allocating to marginal cost, or to whichever market is short of its gate, would give a different answer. Nothing in the record decides the rule and the even split is the conservative reading of it.</td><td>Founder with growth when appointed</td><td>DR-023's priced United Kingdom waiting list, and in any case before the first foreign market's media is bought.</td><td><span class="chip chip-assumption">assumption</span></td><td><a href="../05-business/#geography">05, 8</a>; <a href="../decisions/dr-025-growth-two-mechanisms.html">DR-025</a></td></tr>
               <tr><td class="key">Whether the engineering headcount exponent falls as the workflow library generalises. It is the difference between a software company and an agency, and the least examined number in the model.</td><td>Founding engineer; interim owner the founder</td><td>Visible only over time: whether the tenth institution costs less to add than the second.</td><td><span class="chip chip-assumption">assumption</span></td><td><a href="../05-business/model.html">05 the model</a>; <a href="../02-architecture/#workflow-library">02, 4.4</a></td></tr>
               <tr><td class="key">The headcount threshold at which the attested 24-hour site replaces the pilot's single controlled room. The models carry a seat-cost curve but no threshold, so the number is the founder's to set rather than derived.</td><td>Founder with the operations lead when appointed</td><td>Before the floor passes the size at which one room stops being credible, and in any case before the first foreign market goes live.</td><td><span class="chip chip-amber">amber</span></td><td><a href="../decisions/dr-006-office-mandatory.html">DR-006</a>; <a href="../04-operations/#shifts">04, 2</a></td></tr>
               <tr><td class="key">The founder's position at Faff, which <a href="../00-thesis/#landscape">00</a> lists as a competitor, and how it is disclosed in a diligence process.</td><td>Founder</td><td>Before the first investor conversation.</td><td><span class="chip chip-to-verify">to-verify</span></td><td><a href="../00-thesis/#landscape">00, 5.1</a></td></tr>
@@ -156,7 +157,7 @@
     <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
     <li><a href="../07-open/">See the open items</a></li>
   </ul>
-  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+  <p>Revised 2026-09-14. This page prints clean to A4 or Letter.</p>
 </footer>
 </body>
 </html>

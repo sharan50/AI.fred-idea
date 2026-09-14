@@ -11,18 +11,21 @@ Everything behind the numbers in `/05-business/`. Nothing here is edited by hand
 | `AIfred_probabilistic_model.xlsx` | Output of `aifred_model.py`: monthly bands, per-month rationale, driver table, funding plan. |
 | `AIfred_model_rationale.md` | Why every distribution is shaped the way it is, phase by phase. |
 | `AIfred_geography_and_data_layer.md` | The four geography scenarios, the entity thresholds, and the staging of the data layer. |
-| `sim_*.csv`, `geo_*.csv` | Raw monthly output of the runs quoted in the publication. |
+| `aifred_geo_growth.py` | The four geography scenarios with the two acquisition mechanisms of DR-025 in them, which is the basis the publication now quotes. |
+| `sim_*.csv`, `geo_*.csv`, `geo_growth_*.csv` | Raw monthly output of the runs quoted in the publication. |
 
 ## Rerunning
 
     python aifred_model.py viable 20000 20260913
     python aifred_geo_model.py foreign_led 20000 20260913
+    python3 aifred_geo_growth.py --selftest
+    python3 aifred_geo_growth.py
 
-The publication quotes runs of 20,000 paths at seed 20260913, dated 13 September 2026. Quote the seed and the date whenever a number from these files appears on a page, because the bands move slightly between seeds.
+The publication quotes runs of 20,000 paths at seed 20260913. The organic-only runs are dated 13 September 2026 and the promoted growth and geography runs 14 September 2026. Quote the seed and the date whenever a number from these files appears on a page, because the bands move slightly between seeds.
 
 ## Health warning
 
-These are informed priors, not evidence. The company has no customers. Five measurements replace them, in the order the sensitivity puts them rather than the order this directory first stated: the rate at which users arrive and what it costs to make them arrive, minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises. The first owns more of the outcome than the other four together and is the one the model has no mechanism for.
+These are informed priors, not evidence. The company has no customers. Five measurements replace them, in the order the sensitivity puts them rather than the order this directory first stated: the rate at which users arrive and what it costs to make them arrive, minutes per user per month, twelve-month churn on a paying cohort, willingness to pay above $50, and whether the engineering headcount exponent falls as the workflow library generalises. The first owns more of the outcome than the other four together, and until DR-025 it was the one the model had no mechanism for; the published line now carries one, and what a paid arrival costs is the first number in it to measure.
 
 ## The sensitivity
 
@@ -77,12 +80,22 @@ The marketing side has no evidence behind it and the file does not pretend other
 an input, not a finding. `growth_sweep_viable.csv` sweeps it from $15 to $2,100 against three budget shares and is
 where the break-even comes from; `growth_split_viable.csv` carries the organic and paid arrivals month by month,
 which is what Figure 5.5 is drawn from; `summary_growth_viable.json` holds the headline against the organic-only
-line. The published trajectory in `sim_viable.csv` remains organic-only, so 05's sections 5 and 7 are the case where
+line. `sim_viable.csv` remains organic-only and is quoted only where 05 names it as the floor, the case where
 nothing is spent on being found.
+
+`aifred_geo_growth.py` does the same thing to `aifred_geo_model.py`, so the four geography scenarios sit on the
+same basis as the rest of the page. It adds no figure the record did not already hold: the cost of a paid arrival
+abroad is the home figure times the ratio between the geography model's own per-market acquisition-cost medians,
+which is about 7.4 for the United Kingdom and 9.7 for the United States, and a channel's saturation is a share of
+each market's own ceiling rather than of the home market's. The media budget is split evenly across live markets,
+which is the conservative reading of an allocation rule nothing in the record decides, because the same rupee buys
+about seven times as many Indian arrivals. It writes `geo_growth_*.csv` and `geogrowthsum_*.json` beside the
+organic-only `geo_*.csv`, and it refuses to write anything until each of the four published geography runs comes
+back character for character with media switched off: `python3 aifred_geo_growth.py --selftest`.
 
 ## Where the publication quotes these
 
-The line the publication quotes is `sim_growth.csv`: the viable configuration with both acquisition mechanisms of DR-025 in it, at $120 a paid arrival and fifteen per cent of revenue in media, twenty thousand paths at seed 20260913. `sim_viable.csv` is the same configuration with no marketing and is kept as the floor, the case where nothing is spent on being found; the growth model rebuilds it character for character when marketing is switched off, which is what makes the two comparable path by path.
+The line the publication quotes is `sim_growth.csv`: the viable configuration with both acquisition mechanisms of DR-025 in it, at $120 a paid arrival and fifteen per cent of revenue in media, twenty thousand paths at seed 20260913. `sim_viable.csv` is the same configuration with no marketing and is kept as the floor, the case where nothing is spent on being found; the growth model rebuilds it character for character when marketing is switched off, which is what makes the two comparable path by path. The geography figures of 05, section 8 and the commerce figures of section 9 come from `geo_growth_india_only.csv`, `geo_growth_expansion.csv`, `geo_growth_expansion_commerce.csv` and `geo_growth_foreign_led.csv` on the same basis, with the organic-only `geo_*.csv` kept beside them for the same reason.
 
 `/05-business/` carries the numbers, `/05-business/model.html` describes the instruments, the scenarios and the
 limits, and `/05-business/measurement-protocol.html` is `AIfred_task_measurement_protocol.md` in the publication's

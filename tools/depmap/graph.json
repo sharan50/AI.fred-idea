@@ -5185,7 +5185,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 39,
+      "count": 40,
       "members": [
         {
           "id": "open-07-01",
@@ -5342,9 +5342,13 @@
         {
           "id": "open-07-31",
           "word": "the given-name exception is withdrawn by"
+        },
+        {
+          "id": "open-07-40",
+          "word": "how a media budget is allocated across live markets"
         }
       ],
-      "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
+      "note": "Forty rows and a caption that says forty. The member check is waived because a row's wording is its own; the count and the caption are checked by the coverage pass instead.",
       "loci": [
         {
           "at": "07-open/index.html#table:7.1",
@@ -7695,7 +7699,7 @@
           "role": "home"
         },
         {
-          "at": "05-business/model.html#limits!\"Nothing in it buys a user, and bad months cannot persist\"",
+          "at": "05-business/model.html#limits!\"What buys a user is a prior, and bad months cannot persist\"",
           "role": "mentions"
         }
       ]
@@ -7837,6 +7841,21 @@
       ]
     },
     {
+      "id": "open-07-40",
+      "kind": "open",
+      "label": "How a media budget is allocated across live markets",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"How a media budget is allocated across live markets\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
       "id": "dr-025",
       "kind": "dr",
       "label": "Growth is organic and marketing, and the plan names both",
@@ -7852,6 +7871,10 @@
         },
         {
           "at": "decisions/index.html#ledger!\"Growth is organic and marketing, and the plan names both\"",
+          "role": "mentions"
+        },
+        {
+          "at": "05-business/index.html#geography!\"the two acquisition mechanisms of section 6\"",
           "role": "mentions"
         }
       ]
@@ -11205,6 +11228,16 @@
       "open-07-31",
       "lands-in",
       "dr-027"
+    ],
+    [
+      "open-07-40",
+      "lands-in",
+      "dr-025"
+    ],
+    [
+      "open-07-40",
+      "lands-in",
+      "dr-023"
     ]
   ]
 }

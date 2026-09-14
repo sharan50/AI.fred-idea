@@ -2,6 +2,8 @@
 
 Companion to `aifred_geo_model.py`. Four scenarios, 20,000 paths each, 60 months. Three things the earlier run treated too crudely are now priced: acquisition cost by geography, the standing cost of a foreign entity, and a commerce take rate.
 
+Section 1 is that file. Section 1a is the same four scenarios on the basis the publication now quotes, which is `aifred_geo_growth.py`: the same code with the two acquisition mechanisms of DR-025 in it. Read 1a for a number that appears on a page and 1 for what the promotion changed.
+
 ---
 
 ## 1. The result
@@ -27,13 +29,38 @@ The difference is not whether you expand. It is whether the foreign base gets la
 
 ---
 
+## 1a. The same four on the published line
+
+`aifred_geo_growth.py`, same paths and same seed, with word of mouth and a media budget in place of a single exogenous arrival rate. A paid arrival costs $120 at low volume in India and the same figure times this model's own per-market cost ratio abroad, about $885 in the United Kingdom and $1,165 in the United States; the budget is fifteen per cent of last month's revenue, on a floor of Rs 3 lakh a month, split evenly across live markets. With media switched off every one of the four rebuilds section 1 character for character, which is the self test the file runs before it writes.
+
+| | India only | Expand late | Expand late + commerce | Foreign led |
+|---|---|---|---|---|
+| Profitable by m36 | 93% | 78% | 86% | **97%** |
+| Profitable by m60 | 99% | 97% | 99% | **100%** |
+| Peak cash, planning | $1.42m | $1.68m | $1.61m | $1.98m |
+| Peak cash, conservative | $2.04m | $3.95m | $2.88m | **$3.09m** |
+| ARPU at m36 | $59 | $62 | $70 | **$92** |
+| Foreign share of users, m36 | 0% | 8% | 8% | 41% |
+| Contribution at m36 | Rs 5.69 cr/mo | Rs 4.24 cr/mo | Rs 5.93 cr/mo | **Rs 16.07 cr/mo** |
+| Contribution at m60 | Rs 17.2 cr/mo | Rs 23.1 cr/mo | Rs 30.6 cr/mo | **Rs 73.6 cr/mo** |
+
+Three things to take from it.
+
+**The ranking does not move.** Late secondary expansion is still the worst of the four and foreign led is still the best, so nothing in the sequence DR-023 fixes depends on the acquisition mechanism.
+
+**The margin narrows.** The late sequence now roughly doubles the conservative cash requirement over India only rather than nearly tripling it, $3.95m against $2.04m, because media grows the Indian base that carries the foreign cost. Every scenario is cheaper and earlier than it was: media buys the base that word of mouth compounds on, and the compounding is worth more than the media costs at $120 a paid arrival.
+
+**The mix moves, and against the thesis.** An even split of the budget buys about seven times as many Indian arrivals per rupee, so media lifts the foreign share where expansion was late and starved, from 12 to 24 per cent of users at m60, and thins it where growth had already been moved abroad, from 63 to 52 per cent, which takes foreign-led ARPU at m36 from $107 to $92. Part of the purchasing-power arbitrage a foreign-led sequence exists for is bought back by a media rule that is cheapest at home. An allocation to marginal cost, or to whichever market is short of its gate, would give a different answer; the even split is the conservative reading and nothing in the record decides the rule. It is an open item.
+
+---
+
 ## 2. Why the PPP argument holds, and where it leaks
 
 You are right about the core arithmetic. A US user paying $105 costs the same to serve as an Indian user paying $52, because the delivery floor is in Bengaluru either way. The gross margin on a foreign user is roughly double.
 
 Three leaks in the argument that the model now prices.
 
-**Acquisition cost does not follow purchasing power, it follows competition for attention.** Blended CAC in India runs Rs 600 to 2,200. In the UK and US the same model uses Rs 4,000 to 25,000, which is $45 to $280. That is a ten-fold difference against a two-fold price difference. It still works, because a foreign user at $105 with a thirty-month life is worth around $3,100 gross, so even $280 of CAC is comfortable. But it means foreign expansion is capital-hungry in a way Indian growth is not, and it is the reason the conservative band widens so much.
+**Acquisition cost does not follow purchasing power, it follows competition for attention.** Blended CAC in India runs Rs 600 to 2,200. In the UK and US the same model uses Rs 4,000 to 25,000, which is $45 to $280. That is a ten-fold difference against a two-fold price difference, and on the published line the same ratio prices the media as well as the referral, so a wrong ratio is wrong twice. It still works, because a foreign user at $105 with a thirty-month life is worth around $3,100 gross, so even $280 of CAC is comfortable. But it means foreign expansion is capital-hungry in a way Indian growth is not, and it is the reason the conservative band widens so much.
 
 **Delivery is not free of the geography.** Staff serving UK and US hours work nights and need a higher English bar, which the model prices at a 20 to 48 per cent wage premium on the share of the base that is foreign. Automation share is also worse abroad at entry, because the workflow library is built against Indian institutions and has to be rebuilt for HMRC, the DVLA, US banks and US insurers. That friction decays, but it is real for the first year in each market.
 
@@ -60,9 +87,9 @@ Preference prediction through archetype clustering needs perhaps 300 to 500 user
 
 This is the honest version of the second revenue line. You are already executing purchases the user asked for. Routing them through channels that pay a take rate is not a new business, it is a margin on the existing one.
 
-The model's commerce layer runs at roughly 1.2 per cent of routed GMV after allowing that only 20 to 65 per cent of transactions have a payable channel. At month 60 that is 12 per cent of revenue. **The important part is not the revenue share, it is the margin share:** commerce is roughly 95 per cent gross margin, so adding it more than doubles contribution at month 36, from Rs 0.51 cr to Rs 1.18 cr a month in the late-expansion case.
+The model's commerce layer runs at roughly 1.2 per cent of routed GMV after allowing that only 20 to 65 per cent of transactions have a payable channel. At month 60 that is 12 per cent of revenue on this basis and 14 per cent on the published line. **The important part is not the revenue share, it is the margin share:** commerce is roughly 95 per cent gross margin, so adding it more than doubles contribution at month 36 on this basis, from Rs 0.51 cr to Rs 1.18 cr a month in the late-expansion case. On the published line the absolute addition is larger, Rs 1.69 cr a month, but it is about two fifths rather than a doubling, because the subscription base it is added to is no longer near break-even at that month.
 
-What it needs is not users but GMV, because merchants negotiate on volume. Meaningful terms start somewhere around Rs 25 to 50 crore a year of routed spend, which at the model's central spend per user is **4,000 to 7,500 users**. Foreign users route three to four times the GMV of Indian ones, so a foreign-led base reaches the threshold far earlier.
+What it needs is not users but GMV, because merchants negotiate on volume. Meaningful terms start somewhere around Rs 25 to 50 crore a year of routed spend, which at the model's central spend per user is **4,000 to 7,500 users**. Foreign users route three to four times the GMV of Indian ones, so a foreign-led base reaches the threshold far earlier. On the published line the late-expansion base passes 4,000 users at month 18 and 7,500 at month 23, against months 27 and 33 on this basis, so the leverage now arrives inside the twelve to twenty-two month window the model allows for merchant agreements rather than well after it.
 
 ### 3.3 Data as a sellable asset, and why it is a trap
 

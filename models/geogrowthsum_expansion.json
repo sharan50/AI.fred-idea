@@ -1,0 +1,46 @@
+{
+  "scenario": "expansion",
+  "profitable_by_m36": 0.78195,
+  "profitable_by_m60": 0.9749,
+  "peak_cash_usd_plan": 1681870.5774129424,
+  "peak_cash_usd_cons": 3949291.3316825707,
+  "m36": {
+    "users": 26988.607987914394,
+    "foreign_share": 0.07792281244689783,
+    "arpu_usd": 62.24354528978003,
+    "revenue_cr": 15.248294113040998,
+    "contribution_cr": 4.242175321275787
+  },
+  "m60": {
+    "users": 72672.1890147232,
+    "foreign_share": 0.24014035349475227,
+    "arpu_usd": 75.9017213581892,
+    "revenue_cr": 49.491792335677054,
+    "contribution_cr": 23.09240157755301,
+    "commerce_share": 0.0,
+    "gmv_cr_month": 0.0
+  },
+  "rounds_plan": {
+    "Seed(1-18)": 12.389631963351396,
+    "A(19-36)": 2.579016175623792,
+    "B(37-60)": -0.0
+  },
+  "rounds_cons": {
+    "Seed(1-18)": 13.909459201252117,
+    "A(19-36)": 17.359616837799763,
+    "B(37-60)": 3.879616812922994
+  },
+  "marketing": {
+    "paid_cac_usd_home": 120.0,
+    "spend_share_of_revenue": 0.15,
+    "spend_floor_inr": 300000.0,
+    "paid_share_of_arrivals_m12": 0.24095746779143215,
+    "paid_share_of_arrivals_m60": 0.11616571072019126,
+    "media_spend_cr_m60_plan": 7.182781089002281,
+    "sales_share_of_cost_m60_plan": 0.2756459402954134
+  },
+  "crossover_month_plan": 24,
+  "trough_month_plan": 23,
+  "peak_cash_cr_plan": 14.968648138975189,
+  "peak_cash_cr_cons": 35.14869285197488
+}
