@@ -94,14 +94,21 @@ switched off: `python3 aifred_geo_growth.py --selftest`.
 
 Four things about it are worth knowing before quoting a number from it, because each was got wrong once.
 
-- **The cost of a paid arrival is not $120.** That figure is the low-volume price of the cheapest of the three
-  channels. Weighted by the mix it is $148 at zero volume, and because a channel's cost rises with its budget the
-  run actually pays about $122 an arrival in month 1 and about $1,515 by month 60, which is inside the review's
-  consumer fintech band rather than under it. `geogrowthsum_*.json` carries the anchors and the effective cost per
-  market at months 36 and 60.
+- **The cost of a paid arrival is not $120.** That figure is the low-volume price of short video, the channel
+  carrying three fifths of the budget, and not of the cheapest channel, which is earned press at $42 and cannot be
+  scaled with money. Weighted by the mix the anchor is $148 at zero volume, and because a channel's cost rises with
+  its budget the run pays about $122 an arrival in month 1, $131 averaged over the first year and about $1,515 by
+  month 60, which is inside the review's consumer fintech band rather than under it. Abroad, on the sequence of
+  record, it reaches $2,938 in the United Kingdom by month 36 and $8,423 by month 60. `geogrowthsum_*.json` carries
+  the anchors and the effective cost per market at months 36 and 60.
 - **The referral incentive is scaled per market.** A word-of-mouth arrival costs Rs 250 at home and that figure
   times the market ratio abroad, about Rs 1,844 and Rs 2,428. The first version of this file charged Rs 250
   everywhere, which priced four fifths of the foreign intake as though it were Indian.
+- **The published line is not geography-neutral.** `aifred_model.py` opens the United Kingdom around month 20
+  and the United States around month 36, with no entity standing cost, no night premium and no foreign churn
+  multiplier, and buys foreign arrivals at the Indian channel price. `sim_growth_india_only.csv` is the same run
+  with both launches suppressed: revenue per user at month 36 falls from $70 to $59 and users at month 60 from
+  95,171 to 59,914. Which run is the plan of record is an open item, not a modelling question.
 - **The even split is conservative on cash and not on the mix.** `geo_growth_allocation.csv` holds the
   counterfactual: put the whole budget into India and the late sequence's foreign share at month 60 is 7 per cent
   rather than 24, and its conservative cash need falls from 35.5 crore to 29.9. The foreign share is a property of

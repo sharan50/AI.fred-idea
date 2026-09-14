@@ -23,9 +23,14 @@ THE ONE THING THIS ADDS, AND THE NUMBERS IT DOES NOT INVENT.
   which are about $13, $95 and $126 a user for India, the United Kingdom and
   the United States. So the low-volume cost of a paid arrival is the promoted
   line's own $120 in India and that same figure times each market's published
-  ratio abroad, which puts the American figure inside the consumer fintech
-  benchmark band the review at /08-review/ already carries. No figure enters
-  that the record did not hold.
+  ratio abroad. No figure enters that the record did not hold.
+
+  Those anchors are not the cost. $120 prices short video at zero volume, the
+  channel carrying three fifths of the budget; the mix-weighted figure is $148,
+  and because a channel's cost rises with its budget the run pays far more as it
+  grows. The effective cost per paid arrival per market is in the summary, and
+  abroad it runs at or above the consumer fintech benchmark the review at
+  /08-review/ carries rather than below it.
 
   Saturation is per market. A channel's cost doubles at a share of the market
   ceiling, and each market has its own ceiling, so the same share gives a
@@ -33,9 +38,11 @@ THE ONE THING THIS ADDS, AND THE NUMBERS IT DOES NOT INVENT.
   proportion to the ceiling for the same reason.
 
   The budget splits evenly across live markets. This is the promoted line's
-  own rule, extended. An operator allocating to marginal cost would do better,
-  because Indian arrivals are cheaper by a factor of seven, so this is the
-  conservative reading of expansion rather than a flattering one.
+  own rule, extended. It is the more expensive of the rules on cash, which is
+  why it is the one published, but it is not neutral on the mix: the same rupee
+  buys about seven times as many Indian arrivals, so the split decides the
+  foreign share. geo_growth_allocation.csv holds the counterfactual, and the
+  rule itself is an open question rather than a finding.
 
 FIDELITY. With marketing switched off each of the four published geography
 CSVs comes back character for character. Every new quantity is pure arithmetic
@@ -276,10 +283,12 @@ def report(ns):
         return float(sp / ad / 89.0) if ad > 1e-9 else None
     s["marketing"] = {
         "market_ratios": ratios,
-        # What the pages may quote. The single input prices the cheapest
-        # channel at zero volume; the mix-weighted anchor and the effective
-        # cost at the budget the run actually spends are the honest figures.
-        "cheapest_channel_anchor_usd": [ns["CAC_USD"] * r for r in ratios],
+        # What the pages may quote. The single input prices short video at
+        # zero volume, which is the channel carrying three fifths of the budget
+        # and not the cheapest of the three: earned press is cheaper and cannot
+        # be scaled with money. The mix-weighted anchor and the effective cost
+        # at the budget the run actually spends are the honest figures.
+        "short_video_anchor_usd": [ns["CAC_USD"] * r for r in ratios],
         "mix_weighted_anchor_usd": [ns["CAC_USD"] * r * mixw for r in ratios],
         "effective_cost_per_paid_arrival_usd_m36": {
             k: eff(k, 36) for k in ("ind", "uk", "us")},

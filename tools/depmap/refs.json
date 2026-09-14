@@ -6289,12 +6289,12 @@
           "caption": "The trajectory as specified against the trajectory with the four levers, twenty thousand paths over sixty months. assump",
           "rows": [
             [
-              "paths profitable by month 36",
-              "0.9 per cent",
+              "paths profitable from month 36 onward",
+              "0.3 per cent",
               "84.1 per cent"
             ],
             [
-              "paths profitable by month 60",
+              "paths profitable in month 60",
               "12.9 per cent",
               "100 per cent"
             ],
@@ -6845,7 +6845,7 @@
             ],
             [
               "foreign led",
-              "the united kingdom between months 8 and 14 with acquisition genuinely moved ther"
+              "the united kingdom between months 8 and 14 as dr-023 commits, which the run draw"
             ]
           ],
           "under": "scenarios"
@@ -6982,7 +6982,7 @@
         },
         {
           "line": 106,
-          "to": "06-roadmap/index.html#expansion"
+          "to": "06-roadmap/index.html#expansion-shift"
         },
         {
           "line": 106,
@@ -8243,7 +8243,7 @@
         },
         {
           "line": 96,
-          "to": "06-roadmap/index.html#expansion"
+          "to": "06-roadmap/index.html#expansion-shift"
         },
         {
           "line": 96,
