@@ -5185,7 +5185,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 43,
+      "count": 46,
       "members": [
         {
           "id": "open-07-01",
@@ -5358,9 +5358,21 @@
         {
           "id": "open-07-43",
           "word": "the step cost of serving a foreign market at night"
+        },
+        {
+          "id": "open-07-44",
+          "word": "which run is the plan of record"
+        },
+        {
+          "id": "open-07-45",
+          "word": "whether a media budget held at a share of revenue should be capped"
+        },
+        {
+          "id": "open-07-46",
+          "word": "routed spend per subscriber, and the foreign basket"
         }
       ],
-      "note": "Forty-three rows and a caption that says forty-three. The member check is waived because a row's wording is its own; the count and the caption are checked by the coverage pass instead.",
+      "note": "Forty-six rows and a caption that says forty-six. The member check is waived because a row's wording is its own; the count and the caption are checked by the coverage pass instead.",
       "loci": [
         {
           "at": "07-open/index.html#table:7.1",
@@ -7858,7 +7870,7 @@
       "label": "How a media budget is allocated across live markets",
       "facets": {
         "layer": "open",
-        "fixity": "assumption"
+        "fixity": "amber"
       },
       "loci": [
         {
@@ -7908,6 +7920,51 @@
       "loci": [
         {
           "at": "07-open/index.html#items!\"The step cost of serving a foreign market at night\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-44",
+      "kind": "open",
+      "label": "Which run is the plan of record",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Which run is the plan of record\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-45",
+      "kind": "open",
+      "label": "Whether a media budget held at a share of revenue should be capped",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Whether a media budget held at a share of revenue should be capped\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-46",
+      "kind": "open",
+      "label": "Routed spend per subscriber, and the foreign basket",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Routed spend per subscriber, and the foreign basket\"",
           "role": "home"
         }
       ]
@@ -11310,6 +11367,21 @@
       "open-07-43",
       "lands-in",
       "dr-023"
+    ],
+    [
+      "open-07-44",
+      "lands-in",
+      "dr-023"
+    ],
+    [
+      "open-07-45",
+      "lands-in",
+      "dr-025"
+    ],
+    [
+      "open-07-46",
+      "lands-in",
+      "dr-024"
     ]
   ]
 }

@@ -260,6 +260,18 @@ if __name__ == "__main__":
     sweep = pd.DataFrame(rows)
     sweep.to_csv(HERE / f"growth_sweep_{SCENARIO}.csv", index=False)
 
+    # The published run opens the United Kingdom around month 20 and the United
+    # States around month 36 without charging a foreign entity's standing cost,
+    # so this is the same run with both launches suppressed: the India-only
+    # reading of the published line, for the comparison 05, 6.5 states.
+    india = run(N, SEED, SCENARIO, marketing=True, overrides={"uk_m": 9999, "us_m": 9999})
+    bands(india).to_csv(HERE / f"sim_growth_india_only.csv", index=False)
+    di, db = bands(india), bands(with_mk)
+    print()
+    for tag, d in (("published, UK m20 and US m36", db), ("same run, India only", di)):
+        print(f'{tag:30s} arpu m36 ${d.arpu_usd_plan[35]:6.2f}  users m60 {d.users_plan[59]:8,.0f}  '
+              f'need {-d.cum_cash_plan.min() / CR:5.2f} cr')
+
     months = np.arange(1, MONTHS + 1)
     o = with_mk["out"]
     split = pd.DataFrame({
