@@ -1,0 +1,58 @@
+{
+  "scenario": "viable",
+  "paths": 20000,
+  "seed": 20260913,
+  "marketing": {
+    "spend_share": 0.15,
+    "spend_floor_inr": 300000.0,
+    "blended_cac_usd": 120.0,
+    "fx": 89.0,
+    "channels": {
+      "reels": {
+        "mult": 1.0,
+        "half_share": 0.006,
+        "cap": null
+      },
+      "influencer": {
+        "mult": 2.0,
+        "half_share": 0.003,
+        "cap": null
+      },
+      "press": {
+        "mult": 0.35,
+        "half_share": 0.001,
+        "cap": 200.0
+      }
+    },
+    "mix": {
+      "reels": 0.6,
+      "influencer": 0.3,
+      "press": 0.1
+    },
+    "referral_incentive_inr": 250.0
+  },
+  "organic_only": {
+    "peak_need_cr": 24.501623941795344,
+    "trough_month": 36.0,
+    "crossover_month": 40.0,
+    "profitable_by_m60": 1.0,
+    "profitable_by_m36": 0.0,
+    "m60_contribution_cr": 9.326182655433408,
+    "m60_users": 29784.998703883848,
+    "m36_minutes_per_user": 56.322404190011326,
+    "m36_labour_share": 0.1705630309552179
+  },
+  "with_marketing": {
+    "peak_need_cr": 15.032026972227783,
+    "trough_month": 23.0,
+    "crossover_month": 25.0,
+    "profitable_by_m60": 1.0,
+    "profitable_by_m36": 1.0,
+    "m60_contribution_cr": 39.361445732875595,
+    "m60_users": 89085.25373521686,
+    "m36_minutes_per_user": 57.96743676950791,
+    "m36_labour_share": 0.1553555152676125
+  },
+  "share_profitable_organic_only": 0.8904,
+  "share_profitable_with_marketing": 0.9999
+}

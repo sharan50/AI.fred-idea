@@ -5955,6 +5955,10 @@
           "to": "decisions/dr-021-no-value-spoken.html"
         },
         {
+          "line": 223,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
+        },
+        {
           "line": 226,
           "to": "decisions/dr-022-structured-task-cards.html"
         },
@@ -6149,27 +6153,69 @@
           "no": "6",
           "text": "How users arrive"
         },
+        "two-mechanisms": {
+          "kind": "h3",
+          "line": 163,
+          "no": "6.1",
+          "text": "The two mechanisms",
+          "under": "how-users-arrive"
+        },
+        "fig-two-mechanisms": {
+          "kind": "figure",
+          "line": 167,
+          "no": "Figure 5.5",
+          "text": "Media is the primer and word of mouth is the engine: the bought share peaks early and falls as the base it created compo",
+          "under": "two-mechanisms"
+        },
+        "what-a-user-is-worth": {
+          "kind": "h3",
+          "line": 173,
+          "no": "6.2",
+          "text": "What a user is worth, and what one may cost",
+          "under": "how-users-arrive"
+        },
+        "the-number-nobody-has": {
+          "kind": "h3",
+          "line": 176,
+          "no": "6.3",
+          "text": "The number nobody has",
+          "under": "how-users-arrive"
+        },
+        "growth-changes-sign": {
+          "kind": "h3",
+          "line": 178,
+          "no": "6.4",
+          "text": "Growth changes sign with the unit economics",
+          "under": "how-users-arrive"
+        },
+        "what-the-page-above-still-carries": {
+          "kind": "h3",
+          "line": 180,
+          "no": "6.5",
+          "text": "What the page above still carries",
+          "under": "how-users-arrive"
+        },
         "funding": {
           "kind": "h2",
-          "line": 171,
+          "line": 185,
           "no": "7",
           "text": "Funding"
         },
         "geography": {
           "kind": "h2",
-          "line": 188,
+          "line": 202,
           "no": "8",
           "text": "Geography"
         },
         "commerce": {
           "kind": "h2",
-          "line": 208,
+          "line": 222,
           "no": "9",
           "text": "The commerce layer"
         },
         "what-replaces": {
           "kind": "h2",
-          "line": 214,
+          "line": 228,
           "no": "10",
           "text": "What replaces this page"
         }
@@ -6272,8 +6318,8 @@
           "under": "trajectory"
         },
         "5.4": {
-          "line": 174,
-          "caption": "The funding plan: what each round is sized for and what it has to buy. assumption",
+          "line": 188,
+          "caption": "The funding plan: what each round is sized for and what it has to buy. The figures are guidance; the shape is the claim.",
           "rows": [
             [
               "seed",
@@ -6297,7 +6343,7 @@
           "under": "funding"
         },
         "5.5": {
-          "line": 193,
+          "line": 207,
           "caption": "Three of the four sequencing scenarios, twenty thousand paths each: late secondary expansion is worse than not expanding",
           "rows": [
             [
@@ -6434,51 +6480,47 @@
           "to": "07-open/index.html#items"
         },
         {
-          "line": 166,
+          "line": 162,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 177,
           "to": "08-review/index.html#economics"
         },
         {
-          "line": 167,
-          "to": "00-thesis/index.html#customer-and-wedge"
-        },
-        {
-          "line": 167,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 204,
+          "line": 218,
           "to": "decisions/dr-023-geography-sequencing.html"
         },
         {
-          "line": 204,
+          "line": 218,
           "to": "06-roadmap/index.html#expansion"
         },
         {
-          "line": 210,
+          "line": 224,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 210,
+          "line": 224,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 215,
+          "line": 229,
           "to": "05-business/measurement-protocol.html"
         },
         {
-          "line": 215,
+          "line": 229,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 223,
+          "line": 237,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 224,
+          "line": 238,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 225,
+          "line": 239,
           "to": "07-open/index.html"
         }
       ]
@@ -7810,7 +7852,7 @@
               "08 ; dr-008"
             ],
             [
-              "the acquisition channel, and what a user costs through it. the model assumes use",
+              "what a paid arrival costs. dr-025 fixes the mechanism, two of them, and names th",
               "founder",
               "before the pilot cohort is recruited, because how the first hundred are found is",
               "",
@@ -14520,6 +14562,265 @@
         }
       ]
     },
+    "decisions/dr-025-growth-two-mechanisms.html": {
+      "title": "DR-025 Growth is organic and marketing, and the plan names both, AI.fred",
+      "kind": "record",
+      "status": "assumption",
+      "anchors": {
+        "decision": {
+          "kind": "h2",
+          "line": 61,
+          "no": "1",
+          "text": "Decision"
+        },
+        "what-decides-it": {
+          "kind": "h3",
+          "line": 64,
+          "no": "1.1",
+          "text": "The one number that decides whether to spend",
+          "under": "decision"
+        },
+        "where-specified": {
+          "kind": "h3",
+          "line": 68,
+          "no": "1.2",
+          "text": "Where this is specified",
+          "under": "decision"
+        },
+        "rejected": {
+          "kind": "h2",
+          "line": 72,
+          "no": "2",
+          "text": "Rejected alternative(s) and their cost"
+        },
+        "closes-off": {
+          "kind": "h2",
+          "line": 85,
+          "no": "3",
+          "text": "What this closes off"
+        },
+        "record-status": {
+          "kind": "h2",
+          "line": 95,
+          "no": "4",
+          "text": "Status"
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 18,
+          "to": "decisions/dr-025-growth-two-mechanisms.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "decisions/dr-025-growth-two-mechanisms.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 44,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 45,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 46,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 47,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 48,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 49,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 50,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 51,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 69,
+          "to": "05-business/index.html#how-users-arrive"
+        },
+        {
+          "line": 105,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 106,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 107,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
+    "decisions/dr-026-telephony-mapping-not-authentication.html": {
+      "title": "DR-026 A call is for account mapping, never for authentication, AI.fred",
+      "kind": "record",
+      "status": "decision",
+      "anchors": {
+        "decision": {
+          "kind": "h2",
+          "line": 61,
+          "no": "1",
+          "text": "Decision"
+        },
+        "what-this-does-not-change": {
+          "kind": "h3",
+          "line": 64,
+          "no": "1.1",
+          "text": "What this does not change",
+          "under": "decision"
+        },
+        "why-the-distinction-holds": {
+          "kind": "h3",
+          "line": 66,
+          "no": "1.2",
+          "text": "Why the distinction holds",
+          "under": "decision"
+        },
+        "where-specified": {
+          "kind": "h3",
+          "line": 68,
+          "no": "1.3",
+          "text": "Where this is specified",
+          "under": "decision"
+        },
+        "rejected": {
+          "kind": "h2",
+          "line": 72,
+          "no": "2",
+          "text": "Rejected alternative(s) and their cost"
+        },
+        "closes-off": {
+          "kind": "h2",
+          "line": 85,
+          "no": "3",
+          "text": "What this closes off"
+        },
+        "record-status": {
+          "kind": "h2",
+          "line": 94,
+          "no": "4",
+          "text": "Status"
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 18,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 44,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 45,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 46,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 47,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 48,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 49,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 50,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 51,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 63,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 69,
+          "to": "02-architecture/index.html#step-catalogue"
+        },
+        {
+          "line": 69,
+          "to": "01-product/index.html#taxonomy"
+        },
+        {
+          "line": 69,
+          "to": "04-operations/index.html#phone-scope"
+        },
+        {
+          "line": 104,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 105,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 106,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
     "decisions/index.html": {
       "title": "Decisions, AI.fred",
       "kind": "ledger",
@@ -14533,7 +14834,7 @@
         },
         "how-records-work": {
           "kind": "h2",
-          "line": 98,
+          "line": 100,
           "no": "2",
           "text": "How a record works"
         }
@@ -14710,6 +15011,20 @@
               "",
               "2026-09-13",
               "an unlimited promise, and a merchant paying for placement."
+            ],
+            [
+              "dr-025",
+              "growth is organic and marketing, and the plan names both",
+              "",
+              "2026-09-14",
+              "a trajectory whose growth has no mechanism, and a cost per acquired user quoted "
+            ],
+            [
+              "dr-026",
+              "a call is for account mapping, never for authentication",
+              "",
+              "2026-09-14",
+              "a call to a desk that treats an identifier as a way in."
             ]
           ],
           "under": "ledger"
@@ -14869,23 +15184,31 @@
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 95,
+          "line": 92,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 93,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
+        },
+        {
+          "line": 97,
           "to": "07-open/index.html"
         },
         {
-          "line": 100,
+          "line": 102,
           "to": "07-open/index.html#objections"
         },
         {
-          "line": 109,
+          "line": 111,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 110,
+          "line": 112,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 111,
+          "line": 113,
           "to": "07-open/index.html"
         }
       ]

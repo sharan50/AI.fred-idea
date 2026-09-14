@@ -5301,7 +5301,7 @@
         },
         {
           "id": "open-07-29",
-          "word": "the acquisition channel, and what a user costs"
+          "word": "what a paid arrival costs"
         },
         {
           "id": "open-07-30",
@@ -7665,18 +7665,18 @@
     {
       "id": "open-07-29",
       "kind": "open",
-      "label": "The acquisition channel and what a user costs through it",
+      "label": "What a paid arrival costs",
       "facets": {
         "layer": "open",
         "fixity": "assumption"
       },
       "loci": [
         {
-          "at": "07-open/index.html#items!\"The acquisition channel, and what a user costs through it\"",
+          "at": "07-open/index.html#items!\"What a paid arrival costs\"",
           "role": "home"
         },
         {
-          "at": "05-business/index.html#how-users-arrive!\"What this record does not have is a channel\"",
+          "at": "05-business/index.html#how-users-arrive!\"What a paid arrival actually costs\"",
           "role": "mentions"
         }
       ]
@@ -7852,6 +7852,158 @@
         {
           "at": "07-open/index.html#items!\"Two external facts the review dates past the record\"",
           "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "dr-025",
+      "kind": "dr",
+      "label": "Growth is organic and marketing, and the plan names both",
+      "facets": {
+        "layer": "business",
+        "fixity": "fixed",
+        "fatal": "none"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-025-growth-two-mechanisms.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Growth is organic and marketing, and the plan names both\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "dr-026",
+      "kind": "dr",
+      "label": "A call is for account mapping, never for authentication",
+      "facets": {
+        "layer": "trust",
+        "fixity": "fixed",
+        "fatal": "1"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-026-telephony-mapping-not-authentication.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"A call is for account mapping, never for authentication\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-025-leaving-growth-exogenous",
+      "kind": "alt",
+      "label": "Leaving growth exogenous",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-025-growth-two-mechanisms.html#rejected!\"Leaving growth exogenous\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-025-paid-as-the-engine",
+      "kind": "alt",
+      "label": "Paid acquisition as the engine",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-025-growth-two-mechanisms.html#rejected!\"Paid acquisition as the engine\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-025-performance-channels-only",
+      "kind": "alt",
+      "label": "Performance channels only",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-025-growth-two-mechanisms.html#rejected!\"Performance channels only\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-025-a-named-cac",
+      "kind": "alt",
+      "label": "A named CAC in the plan",
+      "facets": {
+        "layer": "business"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-025-growth-two-mechanisms.html#rejected!\"A named CAC in the plan\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-026-no-phone-work",
+      "kind": "alt",
+      "label": "No phone work at all",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-026-telephony-mapping-not-authentication.html#rejected!\"No phone work at all\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-026-judging-by-class",
+      "kind": "alt",
+      "label": "Judging each call by the value's class",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-026-telephony-mapping-not-authentication.html#rejected!\"Judging each call by the value's class\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-026-leaving-it-to-the-worker",
+      "kind": "alt",
+      "label": "Leaving it to the worker on the call",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-026-telephony-mapping-not-authentication.html#rejected!\"Leaving it to the worker on the call\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-026-per-call",
+      "kind": "alt",
+      "label": "Deciding per call rather than per party",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-026-telephony-mapping-not-authentication.html#rejected!\"Deciding per call rather than per party\"",
+          "role": "canonical"
         }
       ]
     }
@@ -10891,6 +11043,66 @@
       "open-07-39",
       "lands-in",
       "flag-basis-speak-as-customer"
+    ],
+    [
+      "dr-025",
+      "rejects",
+      "alt-dr-025-leaving-growth-exogenous"
+    ],
+    [
+      "dr-025",
+      "rejects",
+      "alt-dr-025-paid-as-the-engine"
+    ],
+    [
+      "dr-025",
+      "rejects",
+      "alt-dr-025-performance-channels-only"
+    ],
+    [
+      "dr-025",
+      "rejects",
+      "alt-dr-025-a-named-cac"
+    ],
+    [
+      "dr-026",
+      "rejects",
+      "alt-dr-026-no-phone-work"
+    ],
+    [
+      "dr-026",
+      "rejects",
+      "alt-dr-026-judging-by-class"
+    ],
+    [
+      "dr-026",
+      "rejects",
+      "alt-dr-026-leaving-it-to-the-worker"
+    ],
+    [
+      "dr-026",
+      "rejects",
+      "alt-dr-026-per-call"
+    ],
+    [
+      "dr-021",
+      "justifies",
+      "dr-026"
+    ],
+    [
+      "open-07-29",
+      "lands-in",
+      "dr-025"
+    ],
+    [
+      "premise-wedge",
+      "justifies",
+      "dr-025"
+    ],
+    [
+      "dr-026",
+      "justifies",
+      "comp-telephony"
     ]
   ]
 }

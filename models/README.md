@@ -62,6 +62,24 @@ One limit worth stating, since it bounds what the sweeps mean. `aifred_model.py`
 revenue is users times price, and the task allowance enters only as cost. The metered allowance the publication now
 specifies is not in it, so the sweep over tasks a day is a pure cost sweep and understates what that lever does.
 
+## Growth
+
+`aifred_growth_model.py` replaces the published model's single exogenous arrival rate with the two mechanisms
+DR-025 fixes: organic word of mouth compounding on the installed base, and a monthly media budget converted into
+arrivals at a cost that rises with the budget, across reels, AI-influencer placements and earned press. It reaches
+the published model the same way the sensitivity does, by executing `aifred_model.py` in pieces, and replaces only
+the acquisition and acquisition-cost blocks, which are quoted in the file so a reader can see exactly what differs.
+Every new parameter is drawn outside the published random stream, so with marketing switched off it rebuilds
+`sim_viable.csv` character for character and the two runs are comparable path by path rather than only in aggregate.
+Run `python3 aifred_growth_model.py --selftest` to check that before quoting anything from it.
+
+The marketing side has no evidence behind it and the file does not pretend otherwise: the cost of a paid arrival is
+an input, not a finding. `growth_sweep_viable.csv` sweeps it from $15 to $2,100 against three budget shares and is
+where the break-even comes from; `growth_split_viable.csv` carries the organic and paid arrivals month by month,
+which is what Figure 5.5 is drawn from; `summary_growth_viable.json` holds the headline against the organic-only
+line. The published trajectory in `sim_viable.csv` remains organic-only, so 05's sections 5 and 7 are the case where
+nothing is spent on being found.
+
 ## Where the publication quotes these
 
 `/05-business/` carries the numbers, `/05-business/model.html` describes the instruments, the scenarios and the

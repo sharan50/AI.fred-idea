@@ -365,6 +365,22 @@
       "updated": "2026-09-13"
     },
     {
+      "path": "decisions/dr-025-growth-two-mechanisms.html",
+      "title": "DR-025 Growth is organic and marketing, and the plan names both",
+      "status": "assumption",
+      "updated": "2026-09-14",
+      "section": "decisions",
+      "summary": "Growth is two mechanisms, word of mouth compounding on the installed base and a media budget across reels, AI-influencer placements and the technology and business papers, with the cost per paid arrival as the first number to measure."
+    },
+    {
+      "path": "decisions/dr-026-telephony-mapping-not-authentication.html",
+      "title": "DR-026 A call is for account mapping, never for authentication",
+      "status": "decision",
+      "updated": "2026-09-14",
+      "section": "decisions",
+      "summary": "A call is used only where the institution asks for identity to find the account rather than to open it, recorded as a field in the party register and applied before a script is written."
+    },
+    {
       "path": "decisions/index.html",
       "title": "Decisions",
       "section": "decisions",
