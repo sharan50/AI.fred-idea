@@ -5185,7 +5185,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 46,
+      "count": 49,
       "members": [
         {
           "id": "open-07-01",
@@ -5370,9 +5370,21 @@
         {
           "id": "open-07-46",
           "word": "routed spend per subscriber, and the foreign basket"
+        },
+        {
+          "id": "open-07-47",
+          "word": "whether the quoted prices are gross or net of consumption tax"
+        },
+        {
+          "id": "open-07-48",
+          "word": "the step cost of the floor"
+        },
+        {
+          "id": "open-07-49",
+          "word": "tasks a user a month, which is the other half of the governing ratio"
         }
       ],
-      "note": "Forty-six rows and a caption that says forty-six. The member check is waived because a row's wording is its own; the count and the caption are checked by the coverage pass instead.",
+      "note": "Forty-nine rows and a caption that says forty-nine. The member check is waived because a row's wording is its own; the count and the caption are checked by the coverage pass instead.",
       "loci": [
         {
           "at": "07-open/index.html#table:7.1",
@@ -7965,6 +7977,51 @@
       "loci": [
         {
           "at": "07-open/index.html#items!\"Routed spend per subscriber, and the foreign basket\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-47",
+      "kind": "open",
+      "label": "Whether the quoted prices are gross or net of consumption tax",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Whether the quoted prices are gross or net of consumption tax\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-48",
+      "kind": "open",
+      "label": "The step cost of the floor",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The step cost of the floor\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-49",
+      "kind": "open",
+      "label": "Tasks a user a month, which is the other half of the governing ratio",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"Tasks a user a month, which is the other half of the governing ratio\"",
           "role": "home"
         }
       ]
@@ -11380,6 +11437,21 @@
     ],
     [
       "open-07-46",
+      "lands-in",
+      "dr-024"
+    ],
+    [
+      "open-07-47",
+      "lands-in",
+      "dr-024"
+    ],
+    [
+      "open-07-48",
+      "lands-in",
+      "dr-006"
+    ],
+    [
+      "open-07-49",
       "lands-in",
       "dr-024"
     ]

@@ -1,7 +1,8 @@
 """Figure 5.5 for /05-business/: the two acquisition mechanisms, month by month.
 
-Generated from models/growth_split_viable.csv, which aifred_growth_model.py
-writes. Every value is read; none is entered by hand. Same diagram language as
+Generated from models/sim_growth.csv, the published run, on its planning line,
+which is the basis every other figure on the page uses. Every value is read;
+none is entered by hand. Same diagram language as
 the other figures on the page: classes only, no colour attributes, stroke
 widths from the class list, one accent element, a height that is a multiple of
 40.
@@ -14,7 +15,7 @@ import math
 import pathlib
 
 R = pathlib.Path(__file__).resolve().parents[2]
-rows = list(csv.DictReader(open(R / 'models/growth_split_viable.csv')))
+rows = list(csv.DictReader(open(R / 'models/sim_growth.csv')))
 months = [int(r['month']) for r in rows]
 org = [float(r['adds_organic_plan']) for r in rows]
 paid = [float(r['adds_paid_plan']) for r in rows]
@@ -74,11 +75,12 @@ out.append(txt(x0, y1 - 18, f'{share_paid[peak]:.0f} per cent of arrivals bought
 
 FID = 'fig-two-mechanisms'
 TITLE = 'The two acquisition mechanisms, months 1 to 60'
-DESC = ('The share of new users bought rather than earned, month by month, at the modelled cost of $120 a paid '
-        'arrival and a media budget of 15 per cent of revenue. It is 38 per cent in month 1, when the base is two '
-        'hundred users and the budget is a floor, settles near a quarter through the first year and falls to 14 per '
-        'cent by month 60, while the absolute media spend rises throughout, '
-        'because every bought user joins the base that word of mouth compounds on.')
+DESC = (f'The share of new users bought rather than earned, month by month, on the planning line of the published '
+        f'run, at a $120 low-volume anchor and a media budget of 15 per cent of revenue. It is '
+        f'{share_paid[0]:.0f} per cent in month 1, when the base is two hundred users and the budget is a floor, '
+        f'settles near {share_paid[11]:.0f} per cent through the first year and falls to {share_paid[-1]:.0f} per '
+        f'cent by month 60, while the absolute media spend rises throughout, '
+        f'because every bought user joins the base that word of mouth compounds on.')
 TAKEAWAY = ('Media is the primer and word of mouth is the engine: the bought share peaks early and falls as the base '
             'it created compounds.')
 

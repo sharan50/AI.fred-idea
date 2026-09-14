@@ -97,7 +97,7 @@ Four things about it are worth knowing before quoting a number from it, because 
 - **The cost of a paid arrival is not $120.** That figure is the low-volume price of short video, the channel
   carrying three fifths of the budget, and not of the cheapest channel, which is earned press at $42 and cannot be
   scaled with money. Weighted by the mix the anchor is $148 at zero volume, and because a channel's cost rises with
-  its budget the run pays about $122 an arrival in month 1, $131 averaged over the first year and about $1,515 by
+  its budget the run pays about $122 an arrival in month 1, $130 averaged over the first year and about $1,368 by
   month 60, which is inside the review's consumer fintech band rather than under it. Abroad, on the sequence of
   record, it reaches $2,938 in the United Kingdom by month 36 and $8,423 by month 60. `geogrowthsum_*.json` carries
   the anchors and the effective cost per market at months 36 and 60.

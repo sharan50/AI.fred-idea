@@ -272,14 +272,30 @@ if __name__ == "__main__":
         print(f'{tag:30s} arpu m36 ${d.arpu_usd_plan[35]:6.2f}  users m60 {d.users_plan[59]:8,.0f}  '
               f'need {-d.cum_cash_plan.min() / CR:5.2f} cr')
 
+    # Neither model carries a tax term. If the quoted prices are gross of
+    # consumption tax rather than net, a seventh of Indian revenue and a sixth
+    # of British revenue do not exist, so this is the same run with both prices
+    # divided by their rate: the net-of-tax reading of the published line.
+    gross = {k: np.asarray(with_mk[k]) for k in ("price_ind", "price_uk")}
+    net = run(N, SEED, SCENARIO, marketing=True,
+              overrides={"price_ind": gross["price_ind"] / 1.18,
+                         "price_uk": gross["price_uk"] / 1.20})
+    bands(net).to_csv(HERE / "sim_growth_net_of_tax.csv", index=False)
+    dn = bands(net)
+    print(f'{"net of GST at 18 and 20 per cent":34s} trough {-dn.cum_cash_plan.min() / CR:5.2f} cr  '
+          f'cons {-dn.cum_cash_cons.min() / CR:5.2f} cr  arpu m36 ${dn.arpu_usd_plan[35]:5.2f}')
+
     months = np.arange(1, MONTHS + 1)
     o = with_mk["out"]
+    # These are means across every path, not the planning line, so they carry a
+    # _mean suffix: sim_growth.csv holds the planning-line series under _plan
+    # and that is what the publication and Figure 5.5 quote.
     split = pd.DataFrame({
         "month": months,
-        "adds_organic_plan": o["adds_organic"].mean(1),
-        "adds_paid_plan": o["adds_paid"].mean(1),
-        "marketing_spend_plan": o["marketing_spend"].mean(1),
-        "users_plan": o["users"].mean(1),
+        "adds_organic_mean": o["adds_organic"].mean(1),
+        "adds_paid_mean": o["adds_paid"].mean(1),
+        "marketing_spend_mean": o["marketing_spend"].mean(1),
+        "users_mean": o["users"].mean(1),
     })
     split.to_csv(HERE / f"growth_split_{SCENARIO}.csv", index=False)
 
@@ -289,7 +305,15 @@ if __name__ == "__main__":
                    "organic_only": {k: float(np.median(v)) for k, v in base.items()},
                    "with_marketing": {k: float(np.median(v)) for k, v in mk.items()},
                    "share_profitable_organic_only": float(base["profitable_by_m60"].mean()),
-                   "share_profitable_with_marketing": float(mk["profitable_by_m60"].mean())},
+                   "share_profitable_with_marketing": float(mk["profitable_by_m60"].mean()),
+                   # Table 5.3 quotes the sustained figure, so the file carries it.
+                   "profitable_from_m36_onward_with_marketing": float(
+                       (with_mk["out"]["contribution"][35:] > 0).all(axis=0).mean()),
+                   "profitable_from_m36_onward_organic_only": float(
+                       (run(N, SEED, SCENARIO, marketing=False)["out"]["contribution"][35:] > 0).all(axis=0).mean()),
+                   "effective_cost_per_paid_arrival_usd_plan": {
+                       f"m{m}": float(db[f"marketing_spend_plan"][m - 1] / db["adds_paid_plan"][m - 1] / 89.0)
+                       for m in (1, 12, 24, 36, 60)}},
                   f, indent=2, default=float)
     print()
     print(sweep.to_string(index=False))

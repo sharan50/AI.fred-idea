@@ -6126,100 +6126,100 @@
         },
         "trajectory": {
           "kind": "h2",
-          "line": 120,
+          "line": 121,
           "no": "5",
           "text": "The trajectory"
         },
         "fig-revenue-cost": {
           "kind": "figure",
-          "line": 122,
+          "line": 123,
           "no": "Figure 5.2",
           "text": "The lines cross at month 23 on the planning line: before it every month consumes cash, after it every month makes it. Tw",
           "under": "trajectory"
         },
         "fig-labour-share": {
           "kind": "figure",
-          "line": 128,
+          "line": 129,
           "no": "Figure 5.3",
           "text": "This is the ratio the four levers move: the same curve sits at 85 per cent at month 36 in the configuration the record p",
           "under": "trajectory"
         },
         "fig-cumulative-cash": {
           "kind": "figure",
-          "line": 152,
+          "line": 153,
           "no": "Figure 5.4",
           "text": "The trough is what the planning line asks for: about 14.1 crore, and 20.5 on the conservative one, which at the model&#x",
           "under": "trajectory"
         },
         "how-users-arrive": {
           "kind": "h2",
-          "line": 161,
+          "line": 162,
           "no": "6",
           "text": "How users arrive"
         },
         "two-mechanisms": {
           "kind": "h3",
-          "line": 164,
+          "line": 165,
           "no": "6.1",
           "text": "The two mechanisms",
           "under": "how-users-arrive"
         },
         "fig-two-mechanisms": {
           "kind": "figure",
-          "line": 168,
+          "line": 169,
           "no": "Figure 5.5",
           "text": "Media is the primer and word of mouth is the engine: the bought share peaks early and falls as the base it created compo",
           "under": "two-mechanisms"
         },
         "what-a-user-is-worth": {
           "kind": "h3",
-          "line": 174,
+          "line": 175,
           "no": "6.2",
           "text": "What a user is worth, and what one may cost",
           "under": "how-users-arrive"
         },
         "the-number-nobody-has": {
           "kind": "h3",
-          "line": 177,
+          "line": 178,
           "no": "6.3",
           "text": "The number nobody has",
           "under": "how-users-arrive"
         },
         "growth-changes-sign": {
           "kind": "h3",
-          "line": 180,
+          "line": 181,
           "no": "6.4",
           "text": "Growth changes sign with the unit economics",
           "under": "how-users-arrive"
         },
         "what-the-page-above-still-carries": {
           "kind": "h3",
-          "line": 182,
+          "line": 183,
           "no": "6.5",
           "text": "What the page above still carries",
           "under": "how-users-arrive"
         },
         "funding": {
           "kind": "h2",
-          "line": 189,
+          "line": 190,
           "no": "7",
           "text": "Funding"
         },
         "geography": {
           "kind": "h2",
-          "line": 206,
+          "line": 207,
           "no": "8",
           "text": "Geography"
         },
         "commerce": {
           "kind": "h2",
-          "line": 231,
+          "line": 232,
           "no": "9",
           "text": "The commerce layer"
         },
         "what-replaces": {
           "kind": "h2",
-          "line": 238,
+          "line": 239,
           "no": "10",
           "text": "What replaces this page"
         }
@@ -6285,7 +6285,7 @@
           "under": "the-ratio"
         },
         "5.3": {
-          "line": 135,
+          "line": 136,
           "caption": "The trajectory as specified against the trajectory with the four levers, twenty thousand paths over sixty months. assump",
           "rows": [
             [
@@ -6322,7 +6322,7 @@
           "under": "trajectory"
         },
         "5.4": {
-          "line": 192,
+          "line": 193,
           "caption": "The funding plan: what each round is sized for and what it has to buy. The figures are guidance; the shape is the claim.",
           "rows": [
             [
@@ -6335,7 +6335,7 @@
               "series a",
               "month 18 to 22",
               "$6m to $10m",
-              "contribution positive per user, a workflow library that generalises, a second ge"
+              "contribution positive per user, a workflow library that generalises, and the sec"
             ],
             [
               "series b",
@@ -6347,7 +6347,7 @@
           "under": "funding"
         },
         "5.5": {
-          "line": 212,
+          "line": 213,
           "caption": "Three of the four sequencing scenarios on the published line, twenty thousand paths each, with the commerce layer of sec",
           "rows": [
             [
@@ -6461,98 +6461,114 @@
         },
         {
           "line": 116,
-          "to": "04-operations/index.html"
+          "to": "04-operations/index.html#shifts"
         },
         {
-          "line": 121,
+          "line": 116,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 117,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 122,
           "to": "05-business/index.html#fig-revenue-cost"
         },
         {
-          "line": 121,
+          "line": 122,
           "to": "05-business/index.html#fig-labour-share"
         },
         {
-          "line": 121,
+          "line": 122,
           "to": "05-business/index.html#fig-cumulative-cash"
         },
         {
-          "line": 151,
+          "line": 152,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 151,
+          "line": 152,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 162,
+          "line": 163,
           "to": "decisions/dr-025-growth-two-mechanisms.html"
         },
         {
-          "line": 165,
+          "line": 166,
           "to": "01-product/index.html#verdicts"
         },
         {
-          "line": 175,
+          "line": 176,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 178,
+          "line": 179,
           "to": "08-review/index.html#economics"
         },
         {
-          "line": 185,
+          "line": 186,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 209,
-          "to": "08-review/index.html#economics"
-        },
-        {
-          "line": 225,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 227,
+          "line": 191,
           "to": "decisions/dr-023-geography-sequencing.html"
         },
         {
-          "line": 227,
+          "line": 210,
+          "to": "08-review/index.html#economics"
+        },
+        {
+          "line": 226,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 228,
+          "to": "decisions/dr-023-geography-sequencing.html"
+        },
+        {
+          "line": 228,
           "to": "06-roadmap/index.html#expansion"
         },
         {
-          "line": 227,
+          "line": 228,
           "to": "07-open/index.html#items"
         },
         {
           "line": 233,
-          "to": "07-open/index.html#items"
+          "to": "decisions/dr-023-geography-sequencing.html"
         },
         {
           "line": 234,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 235,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 234,
+          "line": 235,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 239,
+          "line": 240,
           "to": "05-business/measurement-protocol.html"
         },
         {
-          "line": 239,
+          "line": 240,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 247,
+          "line": 248,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 248,
+          "line": 249,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 249,
+          "line": 250,
           "to": "07-open/index.html"
         }
       ]
@@ -6570,62 +6586,62 @@
         },
         "why-the-rubric": {
           "kind": "h2",
-          "line": 71,
+          "line": 72,
           "no": "2",
           "text": "Why the rubric is built this way"
         },
         "tiers": {
           "kind": "h2",
-          "line": 77,
+          "line": 78,
           "no": "3",
           "text": "Tiers"
         },
         "timing": {
           "kind": "h2",
-          "line": 96,
+          "line": 97,
           "no": "4",
           "text": "Timing definitions"
         },
         "task-set": {
           "kind": "h2",
-          "line": 110,
+          "line": 111,
           "no": "5",
           "text": "The task set"
         },
         "run-protocol": {
           "kind": "h2",
-          "line": 124,
+          "line": 125,
           "no": "6",
           "text": "Run protocol"
         },
         "learning-curve": {
           "kind": "h2",
-          "line": 130,
+          "line": 131,
           "no": "7",
           "text": "The learning curve sub-test"
         },
         "thresholds": {
           "kind": "h2",
-          "line": 136,
+          "line": 137,
           "no": "8",
           "text": "Decision thresholds"
         },
         "cautions": {
           "kind": "h2",
-          "line": 154,
+          "line": 155,
           "no": "9",
           "text": "Practical and legal cautions"
         },
         "output": {
           "kind": "h2",
-          "line": 160,
+          "line": 161,
           "no": "10",
           "text": "What comes out of it"
         }
       },
       "tables": {
         "5.6": {
-          "line": 80,
+          "line": 81,
           "caption": "The five outcomes, their definitions and the human time each records.",
           "rows": [
             [
@@ -6657,7 +6673,7 @@
           "under": "tiers"
         },
         "5.7": {
-          "line": 139,
+          "line": 140,
           "caption": "What each measured result means and what changes if it lands there. assumption",
           "rows": [
             [
@@ -6751,35 +6767,47 @@
           "to": "05-business/index.html"
         },
         {
-          "line": 78,
+          "line": 68,
+          "to": "05-business/index.html#what-replaces"
+        },
+        {
+          "line": 79,
           "to": "05-business/index.html#task-model"
         },
         {
-          "line": 104,
+          "line": 105,
           "to": "05-business/index.html#the-ratio"
         },
         {
-          "line": 120,
+          "line": 121,
           "to": "05-business/model.html"
         },
         {
-          "line": 132,
+          "line": 133,
           "to": "02-architecture/index.html#workflow-library"
         },
         {
-          "line": 155,
+          "line": 156,
           "to": "03-trust-and-data/index.html#policy-flags"
         },
         {
-          "line": 170,
-          "to": "00-thesis/index.html"
+          "line": 156,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 156,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
         },
         {
           "line": 171,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 172,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 173,
           "to": "07-open/index.html"
         }
       ]
@@ -6970,19 +6998,23 @@
         },
         {
           "line": 102,
-          "to": "05-business/index.html#geography"
-        },
-        {
-          "line": 102,
           "to": "07-open/index.html#items"
         },
         {
           "line": 104,
-          "to": "05-business/index.html#funding"
+          "to": "04-operations/index.html#shifts"
+        },
+        {
+          "line": 104,
+          "to": "05-business/index.html#cost-split"
+        },
+        {
+          "line": 104,
+          "to": "decisions/dr-006-office-mandatory.html"
         },
         {
           "line": 106,
-          "to": "06-roadmap/index.html#expansion-shift"
+          "to": "05-business/index.html#geography"
         },
         {
           "line": 106,
@@ -6990,34 +7022,50 @@
         },
         {
           "line": 108,
-          "to": "05-business/index.html#geography"
-        },
-        {
-          "line": 108,
-          "to": "05-business/index.html#trajectory"
+          "to": "05-business/index.html#funding"
         },
         {
           "line": 110,
-          "to": "decisions/dr-024-metered-pricing.html"
+          "to": "06-roadmap/index.html#expansion-shift"
+        },
+        {
+          "line": 110,
+          "to": "07-open/index.html#items"
         },
         {
           "line": 112,
-          "to": "05-business/index.html#how-users-arrive"
+          "to": "05-business/index.html#geography"
+        },
+        {
+          "line": 112,
+          "to": "05-business/index.html#trajectory"
         },
         {
           "line": 114,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 116,
+          "to": "05-business/index.html#how-users-arrive"
+        },
+        {
+          "line": 116,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 118,
           "to": "05-business/index.html#cost-split"
         },
         {
-          "line": 123,
+          "line": 127,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 124,
+          "line": 128,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 125,
+          "line": 129,
           "to": "07-open/index.html"
         }
       ]
@@ -7657,34 +7705,34 @@
         },
         "legal": {
           "kind": "h3",
-          "line": 117,
+          "line": 120,
           "no": "1.1",
           "text": "The legal to-verifies, per jurisdiction",
           "under": "items"
         },
         "naming": {
           "kind": "h3",
-          "line": 127,
+          "line": 130,
           "no": "1.2",
           "text": "Naming, domain and trademark",
           "under": "items"
         },
         "netlify": {
           "kind": "h3",
-          "line": 129,
+          "line": 132,
           "no": "1.3",
           "text": "Netlify access",
           "under": "items"
         },
         "objections": {
           "kind": "h2",
-          "line": 133,
+          "line": 136,
           "no": "2",
           "text": "Objections formed against fixed decisions"
         },
         "left-alone": {
           "kind": "h2",
-          "line": 147,
+          "line": 150,
           "no": "3",
           "text": "What was deliberately left alone"
         }
@@ -7692,7 +7740,7 @@
       "tables": {
         "7.1": {
           "line": 64,
-          "caption": "Forty-six open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed and k",
+          "caption": "Forty-nine open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed and ",
           "rows": [
             [
               "the front door per market (the channel amber). the intake gateway beneath it is ",
@@ -7854,6 +7902,27 @@
               "two weeks of actual media in the united kingdom, which is what yields a cost per",
               "",
               "05, 8 ; dr-023"
+            ],
+            [
+              "whether the quoted prices are gross or net of consumption tax. neither model car",
+              "founder with counsel on the gst treatment of a cross-border service",
+              "before the pilot cohort is priced, which is the moment the answer becomes a numb",
+              "",
+              "05, 4 ; 05 the model"
+            ],
+            [
+              "the step cost of the floor. both models carry a per-head seat cost and no term f",
+              "founder with the operations lead when appointed",
+              "quotes for the attested site, at the same time as the headcount threshold dr-006",
+              "",
+              "dr-006 ; 04, 2 ; 05, 4"
+            ],
+            [
+              "tasks a user a month, which is the other half of the governing ratio and the hal",
+              "founder",
+              "the first pilot cohort's own usage over three months, which is the earliest thin",
+              "",
+              "05, 3 ; 05, 10 ; the measurement protocol"
             ],
             [
               "which run is the plan of record. the published line opens the united kingdom aro",
@@ -8199,11 +8268,7 @@
         },
         {
           "line": 91,
-          "to": "05-business/index.html#what-the-page-above-still-carries"
-        },
-        {
-          "line": 91,
-          "to": "05-business/index.html#funding"
+          "to": "05-business/index.html#cost-split"
         },
         {
           "line": 91,
@@ -8211,202 +8276,238 @@
         },
         {
           "line": 92,
-          "to": "05-business/index.html#what-a-user-is-worth"
-        },
-        {
-          "line": 92,
-          "to": "decisions/dr-025-growth-two-mechanisms.html"
-        },
-        {
-          "line": 93,
-          "to": "05-business/index.html#commerce"
-        },
-        {
-          "line": 93,
-          "to": "decisions/dr-024-metered-pricing.html"
-        },
-        {
-          "line": 94,
-          "to": "05-business/index.html#what-replaces"
-        },
-        {
-          "line": 94,
-          "to": "05-business/model.html#limits"
-        },
-        {
-          "line": 95,
-          "to": "decisions/dr-023-geography-sequencing.html"
-        },
-        {
-          "line": 95,
-          "to": "05-business/index.html#geography"
-        },
-        {
-          "line": 96,
-          "to": "06-roadmap/index.html#expansion-shift"
-        },
-        {
-          "line": 96,
-          "to": "05-business/model.html#limits"
-        },
-        {
-          "line": 97,
-          "to": "05-business/index.html#geography"
-        },
-        {
-          "line": 97,
-          "to": "decisions/dr-025-growth-two-mechanisms.html"
-        },
-        {
-          "line": 98,
-          "to": "05-business/model.html"
-        },
-        {
-          "line": 98,
-          "to": "02-architecture/index.html#workflow-library"
-        },
-        {
-          "line": 99,
           "to": "decisions/dr-006-office-mandatory.html"
         },
         {
-          "line": 99,
+          "line": 92,
           "to": "04-operations/index.html#shifts"
         },
         {
-          "line": 100,
-          "to": "00-thesis/index.html#landscape"
+          "line": 92,
+          "to": "05-business/index.html#cost-split"
         },
         {
-          "line": 100,
-          "to": "00-thesis/index.html#landscape"
+          "line": 93,
+          "to": "05-business/index.html#the-ratio"
         },
         {
-          "line": 101,
-          "to": "00-thesis/index.html#tab-why-now"
+          "line": 93,
+          "to": "05-business/index.html#what-replaces"
         },
         {
-          "line": 101,
-          "to": "03-trust-and-data/index.html#tab-rails"
+          "line": 93,
+          "to": "05-business/measurement-protocol.html"
         },
         {
-          "line": 101,
-          "to": "08-review/index.html#horizon-threats"
+          "line": 94,
+          "to": "05-business/index.html#what-the-page-above-still-carries"
         },
         {
-          "line": 102,
-          "to": "03-trust-and-data/index.html#entry-routes"
+          "line": 94,
+          "to": "05-business/index.html#funding"
         },
         {
-          "line": 102,
-          "to": "02-architecture/index.html#telephony"
-        },
-        {
-          "line": 103,
-          "to": "02-architecture/index.html#step-catalogue"
-        },
-        {
-          "line": 103,
-          "to": "03-trust-and-data/index.html#policy-flags"
-        },
-        {
-          "line": 104,
-          "to": "02-architecture/index.html#step-context"
-        },
-        {
-          "line": 104,
-          "to": "02-architecture/index.html#transitions"
-        },
-        {
-          "line": 105,
-          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
-        },
-        {
-          "line": 105,
-          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
-        },
-        {
-          "line": 105,
-          "to": "04-operations/index.html#card-generation"
-        },
-        {
-          "line": 106,
-          "to": "04-operations/index.html#card-script"
-        },
-        {
-          "line": 106,
-          "to": "03-trust-and-data/index.html#tab-alias"
-        },
-        {
-          "line": 107,
-          "to": "02-architecture/index.html#telephony"
-        },
-        {
-          "line": 107,
-          "to": "02-architecture/index.html#closing"
-        },
-        {
-          "line": 108,
-          "to": "03-trust-and-data/index.html#alias-types"
-        },
-        {
-          "line": 108,
-          "to": "01-product/index.html#journey-family"
-        },
-        {
-          "line": 109,
-          "to": "08-review/index.html#regulation-us"
-        },
-        {
-          "line": 109,
-          "to": "decisions/dr-008-vault-bought.html"
-        },
-        {
-          "line": 110,
-          "to": "05-business/index.html#how-users-arrive"
-        },
-        {
-          "line": 111,
-          "to": "decisions/dr-025-growth-two-mechanisms.html"
-        },
-        {
-          "line": 111,
+          "line": 94,
           "to": "05-business/model.html#limits"
         },
         {
-          "line": 111,
-          "to": "decisions/dr-024-metered-pricing.html"
+          "line": 95,
+          "to": "05-business/index.html#what-a-user-is-worth"
         },
         {
-          "line": 112,
-          "to": "decisions/dr-018-mail-from-the-users-address.html"
+          "line": 95,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
         },
         {
-          "line": 112,
-          "to": "02-architecture/index.html#mail-relay"
-        },
-        {
-          "line": 113,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 113,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 113,
+          "line": 96,
           "to": "05-business/index.html#commerce"
         },
         {
-          "line": 162,
+          "line": 96,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 97,
+          "to": "05-business/index.html#what-replaces"
+        },
+        {
+          "line": 97,
+          "to": "05-business/model.html#limits"
+        },
+        {
+          "line": 98,
+          "to": "decisions/dr-023-geography-sequencing.html"
+        },
+        {
+          "line": 98,
+          "to": "05-business/index.html#geography"
+        },
+        {
+          "line": 99,
+          "to": "06-roadmap/index.html#expansion-shift"
+        },
+        {
+          "line": 99,
+          "to": "05-business/model.html#limits"
+        },
+        {
+          "line": 100,
+          "to": "05-business/index.html#geography"
+        },
+        {
+          "line": 100,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 101,
+          "to": "05-business/model.html"
+        },
+        {
+          "line": 101,
+          "to": "02-architecture/index.html#workflow-library"
+        },
+        {
+          "line": 102,
+          "to": "decisions/dr-006-office-mandatory.html"
+        },
+        {
+          "line": 102,
+          "to": "04-operations/index.html#shifts"
+        },
+        {
+          "line": 103,
+          "to": "00-thesis/index.html#landscape"
+        },
+        {
+          "line": 103,
+          "to": "00-thesis/index.html#india-field"
+        },
+        {
+          "line": 104,
+          "to": "00-thesis/index.html#tab-why-now"
+        },
+        {
+          "line": 104,
+          "to": "03-trust-and-data/index.html#tab-rails"
+        },
+        {
+          "line": 104,
+          "to": "08-review/index.html#horizon-threats"
+        },
+        {
+          "line": 105,
+          "to": "03-trust-and-data/index.html#entry-routes"
+        },
+        {
+          "line": 105,
+          "to": "02-architecture/index.html#telephony"
+        },
+        {
+          "line": 106,
+          "to": "02-architecture/index.html#step-catalogue"
+        },
+        {
+          "line": 106,
+          "to": "03-trust-and-data/index.html#policy-flags"
+        },
+        {
+          "line": 107,
+          "to": "02-architecture/index.html#step-context"
+        },
+        {
+          "line": 107,
+          "to": "02-architecture/index.html#transitions"
+        },
+        {
+          "line": 108,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 108,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 108,
+          "to": "04-operations/index.html#card-generation"
+        },
+        {
+          "line": 109,
+          "to": "04-operations/index.html#card-script"
+        },
+        {
+          "line": 109,
+          "to": "03-trust-and-data/index.html#tab-alias"
+        },
+        {
+          "line": 110,
+          "to": "02-architecture/index.html#telephony"
+        },
+        {
+          "line": 110,
+          "to": "02-architecture/index.html#closing"
+        },
+        {
+          "line": 111,
+          "to": "03-trust-and-data/index.html#alias-types"
+        },
+        {
+          "line": 111,
+          "to": "01-product/index.html#journey-family"
+        },
+        {
+          "line": 112,
+          "to": "08-review/index.html#regulation-us"
+        },
+        {
+          "line": 112,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 113,
+          "to": "05-business/index.html#how-users-arrive"
+        },
+        {
+          "line": 114,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 114,
+          "to": "05-business/model.html#limits"
+        },
+        {
+          "line": 114,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 115,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 115,
+          "to": "02-architecture/index.html#mail-relay"
+        },
+        {
+          "line": 116,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 116,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 116,
+          "to": "05-business/index.html#commerce"
+        },
+        {
+          "line": 165,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 163,
+          "line": 166,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 164,
+          "line": 167,
           "to": "07-open/index.html"
         }
       ]
@@ -9616,7 +9717,7 @@
         },
         {
           "line": 100,
-          "to": "02-architecture/index.html#classifier"
+          "to": "02-architecture/index.html#class-selection"
         },
         {
           "line": 100,
@@ -14900,6 +15001,10 @@
         {
           "line": 51,
           "to": "decisions/index.html"
+        },
+        {
+          "line": 65,
+          "to": "05-business/index.html#what-a-user-is-worth"
         },
         {
           "line": 69,

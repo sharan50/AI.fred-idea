@@ -54,5 +54,14 @@
     "m36_labour_share": 0.1553555152676125
   },
   "share_profitable_organic_only": 0.8904,
-  "share_profitable_with_marketing": 0.9999
+  "share_profitable_with_marketing": 0.9999,
+  "profitable_from_m36_onward_with_marketing": 0.8409,
+  "profitable_from_m36_onward_organic_only": 0.34305,
+  "effective_cost_per_paid_arrival_usd_plan": {
+    "m1": 121.9673049896316,
+    "m12": 140.0294111627343,
+    "m24": 231.07511465465444,
+    "m36": 470.6492044936185,
+    "m60": 1368.4716298736662
+  }
 }
