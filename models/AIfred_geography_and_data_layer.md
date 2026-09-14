@@ -31,26 +31,30 @@ The difference is not whether you expand. It is whether the foreign base gets la
 
 ## 1a. The same four on the published line
 
-`aifred_geo_growth.py`, same paths and same seed, with word of mouth and a media budget in place of a single exogenous arrival rate. A paid arrival costs $120 at low volume in India and the same figure times this model's own per-market cost ratio abroad, about $885 in the United Kingdom and $1,165 in the United States; the budget is fifteen per cent of last month's revenue, on a floor of Rs 3 lakh a month, split evenly across live markets. With media switched off every one of the four rebuilds section 1 character for character, which is the self test the file runs before it writes.
+`aifred_geo_growth.py`, same paths and same seed, with word of mouth and a media budget in place of a single exogenous arrival rate. A paid arrival costs $120 at low volume in India's cheapest channel and the same figure times this model's own per-market cost ratio abroad, 7.4 and 9.7, so $885 and $1,165 in that channel, $1,093 and $1,439 weighted by the mix, and $1,518 and $1,419 an arrival by m36 once the budget has grown. A referral incentive is scaled by the same ratio, Rs 250 at home against Rs 1,844 and Rs 2,428. The budget is fifteen per cent of last month's revenue, on a floor of Rs 3 lakh a month, split evenly across live markets. With media switched off every one of the four rebuilds section 1 character for character, which is the self test the file runs before it writes.
 
-| | India only | Expand late | Expand late + commerce | Foreign led |
+The last column is the run with the commerce layer switched off, because `foreign_led` carries that layer by its own definition and a sequencing comparison against two scenarios without it is not a comparison. The with-commerce figures are in brackets.
+
+| | India only | Expand late | Expand late + commerce | Foreign led, commerce off |
 |---|---|---|---|---|
-| Profitable by m36 | 93% | 78% | 86% | **97%** |
-| Profitable by m60 | 99% | 97% | 99% | **100%** |
-| Peak cash, planning | $1.42m | $1.68m | $1.61m | $1.98m |
-| Peak cash, conservative | $2.04m | $3.95m | $2.88m | **$3.09m** |
-| ARPU at m36 | $59 | $62 | $70 | **$92** |
+| Profitable by m36 | 93% | 78% | 85% | **92%** (96%) |
+| Profitable by m60 | 99% | 97% | 99% | **100%** (100%) |
+| Peak cash, planning | $1.42m | $1.68m | $1.61m | $2.16m ($2.03m) |
+| Peak cash, conservative | $2.04m | $3.98m | $2.90m | **$3.85m** ($3.19m) |
+| ARPU at m36 | $59 | $62 | $70 | **$77** ($92) |
 | Foreign share of users, m36 | 0% | 8% | 8% | 41% |
-| Contribution at m36 | Rs 5.69 cr/mo | Rs 4.24 cr/mo | Rs 5.93 cr/mo | **Rs 16.07 cr/mo** |
-| Contribution at m60 | Rs 17.2 cr/mo | Rs 23.1 cr/mo | Rs 30.6 cr/mo | **Rs 73.6 cr/mo** |
+| Contribution at m36 | Rs 5.69 cr/mo | Rs 4.20 cr/mo | Rs 5.89 cr/mo | **Rs 10.83 cr/mo** (15.65) |
+| Contribution at m60 | Rs 17.2 cr/mo | Rs 22.8 cr/mo | Rs 30.3 cr/mo | **Rs 55.0 cr/mo** (72.9) |
 
-Three things to take from it.
+Four things to take from it.
 
 **The ranking does not move.** Late secondary expansion is still the worst of the four and foreign led is still the best, so nothing in the sequence DR-023 fixes depends on the acquisition mechanism.
 
-**The margin narrows.** The late sequence now roughly doubles the conservative cash requirement over India only rather than nearly tripling it, $3.95m against $2.04m, because media grows the Indian base that carries the foreign cost. Every scenario is cheaper and earlier than it was: media buys the base that word of mouth compounds on, and the compounding is worth more than the media costs at $120 a paid arrival.
+**The cash argument for going early has largely gone.** Compared like for like, foreign led costs $3.85m of conservative cash against the late sequence's $3.98m, where on the old basis it was $4.86m against $8.78m. Media grows the Indian base that carries the foreign cost, which helps the late sequence most because that is the sequence starved of a base. What is left for foreign led is a contribution argument: about twice the contribution at m36 and fourteen more points of the chance of being profitable by then.
 
-**The mix moves, and against the thesis.** An even split of the budget buys about seven times as many Indian arrivals per rupee, so media lifts the foreign share where expansion was late and starved, from 12 to 24 per cent of users at m60, and thins it where growth had already been moved abroad, from 63 to 52 per cent, which takes foreign-led ARPU at m36 from $107 to $92. Part of the purchasing-power arbitrage a foreign-led sequence exists for is bought back by a media rule that is cheapest at home. An allocation to marginal cost, or to whichever market is short of its gate, would give a different answer; the even split is the conservative reading and nothing in the record decides the rule. It is an open item.
+**The mix moves, and against the thesis.** An even split of the budget buys about seven times as many Indian arrivals per rupee, so media lifts the foreign share where expansion was late and starved, from 12 to 24 per cent of users at m60, and thins it where growth had already been moved abroad, from 63 to 52 per cent, which takes foreign-led ARPU at m36 from $107 to $92 on the same commerce-carrying basis and to $77 without it. Against the alternative rules, though, the finding reverses: put the whole budget into India and the late sequence's foreign share is 7 per cent rather than 24, and its conservative need falls to 29.9 crore. So the foreign share is a property of the rule. `geo_growth_allocation.csv` has both.
+
+**Two artefacts bound what the table means.** The conservative line is an average within a ranked family, and it lands at the 72nd percentile of the India-only need distribution, the 83rd of the late sequence's and the 76th of the foreign-led: at matched percentiles the late sequence needs 1.29 to 1.74 times India only rather than the 1.95 the band lines show (`geo_growth_percentiles.csv`). And if a word-of-mouth arrival abroad in fact costs this model's own per-market figure rather than a scaled referral incentive, the foreign-led case needs 52.0 crore against the late sequence's 43.2 and becomes the most expensive of the three (`geo_growth_bounds.csv`). The sequence is most exposed there.
 
 ---
 

@@ -84,14 +84,37 @@ line. `sim_viable.csv` remains organic-only and is quoted only where 05 names it
 nothing is spent on being found.
 
 `aifred_geo_growth.py` does the same thing to `aifred_geo_model.py`, so the four geography scenarios sit on the
-same basis as the rest of the page. It adds no figure the record did not already hold: the cost of a paid arrival
-abroad is the home figure times the ratio between the geography model's own per-market acquisition-cost medians,
-which is about 7.4 for the United Kingdom and 9.7 for the United States, and a channel's saturation is a share of
-each market's own ceiling rather than of the home market's. The media budget is split evenly across live markets,
-which is the conservative reading of an allocation rule nothing in the record decides, because the same rupee buys
-about seven times as many Indian arrivals. It writes `geo_growth_*.csv` and `geogrowthsum_*.json` beside the
-organic-only `geo_*.csv`, and it refuses to write anything until each of the four published geography runs comes
-back character for character with media switched off: `python3 aifred_geo_growth.py --selftest`.
+same basis as the rest of the page. It adds no figure the record did not already hold: the ratio between the
+geography model's own per-market acquisition-cost medians, 7.4 for the United Kingdom and 9.7 for the United States,
+prices both halves of acquisition abroad, the media and the referral incentive alike, and a channel's saturation is
+a share of each market's own ceiling rather than of the home market's. The media budget is split evenly across live
+markets. It writes `geo_growth_*.csv` and `geogrowthsum_*.json` beside the organic-only `geo_*.csv`, and it refuses
+to write anything until each of the four published geography runs comes back character for character with media
+switched off: `python3 aifred_geo_growth.py --selftest`.
+
+Four things about it are worth knowing before quoting a number from it, because each was got wrong once.
+
+- **The cost of a paid arrival is not $120.** That figure is the low-volume price of the cheapest of the three
+  channels. Weighted by the mix it is $148 at zero volume, and because a channel's cost rises with its budget the
+  run actually pays about $122 an arrival in month 1 and about $1,515 by month 60, which is inside the review's
+  consumer fintech band rather than under it. `geogrowthsum_*.json` carries the anchors and the effective cost per
+  market at months 36 and 60.
+- **The referral incentive is scaled per market.** A word-of-mouth arrival costs Rs 250 at home and that figure
+  times the market ratio abroad, about Rs 1,844 and Rs 2,428. The first version of this file charged Rs 250
+  everywhere, which priced four fifths of the foreign intake as though it were Indian.
+- **The even split is conservative on cash and not on the mix.** `geo_growth_allocation.csv` holds the
+  counterfactual: put the whole budget into India and the late sequence's foreign share at month 60 is 7 per cent
+  rather than 24, and its conservative cash need falls from 35.5 crore to 29.9. The foreign share is a property of
+  the rule, so the record treats the rule as an open question rather than a finding.
+- **Two scenarios carry the commerce layer and two do not.** `foreign_led` has it on by its own definition, so the
+  sequencing table in 05, 8 quotes `geo_growth_foreign_led_nocommerce.csv` and compares sequencing alone.
+
+`geo_growth_bounds.csv` holds the pessimistic reading, each scenario run twice: with the scaled referral incentive,
+and with a word-of-mouth arrival charged the geography model's own per-market figure instead. On the second reading
+the foreign-led case is the most expensive of the three in cash, which is where the sequence is most exposed.
+`geo_growth_percentiles.csv` holds what a path in each scenario actually needs against where its conservative band
+line sits, which is between the seventy-first and the eighty-third percentile depending on the scenario, so a
+comparison of two band lines is not a comparison at a matched percentile.
 
 ## Where the publication quotes these
 

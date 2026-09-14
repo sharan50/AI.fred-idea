@@ -170,7 +170,7 @@
       "section": "08-review",
       "status": "to-verify",
       "summary": "An independent, partner-level review of the venture as the record stood on 11 September 2026: the technology today, the technologies on the horizon, the regulatory landscape in India, the UK and the US, the market, the economics the record defers, the team the plan needs, a red-team read of the trust design, the product and its path to customers, a pre-mortem and what would need to be true before money.",
-      "updated": "2026-09-11"
+      "updated": "2026-09-14"
     },
     {
       "path": "decisions/dr-001-channel-gateway.html",
@@ -394,7 +394,7 @@
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-14"
     },
     {
       "path": "depmap/index.html",

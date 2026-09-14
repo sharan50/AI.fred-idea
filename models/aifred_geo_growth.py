@@ -109,21 +109,32 @@ NEW_ADDS = '''    sales = np.zeros(sh)
                       * np.clip(1 - b / caps[:, g], 0, 1), 0.0)
              if MARKETING_ON else np.zeros(sh))
         users[:, g] = np.where(live, np.maximum(b * (1 - cg) + a + p, 0), 0.0)
+        # A referral incentive is not one rupee figure in every market: it is
+        # scaled by the same published ratio that prices the media, because a
+        # referrer abroad will not accept the Indian sum.
         sales += (a * cac[:, g] * cac_growth ** t if not MARKETING_ON
-                  else a * REFERRAL_INCENTIVE)
+                  else a * REFERRAL_G[g])
         adds_organic += a
         adds_paid += p
+        out_paid[g][t] = p
+        out_spend[g][t] = np.where(live, budget / live_any, 0.0)
     if MARKETING_ON:
         sales += budget
     tot = users.sum(1)'''
 
 OLD_KEYS = '"blended_min", "arpu_usd", "gmv"]'
 NEW_KEYS = ('"blended_min", "arpu_usd", "gmv",\n'
-            '        "adds_organic", "adds_paid", "marketing_spend"]')
+            '        "adds_organic", "adds_paid", "marketing_spend",\n'
+            '        "adds_paid_ind", "adds_paid_uk", "adds_paid_us",\n'
+            '        "spend_ind", "spend_uk", "spend_us"]')
 OLD_VALS = "arpu_usd=(revenue / fx) / np.maximum(tot, 1), gmv=gmv).items():"
 NEW_VALS = ("arpu_usd=(revenue / fx) / np.maximum(tot, 1), gmv=gmv,\n"
             "                     adds_organic=adds_organic, adds_paid=adds_paid,\n"
-            "                     marketing_spend=budget).items():")
+            "                     marketing_spend=budget,\n"
+            "                     adds_paid_ind=out_paid[0][t], adds_paid_uk=out_paid[1][t],\n"
+            "                     adds_paid_us=out_paid[2][t],\n"
+            "                     spend_ind=out_spend[0][t], spend_uk=out_spend[1][t],\n"
+            "                     spend_us=out_spend[2][t]).items():")
 
 assert PART_LOOP.count(OLD_ADDS) == 1, "the published acquisition block has moved"
 assert PART_LOOP.count(OLD_KEYS) == 1 and PART_LOOP.count(OLD_VALS) == 1
@@ -138,19 +149,34 @@ LOOP = LOOP.replace("        out[k][t] = v",
                     "        out[k][t] = v\n    prev_revenue = revenue")
 
 
+def market_ratios(cac_inr):
+    """How much dearer a user is in each market, on the published draws alone.
+
+    The geography model already asserts a per-market acquisition cost. Its
+    ratio is the only statement the record holds about how much more a foreign
+    user costs to find, so it is what scales both the media and the referral
+    incentive here. At the published seed it is 1, 7.4 and 9.7, which is what
+    the pages should quote rather than the "ten times" gloss.
+    """
+    home = float(np.median(cac_inr[:, 0]))
+    return [float(np.median(cac_inr[:, g])) / max(home, 1e-9)
+            for g in range(cac_inr.shape[1])]
+
+
 def channel_tables(cac_usd, cac_inr, caps, fx=89.0):
     """One channel table per market, from the promoted line's single input.
 
-    `cac_usd` is what a paid arrival costs at low volume in the home market.
-    `cac_inr` and `caps` are the geography model's own per-market acquisition
-    cost and market ceiling draws: the first fixes how much dearer a foreign
-    arrival is, the second fixes where each market's channels saturate.
+    `cac_usd` is what a paid arrival costs at low volume in the home market's
+    cheapest channel. `cac_inr` and `caps` are the geography model's own
+    per-market acquisition cost and market ceiling draws: the first fixes how
+    much dearer a foreign arrival is, the second fixes where each market's
+    channels saturate.
     """
-    home = float(np.median(cac_inr[:, 0]))
     ceil_home = float(np.median(caps[:, 0]))
+    ratios = market_ratios(cac_inr)
     tables = []
     for g in range(cac_inr.shape[1]):
-        ratio = float(np.median(cac_inr[:, g])) / max(home, 1e-9)
+        ratio = ratios[g]
         ceiling = float(np.median(caps[:, g]))
         t = {}
         for name, c in MARKETING["channels"].items():
@@ -163,7 +189,7 @@ def channel_tables(cac_usd, cac_inr, caps, fx=89.0):
 
 
 def run(scenario="expansion", n=20000, seed=DEFAULT_SEED, marketing=True,
-        cac_usd=None, spend_share=None):
+        cac_usd=None, spend_share=None, organic_cost=None, commerce=None):
     """Execute the published geography file with the acquisition block replaced."""
     argv = sys.argv
     sys.argv = ["aifred_geo_model.py", scenario, str(n), str(seed)]
@@ -179,12 +205,54 @@ def run(scenario="expansion", n=20000, seed=DEFAULT_SEED, marketing=True,
     }
     try:
         exec(compile(PART_DRIVERS, "aifred_geo_model.py", "exec"), ns)
+        if commerce is not None:
+            ns["COMMERCE"] = bool(commerce)
         ns["CHANNELS"] = channel_tables(ns["CAC_USD"], ns["cac"], ns["caps"])
-        exec(compile(LOOP, "aifred_geo_model.py(growth)", "exec"), ns)
+        ns["RATIOS"] = market_ratios(ns["cac"])
+        if organic_cost == "published":
+            # The pessimistic bound: a word-of-mouth arrival costs the
+            # geography model's own per-market acquisition figure rather than a
+            # referral incentive, which is what the page's ten-times qualifier
+            # would mean if it still priced organic arrivals.
+            ns["REFERRAL_G"] = [None] * ns["G"]
+            ns["ORGANIC_AT_PUBLISHED_CAC"] = True
+        else:
+            ns["REFERRAL_G"] = [ns["REFERRAL_INCENTIVE"] * r for r in ns["RATIOS"]]
+        ns["out_paid"] = {g: np.zeros((ns["MONTHS"], n)) for g in range(ns["G"])}
+        ns["out_spend"] = {g: np.zeros((ns["MONTHS"], n)) for g in range(ns["G"])}
+        loop = LOOP if organic_cost != "published" else LOOP.replace(
+            "                  else a * REFERRAL_G[g])",
+            "                  else a * cac[:, g] * cac_growth ** t)")
+        exec(compile(loop, "aifred_geo_model.py(growth)", "exec"), ns)
         exec(compile(PART_BANDS, "aifred_geo_model.py(bands)", "exec"), ns)
     finally:
         sys.argv = argv
     return ns
+
+
+def _with_loop(scenario, n, seed, loop, commerce=None):
+    """Run with a substituted loop, for the allocation counterfactual alone."""
+    argv = sys.argv
+    sys.argv = ["aifred_geo_model.py", scenario, str(n), str(seed)]
+    ns = {"__name__": "aifred_geo_growth", "MARKETING_ON": True,
+          "SPEND_SHARE": MARKETING["spend_share"], "SPEND_FLOOR": float(MARKETING["spend_floor_inr"]),
+          "MIX": MARKETING["mix"], "CAC_USD": float(MARKETING["blended_cac_usd"]),
+          "REFERRAL_INCENTIVE": float(MARKETING["referral_incentive_inr"]),
+          "paid_arrivals": paid_arrivals}
+    try:
+        exec(compile(PART_DRIVERS, "aifred_geo_model.py", "exec"), ns)
+        if commerce is not None:
+            ns["COMMERCE"] = bool(commerce)
+        ns["CHANNELS"] = channel_tables(ns["CAC_USD"], ns["cac"], ns["caps"])
+        ns["RATIOS"] = market_ratios(ns["cac"])
+        ns["REFERRAL_G"] = [ns["REFERRAL_INCENTIVE"] * r for r in ns["RATIOS"]]
+        ns["out_paid"] = {g: np.zeros((ns["MONTHS"], n)) for g in range(ns["G"])}
+        ns["out_spend"] = {g: np.zeros((ns["MONTHS"], n)) for g in range(ns["G"])}
+        exec(compile(loop, "aifred_geo_model.py(growth)", "exec"), ns)
+        exec(compile(PART_BANDS, "aifred_geo_model.py(bands)", "exec"), ns)
+    finally:
+        sys.argv = argv
+    return ns["df"]
 
 
 def selftest(scenario):
@@ -199,7 +267,25 @@ def report(ns):
     """The published summary, plus what the media budget did."""
     s = dict(ns["summary"])
     df, out = ns["df"], ns["out"]
+    ratios = ns["RATIOS"]
+    mix = MARKETING["mix"]
+    ch = MARKETING["channels"]
+    mixw = sum(mix[k] * ch[k]["mult"] for k in mix)
+    def eff(market, month):
+        sp, ad = df[f"spend_{market}_plan"][month - 1], df[f"adds_paid_{market}_plan"][month - 1]
+        return float(sp / ad / 89.0) if ad > 1e-9 else None
     s["marketing"] = {
+        "market_ratios": ratios,
+        # What the pages may quote. The single input prices the cheapest
+        # channel at zero volume; the mix-weighted anchor and the effective
+        # cost at the budget the run actually spends are the honest figures.
+        "cheapest_channel_anchor_usd": [ns["CAC_USD"] * r for r in ratios],
+        "mix_weighted_anchor_usd": [ns["CAC_USD"] * r * mixw for r in ratios],
+        "effective_cost_per_paid_arrival_usd_m36": {
+            k: eff(k, 36) for k in ("ind", "uk", "us")},
+        "effective_cost_per_paid_arrival_usd_m60": {
+            k: eff(k, 60) for k in ("ind", "uk", "us")},
+        "referral_incentive_inr_by_market": ns["REFERRAL_G"],
         "paid_cac_usd_home": ns["CAC_USD"],
         "spend_share_of_revenue": ns["SPEND_SHARE"],
         "spend_floor_inr": ns["SPEND_FLOOR"],
@@ -249,6 +335,64 @@ if __name__ == "__main__":
               f"foreign share {s['m60']['foreign_share']:5.1%}   "
               f"paid share of arrivals m12 {s['marketing']['paid_share_of_arrivals_m12']:5.1%}"
               f" m60 {s['marketing']['paid_share_of_arrivals_m60']:5.1%}")
+
+    # Like for like, for the sequencing table: the commerce layer off in every
+    # scenario, because the published file has it on in foreign_led and in
+    # expansion_commerce and off in the other two, which is not a comparison.
+    if not only:
+        nc = run("foreign_led", N, SEED, marketing=True, commerce=False)
+        nc["df"].to_csv(HERE / "geo_growth_foreign_led_nocommerce.csv", index=False)
+        s_nc = report(nc)
+        summaries["foreign_led_nocommerce"] = s_nc
+        json.dump(s_nc, open(HERE / "geogrowthsum_foreign_led_nocommerce.json", "w"),
+                  indent=2, default=float)
+        print(f'{"foreign_led, commerce off":26s} peak need {s_nc["peak_cash_cr_plan"]:6.1f} cr   '
+              f'cons {s_nc["peak_cash_usd_cons"]/1e6:5.2f}m   '
+              f'arpu m36 ${s_nc["m36"]["arpu_usd"]:.0f}   '
+              f'contribution m36 {s_nc["m36"]["contribution_cr"]:5.2f} cr')
+
+        # The pessimistic bound, the matched percentiles, and the allocation
+        # counterfactual: every figure section 8 of 05 quotes, in a file.
+        rows, pct, alloc = [], [], []
+        alt = LOOP.replace("paid_arrivals(budget / live_any, CHANNELS[g], MIX)",
+                           "paid_arrivals(budget * (1.0 if g == 0 else 0.0), CHANNELS[g], MIX)")
+        assert alt != LOOP
+        # foreign_led carries the commerce layer by its own definition, so the
+        # sequencing table's column for it is the commerce-off run; the bound,
+        # the percentiles and the counterfactual are reported for both.
+        BASES = [(sc, None) for sc in SCENARIOS] + [("foreign_led", False)]
+        for sc, comm in BASES:
+            tag = sc if comm is None else f"{sc}_nocommerce"
+            for basis in ("referral_scaled", "published_cac_on_organic"):
+                r = report(run(sc, N, SEED, marketing=True, commerce=comm,
+                               organic_cost=None if basis == "referral_scaled" else "published"))
+                rows.append({"scenario": tag, "organic_cost_basis": basis,
+                             "peak_cash_cr_plan": r["peak_cash_cr_plan"],
+                             "peak_cash_cr_cons": r["peak_cash_cr_cons"],
+                             "profitable_by_m36": r["profitable_by_m36"],
+                             "contribution_cr_m36": r["m36"]["contribution_cr"]})
+            ns2 = run(sc, N, SEED, marketing=True, commerce=comm)
+            cum = np.cumsum(ns2["out"]["contribution"], axis=0)
+            need = -np.minimum(cum.min(axis=0), 0) / CR
+            band = -ns2["df"].cum_cash_cons.min() / CR
+            pct.append({"scenario": tag, "need_cr_p50": float(np.median(need)),
+                        "need_cr_p80": float(np.quantile(need, 0.8)),
+                        "need_cr_p90": float(np.quantile(need, 0.9)),
+                        "band_cons_cr": float(band),
+                        "band_sits_at_percentile": float((need < band).mean() * 100)})
+            for rule, loop in (("even_split", LOOP), ("home_market_only", alt)):
+                d = _with_loop(sc, N, SEED, loop, comm)
+                alloc.append({"scenario": tag, "allocation": rule,
+                              "foreign_share_users_m60":
+                                  float(d.users_fgn_plan[59] / max(d.users_plan[59], 1)),
+                              "peak_cash_cr_cons": float(-d.cum_cash_cons.min() / CR)})
+        pd.DataFrame(rows).to_csv(HERE / "geo_growth_bounds.csv", index=False)
+        pd.DataFrame(pct).to_csv(HERE / "geo_growth_percentiles.csv", index=False)
+        pd.DataFrame(alloc).to_csv(HERE / "geo_growth_allocation.csv", index=False)
+        print()
+        print(pd.DataFrame(pct).to_string(index=False))
+        print()
+        print(pd.DataFrame(alloc).to_string(index=False))
 
     if len(todo) > 1:
         json.dump(summaries, open(HERE / "geogrowthsum_all.json", "w"), indent=2, default=float)

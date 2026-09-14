@@ -5185,7 +5185,7 @@
         "fixity": "amber"
       },
       "check": "none",
-      "count": 40,
+      "count": 43,
       "members": [
         {
           "id": "open-07-01",
@@ -5346,9 +5346,21 @@
         {
           "id": "open-07-40",
           "word": "how a media budget is allocated across live markets"
+        },
+        {
+          "id": "open-07-41",
+          "word": "general and administrative cost at a hundred users"
+        },
+        {
+          "id": "open-07-42",
+          "word": "the entity gates against the cost model behind them"
+        },
+        {
+          "id": "open-07-43",
+          "word": "the step cost of serving a foreign market at night"
         }
       ],
-      "note": "Forty rows and a caption that says forty. The member check is waived because a row's wording is its own; the count and the caption are checked by the coverage pass instead.",
+      "note": "Forty-three rows and a caption that says forty-three. The member check is waived because a row's wording is its own; the count and the caption are checked by the coverage pass instead.",
       "loci": [
         {
           "at": "07-open/index.html#table:7.1",
@@ -7688,14 +7700,14 @@
     {
       "id": "open-07-30",
       "kind": "open",
-      "label": "The three mechanisms the trajectory model does not have",
+      "label": "The two mechanisms the trajectory model still does not have",
       "facets": {
         "layer": "open",
         "fixity": "assumption"
       },
       "loci": [
         {
-          "at": "07-open/index.html#items!\"The three mechanisms the trajectory model does not have\"",
+          "at": "07-open/index.html#items!\"The two mechanisms the trajectory model still does not have\"",
           "role": "home"
         },
         {
@@ -7851,6 +7863,51 @@
       "loci": [
         {
           "at": "07-open/index.html#items!\"How a media budget is allocated across live markets\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-41",
+      "kind": "open",
+      "label": "General and administrative cost at a hundred users",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"General and administrative cost at a hundred users\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-42",
+      "kind": "open",
+      "label": "The entity gates against the cost model behind them",
+      "facets": {
+        "layer": "open",
+        "fixity": "amber"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The entity gates against the cost model behind them\"",
+          "role": "home"
+        }
+      ]
+    },
+    {
+      "id": "open-07-43",
+      "kind": "open",
+      "label": "The step cost of serving a foreign market at night",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The step cost of serving a foreign market at night\"",
           "role": "home"
         }
       ]
@@ -11236,6 +11293,21 @@
     ],
     [
       "open-07-40",
+      "lands-in",
+      "dr-023"
+    ],
+    [
+      "open-07-41",
+      "lands-in",
+      "dr-024"
+    ],
+    [
+      "open-07-42",
+      "lands-in",
+      "dr-023"
+    ],
+    [
+      "open-07-43",
       "lands-in",
       "dr-023"
     ]

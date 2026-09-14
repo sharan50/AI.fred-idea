@@ -1,0 +1,76 @@
+{
+  "scenario": "foreign_led",
+  "profitable_by_m36": 0.9172,
+  "profitable_by_m60": 0.9993,
+  "peak_cash_usd_plan": 2158397.522770033,
+  "peak_cash_usd_cons": 3851519.8544540363,
+  "m36": {
+    "users": 42172.75795684695,
+    "foreign_share": 0.4141565209235726,
+    "arpu_usd": 77.42907417659146,
+    "revenue_cr": 29.501612629218332,
+    "contribution_cr": 10.832139299700922
+  },
+  "m60": {
+    "users": 121949.33388029099,
+    "foreign_share": 0.5223959359873639,
+    "arpu_usd": 91.24624558801847,
+    "revenue_cr": 101.23463708504462,
+    "contribution_cr": 55.036744261604476,
+    "commerce_share": 0.0,
+    "gmv_cr_month": 0.0
+  },
+  "rounds_plan": {
+    "Seed(1-18)": 15.755590847646744,
+    "A(19-36)": 3.454147105006553,
+    "B(37-60)": -0.0
+  },
+  "rounds_cons": {
+    "Seed(1-18)": 17.15449272543665,
+    "A(19-36)": 17.124033979204274,
+    "B(37-60)": -0.0
+  },
+  "marketing": {
+    "market_ratios": [
+      1.0,
+      7.377508846026178,
+      9.710290845375463
+    ],
+    "cheapest_channel_anchor_usd": [
+      120.0,
+      885.3010615231414,
+      1165.2349014450556
+    ],
+    "mix_weighted_anchor_usd": [
+      148.2,
+      1093.3468109810794,
+      1439.0651032846436
+    ],
+    "effective_cost_per_paid_arrival_usd_m36": {
+      "ind": 407.88926116903144,
+      "uk": 2937.8223863185317,
+      "us": 1839.400403693028
+    },
+    "effective_cost_per_paid_arrival_usd_m60": {
+      "ind": 1156.7572230083501,
+      "uk": 8422.505334614421,
+      "us": 5351.9035857073395
+    },
+    "referral_incentive_inr_by_market": [
+      250.0,
+      1844.3772115065444,
+      2427.5727113438656
+    ],
+    "paid_cac_usd_home": 120.0,
+    "spend_share_of_revenue": 0.15,
+    "spend_floor_inr": 300000.0,
+    "paid_share_of_arrivals_m12": 0.19156466544151418,
+    "paid_share_of_arrivals_m60": 0.0835840722142305,
+    "media_spend_cr_m60_plan": 14.809189414208744,
+    "sales_share_of_cost_m60_plan": 0.34081942812895055
+  },
+  "crossover_month_plan": 25,
+  "trough_month_plan": 24,
+  "peak_cash_cr_plan": 19.209737952653295,
+  "peak_cash_cr_cons": 34.278526704640925
+}

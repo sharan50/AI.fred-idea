@@ -32,6 +32,24 @@ END_CR = S['cum_cash'][-1] / CR
 EXIT_M = next(m for m in months if S['cum_cash'][m - 1] / CR > 60)
 CONS_EXIT_M = next(m for m in months if S['cash_cons'][m - 1] / CR > 60)
 CONS_END_CR = S['cash_cons'][-1] / CR
+# The figure text is derived too. Batch 0010 promoted the run under these
+# figures and left three descriptions and two captions quoting the run it
+# replaced, so nothing in the prose below is typed by hand either.
+LAB_OVER_ENG = next((m for m in months if S['labour'][m - 1] > S['eng'][m - 1]), None)
+FEES_M60 = (S['total_cost'][-1] - S['labour'][-1] - S['eng'][-1] - S['tokens'][-1] - S['other'][-1]) / CR
+BELOW = sum(1 for m in months if S['revenue'][m - 1] < S['total_cost'][m - 1])
+SHARE = {m: S['labour_share'][m - 1] for m in (1, 12, 36, 60)}
+# The median path's crossing, and the as-specified labour share, both read from
+# the files that hold them rather than restated.
+import json as _json
+MEDIAN_CROSS = int(_json.load(open(R / 'models/summary_growth_viable.json'))['with_marketing']['crossover_month'])
+_asp = list(csv.DictReader(open(R / 'models/sim_as_specified.csv')))
+AS_SPEC_SHARE_M36 = float(_asp[35]['labour_plan']) / float(_asp[35]['revenue_plan']) * 100
+
+
+def yrs(m):
+    return {12: 'first year', 24: 'first two years', 36: 'first three years', 48: 'first four years'}.get(
+        int(round(m / 12.0) * 12), f'first {m} months')
 
 def esc(s): return html.escape(str(s), quote=True)
 def H(h): return int(math.ceil(h / 40.0) * 40)
@@ -143,33 +161,39 @@ h, body = small_multiples()
 figs.append(figure('fig-cost-factors', 1,
  'The cost base by factor, months 1 to 60',
  'Four panels on one scale, in rupees crore a month, on the planning line. Delivery labour, drawn in the accent, '
- 'rises from about 0.08 crore a month to 3.6. Engineering rises from 0.28 to 3.1 and is the larger line until month 46. '
- 'Tokens never leave the floor of the scale, ending at 0.26. Everything else, which is compliance, sales, general and '
- 'administrative and one-time costs, rises from 0.24 to 2.3.',
- 'Labour is the line that grows with usage; engineering is the larger line for the first four years; tokens never '
- 'become the largest line in any month. The four panels are the cost base except payment fees and make-goods, '
- 'which are charged on revenue and reach 1.2 crore a month by m60.', h, body))
+ f'rises from about {S["labour"][0] / CR:.2f} crore a month to {S["labour"][-1] / CR:.1f}. Engineering rises from '
+ f'{S["eng"][0] / CR:.2f} to {S["eng"][-1] / CR:.1f} and is the larger line until month {LAB_OVER_ENG}. '
+ f'Tokens never leave the floor of the scale, ending at {S["tokens"][-1] / CR:.2f}. Everything else, which is '
+ f'compliance, sales, general and administrative and one-time costs, rises from {S["other"][0] / CR:.2f} to '
+ f'{S["other"][-1] / CR:.1f}.',
+ f'Labour is the line that grows with usage; engineering is the larger line for the {yrs(LAB_OVER_ENG)}; tokens never '
+ f'become the largest line in any month. The four panels are the cost base except payment fees and make-goods, '
+ f'which are charged on revenue and reach {FEES_M60:.1f} crore a month by m60.', h, body))
 
 h, body = frame({'revenue': [v / CR for v in S['revenue']], 'cost': [v / CR for v in S['total_cost']]},
  lambda t: f'{t:g}', 'Rs crore a month', [(CROSS, 'revenue', f'revenue passes cost at m{CROSS}', True, -12, -34, 'end')],
  'revenue', height=400, clip='clip-rc')
 figs.append(figure('fig-revenue-cost', 2,
  'Revenue against the whole cost base, months 1 to 60',
- 'Two lines in rupees crore a month on the planning line. The cost base starts near 0.63 crore a month and rises to '
- 'about 10.4 by month 60. Revenue starts at 0.115, is below cost for the first twenty-eight months, crosses it at '
+ f'Two lines in rupees crore a month on the planning line. The cost base starts near '
+ f'{S["total_cost"][0] / CR:.2f} crore a month and rises to about {S["total_cost"][-1] / CR:.1f} by month 60. Revenue '
+ f'starts at {S["revenue"][0] / CR:.3f}, is below cost for {BELOW} months, crosses it at '
  f'month {CROSS}, and ends where the accent line ends.',
  f'The lines cross at month {CROSS} on the planning line: before it every month consumes cash, after it every month makes '
- 'it. Two averaged lines cross earlier than the paths beneath them; the median path crosses at month 40.', h, body))
+ f'it. Two averaged lines cross earlier than the paths beneath them; the median path crosses at month {MEDIAN_CROSS}.', h, body))
 
 h, body = frame({'labour as a share of revenue': S['labour_share']}, lambda t: f'{t:g}%', 'per cent of revenue',
- [(1, 'labour as a share of revenue', '73% at m1', True), (36, 'labour as a share of revenue', '18% at m36', True),
-  (60, 'labour as a share of revenue', '15% at m60', True)], 'labour as a share of revenue', height=360, clip='clip-ls')
+ [(1, 'labour as a share of revenue', f'{SHARE[1]:.0f}% at m1', True),
+  (36, 'labour as a share of revenue', f'{SHARE[36]:.0f}% at m36', True),
+  (60, 'labour as a share of revenue', f'{SHARE[60]:.0f}% at m60', True)],
+ 'labour as a share of revenue', height=360, clip='clip-ls')
 figs.append(figure('fig-labour-share', 3,
  'Delivery labour as a share of revenue, months 1 to 60',
- 'One line, the accent, falling from 73 per cent of revenue in month 1 to 39 per cent by month 12, 18 per cent by '
- 'month 36 and 15 per cent by month 60, with most of the fall in the first two years.',
- 'This is the ratio the four levers move: the same curve sits at 85 per cent at month 36 in the configuration the '
- 'record previously specified.', h, body))
+ f'One line, the accent, falling from {SHARE[1]:.0f} per cent of revenue in month 1 to {SHARE[12]:.0f} per cent by '
+ f'month 12, {SHARE[36]:.0f} per cent by month 36 and {SHARE[60]:.0f} per cent by month 60, with most of the fall in '
+ f'the first two years.',
+ f'This is the ratio the four levers move: the same curve sits at {AS_SPEC_SHARE_M36:.0f} per cent at month 36 in the '
+ f'configuration the record previously specified.', h, body))
 
 h, body = frame({'planning line': [v / CR for v in S['cum_cash']], 'conservative line': [v / CR for v in S['cash_cons']]},
  lambda t: f'{t:g}', 'Rs crore, cumulative',

@@ -31,6 +31,36 @@
     "B(37-60)": -0.0
   },
   "marketing": {
+    "market_ratios": [
+      1.0,
+      7.377508846026178,
+      9.710290845375463
+    ],
+    "cheapest_channel_anchor_usd": [
+      120.0,
+      885.3010615231414,
+      1165.2349014450556
+    ],
+    "mix_weighted_anchor_usd": [
+      148.2,
+      1093.3468109810794,
+      1439.0651032846436
+    ],
+    "effective_cost_per_paid_arrival_usd_m36": {
+      "ind": 508.60210409456755,
+      "uk": null,
+      "us": null
+    },
+    "effective_cost_per_paid_arrival_usd_m60": {
+      "ind": 1308.1553120172705,
+      "uk": null,
+      "us": null
+    },
+    "referral_incentive_inr_by_market": [
+      250.0,
+      1844.3772115065444,
+      2427.5727113438656
+    ],
     "paid_cac_usd_home": 120.0,
     "spend_share_of_revenue": 0.15,
     "spend_floor_inr": 300000.0,

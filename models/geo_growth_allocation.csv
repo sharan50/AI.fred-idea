@@ -1,0 +1,11 @@
+scenario,allocation,foreign_share_users_m60,peak_cash_cr_cons
+india_only,even_split,0.0,18.16787972733527
+india_only,home_market_only,0.0,18.16787972733527
+expansion,even_split,0.2404142912854596,35.46417760912357
+expansion,home_market_only,0.06795224353003944,29.92758208817657
+expansion_commerce,even_split,0.24930661765892292,25.784100173876084
+expansion_commerce,home_market_only,0.06681597641677287,22.987071536750573
+foreign_led,even_split,0.5197719226357315,28.348555574770064
+foreign_led,home_market_only,0.4416948467676883,27.025357225554263
+foreign_led_nocommerce,even_split,0.5223959359873639,34.278526704640925
+foreign_led_nocommerce,home_market_only,0.4497843255404253,31.885950688083565
