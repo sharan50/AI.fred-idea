@@ -82,13 +82,15 @@ nothing is spent on being found.
 
 ## Where the publication quotes these
 
+The line the publication quotes is `sim_growth.csv`: the viable configuration with both acquisition mechanisms of DR-025 in it, at $120 a paid arrival and fifteen per cent of revenue in media, twenty thousand paths at seed 20260913. `sim_viable.csv` is the same configuration with no marketing and is kept as the floor, the case where nothing is spent on being found; the growth model rebuilds it character for character when marketing is switched off, which is what makes the two comparable path by path.
+
 `/05-business/` carries the numbers, `/05-business/model.html` describes the instruments, the scenarios and the
 limits, and `/05-business/measurement-protocol.html` is `AIfred_task_measurement_protocol.md` in the publication's
 own conventions. Nothing here is linked from a page: the published site is `docs/` only, so a page that needs a
 number states it with its scenario and its seed instead. When a figure on a page and a figure here disagree, this
 directory is right and the page is stale.
 
-Figures 5.1 to 5.4 on `/05-business/` are drawn from `sim_viable.csv` alone, on the planning line: the cost base by
+Figures 5.1 to 5.4 on `/05-business/` are drawn from `sim_growth.csv` alone, on the planning line: the cost base by
 factor from `labour_plan`, `eng_plan`, `tokens_plan` and the sum of `compliance_plan`, `sales_plan`, `gna_plan` and
 `onetime_plan`; revenue against cost from `revenue_plan` and `total_cost_plan`; the labour share from `labour_plan`
 over `revenue_plan`; the cash curves from `cum_cash_plan` and `cum_cash_cons`. They are in rupees crore at the

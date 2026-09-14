@@ -5860,6 +5860,10 @@
         },
         {
           "line": 64,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 64,
           "to": "03-trust-and-data/index.html#alias-model"
         },
         {
@@ -6130,7 +6134,7 @@
           "kind": "figure",
           "line": 122,
           "no": "Figure 5.2",
-          "text": "The lines cross at month 29 on the planning line: before it every month consumes cash, after it every month makes it. Tw",
+          "text": "The lines cross at month 23 on the planning line: before it every month consumes cash, after it every month makes it. Tw",
           "under": "trajectory"
         },
         "fig-labour-share": {
@@ -6144,7 +6148,7 @@
           "kind": "figure",
           "line": 152,
           "no": "Figure 5.4",
-          "text": "The trough is what the planning line asks for: about 17.3 crore, and 49.6 on the conservative one, which at the model&#x",
+          "text": "The trough is what the planning line asks for: about 14.1 crore, and 20.5 on the conservative one, which at the model&#x",
           "under": "trajectory"
         },
         "how-users-arrive": {
@@ -6155,67 +6159,67 @@
         },
         "two-mechanisms": {
           "kind": "h3",
-          "line": 163,
+          "line": 164,
           "no": "6.1",
           "text": "The two mechanisms",
           "under": "how-users-arrive"
         },
         "fig-two-mechanisms": {
           "kind": "figure",
-          "line": 167,
+          "line": 168,
           "no": "Figure 5.5",
           "text": "Media is the primer and word of mouth is the engine: the bought share peaks early and falls as the base it created compo",
           "under": "two-mechanisms"
         },
         "what-a-user-is-worth": {
           "kind": "h3",
-          "line": 173,
+          "line": 174,
           "no": "6.2",
           "text": "What a user is worth, and what one may cost",
           "under": "how-users-arrive"
         },
         "the-number-nobody-has": {
           "kind": "h3",
-          "line": 176,
+          "line": 177,
           "no": "6.3",
           "text": "The number nobody has",
           "under": "how-users-arrive"
         },
         "growth-changes-sign": {
           "kind": "h3",
-          "line": 178,
+          "line": 179,
           "no": "6.4",
           "text": "Growth changes sign with the unit economics",
           "under": "how-users-arrive"
         },
         "what-the-page-above-still-carries": {
           "kind": "h3",
-          "line": 180,
+          "line": 181,
           "no": "6.5",
           "text": "What the page above still carries",
           "under": "how-users-arrive"
         },
         "funding": {
           "kind": "h2",
-          "line": 185,
+          "line": 186,
           "no": "7",
           "text": "Funding"
         },
         "geography": {
           "kind": "h2",
-          "line": 202,
+          "line": 203,
           "no": "8",
           "text": "Geography"
         },
         "commerce": {
           "kind": "h2",
-          "line": 222,
+          "line": 223,
           "no": "9",
           "text": "The commerce layer"
         },
         "what-replaces": {
           "kind": "h2",
-          "line": 228,
+          "line": 229,
           "no": "10",
           "text": "What replaces this page"
         }
@@ -6287,38 +6291,38 @@
             [
               "paths profitable by month 36",
               "0.9 per cent",
-              "53.6 per cent"
+              "84.1 per cent"
             ],
             [
               "paths profitable by month 60",
               "12.9 per cent",
-              "89.0 per cent"
+              "100 per cent"
             ],
             [
               "labour as a share of revenue at month 36",
               "85 per cent",
-              "18 per cent"
+              "16 per cent"
             ],
             [
               "cash trough",
               "not reached by month 60",
-              "month 28"
+              "month 22"
             ],
             [
               "peak cash, planning line",
               "$23.5m",
-              "$1.95m"
+              "$1.58m"
             ],
             [
               "peak cash, conservative line",
               "$31.8m",
-              "$5.6m"
+              "$2.30m"
             ]
           ],
           "under": "trajectory"
         },
         "5.4": {
-          "line": 188,
+          "line": 189,
           "caption": "The funding plan: what each round is sized for and what it has to buy. The figures are guidance; the shape is the claim.",
           "rows": [
             [
@@ -6343,7 +6347,7 @@
           "under": "funding"
         },
         "5.5": {
-          "line": 207,
+          "line": 208,
           "caption": "Three of the four sequencing scenarios, twenty thousand paths each: late secondary expansion is worse than not expanding",
           "rows": [
             [
@@ -6484,43 +6488,47 @@
           "to": "decisions/dr-025-growth-two-mechanisms.html"
         },
         {
-          "line": 177,
+          "line": 165,
+          "to": "01-product/index.html#verdicts"
+        },
+        {
+          "line": 178,
           "to": "08-review/index.html#economics"
         },
         {
-          "line": 218,
+          "line": 219,
           "to": "decisions/dr-023-geography-sequencing.html"
         },
         {
-          "line": 218,
+          "line": 219,
           "to": "06-roadmap/index.html#expansion"
         },
         {
-          "line": 224,
+          "line": 225,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 224,
+          "line": 225,
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
-          "line": 229,
+          "line": 230,
           "to": "05-business/measurement-protocol.html"
         },
         {
-          "line": 229,
+          "line": 230,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 237,
+          "line": 238,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 238,
+          "line": 239,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 239,
+          "line": 240,
           "to": "07-open/index.html"
         }
       ]
@@ -6771,13 +6779,13 @@
         },
         "the-run": {
           "kind": "h2",
-          "line": 85,
+          "line": 86,
           "no": "3",
           "text": "The run the publication quotes"
         },
         "limits": {
           "kind": "h2",
-          "line": 91,
+          "line": 92,
           "no": "4",
           "text": "The limits"
         }
@@ -6794,6 +6802,10 @@
             [
               "viable",
               "the four levers of 05, section 3, at their stated values: 26 tasks by allowance,"
+            ],
+            [
+              "growth",
+              "the line the publication quotes. the viable run with the two acquisition mechani"
             ],
             [
               "india only",
@@ -6889,47 +6901,51 @@
           "to": "05-business/index.html#trajectory"
         },
         {
-          "line": 78,
+          "line": 75,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 79,
           "to": "decisions/dr-023-geography-sequencing.html"
         },
         {
-          "line": 86,
+          "line": 87,
           "to": "05-business/index.html"
         },
         {
-          "line": 95,
+          "line": 96,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 99,
+          "line": 100,
           "to": "decisions/dr-023-geography-sequencing.html"
         },
         {
-          "line": 101,
+          "line": 102,
           "to": "05-business/index.html#trajectory"
         },
         {
-          "line": 103,
+          "line": 104,
           "to": "decisions/dr-024-metered-pricing.html"
         },
         {
-          "line": 105,
+          "line": 106,
           "to": "05-business/index.html#how-users-arrive"
         },
         {
-          "line": 107,
+          "line": 108,
           "to": "05-business/index.html#cost-split"
         },
         {
-          "line": 116,
+          "line": 117,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 117,
+          "line": 118,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 118,
+          "line": 119,
           "to": "07-open/index.html"
         }
       ]
@@ -7604,7 +7620,7 @@
       "tables": {
         "7.1": {
           "line": 64,
-          "caption": "Thirty-nine open items; none is silently assumed, and each has one owner and one trigger. One is recorded as closed by t",
+          "caption": "Thirty-nine open items; none is silently assumed, and each has one owner and one trigger. Two are recorded as closed and",
           "rows": [
             [
               "the front door per market (the channel amber). the intake gateway beneath it is ",
@@ -7817,11 +7833,11 @@
               "02, 4.6 ; 02, table 2.2"
             ],
             [
-              "a given name on a task card. the need-to-know filter admits no person's name, an",
-              "founder",
-              "before the first card is generated against a live party.",
+              "closed on 2026-09-14. the given-name exception is withdrawn by dr-027 : no name ",
+              "founder with the operations lead when appointed",
+              "closed in principle; the exclusions are drawn as party entries are signed.",
               "",
-              "04, 1.2 ; 01, 1"
+              "dr-027 ; 04, 1.1"
             ],
             [
               "a fee quoted on a call has nothing to compare it with. an amount reaches no card",
@@ -8122,11 +8138,15 @@
         },
         {
           "line": 98,
-          "to": "04-operations/index.html#card-generation"
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
         },
         {
           "line": 98,
-          "to": "01-product/index.html#journeys"
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 98,
+          "to": "04-operations/index.html#card-generation"
         },
         {
           "line": 99,
@@ -14821,6 +14841,145 @@
         }
       ]
     },
+    "decisions/dr-027-no-name-reaches-a-worker.html": {
+      "title": "DR-027 No name ever reaches a worker, and a call that would need one is not a task we do, AI.fred",
+      "kind": "record",
+      "status": "decision",
+      "anchors": {
+        "decision": {
+          "kind": "h2",
+          "line": 61,
+          "no": "1",
+          "text": "Decision"
+        },
+        "why-absolute": {
+          "kind": "h3",
+          "line": 63,
+          "no": "1.1",
+          "text": "Why it has to be absolute",
+          "under": "decision"
+        },
+        "the-call-rule": {
+          "kind": "h3",
+          "line": 65,
+          "no": "1.2",
+          "text": "What this excludes on a call",
+          "under": "decision"
+        },
+        "where-specified": {
+          "kind": "h3",
+          "line": 68,
+          "no": "1.3",
+          "text": "Where this is specified",
+          "under": "decision"
+        },
+        "rejected": {
+          "kind": "h2",
+          "line": 72,
+          "no": "2",
+          "text": "Rejected alternative(s) and their cost"
+        },
+        "closes-off": {
+          "kind": "h2",
+          "line": 85,
+          "no": "3",
+          "text": "What this closes off"
+        },
+        "record-status": {
+          "kind": "h2",
+          "line": 96,
+          "no": "4",
+          "text": "Status"
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 18,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 44,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 45,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 46,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 47,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 48,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 49,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 50,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 51,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 66,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
+        },
+        {
+          "line": 69,
+          "to": "04-operations/index.html#card-generation"
+        },
+        {
+          "line": 69,
+          "to": "04-operations/index.html#card-script"
+        },
+        {
+          "line": 69,
+          "to": "02-architecture/index.html#step-catalogue"
+        },
+        {
+          "line": 106,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 107,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 108,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
     "decisions/index.html": {
       "title": "Decisions, AI.fred",
       "kind": "ledger",
@@ -14834,7 +14993,7 @@
         },
         "how-records-work": {
           "kind": "h2",
-          "line": 100,
+          "line": 101,
           "no": "2",
           "text": "How a record works"
         }
@@ -15025,6 +15184,13 @@
               "",
               "2026-09-14",
               "a call to a desk that treats an identifier as a way in."
+            ],
+            [
+              "dr-027",
+              "no name ever reaches a worker",
+              "",
+              "2026-09-14",
+              "a name of any person on a card or in a worker&#x27;s mouth, and a task that need"
             ]
           ],
           "under": "ledger"
@@ -15192,23 +15358,27 @@
           "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
         },
         {
-          "line": 97,
+          "line": 94,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 98,
           "to": "07-open/index.html"
         },
         {
-          "line": 102,
+          "line": 103,
           "to": "07-open/index.html#objections"
         },
         {
-          "line": 111,
+          "line": 112,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 112,
+          "line": 113,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 113,
+          "line": 114,
           "to": "07-open/index.html"
         }
       ]

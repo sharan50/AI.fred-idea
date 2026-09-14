@@ -179,7 +179,8 @@ LOOP = LOOP.replace("    for k, v in vals.items():\n        out[k][t] = v",
                     "    for k, v in vals.items():\n        out[k][t] = v\n    prev_revenue = revenue")
 
 
-def run(n, seed=DEFAULT_SEED, scenario="viable", marketing=True, cac_usd=None, spend_share=None):
+def run(n, seed=DEFAULT_SEED, scenario="viable", marketing=True, cac_usd=None, spend_share=None,
+        overrides=None, with_drivers=False):
     argv = sys.argv
     sys.argv = ["aifred_model.py", scenario, str(n), str(seed)]
     ns = {
@@ -194,11 +195,18 @@ def run(n, seed=DEFAULT_SEED, scenario="viable", marketing=True, cac_usd=None, s
     }
     try:
         exec(compile(PART_DRIVERS, "aifred_model.py", "exec"), ns)
+        drivers = {k: v for k, v in ns.items()
+                   if isinstance(v, np.ndarray) and v.shape == (n,)}
+        if overrides:
+            for k, v in overrides.items():
+                if k not in drivers:
+                    raise KeyError(f"{k} is not a driver of this model")
+                ns[k] = np.full(n, v, dtype=float) if np.isscalar(v) else np.asarray(v, float)
         ns["CHANNELS"] = channel_table(ns["CAC_USD"], ns["cap_ind"])
         exec(compile(LOOP, "aifred_model.py(growth)", "exec"), ns)
     finally:
         sys.argv = argv
-    return ns
+    return (drivers, ns) if with_drivers else ns
 
 
 def selftest():

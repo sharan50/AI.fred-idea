@@ -52,7 +52,7 @@
     },
     {
       "key": "decisions",
-      "pages": 25
+      "pages": 28
     },
     {
       "key": "depmap",
@@ -379,6 +379,14 @@
       "updated": "2026-09-14",
       "section": "decisions",
       "summary": "A call is used only where the institution asks for identity to find the account rather than to open it, recorded as a field in the party register and applied before a script is written."
+    },
+    {
+      "path": "decisions/dr-027-no-name-reaches-a-worker.html",
+      "title": "DR-027 No name ever reaches a worker",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "A worker never sees or states a name, of the user or of anyone else, on any surface; a task whose party process needs one after the automated account mapping leaves the phone surface rather than moving to a workaround.",
+      "updated": "2026-09-14"
     },
     {
       "path": "decisions/index.html",

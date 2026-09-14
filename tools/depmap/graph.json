@@ -5308,10 +5308,6 @@
           "word": "the three mechanisms the trajectory model does not have"
         },
         {
-          "id": "open-07-31",
-          "word": "a given name on a task card"
-        },
-        {
           "id": "open-07-32",
           "word": "a fee quoted on a call has nothing to compare it with"
         },
@@ -5342,6 +5338,10 @@
         {
           "id": "open-07-39",
           "word": "two external facts the review dates past the record"
+        },
+        {
+          "id": "open-07-31",
+          "word": "the given-name exception is withdrawn by"
         }
       ],
       "note": "The caption says eighteen over nineteen rows; the waiver fails when the caption is corrected.",
@@ -7701,25 +7701,6 @@
       ]
     },
     {
-      "id": "open-07-31",
-      "kind": "open",
-      "label": "A given name on a task card",
-      "facets": {
-        "layer": "open",
-        "fixity": "amber"
-      },
-      "loci": [
-        {
-          "at": "07-open/index.html#items!\"A given name on a task card\"",
-          "role": "home"
-        },
-        {
-          "at": "04-operations/index.html#card-generation!\"with one exception the cards in section 1.4 already use\"",
-          "role": "mentions"
-        }
-      ]
-    },
-    {
       "id": "open-07-32",
       "kind": "open",
       "label": "A fee quoted on a call has nothing to compare it with",
@@ -8004,6 +7985,97 @@
         {
           "at": "decisions/dr-026-telephony-mapping-not-authentication.html#rejected!\"Deciding per call rather than per party\"",
           "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "dr-027",
+      "kind": "dr",
+      "label": "No name ever reaches a worker",
+      "facets": {
+        "layer": "trust",
+        "fixity": "fixed",
+        "fatal": "1"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-027-no-name-reaches-a-worker.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"No name ever reaches a worker\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-027-a-given-name-only",
+      "kind": "alt",
+      "label": "A given name only, where the process needs one",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-027-no-name-reaches-a-worker.html#rejected!\"A given name only, where the process needs one\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-027-an-alias-read-out",
+      "kind": "alt",
+      "label": "An alias the worker reads out",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-027-no-name-reaches-a-worker.html#rejected!\"An alias the worker reads out\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-027-vetting-as-the-closure",
+      "kind": "alt",
+      "label": "Vetting and the ledger as the closure",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-027-no-name-reaches-a-worker.html#rejected!\"Vetting and the ledger as the closure\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-027-refusing-calls-altogether",
+      "kind": "alt",
+      "label": "Refusing calls altogether",
+      "facets": {
+        "layer": "trust"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-027-no-name-reaches-a-worker.html#rejected!\"Refusing calls altogether\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "open-07-31",
+      "kind": "open",
+      "label": "The given name, settled by DR-027",
+      "facets": {
+        "layer": "open",
+        "fixity": "assumption"
+      },
+      "loci": [
+        {
+          "at": "07-open/index.html#items!\"The given-name exception is withdrawn by\"",
+          "role": "home"
         }
       ]
     }
@@ -11000,11 +11072,6 @@
       "dr-024"
     ],
     [
-      "open-07-31",
-      "lands-in",
-      "comp-envelope"
-    ],
-    [
       "open-07-32",
       "lands-in",
       "dr-004"
@@ -11103,6 +11170,41 @@
       "dr-026",
       "justifies",
       "comp-telephony"
+    ],
+    [
+      "dr-027",
+      "rejects",
+      "alt-dr-027-a-given-name-only"
+    ],
+    [
+      "dr-027",
+      "rejects",
+      "alt-dr-027-an-alias-read-out"
+    ],
+    [
+      "dr-027",
+      "rejects",
+      "alt-dr-027-vetting-as-the-closure"
+    ],
+    [
+      "dr-027",
+      "rejects",
+      "alt-dr-027-refusing-calls-altogether"
+    ],
+    [
+      "dr-027",
+      "justifies",
+      "comp-telephony"
+    ],
+    [
+      "dr-026",
+      "justifies",
+      "dr-027"
+    ],
+    [
+      "open-07-31",
+      "lands-in",
+      "dr-027"
     ]
   ]
 }
