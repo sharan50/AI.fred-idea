@@ -114,7 +114,7 @@
       "after": ["s_03"],
       "state": "pending",
       "envelope_version": "env_12/v1",
-      "policy": { "jurisdiction": "IN", "institution_market": "IN", "delegator": "user", "act": "present-document", "flag": "delegated" },
+      "policy": { "jurisdiction": "IN", "institution_market": "IN", "delegator": "user", "act": "present-document", "flag": "bounce" },
       "bounce": {
         "form": "user-act",
         "instruction": "Approve the DigiLocker share of your referral letter.",

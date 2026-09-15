@@ -168,9 +168,11 @@ export function issueToken({ ids, signer, check_id, task_id, step_id, envelope_v
   return token;
 }
 
+// The signature covers the token as issued; consumption and voiding are
+// state the controller and the substitutor record after issue.
 export function tokenState(token, { keys, envelope_version, at, act = null }) {
   if (!token) return { ok: false, why: 'no token' };
-  if (!keys.verify(token)) return { ok: false, why: 'signature' };
+  if (!keys.verify({ ...token, consumed_at: null, voided: null })) return { ok: false, why: 'signature' };
   if (token.voided) return { ok: false, why: 'voided' };
   if (token.consumed_at) return { ok: false, why: 'consumed' };
   if (token.envelope_version !== envelope_version) return { ok: false, why: 'another envelope version' };

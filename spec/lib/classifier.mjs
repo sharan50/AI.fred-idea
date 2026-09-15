@@ -76,13 +76,17 @@ export function classify({ step, catalogue, parties, envelope, flags, scope = DE
   // Second: the policy layer, keyed by jurisdiction and act type, once under
   // the delegator's jurisdiction and once under the institution's market, for
   // the act and for every identity act the step implies; the stricter governs.
-  const acts = [step.act, ...step.identity_acts.filter((a) => a !== step.act)];
+  const acts = [...step.identity_acts, step.act].filter((a, i, arr) => arr.indexOf(a) === i);
   const lookups = acts.filter((a) => actKind(a) !== 'committable' || a === 'pay-under-cap').map((a) => evaluate(flags, { act: a, delegator_jurisdiction: delegatorJurisdiction, institution_market: institutionMarket, holds, healthRecord: healthRecord && a === 'present-document' }));
   const committableLookups = acts.filter((a) => actKind(a) === 'committable' && a !== 'pay-under-cap').map((a) => evaluate(flags, { act: a, delegator_jurisdiction: delegatorJurisdiction, institution_market: institutionMarket, holds }));
   const all = [...lookups, ...committableLookups];
+  // The policy block names the act whose lookup governs; on a tie it names
+  // the identity act, whose line is the one the flag table is about, as the
+  // printed step record does for the booking call (attest-fact beside schedule).
+  const ordered = [...lookups, ...committableLookups];
   let governing = 'delegated';
-  let governingAct = step.act;
-  for (const l of all) {
+  let governingAct = ordered.length ? ordered[0].act : step.act;
+  for (const l of ordered) {
     if (stricter(l.governing, governing) !== governing) {
       governing = l.governing;
       governingAct = l.act;
