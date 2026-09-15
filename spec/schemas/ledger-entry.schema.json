@@ -12,7 +12,7 @@
     "at": { "$ref": "aifred:common#/$defs/timestamp" },
     "alias": { "anyOf": [{ "$ref": "aifred:common#/$defs/alias" }, { "type": "null" }] },
     "event_type": { "$ref": "aifred:vocab#/$defs/ledger-events" },
-    "form": { "anyOf": [{ "type": "string", "enum": ["placing", "not-confirmed", "checker", "held", "code-relayed", "user-act", "approval", "do-yourself", "partial-issued", "new-version", "destroyed", "key-rotated", "renamed"] }, { "type": "null" }] },
+    "form": { "anyOf": [{ "type": "string", "enum": ["placing", "not-confirmed", "checker", "held", "code-relayed", "user-act", "approval", "do-yourself", "worker-request", "partial-issued", "new-version", "destroyed", "key-rotated", "renamed"] }, { "type": "null" }] },
     "use": { "type": "string", "description": "The use, in words; assembled from fields by the writing component, never typed." },
     "surface": { "anyOf": [{ "type": "string", "enum": ["managed-browser", "telephony", "mail-relay", "device", "vault-edge-proxy", "hash-service", "evidence-store", "console"] }, { "type": "null" }] },
     "party": { "anyOf": [{ "type": "string" }, { "type": "null" }], "description": "Named as the user knows it, never by an internal id." },

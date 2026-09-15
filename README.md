@@ -21,6 +21,7 @@ find-and-replace pass.
 | `tools/verify.mjs` | The verification harness. Never published. |
 | `tools/depmap.mjs` | The dependency map's tool: `extract`, `check`, `impact`, `batch`, `at`, `show`, `list`, `selftest`, `view`. The tool is never published; its served view is (DR-017). |
 | `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `view.src.html` and `view-architecture.src.html` (the two viewer templates), `batches/` (one record per batch of changes, proposed or made). |
+| `spec/` | The executable specification: a schema for every record, the closed lists, and reference implementations of the state machine, the envelope, the classifier, the substitutor, the hash service, the evidence pipeline and the ledger, with tests. Never published; `spec/README.md` explains it. |
 | `netlify.toml` | Publish directory pinned to `docs`; no build command. |
 | `SURFACING_REPORT.md` | The loop's closing report against the founder's bar (written at the end of the build). |
 
@@ -42,6 +43,12 @@ at the top of that file. The loop rules in its section 9 govern.
 
 ```
 node tools/verify.mjs
+```
+
+The executable specification has its own suite, separate from the harness:
+
+```
+node --test 'spec/test/*.test.mjs'
 ```
 
 Node 18 or later, no dependencies. Non-zero exit on any failure; each failure
