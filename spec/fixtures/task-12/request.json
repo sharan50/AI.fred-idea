@@ -1,0 +1,17 @@
+{
+  "request_id": "req_7f",
+  "received_at": "2026-09-02T14:31:08+05:30",
+  "channel": "whatsapp",
+  "market": "IN",
+  "locale": "en-IN",
+  "user_ref": "u_3f9a",
+  "thread_ref": null,
+  "content": {
+    "text": "Book me the earliest cardiology appointment next week at Max; my DOB is {{dob}}",
+    "voice": null,
+    "attachments": []
+  },
+  "aliases_issued": ["{{dob}}"],
+  "device_binding": "dev_12a",
+  "consent_refs": ["c_calendar-readonly"]
+}

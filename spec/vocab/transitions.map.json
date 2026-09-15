@@ -1,0 +1,100 @@
+{
+  "id": "vocab-transitions",
+  "slug": "transitions",
+  "label": "The eighteen task transitions",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#table:2.2",
+  "check": "members",
+  "members": [
+    {
+      "id": "accept",
+      "word": "accept",
+      "code": "accept"
+    },
+    {
+      "id": "refuse",
+      "word": "refuse",
+      "code": "refuse"
+    },
+    {
+      "id": "propose",
+      "word": "propose",
+      "code": "propose"
+    },
+    {
+      "id": "authorise",
+      "word": "authorise",
+      "code": "authorise"
+    },
+    {
+      "id": "revise",
+      "word": "revise",
+      "code": "revise"
+    },
+    {
+      "id": "bounce",
+      "word": "bounce",
+      "code": "bounce"
+    },
+    {
+      "id": "ask",
+      "word": "ask",
+      "code": "ask"
+    },
+    {
+      "id": "request-extension",
+      "word": "request-extension",
+      "code": "request-extension"
+    },
+    {
+      "id": "resume",
+      "word": "resume",
+      "code": "resume"
+    },
+    {
+      "id": "wait",
+      "word": "wait",
+      "code": "wait"
+    },
+    {
+      "id": "escalate-resume",
+      "word": "escalate-resume",
+      "code": "escalate-resume"
+    },
+    {
+      "id": "expire-authority",
+      "word": "expire-authority",
+      "code": "expire-authority"
+    },
+    {
+      "id": "report",
+      "word": "report",
+      "code": "report"
+    },
+    {
+      "id": "verdict",
+      "word": "verdict",
+      "code": "verdict"
+    },
+    {
+      "id": "redo",
+      "word": "redo",
+      "code": "redo"
+    },
+    {
+      "id": "withdraw",
+      "word": "withdraw",
+      "code": "withdraw"
+    },
+    {
+      "id": "lapse",
+      "word": "lapse",
+      "code": "lapse"
+    },
+    {
+      "id": "revive",
+      "word": "revive",
+      "code": "revive"
+    }
+  ]
+}

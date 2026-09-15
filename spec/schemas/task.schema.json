@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:task",
+  "title": "Task record",
+  "description": "The task service's record of one task: exactly one named state, the timer it carries, and the references the state machine needs. The pages fix the states, transitions and timers; the field names here are the spec's.",
+  "x-locus": "02-architecture/index.html#state-machine",
+  "type": "object",
+  "properties": {
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "task_type": { "$ref": "aifred:common#/$defs/task-type" },
+    "market": { "$ref": "aifred:common#/$defs/market" },
+    "locale": { "type": "string" },
+    "user_ref": { "$ref": "aifred:common#/$defs/user-ref" },
+    "device_binding": { "anyOf": [{ "$ref": "aifred:common#/$defs/device-id" }, { "type": "null" }] },
+    "state": { "$ref": "aifred:vocab#/$defs/states" },
+    "opened_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "request_ids": { "type": "array", "items": { "$ref": "aifred:common#/$defs/request-id" } },
+    "plan_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/plan-id" }, { "type": "null" }] },
+    "envelope_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/envelope-id" }, { "type": "null" }] },
+    "envelope_version": { "anyOf": [{ "type": "integer", "minimum": 1 }, { "type": "null" }] },
+    "lapsed_from": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/states" }, { "type": "null" }], "description": "Recorded by the lapse event: what keeps a task abandoned before authorisation apart from one completed but never judged." },
+    "refusal_code": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/refusal-codes" }, { "type": "null" }] },
+    "verdict": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/verdicts" }, { "type": "null" }] },
+    "parent_task_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/task-id" }, { "type": "null" }], "description": "Set on the linked child a redo verdict opens." },
+    "child_task_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/task-id" }, { "type": "null" }] },
+    "report": { "anyOf": [{ "type": "object", "properties": { "reference": { "type": "string" }, "version": { "const": 1 }, "sent_at": { "$ref": "aifred:common#/$defs/timestamp" }, "delivered_at": { "anyOf": [{ "$ref": "aifred:common#/$defs/timestamp" }, { "type": "null" }] } }, "required": ["reference", "version", "sent_at", "delivered_at"], "additionalProperties": false }, { "type": "null" }] },
+    "renewal_open": { "type": "boolean", "description": "True while a renewal of the authority is with the user after expire-authority." },
+    "validity_to": { "anyOf": [{ "$ref": "aifred:common#/$defs/timestamp" }, { "type": "null" }], "description": "The end of the envelope's validity window while the task holds authority." },
+    "committed_spend": { "type": "object", "properties": { "fired": { "type": "number", "minimum": 0 }, "reserved": { "type": "number", "minimum": 0 } }, "required": ["fired", "reserved"], "additionalProperties": false }
+  },
+  "required": ["task_id", "task_type", "market", "user_ref", "device_binding", "state", "opened_at", "request_ids", "plan_id", "envelope_id", "envelope_version", "lapsed_from", "refusal_code", "verdict", "parent_task_id", "child_task_id", "report", "renewal_open", "committed_spend"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "state": { "const": "lapsed" } } }, "then": { "properties": { "lapsed_from": { "$ref": "aifred:vocab#/$defs/states" } } } },
+    { "if": { "properties": { "state": { "const": "refused" } } }, "then": { "properties": { "refusal_code": { "$ref": "aifred:vocab#/$defs/refusal-codes" } } } },
+    { "if": { "properties": { "state": { "const": "closed" } } }, "then": { "properties": { "verdict": { "$ref": "aifred:vocab#/$defs/verdicts" } } } }
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:approval-token",
+  "title": "Approval token",
+  "description": "A record signed by the task service's key that carries the check id, the step id, the envelope version the check was made against, the checker's identity, a hash of the act as checked and an expiry equal to the step deadline or the envelope's validity window, whichever is sooner. Single-use; it reserves its act's amount from issue until the step closes without a fired marker.",
+  "x-locus": "02-architecture/index.html#dual-control",
+  "type": "object",
+  "properties": {
+    "token_id": { "$ref": "aifred:common#/$defs/token-id" },
+    "check_id": { "$ref": "aifred:common#/$defs/check-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "step_id": { "$ref": "aifred:common#/$defs/step-id" },
+    "envelope_version": { "$ref": "aifred:common#/$defs/envelope-version-ref" },
+    "checker": {
+      "type": "object",
+      "properties": { "kind": { "type": "string", "enum": ["worker", "harness"] }, "id": { "type": "string", "minLength": 1 }, "pool": { "$ref": "aifred:vocab#/$defs/pools" } },
+      "required": ["kind", "id"],
+      "additionalProperties": false
+    },
+    "act_hash": { "$ref": "aifred:common#/$defs/hex-digest" },
+    "amount_reserved": { "anyOf": [{ "$ref": "aifred:common#/$defs/money" }, { "type": "null" }] },
+    "issued_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "expires_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "consumed_at": { "anyOf": [{ "$ref": "aifred:common#/$defs/timestamp" }, { "type": "null" }] },
+    "voided": { "anyOf": [{ "type": "null" }, { "type": "object", "properties": { "at": { "$ref": "aifred:common#/$defs/timestamp" }, "reason": { "type": "string" } }, "required": ["at", "reason"], "additionalProperties": false }] },
+    "key_id": { "$ref": "aifred:common#/$defs/key-id" },
+    "signature": { "$ref": "aifred:common#/$defs/signature" }
+  },
+  "required": ["token_id", "check_id", "task_id", "step_id", "envelope_version", "checker", "act_hash", "amount_reserved", "issued_at", "expires_at", "consumed_at", "voided", "key_id", "signature"],
+  "additionalProperties": false
+}

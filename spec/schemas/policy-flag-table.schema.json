@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:policy-flag-table",
+  "title": "Policy flag table",
+  "description": "What the policy layer reads at runtime, keyed by jurisdiction and act-type row. A flag is one of three values; a condition is a conjunction of named predicates, never a free expression; every cell is a to-verify legal item. The basis row is not a key and is not here.",
+  "x-locus": "03-trust-and-data/index.html#table:3.5",
+  "$defs": {
+    "cell": {
+      "type": "object",
+      "properties": {
+        "flag": { "$ref": "aifred:vocab#/$defs/flag-values" },
+        "condition": { "anyOf": [{ "type": "null" }, { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/condition-predicates" }, "minItems": 1, "uniqueItems": true }] },
+        "status": { "const": "to-verify" },
+        "note": { "type": "string" }
+      },
+      "required": ["flag", "condition", "status"],
+      "additionalProperties": false
+    },
+    "row": {
+      "type": "object",
+      "properties": { "IN": { "$ref": "#/$defs/cell" }, "UK": { "$ref": "#/$defs/cell" }, "US": { "$ref": "#/$defs/cell" } },
+      "additionalProperties": false
+    }
+  },
+  "type": "object",
+  "properties": {
+    "edition": { "type": "string" },
+    "loaded": { "type": "string", "enum": ["ceiling", "pilot"] },
+    "rows": {
+      "type": "object",
+      "properties": {
+        "present-document": { "$ref": "#/$defs/row" },
+        "state-identity-number": { "$ref": "#/$defs/row" },
+        "complete-kyc-form": { "$ref": "#/$defs/row" },
+        "undergo-identification": { "$ref": "#/$defs/row" },
+        "answer-security-questions": { "$ref": "#/$defs/row" },
+        "attest-fact": { "$ref": "#/$defs/row" },
+        "use-delegated-login": { "$ref": "#/$defs/row" },
+        "pay-under-cap": { "$ref": "#/$defs/row" },
+        "sign": { "$ref": "#/$defs/row" },
+        "book-or-cancel": { "$ref": "#/$defs/row" },
+        "share-health-record": { "$ref": "#/$defs/row" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "required": ["edition", "loaded", "rows"],
+  "additionalProperties": false
+}

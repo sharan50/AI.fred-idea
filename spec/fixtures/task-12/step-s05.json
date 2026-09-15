@@ -1,0 +1,32 @@
+{
+  "step_id": "s_05",
+  "task_id": "t_12",
+  "plan_id": "p_12.1",
+  "purpose": "Share the referral letter with Max Healthcare",
+  "step_type": "IN/health/share-referral-letter",
+  "template": "IN/health/share-referral-letter@v1",
+  "class": "user",
+  "reversibility": "irreversible",
+  "route": "bounce",
+  "executor": null,
+  "surface": "device",
+  "party": { "id": "party_max-healthcare" },
+  "act": "present-document",
+  "identity_acts": [],
+  "fields": [],
+  "facts_in_clear": [],
+  "envelope_lines": ["contactable party: Max Healthcare"],
+  "expected_outcome": "The referral letter is shared from DigiLocker and the share is confirmed on your device",
+  "after": ["s_03"],
+  "state": "bounced",
+  "envelope_version": "env_12/v2",
+  "policy": { "jurisdiction": "IN", "institution_market": "IN", "delegator": "user", "act": "present-document", "flag": "delegated" },
+  "bounce": {
+    "form": "user-act",
+    "instruction": "Approve the DigiLocker share of your referral letter.",
+    "target": { "rail": "digilocker", "deep_link": "digilocker://share/referral" },
+    "callback": "cb_12_05",
+    "expires": "2026-09-03T14:35:00+05:30"
+  },
+  "device_response": null
+}

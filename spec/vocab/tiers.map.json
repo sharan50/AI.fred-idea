@@ -1,0 +1,35 @@
+{
+  "id": "vocab-tiers",
+  "slug": "tiers",
+  "label": "The workforce tiers and the two standalone functions",
+  "source": "tools/depmap/graph.json",
+  "canonical": "04-operations/index.html#tiers",
+  "check": "members",
+  "members": [
+    {
+      "id": "l1",
+      "word": "l1",
+      "code": "l1"
+    },
+    {
+      "id": "l2",
+      "word": "l2",
+      "code": "l2"
+    },
+    {
+      "id": "l3",
+      "word": "l3",
+      "code": "l3"
+    },
+    {
+      "id": "qa",
+      "word": "qa",
+      "code": "qa"
+    },
+    {
+      "id": "escalation",
+      "word": "escalation",
+      "code": "escalation"
+    }
+  ]
+}

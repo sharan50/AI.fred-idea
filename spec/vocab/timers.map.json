@@ -1,0 +1,50 @@
+{
+  "id": "vocab-timers",
+  "slug": "timers",
+  "label": "The ten timers",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#table:2.8",
+  "check": "members",
+  "members": [
+    {
+      "id": "planning-deadline",
+      "word": "planning deadline"
+    },
+    {
+      "id": "nudge-schedule",
+      "word": "nudge schedule"
+    },
+    {
+      "id": "validity-window",
+      "word": "validity window"
+    },
+    {
+      "id": "delegation-validity",
+      "word": "delegation validity"
+    },
+    {
+      "id": "step-deadline",
+      "word": "step deadline"
+    },
+    {
+      "id": "response-window",
+      "word": "response window"
+    },
+    {
+      "id": "check-deadline",
+      "word": "check deadline"
+    },
+    {
+      "id": "placement-window",
+      "word": "placement window"
+    },
+    {
+      "id": "hold-window",
+      "word": "hold window"
+    },
+    {
+      "id": "column-limit",
+      "word": "column limit"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "id": "vocab-status-words",
+  "slug": "status-words",
+  "label": "The five status words",
+  "source": "tools/depmap/graph.json",
+  "canonical": "index.html#how-to-read",
+  "check": "members",
+  "members": [
+    {
+      "id": "verified",
+      "word": "verified",
+      "code": "verified"
+    },
+    {
+      "id": "to-verify",
+      "word": "to-verify",
+      "code": "to-verify"
+    },
+    {
+      "id": "amber",
+      "word": "amber",
+      "code": "amber"
+    },
+    {
+      "id": "assumption",
+      "word": "assumption",
+      "code": "assumption"
+    },
+    {
+      "id": "decision",
+      "word": "decision",
+      "code": "decision"
+    }
+  ]
+}

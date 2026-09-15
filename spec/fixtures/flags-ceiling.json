@@ -1,0 +1,17 @@
+{
+  "edition": "2026-09-15",
+  "loaded": "ceiling",
+  "rows": {
+    "present-document": { "IN": { "flag": "delegated", "condition": null, "status": "to-verify" }, "UK": { "flag": "delegated", "condition": null, "status": "to-verify" }, "US": { "flag": "delegated", "condition": null, "status": "to-verify" } },
+    "state-identity-number": { "IN": { "flag": "delegated", "condition": null, "status": "to-verify" }, "UK": { "flag": "delegated", "condition": null, "status": "to-verify" }, "US": { "flag": "delegated", "condition": null, "status": "to-verify" } },
+    "complete-kyc-form": { "IN": { "flag": "delegated", "condition": null, "status": "to-verify" }, "UK": { "flag": "delegated", "condition": null, "status": "to-verify" }, "US": { "flag": "delegated", "condition": null, "status": "to-verify" } },
+    "undergo-identification": { "IN": { "flag": "bounce", "condition": null, "status": "to-verify" }, "UK": { "flag": "bounce", "condition": null, "status": "to-verify" }, "US": { "flag": "bounce", "condition": null, "status": "to-verify" } },
+    "answer-security-questions": { "IN": { "flag": "delegated", "condition": null, "status": "to-verify" }, "UK": { "flag": "delegated", "condition": null, "status": "to-verify" }, "US": { "flag": "delegated", "condition": null, "status": "to-verify" } },
+    "attest-fact": { "IN": { "flag": "delegated", "condition": ["fact-user-confirmed"], "status": "to-verify" }, "UK": { "flag": "delegated", "condition": ["fact-user-confirmed"], "status": "to-verify" }, "US": { "flag": "delegated", "condition": ["fact-user-confirmed"], "status": "to-verify" } },
+    "use-delegated-login": { "IN": { "flag": "delegated", "condition": ["portal-non-financial", "login-delegated-in-envelope"], "status": "to-verify" }, "UK": { "flag": "delegated", "condition": ["portal-non-financial", "login-delegated-in-envelope"], "status": "to-verify" }, "US": { "flag": "delegated", "condition": ["portal-non-financial", "login-delegated-in-envelope"], "status": "to-verify" } },
+    "pay-under-cap": { "IN": { "flag": "bounce", "condition": null, "status": "to-verify", "note": "the debit is the user's own act on their device, under UPI Circle or Reserve Pay" }, "UK": { "flag": "delegated", "condition": ["mandate-names-payee"], "status": "to-verify" }, "US": { "flag": "delegated", "condition": ["network-token-bound"], "status": "to-verify" } },
+    "sign": { "IN": { "flag": "bounce", "condition": null, "status": "to-verify" }, "UK": { "flag": "bounce", "condition": null, "status": "to-verify" }, "US": { "flag": "bounce", "condition": null, "status": "to-verify" } },
+    "book-or-cancel": { "IN": { "flag": "delegated", "condition": null, "status": "to-verify" }, "UK": { "flag": "delegated", "condition": null, "status": "to-verify" }, "US": { "flag": "delegated", "condition": null, "status": "to-verify" } },
+    "share-health-record": { "IN": { "flag": "delegated", "condition": ["consent-in-envelope"], "status": "to-verify" }, "UK": { "flag": "delegated", "condition": ["consent-in-envelope"], "status": "to-verify" }, "US": { "flag": "delegated", "condition": ["consent-in-envelope"], "status": "to-verify" } }
+  }
+}

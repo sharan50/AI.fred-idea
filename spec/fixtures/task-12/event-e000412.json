@@ -1,0 +1,12 @@
+{
+  "event_id": "e_000412",
+  "task_id": "t_12",
+  "at": "2026-09-02T15:12:40+05:30",
+  "kind": "transition",
+  "from": "active",
+  "to": "awaiting-verdict",
+  "transition": "report",
+  "actor": { "kind": "system", "id": "task-service" },
+  "reason": "all steps closed",
+  "timer_set": { "kind": "nudge-schedule", "task_type": "IN/health/book-appointment" }
+}

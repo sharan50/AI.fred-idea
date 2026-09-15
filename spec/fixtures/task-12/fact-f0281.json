@@ -1,0 +1,17 @@
+{
+  "fact_id": "f_0281",
+  "subject": "u_3f9a",
+  "predicate": "has-account-at",
+  "object": "HDFC Bank",
+  "value_alias": "{{account.hdfc}}",
+  "sensitive": true,
+  "source": { "kind": "task-outcome", "ref": "t_09/s_05" },
+  "observed_at": "2026-08-20",
+  "confidence": "high",
+  "user_confirmed": true,
+  "confirmed_at": "2026-08-21",
+  "valid_from": "2026-08-20",
+  "valid_to": null,
+  "superseded_by": null,
+  "quality_flag": null
+}

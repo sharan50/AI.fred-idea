@@ -1,0 +1,20 @@
+{
+  "ledger_id": "l_12_0007",
+  "task_id": "t_12",
+  "step_id": "s_04",
+  "at": "2026-09-02T15:09:02+05:30",
+  "alias": "{{dob}}",
+  "event_type": "placed",
+  "use": "typed into Max Healthcare's appointment form",
+  "surface": "managed-browser",
+  "party": "Max Healthcare's appointment portal",
+  "placed_by": "system",
+  "seen_by": "no person; the field rendered as dots",
+  "outcome": "placed",
+  "policy_ref": "IN/attest-fact",
+  "envelope_version": "env_12/v2",
+  "placement_id": "pl_12040001",
+  "artefact_ref": null,
+  "viewer_role": null,
+  "written_by": "substitution-component"
+}

@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:envelope",
+  "title": "Envelope record",
+  "description": "A versioned record. Version 1 is the planner's unsigned proposal and carries no authority; authorisation and every later edit produce a new version signed by the user's bound device. Every line carries a scope: task, or one step's id.",
+  "x-locus": "02-architecture/index.html#envelope-record",
+  "$defs": {
+    "party-line": { "type": "object", "properties": { "party": { "$ref": "aifred:common#/$defs/party-id" }, "scope": { "$ref": "aifred:common#/$defs/scope" } }, "required": ["party", "scope"], "additionalProperties": false },
+    "act-line": { "type": "object", "properties": { "act": { "$ref": "aifred:vocab#/$defs/committable-acts" }, "scope": { "$ref": "aifred:common#/$defs/scope" } }, "required": ["act", "scope"], "additionalProperties": false },
+    "identity-act-line": { "type": "object", "properties": { "act": { "$ref": "aifred:vocab#/$defs/identity-acts" }, "scope": { "$ref": "aifred:common#/$defs/scope" } }, "required": ["act", "scope"], "additionalProperties": false },
+    "consent-line": { "type": "object", "properties": { "record": { "$ref": "aifred:common#/$defs/alias" }, "scope": { "$ref": "aifred:common#/$defs/scope" } }, "required": ["record", "scope"], "additionalProperties": false }
+  },
+  "type": "object",
+  "properties": {
+    "envelope_id": { "$ref": "aifred:common#/$defs/envelope-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "version": { "type": "integer", "minimum": 1 },
+    "spend_cap": { "$ref": "aifred:common#/$defs/money" },
+    "sub_caps": { "type": "object", "patternProperties": { "^s_[a-z0-9]+$": { "$ref": "aifred:common#/$defs/money" } }, "additionalProperties": false },
+    "contactable_parties": { "type": "array", "items": { "$ref": "#/$defs/party-line" } },
+    "committable_acts": { "type": "array", "items": { "$ref": "#/$defs/act-line" } },
+    "delegated_identity_acts": { "type": "array", "items": { "$ref": "#/$defs/identity-act-line" } },
+    "health_record_consents": { "type": "array", "items": { "$ref": "#/$defs/consent-line" }, "description": "Explicit consent per health record, the condition of the share-a-health-record line." },
+    "delegated_logins": { "type": "array", "items": { "$ref": "#/$defs/consent-line" }, "description": "Credential aliases the user delegated, the condition of the delegated-login line." },
+    "validity": { "type": "object", "properties": { "from": { "$ref": "aifred:common#/$defs/timestamp" }, "to": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["from", "to"], "additionalProperties": false },
+    "authorised_by": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "device": { "$ref": "aifred:common#/$defs/device-id" }, "at": { "$ref": "aifred:common#/$defs/timestamp" }, "signature": { "$ref": "aifred:common#/$defs/signature" } }, "required": ["device", "at"], "additionalProperties": false }
+      ],
+      "description": "Null on version 1; a version is authority only once signed by the bound device."
+    },
+    "edits": {
+      "type": "array",
+      "items": { "type": "object", "properties": { "version": { "type": "integer", "minimum": 2 }, "change": { "type": "string" }, "at": { "$ref": "aifred:common#/$defs/timestamp" }, "kind": { "type": "string", "enum": ["authorisation", "extension", "narrowing", "renewal"] }, "scope": { "$ref": "aifred:common#/$defs/scope" } }, "required": ["version", "change", "at"], "additionalProperties": false }
+    }
+  },
+  "required": ["envelope_id", "task_id", "version", "spend_cap", "sub_caps", "contactable_parties", "committable_acts", "delegated_identity_acts", "validity", "authorised_by", "edits"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "version": { "const": 1 } } }, "then": { "properties": { "authorised_by": { "type": "null" } } } },
+    { "if": { "properties": { "version": { "minimum": 2 } } }, "then": { "properties": { "authorised_by": { "type": "object" } } } }
+  ]
+}

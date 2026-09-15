@@ -1,0 +1,33 @@
+{
+  "step_id": "s_03",
+  "task_id": "t_12",
+  "plan_id": "p_12.1",
+  "purpose": "Book the earliest cardiology slot next week",
+  "step_type": "IN/health/book-appointment-by-phone",
+  "template": "IN/health/book-appointment-by-phone@v4",
+  "class": "human",
+  "reversibility": "reversible",
+  "route": "execute",
+  "executor": { "kind": "worker", "pool": "L1" },
+  "surface": "telephony",
+  "party": { "id": "party_max-healthcare", "desk": "booking line" },
+  "act": "schedule",
+  "identity_acts": ["attest-fact"],
+  "fields": [],
+  "facts_in_clear": ["prefers morning appointments", "any weekday after 10:00"],
+  "script": [
+    "Ask for the cardiology desk.",
+    "If the desk asks for a date of birth or any other value, say it cannot be given on a call.",
+    "Read the offered slot back and note that the reference was captured.",
+    "Give no other detail. End the call."
+  ],
+  "envelope_lines": ["contactable party: Max Healthcare", "spend cap: no spend"],
+  "expected_outcome": "A booked slot next week with a reference; no fee",
+  "after": ["s_02"],
+  "deadline": "2026-09-02T16:00:00+05:30",
+  "attempts": { "made": 0, "cap": 2 },
+  "state": "ready",
+  "envelope_version": "env_12/v2",
+  "approval_token": null,
+  "policy": { "jurisdiction": "IN", "institution_market": "IN", "delegator": "user", "act": "attest-fact", "flag": "delegated" }
+}

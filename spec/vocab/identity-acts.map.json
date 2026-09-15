@@ -1,0 +1,45 @@
+{
+  "id": "vocab-identity-acts",
+  "slug": "identity-acts",
+  "label": "The seven delegated identity acts",
+  "source": "tools/depmap/graph.json",
+  "canonical": "01-product/index.html#envelope-setup",
+  "check": "verbatim",
+  "members": [
+    {
+      "id": "present-document",
+      "word": "present a document",
+      "code": "present-document"
+    },
+    {
+      "id": "state-identity-number",
+      "word": "state an identity number",
+      "code": "state-identity-number"
+    },
+    {
+      "id": "answer-security-questions",
+      "word": "answer security questions from the context store",
+      "code": "answer-security-questions"
+    },
+    {
+      "id": "complete-kyc-form",
+      "word": "complete a KYC form",
+      "code": "complete-kyc-form"
+    },
+    {
+      "id": "use-delegated-login",
+      "word": "use a delegated login to a non-financial portal",
+      "code": "use-delegated-login"
+    },
+    {
+      "id": "sign",
+      "word": "sign or e-sign",
+      "code": "sign"
+    },
+    {
+      "id": "attest-fact",
+      "word": "attest a fact about the user",
+      "code": "attest-fact"
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+{
+  "id": "vocab-ledger-events",
+  "slug": "ledger-events",
+  "label": "The access-ledger event types",
+  "source": "tools/depmap/graph.json",
+  "canonical": "03-trust-and-data/index.html#ledger-fields",
+  "check": "members",
+  "members": [
+    {
+      "id": "received",
+      "word": "received",
+      "code": "received"
+    },
+    {
+      "id": "custody",
+      "word": "custody",
+      "code": "custody"
+    },
+    {
+      "id": "placed",
+      "word": "placed",
+      "code": "placed"
+    },
+    {
+      "id": "refused",
+      "word": "refused",
+      "code": "refused"
+    },
+    {
+      "id": "shown-as-dots",
+      "word": "shown-as-dots",
+      "code": "shown-as-dots"
+    },
+    {
+      "id": "echo-masked",
+      "word": "echo-masked",
+      "code": "echo-masked"
+    },
+    {
+      "id": "exposure-recorded",
+      "word": "exposure-recorded",
+      "code": "read-back-muted"
+    },
+    {
+      "id": "bounced",
+      "word": "bounced",
+      "code": "bounced"
+    },
+    {
+      "id": "evidence-stored",
+      "word": "evidence-stored",
+      "code": "evidence-stored"
+    },
+    {
+      "id": "evidence-withheld",
+      "word": "evidence-withheld",
+      "code": "evidence-withheld"
+    },
+    {
+      "id": "evidence-opened",
+      "word": "evidence-opened",
+      "code": "evidence-opened"
+    },
+    {
+      "id": "reconciled",
+      "word": "reconciled",
+      "code": "reconciled"
+    },
+    {
+      "id": "released",
+      "word": "released",
+      "code": "released"
+    },
+    {
+      "id": "break-glass",
+      "word": "break-glass",
+      "code": "break-glass"
+    }
+  ]
+}

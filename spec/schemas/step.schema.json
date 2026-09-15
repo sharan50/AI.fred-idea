@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:step",
+  "title": "Step record",
+  "description": "Every step gets exactly one class, one reversibility and one route. The record carries aliases, a pseudonymous task reference and nothing that identifies the user; the task card is a projection of it. A user step is the same record with a bounce block in place of the executor and the script.",
+  "x-locus": "02-architecture/index.html#step-record",
+  "type": "object",
+  "properties": {
+    "step_id": { "$ref": "aifred:common#/$defs/step-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "plan_id": { "$ref": "aifred:common#/$defs/plan-id" },
+    "purpose": { "type": "string", "minLength": 1 },
+    "step_type": { "$ref": "aifred:common#/$defs/step-type" },
+    "template": { "$ref": "aifred:common#/$defs/template" },
+    "class": { "$ref": "aifred:vocab#/$defs/classes" },
+    "reversibility": { "type": "string", "enum": ["reversible", "irreversible"] },
+    "route": { "$ref": "aifred:vocab#/$defs/routes" },
+    "executor": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "kind": { "$ref": "aifred:vocab#/$defs/executor-kinds" }, "pool": { "$ref": "aifred:vocab#/$defs/pools" } }, "required": ["kind"], "additionalProperties": false }
+      ]
+    },
+    "surface": { "$ref": "aifred:vocab#/$defs/surfaces" },
+    "party": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "id": { "$ref": "aifred:common#/$defs/party-id" }, "desk": { "type": "string" } }, "required": ["id"], "additionalProperties": false }
+      ]
+    },
+    "act": { "$ref": "aifred:vocab#/$defs/act-types" },
+    "identity_acts": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/identity-acts" }, "uniqueItems": true },
+    "fields": { "type": "array", "items": { "$ref": "aifred:common#/$defs/alias" }, "uniqueItems": true, "description": "The aliases the step may place: the allow-list the substitutor checks." },
+    "facts_in_clear": { "type": "array", "items": { "type": "string" } },
+    "script": { "type": "array", "items": { "type": "string" } },
+    "envelope_lines": { "type": "array", "items": { "type": "string" }, "description": "Presence and comparison only; a cap never as a number." },
+    "expected_outcome": { "type": "string" },
+    "after": { "type": "array", "items": { "$ref": "aifred:common#/$defs/step-id" } },
+    "deadline": { "anyOf": [{ "$ref": "aifred:common#/$defs/timestamp" }, { "type": "null" }] },
+    "attempts": { "type": "object", "properties": { "made": { "type": "integer", "minimum": 0 }, "cap": { "type": "integer", "minimum": 0 } }, "required": ["made", "cap"], "additionalProperties": false },
+    "state": { "$ref": "aifred:vocab#/$defs/step-states" },
+    "envelope_version": { "$ref": "aifred:common#/$defs/envelope-version-ref" },
+    "approval_token": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "check_id": { "$ref": "aifred:common#/$defs/check-id" }, "token_id": { "$ref": "aifred:common#/$defs/token-id" }, "envelope_version": { "$ref": "aifred:common#/$defs/envelope-version-ref" }, "expires_at": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["check_id", "envelope_version", "expires_at"], "additionalProperties": false }
+      ]
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "jurisdiction": { "$ref": "aifred:common#/$defs/market" },
+        "institution_market": { "anyOf": [{ "$ref": "aifred:common#/$defs/market" }, { "type": "null" }] },
+        "delegator": { "anyOf": [{ "const": "user" }, { "$ref": "aifred:common#/$defs/person-ref" }] },
+        "act": { "$ref": "aifred:vocab#/$defs/act-types" },
+        "flag": { "$ref": "aifred:vocab#/$defs/flag-values" }
+      },
+      "required": ["jurisdiction", "institution_market", "delegator", "act", "flag"],
+      "additionalProperties": false
+    },
+    "bounce": {
+      "anyOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "properties": {
+            "form": { "$ref": "aifred:vocab#/$defs/bounce-forms" },
+            "instruction": { "type": "string", "minLength": 1 },
+            "target": { "anyOf": [{ "type": "null" }, { "type": "object", "properties": { "rail": { "type": "string" }, "deep_link": { "type": "string" } }, "required": ["rail"], "additionalProperties": false }] },
+            "callback": { "$ref": "aifred:common#/$defs/callback-id" },
+            "expires": { "anyOf": [{ "$ref": "aifred:common#/$defs/timestamp" }, { "type": "null" }], "description": "The institution's own expiry for the act, not a timer of ours." }
+          },
+          "required": ["form", "instruction", "target", "callback", "expires"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "device_response": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "result": { "type": "string", "enum": ["done", "declined", "expired"] }, "reference": { "anyOf": [{ "$ref": "aifred:common#/$defs/alias" }, { "type": "null" }] }, "reason": { "type": "string" }, "at": { "$ref": "aifred:common#/$defs/timestamp" }, "device": { "$ref": "aifred:common#/$defs/device-id" }, "signature": { "$ref": "aifred:common#/$defs/signature" } }, "required": ["result", "at", "device", "signature"], "additionalProperties": false }
+      ]
+    },
+    "fired_marker": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "at": { "$ref": "aifred:common#/$defs/timestamp" }, "action": { "$ref": "aifred:vocab#/$defs/committing-actions" }, "written_by": { "type": "string" }, "token_id": { "$ref": "aifred:common#/$defs/token-id" } }, "required": ["at", "action", "written_by"], "additionalProperties": false }
+      ]
+    },
+    "cancelled": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "cause": { "$ref": "aifred:vocab#/$defs/cancellation-causes" }, "superseded_by": { "$ref": "aifred:common#/$defs/step-id" }, "at": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["cause", "at"], "additionalProperties": false }
+      ]
+    },
+    "outcome": { "anyOf": [{ "type": "null" }, { "$ref": "aifred:outcome" }] },
+    "check": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "check_id": { "$ref": "aifred:common#/$defs/check-id" }, "checker": { "anyOf": [{ "type": "object" }, { "type": "null" }] }, "deadline": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["check_id", "checker", "deadline"], "additionalProperties": false }
+      ]
+    },
+    "context_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/context-id" }, { "type": "null" }] },
+    "retry_token": { "anyOf": [{ "type": "string", "pattern": "^rt_[a-z0-9]+$" }, { "type": "null" }], "description": "Issued by the step runner for any re-placement of the same step, alias and target." },
+    "created_by": { "$ref": "aifred:common#/$defs/step-id", "description": "For a user step a blocked-needs-user closure created: the step it unblocks." },
+    "response_window_until": { "anyOf": [{ "$ref": "aifred:common#/$defs/timestamp" }, { "type": "null" }], "description": "The step's own timer after a blocked-third-party closure." },
+    "runtime": { "type": "object", "description": "The task service's bookkeeping, never rendered: re-classification pending, a placement inside its window, a re-issue on renewal." },
+    "amount": { "anyOf": [{ "$ref": "aifred:common#/$defs/money" }, { "type": "null" }], "description": "Where the act moves money: the amount, never shown on a card." }
+  },
+  "required": ["step_id", "task_id", "plan_id", "purpose", "step_type", "template", "class", "reversibility", "route", "surface", "party", "act", "identity_acts", "fields", "facts_in_clear", "envelope_lines", "expected_outcome", "after", "state", "envelope_version", "policy"],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": { "properties": { "class": { "enum": ["ai", "human"] } } },
+      "then": { "required": ["executor", "script", "deadline", "attempts", "approval_token"], "properties": { "executor": { "type": "object" }, "bounce": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "class": { "const": "user" } } },
+      "then": { "required": ["bounce", "device_response"], "properties": { "bounce": { "type": "object" }, "executor": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "class": { "const": "ai" } } },
+      "then": { "properties": { "executor": { "properties": { "kind": { "const": "harness" } } } } }
+    },
+    {
+      "if": { "properties": { "class": { "const": "human" } } },
+      "then": { "properties": { "executor": { "properties": { "kind": { "const": "worker" } }, "required": ["kind", "pool"] } } }
+    },
+    {
+      "if": { "properties": { "surface": { "const": "telephony" } } },
+      "then": { "properties": { "fields": { "maxItems": 0 } }, "$comment": "A call carries no value from the vault, in either direction (DR-021)." }
+    },
+    {
+      "if": { "properties": { "state": { "const": "cancelled" } } },
+      "then": { "required": ["cancelled"], "properties": { "cancelled": { "type": "object" } } }
+    },
+    {
+      "if": { "properties": { "state": { "const": "closed" } } },
+      "then": { "required": ["outcome"], "properties": { "outcome": { "type": "object" } } }
+    },
+    {
+      "if": { "properties": { "route": { "const": "dual-control" } } },
+      "then": { "properties": { "reversibility": { "const": "irreversible" } } }
+    },
+    {
+      "if": { "properties": { "route": { "const": "execute" } } },
+      "then": { "properties": { "reversibility": { "const": "reversible" } } }
+    }
+  ]
+}

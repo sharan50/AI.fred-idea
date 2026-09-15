@@ -1,0 +1,14 @@
+{
+  "step_id": "s_03",
+  "code": "ok-with-variance",
+  "closed_by": { "kind": "worker", "id": "w_0x", "pool": "L1" },
+  "checked_by": null,
+  "fields": {
+    "reference": "{{reference.max-healthcare}}",
+    "timestamp": "2026-09-02T15:12:40+05:30",
+    "party": "Max Healthcare booking line",
+    "variance": "The earliest slot is the week after; 11:15 rather than the morning preference"
+  },
+  "artefacts": ["ev_12_03_rec", "ev_12_03_tx"],
+  "closed_at": "2026-09-02T15:12:52+05:30"
+}

@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:party",
+  "title": "Party directory entry",
+  "description": "One entry per contactable party per market: the party's name as the user knows it, the market the institution operates in, its declared domains and certificate pins, the numbers we dial per desk with each desk's menu map, the page map, its mail domains, the machine-navigable flag per step type, the site's mask map and the reference shapes it issues. The envelope names parties by directory id.",
+  "x-locus": "02-architecture/index.html#step-type-catalogue",
+  "type": "object",
+  "properties": {
+    "party_id": { "$ref": "aifred:common#/$defs/party-id" },
+    "market": { "$ref": "aifred:common#/$defs/market" },
+    "name": { "type": "string", "minLength": 1 },
+    "domains": { "type": "array", "items": { "type": "string", "pattern": "^[a-z0-9.-]+\\.[a-z]{2,}$" } },
+    "certificate_pins": { "type": "array", "items": { "type": "string" } },
+    "desks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string", "minLength": 1 },
+          "number": { "type": "string", "pattern": "^\\+[0-9 ]+$" },
+          "menu_map": { "type": "object", "properties": { "navigate": { "type": "array", "items": { "type": "string" } }, "commit": { "type": "array", "items": { "type": "string" } } }, "required": ["navigate", "commit"], "additionalProperties": false },
+          "opening_identity_step": { "type": "string", "enum": ["none", "maps-to-account", "authenticates-access"] }
+        },
+        "required": ["name", "number", "menu_map", "opening_identity_step"],
+        "additionalProperties": false
+      }
+    },
+    "page_map": { "type": "object", "properties": { "navigation_controls": { "type": "array", "items": { "type": "string" } } }, "required": ["navigation_controls"], "additionalProperties": false },
+    "mail_domains": { "type": "array", "items": { "type": "string" } },
+    "machine_navigable": { "type": "object", "patternProperties": { "^(IN|UK|US)/[a-z-]+/[a-z0-9-]+$": { "type": "boolean" } }, "additionalProperties": false },
+    "mask_map": { "type": "array", "items": { "type": "object", "properties": { "region": { "type": "string" }, "kind": { "type": "string", "enum": ["image", "canvas", "text"] } }, "required": ["region", "kind"], "additionalProperties": false } },
+    "authenticated_portal": { "type": "boolean" },
+    "reference_shapes": { "type": "array", "items": { "type": "string" }, "description": "Regular expressions for the references this party issues, matched by the format masks." },
+    "surfaces": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/surfaces" } }
+  },
+  "required": ["party_id", "market", "name", "domains", "certificate_pins", "desks", "page_map", "mail_domains", "machine_navigable", "mask_map", "authenticated_portal", "reference_shapes", "surfaces"],
+  "additionalProperties": false
+}

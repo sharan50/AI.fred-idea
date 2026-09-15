@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:request",
+  "title": "Internal request record",
+  "description": "One request format for every channel, already tokenised at the vault's edge proxy; nothing downstream branches on the channel.",
+  "x-locus": "02-architecture/index.html#table:2.3",
+  "type": "object",
+  "properties": {
+    "request_id": { "$ref": "aifred:common#/$defs/request-id" },
+    "received_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "channel": { "$ref": "aifred:vocab#/$defs/channels" },
+    "market": { "$ref": "aifred:common#/$defs/market" },
+    "locale": { "type": "string", "pattern": "^[a-z]{2}-[A-Z]{2}$" },
+    "user_ref": { "$ref": "aifred:common#/$defs/user-ref" },
+    "thread_ref": { "anyOf": [{ "$ref": "aifred:common#/$defs/task-id" }, { "type": "null" }] },
+    "content": {
+      "type": "object",
+      "properties": {
+        "text": { "type": "string" },
+        "voice": {
+          "anyOf": [
+            { "type": "null" },
+            {
+              "type": "object",
+              "properties": {
+                "transcript": { "type": "string" },
+                "audio": { "$ref": "aifred:common#/$defs/alias" },
+                "spans": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": { "alias": { "$ref": "aifred:common#/$defs/alias" }, "start_ms": { "type": "integer", "minimum": 0 }, "end_ms": { "type": "integer", "minimum": 0 } },
+                    "required": ["alias", "start_ms", "end_ms"],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": ["transcript", "audio", "spans"],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "attachments": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "kind": { "type": "string", "enum": ["image", "pdf", "audio", "other"] },
+              "alias": { "$ref": "aifred:common#/$defs/alias" },
+              "document_type": { "type": "string" },
+              "ambiguous": { "type": "boolean" },
+              "metadata": { "type": "object" }
+            },
+            "required": ["kind", "alias", "document_type"],
+            "additionalProperties": false
+          }
+        }
+      },
+      "required": ["text", "voice", "attachments"],
+      "additionalProperties": false
+    },
+    "aliases_issued": { "type": "array", "items": { "$ref": "aifred:common#/$defs/alias" }, "uniqueItems": true },
+    "device_binding": { "$ref": "aifred:common#/$defs/device-id" },
+    "consent_refs": { "type": "array", "items": { "type": "string", "pattern": "^c_[a-z0-9-]+$" } }
+  },
+  "required": ["request_id", "received_at", "channel", "market", "locale", "user_ref", "thread_ref", "content", "aliases_issued", "device_binding", "consent_refs"],
+  "additionalProperties": false
+}

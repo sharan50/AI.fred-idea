@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:plan",
+  "title": "Plan record",
+  "description": "The planner's output is a plan or a refusal, and its schema admits no third thing. A plan is a list of step types drawn from the catalogue, each step classified, with the envelope proposal and the facts it used.",
+  "x-locus": "02-architecture/index.html#planner",
+  "type": "object",
+  "properties": {
+    "plan_id": { "$ref": "aifred:common#/$defs/plan-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "summary": { "type": "string", "minLength": 1 },
+    "steps": { "type": "array", "items": { "$ref": "aifred:step" }, "minItems": 1 },
+    "envelope_proposal": { "$ref": "aifred:envelope" },
+    "facts_used": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": { "fact": { "$ref": "aifred:common#/$defs/fact-id" }, "confidence": { "$ref": "aifred:vocab#/$defs/confidence" }, "user_confirmed": { "type": "boolean" } },
+        "required": ["fact", "confidence", "user_confirmed"],
+        "additionalProperties": false
+      }
+    },
+    "produced_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "supersedes": { "anyOf": [{ "$ref": "aifred:common#/$defs/plan-id" }, { "type": "null" }] },
+    "trigger": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/replan-triggers" }, { "type": "null" }], "description": "Null for the first plan; one of the eight re-plan triggers for every later one." }
+  },
+  "required": ["plan_id", "task_id", "summary", "steps", "envelope_proposal", "facts_used", "produced_at", "supersedes", "trigger"],
+  "additionalProperties": false
+}

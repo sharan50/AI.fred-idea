@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:ledger-entry",
+  "title": "Access ledger entry",
+  "description": "The record form behind each rendered line, written by the component that performed the event, from its own record, never by a person. It holds the identifiers an audit needs and nothing else: no value, no partial or digest, no artefact, no name and no free text.",
+  "x-locus": "03-trust-and-data/index.html#ledger-fields",
+  "type": "object",
+  "properties": {
+    "ledger_id": { "$ref": "aifred:common#/$defs/ledger-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "step_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/step-id" }, { "type": "null" }], "description": "Null only for a custody line at intake, a break-glass entry, a key rotation, a reconciliation or a release." },
+    "at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "alias": { "anyOf": [{ "$ref": "aifred:common#/$defs/alias" }, { "type": "null" }] },
+    "event_type": { "$ref": "aifred:vocab#/$defs/ledger-events" },
+    "form": { "anyOf": [{ "type": "string", "enum": ["placing", "not-confirmed", "checker", "held", "code-relayed", "user-act", "approval", "do-yourself", "partial-issued", "new-version", "destroyed", "key-rotated", "renamed"] }, { "type": "null" }] },
+    "use": { "type": "string", "description": "The use, in words; assembled from fields by the writing component, never typed." },
+    "surface": { "anyOf": [{ "type": "string", "enum": ["managed-browser", "telephony", "mail-relay", "device", "vault-edge-proxy", "hash-service", "evidence-store", "console"] }, { "type": "null" }] },
+    "party": { "anyOf": [{ "type": "string" }, { "type": "null" }], "description": "Named as the user knows it, never by an internal id." },
+    "placed_by": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/placed-by" }, { "type": "null" }] },
+    "seen_by": { "type": "string", "description": "A category, never a name." },
+    "outcome": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/ledger-outcomes" }, { "type": "null" }] },
+    "policy_ref": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+    "envelope_version": { "anyOf": [{ "$ref": "aifred:common#/$defs/envelope-version-ref" }, { "type": "null" }] },
+    "placement_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/placement-id" }, { "type": "null" }] },
+    "artefact_ref": { "anyOf": [{ "$ref": "aifred:common#/$defs/artefact-id" }, { "type": "null" }] },
+    "viewer_role": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/viewer-roles" }, { "type": "null" }] },
+    "incident_ref": { "anyOf": [{ "$ref": "aifred:common#/$defs/incident-id" }, { "type": "null" }] },
+    "written_by": { "$ref": "aifred:vocab#/$defs/ledger-writers" },
+    "prev_hash": { "anyOf": [{ "$ref": "aifred:common#/$defs/hex-digest" }, { "type": "null" }], "description": "Append-only: each entry carries the hash of the one before it." }
+  },
+  "required": ["ledger_id", "task_id", "step_id", "at", "alias", "event_type", "use", "surface", "party", "placed_by", "seen_by", "outcome", "policy_ref", "envelope_version", "placement_id", "artefact_ref", "viewer_role", "written_by"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "event_type": { "const": "placed" } } }, "then": { "required": ["placement_id"], "properties": { "placement_id": { "$ref": "aifred:common#/$defs/placement-id" }, "step_id": { "$ref": "aifred:common#/$defs/step-id" }, "surface": { "enum": ["managed-browser", "mail-relay"] } }, "$comment": "Placed in a browser field or through the relay, never on a call." } },
+    { "if": { "properties": { "event_type": { "enum": ["evidence-stored", "evidence-withheld", "evidence-opened"] } } }, "then": { "properties": { "step_id": { "$ref": "aifred:common#/$defs/step-id" } } } },
+    { "if": { "properties": { "event_type": { "const": "evidence-opened" } } }, "then": { "properties": { "viewer_role": { "$ref": "aifred:vocab#/$defs/viewer-roles" }, "artefact_ref": { "$ref": "aifred:common#/$defs/artefact-id" } } } },
+    { "if": { "properties": { "event_type": { "enum": ["shown-as-dots", "echo-masked", "exposure-recorded", "bounced", "refused"] } } }, "then": { "properties": { "step_id": { "$ref": "aifred:common#/$defs/step-id" } } } }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "id": "vocab-redaction-masks",
+  "slug": "redaction-masks",
+  "label": "The five artefact masks of the evidence pipeline",
+  "source": "tools/depmap/graph.json",
+  "canonical": "03-trust-and-data/index.html#redaction-pipeline",
+  "check": "members",
+  "members": [
+    {
+      "id": "coordinate",
+      "word": "coordinate masks"
+    },
+    {
+      "id": "known-value",
+      "word": "known-value masks"
+    },
+    {
+      "id": "audio-windows",
+      "word": "audio windows"
+    },
+    {
+      "id": "format",
+      "word": "format masks"
+    },
+    {
+      "id": "mask-map",
+      "word": "mask-map masks"
+    }
+  ]
+}

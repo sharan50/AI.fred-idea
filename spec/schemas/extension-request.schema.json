@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:extension-request",
+  "title": "Extension request",
+  "description": "A record, not a message: one line it would change, raised by a step that closed blocked-outside-envelope or a narrowing that put a step outside; one per task per envelope version for a given line. It has no expiry of its own.",
+  "x-locus": "01-product/index.html#envelope-edits",
+  "type": "object",
+  "properties": {
+    "reference": { "$ref": "aifred:common#/$defs/extension-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "envelope_version": { "$ref": "aifred:common#/$defs/envelope-version-ref" },
+    "raised_by": {
+      "type": "object",
+      "properties": {
+        "kind": { "type": "string", "enum": ["step-closure", "narrowing", "renewal"] },
+        "step_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/step-id" }, { "type": "null" }] }
+      },
+      "required": ["kind", "step_id"],
+      "additionalProperties": false
+    },
+    "line": {
+      "type": "object",
+      "properties": {
+        "field": { "$ref": "aifred:vocab#/$defs/envelope-line-kinds" },
+        "proposed_value": {}
+      },
+      "required": ["field", "proposed_value"],
+      "additionalProperties": false
+    },
+    "reason": { "type": "string", "minLength": 1, "description": "The step's purpose in one sentence." },
+    "raised_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "offers_do_yourself": { "type": "boolean", "description": "True where the catalogue names a user-act form for the step that raised it." },
+    "answer": {
+      "anyOf": [
+        { "type": "null" },
+        {
+          "type": "object",
+          "properties": {
+            "kind": { "$ref": "aifred:vocab#/$defs/extension-answers" },
+            "value": {},
+            "at": { "$ref": "aifred:common#/$defs/timestamp" },
+            "device": { "$ref": "aifred:common#/$defs/device-id" },
+            "new_version": { "anyOf": [{ "type": "integer", "minimum": 2 }, { "type": "null" }] }
+          },
+          "required": ["kind", "at", "device", "new_version"],
+          "additionalProperties": false
+        }
+      ]
+    }
+  },
+  "required": ["reference", "task_id", "envelope_version", "raised_by", "line", "reason", "raised_at", "offers_do_yourself", "answer"],
+  "additionalProperties": false
+}

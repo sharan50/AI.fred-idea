@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:incident",
+  "title": "Incident record",
+  "description": "Opened by a component when a rule missed or a value reached a place it should not have. It names only the alias and the rule that missed: never an artefact, never a value. Incidents go to the queue QA and escalation own, never to the exceptions board.",
+  "x-locus": "02-architecture/index.html#table:2.9",
+  "type": "object",
+  "properties": {
+    "incident_id": { "$ref": "aifred:common#/$defs/incident-id" },
+    "task_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/task-id" }, { "type": "null" }] },
+    "step_id": { "anyOf": [{ "$ref": "aifred:common#/$defs/step-id" }, { "type": "null" }] },
+    "class": { "$ref": "aifred:vocab#/$defs/incident-classes" },
+    "rule": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+    "alias": { "anyOf": [{ "$ref": "aifred:common#/$defs/alias" }, { "type": "null" }] },
+    "alias_class": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/alias-classes" }, { "type": "null" }] },
+    "opened_by": { "type": "string", "minLength": 1 },
+    "at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "detail": { "type": "string", "description": "Screened text or a reason class; never a value." }
+  },
+  "required": ["incident_id", "task_id", "step_id", "class", "rule", "alias", "opened_by", "at"],
+  "additionalProperties": false
+}

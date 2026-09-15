@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:fact",
+  "title": "Fact record",
+  "description": "The canonical fact schema of the context store: every fact says where it came from and how much to trust it, and has a validity interval. A sensitive fact holds the alias, never the value; object names only the class or the institution.",
+  "x-locus": "02-architecture/index.html#fact-schema",
+  "type": "object",
+  "properties": {
+    "fact_id": { "$ref": "aifred:common#/$defs/fact-id" },
+    "subject": { "anyOf": [{ "$ref": "aifred:common#/$defs/user-ref" }, { "$ref": "aifred:common#/$defs/person-ref" }] },
+    "predicate": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "object": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+    "value_alias": { "anyOf": [{ "$ref": "aifred:common#/$defs/alias" }, { "type": "null" }] },
+    "sensitive": { "type": "boolean" },
+    "source": {
+      "type": "object",
+      "properties": { "kind": { "$ref": "aifred:vocab#/$defs/fact-sources" }, "ref": { "type": "string", "minLength": 1 } },
+      "required": ["kind", "ref"],
+      "additionalProperties": false
+    },
+    "observed_at": { "$ref": "aifred:common#/$defs/date" },
+    "confidence": { "$ref": "aifred:vocab#/$defs/confidence" },
+    "user_confirmed": { "type": "boolean" },
+    "confirmed_at": { "anyOf": [{ "$ref": "aifred:common#/$defs/date" }, { "type": "null" }] },
+    "valid_from": { "$ref": "aifred:common#/$defs/date" },
+    "valid_to": { "anyOf": [{ "$ref": "aifred:common#/$defs/date" }, { "type": "null" }] },
+    "superseded_by": { "anyOf": [{ "$ref": "aifred:common#/$defs/fact-id" }, { "type": "null" }] },
+    "quality_flag": { "anyOf": [{ "type": "string", "enum": ["contradicted", "expired", "ambiguous"] }, { "type": "null" }] }
+  },
+  "required": ["fact_id", "subject", "predicate", "object", "value_alias", "sensitive", "source", "observed_at", "confidence", "user_confirmed", "confirmed_at", "valid_from", "valid_to", "superseded_by", "quality_flag"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "sensitive": { "const": true } } }, "then": { "properties": { "value_alias": { "$ref": "aifred:common#/$defs/alias" } } } },
+    { "if": { "properties": { "user_confirmed": { "const": true } } }, "then": { "properties": { "confirmed_at": { "$ref": "aifred:common#/$defs/date" } } } }
+  ]
+}

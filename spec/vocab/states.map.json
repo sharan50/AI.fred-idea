@@ -1,0 +1,60 @@
+{
+  "id": "vocab-states",
+  "slug": "states",
+  "label": "The ten task states",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#table:2.1",
+  "check": "members",
+  "members": [
+    {
+      "id": "received",
+      "word": "received",
+      "code": "received"
+    },
+    {
+      "id": "planning",
+      "word": "planning",
+      "code": "planning"
+    },
+    {
+      "id": "awaiting-authority",
+      "word": "awaiting-authority",
+      "code": "awaiting-authority"
+    },
+    {
+      "id": "active",
+      "word": "active",
+      "code": "active"
+    },
+    {
+      "id": "awaiting-user",
+      "word": "awaiting-user",
+      "code": "awaiting-user"
+    },
+    {
+      "id": "awaiting-third-party",
+      "word": "awaiting-third-party",
+      "code": "awaiting-third-party"
+    },
+    {
+      "id": "awaiting-verdict",
+      "word": "awaiting-verdict",
+      "code": "awaiting-verdict"
+    },
+    {
+      "id": "closed",
+      "word": "closed",
+      "code": "closed"
+    },
+    {
+      "id": "lapsed",
+      "word": "lapsed",
+      "code": "lapsed"
+    },
+    {
+      "id": "refused",
+      "word": "refused",
+      "code": "refused"
+    }
+  ]
+}

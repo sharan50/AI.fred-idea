@@ -1,0 +1,55 @@
+{
+  "id": "vocab-outcome-codes",
+  "slug": "outcome-codes",
+  "label": "The nine step outcome codes",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/worker-console.html#outcome-codes",
+  "check": "members",
+  "members": [
+    {
+      "id": "ok",
+      "word": "ok",
+      "code": "ok"
+    },
+    {
+      "id": "ok-with-variance",
+      "word": "ok-with-variance",
+      "code": "ok-with-variance"
+    },
+    {
+      "id": "blocked-third-party",
+      "word": "blocked-third-party",
+      "code": "blocked-third-party"
+    },
+    {
+      "id": "blocked-needs-user",
+      "word": "blocked-needs-user",
+      "code": "blocked-needs-user"
+    },
+    {
+      "id": "blocked-outside-envelope",
+      "word": "blocked-outside-envelope",
+      "code": "blocked-outside-envelope"
+    },
+    {
+      "id": "failed-retryable",
+      "word": "failed-retryable",
+      "code": "failed-retryable"
+    },
+    {
+      "id": "failed-final",
+      "word": "failed-final",
+      "code": "failed-final"
+    },
+    {
+      "id": "refused-policy",
+      "word": "refused-policy",
+      "code": "refused-policy"
+    },
+    {
+      "id": "superseded",
+      "word": "superseded",
+      "code": "superseded"
+    }
+  ]
+}

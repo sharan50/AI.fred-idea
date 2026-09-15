@@ -1,0 +1,34 @@
+{
+  "id": "vocab-verticals",
+  "slug": "verticals",
+  "label": "The six marquee verticals",
+  "source": "tools/depmap/graph.json",
+  "canonical": "00-thesis/index.html#the-customer",
+  "check": "verbatim",
+  "members": [
+    {
+      "id": "banking-and-wealth",
+      "word": "banking and wealth"
+    },
+    {
+      "id": "legal-and-administrative",
+      "word": "legal and administrative"
+    },
+    {
+      "id": "identity-and-security",
+      "word": "identity and security"
+    },
+    {
+      "id": "health-and-medical",
+      "word": "health and medical"
+    },
+    {
+      "id": "family-affairs",
+      "word": "family affairs"
+    },
+    {
+      "id": "travel",
+      "word": "travel"
+    }
+  ]
+}

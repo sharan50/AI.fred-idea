@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:outcome",
+  "title": "Outcome record",
+  "description": "Every step closes with exactly one outcome code from a fixed vocabulary and the structured fields that code requires. Artefacts attach by identifier for audit and dispute only.",
+  "x-locus": "02-architecture/worker-console.html#table:2.4",
+  "type": "object",
+  "properties": {
+    "step_id": { "$ref": "aifred:common#/$defs/step-id" },
+    "code": { "$ref": "aifred:vocab#/$defs/outcome-codes" },
+    "closed_by": {
+      "type": "object",
+      "properties": {
+        "kind": { "type": "string", "enum": ["worker", "harness", "device", "task-service", "controller"] },
+        "id": { "type": "string", "minLength": 1 },
+        "pool": { "$ref": "aifred:vocab#/$defs/pools" }
+      },
+      "required": ["kind", "id"],
+      "additionalProperties": false
+    },
+    "checked_by": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "kind": { "type": "string", "enum": ["worker", "harness"] }, "id": { "type": "string" }, "pool": { "$ref": "aifred:vocab#/$defs/pools" }, "check_id": { "$ref": "aifred:common#/$defs/check-id" } }, "required": ["kind", "id"], "additionalProperties": false }
+      ]
+    },
+    "fields": {
+      "type": "object",
+      "properties": {
+        "reference": { "anyOf": [{ "$ref": "aifred:common#/$defs/alias" }, { "type": "null" }], "description": "A party-issued reference is an identity-number-class value: it reaches the record as an alias, tokenised by the hash service's screen." },
+        "timestamp": { "$ref": "aifred:common#/$defs/timestamp" },
+        "party": { "type": "string" },
+        "variance": { "type": "string" },
+        "response_window": { "$ref": "aifred:common#/$defs/duration" },
+        "needed": { "type": "string" },
+        "why": { "type": "string" },
+        "envelope_line": { "type": "string" },
+        "error_class": { "type": "string" },
+        "reason": { "type": "string" },
+        "alternatives_considered": { "type": "array", "items": { "type": "string" } },
+        "policy_reference": { "type": "string" },
+        "superseding_step": { "$ref": "aifred:common#/$defs/step-id" },
+        "facts_established": { "type": "array", "items": { "$ref": "aifred:common#/$defs/fact-id" } },
+        "sent_fields": { "type": "array", "items": { "$ref": "aifred:common#/$defs/alias" } }
+      },
+      "additionalProperties": false
+    },
+    "artefacts": { "type": "array", "items": { "$ref": "aifred:common#/$defs/artefact-id" }, "uniqueItems": true },
+    "closed_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "fired_marker": { "anyOf": [{ "type": "null" }, { "type": "object" }], "description": "Attached by the task service where one exists; a step with a fired marker never closes failed-retryable." }
+  },
+  "required": ["step_id", "code", "closed_by", "checked_by", "fields", "artefacts", "closed_at"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "code": { "const": "ok" } } }, "then": { "properties": { "fields": { "required": ["timestamp", "party"] } } } },
+    { "if": { "properties": { "code": { "const": "ok-with-variance" } } }, "then": { "properties": { "fields": { "required": ["timestamp", "party", "variance"] } } } },
+    { "if": { "properties": { "code": { "const": "blocked-third-party" } } }, "then": { "properties": { "fields": { "required": ["party", "response_window"] } } } },
+    { "if": { "properties": { "code": { "const": "blocked-needs-user" } } }, "then": { "properties": { "fields": { "required": ["needed", "why"] } } } },
+    { "if": { "properties": { "code": { "const": "blocked-outside-envelope" } } }, "then": { "properties": { "fields": { "required": ["envelope_line"] } } } },
+    { "if": { "properties": { "code": { "const": "failed-retryable" } } }, "then": { "properties": { "fields": { "required": ["error_class"] }, "fired_marker": { "type": "null" } } } },
+    { "if": { "properties": { "code": { "const": "failed-final" } } }, "then": { "properties": { "fields": { "required": ["reason", "alternatives_considered"] } } } },
+    { "if": { "properties": { "code": { "const": "refused-policy" } } }, "then": { "properties": { "fields": { "required": ["policy_reference"] } } } },
+    { "if": { "properties": { "code": { "const": "superseded" } } }, "then": { "properties": { "fields": { "required": ["superseding_step"] } } } }
+  ]
+}
