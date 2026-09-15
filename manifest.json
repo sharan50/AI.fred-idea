@@ -1,7 +1,7 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "updated": "2026-09-14",
+  "updated": "2026-09-15",
   "statuses": {
     "verified": "never a page status",
     "to-verify": "the page carries external claims not yet verified",
@@ -56,7 +56,7 @@
     },
     {
       "key": "depmap",
-      "pages": 1
+      "pages": 2
     }
   ],
   "pages": [
@@ -66,7 +66,7 @@
       "section": "index",
       "status": "decision",
       "summary": "The venture in two pages: the promise, the human-in-the-gap model, the two fatal failures and how the design makes them structurally impossible, the three-market shape, what exists today, and how to read this publication.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-15"
     },
     {
       "path": "00-thesis/index.html",
@@ -250,7 +250,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The publication is plain static HTML served straight from GitHub by Netlify with no build command, framework, CDN or external asset. HTML is the single canonical source; a static site generator and Markdown-canonical generation were rejected because two representations drift.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-15"
     },
     {
       "path": "decisions/dr-011-token-and-component-system.html",
@@ -305,8 +305,8 @@
       "title": "DR-017 A dependency map of the record, kept as a tool",
       "section": "decisions",
       "status": "decision",
-      "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory, with one served view of it under docs/depmap/ and no other page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
-      "updated": "2026-09-13"
+      "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory, with two served views of it under docs/depmap/, the record's map and the architecture map, and no other page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
+      "updated": "2026-09-15"
     },
     {
       "path": "decisions/dr-018-mail-from-the-users-address.html",
@@ -401,8 +401,16 @@
       "title": "AI.fred Dependency Map",
       "section": "depmap",
       "status": "decision",
-      "summary": "The dependency map of the record (DR-017) served as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json by the map's own tool, committed, and failed by the harness when stale; the one page outside the page floor, by DR-010's exception.",
-      "updated": "2026-09-13"
+      "summary": "The dependency map of the record (DR-017) served as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json by the map's own tool, committed, and failed by the harness when stale; one of the two pages outside the page floor, by DR-010's exception.",
+      "updated": "2026-09-15"
+    },
+    {
+      "path": "depmap/architecture.html",
+      "title": "AI.fred Architecture Map",
+      "section": "depmap",
+      "status": "decision",
+      "summary": "The architecture map (DR-017, revised 2026-09-15): the harness alone as a blueprint, every component placed in the zones of Figure 2.1, the invariants it must keep, the closed lists and policy flags it reads, the records that justify it and the stage that builds it, with the cone of change for any node and a link to the section that states it. Generated from tools/depmap/graph.json by the map's own tool, committed, and failed by the harness when stale; the second page outside the page floor, by DR-010's exception.",
+      "updated": "2026-09-15"
     }
   ]
 }

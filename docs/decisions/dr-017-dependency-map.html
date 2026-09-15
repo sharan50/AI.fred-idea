@@ -24,12 +24,12 @@
 </header>
 <main id="main" class="page">
   <header class="page-header">
-    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-13</small></p>
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-15</small></p>
     <h1><span class="no"><a href="./">DR-017</a></span><span class="title">A dependency map of the record, kept as a tool</span></h1>
     <p class="standfirst">Before this publication is changed on purpose, its dependencies are mapped: one graph of typed edges and faceted nodes at the grain of decisions, mechanisms, invariants and closed lists, kept under the repository's tools directory and never published as a page. A node carries a name and the places where the pages state the thing, never a paraphrase of it, and the harness checks every pointer on every pass. A proposed change is run through the map first, so that what must change with it is known before an editor touches a page.</p>
     <dl class="meta">
       <div><dt>Document</dt><dd>DR-017</dd></div>
-      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-15</dd></div>
       <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
       <div><dt>Reader</dt><dd class="sans">For the next editor</dd></div>
     </dl>
@@ -50,6 +50,8 @@
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
           <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
         </ol>
       </nav>
       <nav class="contents" aria-label="On this page" data-contents hidden>
@@ -78,7 +80,7 @@
             <dt>A wiki, a graph database or a diagram tool</dt>
             <dd>A second representation of the design that drifts from the first, which is the reason <a href="dr-010-html-no-build-step.html">DR-010</a> rejected a Markdown mirror; a dependency the publishing path must not carry; and a store the harness cannot check without running a service. A JSON file the harness reads costs none of that.</dd>
             <dt>A published, interactive map page</dt>
-            <dd>DR-010 bans inline scripts and frameworks, so a browsable graph could not be built inside the publication's own rules, and a map that is pleasant to browse invites reading the map instead of the record. A static drawing of the map may earn a place in a later edition; the instrument itself stays a tool. Reversed in part on 2026-09-10 by the founder, who asked for the map to be reachable from the published workspace: the three-dimensional view is served at <code>docs/depmap/</code> under an exception DR-010 now names, at the cost stated here, and the instrument is still the JSON the harness checks; the page is generated from it and never edited.</dd>
+            <dd>DR-010 bans inline scripts and frameworks, so a browsable graph could not be built inside the publication's own rules, and a map that is pleasant to browse invites reading the map instead of the record. A static drawing of the map may earn a place in a later edition; the instrument itself stays a tool. Reversed in part on 2026-09-10 by the founder, who asked for the map to be reachable from the published workspace: the three-dimensional view is served at <code>docs/depmap/</code> under an exception DR-010 now names, at the cost stated here, and the instrument is still the JSON the harness checks; the page is generated from it and never edited. Widened on 2026-09-15 to a second view under the same exception, the architecture map at <code>docs/depmap/architecture.html</code>, which the founder asked for as a map dedicated to the technical architecture; it is a query of the one graph and adds no node or edge of its own, so the rejection of several maps below stands.</dd>
             <dt>The internal links as the map</dt>
             <dd>Eleven hundred references cannot tell a canonical statement from a mention, a restatement from a citation, or a rejected alternative from a decision. They are kept as the mechanical layer the map's queries consult for inbound links, and are never mistaken for the map.</dd>
           </dl>
@@ -91,13 +93,13 @@
             <li>A locus written any way but a page path and an anchor the harness resolves, with a phrase or a table row where an anchor is not precise enough.</li>
             <li>A closed list checked by eye where the map names it, and a restatement added to a page without its locus added to the list's node.</li>
             <li>A proposed change modelled as a node in this edition; a change is a set of seeds run through the map, and the map records the record as it stands.</li>
-            <li>A build step or a dependency for the map; it runs on the same Node the harness runs on and nothing else. The one served artefact is the view at <code>docs/depmap/</code>, generated by the same tool, committed, and failed by the harness when stale, when indexed or when it loads anything from outside; it is a view of the map and never the map.</li>
+            <li>A build step or a dependency for the map; it runs on the same Node the harness runs on and nothing else. The served artefacts are the two views under <code>docs/depmap/</code>, the record's map and the architecture map, generated by the same tool from the one graph, committed, and failed by the harness when either is stale, indexed or loads anything from outside; each is a view of the map and never the map, and a third view is the same exception again, never a second map.</li>
             <li>Editing a fixed decision, a mechanism stated on more than one page, or a closed list without first running the change through the map and recording the batch.</li>
           </ul>
         </section>
         <section>
           <h2 id="record-status"><span class="no">4</span>Status</h2>
-          <p>Fixed decision, taken by the founder on 2026-09-10. It postdates the brief's ledger, which fixed the publication's other structural choices, and it reopens none of them. The map is specified in <code>tools/depmap/SCHEMA.md</code>, populated in <code>tools/depmap/graph.json</code>, and checked by <code>tools/verify.mjs</code> on every pass. The residual findings the seventh adversarial pass left, carried as an open item in <a href="../07-open/#items">07</a>, are the map's first curated conflicts, and the drift the map found while it was built is recorded in its first batch under <code>tools/depmap/batches/</code> rather than fixed on the branch that built the map. Revised 2026-09-10: the founder asked for the map to be active from the published workspace, so <code>view --site</code> writes the three-dimensional view to <code>docs/depmap/</code>, listed in the manifest, linked from the index, kept fresh by the harness, and served with the rest of the site; <a href="dr-010-html-no-build-step.html">DR-010</a> records the one exception this makes to its closure.</p>
+          <p>Fixed decision, taken by the founder on 2026-09-10. It postdates the brief's ledger, which fixed the publication's other structural choices, and it reopens none of them. The map is specified in <code>tools/depmap/SCHEMA.md</code>, populated in <code>tools/depmap/graph.json</code>, and checked by <code>tools/verify.mjs</code> on every pass. The residual findings the seventh adversarial pass left, carried as an open item in <a href="../07-open/#items">07</a>, are the map's first curated conflicts, and the drift the map found while it was built is recorded in its first batch under <code>tools/depmap/batches/</code> rather than fixed on the branch that built the map. Revised 2026-09-10: the founder asked for the map to be active from the published workspace, so <code>view --site</code> writes the three-dimensional view to <code>docs/depmap/</code>, listed in the manifest, linked from the index, kept fresh by the harness, and served with the rest of the site; <a href="dr-010-html-no-build-step.html">DR-010</a> records the one exception this makes to its closure. Revised 2026-09-15: the founder asked for the map to be reachable from the site and for a second map dedicated to the technical architecture. Both views are now in the publication list in the rail of every page and in the index's table, and <code>view --site --scope architecture</code> writes the architecture map to <code>docs/depmap/architecture.html</code>: the harness alone, its components placed in the zones of Figure 2.1 in <a href="../02-architecture/#overview">02</a> through a zone facet on the component nodes, the invariants they keep, the closed lists and flag rows they read, the records that justify them and the stages that build them, every locus linking to the section that states it. The harness holds it to the same three checks as the first view and fails when it is stale; the schema gains the zone facet and nothing else, recorded in batch 0016.</p>
         </section>
       </article>
     </div>
@@ -110,7 +112,7 @@
     <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
     <li><a href="../07-open/">See the open items</a></li>
   </ul>
-  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+  <p>Revised 2026-09-15. This page prints clean to A4 or Letter.</p>
 </footer>
 </body>
 </html>
