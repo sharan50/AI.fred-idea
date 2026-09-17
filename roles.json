@@ -1,0 +1,154 @@
+{
+  "updated": "2026-09-17",
+  "note": "The source of ownership (DR-029). A role owns pages and page#anchor sections; owning a page owns every section of it except those another role lists. A decision record page follows its decision's owner. Every h2 section of every page under docs/, except depmap/ and the generated views, has exactly one owner; tools/build.mjs --owners prints the table and tools/verify.mjs section 10 fails on a section with none or two.",
+  "roles": [
+    {
+      "id": "ceo",
+      "title": "Chief executive",
+      "github": null,
+      "frame": "You hold the thesis and the scope. The publication argues that a personal assistant can be trusted with the tasks that carry real consequence because the design makes the two fatal failures structurally impossible, and that the flat-fee players cannot follow because the trust architecture, not price or channel, is the moat. You own that argument, the product as the user meets it, the roadmap that sequences the build, the open items with their triggers, the ledger of decisions and the independent review. Every decision in the ledger is fixed unless its record says amber; an objection goes to the open items and the build complies. Your reading path starts with the thesis and ends with the review, which is the record read by someone who did not write it. What you are asked most often is what is not known, so read the open items with their triggers before anything else on the path.",
+      "owns": [
+        "00-thesis/index.html",
+        "01-product/index.html",
+        "06-roadmap/index.html",
+        "07-open/index.html",
+        "08-review/index.html",
+        "decisions/index.html",
+        "contents/index.html"
+      ],
+      "reads": [
+        "03-trust-and-data/trust-story.html",
+        "05-business/index.html",
+        "02-architecture/index.html#overview",
+        "04-operations/index.html#shifts"
+      ]
+    },
+    {
+      "id": "cto",
+      "title": "Chief technology officer",
+      "github": null,
+      "frame": "You own the harness: the planner, the classifier and its step catalogue, the execution surfaces and their controllers, the state machine and its invariant, verification and the evidence pipeline, the context store, the intake gateway, the market adapters and the worker console. You also own the first half of the trust design, the alias model, the substitution component, the surfaces, artefact redaction and the passports, because those are components before they are policy. The two fatal failures are yours to make structurally impossible: nobody on our side sees a real value, and no irreversible act happens outside an envelope. Every closed list the pages restate, the committing actions, the identity acts, the outcome codes, the step classes, is checked by the dependency map, so a change to one is a change to its whole closure. Read the product's envelope and verdict sections and the roadmap's sequence before you build; they say what the harness is for and in what order it earns its keep.",
+      "owns": [
+        "02-architecture/index.html",
+        "02-architecture/worker-console.html",
+        "03-trust-and-data/index.html",
+        "03-trust-and-data/index.html#alias-model",
+        "03-trust-and-data/index.html#substitution",
+        "03-trust-and-data/index.html#surfaces",
+        "03-trust-and-data/index.html#redaction",
+        "03-trust-and-data/index.html#passports"
+      ],
+      "reads": [
+        "01-product/index.html#envelope",
+        "01-product/index.html#verdicts",
+        "04-operations/index.html#task-cards",
+        "06-roadmap/index.html#sequence",
+        "06-roadmap/index.html#build-buy"
+      ]
+    },
+    {
+      "id": "coo",
+      "title": "Chief operating officer",
+      "github": null,
+      "frame": "You own the floor: the need-to-know task cards and their pseudonymisation, the three worker tiers with dual control, the shift design in its staged form, site controls as part of the trust guarantee, QA and the exceptions board, and the service levels stated qualitatively. You also own the measurement protocol, the thirty-task instrument that replaces the priors in the economics, because it is run on the floor and scored by the people who work it. The trust story makes promises about what a worker can and cannot see; the floor is where those promises are kept or broken, and the site controls are the second line behind the harness, never the first. Read the worker console before the operations page, because the console is the surface a worker actually holds. The office is mandatory and the shift wheel arrives in stages; the staging is an amber decision with a trigger the founder has yet to set.",
+      "owns": [
+        "04-operations/index.html",
+        "05-business/measurement-protocol.html"
+      ],
+      "reads": [
+        "02-architecture/worker-console.html",
+        "01-product/index.html#journeys",
+        "03-trust-and-data/index.html#redaction",
+        "06-roadmap/index.html#pilot"
+      ]
+    },
+    {
+      "id": "cfo",
+      "title": "Chief financial officer",
+      "github": null,
+      "frame": "You own the economics: the task model that sets cost, the one ratio that decides everything, human minutes per user per month, the cost split, the trajectory the model simulates, how users arrive, the funding plan, the geography gates and the commerce layer, and the description of the model behind them. Every number on those pages is modelled rather than measured, and the pages say so; the measurement protocol replaces the priors, and the open items list the measurements that own the outcome. Pricing is metered and the tail is priced, growth is two mechanisms and the plan names both, and the geography sequence carries entity thresholds; those are your decisions to hold and, when the numbers arrive, to reopen with the founder. Read the roadmap's expansion playbook and the thesis on markets before the model, because the model prices a plan the rest of the record fixes.",
+      "owns": [
+        "05-business/index.html",
+        "05-business/model.html"
+      ],
+      "reads": [
+        "00-thesis/index.html#markets",
+        "01-product/index.html#taxonomy",
+        "05-business/measurement-protocol.html",
+        "06-roadmap/index.html#expansion"
+      ]
+    },
+    {
+      "id": "counsel",
+      "title": "General counsel",
+      "github": null,
+      "frame": "You own the half of the trust design that is policy before it is component: the per-jurisdiction policy flag table that doubles as the lobbying agenda, the threat model organised as named and closed paths by which a human could see a real value, the access ledger the customer reads, the data-residency map and the privacy-law skeleton, and the trust story itself, the one page a customer could read. The legal to-verifies are yours: the KYC last mile per jurisdiction, privacy law and cross-border transfer safeguards, night-shift labour law, delegation by a family member. The design carries the full delegation ceiling and the flag table decides at runtime what is permitted in each country; a country-specific constraint is recorded as a to-verify, never as a design change. Read the alias model and the passports, which you do not own, before the flag table, because the table's rows are acts those components make possible.",
+      "owns": [
+        "03-trust-and-data/index.html#policy-flags",
+        "03-trust-and-data/index.html#threat-model",
+        "03-trust-and-data/index.html#access-ledger",
+        "03-trust-and-data/index.html#residency",
+        "03-trust-and-data/index.html#privacy-law",
+        "03-trust-and-data/trust-story.html"
+      ],
+      "reads": [
+        "03-trust-and-data/index.html#alias-model",
+        "03-trust-and-data/index.html#passports",
+        "01-product/index.html#refusals",
+        "08-review/index.html#regulation-india",
+        "08-review/index.html#regulation-uk",
+        "08-review/index.html#regulation-us"
+      ]
+    }
+  ],
+  "layers": {
+    "thesis": "ceo",
+    "product": "ceo",
+    "roadmap": "ceo",
+    "open": "ceo",
+    "publishing": "ceo",
+    "index": "ceo",
+    "architecture": "cto",
+    "operations": "coo",
+    "business": "cfo"
+  },
+  "decisions": {
+    "dr-003": "counsel",
+    "dr-009": "counsel",
+    "dr-026": "counsel",
+    "dr-008": "cto",
+    "dr-014": "cto",
+    "dr-006": "coo",
+    "dr-027": "coo",
+    "dr-015": "cfo",
+    "dr-023": "cfo",
+    "dr-024": "cfo",
+    "dr-025": "cfo",
+    "dr-028": "ceo",
+    "dr-029": "ceo"
+  },
+  "owner_text": {
+    "Founder": "ceo",
+    "The next editor": "ceo",
+    "Product": "ceo",
+    "Founding engineer": "cto",
+    "engineering": "cto",
+    "Operations lead": "coo",
+    "Counsel": "counsel",
+    "growth": "cfo"
+  },
+  "summary": {
+    "decisions": ["dr-008", "dr-004", "dr-003", "dr-009", "dr-005", "dr-007", "dr-006", "dr-022", "dr-021", "dr-019"],
+    "keys": [],
+    "unknowns": [
+      "The front door per market (the channel amber)",
+      "First-cohort market sequencing",
+      "Legal to-verifies: the KYC last mile and every flag-table row",
+      "Netlify access control",
+      "Naming, domain and trademark",
+      "Make-good policy",
+      "The thirty-task measurement",
+      "Which run is the plan of record"
+    ]
+  }
+}
