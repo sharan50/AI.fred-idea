@@ -1,0 +1,116 @@
+      <section>
+        <h2 id="overview"><span class="no">1</span>Overview</h2>
+        <p>The harness is a control system wrapped around a planner, not a chat model with tools attached. A request enters through one gateway, becomes a plan of classified steps, and each step executes on a surface we own, closes with a code from a fixed vocabulary and leaves behind a redacted artefact. Every component of ours outside the real-value zone handles aliases only, and the zone holds four of ours: the substitution component, the three surface controllers with their surfaces, the evidence pipeline, and the hash service while it screens a text. A real value exists on our side only inside the real-value zone of Figure 2.1: in the vault and its edge proxy, which are bought and hold the bytes of one message or one rail response until they are tokenised; in the substitution component, in memory for one placement; on the surface field, call leg or outbound store it has just placed into, for as long as the third party takes to consume it; in the evidence pipeline, in memory until redaction is verified; and in the hash service, in memory while it screens a text written on our side (section 8.3). Every task sits in one named state with a live timer until a recorded transition ends it. Those sentences are the architecture; the rest of this page is their consequences.</p>
+        <p>Vocabulary: a <em>task</em> is one user request from intake to a terminal state; a <em>step</em> is the unit of execution and classification; a <em>worker</em> is a person on our side who executes a step from a task card; the <em>user</em> is the customer who delegated it. <a href="worker-console.html">The worker console</a> specifies what a worker sees; <a href="../03-trust-and-data/#alias-model">the alias model in 03</a> and <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> specify and close the trust mechanics this page enforces.</p>
+        <figure class="fig" id="fig-components">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 2.1, component map, scrollable">
+          <svg viewBox="0 0 720 560" role="img" aria-labelledby="fig-components-title fig-components-desc">
+            <title id="fig-components-title">The component map</title>
+            <desc id="fig-components-desc">An entry strip across the top is the vault's edge proxy, the provider's, which terminates every channel and every rail response and hands aliases down to the intake gateway and the passport adapters. Below it a dashed alias zone holds the intake gateway, planner, classifier, context store, task service with its step runner, envelope and policy layer, worker console, passport adapters and access ledger, and a second dashed zone, the real-value zone, holds the vault, bought, outside our software, inside the real-value zone, then the substitution component, the three execution surfaces with their controllers, the evidence pipeline and the hash service. The user's device sits outside on the left as the device surface, sending the request into the proxy and receiving bounces and the ledger. The single accent element is the outline of the substitution component, the only component that can detokenise.</desc>
+            <defs>
+              <marker id="fig-components-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-zone" rx="2" x="132" y="16" width="580" height="64"/>
+            <text class="fg-label-small fg-label-soft" x="144" y="30">Entry boundary: the vault's edge proxy; no process of ours holds a raw byte</text>
+            <rect class="fg-box" rx="2" x="144" y="36" width="556" height="36"/>
+            <text class="fg-label-small" text-anchor="middle" x="422" y="51">Vault's edge proxy: the provider's, run in the market's region</text>
+            <text class="fg-label-small" text-anchor="middle" x="422" y="65">terminates every channel and every rail response; issues aliases</text>
+            <rect class="fg-zone" rx="2" x="132" y="96" width="300" height="400"/>
+            <text class="fg-label-small fg-label-soft" x="144" y="110">Alias zone: aliases only, no vault SDK</text>
+            <rect class="fg-zone" rx="2" x="460" y="96" width="252" height="400"/>
+            <text class="fg-label-small fg-label-soft" x="472" y="110">Real-value zone</text>
+            <text class="fg-label-small fg-label-soft" x="472" y="486">vault: bought, outside our software</text>
+            <rect class="fg-device" rx="8" x="8" y="264" width="96" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="56" y="285">User's device</text>
+            <text class="fg-label-small" text-anchor="middle" x="56" y="299">device surface</text>
+            <rect class="fg-box" rx="2" x="144" y="120" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="208" y="149">Intake gateway</text>
+            <rect class="fg-box" rx="2" x="296" y="120" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="360" y="149">Planner</text>
+            <rect class="fg-box" rx="2" x="144" y="192" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="208" y="221">Classifier</text>
+            <rect class="fg-box" rx="2" x="296" y="192" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="360" y="221">Context store</text>
+            <rect class="fg-box" rx="2" x="144" y="264" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="208" y="285">Task service</text>
+            <text class="fg-label-small" text-anchor="middle" x="208" y="299">and step runner</text>
+            <rect class="fg-box" rx="2" x="296" y="264" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="360" y="285">Envelope and</text>
+            <text class="fg-label-small" text-anchor="middle" x="360" y="299">policy layer</text>
+            <rect class="fg-box" rx="2" x="144" y="336" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="208" y="365">Worker console</text>
+            <rect class="fg-box" rx="2" x="296" y="336" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="360" y="357">Passport</text>
+            <text class="fg-label-small" text-anchor="middle" x="360" y="371">adapters</text>
+            <text class="fg-label-small fg-label-soft" x="296" y="396">rails, through</text>
+            <text class="fg-label-small fg-label-soft" x="296" y="410">the proxy above</text>
+            <rect class="fg-box" rx="2" x="144" y="408" width="128" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="208" y="437">Access ledger</text>
+            <rect class="fg-box" rx="2" x="472" y="120" width="228" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="586" y="141">Vault: bought, the provider's</text>
+            <text class="fg-label-small" text-anchor="middle" x="586" y="155">real values at rest, in region</text>
+            <rect class="fg-box-accent" rx="2" x="472" y="192" width="228" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="586" y="213">Substitution component</text>
+            <text class="fg-label-small" text-anchor="middle" x="586" y="227">the one detokenise right</text>
+            <rect class="fg-box-2" rx="2" x="472" y="264" width="228" height="64"/>
+            <text class="fg-label-small fg-label-soft" x="480" y="277">Surfaces, each with its controller</text>
+            <rect class="fg-box" rx="2" x="484" y="284" width="64" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="516" y="301">Managed</text>
+            <text class="fg-label-small" text-anchor="middle" x="516" y="315">browser</text>
+            <rect class="fg-box" rx="2" x="556" y="284" width="64" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="588" y="308">Telephony</text>
+            <rect class="fg-box" rx="2" x="628" y="284" width="64" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="660" y="301">Mail</text>
+            <text class="fg-label-small" text-anchor="middle" x="660" y="315">relay</text>
+            <rect class="fg-box" rx="2" x="472" y="352" width="140" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="542" y="373">Evidence pipeline</text>
+            <text class="fg-label-small" text-anchor="middle" x="542" y="387">raw in memory</text>
+            <rect class="fg-box" rx="2" x="472" y="424" width="140" height="48"/>
+            <text class="fg-label-small" text-anchor="middle" x="542" y="445">Hash service</text>
+            <text class="fg-label-small" text-anchor="middle" x="542" y="459">digests, two keys</text>
+            <path class="fg-line" d="M56,264 V54 H144" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="62" y="48">request</text>
+            <line class="fg-line" x1="208" y1="72" x2="208" y2="120" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="214" y="89">aliases</text>
+            <line class="fg-line" x1="586" y1="72" x2="586" y2="120" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="592" y="89">tokenise</text>
+            <line class="fg-line" x1="272" y1="144" x2="296" y2="144" marker-end="url(#fig-components-arrow)"/>
+            <path class="fg-line" d="M340,168 V180 H208 V192" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="216" y="178">plan</text>
+            <line class="fg-line" x1="380" y1="192" x2="380" y2="168" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="386" y="184">facts</text>
+            <line class="fg-line" x1="208" y1="240" x2="208" y2="264" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" text-anchor="end" x="204" y="256">steps</text>
+            <path class="fg-line" d="M340,264 V252 H232 V240" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="346" y="259">flags</text>
+            <line class="fg-line" x1="296" y1="300" x2="272" y2="300" marker-end="url(#fig-components-arrow)"/>
+            <line class="fg-line" x1="144" y1="288" x2="104" y2="288" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="34" y="326">bounce,</text>
+            <text class="fg-label-small" x="34" y="340">one tap</text>
+            <line class="fg-line" x1="208" y1="312" x2="208" y2="336" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" text-anchor="end" x="204" y="328">cards</text>
+            <path class="fg-line" d="M232,312 V324 H360 V336" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="280" y="320">consents</text>
+            <line class="fg-line" x1="586" y1="168" x2="586" y2="192" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="592" y="184">detokenise</text>
+            <line class="fg-line" x1="586" y1="240" x2="586" y2="264" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="592" y="256">injects</text>
+            <line class="fg-line" x1="536" y1="328" x2="536" y2="352" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="542" y="344">captures</text>
+            <line class="fg-line" x1="536" y1="424" x2="536" y2="400" marker-end="url(#fig-components-arrow)"/>
+            <path class="fg-line" d="M612,448 H650 V328" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="656" y="392">digests</text>
+            <path class="fg-line" d="M472,228 H446 V432 H272" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="300" y="428">ledger line</text>
+            <path class="fg-line" d="M144,432 H24 V312" marker-end="url(#fig-components-arrow)"/>
+            <text class="fg-label-small" x="30" y="426">ledger</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="520">accent: the one component that can detokenise; dashed: a zone; rounded: the user's own device</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="536">vault: bought, outside our software, inside the real-value zone; its edge proxy is the entry boundary</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 2.1</span> One component can detokenise, the vault holds the values behind its own entry proxy, and every other component, the model included, handles aliases.</figcaption>
+        </figure>
+        <p>Each component has one responsibility, and the boundaries between them are where the guarantees live. The components are these, and sections 2 to 10 specify them: the vault's edge proxy, the provider's (section 10.1); the intake gateway (section 10); the planner (section 2) and the <code>ai</code> executor that runs its steps (section 3.4); the classifier (section 3) and the step-type catalogue it reads (section 3.3); the context store (section 9); the envelope and the policy layer (sections 7.3 and 3); the task service, in the alias zone, which holds the state machine (section 5) and the step runner (section 4.5) and issues the signed step context (section 4.6); the passport adapters (section 6); the worker console (its own page); the three execution surfaces, each with its controller, in the real-value zone (sections 4 and 4.5); the substitution component (section 4, specified in full in 03); the evidence pipeline (section 8) and the hash service (section 8.3); the access ledger (section 7.3); and the device surface (section 4.7), the user's own app or logged-in web session, which receives bounces, one-tap authorisations, envelope edits and the verdict, authenticated whatever channel the conversation runs in. The policy layer's mechanism is core but its table is <a href="../03-trust-and-data/#policy-flags">the policy flag table in 03</a>; the user's device is where <a href="../03-trust-and-data/#access-ledger">the access ledger in 03</a> and the verdict live.</p>
+        <p>Three boundaries carry the guarantees. The entry boundary is the vault's edge proxy: the channel webhook, the device form and every rail response terminate there, so the intake gateway and the passport adapters receive aliases, hold no raw byte, hold no vault SDK and have no network route to the vault. The edge of the alias zone encloses every component that handles aliases; the vault SDK exists in exactly two places of ours, the substitution component and the hash service, so nothing in the alias zone can detokenise or compute a known-value match. The user's device is where authority originates and where irreversible acts outside the envelope are performed by the user, never by us. The vault is bought (<a href="../decisions/dr-008-vault-bought.html">DR-008</a>), outside our software and inside the real-value zone: its regional hosting is part of the residency answer, and a boundary we do not operate is one our staff cannot cross. No host in the real-value zone allows interactive access in production, and deployment to it is by signed build under a two-person rule; break-glass access needs two named approvers, first drains the host of live sessions and zeroes its memory, is time-boxed, and writes an incident and a ledger-level event on every task that had a session on the host, as <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> fixes for the whole zone. The build order is <a href="../06-roadmap/#sequence">the build sequence in 06</a>; the build-versus-buy line is <a href="../06-roadmap/#build-buy">the build-versus-buy table in 06</a>.</p>
+      </section>
+

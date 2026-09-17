@@ -1,0 +1,87 @@
+      <section>
+        <h2 id="envelope"><span class="no">4</span>The authority envelope from the user's point of view</h2>
+        <p>The user grants authority once, in one tap, and can take it back at any moment. Delegation is total inside the envelope and impossible outside it, and every irreversible act inside it is checked by a second party before it fires. The decision is <a href="../decisions/dr-004-authority-envelope.html">DR-004</a>; the capability ceiling above it is <a href="../decisions/dr-003-full-delegation-ceiling.html">DR-003</a>.</p>
+        <p>While a task is open the user sees the task view: its state; the timeline, with every transition and nudge recorded; the ledger lines as they land; the envelope, with its control for extending and narrowing; and the button "Withdrawn by me", present from the moment the task opens. The nudge schedule is per task type; the default is three nudges, then lapse (illustrative).</p>
+
+        <h3 id="envelope-setup"><span class="no">4.1</span>Set-up at task start</h3>
+        <p>The planner proposes the envelope with the plan, and the task waits in <code>awaiting-authority</code> until the user confirms. That confirmation is signed on the user's own device, and the signature is the key: the substitutor can turn no alias of this task back into a value except against an envelope version the device signed, and a withdrawal or the window's close takes the key away (<a href="../03-trust-and-data/#substitutor-interface">03, 2.1</a>; <a href="../decisions/dr-008-vault-bought.html">DR-008</a>). The proposal is least-authority by construction, drawn from the task type and the context store. The one-tap confirmation shows, in this order:</p>
+        <ol>
+          <li>The plan in plain words, each step marked as ours to do, a worker's call, or the user's own act.</li>
+          <li>Spend cap: currency and amount for the task, and any per-step sub-cap the plan proposes. The cap is a running total, not a test on each act alone: the task service keeps a committed-spend total per task, fired acts plus reserved acts; an approval token reserves its act's amount when it is issued, and the substitutor and the checker test each act against the remaining cap, the checker seeing only the task service's comparison, sufficient for this act or not, never a sum; a reservation is released only when its step closes without a fired marker. The token is single-use, consumed by the controller before the committing action is issued, and a consumed token is refused by the substitutor. Every controller writes the fired marker before it issues a committing action, a submit, a release, the start of a committing sentence, and the substitutor writes it before the first tone or character of a committing placement, one whose alias is a payment instrument or a payment instruction or whose catalogue entry marks it as consumed on placement, so an act that fired without a confirmation, a submit that timed out, a call that dropped after the committing sentence, a committing placement the surface did not confirm, closes <code>failed-final</code> with the marker as its evidence, keeps its reservation, and is never retried blind: the re-plan verifies with a status enquiry before any repeat.</li>
+          <li>Contactable parties: the institutions, businesses or people we may contact as the user. Anyone else is outside.</li>
+          <li>Committable acts: the act types we may commit the user to (book, cancel, submit an application, accept terms, make a payment under the cap, file a document, schedule).</li>
+          <li>Delegated identity acts: the identity act types the user delegates in this jurisdiction (present a document; state an identity number; answer security questions from the context store; complete a KYC form; use a delegated login to a non-financial portal; sign or e-sign; attest a fact about the user), filtered by the policy layer before they are shown: an act the jurisdiction flags as bounce appears as "you will do this yourself", never as a box to tick (<a href="../03-trust-and-data/#policy-flags">the policy flags in 03</a>).</li>
+          <li>Validity window: start and expiry. Expiry is an envelope line and a timer of the task service's. On the tick at the window's end the task service cancels every step not yet fired, cause lapsed, and moves the task to <code>awaiting-authority</code> with a one-tap request to renew the window, on the nudge schedule; a reversible step already running completes only what needs no further placement and no committing action, and otherwise stops where it stands. Every envelope line carries a scope, and three cases fix it: a one-tap approval of a step's request produces a line scoped to that step; a one-tap approval of a task-level request the task service raises, this renewal, produces a task-wide line, because no step raised it; a user's own edit produces a task-wide line (4.2). The renewal's approval re-plans the cancelled steps. Nothing starts past the window, reversible or not: no step is claimed for a worker or the AI outside the window and the version its signed context names, the dialler checks both before it resolves a number, so no call is dialled after expiry, and the signed step context carries the window's end as its own expiry, so it dies at expiry as it dies on an edit. Behind the tick, every surface controller checks the window and the envelope version at every placement and at every committing action, a form submit, a committing click, a committing sentence on a call, a keypad press outside the navigation map, a relay release, a committing placement, refuses one past expiry and closes the step <code>blocked-outside-envelope</code> naming the window; the approval token a checked step holds is valid only while the window is open, so an irreversible step cannot fire past expiry (<a href="../02-architecture/#state-machine">the state machine in 02</a>).</li>
+          <li>Which steps are dual-controlled and which come back to the user's device.</li>
+        </ol>
+        <p>Both act lists are closed enumerations: the envelope validates every proposed act against them, the journeys use their words (a block is a cancel, a reissue an application, a name and address on a filing a document presented), and adding a type is a decision record. An act type every market's flag reads bounce, signing among them, is still an act type: the list is the ceiling and the flag is the runtime. The envelope record in <a href="../02-architecture/#verification">02</a> carries these names as written, so its validator and this page enumerate the same lists. An edit before confirming sends the task back to <code>planning</code>; confirming moves it to <code>active</code>. A user who says nothing is nudged on the schedule and the task lapses if it runs out; <code>lapsed</code> is distinct from withdrawn, and a later message referencing the task revives it.</p>
+
+        <h3 id="envelope-edits"><span class="no">4.2</span>Edits mid-task: extend and narrow</h3>
+        <p>The user can extend or narrow the envelope at any time from their device, and we can ask for an extension when a step would breach it. Every envelope line carries a scope, task-wide or one step by its id: the user's own edit produces a task-wide line, a one-tap approval of a step's request produces a line scoped to the step that raised it, and a one-tap approval of a task-level request the task service raises, the validity-window renewal of 4.1, produces a task-wide line. The effects are fixed.</p>
+        <dl class="def">
+          <dt>Extension</dt>
+          <dd>Applies to steps not yet fired and re-runs classification for them: on any new version classification re-runs for every step, and a step-scoped line admits only its step, so a task-wide extension may bring other steps inside and a step-scoped one cannot; the one exception is a bounced step in progress on the device, which no new version, task-wide or step-scoped, re-classifies until its bounce record closes (section 3). A request from us names the exact line it would change (a party, an act, an amount, a date) and arrives on the user's device as a one-tap approval; the user may approve it, approve a narrower value, or decline it.</dd>
+          <dt>Narrowing</dt>
+          <dd>Applies immediately to every step not yet fired. A step in <code>checking</code> is re-checked against the narrowed envelope before it fires. A step that has already fired, a committing placement inside its window among them, is reported in the ledger and the outcome report; narrowing cannot unfire it.</dd>
+        </dl>
+        <p>Either edit produces a new envelope version and voids the signed step context of every step not yet fired: a step <code>running</code> returns to <code>ready</code> and runs again under the new version, a step in <code>checking</code> re-enters <code>checking</code> with a fresh token, and no step stays running across a version change (<a href="../02-architecture/#state-machine">the step states in 02</a>).</p>
+        <p>An extension request is a record, not a message. It carries its own reference; the task and the envelope version it was raised against; what raised it, a step that closed <code>blocked-outside-envelope</code> or a narrowing that put a step outside; the one line it would change, as the field and the proposed value (an amount for the spend cap, a party, an act, an identity act, a date for the window); the step's purpose in one sentence, as the reason; and the time it was raised. It has no expiry of its own: it waits with the task in <code>awaiting-user</code> on the nudge schedule and lapses with the task. The user answers it in one of three ways from the device, with a fourth offered where the catalogue names a user-act form for the step that raised it. Approve: a new envelope version carrying that line with the scope of the step that raised it, by its id, signed by the device; the task resumes and classification re-runs for every step on the new version, the step-scoped line admitting only the step it names and a bounced step in progress on the device standing until its record closes. Approve a narrower value: the same, with the user's value in place of ours. Decline: the envelope stays as it is, the step closes <code>failed-final</code> naming the line it could not cross, and the planner looks for a route inside the envelope or reports that none exists. Do this yourself, where offered: the step becomes a <code>user</code> step performed on the device, the one way <code>blocked-outside-envelope</code> produces one (5.1). Withdrawing the task remains available from the task view throughout. Every version of the envelope is kept, and a step carries the version it was classified against (<a href="../02-architecture/#verification">the envelope record in 02</a>).</p>
+        <p>The rule every step is classified against is identical everywhere. Irreversible and outside the envelope: bounce to the user's device. Irreversible and inside it: dual control. Reversible and inside it: execute, <code>ai</code> or <code>human</code> per the classifier. Anything outside the envelope that is reversible still cannot be executed by us; it becomes an extension request. Figure 1.1 draws the envelope as the user should picture it.</p>
+        <figure class="fig" id="fig-envelope">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 1.1, the authority envelope, scrollable">
+          <svg viewBox="0 0 720 440" role="img" aria-labelledby="fig-envelope-title fig-envelope-desc">
+            <title id="fig-envelope-title">The authority envelope from the user's point of view</title>
+            <desc id="fig-envelope-desc">A bounded region on the left, drawn with the accent outline, is the authority envelope: inside it are its five grants (spend cap, contactable parties, committable acts, delegated identity acts, validity window) and the steps we execute, with a dotted actor checking the irreversible step before it fires. A rounded box on the right is the user's own device: a user-only step bounces out of the envelope to it and the task resumes when the user acts, and a step that would exceed the envelope leaves it as an extension request that returns, extended, with one tap. The accent element is the envelope outline.</desc>
+            <defs>
+              <marker id="fig-envelope-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-box-accent" x="8" y="8" width="416" height="424" rx="2"/>
+            <text class="fg-label fg-label-strong" x="20" y="30">authority envelope</text>
+            <text class="fg-label-small" x="20" y="56">spend cap</text>
+            <text class="fg-label-small" x="20" y="72">contactable parties</text>
+            <text class="fg-label-small" x="20" y="88">committable acts</text>
+            <text class="fg-label-small" x="20" y="104">delegated identity acts</text>
+            <text class="fg-label-small" x="20" y="120">validity window</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="396">inside the envelope: we execute</text>
+            <text class="fg-label-small fg-label-soft" x="20" y="412">irreversible steps: dual control</text>
+            <rect class="fg-box" x="220" y="32" width="184" height="48" rx="2"/>
+            <text class="fg-label" x="232" y="52">1 read the notice</text>
+            <text class="fg-label-small fg-label-soft" x="232" y="68">ai, reversible</text>
+            <line class="fg-line" x1="312" y1="80" x2="312" y2="104" marker-end="url(#fig-envelope-arrow)"/>
+            <rect class="fg-box" x="220" y="104" width="184" height="48" rx="2"/>
+            <text class="fg-label" x="232" y="124">2 compare rates</text>
+            <text class="fg-label-small fg-label-soft" x="232" y="140">ai, in our browser</text>
+            <rect class="fg-actor" x="20" y="200" width="176" height="48" rx="2"/>
+            <text class="fg-label-small" x="32" y="220">checked by the</text>
+            <text class="fg-label-small" x="32" y="236">other party</text>
+            <line class="fg-line" x1="196" y1="224" x2="220" y2="224" marker-end="url(#fig-envelope-arrow)"/>
+            <rect class="fg-box" x="220" y="200" width="184" height="64" rx="2"/>
+            <text class="fg-label" x="232" y="220">4 submit the form</text>
+            <text class="fg-label-small fg-label-soft" x="232" y="236">irreversible:</text>
+            <text class="fg-label-small fg-label-soft" x="232" y="252">dual control</text>
+            <rect class="fg-device" x="456" y="8" width="256" height="424" rx="8"/>
+            <text class="fg-label-small fg-label-soft" x="468" y="30">the user's own device</text>
+            <text class="fg-label-small fg-label-soft" x="468" y="420">outside: the user's own tap</text>
+            <rect class="fg-box" x="528" y="104" width="172" height="48" rx="2"/>
+            <text class="fg-label" x="540" y="124">3 approve in app</text>
+            <text class="fg-label-small fg-label-soft" x="540" y="140">user, one tap</text>
+            <rect class="fg-box" x="528" y="296" width="172" height="64" rx="2"/>
+            <text class="fg-label" x="540" y="316">5 fee above cap</text>
+            <text class="fg-label-small fg-label-soft" x="540" y="332">extension request</text>
+            <text class="fg-label-small fg-label-soft" x="540" y="348">extend or narrow</text>
+            <line class="fg-line" x1="404" y1="128" x2="528" y2="128" marker-end="url(#fig-envelope-arrow)"/>
+            <text class="fg-label-small" x="468" y="120">bounce</text>
+            <path class="fg-line" d="M614,152 V232 H404" marker-end="url(#fig-envelope-arrow)"/>
+            <text class="fg-label-small" x="468" y="224">resume</text>
+            <path class="fg-line" d="M312,264 V320 H528" marker-end="url(#fig-envelope-arrow)"/>
+            <text class="fg-label-small" x="324" y="296">outside</text>
+            <text class="fg-label-small" x="324" y="312">the cap</text>
+            <line class="fg-line" x1="528" y1="348" x2="424" y2="348" marker-end="url(#fig-envelope-arrow)"/>
+            <text class="fg-label-small" x="468" y="340">extended</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 1.1</span> Inside the envelope we execute and the other party checks every irreversible step; anything outside it leaves the envelope only as a tap on the user's own device.</figcaption>
+        </figure>
+        <p>The ledger's specification is <a href="../03-trust-and-data/#access-ledger">the access ledger in 03</a>; its example is <a href="../03-trust-and-data/trust-story.html#ledger-example">the ledger example in the trust story</a>.</p>
+      </section>
+

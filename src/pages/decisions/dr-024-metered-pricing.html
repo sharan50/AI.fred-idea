@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>DR-024 Pricing is metered, and the tail is priced, AI.fred</title>
+<meta name="description" content="Pricing is metered by allowance rather than unlimited, and the complex tail is priced explicitly, because delivery cost scales with usage rather than with users.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-024</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-13</small></p>
+    <h1><span class="no"><a href="./">DR-024</a></span><span class="title">Pricing is metered, and the tail is priced</span></h1>
+    <p class="standfirst">Subscriptions carry a stated monthly task allowance rather than an unlimited promise, and access to the consequential tier is priced explicitly: a stated number of complex tasks a year, metered beyond it. Tiers are differentiated by what they give access to, not by the status of the user holding them.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-024</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>Subscriptions carry a stated monthly task allowance rather than an unlimited promise, and access to the consequential tier is priced explicitly: a stated number of complex tasks a year, metered beyond it. Tiers are differentiated by what they give access to, not by the status of the user holding them.</p>
+          <p>The reason is the one finding that governs the company: delivery cost scales with usage, not with users, so the promised task volume is a cost line and not a marketing line (<a href="../05-business/#the-ratio">05, 3</a>). The allowance is also the lever the record can actually pull: of the four parameters that move the governing ratio, promised volume is the one set by a sentence rather than by engineering.</p>
+          <p>One rule sits beside the price and is not negotiable: a merchant may never pay for placement in a recommendation. The commerce take rate of <a href="../05-business/#commerce">05, 9</a> is a margin on transactions the user already asked us to execute, and the moment a merchant can buy position the assistant stops being the user's agent, which is the property the subscription is bought for.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>Unlimited flat-fee pricing</dt>
+            <dd>The comparables' shape and the better marketing. Its cost is that an unlimited promise on a service advertised on visas and claims selects precisely for the households with a visa problem this month, and that the worst paths in the model are the ones that grow fastest.</dd>
+            <dt>The previous tier structure of mass, privileged and VIP</dt>
+            <dd>Priced by user status on an axis unrelated to what drives cost. Rejected because the cost driver is the task mix, not the person.</dd>
+            <dt>Per-task pricing with no subscription</dt>
+            <dd>Rejected because the profile of <a href="../00-thesis/#context-profile">00, 2</a> needs continuous ordinary use, and a per-task meter discourages exactly the everyday volume that builds it.</dd>
+            <dt>A merchant-funded model, with placement for sale</dt>
+            <dd>Rejected outright: it makes the assistant the merchant's agent, and no disclosure repairs that.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>An unlimited promise anywhere in the record or in a market's pricing page.</li>
+            <li>A flat fee advertised as unlimited and then quietly rationed, which is worse for trust than a stated allowance.</li>
+            <li>Tiering by user status rather than by access.</li>
+            <li>Any merchant payment for placement in a recommendation, at any scale, in any market.</li>
+            <li>The claim that metering is good marketing. It is not, and every competitor at a lower price will be unlimited; the allowance is accepted as a worse pitch and a survivable business.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder on 2026-09-13. The numbers behind the allowance sit in <a href="../05-business/">05</a> on modelled priors, which the measurement protocol replaces. One gap between this decision and those numbers is recorded rather than left to be found: the trajectory model prices a user and not a task, so the metered tail earns nothing in the figures 05 quotes and the allowance is in no line of the model at all: it neither earns the overage nor caps the usage, and 56 per cent of the published paths average above the figure the plan sells, so the net sign of the omission is unknown rather than conservative. That is an open item in <a href="../07-open/#items">07</a>; <a href="dr-020-everyday-tasks-day-one.html">DR-020</a> is the volume this record prices and <a href="dr-019-the-endgame.html">DR-019</a> the data layer whose one rule it carries.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

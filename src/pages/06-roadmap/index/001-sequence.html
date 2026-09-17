@@ -1,0 +1,102 @@
+      <section>
+        <h2 id="sequence"><span class="no">1</span>The harness-first build sequence</h2>
+        <p>We build the harness in the order the two fatal failures dictate, before anything a customer can see. The alias vault and the substitutor come first, so no later component ever handles a real value. The envelope and the classifier come second, so no later executor can fire a step outside its grant. The state machine and the watchdog come third, so no task can be forgotten once tasks exist. Only then do we build a surface a step can run on. <a href="#fig-sequence">Figure 6.1</a> draws the eight stages with what each makes possible.</p>
+        <p>The order is set by preconditions, not the calendar. Each stage has a gate, a test an engineer can automate, and no stage starts before the previous gate has passed. No dates appear here: a stage that has not passed its gate is not late, it is unfinished. The demo order, channel and browser agent first with the vault bolted on later, is rejected: every surface and every log built before the alias rule would have held real values, and <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> would have to close paths that need never have existed.</p>
+        <figure class="fig" id="fig-sequence">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 6.1, harness-first build sequence, scrollable">
+          <svg viewBox="0 0 720 480" role="img" aria-labelledby="fig-sequence-title fig-sequence-desc">
+            <title id="fig-sequence-title">The harness-first build sequence</title>
+            <desc id="fig-sequence-desc">Eight stages in three rows, read left to right and then down: alias vault and substitution; envelope, classifier and planner; state machine and watchdog; managed browser; telephony and mail relay; worker console; access ledger; gateway, device surface and first adapters; ending in a milestone box, pilot opens, which marks the end of the sequence and is not a task state. Under each stage three lines state what it makes possible, and a legend at the bottom left says that each arrow is a gate. The fourth stage, the managed browser, carries the accent stroke: it is the first stage at which the substitutor places a real value into a surface.</desc>
+            <defs>
+              <marker id="fig-sequence-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-box" x="8" y="8" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="20" y="28">Stage 1</text>
+            <text class="fg-label" x="20" y="50">Alias vault and</text>
+            <text class="fg-label" x="20" y="66">substitution</text>
+            <line class="fg-line" x1="208" y1="44" x2="248" y2="44" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="248" y="8" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="260" y="28">Stage 2</text>
+            <text class="fg-label" x="260" y="50">Envelope, classifier</text>
+            <text class="fg-label" x="260" y="66">and planner</text>
+            <line class="fg-line" x1="448" y1="44" x2="488" y2="44" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="488" y="8" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="500" y="28">Stage 3</text>
+            <text class="fg-label" x="500" y="50">State machine and</text>
+            <text class="fg-label" x="500" y="66">watchdog</text>
+            <path class="fg-line" d="M688,44 H708 V144 H108 V156" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box-accent" x="8" y="156" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="20" y="176">Stage 4</text>
+            <text class="fg-label" x="20" y="198">Managed browser</text>
+            <line class="fg-line" x1="208" y1="192" x2="248" y2="192" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="248" y="156" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="260" y="176">Stage 5</text>
+            <text class="fg-label" x="260" y="198">Telephony and</text>
+            <text class="fg-label" x="260" y="214">mail relay</text>
+            <line class="fg-line" x1="448" y1="192" x2="488" y2="192" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="488" y="156" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="500" y="176">Stage 6</text>
+            <text class="fg-label" x="500" y="198">Worker console</text>
+            <path class="fg-line" d="M688,192 H708 V292 H108 V304" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="8" y="304" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="20" y="324">Stage 7</text>
+            <text class="fg-label" x="20" y="346">Access ledger</text>
+            <line class="fg-line" x1="208" y1="340" x2="248" y2="340" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box" x="248" y="304" width="200" height="72" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="260" y="324">Stage 8</text>
+            <text class="fg-label" x="260" y="346">Gateway, device and</text>
+            <text class="fg-label" x="260" y="362">first adapters</text>
+            <line class="fg-line" x1="448" y1="340" x2="488" y2="340" marker-end="url(#fig-sequence-arrow)"/>
+            <rect class="fg-box-2" x="488" y="304" width="200" height="72" rx="2"/>
+            <text class="fg-label fg-label-strong" x="588" y="345" text-anchor="middle">Pilot opens</text>
+            <text class="fg-label fg-label-soft" x="20" y="100">Values in the vault,</text>
+            <text class="fg-label fg-label-soft" x="20" y="116">aliases everywhere else,</text>
+            <text class="fg-label fg-label-soft" x="20" y="132">one detokeniser</text>
+            <text class="fg-label fg-label-soft" x="260" y="100">Plans carry an envelope;</text>
+            <text class="fg-label fg-label-soft" x="260" y="116">each step classified;</text>
+            <text class="fg-label fg-label-soft" x="260" y="132">nothing runs outside it</text>
+            <text class="fg-label fg-label-soft" x="500" y="100">No task is forgotten;</text>
+            <text class="fg-label fg-label-soft" x="500" y="116">lapsed is not withdrawn;</text>
+            <text class="fg-label fg-label-soft" x="500" y="132">facts carry their source</text>
+            <text class="fg-label fg-label-soft" x="20" y="248">First real value placed;</text>
+            <text class="fg-label fg-label-soft" x="20" y="264">stream masked; evidence</text>
+            <text class="fg-label fg-label-soft" x="20" y="280">redacted before storage</text>
+            <text class="fg-label fg-label-soft" x="260" y="248">Typed into a form or a</text>
+            <text class="fg-label fg-label-soft" x="260" y="264">card; never spoken on a</text>
+            <text class="fg-label fg-label-soft" x="260" y="280">call; the relay swaps aliases</text>
+            <text class="fg-label fg-label-soft" x="500" y="248">Human steps from task</text>
+            <text class="fg-label fg-label-soft" x="500" y="264">cards, alias-only; codes</text>
+            <text class="fg-label fg-label-soft" x="500" y="280">and a staffed board</text>
+            <text class="fg-label fg-label-soft" x="20" y="396">Every use of every alias</text>
+            <text class="fg-label fg-label-soft" x="20" y="412">in plain words, readable</text>
+            <text class="fg-label fg-label-soft" x="20" y="428">by the user per task</text>
+            <text class="fg-label fg-label-soft" x="260" y="396">Any channel, one format;</text>
+            <text class="fg-label fg-label-soft" x="260" y="412">edge tokenised; passports;</text>
+            <text class="fg-label fg-label-soft" x="260" y="428">the user's device for taps</text>
+            <text class="fg-label fg-label-soft" x="500" y="396">Every gate passed; the</text>
+            <text class="fg-label fg-label-soft" x="500" y="412">legal pack signed; the</text>
+            <text class="fg-label fg-label-soft" x="500" y="428">two fatals hunted</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="464">Each arrow is a gate: a test that must pass before the next stage starts</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 6.1</span> Eight stages in a fixed order, each arrow a gate; the accent marks the managed browser, the first stage at which the substitutor places a real value, so the evidence pipeline ships inside it and not after it.</figcaption>
+        </figure>
+        <dl class="def">
+          <dt>Stage 1: alias vault and substitution</dt>
+          <dd>Precondition: a vault vendor chosen against the six tests in <a href="../decisions/dr-008-vault-bought.html">DR-008</a>, an item in <a href="../07-open/#items">07</a>. The vault is bought and the substitutor is written: the one small service with detokenise rights, in its own environment, injecting directly into a surface on the interface 02 fixes and never returning a value. Three more pieces ship with it: the alias grammar of <a href="../03-trust-and-data/#alias-model">03</a> (<code>{{pan}}</code>, <code>{{account.hdfc}}</code>, <code>{{card.primary.last4}}</code>); the vault's edge proxy, which the provider runs in the market's region under our detector policy and at which the channel webhook, the device form and every rail response terminate, so that the intake gateway and the passport adapters of stage 8 receive aliases and never hold a raw byte; and the hash service, the one vault-facing interface of ours outside the substitutor, which holds the digest keys, issues the two keyed digest sets 03 specifies, one to the maskers and one to the verifier, and digests each candidate window a masker sends over a batched, rate-limited call, never a value and never a detokenise right. The third door, a third party echoing a value back, is closed on each surface by maskers built against that service as stages 4 and 5 build it. Gate: the vault SDK is absent from every build artefact except the substitutor and the hash service, checked by the build; the gateway and the adapters hold no vault SDK, no vault credential and no network route to the vault; nothing else can detokenise; the substitutor writes a placement line on every call; and the proxy contract, bytes in and aliases out under our detectors, is exercised against a stub so that a second provider can be held to it.</dd>
+          <dt>Stage 2: envelope, classifier and planner</dt>
+          <dd>The envelope schema with its five fields, the point-of-no-return test, the rule of classification, and the policy layer as a loaded flag table keyed by jurisdiction and act type, holding all three markets' drafts with a condition line where one applies and a missing row evaluating to bounce, consulted once under the delegator's jurisdiction and, for an act toward an institution, once more under the institution's market, the stricter result governing; the first market's draft is replaced by its signed table before the pilot opens. The step-type catalogue of <a href="../02-architecture/#classifier">02</a> is built here: its schema is core, and its entries for the pilot's task types carry each step type's act type, default class, reversibility, executor classes, surfaces, alias classes, evidence expected, bounce form, allowed response windows and delay-line length, and no policy flag of its own, because the flag lives in the policy layer. The planner is built here as a schema-validated model call over the catalogue, proposing an envelope with every plan. It reads facts through the context store's read interface, fixed in this stage and served from fixtures, facts in the schema of <a href="../decisions/dr-016-context-store.html">DR-016</a> loaded from the evaluation set; stage 3 puts the store behind the same interface, so nothing built here waits on it. Gate, in three parts. The catalogue's entries for the pilot's task types are complete, every entry carrying a class and a reversibility. The classifier evaluation set passes in full: a table of cases, each a step record as 02 defines it without its class, reversibility and route, with the envelope version, the market's flag table and the fixture facts it is judged against and the expected class, reversibility and route written by a person; one case per step in each pilot task type's plan shape plus the edge cases (outside the envelope, past the validity window, flagged bounce, unknown step type); exact agreement is the pass, and an undecidable case must come out as bounce. The planner evaluation set passes: per task type, normalised requests in 02's request format with fixture facts and, for each, the expected plan shape, the step types in order with their class and reversibility, the point of no return and the envelope proposal's five fields, scored by exact match on shape and envelope; that is the standard until verdicts exist, and the set verdict rates join once they do. And a check in the substitutor and every executor refuses any step outside the envelope. <a href="../01-product/#envelope">The envelope a user sees in 01</a> is the object the harness enforces.</dd>
+          <dt>Stage 3: state machine and watchdog</dt>
+          <dd>The states, transitions, timers and nudges of <a href="../02-architecture/#state-machine">the state machine in 02</a>, <code>lapsed</code> as a state only the system assigns, and the watchdog that feeds the exceptions board. The context store of <a href="../decisions/dr-016-context-store.html">DR-016</a> is built here, behind the read interface stage 2 fixed, because facts accrue once tasks exist: every fact carries its source, date, validity interval, confidence and whether the user confirmed it, and sensitive fields are aliases. Gate: the invariant survives fault injection (delete a timer; the task must reach the board before anything else happens); every transition is recorded with its cause; no code path reaches a terminal state without one; the store rejects a fact without its provenance fields. Tasks can now exist, synthetic ones until stage 8 admits a real user: a task can go quiet safely, and we cannot forget.</dd>
+          <dt>Stage 4: the managed browser</dt>
+          <dd>The first execution surface, and the accent in the figure: our browser and its controller, the first of the three surface controllers, of which the browser controller and the relay alone may request a placement; the substitutor's driver typing the value into the field; the structured task card of DR-022 rendering the field as dots, with the streamed page and its compositor mask deferred with the pixel masking; and DOM capture masked by keyed digest against the hash service. <a href="../02-architecture/#evidence-pipeline">The evidence pipeline</a> (capture, redact, verify, store) ships inside this stage, the first moment a real value exists outside the vault. Gate: a canary test plants a known value and proves it appears in no stored artefact, no log and no frame a worker can see; the verify pass fails closed. The surface for <code>ai</code> steps on any web form, most of the wedge, now exists and is exercised against synthetic tasks under a test envelope; no <code>human</code> step runs before the console of stage 6, and no step of a real user's task before the device surface of stage 8 has confirmed an envelope, as <a href="../decisions/dr-004-authority-envelope.html">DR-004</a> closes off.</dd>
+          <dt>Stage 5: telephony and mail relay</dt>
+          <dd>Our numbers on a bought carrier platform, one call leg per party, with no value ever placed on a call in either direction and no media server, no mute, no delay line and no re-voicing to build (<a href="../decisions/dr-021-no-value-spoken.html">DR-021</a>); the stage is correspondingly smaller, and what remains of it is dialling under the controller, keypad navigation under the step's menu map, and both legs delivered to the evidence pipeline. The mail relay is unchanged. The masked stream of stage 4 is the fallback for an unmodelled counterparty (<a href="../decisions/dr-022-structured-task-cards.html">DR-022</a>) and is deferred with it, so what stage 4 builds is the structured task card and the library behind it. Formerly: the inbound leg behind a delay line at all times, muting an echoed value or a class-shaped run before the worker hears it; transcripts alias-replaced before storage; the relay swapping aliases into outbound mail after composition. The telephony controller and the relay are the second and third surface controllers; the relay joins the browser controller as a writer of placement requests, and the telephony controller never becomes one, because a call carries no value (DR-021). Gate: the canary test repeated on the stored recording, its batch transcript and mail, there being no live masking on a call to test (DR-021); the provider records, transcribes and stores nothing, checked by configuration audit; a recording that fails the verify pass is destroyed, never stored; the relay holds no raw value at rest; the send scope proven against the launch market's leading mail providers and the draft route exercised end to end.</dd>
+          <dt>Stage 6: worker console</dt>
+          <dd>The task card, alias-only rendering, the outcome-code vocabulary, the dual-control check and the exceptions board, as <a href="../02-architecture/worker-console.html">the worker console page</a> specifies them; the console never calls the substitutor, and a tap on Place goes to the task service and on to the step's surface controller. Gate: no vault SDK in the console and no route from it to the substitutor; the stream, DOM capture and transcript arrive already masked by the stage 4 and 5 gates and the console has no other input; copy, download, print and screenshot disabled; the canary test repeated through every panel; the invariant identical to 02; the L1 pool has run a shift on it against synthetic tasks.</dd>
+          <dt>Stage 7: the access ledger</dt>
+          <dd>The entry format and the substitutor's write have existed since stage 1; entries accumulate from the first placement in stage 4. This stage renders them per task, in plain words, as <a href="../03-trust-and-data/#access-ledger">the ledger specification in 03</a> sets out, in a view the device surface of stage 8 carries. Gate: every placement line maps to one substitutor call; view and exposure lines are written by the surface or the evidence store and reference the placement they relate to; the ledger holds aliases and never values, tested against the threat model's evidence paths; a user reads a task's ledger without asking us. The trust story becomes something a customer checks.</dd>
+          <dt>Stage 8: gateway, device surface and first adapters</dt>
+          <dd>Precondition: the first market chosen, the amber item of section 2.5. The channel-agnostic gateway, behind the vault's edge proxy of stage 1, normalising every channel into one request format with aliases already in place; the user's authenticated device surface, carrying envelope confirmation, extension approval, bounce, outcome report, verdict and the ledger view, with the universal device bounce-back; the first market's passport adapters, behind the same proxy, receiving aliases only. The front door is the per-market choice of <a href="../decisions/dr-001-channel-gateway.html">DR-001</a>. Gate: a value typed, uploaded or spoken by a user is an alias before the gateway, let alone the planner, holds a byte; an adapter never holds a raw byte and has no route to the vault; the bounce-back works with no adapter; no envelope confirmation or bounce approval is accepted from a channel that authenticates only a phone number. A real user can now arrive, and the pilot can open.</dd>
+        </dl>
+      </section>

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>DR-006 Office-mandatory 24/7 operation with site controls, AI.fred</title>
+<meta name="description" content="Workers execute only from our office, on our devices, around the clock: a day shift covers India and two night shifts cover the west. Site controls are part of the trust guarantee; remote-safe operation is designed later.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-006</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="amber">Fixed in principle, staged and amber<small>revised 2026-09-13</small></p>
+    <h1><span class="no"><a href="./">DR-006</a></span><span class="title">Office-mandatory 24/7 operation with site controls</span></h1>
+    <p class="standfirst">Workers execute only from premises of ours, on our devices. The attested 24-hour site with three shifts is the shape at scale, not the shape at the pilot: a small controlled room carries the pilot, and the site arrives when a foreign market goes live or the floor passes a headcount the founder has yet to set. Site controls remain part of the trust guarantee. Remote-safe operation is a programme we design later, not a maybe.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-006</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-amber">amber</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>Operations are office-mandatory: a worker executes from premises of ours, on our devices, never from home and never on their own machine. What is staged is the size of the premises and the hours they cover. For the pilot the floor is a small controlled room on one shift, with the same device policy, the same locker at the door, the same monitored stations and the same badge log; the attested 24-hour site with a day shift in Bengaluru and two night shifts covering the west <span class="chip chip-amber">amber</span> arrives when the first foreign market goes live under <a href="dr-023-geography-sequencing.html">DR-023</a>'s gates, or when the floor passes a headcount threshold the founder has not yet set. At pilot volume the 24-hour wheel is neither affordable nor required by law, and asserting it as a precondition priced the company for a scale it does not have. Site controls, the device policy, a clean floor, monitored substitution stations and an attestable room, remain part of the trust guarantee we make to the user rather than a workplace preference, and the room is attestable from the first day even when it is one room. Remote-safe operation is a designed-later programme, parked in 07 with an owner and a trigger.</p>
+          <h3 id="site-as-control"><span class="no">1.1</span>Why the room is a trust control</h3>
+          <p>The last surface a human can see is a screen and a headset. When the substitutor places a real value, the worker works a structured task card whose fields carry aliases, or, on an unmodelled counterparty, a stream whose field renders as dots. No value is ever placed on a call, in either direction, so there is no audio path to mask: the worker hears the far party in the ordinary way and the channel is scoped to non-authenticating calls (<a href="dr-021-no-value-spoken.html">DR-021</a>). The masker on the browser stream keeps its default: a frame carrying a run it can neither match nor clear is painted and held for re-masking. So a value the vault has never seen is painted or toned by default, no residual is delivered to a screen or a headset, and the pipeline's second pass and the incident it opens are the record of a miss, never the closure. Those are software controls, and they run on the server side: masking happens before a card or a frame reaches a station, so nothing that reaches a station's screen is a real value, and a station is not a place the controls can be got behind. A station can still be tampered with, developer tools on the console, a capture device on the video path, a recorder on the headset line, and what any of them captures is a card of aliases, a masked frame, or a call that carries no value. Task detail that never enters the vault, the institution, the appointment facts, the script, can be photographed by a personal phone, and a photograph of the screen captures the same masked frame. And a masker that fails, or a far party that states a value unasked, is a failure <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> names, to be recorded and deterred as well as closed. The threat model is a list of paths by which a human could see a real value, each named and closed by a component property, never by a procedure, and the site controls are entries in it as the record and the deterrent on three paths, never the closure: the device policy, because every station is ours, locked down and signed into by badge, is the record and the deterrent of tampering, whose closure is that masking happens server-side before a card or a frame leaves; the locker at the door and the clean floor are the record and the deterrent of the photograph and the note, closed the same way; and the monitored stations are the record and the deterrent of a masking failure, whose closure is the masker's hold and repaint. A held frame or a station-integrity event is an incident that names the station and the person at it, under camera and console session log, rather than a secret: the console keeps a session log per station, frame identifiers, timestamps, station and sign-in, which holds no frame and no value, and the stream itself is never stored; the camera records a room whose screens show only masked frames, and its footage is a site record, not an evidence artefact: it never enters the evidence pipeline, site security keeps it under the incident process for a fixed retention, and Table 3.3 in 03 does not list it because it holds nothing a task produced. The L3 seats sit in a two-person zone, and the escalation desk sits beside it on the open floor, as 04 draws the floor. Table 4.4 in <a href="../04-operations/#site-controls">04</a> maps each control to its path, and its fourth control, the attestable room, lets us show that mapping to an auditor rather than assert it.</p>
+          <h3 id="shifts"><span class="no">1.2</span>Shifts and tiers</h3>
+          <p>Every shift draws on the same three tiers and the same need-to-know task cards, specified in <a href="../04-operations/#tiers">04</a>: a night-shift worker sees a client number, aliases, a script and an expected outcome, and nothing more. Handover at shift change is the moment the shift wheel in <a href="../04-operations/#shifts">04</a> marks, because an <code>awaiting-third-party</code> step with a callback window in London hours must have a live desk when the callback comes. The floor's own cost is a step cost, which <a href="../05-business/#cost-split">05</a> prices on modelled priors.</p>
+          <h3 id="remote-later"><span class="no">1.3</span>Remote-safe, later</h3>
+          <p>A remote-safe programme would have to close, off-site, every room path the threat model names, with controls we can verify rather than trust, which is what the attestable room gives the office and a home does not. That is a design job, scheduled after the office model has run and the threat model has been exercised against real tasks. It is not a maybe and it is not now; its owner and trigger are in <a href="../07-open/#items">07</a>.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>A remote workforce</dt>
+            <dd>The norm among the human-assisted assistants: Magic's assistants are based in the Philippines and Latin America <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>, and Time etc has clients share logins with a named assistant through password managers <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>. Its cost is a human-visible surface in a room we do not control: the threat model would carry paths we cannot name and close, and "no person saw it" would rest on trust in a household rather than on a control.</dd>
+            <dt>A hybrid floor: sensitive steps in the office, the rest remote</dt>
+            <dd>The classifier gains a "where" dimension and the console splits in two; every step's sensitivity must be judged before it runs, a task whose alias set changes mid-plan moves rooms, and two rule sets drift, the harder one under least use.</dd>
+            <dt>A day shift only, with western tasks queued to the next Indian morning</dt>
+            <dd>The markets that carry the business would meet a dead desk in their own hours, and a promised callback from a London institution would ring an empty floor. The 24/7 floor makes the three-market shape real.</dd>
+            <dt>Three offices, one per market</dt>
+            <dd>Three sites to control before any market has earned one. <a href="dr-007-universal-core-adapters.html">DR-007</a>'s playbook is adapter plus legal pack plus shift, and the shift is added in the existing building.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A worker executing any step from a personal device, a home or a shared workspace.</li>
+            <li>A night shift staffed remotely because it is night. The western hours are the sensitive ones.</li>
+            <li>A substitution station that is not monitored, or a floor that is not clean.</li>
+            <li>Site controls described anywhere as a workplace policy rather than a trust control.</li>
+            <li>Remote-safe operation as "never" or as "now". It is later, with a trigger.</li>
+            <li>A cost model attached to the shift design.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed in principle and amber on its staging, revised by the founder on 2026-09-13. The office rule itself is not reopened: a worker executes from premises of ours, on our devices. What is amber is when the attested 24-hour site with three shifts replaces the pilot's single controlled room. <strong>Trigger:</strong> <span class="chip chip-amber">amber</span> the first foreign market going live under <a href="dr-023-geography-sequencing.html">DR-023</a>'s gates, or the floor passing a headcount threshold, which the founder has not yet set and which is an open item in <a href="../07-open/#items">07</a>. Until one of those fires, the pilot runs one shift in one room and <a href="../04-operations/#shifts">04</a> carries the staging; the floor's cost is a step cost that rises with scale, which <a href="../05-business/#cost-split">05</a> prices. The telephony half of section 1.1 is superseded by <a href="dr-021-no-value-spoken.html">DR-021</a>: no value is placed on a call, so the room guards a screen and a card rather than a headset.</p>
+        </section>
+
+      <section>
+        <h2 id="trigger"><span class="no">5</span>Trigger</h2>
+        <p>What resolves the amber is one number: the headcount at which the attested 24-hour site replaces the pilot&#x27;s single controlled room. The models carry a seat-cost curve and no threshold, so the number is the founder&#x27;s to set rather than to derive, and it is due before the floor passes the size at which one room stops being credible and in any case before the first foreign market goes live. It is an open item with an owner in <a href="../07-open/#items">07</a>.</p>
+      </section>
+      </article>
+      <section>
+        <h2 class="unnumbered" id="sources">Sources</h2>
+        <p class="note">Verified in this edition means verified against a search-engine excerpt of the named document, or a named third party&#x27;s report of it, because direct page reads were blocked; <a href="dr-013-verification-standard.html">DR-013</a> records the standard. Every source below is to be re-read before circulation.</p>
+        <ol class="sources">
+          <li id="src-1">Magic, <cite>Magic home page</cite>, Magic, undated; read via search excerpt on 2 September 2026, corroborated by a Wishup review, 2026. <a class="url" href="https://getmagic.com/">https://getmagic.com/</a></li>
+          <li id="src-2">Time etc, <cite>How to share secure information with your virtual assistant</cite>, Time etc resources, undated; read via search excerpt on 2 September 2026. <a class="url" href="https://www.timeetc.com/resources/how-to-use-a-virtual-assistant/how-to-share-secure-information-with-your-virtual-assistant/">https://www.timeetc.com/resources/how-to-use-a-virtual-assistant/how-to-share-secure-information-with-your-virtual-assistant/</a></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

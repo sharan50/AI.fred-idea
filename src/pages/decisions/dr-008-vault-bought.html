@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>DR-008 Tokenisation vault bought, not built, AI.fred</title>
+<meta name="description" content="Real values live in a bought, regionally hosted tokenisation vault of the Skyflow, VGS and Basis Theory class; everything of ours handles aliases. Why the layer is bought, what buying does not delegate, and why no vendor is chosen yet.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-008</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-13</small></p>
+    <h1><span class="no"><a href="./">DR-008</a></span><span class="title">Tokenisation vault bought, not built</span></h1>
+    <p class="standfirst">Real values live in a bought tokenisation vault of the Skyflow, VGS and Basis Theory class, hosted in each market's region; humans, the AI and almost all of our software handle aliases. We buy the layer because holding secrets and being audited for it is a product, and because the provider's regional hosting is part of how the residency map is honoured. Which vendor is an open item.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-008</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>We buy the tokenisation vault. Every sensitive value, an identity number, a card, an account, a date of birth, a passport, enters a bought vault of the Skyflow, VGS and Basis Theory class and leaves it in only two ways: through the substitution component, into a surface, or as the address of an outbound message, resolved inside the vault's own edge proxy and handed to the channel provider, never to us. Humans, the AI model and almost all of our software handle aliases: <code>{{pan}}</code>, <code>{{card.primary}}</code>, <code>{{nhs-number}}</code>. The vault is hosted regionally per market. It is one of the four bought components in <a href="../06-roadmap/#build-buy">the build-versus-buy table in 06</a>. Its edge is a tokenising proxy the provider runs in the market's region under our detector policy: the channel webhook, the device form and every rail response terminate there, so the intake gateway and the passport adapters receive aliases and never hold a raw byte. Its SDK is present in exactly two places of ours, the substitutor and the hash service; the gateway, the adapters, the model runtime, the worker console and the logging pipeline hold none and have no network route to the vault, which is the gate 06 checks at stage 1.</p>
+          <h3 id="why-bought"><span class="no">1.1</span>Why the layer is bought</h3>
+          <p>Three reasons, in order of weight. The vault's job is to be dull and audited: key custody, hardware-backed storage, rotation, attestation, breach response. That is a product others sell and are examined on; every hour spent rebuilding it is an hour not spent on the substitutor, which nobody sells. Second, regional hosting. The brief's ledger fixes that Bengaluru staff processing UK or EU personal data is a restricted cross-border transfer needing contractual safeguards, and names the provider's regional hosting as part of why this layer is bought. India is moving the same way: the DPDP Rules 2025 bring cross-border transfer obligations into force in May 2027 <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>. A vault instance in each market's region lets <a href="../03-trust-and-data/#residency">the residency map in 03</a> say one plain thing: sensitive values stay in region; only aliases travel to the floor. Third, in India a vault is already a regulated construct: UIDAI's Circular 8 of 2025 updates its Aadhaar Data Vault and hardware security module requirements <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>, and a provider's fitness against such rules, market by market, is one of the tests in 1.3 below, carried by the vendor item in 07.</p>
+          <h3 id="not-delegated"><span class="no">1.2</span>What buying does not delegate</h3>
+          <p>The alias grammar is ours. The substitutor is ours, and it stays ours even where a provider offers an injection or detokenising proxy of its own, because the one component with detokenise rights must be small enough to audit line by line and specific to our three surfaces; the tokenising edge proxy is the one provider feature this design leans on, and it carries two roles and no more: it tokenises what enters, and its channel connector, an address-only role beside the substitutor's value role and part of the proxy contract, resolves the address alias of an outbound message, <code>{{phone}}</code> or a WhatsApp or iMessage handle, only to hand the message to the channel provider, returning nothing to any process of ours and placing nothing into any surface; a value is detokenised into a surface by the substitutor alone. The detector policy that proxy runs under is ours, and so is the hash service, which turns the vault's keyed digests into match-or-no-match answers for the maskers and the verifier and holds no detokenise right. The policy-layer and envelope checks before every injection are ours. The vault sees the bytes of a message, an attachment or a rail response at its edge proxy for as long as tokenising takes, the audio of a voice note while the proxy transcribes it, a value in and an alias out, and a detokenise call from one client identity; it never sees a task, a step, a surface or a person. In <a href="../03-trust-and-data/#threat-model">the threat model</a> the provider is a named path, not a trusted box, and the path has two halves: the account, since whoever administers it could otherwise reveal a value, and the proxy, since whoever runs it could otherwise read a whole message. Four controls close it: no role on the provider account can reveal or detokenise, and the dashboard reveal is disabled or absent by contract; the substitutor's client credential is the only detokenise principal and lives in a secret store no person reads, the channel connector's resolution of an address at the proxy being address-only, a term of the proxy contract rather than a detokenise right, and returning nothing to us; the proxy holds the bytes of one message, attachment or rail response in memory for as long as tokenising takes and no longer, transcribes a voice note inside that same boundary, runs our detector policy, and keeps its request and error logs value-free by contract, bodies never logged and no debugging view of one, so that the provider's staff access controls, attestations and regional hosting are the bought layer's guarantee for what the proxy holds, a legal item the vendor evaluation in 07 tests and this record does not assume; and the provider's access logs are exported and reconciled against the access ledger, so no detokenisation happens unrecorded.</p>
+          <h3 id="vendor-open"><span class="no">1.3</span>No vendor is chosen</h3>
+          <p>The class is fixed; the vendor is not. The research sprint for this edition did not reach the vault vendor class, so nothing on this page asserts what any provider offers, and the choice is an open item in <a href="../07-open/#items">07</a>, owned by the founding engineer and triggered before the substitutor is built. The tests a candidate must pass are ours: hold Indian residents' values in an Indian region that meets UIDAI's Aadhaar Data Vault and HSM requirements for any Aadhaar number it holds, and UK residents' values in a UK or EU region; run its tokenising edge proxy in each region with our detectors loaded, terminating the channel webhook, the device form and every rail response, transcribing a voice note inside that boundary, and carrying the channel connector that delivers our outbound messages, resolving the address alias only to hand a message to the channel provider and returning nothing to us, with bodies never logged at the proxy and its staff access controls and attestations covering the proxy as they cover the vault; expose detokenisation to one client identity only; issue keyed digests of each value in its normalised forms to our hash service without releasing the value, so the maskers and the verifier can match an echo; attest to a standard a legal pack can cite; and survive the re-tokenisation swap test that 06 requires before the pilot opens. If no provider of the named class passes the regional test, the buy stands and the class widens to a regional provider meeting the same tests; building the vault is not the fallback without reopening this record.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>Build the vault ourselves</dt>
+            <dd>We become custodians of secrets in three regions before we have a pilot, and prove key custody to auditors in each. The engineers who should be proving the substitutor would be proving a storage product, and the residency map would rest on hosting we do not run.</dd>
+            <dt>Encrypt fields in place in our own database</dt>
+            <dd>The real value stays in our data path. Every component holding the key can read it, so the alias rule becomes a convention rather than a boundary, and backups, replicas and logs carry ciphertext our own staff can decrypt.</dd>
+            <dt>Rely on the rails' own tokens</dt>
+            <dd>Card-network tokens, where a market offers them, cover cards and nothing else: not an identity number, a date of birth or a health number. They are per country and do not reach our surfaces; a token cannot be spoken on a phone line. The rails are adapters, and the vault sits behind all of them.</dd>
+            <dt>Choose the vendor now</dt>
+            <dd>A choice made without the research would be a choice from memory, which the brief forbids for anything external. Deferring costs nothing: the substitutor's interface to the vault is fixed here, and the vendor sits behind it.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A real value at rest in any store we run: database, cache, queue, backup or log.</li>
+            <li>The vault SDK anywhere but the substitutor and the hash service; the build checks its absence from every other artefact, the intake gateway and the passport adapters included, and network policy denies them the vault's endpoints.</li>
+            <li>A raw byte of a message, an upload, a voice note or a rail response held by a process of ours: each terminates at the vault's edge proxy and reaches us tokenised.</li>
+            <li>A vault region that disagrees with a market's residency map, or one region serving three markets.</li>
+            <li>A provider-supplied reveal screen, detokenise endpoint or detokenising proxy reachable from the worker console, the model runtime, the logging pipeline or a person's provider login: no role on the provider account can reveal or detokenise, the substitutor's credential is the only detokenise principal, and the provider's access logs are reconciled against the access ledger.</li>
+            <li>A detokenisation for a task whose envelope the user's own device has not signed, or whose envelope has expired or been withdrawn: the substitutor checks the device-signed confirmation the step context carries, so the vault's credential and the user's key are two locks, and neither opens the other.</li>
+            <li>A message body, an attachment, a voice note or a transcript persisting at the proxy, in a provider log, an error trace or a debugging view: the proxy holds one payload's bytes in memory for as long as tokenising takes, and its logs are value-free by contract, a term the vendor evaluation tests.</li>
+            <li>A channel connector that returns a resolved address, or anything else, to a process of ours, or that can place a value into a surface: its role is address-only and ends at the channel provider.</li>
+            <li>Delegating the substitutor to the provider, whatever it offers.</li>
+            <li>A provider we cannot leave: the re-tokenisation swap test runs before the pilot, not after the first outage.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder and recorded in the brief's ledger on 2026-09-02. The alias model, the three doors a value enters by and the substitutor are specified in <a href="../03-trust-and-data/#alias-model">03</a>, the buy is sequenced as stage 1 in <a href="../06-roadmap/#sequence">06</a>, and the vendor choice is open in <a href="../07-open/#items">07</a> with its owner and trigger. Confirmed on 2026-09-10 against the custody position in the exchange recorded as batch 0002 (a porter handing the user an OTP from a third-party container): the key-release check above is the answer, and the buy stands.</p>
+        </section>
+      </article>
+      <section>
+        <h2 class="unnumbered" id="sources">Sources</h2>
+        <p>Verified in this edition means verified against a search-engine excerpt of the named document, or a named third party's report of it, because direct page reads were blocked; <a href="dr-013-verification-standard.html">DR-013</a> records the standard. Every source below is to be re-read before circulation.</p>
+        <ol class="sources">
+          <li id="src-1">Press Information Bureau, <cite>Digital Personal Data Protection Rules, 2025</cite>, explanatory document, Government of India, 17 November 2025; read as a search excerpt on 2 September 2026. <a class="url" href="https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf">https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251117695301.pdf</a></li>
+          <li id="src-2">Unique Identification Authority of India, <cite>Circular 8 of 2025: revised guidelines on Aadhaar Data Vault and HSM</cite>, 18 July 2025, as reported by India TV News, <cite>UIDAI issues Aadhaar security guidelines: 5 essential steps to protect yourself from scams</cite>, 28 December 2025; the report was read as a search excerpt on 2 September 2026, the circular was not read. Circular: <a class="url" href="https://uidai.gov.in/en/ecosystem/authentication-devices-documents/authentication-document/19311-circular-8-of-2025-dated-18-7-2025-regarding-revised-guidelines-on-adv-hsm.html">https://uidai.gov.in/en/ecosystem/authentication-devices-documents/authentication-document/19311-circular-8-of-2025-dated-18-7-2025-regarding-revised-guidelines-on-adv-hsm.html</a> Report: <a class="url" href="https://www.indiatvnews.com/technology/news/uidai-issues-aadhaar-security-guidelines-5-essential-steps-to-protect-yourself-from-scams-2025-12-28-1023569">https://www.indiatvnews.com/technology/news/uidai-issues-aadhaar-security-guidelines-5-essential-steps-to-protect-yourself-from-scams-2025-12-28-1023569</a></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

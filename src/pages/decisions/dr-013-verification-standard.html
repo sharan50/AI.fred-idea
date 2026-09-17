@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>DR-013 The verification standard for this edition, AI.fred</title>
+<meta name="description" content="In this edition a verified chip means the claim was checked against a search-engine excerpt of the named, dated source, because the build environment blocked full page reads and capped searches; no page circulates externally before its load-bearing sources are re-read.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-013</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>revised 2026-09-13</small></p>
+    <h1><span class="no"><a href="./">DR-013</a></span><span class="title">The verification standard for this edition</span></h1>
+    <p class="standfirst">In this edition a verified chip means the claim was checked against a search-engine excerpt of the named source, or a named third party's report of it, with the source's name, date and address recorded on the page, because the build environment blocked full page reads and capped web searches at 200 per session. No page circulates outside the founder's circle before its load-bearing sources are re-read from the page itself.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-013</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>A build decision, taken on 2026-09-02. The brief's research rule is that every external claim carries a chip, <span class="chip chip-verified" data-example>verified</span> with source and date or <span class="chip chip-to-verify" data-example>to-verify</span>, that nothing external is asserted from memory, and that where web access is unavailable everything external becomes to-verify and the loop notes the downgrade. Access in this build was partial rather than absent. Web search worked, capped at 200 calls per session, and the cap was reached during the research sprint. Page fetches were refused by the build environment's egress proxy for almost every host tried, regulators, vendors and press included; a handful of code-hosting and developer domains answered. The standard for this edition is therefore fixed as follows.</p>
+          <h3 id="what-verified-means"><span class="no">1.1</span>What each chip means here</h3>
+          <p>Verified: the claim's text was found in a search-engine excerpt attributed to the named page, or in a named and reputable third party's report of a document, a regulator's circular reported by a newspaper, guidance summarised by a law firm, where the sources entry names the document as the source and the third party as what was read. In either case the page's sources list carries the source's name, title, publisher, date and address, and opens with one line stating this edition's standard and linking this record; an entry adds "read as a search excerpt" or "read via mirror" only where the research note says which. Where a note read an official text in full from a faithful mirror, an RBI direction, a press release or an API specification hosted on a code-hosting site, that is the stronger case, not the norm. To-verify: a claim resting on unnamed commentary, a vendor's own claim about itself, or a source the sprint never reached. The sprint covered the Indian concierge field, the US and UK assistant field, UK rails and part of India rails; the vault vendor class and the privacy-law mapping were not reached and carry to-verify chips wherever a page touches them. The why-now evidence and the US rails were reached in part and carry verified chips where an excerpt was found and to-verify where it was not, which is why the same claim can hold different chips on two pages: the chip records what that page's author read, not what is true.</p>
+          <h3 id="limits"><span class="no">1.2</span>What the standard establishes and what it does not</h3>
+          <p>An excerpt establishes that the source exists, is dated, and contains the sentence the page attributes to it. It does not establish the sentence's context, a correction the page may carry further down, detail behind a paywall, or a later revision of the same address. A verified chip in this edition is therefore a claim about a sentence, not about a page, and a reader who acts on one should treat it as a pointer to a source worth opening rather than as the source itself.</p>
+          <h3 id="reverification"><span class="no">1.3</span>Re-verification before circulation</h3>
+          <p>The consequence is an open item in <a href="../07-open/#items">07</a>, owned by the next editor, with the trigger "before any page is shown outside the founder's circle": re-run the research sprint with page reads enabled, open every address a verified chip points at, confirm or correct the claim, and change each sources list's preface line, and any entry that names what was read, to say the pages were read. A page whose load-bearing claims fail that re-read is corrected before it circulates, not after.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>Mark everything external to-verify</dt>
+            <dd>The brief's literal downgrade for no web access. Its cost is that the distinction the research did establish is lost: a claim found word for word in the named source's excerpt would carry the same chip as a claim nobody could find at all, chips become noise, and the next editor cannot tell which of the claims to re-check first. The downgrade is written for a session with no access, and this one had search.</dd>
+            <dt>Assert from memory</dt>
+            <dd>Forbidden by the brief: it is September 2026, the field and the regulatory picture move fast, and a stale or invented claim under a chip the reader trusts is the worst outcome the research rules exist to prevent.</dd>
+            <dt>Wait for page reads to work</dt>
+            <dd>The loop is capped at forty turns and the missing capability has a stated downgrade, so the brief says re-aim, not exit. Waiting would have traded a documented limitation for no publication.</dd>
+            <dt>Call the excerpt verified without saying so</dt>
+            <dd>A reader would assume full reads. That is silence about what could not be verified, which the brief's forbidden moves name outright.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>Circulating any page externally before its load-bearing sources are re-read from the page itself; the item in 07 carries that trigger.</li>
+            <li>A verified chip on a page whose sources list does not state the edition's standard.</li>
+            <li>Upgrading a to-verify chip on the strength of another excerpt or a secondary source; only a read of the named page upgrades it.</li>
+            <li>A verified chip on a claim whose source was not reached in the sprint, however familiar the claim feels.</li>
+            <li>A later edition reusing this edition's chips without re-running the sprint.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed for this edition, taken during the build on 2026-09-02. It expires when the re-verification item in 07 closes: at that point every sources list says its pages were read, this record is marked superseded, and the chip vocabulary carries its full meaning again.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

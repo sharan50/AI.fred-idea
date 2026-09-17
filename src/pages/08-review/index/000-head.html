@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>Full Review 11/09, AI.fred</title>
+<meta name="description" content="A partner-level review of AI.fred on 11 September 2026: the technology as it stands, the technologies on the horizon, the regulatory landscape in India, the UK and the US, the market, the economics, the team, the security design, the product, a pre-mortem and what would need to be true. Not yet. The trust design is ahead of the field and the wedge is real, but the plan spends a seed on a harness before a customer, the promise can be tested in one market only, and the economics that decide the company are deferred past the round they must justify.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">08 Full Review 11/09</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="to-verify">to-verify<small>revised 2026-09-14</small></p>
+    <h1><span class="no">08</span><span class="title">Full Review 11/09</span></h1>
+    <p class="standfirst">Not yet. The trust design is ahead of the field and the wedge is real, but the plan spends a seed on a harness before a customer, the promise can be tested in one market only, and the economics that decide the company are deferred past the round they must justify. This page is an independent review of the record as it stood on 11 September 2026, written at the level of a seed partner's investment memo: what the technology can do today, what is coming that could threaten the idea, the regulatory position in the three target markets, the market, the economics the record defers, the team the plan needs, a red-team read of the trust design, the product and its path to customers, a pre-mortem, and what would need to be true before money.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>08 Full Review 11/09</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-14</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-to-verify">to-verify</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the founder and investors</dd></div>
+    </dl>
+  </header>
+  <aside class="callout" id="superseded">
+    <p><span class="label">Since this review</span>The record it reads was revised on 2026-09-13, after a working session
+    that went through this page point by point. Two of the findings below rested on things the record said but the founder
+    did not intend, and both are now changed: everyday tasks are in scope from day one, with the consequential ones as the
+    hook (<a href="../decisions/dr-019-the-endgame.html">DR-019</a>, <a href="../decisions/dr-020-everyday-tasks-day-one.html">DR-020</a>),
+    and the economics are no longer deferred (<a href="../05-business/">05</a>). The founder also dropped telephony masking
+    (<a href="../decisions/dr-021-no-value-spoken.html">DR-021</a>), replaced pixel masking with structured task cards
+    (<a href="../decisions/dr-022-structured-task-cards.html">DR-022</a>), staged the attested floor
+    (<a href="../decisions/dr-006-office-mandatory.html">DR-006</a>), resequenced geography
+    (<a href="../decisions/dr-023-geography-sequencing.html">DR-023</a>) and metered the pricing
+    (<a href="../decisions/dr-024-metered-pricing.html">DR-024</a>). This page is left as it was written, dated 11 September
+    2026, because a review that is edited after the fact is no longer evidence of anything; read its quotations of the
+    record as quotations of the edition it reviewed, and its section numbers for 00 as that edition's, which the revision renumbered when it inserted the context profile. What it says about customer evidence, the co-founder condition and
+    institutional admission is unanswered. Its acquisition finding has since been answered rather than left here: <a href="../05-business/#how-users-arrive">05, 6</a> now carries a mechanism with three named channels and a budget, records that what a paid arrival costs is the first thing to measure, and states the break-even against the benchmark below rather than asserting a cost. What remains unanswered is the cost itself, in <a href="../07-open/#items">07</a>.</p>
+  </aside>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">

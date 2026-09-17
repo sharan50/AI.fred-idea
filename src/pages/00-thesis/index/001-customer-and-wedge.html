@@ -1,0 +1,87 @@
+      <section>
+        <h2 id="customer-and-wedge"><span class="no">1</span>Customer and scope</h2>
+        <p>The customer is not defined by a task, they are defined by a relationship. They are a household with more obligations than hours and enough income that an hour is worth more than a few hundred rupees: dual-income professionals, founders and senior operators, and non-resident families carrying admin in two countries at once. What they buy is not a set of tasks. It is an assistant that already knows the answer to the questions a new assistant would have to ask.</p>
+        <h3 id="the-customer"><span class="no">1.1</span>The customer and the task mix</h3>
+        <p>The task mix follows from that rather than defining it. Roughly the shape of it: everyday economic life, which is most of the volume, restaurants and bookings, returns and refunds, travel, rentals, purchase research, appointments and outings. Then the tasks a household faces a few times a year and dreads every time: identity renewals, visas, bank and insurance admin, hospital coordination, tax notices. The second group is why anyone signs up, because nothing else safely takes them. The first group is the product, because it is where the profile is built. Both run on one harness, from the first day, by <a href="../decisions/dr-020-everyday-tasks-day-one.html">DR-020</a>; the six verticals carried in from the founder's prior work, banking and wealth, legal and administrative, identity and security, health and medical, family affairs and travel, are how the second group is organised, not the whole of what the product does.</p>
+        <p>That is a different claim from the one the previous edition made, and it costs us something to make it. The wedge argument was that nobody serves the top-left corner. The claim now is that we serve the whole field, which puts us beside the flat-fee assistants on the everyday layer, where the price anchor is low and the alternatives are free. The answer to that is in section 2 and it is the context profile, not the price.</p>
+        <h3 id="what-consequence-means"><span class="no">1.2</span>What consequence means</h3>
+        <p>A task carries consequence when one of two things could go wrong and could not be put right. The first is a person on the operator side seeing a value they should not: an identity number, a card, a password, a diagnosis. Once seen it cannot be unseen. The second is an act the user did not want that cannot be undone: money moved, an application submitted, terms accepted. We test every step against one question, the point-of-no-return test: can we return the world to its prior state by our own action, at no cost to the user and without a third party's consent? If not, the step is irreversible. These are the two fatal failures the whole design is built around; <a href="../#two-fatals">the index states them</a> and how each is made structurally impossible.</p>
+        <p>Below the line those two failures draw sit errands and bookings, where a wrong table is an annoyance; above it sit the verticals, where a wrong transfer, a leaked Aadhaar number or a missed filing deadline is a harm. <a href="#fig-wedge">Figure 0.1</a> maps the field onto that line.</p>
+        <figure class="fig" id="fig-wedge">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 0.1, the wedge as a map of consequence against who handles the real value, scrollable">
+          <svg viewBox="0 0 720 600" role="img" aria-labelledby="fig-wedge-title fig-wedge-desc">
+            <title id="fig-wedge-title">The wedge: consequence against who handles the real value</title>
+            <desc id="fig-wedge-desc">A map with consequence to the user rising from bottom to top and three columns for who handles the real value: a person with their own tools, a model inside the user's own accounts, and the system alone at the last boundary with people seeing aliases only. A horizontal accent line crosses the map: the line no flat-fee player can cross. Below it sit the Indian concierge field, the US and UK hybrid assistants and the AI-lab browser agents, on errands and bookings; above it only the third column is occupied, by AI.fred, on banking, identity, legal, health and institutional admin, while the dashed zone across the first two columns is entered today only by a person seeing the value. Below the line in the third column, errands, travel and family logistics are reachable by us but are not the wedge.</desc>
+            <defs>
+              <marker id="fig-wedge-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <text class="fg-label-small fg-label-soft" x="205" y="22" text-anchor="middle">a person handles it,</text>
+            <text class="fg-label-small fg-label-soft" x="205" y="38" text-anchor="middle">with their own tools</text>
+            <text class="fg-label-small fg-label-soft" x="407" y="22" text-anchor="middle">a model acts inside</text>
+            <text class="fg-label-small fg-label-soft" x="407" y="38" text-anchor="middle">the user's own accounts</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="22" text-anchor="middle">the system places it;</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="38" text-anchor="middle">people see aliases only</text>
+            <line class="fg-lifeline" x1="306" y1="358" x2="306" y2="552"/>
+            <line class="fg-lifeline" x1="508" y1="56" x2="508" y2="300"/>
+            <line class="fg-lifeline" x1="508" y1="358" x2="508" y2="552"/>
+            <line class="fg-line" x1="104" y1="552" x2="104" y2="56" marker-end="url(#fig-wedge-arrow)"/>
+            <line class="fg-line" x1="104" y1="552" x2="712" y2="552"/>
+            <text class="fg-label-small" x="96" y="72" text-anchor="end">high</text>
+            <text class="fg-label-small" x="96" y="548" text-anchor="end">low</text>
+            <text class="fg-label-small fg-label-soft" transform="rotate(-90 28 304)" x="28" y="304" text-anchor="middle">consequence to the user</text>
+            <text class="fg-label-small fg-label-soft" x="408" y="584" text-anchor="middle">who handles the real value</text>
+            <rect class="fg-zone" x="114" y="68" width="384" height="228" rx="2"/>
+            <text class="fg-label-small fg-label-soft" x="126" y="86">not safely reachable</text>
+            <text class="fg-label-small" x="306" y="156" text-anchor="middle">banking, identity, legal, health,</text>
+            <text class="fg-label-small" x="306" y="172" text-anchor="middle">institutional admin:</text>
+            <text class="fg-label-small" x="306" y="204" text-anchor="middle">entered today only by a person</text>
+            <text class="fg-label-small" x="306" y="220" text-anchor="middle">seeing the value; otherwise refused</text>
+            <rect class="fg-box" x="518" y="68" width="184" height="228" rx="2"/>
+            <text class="fg-label fg-label-strong" x="610" y="93" text-anchor="middle">AI.fred</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="109" text-anchor="middle">the wedge</text>
+            <text class="fg-label-small" x="610" y="137" text-anchor="middle">banking</text>
+            <text class="fg-label-small" x="610" y="153" text-anchor="middle">identity</text>
+            <text class="fg-label-small" x="610" y="169" text-anchor="middle">legal</text>
+            <text class="fg-label-small" x="610" y="185" text-anchor="middle">health</text>
+            <text class="fg-label-small" x="610" y="201" text-anchor="middle">institutional admin</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="229" text-anchor="middle">aliases only</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="245" text-anchor="middle">authority envelope</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="261" text-anchor="middle">dual control</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="277" text-anchor="middle">access ledger</text>
+            <line class="fg-accent" x1="104" y1="320" x2="712" y2="320"/>
+            <text class="fg-label-small" x="116" y="313">the line no flat-fee player can cross</text>
+            <text class="fg-label-small fg-label-soft" x="116" y="336">past it, a leak or an unwanted irreversible act</text>
+            <text class="fg-label-small fg-label-soft" x="116" y="352">costs the user something real</text>
+            <rect class="fg-actor" x="114" y="364" width="182" height="176" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="205" y="389" text-anchor="middle">Indian concierge</text>
+            <text class="fg-label-small fg-label-strong" x="205" y="405" text-anchor="middle">field; US and UK</text>
+            <text class="fg-label-small fg-label-strong" x="205" y="421" text-anchor="middle">hybrid assistants</text>
+            <text class="fg-label-small" x="205" y="453" text-anchor="middle">errands, tables,</text>
+            <text class="fg-label-small" x="205" y="469" text-anchor="middle">cabs, groceries,</text>
+            <text class="fg-label-small" x="205" y="485" text-anchor="middle">gifts, follow-ups</text>
+            <text class="fg-label-small fg-label-soft" x="205" y="517" text-anchor="middle">a person sees all</text>
+            <rect class="fg-box" x="316" y="364" width="182" height="176" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="407" y="389" text-anchor="middle">AI-lab browser and</text>
+            <text class="fg-label-small fg-label-strong" x="407" y="405" text-anchor="middle">app agents</text>
+            <text class="fg-label-small" x="407" y="437" text-anchor="middle">shopping, bookings,</text>
+            <text class="fg-label-small" x="407" y="453" text-anchor="middle">research, drafting</text>
+            <text class="fg-label-small fg-label-soft" x="407" y="485" text-anchor="middle">refuse or supervise</text>
+            <text class="fg-label-small fg-label-soft" x="407" y="501" text-anchor="middle">money, law, health</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="429" text-anchor="middle">errands, travel,</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="445" text-anchor="middle">family logistics:</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="461" text-anchor="middle">also reachable;</text>
+            <text class="fg-label-small fg-label-soft" x="610" y="477" text-anchor="middle">not the wedge</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 0.1</span> Below the line, any service with a phone and a chat thread can operate; above it, only one in which nobody sees the real value and nothing irreversible fires outside the envelope. Every rival is built below the line.</figcaption>
+        </figure>
+        <h3 id="how-we-cross-it"><span class="no">1.3</span>How we cross it</h3>
+        <p>The AI is the brain and the humans are hands. Every request becomes an ordered plan, and a classifier marks each step as one the AI can run, one a worker can run from a task card, or one only the user can do on their own device. Workers, the AI and almost all of our software handle aliases such as <code>{{pan}}</code>; the real value lives in a bought vault and is placed into a form or an email, never onto a call, by one small isolated component at the last boundary, so the worker sees a field of dots, and no value goes onto a call at all (<a href="../decisions/dr-021-no-value-spoken.html">DR-021</a>). Every task carries an authority envelope: a spend cap, the parties we may contact, the acts we may commit the user to, the identity acts they delegate, and a validity window past which nothing starts: at its end every unfired step is cancelled and the task waits for the user's one-tap renewal. The planner proposes it with the plan; the user confirms it with one tap before any step executes, and can narrow or extend it from their own device at any time. Delegation is total inside it and impossible outside it. And every use of every alias is written into a plain-words access ledger the user can read:</p>
+        <ol class="ledger">
+          <li><span class="t">14:32</span><span class="e">{{pan}} used to fill HDFC Bank's account-opening form, in our browser. Placed by the system. No person saw it.</span></li>
+          <li><span class="t">14:40</span><span class="e">{{dob}} typed into Max Healthcare's appointment form, in a browser we run. Placed by the system. No person saw it.</span></li>
+          <li><span class="t">14:41</span><span class="e">A worker saw the form with {{pan}} shown as dots.</span></li>
+        </ol>
+        <p>Those lines are the product. <a href="../03-trust-and-data/trust-story.html">The trust story</a> says it in a page a customer could read; <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> names every path by which a person could see a real value and closes each one.</p>
+      </section>
+

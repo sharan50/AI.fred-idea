@@ -1,0 +1,79 @@
+      <section>
+        <h2 id="task-card"><span class="no">1</span>The task card</h2>
+        <p>A task card is the whole of a worker's world for the duration of one step, and it is generated, not written. When a <code>human</code> step reaches <code>ready</code>, the task service's card generator projects the step record from <a href="./#step-record">the step record in 02</a> into a card, with the script the planner wrote from the step template, and offers it to the pool the step type's catalogue entry names in its <code>pool</code> field: L1 generalists, an L2 specialist pod for the vertical, or L3 super-trust, per <a href="../04-operations/#tiers">the tiers in 04</a>. Cards are offered in order of earliest step deadline, then plan order, to every signed-in worker whose tier and pod on the shift roster match the pool; a worker's identity is the console sign-in bound to their badge, and their id, <code>w_...</code>, is on every event they cause. A worker claims a card, the step moves to <code>running</code>, and the card is live until the step closes. A claim survives a dropped connection for a grace interval (illustrative: two minutes), after which the card returns to the pool as a recorded step-state event with the surface released; at shift end a live card is handed over by name under the handover rule in <a href="../04-operations/#handover">04</a> or returned the same way, and a call in progress is finished by the worker on it first. Then it is gone: the console keeps no history a worker can open once a step closes, and a worker never holds two live cards at once.</p>
+        <p>The card has six parts, in this order, and nothing else. A header naming the pseudonymous client ("Client 4471"), the task and step position, the pool, and the live step timer. The step, in one sentence. The script: what to say or do, in order, with the moments at which a value is to be placed marked as actions rather than as text. The fields for this step, as aliases, each with a Place control and a masked rendering slot. The expected outcome, which is the test the result is checked against. And the result form, which closes the step with one outcome code and the fields that code requires. Every free-text part of the card, the step sentence, the expected outcome, the facts in clear projected into them, a question and a variance note, is rendered through the same allowlist default paint as an inbound message (section 2.3), after the hash service's screen: a token outside the cleared vocabulary is painted, and a painted token the step needs is requested as a typed field on the user's device or closes the step <code>blocked-needs-user</code>. Figure 2.5 shows the anatomy.</p>
+        <figure class="fig" id="fig-task-card">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 2.5, the anatomy of a task card, scrollable">
+          <svg viewBox="0 0 720 560" role="img" aria-labelledby="fig-task-card-title fig-task-card-desc">
+            <title id="fig-task-card-title">The anatomy of a task card</title>
+            <desc id="fig-task-card-desc">A single card for Client 4471, step four of six, with a live timer: the step in one sentence, a four-line script, two field rows for the name and the date of birth, each with its alias, a masked value cell and a Place control, the surface note naming the browser, the expected outcome and the result form. Annotations to the right explain each part. The accent element is the outline of the masked value column, which the console cannot render.</desc>
+            <rect class="fg-box" rx="2" x="8" y="16" width="456" height="520"/>
+            <text class="fg-label fg-label-strong" x="24" y="44">Client 4471</text>
+            <text class="fg-label-small" x="140" y="44">task 12, step 4 of 6</text>
+            <text class="fg-label-small" x="300" y="44">L1 pool</text>
+            <text class="fg-label-small" x="372" y="44">timer: live</text>
+            <line class="fg-rule" x1="8" y1="60" x2="464" y2="60"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="80">Step</text>
+            <text class="fg-label-small" x="24" y="96">Book the earliest cardiology appointment next week</text>
+            <text class="fg-label-small" x="24" y="110">on Max Healthcare's appointment portal, at no fee.</text>
+            <line class="fg-rule" x1="8" y1="126" x2="464" y2="126"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="146">Script</text>
+            <text class="fg-label-small" x="24" y="162">1  Open the cardiology appointment page.</text>
+            <text class="fg-label-small" x="24" y="176">2  In the patient fields, press Place for each.</text>
+            <text class="fg-label-small" x="24" y="190">3  Choose the earliest slot next week and submit.</text>
+            <text class="fg-label-small" x="24" y="204">4  Enter nothing else. Close the page.</text>
+            <line class="fg-rule" x1="8" y1="220" x2="464" y2="220"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="240">Fields for this step (only these)</text>
+            <rect class="fg-box" rx="2" x="24" y="252" width="116" height="40"/>
+            <text class="fg-label-small" x="36" y="276">name</text>
+            <rect class="fg-box" rx="2" x="144" y="252" width="120" height="40"/>
+            <text class="fg-label-small" x="156" y="276">{{name}}</text>
+            <rect class="fg-box-accent" rx="2" x="268" y="252" width="108" height="88"/>
+            <text class="fg-label-small" text-anchor="middle" x="322" y="276">not rendered</text>
+            <text class="fg-label-small" text-anchor="middle" x="322" y="324">not rendered</text>
+            <rect class="fg-box" rx="2" x="380" y="252" width="64" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="412" y="276">Place</text>
+            <rect class="fg-box" rx="2" x="24" y="300" width="116" height="40"/>
+            <text class="fg-label-small" x="36" y="324">date of birth</text>
+            <rect class="fg-box" rx="2" x="144" y="300" width="120" height="40"/>
+            <text class="fg-label-small" x="156" y="324">{{dob}}</text>
+            <rect class="fg-box" rx="2" x="380" y="300" width="64" height="40"/>
+            <text class="fg-label-small" text-anchor="middle" x="412" y="324">Place</text>
+            <text class="fg-label-small fg-label-soft" x="24" y="358">surface: Max Healthcare's portal, in a browser we run</text>
+            <line class="fg-rule" x1="8" y1="372" x2="464" y2="372"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="392">Expected outcome</text>
+            <text class="fg-label-small" x="24" y="408">A booked slot next week with a reference number; no fee.</text>
+            <line class="fg-rule" x1="8" y1="424" x2="464" y2="424"/>
+            <text class="fg-label-small fg-label-soft" x="24" y="444">Result: fill in to close the step</text>
+            <text class="fg-label-small" x="24" y="460">code       ok / ok-with-variance / blocked-third-party / ...</text>
+            <text class="fg-label-small" x="24" y="476">reference  set by the controller</text>
+            <text class="fg-label-small" x="24" y="492">party      ______________</text>
+            <text class="fg-label-small" x="24" y="508">variance   ______________</text>
+            <text class="fg-label-small" x="24" y="524">timestamp  set by the console</text>
+            <line class="fg-line-soft" x1="466" y1="40" x2="480" y2="40"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="40">pseudonym only: no name, no</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="54">contact detail, no history</text>
+            <line class="fg-line-soft" x1="466" y1="92" x2="480" y2="92"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="96">the step in one sentence</text>
+            <line class="fg-line-soft" x1="466" y1="158" x2="480" y2="158"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="162">the script: what to say, in</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="176">order, and nothing else</text>
+            <line class="fg-line-soft" x1="466" y1="296" x2="480" y2="296"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="286">aliases: all the console holds</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="300">accent: the values cannot be</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="314">rendered here at all</text>
+            <line class="fg-line-soft" x1="466" y1="404" x2="480" y2="404"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="408">what the result is checked</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="422">against</text>
+            <line class="fg-line-soft" x1="466" y1="456" x2="480" y2="456"/>
+            <text class="fg-label-small fg-label-soft" x="488" y="460">one code from the fixed</text>
+            <text class="fg-label-small fg-label-soft" x="488" y="474">vocabulary closes the step</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="552">illustrative content; a real card carries the fields its step needs and no others</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 2.5</span> Everything a worker needs to place two values in one form, and nothing that would let them know whose values they are; the identifiers are illustrative.</figcaption>
+        </figure>
+        <p>The Place control is the only way a worker cues a value onto a surface, and the value never passes through the console, which never calls the substitution component. Pressing it sends the task service the step and the alias; the task service hands the tap to the step's surface controller, the browser controller, the telephony controller or the mail relay, of which the browser controller and the relay alone may write a placement request, naming the task, the step, the alias, the surface and the target (the field's accessibility node and origin in the managed browser, the frame and the field in the browser, the placeholder occurrences in the mail relay) with the signed step context, as <a href="./#surface-controllers">the surface controllers in 02</a> and <a href="../03-trust-and-data/#substitutor-interface">the substitutor's interface in 03</a> specify. The substitution component runs its checks, performs the placement directly into the surface, writes the ledger entry, and returns a receipt to the controller: <code>placed</code>, <code>not-confirmed</code>, <code>refused</code> naming the check that failed, or <code>failed</code> with a reason class. The controller closes or continues the step and the task service records the outcome; the console renders the receipt in the masked slot and has no route by which the value could arrive. On <code>placed</code> the script continues. On <code>not-confirmed</code> or <code>failed</code> the slot says so and offers Place again, a retry under a token the step runner issues, up to the step's cap, after which the task service closes the step <code>failed-retryable</code> and re-queues it; a committing placement is the exception, a payment instrument or instruction or an alias the catalogue marks consumed on placement, which needs the approval token like a submit, carries the fired marker from its first tone or character and on <code>not-confirmed</code> closes <code>failed-final</code> with the marker and no retry, as <a href="./#surface-controllers">02</a> fixes. On <code>refused</code> the worker chooses nothing: the task service closes the step <code>refused-policy</code> with the check named as the policy reference, the card shows the closure, and the planner re-plans or bounces the act. A worker chooses <code>blocked-outside-envelope</code> whenever the party asks for something the envelope's lines on the card do not cover, a fee the caption reports outside the sub-cap included, before or after a placement; a placement already made stands in the ledger and is not undone by the code. The envelope lines a card carries are presence and comparison only, never a number: a cap of zero reads "spend cap: no spend", any other cap "spend cap: set", and a fee is reported by the caption's comparison line, so no card, caption or check card carries an amount and the hash service's amount-pattern screen holds on every card payload.</p>
+        <p>Beside the card sits the surface panel: the structured task card of a modelled workflow or, for an unmodelled counterparty, the masked video stream of the managed browser; the call panel, which carries the line state and the script and no placement control at all, because no value is ever on a call (<a href="../decisions/dr-021-no-value-spoken.html">DR-021</a>); the comparison line where the step's catalogue entry names an amount field, and on a call the amount the desk quotes, which the worker records in the result and which no component compares with the envelope's cap line, an open item in 07, and the non-committing lexicon: "held; off script" when it holds anything else, on which the worker re-phrases, and two the card carries before the worker speaks at all, nothing on this surface being able to cut what is said (DR-021): "commitment held; send for check" on an irreversible step not yet checked, which moves the step to <code>checking</code>, and "this step commits nothing" on a reversible step, where the step enters no check and holds no token, and a party who will not proceed without a commitment is answered by closing the step <code>blocked-outside-envelope</code>; or the mail composer with aliases in the text and, for an inbound message, the relay's painted rendering (section 2.3). The card's timer is the step deadline from the state machine, and it is live in the sense the invariant requires: when it expires, the step does not wait for the worker; the task service acts on the tick by the step type's <code>on_timeout</code> in <a href="./#timers">the timers in 02</a>, which re-queues the step with the card revoked, re-plans it or escalates it, and the card tells the worker so. How cards are pseudonymised, and what the floor around a worker looks like, is operational and specified in <a href="../04-operations/#task-cards">task cards in 04</a>.</p>
+      </section>
+

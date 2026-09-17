@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>The model, AI.fred</title>
+<meta name="description" content="A short description of the unit model and the Monte Carlo simulation behind 05: the scenarios, the run and seed the publication quotes, where the files sit, and the limits of the method.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">05 The model</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="assumption">The instrument behind the numbers, on assumptions<small>revised 2026-09-14</small></p>
+    <h1><span class="no"><a href="./">05</a></span><span class="title">The model</span></h1>
+    <p class="standfirst">The two instruments behind every number in 05: a deterministic unit model whose capture sheet the measurement protocol fills, and a sixty-month Monte Carlo run over twenty thousand paths. What each scenario holds fixed, which run the publication quotes, and the twelve limits that keep a simulation from being read as a forecast.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>05 The model</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-14</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-assumption">assumption</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the founder and investors</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="what-it-is"><span class="no">1</span>What the model is</h2>
+        <p>Two instruments sit behind every number in <a href="./">05</a>. The first is a deterministic unit model: set the assumptions, fill the capture sheet from <a href="./measurement-protocol.html">the measurement protocol</a>, and headcount, cost per task and margin fall out, with a thirty-six-month trajectory sheet that applies improving automation, a learning curve and user growth. The second is a Monte Carlo simulation over sixty months, which samples every driver rather than assuming it and reports the share of paths that reach profitability, the cash trough and the peak cash requirement.</p>
+        <p>Neither is a forecast. A simulation inherits the shape of its priors, and the priors here are informed guesses made by one person with no customers. What the simulation is good for is the ordering of the levers: which parameter, moved by a plausible amount, changes the answer most. That ordering is what section 3 of <a href="./#the-ratio">05</a> reports, and it is stable across seeds even where the levels are not.</p>
+      </section>
+
+      <section>
+        <h2 id="scenarios"><span class="no">2</span>The scenarios</h2>
+        <p>Two configurations of the unit economics, one promotion of the second, and four of the geography, each run as twenty thousand paths. Five of the seven carry the two acquisition mechanisms: the promotion and the four geography scenarios. The other two are organic only by construction, and are the floor rather than the line the publication quotes.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.8</span> The scenarios the publication quotes, and what each one holds fixed. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th>Scenario</th><th>What it is</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">as specified</span></td><td>The product as the previous edition described it: 46 tasks a user a month, unlimited, at a $37 blended revenue per user</td></tr>
+            <tr><td><span class="key">viable</span></td><td>The four levers of 05, section 3, at their stated values: 26 tasks by allowance, $52 in India, an 80 per cent automation ceiling reached faster, a 1.7 minute assisted floor. The run also improves six parameters that are not levers and not commitments: the churn floor, the engineering headcount exponent, the tail handling floor, the speed of approach to the ceiling and both foreign prices, which is set out in <a href="./#trajectory">05, 5</a>. Growth in this run is organic only, and it is the floor rather than the published line</td></tr>
+            <tr><td><span class="key">growth</span></td><td><strong>The line the publication quotes.</strong> The viable run with the two acquisition mechanisms of <a href="../decisions/dr-025-growth-two-mechanisms.html">DR-025</a> in it, at $120 a paid arrival and fifteen per cent of revenue in media. With marketing switched off it rebuilds the viable run character for character, so the two are comparable path by path. It is not geography-neutral: it opens the United Kingdom around month 20 and the United States around month 36 and does not charge a foreign entity's standing cost, which is the sixth limit below and is stated in <a href="./#what-the-page-above-still-carries">05, 6.5</a>. <code>sim_growth_india_only.csv</code> is the same run with both launches suppressed</td></tr>
+            <tr><td><span class="key">india only</span></td><td>No foreign entity; India as delivery base and revenue market. The four geography scenarios carry the same two acquisition mechanisms as the growth run, with the cost of a paid arrival abroad set by the ratio the geography model already held between its per-market acquisition costs</td></tr>
+            <tr><td><span class="key">expansion</span></td><td>The previous edition's sequence, which DR-023 rejected: the United Kingdom around month 20, the United States around month 36, both as secondary markets</td></tr>
+            <tr><td><span class="key">expansion commerce</span></td><td>As above, with the commerce take rate of 05, section 9</td></tr>
+            <tr><td><span class="key">foreign led</span></td><td>The United Kingdom between months 8 and 14 as DR-023 commits, which the run draws as a triangular between months 8 and 18 whose tenth and ninetieth percentiles are months 10 and 16, with acquisition genuinely moved there, under the gates of <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a>. This scenario carries the commerce take rate as well, which is why the sequencing table in <a href="./#geography">05, 8</a> quotes it from a run with the layer switched off, as <code>geo_growth_foreign_led_nocommerce.csv</code>, so that the three columns compare sequencing alone</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 id="the-run"><span class="no">3</span>The run the publication quotes</h2>
+        <p>Every figure on <a href="./">05</a> comes from <code>sim_growth.csv</code>, except the India-only reading of it that section 6.5 quotes, which is <code>sim_growth_india_only.csv</code>: a run of twenty thousand paths at seed 20260913 dated 14 September 2026, which is the viable configuration with both acquisition mechanisms in it at $120 a paid arrival and fifteen per cent of revenue in media. The organic-only run it was promoted over is kept as <code>sim_viable.csv</code>, and 05 quotes it only where it names it as the floor. The geography figures of <a href="./#geography">05, 8</a> and the commerce figures of <a href="./#commerce">05, 9</a> come from <code>geo_growth_india_only.csv</code>, <code>geo_growth_expansion.csv</code>, <code>geo_growth_expansion_commerce.csv</code> and, for the sequencing table's third column, <code>geo_growth_foreign_led_nocommerce.csv</code>, with <code>geo_growth_foreign_led.csv</code> beside it for the same scenario carrying its commerce layer, at the same paths, seed and date, with the four organic-only runs kept beside them as <code>geo_*.csv</code>; each of the four is rebuilt character for character with media switched off, which is the self test the geography script runs before it writes anything. The bands move slightly between seeds, so the seed and the date are quoted wherever a number appears, and a figure re-derived from a different run is a different number. <span class="chip chip-assumption">assumption</span></p>
+        <p>The files sit in <code>models/</code> at the root of the repository, outside the publication, because they are working instruments rather than pages: the two workbooks, the two simulation scripts, the rationale that explains why each distribution is shaped the way it is, the geography and data-layer note, and the raw monthly output of each quoted run as comma-separated values. The directory's own readme names each file and carries the command that reproduces a run. The spreadsheets are deliberately not linked from a page and not pasted into one; a number that matters enough to quote is stated here, with its scenario and its seed.</p>
+      </section>
+
+      <section>
+        <h2 id="limits"><span class="no">4</span>The limits</h2>
+        <p>Twelve limits are worth stating plainly, because a model presented without them invites more weight than it can carry. Three of them were found by interrogating the model rather than by reading it, three more by putting the geography scenarios on the published line, which are the sixth, seventh and eighth below, and the fourth and fifth by reviewing that work in turn; the working is in <code>models/AIfred_model_critique.md</code> beside the model itself.</p>
+        <dl class="def">
+          <dt>The priors are not evidence</dt>
+          <dd>No customer has been served. Five measurements replace the priors, in the order the published line&#x27;s own sensitivity puts them, which is the order <a href="./#what-replaces">05, 10</a> carries: what a paid arrival costs, general and administrative cost at a hundred users, twelve-month churn on a paying cohort, minutes per user per month, and whether the engineering headcount exponent falls as the workflow library generalises. Willingness to pay above $50 sits behind them and is the trigger of the pricing decision rather than of the model. Each is an open item with an owner in <a href="../07-open/#items">07</a>.</dd>
+          <dt>Correlations are asserted, not fitted</dt>
+          <dd>The families of paths that make up the conservative and optimistic lines are constructed by ranking coherent runs, not by blending unrelated percentiles, which avoids the worst artefact of percentile arithmetic but does not measure how the drivers actually co-move.</dd>
+          <dt>The foreign-led case carries the heaviest assumption</dt>
+          <dd>It assumes acquisition abroad at 1.6 times the Indian growth rate from a standing start with no brand and no local team. A comparable service in the United States, backed by a large corporate, reached a few thousand households and closed in 2025. That is why <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a> is amber rather than fixed. Its launch cohort is also 3.4 times the size of the late sequence&#x27;s, and its foreign churn may be lower than the Indian figure. Two further assumptions now ride on the same unmeasured ratio between the Indian and the foreign cost of a user: it prices the media abroad as well as the referral incentive, and the model splits the media budget evenly across live markets, which buys about seven times as many Indian arrivals per rupee and thins the foreign mix. Neither the ratio nor the allocation rule is measured, and the allocation rule is not even decided; both are open items in <a href="../07-open/#items">07</a>, as is the gate arithmetic the same section reports does not reconcile with this model&#x27;s own standing-cost curve.</dd>
+          <dt>There is no tax in either model</dt>
+          <dd>No consumption tax term exists on either side of either model. If the quoted prices are gross of the tax the customer pays rather than net of it, about a seventh of Indian revenue and a sixth of British revenue in every published figure does not exist. Dividing both prices by their rate, which is <code>sim_growth_net_of_tax.csv</code>, moves the cash trough from 14.1 crore to 18.7, the conservative line from 20.5 to 28.5, revenue per user at month 36 from $70 to $59 and the share of paths profitable from month 36 onward from 84 per cent to 71. That is a larger swing than any other limit here. Which reading is right is a question about the price rather than about the model, and it is an open item in <a href="../07-open/#items">07</a>.</dd>
+          <dt>The floor is a step cost and nothing charges the step</dt>
+          <dd>Both models carry a per-head seat cost that rises with headcount, from about Rs 3,200 a month to at most 1.9 times that, and no term at all for the jump a shift or a market adds. At the published line&#x27;s cash trough the whole attested site of <a href="../04-operations/#shifts">04, 2</a>, three shifts, badge-controlled zones, camera coverage and locked-down workstations, is carried at about Rs 5.2 lakh a month, 1.3 per cent of cost. <a href="./#cost-split">05, 4</a> pointed at 04 for the price and 04 pointed back here; neither had it. The step also arrives in the months around the trough the seed is sized against, because <a href="../decisions/dr-006-office-mandatory.html">DR-006</a> triggers it on the first foreign market going live.</dd>
+          <dt>The published line contains a geography it does not pay for</dt>
+          <dd>The unit-economics model opens the United Kingdom around month 20 and the United States around month 36, charging each market&#x27;s entry cost and monthly counsel but no entity standing cost and no night premium, and buying foreign arrivals at the Indian channel price. That is the sequence <a href="./#geography">05, 8</a> finds worse than not expanding, with the cost that makes it worse left out. Suppressing both launches takes revenue per user at month 36 from $70 to $59 and users at month 60 from ninety-five thousand to sixty thousand, so about a third of the base is foreign and unpriced; the geography model charges Rs 55.5 crore of standing cost to month 60 that this run does not. Which run is the plan of record is an open item in <a href="../07-open/#items">07</a>, and until it is settled sections 5 and 7 understate the cost of the geography they contain.</dd>
+          <dt>Serving a foreign market costs almost nothing more per task</dt>
+          <dd>The only foreign delivery penalty is a friction term subtracted from the blended automation share, weighted by the foreign share of users and decaying on a six to twenty-two month half-life from launch, with no floor and no engineering spend attached. Nothing makes a foreign task more likely to need the human-led tail, take more worker minutes, or start from less accumulated experience. The result is that a base 41 per cent foreign at month 36 carries 4.8 per cent more handling time per task than an India-only base, and by month 60 at 52 per cent foreign, 2.3 per cent; labour as a share of revenue is lower abroad than at home, because the price is double and the cost of service is all but identical. The cost of rebuilding the workflow library against a second country&#x27;s institutions, which the round plan in <a href="./#funding">05, 7</a> asks the Series A to buy, is therefore already granted for free in the run that argues for going abroad.</dd>
+          <dt>The cost of serving a foreign market at night is a wage uplift and nothing else</dt>
+          <dd>The model charges a night and language premium of 20 to 48 per cent on general agents, scaled by the foreign share of users, so a market with five per cent of the users buys five per cent of a night shift. Supervisors and quality assurance carry no night term at all. That is perfectly divisible shift staffing, which is not a thing: <a href="../06-roadmap/#expansion-shift">06, 4.4</a> requires a rostered crew per market with quality assurance and escalation cover on the same shift, and the whole priced cost of night cover in the late sequence at month 36 is Rs 0.04 crore a month. The step cost of the first foreign user is the question a 400-user gate turns on, and this model does not contain it. It is an open item in <a href="../07-open/#items">07</a>.</dd>
+          <dt>The summary statistics are the optimistic end of what they describe</dt>
+          <dd>The planning and conservative lines are averages taken within a family of paths, month by month. An average of paths is not a path, and the minimum of an average is shallower than the average of minimums: on the published line the planning trough sits at the forty-fifth percentile of what a path in this model needs and the crossing of the two averaged lines falls two months before the median path&#x27;s, where on the organic-only floor it was the thirty-first percentile and eleven months. The distortion also differs by scenario, which matters most where two scenarios are compared: the conservative line sits at the seventy-second percentile of the India-only distribution, the eighty-third of the late sequence&#x27;s and the seventy-sixth of the foreign-led, so the sequencing gap in <a href="./#geography">05, 8</a> is stated at its widest and is narrower at every matched percentile. The distribution is quoted in <a href="./#trajectory">05, 5</a>. Reporting per-path statistics rather than statistics of a line would remove this, and costs nothing but a rewrite of the output.</dd>
+          <dt>The levers are free, and the price lever is the one that matters</dt>
+          <dd>Nothing in the model makes a higher price cost retention or word of mouth, and nothing makes a higher automation ceiling cost engineering. Charging the price a penalty in both and re-running, the move to $52 stops being worth taking once it costs about a tenth of retention and growth together, measured by the odds of ever turning profitable. That number decides the pricing of <a href="../decisions/dr-024-metered-pricing.html">DR-024</a> and the model as written cannot produce it.</dd>
+          <dt>What buys a user is a prior, and bad months cannot persist</dt>
+          <dd>In the organic-only floor, acquisition cost is charged for every user who arrives and no spend causes one to arrive, so the model&#x27;s largest driver has no mechanism. The published line supplies one, in <a href="./#how-users-arrive">05, 6</a>, but every number in it is a prior: nobody has run a reel, and what a paid arrival costs is the figure the mechanism most depends on and the record least knows. The monthly churn and growth shocks are independent draws, so over sixty months they average out and the model contains no sustained bad run, which is the failure mode that ends companies. Revenue is users times price with no usage term, so the metered allowance of <a href="../decisions/dr-024-metered-pricing.html">DR-024</a> earns nothing here, and it does not cap anything either: tasks a user a month is a demand prior between 15 and 40, and 56 per cent of paths average above the allowance the plan sells. The allowance is missing on both sides, so the net sign of the omission is unknown rather than conservative.</dd>
+          <dt>Token prices cut both ways and cancel</dt>
+          <dd>Cost per task falls with model prices and rises with agent loop length and context size; the model lets the two offset for about two years, and in no scenario are tokens the largest line. If either side of that moves sharply, the cost split in <a href="./#cost-split">05, 4</a> is the first thing to re-derive.</dd>
+        </dl>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-14. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

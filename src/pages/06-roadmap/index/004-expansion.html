@@ -1,0 +1,47 @@
+      <section>
+        <h2 id="expansion"><span class="no">4</span>The country-expansion playbook</h2>
+        <p>A new country is an adapter, a legal pack and a shift, and nothing else changes: that is <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a>, the universal core as one country-agnostic build that entering a country must not touch. The checklist below runs for each market. A country is live when every line is ticked, not before.</p>
+        <h3 id="expansion-sequence"><span class="no">4.1</span>The sequence, and the gates</h3>
+        <p>The sequence is not the one the previous edition carried, and the reason is arithmetic rather than ambition. The United Kingdom opens between months 8 and 14, with acquisition genuinely moved there rather than treated as secondary, because the modelling says a late, secondary expansion is worse than not expanding at all: the standing cost of a foreign entity arrives long before its users do, which roughly doubles the conservative cash requirement while lowering the probability of profitability (<span class="chip chip-assumption">assumption</span> <a href="../05-business/#geography">05, 8</a>). India is then the delivery base, the workflow laboratory and a secondary revenue market, not the first of three equal markets: the floor, the library and the measurement all live there, and its revenue is real but is not what the plan turns on.</p>
+        <p>Two gates govern any market, and they are gates rather than forecasts: <strong>400 users in the United Kingdom and 600 in the United States</strong> to carry the local cost base. No market is opened that cannot plausibly reach 500 users within twelve months of entry, and no second market is opened until the first has cleared its gate. Below the gate a market is a drag; above it each user is the purchasing-power arbitrage the expansion is for. <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a> fixes the sequence and the gates, and is amber <span class="chip chip-amber">amber</span>: its trigger is a priced United Kingdom waiting list aimed at non-resident households, measured for conversion, and a net promoter score of 60 or above on the Indian paying cohort, without which the organic mechanism DR-025 rests on is not established and a second market is being opened on borrowed growth, because the case rests on acquiring abroad from a standing start with no brand and no local team.</p>
+        <p>The United States follows the same test rather than a date, and the playbook below is what either market has to absorb.</p>
+        <h3 id="expansion-adapter"><span class="no">4.2</span>The adapter</h3>
+        <ol>
+          <li>Inventory the country's rails: identity, documents, bank data, payments, signatures, and the institutions the wedge touches.</li>
+          <li>For each rail, choose one of three routes: direct where the rail admits us; through a regulated partner where it is reserved to regulated entities; bounce to the user's device where neither is open.</li>
+          <li>Build the passport adapter behind the boundary <a href="../02-architecture/#adapters">the adapter model in 02</a> draws: the rail's response terminates at the vault's edge proxy in front of it, so the adapter receives aliases only and holds no raw byte.</li>
+          <li>Pass adapter conformance: a planted value cannot cross the boundary; every consent artefact and its expiry is a dated fact in the context store.</li>
+        </ol>
+        <h3 id="expansion-legal"><span class="no">4.3</span>The legal pack</h3>
+        <p>The pack's verticals line governs identity and institutional acts, which are the consequential tasks; the everyday work is in scope from the first day and waits on no pack, as <a href="../decisions/dr-019-the-endgame.html">DR-019</a> and DR-020 record.</p>
+        <ol>
+          <li>Load the policy flag table, keyed by jurisdiction and act type: delegated, bounce, or prohibited pending a regulatory answer, with a condition line where one applies; a missing row evaluates to bounce; every line that is not delegated becomes a lobbying-agenda entry with its end-user benefit stated.</li>
+          <li>File the KYC last-mile constraints as legal to-verifies with owners in <a href="../07-open/#items">07</a>. Design carries the ceiling; the flags carry the law.</li>
+          <li>Add the country to <a href="../03-trust-and-data/#residency">the data-residency map</a>: vault, evidence-store and inference regions, and the safeguards for Bengaluru staff processing its data, for the UK a restricted cross-border transfer needing contractual safeguards <span class="chip chip-to-verify">to-verify</span>.</li>
+          <li>Extend <a href="../03-trust-and-data/#privacy-law">the privacy-law skeleton in 03</a> and record the consumer-law liability position: it is our name on the agent.</li>
+          <li>Settle the contactable-party defaults and the refusals list for the country.</li>
+        </ol>
+        <h3 id="expansion-shift"><span class="no">4.4</span>The shift</h3>
+        <ol>
+          <li>Place the country on <a href="../04-operations/#shifts">the 24/7 wheel in 04</a>: the shift covering its business hours and the handovers either side.</li>
+          <li>Stand up the L2 pods for the verticals opening there, with QA and escalation cover on the same shift.</li>
+          <li>Provision numbers, caller identity and languages on our telephony, and the substitution stations under <a href="../04-operations/#site-controls">the site controls</a>, which do not vary by country.</li>
+          <li>Render the ledger in the country's plain words and check that <a href="../03-trust-and-data/trust-story.html">the trust story</a> reads true there.</li>
+        </ol>
+        <p>The three markets are instances of the same list, with preconditions the research to date states only partly. <a href="#tab-preconditions">Table 6.2</a> records the lines that decide an adapter's route or a legal pack's contents, chipped as the evidence allows; what else the rails permit lives in <a href="../03-trust-and-data/#passports">the passports in 03</a>. Every to-verify line has an owner in 07. The KYC last mile in the UK and the US, UK identity rails and US bank-data aggregation have not been researched at all, and the table does not pretend otherwise.</p>
+        <div class="table-wrap wide" id="tab-preconditions">
+        <table class="data">
+          <caption><span class="tab-no">Table 6.2</span> What the adapter and the legal pack must absorb in each market, as far as the research to date can say.</caption>
+          <thead><tr><th>Market</th><th>Claim</th><th>Status</th><th>Source</th></tr></thead>
+          <tbody>
+            <tr><td class="key">India</td><td>A document pull from DigiLocker needs the user's own authorisation on a DigiLocker consent page, with a stated purpose and a consent expiry: a bounce, then an adapter fetch.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a></td><td>NeGD and MeitY, Requester API specification v2.3, September 2023</td></tr>
+            <tr><td class="key">India</td><td>Only an entity regulated by a financial sector regulator may be an Account Aggregator information user, so bank-data access runs through a regulated partner, never directly.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a></td><td>RBI, Master Direction on Account Aggregators, 2017</td></tr>
+            <tr><td class="key">UK</td><td>Open banking is moving to a Future Entity overseen by the FCA; whether a party acting for the customer can hold an account-information or payment-initiation consent is unresearched, so the bank-data route is undecided.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>FCA FS25/4, August 2025, in excerpt; Payment Services Regulations 2017 not yet read</td></tr>
+            <tr><td class="key">UK</td><td>The business is responsible for what its AI agent does even where the technology is supplied by a third party.</td><td><span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-3">[3]</a></td><td>CMA guidance of 9 March 2026, as summarised by Cooley; not read at source</td></tr>
+            <tr><td class="key">US</td><td>Regulation E has no rule for a standing authorisation given to an agent, and no CFPB guidance squarely applies as of August 2026.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Law-firm and trade commentary, 2026; primary texts not yet read</td></tr>
+            <tr><td class="key">US</td><td>Card networks bind a tokenised credential to a named agent and merchant scope (Mastercard Agent Pay; Visa Trusted Agent Protocol), so an agent never holds the card number.</td><td><span class="chip chip-to-verify">to-verify</span></td><td>Trade press, 2025 to 2026; no consumer-liability terms found</td></tr>
+            <tr><td class="key">US</td><td>California AB 316 bars a defendant who used AI from arguing that the AI autonomously caused the harm, from 1 January 2026.</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-4">[4]</a></td><td>DataGuidance, October 2025</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>

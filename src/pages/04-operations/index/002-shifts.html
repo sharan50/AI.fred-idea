@@ -1,0 +1,103 @@
+      <section>
+        <h2 id="shifts"><span class="no">2</span>The shift design, staged</h2>
+        <p>The wheel below is the shape at scale. The pilot runs one shift in one controlled room, because at pilot volume the 24-hour wheel is neither affordable nor required by law, and the attested site with three shifts arrives when the first foreign market goes live or the floor passes a headcount threshold the founder has yet to set (<a href="../decisions/dr-006-office-mandatory.html">DR-006</a>, amber). Two costs follow and both belong to the room rather than to a task: the floor is a step cost, so each shift and each market added is a jump rather than a slope, and seat cost per head rises with headcount, by something between 1.15 and 1.9 times by the time a floor passes three hundred, because a company that size has to become a place people will join. <span class="chip chip-assumption">assumption</span> <a href="../05-business/#cost-split">05</a> prices both.</p>
+        <p>One office runs the clock: a day shift for India and two night shifts for the west, the UK first and then the US, on a single 24-hour wheel in Indian Standard Time. The handover is the moment we design hardest for. No cost model is attached; pool sizing against the wheel is an input <a href="../05-business/">05</a> models on priors rather than measures. The two night shifts are night work in Karnataka, which the floor takes to need permits, transport and safeguards, including for women workers; what the law requires of each is to be verified from the primary source before the first night shift is rostered, and the item and its owner are in <a href="../07-open/#items">07</a> <span class="chip chip-to-verify">to-verify</span>.</p>
+        <h3 id="shift-wheel"><span class="no">2.1</span>The wheel</h3>
+        <figure class="fig" id="fig-shift-wheel">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 4.1, the 24-hour shift wheel in Indian Standard Time, scrollable">
+          <svg viewBox="0 0 720 600" role="img" aria-labelledby="fig-shift-wheel-title fig-shift-wheel-desc">
+            <title id="fig-shift-wheel-title">The 24-hour shift wheel in Indian Standard Time</title>
+            <desc id="fig-shift-wheel-desc">A clock face of 24 hours in Indian Standard Time, midnight at the top and running clockwise, with an outer band carrying three shifts: the day shift from 07:30 to 16:00, night one from 15:30 to 00:00 and night two from 23:30 to 08:00, each overlapping the next by thirty minutes. Inside the band four plain arcs show the working day of India, the UK, the US east coast and the US west coast, converted to Indian time on summer offsets. The accent is the set of three thirty-minute handover windows where the shift bands overlap.</desc>
+            <text class="fg-label-small fg-label-soft" x="8" y="22">24 hours in IST (UTC+5:30), clockwise</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="38">from midnight at the top. Summer offsets</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="54">drawn: BST, EDT and PDT.</text>
+            <circle class="fg-line" cx="360" cy="300" r="224"/>
+            <line class="fg-line" x1="360" y1="88" x2="360" y2="76"/>
+            <line class="fg-line" x1="415.9" y1="91.4" x2="418" y2="83.6"/>
+            <line class="fg-line" x1="468" y1="112.9" x2="472" y2="106"/>
+            <line class="fg-line" x1="509.9" y1="150.1" x2="518.4" y2="141.6"/>
+            <line class="fg-line" x1="547.1" y1="192" x2="554" y2="188"/>
+            <line class="fg-line" x1="568.6" y1="244.1" x2="576.4" y2="242"/>
+            <line class="fg-line" x1="572" y1="300" x2="584" y2="300"/>
+            <line class="fg-line" x1="568.6" y1="355.9" x2="576.4" y2="358"/>
+            <line class="fg-line" x1="547.1" y1="408" x2="554" y2="412"/>
+            <line class="fg-line" x1="509.9" y1="449.9" x2="518.4" y2="458.4"/>
+            <line class="fg-line" x1="468" y1="487.1" x2="472" y2="494"/>
+            <line class="fg-line" x1="415.9" y1="508.6" x2="418" y2="516.4"/>
+            <line class="fg-line" x1="360" y1="512" x2="360" y2="524"/>
+            <line class="fg-line" x1="304.1" y1="508.6" x2="302" y2="516.4"/>
+            <line class="fg-line" x1="252" y1="487.1" x2="248" y2="494"/>
+            <line class="fg-line" x1="210.1" y1="449.9" x2="201.6" y2="458.4"/>
+            <line class="fg-line" x1="172.9" y1="408" x2="166" y2="412"/>
+            <line class="fg-line" x1="151.4" y1="355.9" x2="143.6" y2="358"/>
+            <line class="fg-line" x1="148" y1="300" x2="136" y2="300"/>
+            <line class="fg-line" x1="151.4" y1="244.1" x2="143.6" y2="242"/>
+            <line class="fg-line" x1="172.9" y1="192" x2="166" y2="188"/>
+            <line class="fg-line" x1="210.1" y1="150.1" x2="201.6" y2="141.6"/>
+            <line class="fg-line" x1="252" y1="112.9" x2="248" y2="106"/>
+            <line class="fg-line" x1="304.1" y1="91.4" x2="302" y2="83.6"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="66.5">00</text>
+            <text class="fg-label" text-anchor="middle" x="528.3" y="136.2">03</text>
+            <text class="fg-label" text-anchor="middle" x="598" y="304.5">06</text>
+            <text class="fg-label" text-anchor="middle" x="528.3" y="472.8">09</text>
+            <text class="fg-label" text-anchor="middle" x="360" y="542.5">12</text>
+            <text class="fg-label" text-anchor="middle" x="191.7" y="472.8">15</text>
+            <text class="fg-label" text-anchor="middle" x="122" y="304.5">18</text>
+            <text class="fg-label" text-anchor="middle" x="191.7" y="136.2">21</text>
+            <path class="fg-box-2" d="M 552.2 379.6 A 208 208 0 0 1 179.9 404 L 212.8 385 A 170 170 0 0 0 517.1 365.1 Z"/>
+            <path class="fg-box-2" d="M 195 426.6 A 208 208 0 0 1 360 92 L 360 130 A 170 170 0 0 0 225.1 403.5 Z"/>
+            <path class="fg-box-2" d="M 332.9 93.8 A 208 208 0 0 1 540.1 404 L 507.2 385 A 170 170 0 0 0 337.8 131.5 Z"/>
+            <path class="fg-accent" d="M 195 426.6 A 208 208 0 0 1 179.9 404 L 212.8 385 A 170 170 0 0 0 225.1 403.5 Z M 332.9 93.8 A 208 208 0 0 1 360 92 L 360 130 A 170 170 0 0 0 337.8 131.5 Z M 552.2 379.6 A 208 208 0 0 1 540.1 404 L 507.2 385 A 170 170 0 0 0 517.1 365.1 Z"/>
+            <text class="fg-label fg-label-strong" text-anchor="middle" x="372" y="483.6" transform="rotate(-3.75 372 483.6)">Day shift</text>
+            <text class="fg-label-small" text-anchor="middle" x="373" y="498.6" transform="rotate(-3.75 373 498.6)">07:30 to 16:00</text>
+            <text class="fg-label fg-label-strong" text-anchor="middle" x="186" y="214.2" transform="rotate(-63.75 186 214.2)">Night one</text>
+            <text class="fg-label-small" text-anchor="middle" x="199.5" y="220.8" transform="rotate(-63.75 199.5 220.8)">15:30 to 00:00</text>
+            <text class="fg-label fg-label-strong" text-anchor="middle" x="521.3" y="192.2" transform="rotate(56.25 521.3 192.2)">Night two</text>
+            <text class="fg-label-small" text-anchor="middle" x="508.8" y="200.6" transform="rotate(56.25 508.8 200.6)">23:30 to 08:00</text>
+            <path class="fg-line" d="M 466.1 406.1 A 150 150 0 0 1 211.3 319.6"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="442">India</text>
+            <path class="fg-line" d="M 311.8 416.4 A 126 126 0 0 1 297 190.9"/>
+            <text class="fg-label" x="244" y="313">UK</text>
+            <path class="fg-line" d="M 258.9 286.7 A 102 102 0 0 1 432.1 227.9"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="190">US East</text>
+            <path class="fg-line" d="M 312.5 238.1 A 78 78 0 0 1 438 300"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="240">US West</text>
+            <text class="fg-label fg-label-strong" text-anchor="middle" x="360" y="304">IST</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="572">Shift boundaries and the 30-minute handover are</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="588">illustrative, not fixed.</text>
+            <text class="fg-label-small fg-label-soft" text-anchor="end" x="712" y="572">Arcs: working day of each market, in IST</text>
+            <text class="fg-label-small fg-label-soft" text-anchor="end" x="712" y="588">Accent: the three handover windows</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 4.1</span> Three shifts on one wheel cover the working day of every market from one office; the handover windows are where the design concentrates its care.</figcaption>
+        </figure>
+        <p>The dial is Indian Standard Time, midnight at the top; the outer band holds the three shifts, the accent marks each handover where two bands overlap, and the arcs inside are each market's working day in Indian time, with the numbers in Table 4.2. Two of the three handovers, at 15:30 and 23:30, fall inside open markets. The third, at 07:30, sits on purpose in the quiet hour between the US west coast's close and India's open. All three are designed as events rather than a change of faces, because blocked steps hold response windows across them and a promised callback has to find a live desk.</p>
+        <h3 id="offsets"><span class="no">2.2</span>The offsets used</h3>
+        <p>Offsets are facts, and Table 4.2 states the ones drawn. The wheel uses summer offsets; in winter every western arc moves an hour later on the dial and the shift windows absorb it without redrawing. The working day drawn is a plain nine to five-thirty for every market, India included, not a claim about any institution's hours.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 4.2</span> The working day drawn for each market, the offset used, and where it lands in Indian Standard Time.</caption>
+          <thead><tr><th>Market</th><th>Working day drawn, local</th><th>Offset used</th><th>In IST, summer</th><th>In IST, winter</th></tr></thead>
+          <tbody>
+            <tr><td class="key">India</td><td class="mono">09:00 to 17:30 IST</td><td class="mono">UTC+5:30, all year</td><td class="mono">09:00 to 17:30</td><td class="mono">09:00 to 17:30</td></tr>
+            <tr><td class="key">UK</td><td class="mono">09:00 to 17:30</td><td class="mono">UTC+1 (BST); UTC+0 in winter</td><td class="mono">13:30 to 22:00</td><td class="mono">14:30 to 23:00</td></tr>
+            <tr><td class="key">US Eastern</td><td class="mono">09:00 to 17:30</td><td class="mono">UTC-4 (EDT); UTC-5 in winter</td><td class="mono">18:30 to 03:00</td><td class="mono">19:30 to 04:00</td></tr>
+            <tr><td class="key">US Pacific</td><td class="mono">09:00 to 17:30</td><td class="mono">UTC-7 (PDT); UTC-8 in winter</td><td class="mono">21:30 to 06:00</td><td class="mono">22:30 to 07:00</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <h3 id="handover"><span class="no">2.3</span>The three shifts and the handover</h3>
+        <p>Each shift carries the same complement: an L1 pool, L2 pods staffed for the markets the shift holds, at least one L3 seat, a shift lead who holds QA for the shift, and escalation cover. A pod is defined by vertical, but its members on a shift are drawn for that shift's markets: the night-one banking pod knows UK institutions, the day-shift one Indian ones. What a pod learns about an institution is written back into that market's entries in the step-type catalogue of <a href="../02-architecture/#classifier">02</a>, which ship in the legal pack, so the knowledge outlives the person; the per-market complement is the shift in the playbook of <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a>, an adapter, a legal pack and a shift. Table 4.3's windows are illustrative; the shape and the overlap are fixed.</p>
+        <div class="table-wrap">
+        <table class="data">
+          <caption><span class="tab-no">Table 4.3</span> The three shifts, their illustrative windows, and the markets each one holds while they are working, on summer offsets.</caption>
+          <thead><tr><th>Shift</th><th>Window in IST (illustrative)</th><th>Markets in their working day</th></tr></thead>
+          <tbody>
+            <tr><td class="key">Day shift</td><td class="mono">07:30 to 16:00</td><td>India from its opening to 16:00; the UK from 13:30.</td></tr>
+            <tr><td class="key">Night one</td><td class="mono">15:30 to 00:00</td><td>India's last two hours; the UK to its close at 22:00; the US east coast from 18:30 and the west coast from 21:30.</td></tr>
+            <tr><td class="key">Night two</td><td class="mono">23:30 to 08:00</td><td>The US east coast to 03:00 and the west coast to 06:00 (07:00 in winter); India's opening at 09:00 belongs to the day shift.</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>The handover is the figure's accent because it is where a floor is most likely to drop something. Thirty minutes of overlap, illustrative, under one rule: before a shift ends, every item on the <a href="../02-architecture/worker-console.html#exceptions-board">exceptions board</a> has a named owner and a live timer, and nothing crosses the handover unowned. The outgoing shift lead walks the incoming one through the board, and an item that still needs work is re-owned by name as the first act of the handover. A card in <code>running</code> or <code>checking</code> is closed by its holder before they leave or re-assigned with its timer intact, and the surface decides which: a step on a live call is finished by its holder, whose shift ends when it closes; browser and mail steps re-assign; a call that cannot finish closes <code>blocked-third-party</code> with a callback window. The L3 seat passes with the list of steps in <code>checking</code>. The <a href="../02-architecture/#state-machine">state machine</a> makes this enforceable: a step whose holder left without closing it still carries its timer; at expiry the task service acts on the tick, as section 7 sets out, re-queuing the step to its pool with a fresh timer up to the step type's cap and closing it <code>failed-final</code> past the cap, which is what re-plans; and the watchdog's four checks catch the residue.</p>
+      </section>

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>The trust story, AI.fred</title>
+<meta name="description" content="One page a customer could read: what AI.fred does, why no person who works for us ever sees a value from your vault, where the line actually falls on a phone call, what your ledger looks like, and what we never do.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-sheet">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">03 The trust story</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">decision<small>revised 2026-09-13</small></p>
+    <h1><span class="no"><a href="./">03</a></span><span class="title">The trust story</span></h1>
+    <p class="standfirst">We do the tasks that matter, the ones with your money, your identity and your institutions in them. No person who works for us ever sees a value from your vault, and you can read every use of one in plain words.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>03 The trust story</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For customers</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="promise"><span class="no">1</span>The promise</h2>
+        <p>How it is built is in <a href="./">03 Trust and data</a>; this page is what we would say to you. You hand us a task that matters: opening a bank account, chasing a hospital appointment, renewing a passport, answering a tax notice. We get it done. An AI plans the work and does what it can. Where a person is needed, one of our staff follows a short, exact instruction. And one thing makes this safe to trust: no person who works for us ever sees a value from your vault, with the two exceptions set out in section 4.</p>
+        <p>Your PAN, your Aadhaar, your card and your date of birth live in a locked vault run by a specialist company, not on our desks. Our staff and our AI work with labels instead, like <code>{{pan}}</code>. When a form needs the real number, a machine with no screen types it in, and the person watching sees dots. A call never carries one of your numbers at all: if a task cannot go on without one, it moves to a form or it comes back to you. Every time that happens, a line is written in your ledger, in words you can read. When we write to an institution for you, the email goes from your own address, either sent by us with your permission or written by us and sent by you, so the reply lands in your inbox and you see the whole exchange. You never move your email to us.</p>
+        <figure class="fig" id="fig-promise">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 3.5, the promise in one drawing, scrollable">
+          <svg viewBox="0 0 720 320" role="img" aria-labelledby="fig-promise-title fig-promise-desc">
+            <title id="fig-promise-title">The promise in one drawing</title>
+            <desc id="fig-promise-desc">You, on your own phone, send a request to our AI and your number, once, to the vault. The AI gives a worker a card that names the number by a label, never the number itself. On the worker's tap, a placing machine with no screen takes the number from the vault and puts it into the institution's form. That arrow, from the placer into the institution, is the accent: the one place your number appears outside the vault. The worker sees dots, and a line is written in your ledger.</desc>
+            <defs>
+              <marker id="fig-promise-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+              <marker id="fig-promise-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <text class="fg-label-small fg-label-soft" x="372" y="20" text-anchor="middle">a task card: place {{pan}}, no number on it</text>
+            <rect class="fg-box" x="184" y="32" width="160" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="264" y="54" text-anchor="middle">Our AI</text>
+            <text class="fg-label-small" x="264" y="72" text-anchor="middle">plans; sees {{pan}}</text>
+            <rect class="fg-actor" x="400" y="32" width="176" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="488" y="54" text-anchor="middle">A worker</text>
+            <text class="fg-label-small" x="488" y="72" text-anchor="middle">sees dots, never a number</text>
+            <line class="fg-line" x1="344" y1="60" x2="400" y2="60" marker-end="url(#fig-promise-arrow)"/>
+            <rect class="fg-device" x="8" y="128" width="128" height="64" rx="8"/>
+            <text class="fg-label fg-label-strong" x="72" y="152" text-anchor="middle">You</text>
+            <text class="fg-label-small" x="72" y="172" text-anchor="middle">your own phone</text>
+            <rect class="fg-box-2" x="184" y="128" width="160" height="64" rx="2"/>
+            <text class="fg-label fg-label-strong" x="264" y="152" text-anchor="middle">The vault</text>
+            <text class="fg-label-small" x="264" y="172" text-anchor="middle">your numbers, locked</text>
+            <rect class="fg-box" x="396" y="128" width="136" height="64" rx="2"/>
+            <text class="fg-label fg-label-strong" x="464" y="152" text-anchor="middle">The placer</text>
+            <text class="fg-label-small" x="464" y="172" text-anchor="middle">machine, no screen</text>
+            <rect class="fg-box" x="568" y="128" width="144" height="64" rx="2"/>
+            <text class="fg-label fg-label-strong" x="640" y="152" text-anchor="middle">The institution</text>
+            <text class="fg-label-small" x="640" y="172" text-anchor="middle">receives the number</text>
+            <path class="fg-line" d="M72,128 V60 H184" fill="none" marker-end="url(#fig-promise-arrow)"/>
+            <text class="fg-label-small" x="80" y="52">your request</text>
+            <line class="fg-line" x1="136" y1="160" x2="184" y2="160" marker-end="url(#fig-promise-arrow)"/>
+            <text class="fg-label-small" x="160" y="152" text-anchor="middle">number</text>
+            <line class="fg-line" x1="488" y1="88" x2="488" y2="128" marker-end="url(#fig-promise-arrow)"/>
+            <text class="fg-label-small" x="496" y="112">one tap: place</text>
+            <line class="fg-line" x1="344" y1="160" x2="396" y2="160" marker-end="url(#fig-promise-arrow)"/>
+            <text class="fg-label-small" x="370" y="152" text-anchor="middle">number</text>
+            <line class="fg-accent" x1="532" y1="160" x2="568" y2="160" marker-end="url(#fig-promise-arrow-accent)"/>
+            <text class="fg-label-small" x="712" y="210" text-anchor="end">the only place your number</text>
+            <text class="fg-label-small" x="712" y="226" text-anchor="end">appears outside the vault</text>
+            <line class="fg-line" x1="408" y1="192" x2="408" y2="240" marker-end="url(#fig-promise-arrow)"/>
+            <text class="fg-label-small fg-label-strong" x="8" y="262">Your ledger</text>
+            <text class="fg-label-small" x="104" y="262">14:32  {{pan}} used to fill the form, in our browser. Placed by the system. No person saw it.</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="304">dotted box: a person; rounded box: your phone; accent arrow: where your number appears outside the vault</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 3.5</span> Your number goes once into a vault and comes out once, into the institution's form, by a machine; the people in between only ever see a label or dots.</figcaption>
+        </figure>
+        <p>Before we start, you set the limits: how much we may spend, who we may contact, what we may commit you to. Inside them we act. Outside them, nothing happens without your tap and passcode on your own phone, and a lost phone is suspended by one login. Anything that cannot be undone, a payment or a submitted application, gets a second check before it fires. Your tap on your own phone is also the key: until you confirm the limits there, nothing of yours leaves the vault for that task, and when you withdraw or the window closes, the key is gone. You hold the key, the vault holds the value, and the placing machine holds the credential; none of the three can act alone. Every task teaches us a little more about your affairs, and that is what lets us do the next one, and the everyday ones, better. It is held for you.</p>
+      </section>
+      <section>
+        <h2 id="ledger-example"><span class="no">2</span>What your ledger looks like</h2>
+        <p>Every use of your numbers is one line, written by the machine that used it, not by a person. A bank-account task might read:</p>
+        <ol class="ledger">
+          <li><span class="t">14:02</span><span class="e">{{pan}} received from your message and stored in the vault. No person saw it.</span></li>
+          <li><span class="t">14:32</span><span class="e">{{pan}} used to fill HDFC Bank's account-opening form, in our browser. Placed by the system. No person saw it.</span></li>
+          <li><span class="t">14:32</span><span class="e">A worker saw the form with {{pan}} shown as dots.</span></li>
+          <li><span class="t">14:40</span><span class="e">{{dob}} typed into Max Healthcare's appointment form, in a browser we run. Placed by the system. No person saw it.</span></li>
+        </ol>
+        <p>Three promises. Every use is written down; the machine cannot use a number without writing the line first. "No person saw it" is what their screen could show, not a rule staff follow. And you can read your ledger at any time; the times are illustrative.</p>
+      </section>
+      <section>
+        <h2 id="the-boundary"><span class="no">3</span>Where the line actually falls</h2>
+        <p>No person who works for us ever sees a value from your vault. Your card numbers, your account numbers, your identity numbers and your passwords are held in a vault we bought rather than built, and our people and our software work with labels instead: <code>{{pan}}</code>, <code>{{dob}}</code>. One small isolated component places the real value at the last moment, into a form in a browser we run, rendered as dots, or into an email through our relay. Every surface is ours; nobody ever uses their own.</p>
+        <p>Where a task needs a phone call, one of our people makes it, and here is the honest boundary: no value from your vault is ever spoken on a call, by us or at the institution's request. If a call cannot proceed without one, it stops and moves to a channel where the value can be placed without a person hearing it, or it comes back to you. A person placing a booking on your behalf will hear the other end use your name and the details of the thing being booked. They are never given a number that could be used to become you, and section 4 names the two places where something could still reach them.</p>
+        <p>This is a narrower promise than the one the previous edition made, and it is the one we can actually keep. It is fixed in <a href="../decisions/dr-021-no-value-spoken.html">DR-021</a>, and what a worker does see, a pseudonym and the fields one step needs, is in <a href="../04-operations/#task-cards">04</a>.</p>
+      </section>
+      <section>
+        <h2 id="what-we-never-do"><span class="no">4</span>What we never do</h2>
+        <ul>
+          <li>We never ask you for a one-time code, a PIN or a bank password; those come to your own phone and you enter them yourself, and where one must go into a form on our screen, the worker sees dots. For a payment we do everything up to the tap that moves the money, and that tap is yours, on your own phone. A login to a non-bank website you choose to give us goes into a form that posts straight to the vault, and we only ever see a placeholder.</li>
+          <li>No person who works for us, at any level, sees your numbers, documents or card: every screen and every line they work with is built to show only placeholders, and if a failure ever put a value where a person could see it, your ledger tells you. Two things are still a promise rather than a machine, and we would rather you heard them from us: a health or legal matter said in ordinary words on a call, which no detector can reliably catch, and the name and number of a person you ask us to contact, which someone here has to read in order to put it in the list we dial from. Both are written down as open, with an owner, in the open items.</li>
+          <li>Nothing that cannot be undone happens outside the limits you set. If a task needs more, we ask, and it waits for your tap.</li>
+          <li>If you go quiet, we remind you, then mark the task lapsed and say so; one message revives it. We never quietly forget it.</li>
+          <li>You close every task with one tap: done, satisfied; done, but rough; wrong outcome, needs redoing; we couldn't complete it; withdrawn by me. That answer is how we improve.</li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

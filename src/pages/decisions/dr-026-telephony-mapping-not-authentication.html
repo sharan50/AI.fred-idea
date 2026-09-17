@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>DR-026 A call is for account mapping, never for authentication, AI.fred</title>
+<meta name="description" content="Phone work is eligible only for parties whose opening identity step maps to an account rather than authenticating access to it, recorded as a field in the party register.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-026</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>taken 2026-09-14</small></p>
+    <h1><span class="no"><a href="./">DR-026</a></span><span class="title">A call is for account mapping, never for authentication</span></h1>
+    <p class="standfirst">A call is used only where the institution asks for identity at the start in order to find the account rather than to open it. The test is the institution’s own workflow, recorded per party, and it gives DR-021’s scope of non-authenticating calls something an operations lead can apply before a script is written.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-026</dd></div>
+      <div><dt>Taken</dt><dd>2026-09-14</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For everyone</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>A call is used only where the institution asks for identity at the start of it in order to find the account, and not in order to open it. The test is the institution's own workflow, not our judgement of the risk: if the identifier a desk asks for is a key it maps to a record, the party is eligible for phone work; if it is a secret that grants access to what the record holds, the party is not, and the task runs on the browser or bounces to the user's own device.</p>
+          <p>This gives <a href="dr-021-no-value-spoken.html">DR-021</a>'s scope of non-authenticating calls a test that an operations lead can apply to a party before a script is written, rather than a category a reader has to interpret. A booking desk that asks for a name and a date of birth to pull up an appointment is mapping. A bank's telephone line that accepts a customer identifier and a memorable word as the way in is authenticating, whatever it calls the fields.</p>
+          <h3 id="what-this-does-not-change"><span class="no">1.1</span>What this does not change</h3>
+          <p>It does not change DR-021's rule that nothing from the vault is placed on a call by the substitution component, and it does not restore the media path. It changes which parties may be called at all, which is the question DR-021 left as a category.</p>
+          <h3 id="why-the-distinction-holds"><span class="no">1.2</span>Why the distinction holds</h3>
+          <p>Because of what an overheard value can be used for. The trust story's promise is that no person here is given a number that could be used to become the user. A mapping key overheard by a worker, a booking reference or an appointment number, cannot be used to become anyone: it identifies a record to the party that issued it and to nobody else. A credential overheard can. The two are different kinds of thing wearing the same shape, and the record has until now treated them as one.</p>
+          <h3 id="where-specified"><span class="no">1.3</span>Where this is specified</h3>
+          <p>The eligibility test belongs in the party register, beside the desk numbers and the menu map that <a href="../02-architecture/#step-catalogue">02, 3.3</a> already requires per party: one field, mapping or authenticating, set when the entry is drafted and checked when a phone step type is admitted. The scope of phone work is in <a href="../01-product/#taxonomy">01, 2</a> and <a href="../04-operations/#phone-scope">04, 3</a>.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>No phone work at all</dt>
+            <dd>The safest reading of DR-021's residue, and it costs the product its most ordinary channel: a desk that only answers a telephone cannot be dealt with, and a great many Indian institutional desks only answer a telephone. It also does not follow from the risk, which is specific to credentials.</dd>
+            <dt>Judging each call by the value's class</dt>
+            <dd>Permitting or refusing by alias class, so that a date of birth is always refused and a reference always allowed. Rejected because the same class is a mapping key at one party and a credential at another; the class does not carry the answer and the institution's workflow does.</dd>
+            <dt>Leaving it to the worker on the call</dt>
+            <dd>A script line telling the worker to refuse if the request sounds like a password. It puts the fatal distinction in a person's judgement under time pressure, which is the thing this design exists not to do.</dd>
+            <dt>Deciding per call rather than per party</dt>
+            <dd>Classifying at run time from what the desk asks. Rejected because it cannot fail closed: by the time the desk has asked, the worker is on the call and the pressure to answer is the whole problem.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>A phone step against a party whose register entry does not carry the mapping-or-authenticating field, set before the entry is signed.</li>
+            <li>A call to a desk that treats an identifier as a way in, whatever the field is called and however convenient the call would be.</li>
+            <li>The class of an alias used as the test in place of the institution's workflow.</li>
+            <li>A worker deciding on a live call whether a request is a mapping request.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder on 2026-09-14, narrowing the scope DR-021 set rather than reopening it. One question is left open and sits in 07: whether a mapping key may be spoken by a worker at all, or whether the mapping step bounces to the user's own device as DR-021 has it. This record settles which parties may be called; it does not settle who says the key.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Taken 2026-09-14. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

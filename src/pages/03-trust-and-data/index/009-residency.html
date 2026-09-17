@@ -1,0 +1,75 @@
+      <section>
+        <h2 id="residency"><span class="no">9</span>The data-residency map</h2>
+        <p>Sensitive values stay in the market's region and only aliases travel to the floor. That is the whole map, and it is why the vault is bought: a provider's regional hosting gives each market a vault instance in its own region, and everything of ours that holds a value transiently, the substitutor, the surfaces and the evidence pipeline, is deployed in that region too. The floor in Bengaluru, running 24/7 under <a href="../04-operations/#shifts">the shift design in 04</a>, receives the rendered stream, the task cards, the ledger writes and the masked artefacts a review needs: dots, aliases and masked material, never a value. <a href="#fig-residency">Figure 3.4</a> draws the three markets, and the accent is the one crossing that needs contractual safeguards: personal data of UK and EU residents, even in alias form and pseudonymised, processed by staff in Bengaluru is a restricted transfer under UK GDPR that needs a transfer mechanism (the international data transfer agreement or addendum) and a transfer risk assessment, with the processor terms to match <span class="chip chip-to-verify">to-verify</span>. The US crossing is governed by contract and by the applicable state law rather than by a transfer regime, which the legal pack confirms per cohort <span class="chip chip-to-verify">to-verify</span>. The India crossing is domestic. Model inference for a market runs in that market's region where the model vendor offers it, otherwise in India under the same safeguards as the floor, and for the pilot that choice follows the first market; in either case it sees aliases <span class="chip chip-to-verify">to-verify</span>. A region is never overridden for availability: a vault or substitutor outage in one region delays a step; it never routes a value through another region (<a href="#failure-modes">Table 3.2</a>). Routing is by one key: the market the gateway sets on the request from the user record selects the region, India, the UK or the EU for a UK user, or the US, and that region names the vault instance, the substitutor deployment, the surfaces, the evidence pipeline and the hash service the task will use for its whole life; a step never chooses a region. The rule in <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a> follows: the user's market fixes where values rest and are placed and the institution's market fixes only the rail, so a UK user acting on an Indian institution keeps their vault, substitutor and surfaces in the UK region, the UK-region browser or line reaches the Indian institution as it reaches any other party, and the India adapter's proxy tokenises the rail's response into the user's UK vault instance. Each market's entry in the map lists, per component, the region and the safeguard, and ships in the legal pack (<a href="../02-architecture/#adapters">02</a>); the expansion playbook in <a href="../06-roadmap/#expansion">06</a> adds a row per market.</p>
+        <figure class="fig" id="fig-residency">
+        <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 3.4, the data-residency map, scrollable">
+        <svg viewBox="0 0 720 480" role="img" aria-labelledby="fig-residency-title fig-residency-desc">
+        <title id="fig-residency-title">Where values rest, where processing runs, and which crossing needs safeguards</title>
+        <desc id="fig-residency-desc">Three dashed regions across the top, India, the UK and the US, each holding the user's device, a regional vault with real values at rest, the alias-only stores for that market, and the surfaces and substitutor deployed in region. Below them one dashed zone is the Bengaluru office and its 24/7 floor, holding the worker at the console and the planning, QA and support tooling, all on aliases. An arrow from each region down to the floor carries the stream, cards and ledger writes; the arrow from the UK region is the accent, the border crossing that needs contractual safeguards; the India arrow is domestic and the US arrow is governed by contract.</desc>
+        <defs>
+        <marker id="fig-residency-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+        <marker id="fig-residency-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
+        </defs>
+        <rect class="fg-zone" x="8" y="8" width="224" height="248" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="20" y="23">India region</text>
+        <rect class="fg-device" x="20" y="32" width="200" height="40" rx="8"/>
+        <text class="fg-label-small fg-label-strong" x="120" y="56" text-anchor="middle">User's own device</text>
+        <rect class="fg-box" x="20" y="88" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="120" y="104" text-anchor="middle">Vault, India hosting</text>
+        <text class="fg-label-small fg-label-soft" x="120" y="118" text-anchor="middle">real values at rest</text>
+        <rect class="fg-box" x="20" y="144" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="120" y="160" text-anchor="middle">Stores: context, ledger,</text>
+        <text class="fg-label-small fg-label-soft" x="120" y="174" text-anchor="middle">masked evidence; aliases</text>
+        <rect class="fg-box" x="20" y="200" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="120" y="216" text-anchor="middle">Surfaces and substitutor</text>
+        <text class="fg-label-small fg-label-soft" x="120" y="230" text-anchor="middle">browser, phone and relay</text>
+        <rect class="fg-zone" x="248" y="8" width="224" height="248" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="260" y="23">UK region (UK or EU hosting)</text>
+        <rect class="fg-device" x="260" y="32" width="200" height="40" rx="8"/>
+        <text class="fg-label-small fg-label-strong" x="360" y="56" text-anchor="middle">User's own device</text>
+        <rect class="fg-box" x="260" y="88" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="360" y="104" text-anchor="middle">Vault, UK or EU hosting</text>
+        <text class="fg-label-small fg-label-soft" x="360" y="118" text-anchor="middle">real values at rest</text>
+        <rect class="fg-box" x="260" y="144" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="360" y="160" text-anchor="middle">Stores: context, ledger,</text>
+        <text class="fg-label-small fg-label-soft" x="360" y="174" text-anchor="middle">masked evidence; aliases</text>
+        <rect class="fg-box" x="260" y="200" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="360" y="216" text-anchor="middle">Surfaces and substitutor</text>
+        <text class="fg-label-small fg-label-soft" x="360" y="230" text-anchor="middle">browser, phone and relay</text>
+        <rect class="fg-zone" x="488" y="8" width="224" height="248" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="500" y="23">US region</text>
+        <rect class="fg-device" x="500" y="32" width="200" height="40" rx="8"/>
+        <text class="fg-label-small fg-label-strong" x="600" y="56" text-anchor="middle">User's own device</text>
+        <rect class="fg-box" x="500" y="88" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="600" y="104" text-anchor="middle">Vault, US hosting</text>
+        <text class="fg-label-small fg-label-soft" x="600" y="118" text-anchor="middle">real values at rest</text>
+        <rect class="fg-box" x="500" y="144" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="600" y="160" text-anchor="middle">Stores: context, ledger,</text>
+        <text class="fg-label-small fg-label-soft" x="600" y="174" text-anchor="middle">masked evidence; aliases</text>
+        <rect class="fg-box" x="500" y="200" width="200" height="40" rx="2"/>
+        <text class="fg-label-small fg-label-strong" x="600" y="216" text-anchor="middle">Surfaces and substitutor</text>
+        <text class="fg-label-small fg-label-soft" x="600" y="230" text-anchor="middle">browser, phone and relay</text>
+        <line class="fg-line" x1="120" y1="256" x2="120" y2="312" marker-end="url(#fig-residency-arrow)"/>
+        <text class="fg-label-small" x="128" y="278">domestic:</text>
+        <text class="fg-label-small" x="128" y="292">no border</text>
+        <line class="fg-accent" x1="360" y1="256" x2="360" y2="312" marker-end="url(#fig-residency-arrow-accent)"/>
+        <text class="fg-label-small" x="368" y="278">restricted transfer:</text>
+        <text class="fg-label-small" x="368" y="292">contractual safeguards</text>
+        <line class="fg-line" x1="600" y1="256" x2="600" y2="312" marker-end="url(#fig-residency-arrow)"/>
+        <text class="fg-label-small" x="608" y="278">by contract and</text>
+        <text class="fg-label-small" x="608" y="292">state law</text>
+        <rect class="fg-zone" x="8" y="312" width="704" height="104" rx="2"/>
+        <text class="fg-label-small fg-label-soft" x="20" y="327">Bengaluru office, 24/7 floor: processing on aliases only; no value at rest, none in transit</text>
+        <rect class="fg-actor" x="20" y="344" width="328" height="56" rx="2"/>
+        <text class="fg-label fg-label-strong" x="32" y="366">Worker at the console</text>
+        <text class="fg-label-small fg-label-soft" x="32" y="384">stream as dots; cards and lines as aliases</text>
+        <rect class="fg-box" x="372" y="344" width="328" height="56" rx="2"/>
+        <text class="fg-label fg-label-strong" x="384" y="366">Planning, QA and support tooling</text>
+        <text class="fg-label-small fg-label-soft" x="384" y="384">aliases, masked artefacts, manifests, counts</text>
+        <text class="fg-label-small fg-label-soft" x="12" y="444">accent: the border crossing that needs contractual safeguards, UK and EU residents' data to the floor</text>
+        <text class="fg-label-small fg-label-soft" x="12" y="460">every arrow carries dots, aliases and masked material; a value never leaves its region</text>
+        </svg>
+        </div>
+        <figcaption><span class="fig-no">Figure 3.4</span> Values rest and are placed in the market's region; the floor in Bengaluru works on aliases from all three; the UK crossing is the one that needs a transfer mechanism, and the US crossing rests on contract and state law, to be verified per cohort.</figcaption>
+        </figure>
+      </section>

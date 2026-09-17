@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>Measurement protocol, AI.fred</title>
+<meta name="description" content="The thirty-task instrument that replaces the priors in 05: the five-outcome rubric scored on positive evidence, the timing definitions, the task set, the run protocol, the learning-curve sub-test and the decision thresholds set in advance.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">05 Measurement protocol</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="assumption">The instrument, on assumptions until it is run<small>revised 2026-09-13</small></p>
+    <h1><span class="no"><a href="./">05</a></span><span class="title">Measurement protocol</span></h1>
+    <p class="standfirst">Thirty tasks, three runs each, and three numbers come back measured rather than assumed: the AI-only completion rate, human minutes per assisted task, and the handling time on the human-led tail. A week of one person's time, run on the founder's own accounts, before a floor is leased or an engine is chosen.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>05 Measurement protocol</dd></div>
+      <div><dt>Revised</dt><dd>2026-09-13</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-assumption">assumption</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the founder</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="what-it-measures"><span class="no">1</span>What it measures</h2>
+        <p>Three estimated numbers become three measured ones, at a cost of about a week of one person's time and a few hundred dollars of interface spend, before any floor is leased or any engine is chosen.</p>
+        <ol>
+          <li>AI-only completion rate, by task type, scored on real attempts rather than predicted from a description.</li>
+          <li>Human minutes per assisted task, including wrap, with hold and menu time recorded separately.</li>
+          <li>Average handling time on human-led tasks, which is the number that dominates headcount despite being the smallest share of volume.</li>
+        </ol>
+        <p>Everything else in the unit model is an assumption already held. These three decide whether one generalist serves thirty users or fourteen, which is the difference <a href="./">05</a> turns into a cost base.</p>
+        <p>Two things this instrument cannot do, and both matter for what <a href="./#what-replaces">05, 10</a> claims of it. It measures minutes a task and not tasks a user: how many tasks a household actually brings in a month is a demand question, and thirty tasks chosen by the operator cannot answer it, so the governing ratio of 05 comes out half measured. And the sample below is ten in each tier against an intended mix of 45, 50 and 5 per cent, which over-samples the human-led tail more than sixfold, so the aggregate automation share it reports is a function of the strata and not an estimate of the population figure the cost base is built on. Read each tier's own numbers, and re-weight only when volume by task type has been measured.</p>
+      </section>
+
+      <section>
+        <h2 id="why-the-rubric"><span class="no">2</span>Why the rubric is built this way</h2>
+        <p>The failure mode this protocol exists to avoid is classification by plausibility. A task described as "book a restaurant" looks automatable, so it gets counted as automatable, and the AI-executable share comes out inflated. The correction is positive evidence: a task counts as AI-only when an agent actually completed it and the output passed a stated acceptance test, and not otherwise.</p>
+        <p>Two consequences follow. First, no task is scored before it has been attempted. Second, the acceptance artefact is defined in advance, in the task row, and it is external: a confirmation number, a booking reference, an institutional acknowledgement. A model asserting that it has finished is not evidence that it has.</p>
+      </section>
+
+      <section>
+        <h2 id="tiers"><span class="no">3</span>Tiers</h2>
+        <p>Every run resolves to exactly one of five outcomes, the same five the task model in <a href="./#task-model">05, 2</a> costs.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.6</span> The five outcomes, their definitions and the human time each records.</caption>
+          <thead><tr><th>Tier</th><th>Definition</th><th>Human time</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">AI-only</span></td><td>Agent reached the acceptance artefact with no human action of any kind</td><td>Zero</td></tr>
+            <tr><td><span class="key">Assisted</span></td><td>Agent did the bulk; a human executed one or more bounded steps it could not</td><td>Recorded</td></tr>
+            <tr><td><span class="key">Human-led</span></td><td>A human owned the task from planning through completion, with the AI supporting</td><td>Recorded</td></tr>
+            <tr><td><span class="key">Bounced</span></td><td>Completion required an act only the user can perform: a one-time code, a biometric, a wet signature, an in-person identification</td><td>Recorded, usually small</td></tr>
+            <tr><td><span class="key">Failed</span></td><td>No acceptance artefact, and not because of a bounce</td><td>Recorded</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Bounced is deliberately separate from human-led. A bounce costs almost no labour and therefore barely moves headcount, but it is the outcome that spends the product promise, because the user is handed the task back. Modelling it inside human-led hides the cost in the wrong place; modelling it inside AI-only flatters the automation share. Keep it in its own column and watch it as a product metric, not a cost metric. A run that bounces once and then completes is scored on the work that surrounded the bounce, with the bounce logged in its own column; bounce count and tier are independent fields.</p>
+      </section>
+
+      <section>
+        <h2 id="timing"><span class="no">4</span>Timing definitions</h2>
+        <p>These definitions are the whole of the measurement, so they are applied identically on every run.</p>
+        <dl class="def">
+          <dt>Human active minutes</dt>
+          <dd>Time the worker is doing the step: talking, typing, deciding.</dd>
+          <dt>Wrap minutes</dt>
+          <dd>Time loading context before the step and verifying, recording and closing after it. Typically one to three minutes and routinely omitted from estimates, which is why it is a separate column.</dd>
+          <dt>Hold and menu minutes</dt>
+          <dd>Time spent waiting: menu navigation, queue, transfer. Recorded separately because it is the segment most cheaply removed by engineering. If the system dials, navigates the tree, waits and hands over a connected call, this column drops out of the labour model entirely, which is one of the four levers in <a href="./#the-ratio">05, 3</a>. The workbook has a switch to model both cases.</dd>
+        </dl>
+        <p>Start and stop a timer per segment. Do not reconstruct times afterwards from memory; reconstructed times are consistently short.</p>
+      </section>
+
+      <section>
+        <h2 id="task-set"><span class="no">5</span>The task set</h2>
+        <p>Thirty tasks, stratified across the mix the product intends to serve, ten in each expected tier. Expected tier is a prediction recorded before the run; observed tier is the result. The gap between the two columns is itself a finding.</p>
+        <dl class="def">
+          <dt>Expected AI-only</dt>
+          <dd>Restaurant shortlist with reasons; mobile plan comparison; spend categorisation and anomalies; purchase research within a budget; gift options for an occasion; complaint letter to an airline; a costed outing plan; visa requirements and document checklist; insurance policy explained with exclusions; flight and hotel shortlist.</dd>
+          <dt>Expected assisted</dt>
+          <dd>Phone-only table reservation; dentist appointment in a stated window; return with home pickup; delivery reschedule; refund chase past its window; airport transfer for a specific flight; three rental viewings scheduled; subscription cancellation with a retention flow; repeat grocery order with substitutions; booking confirmation with dietary requirements.</dd>
+          <dt>Expected human-led</dt>
+          <dd>Bank know-your-customer refresh; passport renewal form and appointment; visa application pack and slot; health insurance claim and first follow-up; hospital admission coordination; rent agreement registration; income tax notice response; pension life certificate or deposit renewal; lost SIM replacement or number port; change of address across five institutions.</dd>
+        </dl>
+        <p>The full list with acceptance artefacts is pre-loaded in the workbook's capture sheet, named on <a href="./model.html">the model page</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="run-protocol"><span class="no">6</span>Run protocol</h2>
+        <p>Three runs per task, on three different counterparties where the task allows it. One run tells you nothing about variance, and variance across counterparties is the thing that decides whether a workflow generalises. Record the average and note the spread where it is wide.</p>
+        <p>Any off-the-shelf agent with browser access will do as the harness. The point is to measure the shape of the work, not to evaluate a specific engine, so the harness is held constant across all thirty tasks and the comparison between task types stays clean. Capture input tokens, output tokens, tool call count and wall clock per run; most harnesses report the first three, and where one does not, proxy tokens from the transcript length and say so. The founder runs the first pass; a second operator on a subset of ten tasks tells you how much of the measured time is operator skill rather than task difficulty.</p>
+      </section>
+
+      <section>
+        <h2 id="learning-curve"><span class="no">7</span>The learning curve sub-test</h2>
+        <p>The claim that human handling time falls with practice is central to the operating model and is testable cheaply. Take the four highest-volume assisted task types. One operator runs each twenty times against different counterparties, recording handling time on every run, and the mean of runs one to five is compared with the mean of runs sixteen to twenty. Two outcomes matter: handling time roughly halves and is still falling at run twenty, in which case the practice argument holds and the operating model can lean on it; or it flattens at sixty to seventy per cent of the first attempt by run ten, in which case practice is real but bounded and the model must assume the floor rather than the slope. <span class="chip chip-assumption">assumption</span></p>
+        <p>Whichever it is, the workflows discovered during those twenty runs are the specification for what to encode. That is the real output of this sub-test, and it is the first entry in the workflow library of <a href="../02-architecture/#workflow-library">02</a>.</p>
+      </section>
+
+      <section>
+        <h2 id="thresholds"><span class="no">8</span>Decision thresholds</h2>
+        <p>Set before the data arrives, so the result is read rather than negotiated.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 5.7</span> What each measured result means and what changes if it lands there. <span class="chip chip-assumption">assumption</span></caption>
+          <thead><tr><th>Measured result</th><th>What it means</th><th>What changes</th></tr></thead>
+          <tbody>
+            <tr><td><span class="key">AI-only share below 25 per cent</span></td><td>The cheap tier is thinner than assumed; the assisted tier absorbs the difference</td><td>Headcount rises; re-price or reduce the task promise</td></tr>
+            <tr><td><span class="key">Assisted minutes above 10, including wrap</span></td><td>The two-to-ten-minute band does not hold in practice</td><td>Automate hold and menu navigation first; re-run the model with the switch off</td></tr>
+            <tr><td><span class="key">Human-led handling time above 45 minutes</span></td><td>The tail dominates labour</td><td>Meter complex tasks explicitly rather than bundling them</td></tr>
+            <tr><td><span class="key">Bounce rate above 25 per cent on human-led tasks</span></td><td>The promise is not delegation, it is preparation</td><td>Rewrite the positioning before the raise, not after</td></tr>
+            <tr><td><span class="key">Users per generalist below 15</span></td><td>The one-to-thirty ratio is wrong by a factor of two</td><td>The seed narrative and the pricing both need rebuilding</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+
+      <section>
+        <h2 id="cautions"><span class="no">9</span>Practical and legal cautions</h2>
+        <p>Run the measurement set against your own accounts and your own identity only. Speaking to an institution as another person, even a consenting friend, is the exposure the legal rows of <a href="../03-trust-and-data/#policy-flags">03</a> flag in India, the United Kingdom and the United States, and it is not worth incurring for a measurement exercise. The consequence is that this run does not test the delegation boundary: an operator acting on their own account sees every value and receives their own one-time codes, so the bounce rate cannot rise the way it will on a floor where <a href="../decisions/dr-021-no-value-spoken.html">DR-021</a> and <a href="../decisions/dr-027-no-name-reaches-a-worker.html">DR-027</a> forbid a worker both, and the assisted-minutes floor is measured under a looser operating model than the one it has to hold in. Both readings are therefore optimistic, and the bounce threshold below cannot trip by construction.</p>
+        <p>Where a task involves a live institutional line, be straightforward about who is calling. Where it involves recording, several jurisdictions require all-party consent, and the measurement does not need recordings: timestamps are enough. Do not use task data, task taxonomies or automation classifications drawn from any other company's systems in this exercise. The findings need to be the company's own, both because a diligence process will ask and because a borrowed benchmark from a differently shaped service would mislead anyway.</p>
+      </section>
+
+      <section>
+        <h2 id="output"><span class="no">10</span>What comes out of it</h2>
+        <p>A filled capture sheet gives, per task type and in aggregate: automation share on positive evidence, human minutes split into active, wrap and hold, token cost per task, and bounce rate. The model turns those into required headcount, users per generalist, cost per task and gross margin, and the sensitivity grid shows how far the answer moves when the two dominant variables move.</p>
+        <p>That is also the evidence base for the engine research the roadmap defers, because it says which capability differences between candidate engines are worth paying for, in rupees per task, rather than in the abstract.</p>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Revised 2026-09-13. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

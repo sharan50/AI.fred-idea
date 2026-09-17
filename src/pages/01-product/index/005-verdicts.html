@@ -1,0 +1,78 @@
+      <section>
+        <h2 id="verdicts"><span class="no">5</span>The verdict system</h2>
+        <p>Two loops, two jobs. The control loop decides whether a task can be shown as done; the improvement loop decides whether it was done well, and only the user can say. Keeping them apart is <a href="../decisions/dr-002-verdict-two-loops.html">DR-002</a>: an outcome code is not ground truth of quality, and a verdict is not a gate on execution.</p>
+
+        <h3 id="control-loop"><span class="no">5.1</span>The control loop, before "done" is shown</h3>
+        <p>Every step closes with exactly one outcome code from a fixed vocabulary and the fields that code requires: <code>ok</code>, <code>ok-with-variance</code>, <code>blocked-third-party</code>, <code>blocked-needs-user</code>, <code>blocked-outside-envelope</code>, <code>failed-retryable</code>, <code>failed-final</code>, <code>refused-policy</code>, <code>superseded</code>, specified once in <a href="../02-architecture/worker-console.html#outcome-codes">the outcome codes in the worker console</a>. The codes drive the state machine, and the task service applies the consequence, never the executor: <code>blocked-needs-user</code> creates a <code>user</code> step; <code>blocked-outside-envelope</code> always creates an extension request naming the line it would breach, one per task per envelope version for a given line, and the request's prompt on the device offers "do this yourself" where the catalogue names a user-act form for the step, accepting which turns the step into a <code>user</code> step, the one way that code produces one; <code>failed-final</code> a re-plan. Artefacts attach for audit and dispute only.</p>
+        <p>When every step is closed, the outcome report goes to the bound device and the task waits in <code>awaiting-verdict</code>. The report is a record with one version, because once it is sent no step of the task runs again: its reference and version; the task; for every step, its purpose, its outcome code with the fields the code carries, a variance in words where there was one, and who closed it, as a category; every irreversible act that fired, with the envelope version it fired under; what did not complete and why; the facts the task learned; and the task's ledger. There is no re-plan after the report: a verdict of "wrong outcome, needs redoing" opens a linked child task rather than a second version (5.2). Delivery is recorded when the bound device returns its signed receipt for the report, sent as the report is rendered, and the <code>awaiting-verdict</code> nudge schedule runs from that moment; a report the device has not yet received keeps the task on the same schedule counted from the send time, each nudge re-sending it, so an unreachable device never holds a task without a timer, and when the receipt arrives the schedule restarts from the recorded delivery.</p>
+
+        <h3 id="improvement-loop"><span class="no">5.2</span>The improvement loop, owned by the user</h3>
+        <p>One tap closes every task that reaches a report; a task refused at intake or lapsed unjudged ends without a verdict, and the ledger says which. The user sees exactly five options, in this order and in these words:</p>
+        <ol>
+          <li>Done, satisfied <code>done-satisfied</code></li>
+          <li>Done, but rough <code>done-rough</code></li>
+          <li>Wrong outcome, needs redoing <code>wrong-outcome</code></li>
+          <li>We couldn't complete it <code>could-not-complete</code></li>
+          <li>Withdrawn by me <code>withdrawn</code></li>
+        </ol>
+        <p><code>lapsed</code> is system-assigned and is never a button; the five-option ceiling holds. "Withdrawn by me" is available from the task view at any point: steps in flight are cancelled and an irreversible step already fired is reported. "Wrong outcome, needs redoing" closes the task with that verdict and opens a linked child task in <code>planning</code>; the parent is not reopened. "We couldn't complete it" is the user's word on a task whose report already says what blocked it.</p>
+        <p>The five identifiers are the verdict's record form everywhere, on the architecture page and on the floor. A verdict record carries the task; the identifier; the bound device and its signature; the time; and the reference and version of the outcome report it judged, null for a withdrawal from a state before any report existed. It is written once and never edited; a user who changes their mind opens a new task.</p>
+        <p>The verdict joined to the step trace is the improvement measurement. Every product change, from a new task type to a changed script, is judged against verdict rates per task type; nothing else counts as evidence of improvement. The join is by task reference: the verdict record, the task's event log, its step records and their outcome records, its plan versions and its ledger event types, all of them aliases and pseudonymous references, held in the region the residency map assigns to the market and readable by nothing that renders a value. The measure is the verdict rate per task type: for each identifier, the share of the type's tasks closed by verdict in the window, with <code>lapsed</code> counted beside them by the state lapsed from, never among them. The evaluation set per task type is that join over every closed task of the type, and a change is judged by the rates before and after on the same set; the planner's evaluation set in <a href="../06-roadmap/#sequence">06</a> is drawn from the same records. Figure 1.2 shows both loops.</p>
+        <figure class="fig" id="fig-verdict-flow">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 1.2, the two loops of the verdict system, scrollable">
+          <svg viewBox="0 0 720 360" role="img" aria-labelledby="fig-verdict-flow-title fig-verdict-flow-desc">
+            <title id="fig-verdict-flow-title">The control loop and the improvement loop</title>
+            <desc id="fig-verdict-flow-desc">Three steps run left to right inside a dashed zone labelled control loop; each closes with an outcome code, and the irreversible third step is checked by the other party, drawn as a dotted actor, before it fires. The last step feeds an outcome report, then the user's device where one of five verdicts is tapped, then the terminal state closed. From the device a single accent line, the accent element, runs back through a second dashed zone labelled improvement loop, through the boxes for the verdict joined to the step trace and verdict rates per task type, and up into the first step of the next plan.</desc>
+            <defs>
+              <marker id="fig-verdict-flow-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+              <marker id="fig-verdict-flow-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-zone" x="8" y="8" width="520" height="208" rx="2"/>
+            <text class="fg-label-small fg-label-soft" x="20" y="28">control loop: each step closes with an outcome code</text>
+            <rect class="fg-zone" x="8" y="248" width="520" height="104" rx="2"/>
+            <text class="fg-label-small fg-label-soft" x="56" y="268">improvement loop: the verdict judges every change</text>
+            <path class="fg-accent" d="M544,192 H536 V304 H40 V112" marker-end="url(#fig-verdict-flow-arrow-accent)"/>
+            <text class="fg-label-small fg-label-soft" x="52" y="236">into the next plan for this task type</text>
+            <rect class="fg-box" x="16" y="48" width="152" height="64" rx="2"/>
+            <text class="fg-label" x="28" y="68">step 1, ai</text>
+            <text class="fg-label-small fg-label-soft" x="28" y="84">reversible</text>
+            <text class="fg-label-small fg-label-soft" x="28" y="100">closes ok</text>
+            <line class="fg-line" x1="168" y1="80" x2="192" y2="80" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-box" x="192" y="48" width="152" height="64" rx="2"/>
+            <text class="fg-label" x="204" y="68">step 2, human</text>
+            <text class="fg-label-small fg-label-soft" x="204" y="84">reversible</text>
+            <text class="fg-label-small fg-label-soft" x="204" y="100">closes ok</text>
+            <line class="fg-line" x1="344" y1="80" x2="368" y2="80" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-box" x="368" y="48" width="152" height="64" rx="2"/>
+            <text class="fg-label" x="380" y="68">step 3, ai</text>
+            <text class="fg-label-small fg-label-soft" x="380" y="84">irreversible</text>
+            <text class="fg-label-small fg-label-soft" x="380" y="100">dual control</text>
+            <rect class="fg-actor" x="368" y="136" width="152" height="48" rx="2"/>
+            <text class="fg-label-small" x="380" y="156">checked by the</text>
+            <text class="fg-label-small" x="380" y="172">other party</text>
+            <line class="fg-line" x1="444" y1="136" x2="444" y2="112" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <line class="fg-line" x1="520" y1="80" x2="544" y2="80" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-box" x="544" y="56" width="168" height="48" rx="2"/>
+            <text class="fg-label" x="556" y="76">outcome report</text>
+            <text class="fg-label-small fg-label-soft" x="556" y="92">outcomes and ledger</text>
+            <line class="fg-line" x1="628" y1="104" x2="628" y2="136" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-device" x="544" y="136" width="168" height="88" rx="8"/>
+            <text class="fg-label" x="556" y="160">the user's verdict</text>
+            <text class="fg-label-small fg-label-soft" x="556" y="180">one of five, one tap</text>
+            <text class="fg-label-small fg-label-soft" x="556" y="200">lapsed: not a button</text>
+            <line class="fg-line" x1="628" y1="224" x2="628" y2="256" marker-end="url(#fig-verdict-flow-arrow)"/>
+            <rect class="fg-terminal" x="544" y="256" width="168" height="48" rx="2"/>
+            <text class="fg-label fg-label-paper" x="628" y="284" text-anchor="middle">closed</text>
+            <rect class="fg-box" x="24" y="280" width="208" height="48" rx="2"/>
+            <text class="fg-label" x="36" y="300">verdict and step trace</text>
+            <text class="fg-label-small fg-label-soft" x="36" y="316">the measurement</text>
+            <rect class="fg-box" x="256" y="280" width="248" height="48" rx="2"/>
+            <text class="fg-label" x="268" y="300">verdict rates</text>
+            <text class="fg-label-small fg-label-soft" x="268" y="316">per task type</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 1.2</span> The control loop closes each step with a code; the improvement loop closes the task with the user's verdict, the only measure a product change is judged by.</figcaption>
+        </figure>
+        <aside class="callout"><p><span class="label">Assumption</span><span class="chip chip-assumption">assumption</span> The incentive mechanics are assumed, not decided: a verdict is needed to close a task; a month with a verdict on every task earns a small credit; "Wrong outcome, needs redoing" and "We couldn't complete it" trigger an automatic make-good. What the make-good is remains the founder's open decision in <a href="../07-open/#items">07</a>; nothing here prices it.</p></aside>
+      </section>
+

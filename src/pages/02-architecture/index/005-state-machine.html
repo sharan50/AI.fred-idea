@@ -1,0 +1,194 @@
+      <section>
+        <h2 id="state-machine"><span class="no">5</span>The state machine</h2>
+        <p>A task cannot be forgotten, because forgetting has no transition. The task service holds every task in exactly one named state, gives every non-terminal state a live timer, records every change of state as an explicit event and hands anything that has lost its timer to the watchdog. The invariant below is the contract; it appears identically on the worker console page, where a person is most tempted to leave something for later.</p>
+        <blockquote class="invariant" id="state-machine-invariant"><p>A task never leaves the system by omission. Every task is in exactly one named state. Every non-terminal state carries a live timer. Every change of state is an explicit, recorded transition, and no task reaches a terminal state without one. Silence from the user is a legitimate way for a task to end: it moves through visible nudges into lapsed, and lapsed is not withdrawn. Silence from the system is forbidden: a task with no live timer is an exception, and the watchdog places it on the exceptions board until a person gives it one.</p></blockquote>
+        <h3 id="states"><span class="no">5.1</span>States</h3>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 2.1</span> Ten states: seven live, each with a timer, and three terminal, each reachable only by a named transition.</caption>
+          <thead><tr><th>State</th><th>Kind</th><th>Meaning</th><th>Timer</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">received</td><td>Live</td><td>The intake gateway has accepted and normalised the request.</td><td>Planning deadline</td></tr>
+            <tr><td class="mono">planning</td><td>Live</td><td>The planner is producing the plan, the classification and the envelope proposal.</td><td>Planning deadline</td></tr>
+            <tr><td class="mono">awaiting-authority</td><td>Live</td><td>The plan summary and the envelope proposal are with the user for one-tap confirmation. No step executes before this. Binding the device the confirmation needs is an account act on the device surface, not a step of the task; a task that needs it waits here on the nudge schedule until the bound device exists. A task whose authority ended mid-task, by the validity window's end or a suspension of the binding, returns here by <code>expire-authority</code> and waits the same way for one tap or a replacement binding.</td><td>The nudge schedule</td></tr>
+            <tr><td class="mono">active</td><td>Live</td><td>Steps are executing.</td><td>The earliest step deadline</td></tr>
+            <tr><td class="mono">awaiting-user</td><td>Live</td><td>Blocked on a <code>user</code> step, a question, or an envelope-extension request.</td><td>The nudge schedule</td></tr>
+            <tr><td class="mono">awaiting-third-party</td><td>Live</td><td>Blocked on an external party: an institution's response, a callback, an appointment.</td><td>The third party's expected response window, then escalation</td></tr>
+            <tr><td class="mono">awaiting-verdict</td><td>Live</td><td>Every step is closed and the outcome report has been shown to the user; the task needs the user's verdict. No step of the task runs again after the report is sent, and the report has one version: a "wrong outcome, needs redoing" verdict opens a linked child task (<code>redo</code>).</td><td>The nudge schedule</td></tr>
+            <tr><td class="mono">closed</td><td>Terminal</td><td>Reached only by the user's verdict.</td><td>None</td></tr>
+            <tr><td class="mono">lapsed</td><td>Terminal</td><td>Reached only by the system after the nudge schedule on <code>awaiting-authority</code>, <code>awaiting-user</code> or <code>awaiting-verdict</code> is exhausted. Distinct from withdrawn. The one legal outbound transition is <code>revive</code>, to <code>planning</code>, on a user message referencing the task.</td><td>None</td></tr>
+            <tr><td class="mono">refused</td><td>Terminal</td><td>Reached only from <code>received</code> or <code>planning</code>, before any step executes, when the request falls under what we refuse to do. The user is told why.</td><td>None</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <h3 id="transitions"><span class="no">5.2</span>Transitions</h3>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 2.2</span> Every transition, explicit and recorded; there is no other way for a task to change state.</caption>
+          <thead><tr><th>From</th><th>To</th><th>Transition</th><th>Condition and notes</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">received</td><td class="mono">planning</td><td class="mono">accept</td><td>The request is well formed and addressed to a market we serve.</td></tr>
+            <tr><td class="mono">received, planning</td><td class="mono">refused</td><td class="mono">refuse</td><td>Reason code required, from the refusal list in 01 or the market's legal pack. Only before any step executes.</td></tr>
+            <tr><td class="mono">planning</td><td class="mono">awaiting-authority</td><td class="mono">propose</td><td>Plan and envelope proposal sent to the user's device.</td></tr>
+            <tr><td class="mono">awaiting-authority</td><td class="mono">active</td><td class="mono">authorise</td><td>The user confirms the envelope from the bound device.</td></tr>
+            <tr><td class="mono">awaiting-authority</td><td class="mono">planning</td><td class="mono">revise</td><td>The user edits the envelope or the plan.</td></tr>
+            <tr><td class="mono">active</td><td class="mono">awaiting-user</td><td class="mono">bounce, ask, request-extension</td><td>A <code>user</code> step is next; a question needs an answer; a step is outside the envelope.</td></tr>
+            <tr><td class="mono">awaiting-user</td><td class="mono">active</td><td class="mono">resume</td><td>The user acted or answered. An approved extension re-runs classification for the affected steps.</td></tr>
+            <tr><td class="mono">active</td><td class="mono">awaiting-third-party</td><td class="mono">wait</td><td>A step's outcome is <code>blocked-third-party</code> with a response window, and no other step is <code>ready</code>, <code>running</code>, <code>checking</code> or <code>bounced</code> and no question or extension request is open; otherwise the window runs as that step's own timer and the task keeps its state.</td></tr>
+            <tr><td class="mono">awaiting-third-party</td><td class="mono">active</td><td class="mono">resume, escalate-resume</td><td>The party responded; or the window expired and a re-plan produced a new route.</td></tr>
+            <tr><td class="mono">active, awaiting-user, awaiting-third-party</td><td class="mono">awaiting-authority</td><td class="mono">expire-authority</td><td>The authority the plan runs on ended: the envelope's validity window ended on the tick (Table 2.8), or the user suspended the bound device (section 4.7), which moves only a task in one of these three states, since a task in <code>received</code> or <code>planning</code> holds no authority yet and a task in <code>awaiting-verdict</code> waits in its state for the replacement binding. A dependant's delegation ending is not an expire-authority: it voids the context and token of the steps that name her aliases and leaves the task in its state (Table 2.8). Every step not yet fired is cancelled, exactly as lapse cancels it, and the task waits on the nudge schedule for one tap on the bound device, on an unsigned re-proposal of the envelope with a renewed window where the window ended, or for a replacement binding; <code>authorise</code> then re-plans the cancelled steps as an approved extension does (section 2.2).</td></tr>
+            <tr><td class="mono">active</td><td class="mono">awaiting-verdict</td><td class="mono">report</td><td>All steps closed or cancelled; the outcome report shown to the user.</td></tr>
+            <tr><td class="mono">awaiting-verdict</td><td class="mono">closed</td><td class="mono">verdict</td><td>One of the five verdicts of section 7.4.</td></tr>
+            <tr><td class="mono">awaiting-verdict</td><td class="mono">closed</td><td class="mono">redo</td><td>The verdict was "wrong outcome, needs redoing": the parent closes with that verdict, and the same event creates a linked child task that opens in <code>planning</code> with the parent's trace attached (section 2.2). Redo spawns a new task rather than re-opening the closed one.</td></tr>
+            <tr><td class="mono">any non-terminal</td><td class="mono">closed</td><td class="mono">withdraw</td><td>The user's verdict "withdrawn by me". Steps in flight are cancelled, except a placement already inside its window, which section 4.6 lets complete and which 07 records as undecided; an irreversible step that already fired is reported in the outcome report.</td></tr>
+            <tr><td class="mono">awaiting-authority, awaiting-user, awaiting-verdict</td><td class="mono">lapsed</td><td class="mono">lapse</td><td>The nudge schedule is exhausted. The event records the state lapsed from, and every step not yet fired is cancelled, exactly as withdraw cancels it, so nothing fires after the task has lapsed.</td></tr>
+            <tr><td class="mono">lapsed</td><td class="mono">planning</td><td class="mono">revive</td><td>A user message references the task.</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Where one event implies two transitions, both are recorded, in order and through <code>active</code>: a user who answers the last open question while the only open step is blocked on a party produces <code>resume</code> and then <code>wait</code> on the same tick, and a party who responds while a <code>user</code> step is waiting produces nothing, because the task is <code>awaiting-user</code> and the responding step's window was its own timer. No transition runs directly between the two waiting states.</p>
+        <figure class="fig" id="fig-state-machine">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 2.2, the task state machine, scrollable">
+          <svg viewBox="0 0 720 640" role="img" aria-labelledby="fig-state-machine-title fig-state-machine-desc">
+            <title id="fig-state-machine-title">The task state machine</title>
+            <desc id="fig-state-machine-desc">Seven live states sit inside a dashed zone: received, planning, awaiting-authority, active and awaiting-verdict run down the centre, with awaiting-user to the left of active and awaiting-third-party to its right. Below the zone a horizontal accent rule separates the live states from three ink-filled terminal states, lapsed, closed and refused. Every transition is a labelled arrow: accept, propose and revise, authorise, expire-authority back up from active when the authority the plan runs on ends, drawn once for the three states it leaves, bounce and resume, wait and resume, report, verdict, withdraw from any live state, three lapse arrows, revive from lapsed and two refuse edges, from received and from planning, that meet on the right and enter refused as one arrow. A softer arrow from awaiting-verdict round the right to planning marks redo: the parent takes the verdict arrow to closed and a linked child task opens in planning. The accent element is the rule between live and terminal states.</desc>
+            <defs>
+              <marker id="fig-state-machine-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+              <marker id="fig-state-machine-arrow-soft" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-soft" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-zone" rx="2" x="56" y="8" width="608" height="472"/>
+            <text class="fg-label-small fg-label-soft" x="68" y="22">live states:</text>
+            <text class="fg-label-small fg-label-soft" x="68" y="38">every one carries a timer</text>
+            <rect class="fg-box" rx="2" x="280" y="24" width="160" height="48"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="53">received</text>
+            <rect class="fg-box" rx="2" x="280" y="120" width="160" height="48"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="149">planning</text>
+            <rect class="fg-box" rx="2" x="280" y="216" width="160" height="48"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="236">awaiting-</text>
+            <text class="fg-label" text-anchor="middle" x="360" y="252">authority</text>
+            <rect class="fg-box" rx="2" x="64" y="312" width="160" height="48"/>
+            <text class="fg-label" text-anchor="middle" x="144" y="341">awaiting-user</text>
+            <rect class="fg-box" rx="2" x="280" y="312" width="160" height="48"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="341">active</text>
+            <rect class="fg-box" rx="2" x="496" y="312" width="160" height="48"/>
+            <text class="fg-label" text-anchor="middle" x="576" y="332">awaiting-</text>
+            <text class="fg-label" text-anchor="middle" x="576" y="348">third-party</text>
+            <rect class="fg-box" rx="2" x="280" y="408" width="160" height="48"/>
+            <text class="fg-label" text-anchor="middle" x="360" y="437">awaiting-verdict</text>
+            <line class="fg-accent" x1="8" y1="500" x2="712" y2="500"/>
+            <rect class="fg-terminal" rx="2" x="64" y="528" width="160" height="48"/>
+            <text class="fg-label fg-label-paper" text-anchor="middle" x="144" y="557">lapsed</text>
+            <rect class="fg-terminal" rx="2" x="280" y="528" width="160" height="48"/>
+            <text class="fg-label fg-label-paper" text-anchor="middle" x="360" y="557">closed</text>
+            <rect class="fg-terminal" rx="2" x="496" y="528" width="160" height="48"/>
+            <text class="fg-label fg-label-paper" text-anchor="middle" x="576" y="557">refused</text>
+            <line class="fg-line" x1="360" y1="72" x2="360" y2="120" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="368" y="100">accept</text>
+            <line class="fg-line" x1="344" y1="168" x2="344" y2="216" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" text-anchor="end" x="336" y="196">propose</text>
+            <line class="fg-line" x1="376" y1="216" x2="376" y2="168" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="384" y="196">revise</text>
+            <line class="fg-line" x1="360" y1="264" x2="360" y2="312" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="368" y="292">authorise</text>
+            <line class="fg-line" x1="436" y1="312" x2="436" y2="264" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="444" y="288">expire-authority</text>
+            <line class="fg-line" x1="360" y1="360" x2="360" y2="408" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="368" y="388">report</text>
+            <line class="fg-line" x1="280" y1="328" x2="224" y2="328" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" text-anchor="middle" x="252" y="292">bounce, ask,</text>
+            <text class="fg-label-small" text-anchor="middle" x="252" y="306">request-extension</text>
+            <line class="fg-line" x1="224" y1="344" x2="280" y2="344" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" text-anchor="middle" x="252" y="380">resume</text>
+            <line class="fg-line" x1="440" y1="328" x2="496" y2="328" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" text-anchor="middle" x="468" y="306">wait</text>
+            <line class="fg-line" x1="496" y1="344" x2="440" y2="344" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" text-anchor="middle" x="468" y="380">resume,</text>
+            <text class="fg-label-small" text-anchor="middle" x="468" y="394">escalate-resume</text>
+            <line class="fg-line" x1="360" y1="456" x2="360" y2="528" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="368" y="470">verdict, redo</text>
+            <circle class="fg-fill-ink" cx="420" cy="480" r="3"/>
+            <line class="fg-line" x1="420" y1="480" x2="420" y2="528" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="428" y="520">withdraw, from any live state</text>
+            <line class="fg-line" x1="144" y1="360" x2="144" y2="528" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="150" y="400">lapse</text>
+            <path class="fg-line" d="M280,448 H200 V528" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="206" y="470">lapse</text>
+            <path class="fg-line" d="M280,240 H44 V540 H64" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="100" y="234">lapse</text>
+            <path class="fg-line" d="M64,552 H24 V152 H280" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="100" y="146">revive</text>
+            <path class="fg-line" d="M440,48 H696 V544 H656" marker-end="url(#fig-state-machine-arrow)"/>
+            <text class="fg-label-small" x="448" y="42">refuse</text>
+            <path class="fg-line" d="M440,124 H696"/>
+            <circle class="fg-fill-ink" cx="696" cy="124" r="3"/>
+            <text class="fg-label-small" x="448" y="118">refuse</text>
+            <path class="fg-line-soft" d="M440,440 H676 V160 H440" marker-end="url(#fig-state-machine-arrow-soft)"/>
+            <text class="fg-label-small" x="448" y="434">redo: the parent closes;</text>
+            <text class="fg-label-small" x="448" y="176">a linked child opens in planning</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="604">filled box: terminal state, no timer, no further execution</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="620">accent rule: crossed only by an explicit, recorded transition</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 2.2</span> Every path across the rule is a named arrow: a task reaches closed, lapsed or refused by a transition someone or something recorded, never by being left alone.</figcaption>
+        </figure>
+        <h3 id="timers"><span class="no">5.3</span>Timers, nudges and the watchdog</h3>
+        <p>Every live state carries a timer from Table 2.8, and every step in flight carries its own beside it. All are per task type or per step type, set from a table product owns inside the legal pack, and the defaults, the nudge schedules included, are illustrative until the pilot sets them <span class="chip chip-assumption">assumption</span>. A timer is a scheduled event in the same append-only log as the transitions, so a timer and the transition it produces are one record apart and the watchdog can check both.</p>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 2.8</span> The timer table: every timer, the state or record it belongs to, what sets it, an illustrative default and what the task service does on the tick.</caption>
+          <thead><tr><th>Timer</th><th>Belongs to</th><th>Set from</th><th>Illustrative default</th><th>On expiry, on the tick</th></tr></thead>
+          <tbody>
+            <tr><td class="key">Planning deadline</td><td class="mono">received, planning</td><td>Task type</td><td>Thirty minutes for a routine task type; two hours for one the taxonomy marks complex</td><td>One further planner run; if no valid plan results, a recorded <code>extend-planning</code> holding timer (one shift), the task stays in <code>planning</code> and enters the board's no-route column, and the user is told the plan is delayed.</td></tr>
+            <tr><td class="key">Nudge schedule</td><td class="mono">awaiting-authority, awaiting-user, awaiting-verdict</td><td>Task type</td><td>Three nudges, at four hours, one day and three days after the wait began, each further apart than the last; lapse at seven days</td><td>A <code>nudge</code> event and a prompt on the device surface; after the last, the <code>lapse</code> event.</td></tr>
+            <tr><td class="key">Validity window</td><td>The task while it holds authority: <code>active</code>, <code>awaiting-user</code> or <code>awaiting-third-party</code>. In <code>awaiting-verdict</code> the window's end has no effect, since no step can fire and the verdict waits on the nudge schedule</td><td>The envelope's own end</td><td>Seven days from authorisation for a routine task type, from the task type's row</td><td>Every step not yet fired is cancelled, cause lapsed, the third cause of section 5.4, and the task moves by <code>expire-authority</code> to <code>awaiting-authority</code> with a one-tap request to renew the window, an unsigned re-proposal, on the nudge schedule; the step runner claims nothing outside the window, the dialler dials nothing, and every signed step context has already died with it (sections 4.2, 4.5 and 4.6).</td></tr>
+            <tr><td class="key">Delegation validity</td><td>Every step that names a dependant's aliases</td><td>Her delegation record: its end, or revocation from her device at once</td><td>None of its own; the record's end, set when the delegation was made (01)</td><td>Not an <code>expire-authority</code>: the context and token of every step that names her aliases are voided, exactly as an envelope edit does, those steps re-classify, a step now without authority becomes a <code>user</code> step for her, and the task stays in its state, <code>awaiting-user</code> if a step became hers; no step is cancelled, and an extension of the window never extends past her delegation (section 4.6).</td></tr>
+            <tr><td class="key">Step deadline</td><td class="mono">active</td><td>Step type (<code>deadline_default</code>)</td><td>Forty minutes for a call; one shift for a form or a message</td><td>The step type's <code>on_timeout</code>: <code>requeue</code>, <code>replan</code> or <code>escalate</code>, below.</td></tr>
+            <tr><td class="key">Response window</td><td class="mono">awaiting-third-party</td><td>Step type (<code>response_windows</code>), chosen by the closing party</td><td>Two working days for a written reply; four hours for a promised callback</td><td>A re-plan: <code>escalate-resume</code> on a new route; <code>extend-window</code> and the board's no-route column on none.</td></tr>
+            <tr><td class="key">Check deadline</td><td>A step in <code>checking</code></td><td>Step type</td><td>Ten minutes for the AI's check; thirty for a worker's</td><td>The step enters the board's check column; the act does not fire.</td></tr>
+            <tr><td class="key">Placement window</td><td>A placement request</td><td>Per market</td><td>Two minutes</td><td>The receipt is <code>not-confirmed</code>; the step closes <code>failed-retryable</code> with a retry token, or <code>failed-final</code> with the fired marker where the placement was a committing one (section 4.5).</td></tr>
+            <tr><td class="key">Hold window</td><td>A message held at the vault's edge proxy</td><td>Per market</td><td>Fifteen minutes</td><td>The held message is discarded unseen and the user is told nothing was started (section 10.1).</td></tr>
+            <tr><td class="key">Column limit</td><td>A card on the exceptions board</td><td>Per column</td><td>One hour unowned, thirty minutes for the check column</td><td>Escalated to the shift lead; a recorded <code>board-action</code>.</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>Expiry is acted on by the system, on the tick, never by a person; a person acts only on the entries the watchdog raises on the exceptions board. At a step deadline the task service reads the step type's <code>on_timeout</code>. <code>requeue</code> revokes the claimed card as a recorded step-state event, releases the surface, returns the step to <code>ready</code> with a fresh deadline and counts the attempt, and closes it <code>failed-final</code> with the reason "deadline" at the retry cap. <code>replan</code> closes it <code>failed-final</code> with that reason at once. <code>escalate</code> closes it <code>blocked-third-party</code> with a holding window, so it enters the board's no-route column for the escalation desk. In every case the card tells the worker so and no worker is waited for. Nudges are recorded events on the timer of <code>awaiting-authority</code>, <code>awaiting-user</code> and <code>awaiting-verdict</code>, visible to the user and on the task's timeline; each goes to the device surface, with a notification and nothing more on the conversation channel; a message from the user on the thread that does not resolve the wait resets the schedule to its start as a recorded <code>nudge-reset</code>; the awaited action itself is the transition out; and when the waiting step is a dependant's own act, the nudge goes to the dependant's bound device and the user is told. After the last nudge the task service writes the lapse event itself, recording the state lapsed from and cancelling every step not yet fired; <code>lapsed</code> covers both a task abandoned before authorisation and one completed but never judged, and the state lapsed from is what keeps the two apart in measurement <span class="chip chip-assumption">assumption</span>. For <code>awaiting-verdict</code> the schedule runs from the recorded delivery of the outcome report, the bound device's signed receipt, which the task service checks; a report the device has not yet received keeps the task on the same schedule counted from the send time, each nudge re-sending it, and when the receipt arrives the schedule restarts from that delivery, so an unreachable device never holds a task without a timer, and no person confirms anything before a lapse. When a response window expires the task service re-plans: a new route applies <code>escalate-resume</code>; no route sets a holding window, a recorded timer event named <code>extend-window</code>, and places the task on the exceptions board for a person to chase the party. A lapsed task is terminal and has no timer; revive is the only way out, into <code>planning</code> rather than the state it left, because the world may have moved.</p>
+        <p>The response window is chosen when the step closes: the closing party, the worker on the result form or the <code>ai</code> executor, picks from the step type's allowed windows, never a free number. Chasing a party is the escalation desk's, with three tools and no others: the board card's actions, which are <code>extend-window</code> with the date the party gave, <code>resume</code> when the party answers, <code>escalate-resume</code> when a re-plan prompted by what the desk learned finds a route, and <code>add-alternative</code> for a route the planner should try; a task card of the market's chase-the-party step type, issued by the planner on request, so the chase itself runs on our telephony or relay with the same masks; and the incident queue for a party that has stopped answering.</p>
+        <p>The watchdog runs on a fixed cycle (illustrative: one minute) and asks four questions of every record: does every live task have a future-dated timer; does every step in <code>checking</code> have a checker and a check deadline not yet passed; has any response window or planning deadline expired without <code>resume</code>, <code>escalate-resume</code>, <code>extend-window</code> or <code>extend-planning</code> following within one cycle; and has any nudge schedule been exhausted without a lapse event within one cycle. The last two are defects in the task service, not routine work. Any failure places the task on the exceptions board until a person gives it a timer, a checker or a transition. Every board action is an operation of the task service, recorded as a <code>board-action</code> event whose actor is a person with a staff id and a role, and authorised by role: the shift lead and the escalation desk may set a timer of the right kind for the state, reassign a check, extend a window, add an alternative or, with an incident, close the nudge schedule early, after which the task service writes the lapse event on the next tick with the incident recorded as its cause; no person writes a lapse event, and nobody may dismiss a card. The watchdog's own heartbeat is an alarm in ordinary monitoring, and monitoring is three alarms and one pager: the heartbeat, the hash service's rate-limit breaches and the pipeline's incident counts, each paged to the shift lead on shift with the on-call engineer as the second line, so a silent watchdog is itself an exception. The board is specified on <a href="worker-console.html#exceptions-board">the exceptions board on the worker console page</a> and staffed per <a href="../04-operations/#qa">QA and escalation in 04</a>.</p>
+        <h3 id="step-states"><span class="no">5.4</span>Step states and the event log</h3>
+        <p>Steps have their own small machine: <code>pending</code> (in the plan, not ready), <code>ready</code>, <code>running</code>, <code>checking</code> (dual control; the other party is checking), <code>bounced</code> (a <code>user</code> step, with the user), <code>closed</code> (with an outcome code) and <code>cancelled</code> (withdrawn, lapsed or superseded before it fired; lapsed covers every end of the task's authority, the nudge schedule exhausted, the validity window ended, the binding suspended; a dependant's delegation ending cancels nothing and re-classifies the steps that name her aliases instead, Table 2.8). A cancelled step never ran and carries no outcome code, except that a step a re-plan removes carries <code>superseded</code> with the superseding step, so the plan's history shows what replaced it. A surface acts only for a step in <code>running</code>; a substitution request for any other state is refused and logged. The task's state follows its steps by a fixed rule the task service applies as transitions from Table 2.2 and never as a second mechanism: any step <code>ready</code>, <code>running</code> or <code>checking</code> keeps the task <code>active</code>, timed by the earliest step deadline; otherwise any step <code>bounced</code>, or an open question or extension request, is <code>awaiting-user</code> on the nudge schedule; otherwise any step closed <code>blocked-third-party</code> is <code>awaiting-third-party</code> on that step's response window; otherwise, while a renewal of the authority is open with the user after <code>expire-authority</code>, the task is <code>awaiting-authority</code> on the nudge schedule; and when every step is <code>closed</code> or <code>cancelled</code> and no renewal is open, <code>report</code> moves the task to <code>awaiting-verdict</code>. Each step event names the transition it causes, if any, by that rule; the rule is recomputed on every event as a check, and a task whose state disagrees with it is an exception the watchdog raises, so the task's state and its steps' states cannot drift apart.</p>
+<pre><code>{
+  "event_id": "e_000412",
+  "task_id": "t_12",
+  "at": "2026-09-02T15:12:40+05:30",
+  "kind": "transition",
+  "from": "active",
+  "to": "awaiting-verdict",
+  "transition": "report",
+  "actor": { "kind": "system", "id": "task-service" },
+  "reason": "all steps closed",
+  "timer_set": { "kind": "nudge-schedule", "task_type": "IN/health/book-appointment" }
+}</code></pre>
+        <div class="table-wrap wide">
+        <table class="data">
+          <caption><span class="tab-no">Table 2.9</span> The event log's kinds: one append-only log per market region carries transitions, timers, step events and the actions people take on the board.</caption>
+          <thead><tr><th>Kind</th><th>Level</th><th>Fields beside id, task, time and actor</th><th>Notes</th></tr></thead>
+          <tbody>
+            <tr><td class="mono">transition</td><td>Task</td><td>from, to, transition, reason, timer_set</td><td>One per row of Table 2.2; the only way a task changes state.</td></tr>
+            <tr><td class="mono">timer-set, timer-expired</td><td>Task or step</td><td>timer kind, due, supersedes</td><td>A scheduler reads the earliest future <code>timer-set</code> not superseded and, on the tick, appends <code>timer-expired</code> and the consequence; a later <code>timer-set</code> or a transition supersedes the old one.</td></tr>
+            <tr><td class="mono">nudge, nudge-reset</td><td>Task</td><td>ordinal, channel, device</td><td>Visible to the user on the timeline.</td></tr>
+            <tr><td class="mono">plan-produced, plan-rejected, plan-superseded</td><td>Task</td><td>plan id, validator errors, supersedes</td><td>Re-planning is these events and nothing else.</td></tr>
+            <tr><td class="mono">step-state</td><td>Step</td><td>step id, from, to, cause</td><td>Includes a card revoked or returned and a step re-issued after an envelope edit.</td></tr>
+            <tr><td class="mono">outcome</td><td>Step</td><td>code, fields, closed_by, checked_by, artefacts</td><td>The outcome record of section 7.1.</td></tr>
+            <tr><td class="mono">check-requested, check-decided, token-issued, token-voided</td><td>Step</td><td>check id, checker, decision, reason, token</td><td>Dual control, section 7.2.</td></tr>
+            <tr><td class="mono">context-issued, context-voided</td><td>Step</td><td>context id, envelope version, expiry</td><td>The signed step context, section 4.6.</td></tr>
+            <tr><td class="mono">placement</td><td>Step</td><td>placement id, receipt</td><td>A pointer to the ledger's line; the log never carries the value or the alias's use in words.</td></tr>
+            <tr><td class="mono">question-asked, question-answered</td><td>Task</td><td>question id, step blocked, fact written</td><td>Section 9.4.</td></tr>
+            <tr><td class="mono">extend-window, extend-planning, catalogue-request</td><td>Task</td><td>new due, party or step type</td><td>Holding timers and the catalogue's growth.</td></tr>
+            <tr><td class="mono">board-entry, board-action</td><td>Task</td><td>column, condition, action, actor role</td><td>The actor of a <code>board-action</code> is always a person.</td></tr>
+            <tr><td class="mono">incident</td><td>Task or step</td><td>class, rule that missed, alias</td><td>Never an artefact, never a value.</td></tr>
+          </tbody>
+        </table>
+        </div>
+        <p>The event log is the audit trail, the input to the improvement loop and the source for the user's task timeline. It is append-only, replicated within the market's region, and retained as long as the ledger of section 7.3. It carries aliases and pseudonymous references only; the logging pipeline has no vault SDK and no digest set, and every line passes through the hash service's screen (section 8.3) before it is committed, so a line that matches a known value is dropped and raises an incident rather than being written. Withdrawal is an ordinary event: steps in <code>running</code> are cancelled with the surface released, steps in <code>checking</code> are cancelled before they fire and every approval token is voided, and an irreversible step that has already fired is listed in the outcome report, the only honest response to a withdrawal that came too late; on a call, which side of that line the act fell is decided by the step's fired marker, written when the committing sentence was released to the worker (section 4.2), a withdrawal before the release stopping the utterance at once, and the outcome report cites that record, never the worker's structured result, as the evidence that it fired. Expiry of the validity window follows <a href="../decisions/dr-004-authority-envelope.html">DR-004</a> and is the task service's act on the tick, by the validity-window row of Table 2.8: it cancels every step not yet fired, cause lapsed, and moves the task by <code>expire-authority</code> to <code>awaiting-authority</code> with a one-tap request to renew the window, on the nudge schedule, so nothing starts and no step in <code>ready</code> begins, because the step runner claims a step only inside the window and the version the signed context names (section 4.5); no call is dialled, because the dialler checks the window and the version before it resolves a number (section 4.2); no placement is made, because every signed step context carries the window's end as its own expiry and has died with it (section 4.6); an irreversible step cannot fire at all, because an approval token is valid only while the window is open; and a reversible step already <code>running</code> completes what needs no further placement and no committing action, and otherwise stops where it stands and is cancelled, because every surface controller checks the window and the version at every committing action, a form submit, a committing click, a committing sentence on a call, a keypad press outside the navigation map, a relay release, a committing placement, as at every placement, and after expiry refuses it and closes the step <code>blocked-outside-envelope</code> naming the window (section 4.5). The renewal the user taps is an envelope extension, and its re-plan re-issues the cancelled steps (section 2.2). The decision behind the machine is <a href="../decisions/dr-005-state-machine-lapsed.html">DR-005</a>.</p>
+      </section>
+
