@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>We build one intake gateway. It accepts WhatsApp, a native app, SMS and iMessage, and the web, and normalises each into one internal request format carrying text, voice and attachments; every component behind it, the planner first, sees that format and nothing else. The front door, the channel a market launches with, is a per-market choice, not an architecture commitment; today it is amber.</p>
+          <p data-key="dr-001.decision.1">We build one intake gateway. It accepts WhatsApp, a native app, SMS and iMessage, and the web, and normalises each into one internal request format carrying text, voice and attachments; every component behind it, the planner first, sees that format and nothing else. The front door, the channel a market launches with, is a per-market choice, not an architecture commitment; today it is amber.</p>
           <h3 id="gateway-job"><span class="no">1.1</span>What the gateway does</h3>
           <p>Three jobs, in order. It binds the sender to a user account: a message from an unknown number or address is never a task; it gets <a href="../01-product/#onboarding">the onboarding route in 01</a> and nothing else, and it is never queued for a person. It normalises what the vault's edge proxy hands it: the alias transcript of a voice note, transcribed inside the proxy's boundary; the document alias, type and extracted fields of an attachment; a thread as one request; the channel as a field. And it issues the request record <a href="../02-architecture/#intake-gateway">02</a> specifies, with every alias the proxy created listed for the ledger. Tokenisation is not the gateway's act. The channel webhook and the device form terminate at the vault's own tokenising proxy, run by the provider in the market's region under our detector policy, so the message body, every attachment and the audio of a voice note are the proxy's bytes and never the gateway's; the gateway receives <code>{{pan}}</code> and a document alias, never the digits or the image, holds no vault SDK and has no network route to the vault. That proxy is the first of the three doors a real value enters by; <a href="../03-trust-and-data/#alias-model">the alias model in 03</a> names all three.</p>
           <p>The four detectors 02 specifies run at the proxy, identifier pattern, known-value digest, the user's own declaration and the dictionary-based health and legal term detector, and the pass fails closed. A message carrying a suspected value the detectors cannot type never becomes a task, as 02 fixes: the proxy holds the message in its own memory, in region, for the hold window of Table 2.8, the gateway asks in the channel for the value to be entered in a typed field on the device, which is the device form, and nothing opens in <code>received</code> until the pass is clean; if no re-entry arrives before the window expires, the proxy discards the message unseen and the gateway tells the user that nothing was started. Nothing is held on our side at any point, because no raw byte ever reached a process of ours. A value no detector suspects is the residual risk 02 names: the model runtime's own detector returns such a message for re-tokenisation before it plans, known-value matching on every surface is the line behind it, and <a href="../03-trust-and-data/#redaction">the redaction section of 03</a> specifies the maskers.</p>

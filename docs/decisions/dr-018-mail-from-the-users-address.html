@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>Every email a third party receives for a user comes from the user's own address. The relay we run composes it with aliases, the substitutor swaps the values in, and the message leaves either through the user's own mail provider, under a send scope the user granted on their own device, or by the user's own hand, from a draft the harness wrote. Which route a task takes is decided by what the user has connected, and the harness helps to the extent the user lets it: with a send scope we send, with a read scope we see the reply, with neither the user pastes the draft and forwards the reply. No message to a third party leaves from an address of ours; the per-task address at our domain that the previous edition sent from becomes inbound-only, an address the user forwards to. Nobody migrates their mail to us, and the recipient never sees a stranger's domain. The relay stays ours, as the ledger's line that every execution surface is ours requires: what changes is whose address the message carries, not who composes, checks and places.</p>
+          <p data-key="dr-018.decision.1">Every email a third party receives for a user comes from the user's own address. The relay we run composes it with aliases, the substitutor swaps the values in, and the message leaves either through the user's own mail provider, under a send scope the user granted on their own device, or by the user's own hand, from a draft the harness wrote. Which route a task takes is decided by what the user has connected, and the harness helps to the extent the user lets it: with a send scope we send, with a read scope we see the reply, with neither the user pastes the draft and forwards the reply. No message to a third party leaves from an address of ours; the per-task address at our domain that the previous edition sent from becomes inbound-only, an address the user forwards to. Nobody migrates their mail to us, and the recipient never sees a stranger's domain. The relay stays ours, as the ledger's line that every execution surface is ours requires: what changes is whose address the message carries, not who composes, checks and places.</p>
           <h3 id="two-routes"><span class="no">1.1</span>The two routes</h3>
           <p>On the relay route the user has granted the mailbox's send scope beside its read scope, on the consent screen <a href="../01-product/#connectors">01</a> specifies for connectors. The relay composes with aliases, by a worker in the console or, where the scope block permits, by the <code>ai</code> executor; the substitutor swaps the values into the relay's memory-only outbound store under its ordered checks; the relay releases only a template instance or a message whose hash an approval token names, and writes the fired marker before a committing release; and the vault's edge proxy's channel connector submits the finished message through the user's provider, injecting the send-scope token as it injects every connector's token, so the relay holds no token and the provider keeps the sent copy in the user's own mailbox, which is the user's store and the point. The relay keeps no sent copy. On the draft route there is no send scope, so the mail step is a <code>user</code> step in the "do this yourself" form <a href="../03-trust-and-data/#bounce-back">03</a> fixes: the device shows the draft, written with the user's labels where a value belongs, because nothing of ours places a value anywhere but on a surface we run (<a href="dr-008-vault-bought.html">DR-008</a>); the user pastes it into their own mail app, fills their own values, sends it and taps done, and the ledger writes "you sent this yourself, from your own address". A reply on either route lands in the user's inbox. It reaches us by the read connector where the user has one, terminating at the vault's edge proxy with the digest set added and bound to its task by the thread of the relay's message id, kept for the ledger's retention so a late reply still binds; or, where the user has no connector, by the user's forward to the task's relay address, the inbound-only address 01 names at intake. What a worker asks a party to send a masked span on is the task's thread, never an address of ours.</p>
           <h3 id="send-scope"><span class="no">1.2</span>The send scope is not a connector</h3>

@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>We run two loops that never borrow each other's job. The control loop runs before "done" is shown: every step closes with one outcome code from a fixed vocabulary, artefacts attach for audit and dispute only, and dual control applies only to irreversible steps. It is not ground truth of quality. The improvement loop belongs to the user: a one-tap verdict closes every task that reaches a report, chosen from exactly five options, while a task refused at intake or lapsed unjudged closes without one and the ledger says which; the verdict joined to the step trace is the measurement against which every product change is judged.</p>
+          <p data-key="dr-002.decision.1">We run two loops that never borrow each other's job. The control loop runs before "done" is shown: every step closes with one outcome code from a fixed vocabulary, artefacts attach for audit and dispute only, and dual control applies only to irreversible steps. It is not ground truth of quality. The improvement loop belongs to the user: a one-tap verdict closes every task that reaches a report, chosen from exactly five options, while a task refused at intake or lapsed unjudged closes without one and the ledger says which; the verdict joined to the step trace is the measurement against which every product change is judged.</p>
           <h3 id="control-loop"><span class="no">1.1</span>The control loop</h3>
           <p>A step is closed when its executor, the AI or a worker, records exactly one of nine codes and the fields that code requires: <code>ok</code>, <code>ok-with-variance</code>, <code>blocked-third-party</code>, <code>blocked-needs-user</code>, <code>blocked-outside-envelope</code>, <code>failed-retryable</code>, <code>failed-final</code>, <code>refused-policy</code> and <code>superseded</code>. The codes drive the machine, not the mood: <code>blocked-needs-user</code> creates a <code>user</code> step, <code>failed-final</code> triggers re-planning, <code>blocked-outside-envelope</code> names the envelope line it would breach and raises an extension request. When every step is closed the task moves to <code>awaiting-verdict</code> and the outcome report is shown. Artefacts, all of them redacted, are attached for audit and dispute only: one is opened by the QA and escalation function for a dispute, a bad verdict, a refused-policy exception or the shift lead's sampling of closed steps, by the user for their own task, or under a legal request, each viewing a ledger event the user can read, as the access list in <a href="../03-trust-and-data/#redaction">03</a>, <a href="../02-architecture/#evidence-pipeline">the evidence pipeline in 02</a> and <a href="dr-009-evidence-redaction.html">DR-009</a> specify. The sampling judges whether the card was followed and the code was right; nothing opened there counts as evidence of quality. The full vocabulary, with its required fields, is fixed in <a href="../02-architecture/worker-console.html#outcome-codes">the worker console specification</a>.</p>
           <h3 id="improvement-loop"><span class="no">1.2</span>The improvement loop</h3>

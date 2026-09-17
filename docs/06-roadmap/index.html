@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -61,7 +71,7 @@
     <div class="doc">
       <section>
         <h2 id="sequence"><span class="no">1</span>The harness-first build sequence</h2>
-        <p>We build the harness in the order the two fatal failures dictate, before anything a customer can see. The alias vault and the substitutor come first, so no later component ever handles a real value. The envelope and the classifier come second, so no later executor can fire a step outside its grant. The state machine and the watchdog come third, so no task can be forgotten once tasks exist. Only then do we build a surface a step can run on. <a href="#fig-sequence">Figure 6.1</a> draws the eight stages with what each makes possible.</p>
+        <p data-key="06-roadmap.sequence.1">We build the harness in the order the two fatal failures dictate, before anything a customer can see. The alias vault and the substitutor come first, so no later component ever handles a real value. The envelope and the classifier come second, so no later executor can fire a step outside its grant. The state machine and the watchdog come third, so no task can be forgotten once tasks exist. Only then do we build a surface a step can run on. <a href="#fig-sequence">Figure 6.1</a> draws the eight stages with what each makes possible.</p>
         <p>The order is set by preconditions, not the calendar. Each stage has a gate, a test an engineer can automate, and no stage starts before the previous gate has passed. No dates appear here: a stage that has not passed its gate is not late, it is unfinished. The demo order, channel and browser agent first with the vault bolted on later, is rejected: every surface and every log built before the alias rule would have held real values, and <a href="../03-trust-and-data/#threat-model">the threat model in 03</a> would have to close paths that need never have existed.</p>
         <figure class="fig" id="fig-sequence">
           <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 6.1, harness-first build sequence, scrollable">
@@ -163,7 +173,7 @@
       </section>
       <section>
         <h2 id="pilot"><span class="no">2</span>Pilot scope in capability terms</h2>
-        <p>The pilot is scoped by what the harness can do safely, not by how many people use it or what they pay. Five things define it: verticals, step classes and reversibility, delegated identity acts, surfaces, and the market it opens in. The first four are proposed here and the sequence of verticals is amber in <a href="../07-open/#items">07</a>, as is the market.</p>
+        <p data-key="06-roadmap.pilot.1">The pilot is scoped by what the harness can do safely, not by how many people use it or what they pay. Five things define it: verticals, step classes and reversibility, delegated identity acts, surfaces, and the market it opens in. The first four are proposed here and the sequence of verticals is amber in <a href="../07-open/#items">07</a>, as is the market.</p>
         <h3 id="pilot-verticals"><span class="no">2.1</span>Verticals</h3>
         <p>Three of the six marquee verticals open the pilot as proposed here: banking and wealth, identity and security, and legal and administrative. Every task in them exercises the substitutor and the envelope, so the pilot tests the promise itself and not a proxy. Health and medical joins when an L2 health pod is staffed on the shift that holds the pilot market, because health tasks live on booking lines and a pod that knows them is the precondition; the telephony gate is passed before the pilot opens (2.4), so the pod, not the surface, is what the vertical waits for. Travel and family affairs join last: they carry less consequence, sit in the flat-fee category of <a href="../00-thesis/#landscape">the landscape in 00</a>, and are on the roadmap because a household delegates all its admin to one assistant, not because they prove anything about trust. That sequence is proposed, not fixed: it is the founder's item in <a href="../07-open/#items">07</a>, with the scoping of this pilot as its trigger <span class="chip chip-amber">amber</span>.</p>
         <h3 id="pilot-steps"><span class="no">2.2</span>Step classes and reversibility</h3>
@@ -178,7 +188,7 @@
       </section>
       <section>
         <h2 id="build-buy"><span class="no">3</span>Build versus buy</h2>
-        <p>We buy what must be boring and audited and build what carries the promise: four components bought, sixteen built. <a href="#tab-build-buy">Table 6.1</a> gives the reason for each and what the choice commits us to, since buying is a commitment to someone else's roadmap, regions and outages.</p>
+        <p data-key="06-roadmap.build-buy.1">We buy what must be boring and audited and build what carries the promise: four components bought, sixteen built. <a href="#tab-build-buy">Table 6.1</a> gives the reason for each and what the choice commits us to, since buying is a commitment to someone else's roadmap, regions and outages.</p>
         <div class="table-wrap wide" id="tab-build-buy">
         <table class="data">
           <caption><span class="tab-no">Table 6.1</span> Buy the layers whose value is being audited and dull; build every layer that touches the promise.</caption>
@@ -211,7 +221,7 @@
       </section>
       <section>
         <h2 id="expansion"><span class="no">4</span>The country-expansion playbook</h2>
-        <p>A new country is an adapter, a legal pack and a shift, and nothing else changes: that is <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a>, the universal core as one country-agnostic build that entering a country must not touch. The checklist below runs for each market. A country is live when every line is ticked, not before.</p>
+        <p data-key="06-roadmap.expansion.1">A new country is an adapter, a legal pack and a shift, and nothing else changes: that is <a href="../decisions/dr-007-universal-core-adapters.html">DR-007</a>, the universal core as one country-agnostic build that entering a country must not touch. The checklist below runs for each market. A country is live when every line is ticked, not before.</p>
         <h3 id="expansion-sequence"><span class="no">4.1</span>The sequence, and the gates</h3>
         <p>The sequence is not the one the previous edition carried, and the reason is arithmetic rather than ambition. The United Kingdom opens between months 8 and 14, with acquisition genuinely moved there rather than treated as secondary, because the modelling says a late, secondary expansion is worse than not expanding at all: the standing cost of a foreign entity arrives long before its users do, which roughly doubles the conservative cash requirement while lowering the probability of profitability (<span class="chip chip-assumption">assumption</span> <a href="../05-business/#geography">05, 8</a>). India is then the delivery base, the workflow laboratory and a secondary revenue market, not the first of three equal markets: the floor, the library and the measurement all live there, and its revenue is real but is not what the plan turns on.</p>
         <p>Two gates govern any market, and they are gates rather than forecasts: <strong>400 users in the United Kingdom and 600 in the United States</strong> to carry the local cost base. No market is opened that cannot plausibly reach 500 users within twelve months of entry, and no second market is opened until the first has cleared its gate. Below the gate a market is a drag; above it each user is the purchasing-power arbitrage the expansion is for. <a href="../decisions/dr-023-geography-sequencing.html">DR-023</a> fixes the sequence and the gates, and is amber <span class="chip chip-amber">amber</span>: its trigger is a priced United Kingdom waiting list aimed at non-resident households, measured for conversion, and a net promoter score of 60 or above on the Indian paying cohort, without which the organic mechanism DR-025 rests on is not established and a second market is being opened on borrowed growth, because the case rests on acquiring abroad from a standing start with no brand and no local team.</p>

@@ -17,7 +17,7 @@
           "role": "canonical"
         },
         {
-          "at": "index.html#fatal-one!\"A worker sees something they should not\"",
+          "at": "contents/index.html#fatal-one!\"A worker sees something they should not\"",
           "role": "mentions"
         },
         {
@@ -49,7 +49,7 @@
           "role": "canonical"
         },
         {
-          "at": "index.html#fatal-two!\"An irreversible act the user did not want\"",
+          "at": "contents/index.html#fatal-two!\"An irreversible act the user did not want\"",
           "role": "mentions"
         },
         {
@@ -161,7 +161,7 @@
           "role": "canonical"
         },
         {
-          "at": "index.html#promise!\"It is not the boundary of the product\"",
+          "at": "contents/index.html#promise!\"It is not the boundary of the product\"",
           "role": "mentions"
         }
       ]
@@ -2873,7 +2873,7 @@
           "role": "restates"
         },
         {
-          "at": "index.html#fatal-two!\"dual control\"",
+          "at": "contents/index.html#fatal-two!\"dual control\"",
           "role": "mentions"
         }
       ]
@@ -3019,7 +3019,7 @@
           "role": "mentions"
         },
         {
-          "at": "index.html#fatal-two!\"point-of-no-return\"",
+          "at": "contents/index.html#fatal-two!\"point-of-no-return\"",
           "role": "mentions"
         }
       ]
@@ -7003,7 +7003,7 @@
       ],
       "loci": [
         {
-          "at": "index.html#three-markets",
+          "at": "contents/index.html#three-markets",
           "role": "canonical"
         },
         {
@@ -7058,7 +7058,7 @@
       ],
       "loci": [
         {
-          "at": "index.html#how-to-read",
+          "at": "contents/index.html#how-to-read",
           "role": "canonical"
         },
         {

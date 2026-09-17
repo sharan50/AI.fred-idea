@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>AI.fred, AI.fred</title>
+<meta name="description" content="The front door: what is decided, where the record stands, the numbers that matter, what is not known, five owner doors and the full contents. Generated from roles.json, the manifest and the map.">
+<link rel="preload" href="{{base}}assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{base}}assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{base}}assets/tokens.css">
+<link rel="stylesheet" href="{{base}}assets/base.css">
+<link rel="stylesheet" href="{{base}}assets/print.css" media="print">
+<script src="{{base}}assets/nav.js" defer></script>
+</head>
+<body class="kind-ledger">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="{{base}}">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">Summary</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="{{status}}">{{status}}<small>generated {{date}}</small></p>
+    <h1><span class="title">AI.fred</span></h1>
+    <p class="standfirst" data-frame>A personal assistant you can hand the tasks that carry real consequence: banking, identity, legal, health, institutional admin. The AI is the brain and the humans are hands, and the one property that makes it safe is that nobody on our side ever sees your sensitive data.</p>
+    <p class="read-first">Read first: <a href="{{base}}03-trust-and-data/trust-story.html">the trust story, one page a customer could read</a>.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>Summary</dd></div>
+      <div><dt>Generated</dt><dd>{{date}}</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-{{status}}">{{status}}</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For anyone joining</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+{{rail}}
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="venture"><span class="no">1</span>The front door</h2>
+        <p data-frame>This page is generated from the record itself, and nothing below this paragraph is written by hand. The decisions are the ledger's own titles; the counts are computed; the numbers are the record's own sentences, transcluded from the sections that state them; the open items carry the triggers their owners set. Read what is decided, then the door for what you own, then the reading path that door gives you. The whole record is in the contents at the foot of this page, and the contents page explains how to read it.</p>
+      </section>
+      <section>
+        <h2 id="decided"><span class="no">2</span>What is decided</h2>
+{{decided}}
+      </section>
+      <section>
+        <h2 id="standing"><span class="no">3</span>Where it stands</h2>
+{{standing}}
+      </section>
+      <section>
+        <h2 id="numbers"><span class="no">4</span>The numbers that matter</h2>
+{{numbers}}
+      </section>
+      <section>
+        <h2 id="unknown"><span class="no">5</span>What is not known</h2>
+{{unknowns}}
+      </section>
+      <section>
+        <h2 id="doors"><span class="no">6</span>Doors</h2>
+{{doors}}
+      </section>
+      <section>
+        <h2 id="contents"><span class="no">7</span>Contents</h2>
+{{contents}}
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="{{base}}00-thesis/">Start with the thesis</a></li>
+    <li><a href="{{base}}03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="{{base}}07-open/">See the open items</a></li>
+  </ul>
+  <p>Generated {{date}}. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

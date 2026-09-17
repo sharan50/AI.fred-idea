@@ -15,6 +15,7 @@
 import { readFileSync, writeFileSync, readdirSync, statSync, existsSync, mkdirSync } from 'node:fs';
 import { join, relative, dirname, resolve, basename, posix } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { renderAll, checkViews as viewsCheck } from './build-views.mjs';
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const DEFAULT_ROOT = resolve(HERE, '..');
@@ -319,7 +320,7 @@ export function model(root = DEFAULT_ROOT) {
     if (k.section && !k.key.startsWith(expectedPrefix)) fail(`docs/${p.path}`, k.line, `key block "${k.key}" should be named ${expectedPrefix}<n>`);
   }
 
-  return { root, P, roles, manifest, graph, generated, pages, decisionOwner, opens, keys, problems, roleIds };
+  return { root, P, roles, manifest, graph, generated, pages, decisionOwner, opens, keys, problems, roleIds, sectionsOf, words };
 }
 
 // ---------------------------------------------------------------------------
@@ -337,16 +338,24 @@ export function build({ root = DEFAULT_ROOT } = {}) {
   const { pages, problems } = sources(root);
   if (problems.length) return { written: [], unchanged: [], problems };
   const written = [], unchanged = [];
-  for (const [path, entry] of pages) {
-    const target = join(P.docs, path);
-    const content = assemble(entry);
-    if (existsSync(target) && read(target) === content) { unchanged.push(path); continue; }
+  const put = (target, label, content) => {
+    if (existsSync(target) && read(target) === content) { unchanged.push(label); return; }
     mkdirSync(dirname(target), { recursive: true });
     writeFileSync(target, content);
-    written.push(path);
+    written.push(label);
+  };
+  for (const [path, entry] of pages) put(join(P.docs, path), `docs/${path}`, assemble(entry));
+  // The generated views, the manifest's sections and CODEOWNERS (DR-029).
+  const M = model(root);
+  const viewProblems = [];
+  if (M.roles) {
+    const r = renderAll(M);
+    viewProblems.push(...r.problems);
+    for (const [path, content] of r.files) put(generatedTarget(P, path), path.endsWith('.html') ? `docs/${path}` : path, content);
   }
-  return { written, unchanged, problems };
+  return { written, unchanged, problems: viewProblems };
 }
+const generatedTarget = (P, path) => (path === 'manifest.json' ? P.manifest : path === '.github/CODEOWNERS' ? P.codeowners : join(P.docs, path));
 
 export function check({ root = DEFAULT_ROOT } = {}) {
   const P = paths(root);
@@ -379,8 +388,25 @@ export function check({ root = DEFAULT_ROOT } = {}) {
       fail('manifest.json', 1, `${e.path} is listed but has no source under src/pages/`);
     }
   }
+  // Every generated file is what a build would write.
+  const M = model(root);
+  if (M.roles) {
+    const r = renderAll(M);
+    for (const [path, expected] of r.files) {
+      const target = generatedTarget(P, path);
+      const label = path.endsWith('.html') ? `docs/${path}` : path;
+      if (!existsSync(target)) { fail(label, 1, 'generated file is missing; run node tools/build.mjs'); continue; }
+      const actual = read(target);
+      if (actual !== expected) fail(label, firstDifference(actual, expected), 'differs from what a build would write; run node tools/build.mjs');
+    }
+  }
   out.sort((a, b) => a.file.localeCompare(b.file) || a.line - b.line);
   return out;
+}
+
+// Section 10 of the harness: ownership, the key blocks, the front door's caps and CODEOWNERS.
+export function checkViews({ root = DEFAULT_ROOT } = {}) {
+  return viewsCheck(model(root));
 }
 
 // ---------------------------------------------------------------------------
@@ -446,8 +472,8 @@ function main() {
     console.log(`\n${r.problems.length} problem(s); nothing written.`);
     process.exit(1);
   }
-  console.log(`build: ${r.written.length} page(s) written, ${r.unchanged.length} unchanged.`);
-  for (const p of r.written) console.log(`  docs/${p}`);
+  console.log(`build: ${r.written.length} file(s) written, ${r.unchanged.length} unchanged.`);
+  for (const p of r.written) console.log(`  ${p}`);
 }
 
 if (process.argv[1] && pathToFileURL(resolve(process.argv[1])).href === import.meta.url) main();

@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -61,7 +71,7 @@
     <div class="doc">
       <section>
         <h2 id="ledger"><span class="no">1</span>The ledger</h2>
-        <p>Records DR-001 to DR-011 and DR-015 and DR-016 are the founder's decisions, carried into this publication from the brief's ledger. DR-012, DR-013 and DR-014 were taken during the build, against the bars the brief sets, and are recorded so the result can be traced to them. DR-017 was taken by the founder after the build, before the publication's first deliberate revision; DR-018 and DR-019 were taken by the founder in that revision, recorded as batch 0002 of the dependency map; DR-019 was then superseded by the record of 2026-09-13, in batch 0006, which is why its date is that day rather than the day it was first taken. DR-020 to DR-024 were taken in that same revision and recorded in batch 0006. DR-025 to DR-027 were taken on 2026-09-14, in batches 0009 and 0010: growth as two mechanisms, a call as account mapping rather than authentication, and the absolute that no name reaches a worker. The date is the date the record was written; the founder's earlier decisions predate it.</p>
+        <p data-key="decisions.ledger.1">Records DR-001 to DR-011 and DR-015 and DR-016 are the founder's decisions, carried into this publication from the brief's ledger. DR-012, DR-013 and DR-014 were taken during the build, against the bars the brief sets, and are recorded so the result can be traced to them. DR-017 was taken by the founder after the build, before the publication's first deliberate revision; DR-018 and DR-019 were taken by the founder in that revision, recorded as batch 0002 of the dependency map; DR-019 was then superseded by the record of 2026-09-13, in batch 0006, which is why its date is that day rather than the day it was first taken. DR-020 to DR-024 were taken in that same revision and recorded in batch 0006. DR-025 to DR-027 were taken on 2026-09-14, in batches 0009 and 0010: growth as two mechanisms, a call as account mapping rather than authentication, and the absolute that no name reaches a worker. The date is the date the record was written; the founder's earlier decisions predate it.</p>
         <div class="table-wrap wide">
           <table class="data">
             <caption><span class="tab-no">Table D.2</span> Every record, what it decides, its status, and the first thing it closes off.</caption>
@@ -102,7 +112,7 @@
       </section>
       <section>
         <h2 id="how-records-work"><span class="no">2</span>How a record works</h2>
-        <p>A record has four parts, in a fixed order, and a fifth when it is amber: the decision, stated in one paragraph and then in its substance; the rejected alternative or alternatives and what each would have cost; what the decision closes off, as a list a reader can hold the publication to; its status, with the date and who took it; and, for an amber record, the trigger that resolves it. A record with no rejected alternative is not a decision but a description, and the harness rejects it.</p>
+        <p data-key="decisions.how-records-work.1">A record has four parts, in a fixed order, and a fifth when it is amber: the decision, stated in one paragraph and then in its substance; the rejected alternative or alternatives and what each would have cost; what the decision closes off, as a list a reader can hold the publication to; its status, with the date and who took it; and, for an amber record, the trigger that resolves it. A record with no rejected alternative is not a decision but a description, and the harness rejects it.</p>
         <p>A fixed decision is not reopened in this publication. When the build formed an objection to one, the objection was written down in <a href="../07-open/#objections">07</a> with how the build complied, and the decision stood. That is deliberate: a design that reopens its foundations page by page is not a design, and an investor or an engineer reading one record should be able to trust that the others agree with it.</p>
         <p>To add a record, copy the newest one, take the next number, keep its four headings and the stamp, add the fifth if the record is amber, link it from this ledger and list it in the manifest. The harness checks all of that. A record that supersedes another says so in its status and carries the stamp <span class="mono">Superseded decision</span> on the record it replaces.</p>
       </section>

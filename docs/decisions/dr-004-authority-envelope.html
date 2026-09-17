@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>Every task carries exactly one authority envelope, confirmed by the user with one tap before any step executes, and every step is classified against a point-of-no-return test. The planner proposes the envelope with the plan, least-authority by construction from the task type and the context store; the user confirms it, which takes the task from <code>awaiting-authority</code> to <code>active</code>, or revises it, which returns the task to <code>planning</code>. Inside the envelope we act without asking again; outside it we cannot act at all, and the test in 1.2 sorts every step into execute, dual control, bounce or extension request.</p>
+          <p data-key="dr-004.decision.1">Every task carries exactly one authority envelope, confirmed by the user with one tap before any step executes, and every step is classified against a point-of-no-return test. The planner proposes the envelope with the plan, least-authority by construction from the task type and the context store; the user confirms it, which takes the task from <code>awaiting-authority</code> to <code>active</code>, or revises it, which returns the task to <code>planning</code>. Inside the envelope we act without asking again; outside it we cannot act at all, and the test in 1.2 sorts every step into execute, dual control, bounce or extension request.</p>
           <h3 id="fields"><span class="no">1.1</span>The five fields</h3>
           <dl class="def">
             <dt>Spend cap</dt>

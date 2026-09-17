@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>Every page under the docs directory is assembled from HTML fragments kept under <code>src/pages/</code> by <code>tools/build.mjs</code>, a script with no dependency that runs on the same Node the harness runs on. A page under three thousand words of prose is one file, copied byte for byte. A longer page is a directory of fragments: the head, one fragment per top-level section named for the id of the heading it carries, and the foot, concatenated in filename order and nothing else. The build adds no template, transforms nothing and rewrites no whitespace; the fragments are the page cut at line boundaries, and the page is the fragments joined. The assembled pages stay committed, and Netlify still publishes them straight from GitHub with no build command. What holds the two together is the harness: its ninth section runs the build's check on every pass, and a page under the docs directory that differs by a byte from what its fragments would produce fails in the same <code>file:line message</code> form as every other failure.</p>
+          <p data-key="dr-028.decision.1">Every page under the docs directory is assembled from HTML fragments kept under <code>src/pages/</code> by <code>tools/build.mjs</code>, a script with no dependency that runs on the same Node the harness runs on. A page under three thousand words of prose is one file, copied byte for byte. A longer page is a directory of fragments: the head, one fragment per top-level section named for the id of the heading it carries, and the foot, concatenated in filename order and nothing else. The build adds no template, transforms nothing and rewrites no whitespace; the fragments are the page cut at line boundaries, and the page is the fragments joined. The assembled pages stay committed, and Netlify still publishes them straight from GitHub with no build command. What holds the two together is the harness: its ninth section runs the build's check on every pass, and a page under the docs directory that differs by a byte from what its fragments would produce fails in the same <code>file:line message</code> form as every other failure.</p>
           <h3 id="why-fragments"><span class="no">1.1</span>Why the pages are cut</h3>
           <p><a href="dr-010-html-no-build-step.html">DR-010</a>, 1.2, rested the authoring discipline on one premise: the page count was small enough that copying a template by hand cost less than machinery. The premise held for a page of two thousand words. It does not hold for the pages the record has grown into: 02 is twenty-two thousand words of prose, 03 twenty-four thousand and 08 twenty-six thousand, each around fifty thousand tokens as HTML. A session that opens two of them has spent its working context before its first edit, and an edit to one section of 03 is made by a tool holding the whole of 03. The cut puts every file a session edits under three thousand words, apart from the ten single sections the restructure report lists as longer on their own; a session opens the fragment its task names and no more.</p>
           <h3 id="what-does-not-change"><span class="no">1.2</span>What does not change</h3>

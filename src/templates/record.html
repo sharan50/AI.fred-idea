@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>Record, AI.fred</title>
+<meta name="description" content="The build record door: the independent review, the decision ledger, the two maps, and where the surfacing report and the batches live in the repository.">
+<link rel="preload" href="{{base}}assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="{{base}}assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{base}}assets/tokens.css">
+<link rel="stylesheet" href="{{base}}assets/base.css">
+<link rel="stylesheet" href="{{base}}assets/print.css" media="print">
+<script src="{{base}}assets/nav.js" defer></script>
+</head>
+<body class="kind-ledger">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="{{base}}">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">Record</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="{{status}}">{{status}}<small>generated {{date}}</small></p>
+    <h1><span class="title">The build record</span></h1>
+    <p class="standfirst" data-frame>What was checked, by whom, and where the evidence sits: the independent review, the decision ledger, the two maps, and the two artefacts that live in the repository rather than on the site.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>Record</dd></div>
+      <div><dt>Generated</dt><dd>{{date}}</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-{{status}}">{{status}}</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For reviewers</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+{{rail}}
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="what-it-is"><span class="no">1</span>What the build record is</h2>
+        <p data-frame>The record is everything that was checked before a page was allowed to stand, kept where a reader can follow it. <a href="{{base}}08-review/">The full review</a> reads the venture as a partner would, from the technology and the regulators to the economics and a pre-mortem; it is the record read by someone who did not write it.<a href="{{base}}decisions/">The decision ledger</a> holds every decision that shapes the venture, each with what was rejected and what it closes off. <a href="{{base}}depmap/">The dependency map</a> is the record's own graph of decisions, mechanisms, invariants and closed lists, and <a href="{{base}}depmap/architecture.html">the architecture map</a> is the same graph drawn for the harness alone. Two further artefacts live in the repository rather than on the site: the surfacing report, <code>SURFACING_REPORT.md</code>, which states the founder's bar item by item and what the harness and the two review passes returned, and the batches under <code>tools/depmap/batches/</code>, one record per batch of changes with the closure the map returned for it.</p>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="{{base}}00-thesis/">Start with the thesis</a></li>
+    <li><a href="{{base}}03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="{{base}}07-open/">See the open items</a></li>
+  </ul>
+  <p>Generated {{date}}. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

@@ -15,6 +15,10 @@
       "pages": 1
     },
     {
+      "key": "contents",
+      "pages": 1
+    },
+    {
       "key": "00-thesis",
       "pages": 1
     },
@@ -57,6 +61,14 @@
     {
       "key": "depmap",
       "pages": 2
+    },
+    {
+      "key": "roles",
+      "pages": 6
+    },
+    {
+      "key": "record",
+      "pages": 1
     }
   ],
   "pages": [
@@ -65,8 +77,120 @@
       "title": "AI.fred",
       "section": "index",
       "status": "decision",
+      "summary": "The front door: what is decided, where the record stands, the numbers that matter, what is not known, five owner doors and the full contents. Generated from roles.json, the manifest and the map; edit those, never this page.",
+      "updated": "2026-09-17",
+      "words": 974,
+      "sections": [
+        {
+          "id": "venture",
+          "title": "The front door",
+          "words": 96,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "decided",
+          "title": "What is decided",
+          "words": 89,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "standing",
+          "title": "Where it stands",
+          "words": 35,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "numbers",
+          "title": "The numbers that matter",
+          "words": 7,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "unknown",
+          "title": "What is not known",
+          "words": 123,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "doors",
+          "title": "Doors",
+          "words": 253,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "contents",
+          "title": "Contents",
+          "words": 84,
+          "owner": null,
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "contents/index.html",
+      "title": "Contents",
+      "section": "contents",
+      "status": "decision",
       "summary": "The venture in two pages: the promise, the human-in-the-gap model, the two fatal failures and how the design makes them structurally impossible, the three-market shape, what exists today, and how to read this publication.",
-      "updated": "2026-09-15"
+      "updated": "2026-09-15",
+      "words": 2613,
+      "sections": [
+        {
+          "id": "promise",
+          "title": "The promise",
+          "words": 231,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "human-in-the-gap",
+          "title": "Human in the gap",
+          "words": 233,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "two-fatals",
+          "title": "The two fatal failures, made structurally impossible",
+          "words": 285,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "three-markets",
+          "title": "Three markets, one build",
+          "words": 112,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "what-exists",
+          "title": "What exists today, and what this publication is",
+          "words": 245,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "how-to-read",
+          "title": "How to read this publication",
+          "words": 362,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "publication-map",
+          "title": "The publication",
+          "words": 859,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "00-thesis/index.html",
@@ -74,7 +198,68 @@
       "section": "00-thesis",
       "status": "to-verify",
       "summary": "Why AI.fred wins where the flat-fee concierge players cannot follow: the customer and the high-consequence wedge, why now, India as build base with the US and UK as commercial ground, the researched landscape in India, the US and the UK, and the trust architecture as the moat.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 7497,
+      "sections": [
+        {
+          "id": "customer-and-wedge",
+          "title": "Customer and scope",
+          "words": 857,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "context-profile",
+          "title": "The context profile",
+          "words": 252,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "why-now",
+          "title": "Why now",
+          "words": 1310,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "markets",
+          "title": "Markets",
+          "words": 675,
+          "owner": "ceo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "landscape",
+          "title": "The competitive landscape",
+          "words": 1740,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "moat",
+          "title": "The moat",
+          "words": 778,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "endgame",
+          "title": "The scope, and what it gives up",
+          "words": 526,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 1040,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "01-product/index.html",
@@ -82,7 +267,76 @@
       "section": "01-product",
       "status": "amber",
       "summary": "The product as the user meets it: journeys across six verticals, the task taxonomy, intake through a channel-agnostic gateway (channel amber), the authority envelope, the two-loop verdict system, onboarding and context capture, and what we refuse to do.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 11026,
+      "sections": [
+        {
+          "id": "journeys",
+          "title": "User journeys across the six verticals",
+          "words": 3279,
+          "owner": "ceo",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "taxonomy",
+          "title": "The task taxonomy",
+          "words": 854,
+          "owner": "ceo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "intake",
+          "title": "Intake and the channel-agnostic gateway",
+          "words": 1020,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "envelope",
+          "title": "The authority envelope from the user's point of view",
+          "words": 1787,
+          "owner": "ceo",
+          "readers": [
+            "cto"
+          ]
+        },
+        {
+          "id": "verdicts",
+          "title": "The verdict system",
+          "words": 891,
+          "owner": "ceo",
+          "readers": [
+            "cto"
+          ]
+        },
+        {
+          "id": "onboarding",
+          "title": "Onboarding and context capture",
+          "words": 1307,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "refusals",
+          "title": "What we refuse to do",
+          "words": 1366,
+          "owner": "ceo",
+          "readers": [
+            "counsel"
+          ]
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 237,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "02-architecture/index.html",
@@ -90,7 +344,82 @@
       "section": "02-architecture",
       "status": "assumption",
       "summary": "The harness an engineer builds first: the component map, the planner, the classifier and the step-type catalogue, the execution surfaces and their controllers, the task state machine with its invariant, verification and the evidence pipeline, the context store, the intake gateway behind the vault's edge proxy, and the market adapter model.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 22722,
+      "sections": [
+        {
+          "id": "overview",
+          "title": "Overview",
+          "words": 791,
+          "owner": "cto",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "planner",
+          "title": "The planner",
+          "words": 1424,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "classifier",
+          "title": "The classifier",
+          "words": 4099,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "surfaces",
+          "title": "Execution surfaces",
+          "words": 4738,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "state-machine",
+          "title": "The state machine",
+          "words": 3676,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "adapters",
+          "title": "The market adapter model",
+          "words": 999,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "verification",
+          "title": "Verification",
+          "words": 2206,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "evidence-pipeline",
+          "title": "The evidence pipeline",
+          "words": 1449,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "context-store",
+          "title": "The context store",
+          "words": 1293,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "intake-gateway",
+          "title": "The intake gateway",
+          "words": 1771,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "02-architecture/worker-console.html",
@@ -98,7 +427,64 @@
       "section": "02-architecture",
       "status": "decision",
       "summary": "The operator's task-card view, the alias-only rule, the structured outcome codes, dual control from the worker's side, the exceptions board, and the state-machine invariant identical to 02.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 5646,
+      "sections": [
+        {
+          "id": "task-card",
+          "title": "The task card",
+          "words": 1222,
+          "owner": "cto",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "alias-only",
+          "title": "The alias-only rule",
+          "words": 1225,
+          "owner": "cto",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "outcome-codes",
+          "title": "Structured outcome codes",
+          "words": 864,
+          "owner": "cto",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "dual-control",
+          "title": "Dual control from the worker's side",
+          "words": 1055,
+          "owner": "cto",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "exceptions-board",
+          "title": "The exceptions board",
+          "words": 760,
+          "owner": "cto",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "invariant",
+          "title": "The invariant",
+          "words": 225,
+          "owner": "cto",
+          "readers": [
+            "coo"
+          ]
+        }
+      ]
     },
     {
       "path": "03-trust-and-data/index.html",
@@ -106,7 +492,93 @@
       "section": "03-trust-and-data",
       "status": "to-verify",
       "summary": "How nobody on our side ever sees a real value: the alias and vault model, the substitution component, the execution surfaces, artefact redaction, the passports, the policy flags, the threat model as named and closed paths, the access ledger, the residency map and the privacy-law skeleton.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 24124,
+      "sections": [
+        {
+          "id": "alias-model",
+          "title": "The alias model",
+          "words": 4413,
+          "owner": "cto",
+          "readers": [
+            "counsel"
+          ]
+        },
+        {
+          "id": "substitution",
+          "title": "The substitution component",
+          "words": 3062,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "surfaces",
+          "title": "Execution surfaces",
+          "words": 4029,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "redaction",
+          "title": "Artefact redaction",
+          "words": 1259,
+          "owner": "cto",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "passports",
+          "title": "The passports",
+          "words": 2642,
+          "owner": "cto",
+          "readers": [
+            "counsel"
+          ]
+        },
+        {
+          "id": "policy-flags",
+          "title": "The policy flag table and the lobbying agenda",
+          "words": 1723,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "threat-model",
+          "title": "The threat model: paths by which a human could see a real value",
+          "words": 3777,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "access-ledger",
+          "title": "The access ledger",
+          "words": 1249,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "residency",
+          "title": "The data-residency map",
+          "words": 498,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "privacy-law",
+          "title": "The privacy-law skeleton",
+          "words": 581,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 579,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "03-trust-and-data/trust-story.html",
@@ -114,7 +586,46 @@
       "section": "03-trust-and-data",
       "status": "decision",
       "summary": "One page a customer could read: what AI.fred does, why no person who works for us ever sees a value from your vault, where the line actually falls on a phone call, what your ledger looks like, and what we never do.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1423,
+      "sections": [
+        {
+          "id": "promise",
+          "title": "The promise",
+          "words": 443,
+          "owner": "counsel",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "ledger-example",
+          "title": "What your ledger looks like",
+          "words": 143,
+          "owner": "counsel",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "the-boundary",
+          "title": "Where the line actually falls",
+          "words": 257,
+          "owner": "counsel",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "what-we-never-do",
+          "title": "What we never do",
+          "words": 300,
+          "owner": "counsel",
+          "readers": [
+            "ceo"
+          ]
+        }
+      ]
     },
     {
       "path": "04-operations/index.html",
@@ -122,7 +633,70 @@
       "section": "04-operations",
       "status": "to-verify",
       "summary": "How the floor runs: need-to-know task cards, three worker tiers with dual control, a 24-hour wheel of three shifts from one office, site controls as part of the trust guarantee, QA as a shift duty, and service levels stated qualitatively. No cost model.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 8824,
+      "sections": [
+        {
+          "id": "task-cards",
+          "title": "Task cards and pseudonymisation",
+          "words": 2752,
+          "owner": "coo",
+          "readers": [
+            "cto"
+          ]
+        },
+        {
+          "id": "shifts",
+          "title": "The shift design, staged",
+          "words": 1007,
+          "owner": "coo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "phone-scope",
+          "title": "What phone work covers",
+          "words": 418,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "tiers",
+          "title": "Tiers, escalation and dual control",
+          "words": 2030,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "site-controls",
+          "title": "Site controls as part of the trust guarantee",
+          "words": 1066,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "qa",
+          "title": "QA and the exceptions board",
+          "words": 574,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "slas",
+          "title": "Service levels, stated qualitatively",
+          "words": 608,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 70,
+          "owner": "coo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "05-business/index.html",
@@ -130,7 +704,100 @@
       "section": "05-business",
       "status": "assumption",
       "summary": "The economics, no longer deferred: the five-tier task model that sets cost, human minutes per user per month as the governing ratio, the cost split, sixty months of simulated paths, the round plan and the geography gates. Every number modelled rather than measured.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-14",
+      "words": 7305,
+      "sections": [
+        {
+          "id": "why-this-page",
+          "title": "Why this page exists now",
+          "words": 173,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "task-model",
+          "title": "The task model",
+          "words": 153,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "the-ratio",
+          "title": "The one ratio that decides everything",
+          "words": 290,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "cost-split",
+          "title": "The cost split",
+          "words": 564,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "trajectory",
+          "title": "The trajectory",
+          "words": 829,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "how-users-arrive",
+          "title": "How users arrive",
+          "words": 2174,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "funding",
+          "title": "Funding",
+          "words": 564,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "geography",
+          "title": "Geography",
+          "words": 1377,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "commerce",
+          "title": "The commerce layer",
+          "words": 514,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        },
+        {
+          "id": "what-replaces",
+          "title": "What replaces this page",
+          "words": 371,
+          "owner": "cfo",
+          "readers": [
+            "ceo"
+          ]
+        }
+      ]
     },
     {
       "path": "05-business/measurement-protocol.html",
@@ -138,7 +805,100 @@
       "section": "05-business",
       "status": "assumption",
       "summary": "The thirty-task instrument that replaces the priors in 05: the five-outcome rubric scored on positive evidence, the timing definitions, the task set, the run protocol, the learning-curve sub-test and the decision thresholds set in advance.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 2050,
+      "sections": [
+        {
+          "id": "what-it-measures",
+          "title": "What it measures",
+          "words": 253,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "why-the-rubric",
+          "title": "Why the rubric is built this way",
+          "words": 120,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "tiers",
+          "title": "Tiers",
+          "words": 222,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "timing",
+          "title": "Timing definitions",
+          "words": 150,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "task-set",
+          "title": "The task set",
+          "words": 206,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "run-protocol",
+          "title": "Run protocol",
+          "words": 155,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "learning-curve",
+          "title": "The learning curve sub-test",
+          "words": 167,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "thresholds",
+          "title": "Decision thresholds",
+          "words": 159,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "cautions",
+          "title": "Practical and legal cautions",
+          "words": 219,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "output",
+          "title": "What comes out of it",
+          "words": 104,
+          "owner": "coo",
+          "readers": [
+            "cfo"
+          ]
+        }
+      ]
     },
     {
       "path": "05-business/model.html",
@@ -146,7 +906,38 @@
       "section": "05-business",
       "status": "assumption",
       "summary": "A short description of the unit model and the Monte Carlo simulation behind 05: the scenarios, the run and seed the publication quotes, where the files sit, and the limits of the method.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-14",
+      "words": 2899,
+      "sections": [
+        {
+          "id": "what-it-is",
+          "title": "What the model is",
+          "words": 162,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "scenarios",
+          "title": "The scenarios",
+          "words": 465,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "the-run",
+          "title": "The run the publication quotes",
+          "words": 309,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "limits",
+          "title": "The limits",
+          "words": 1667,
+          "owner": "cfo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "06-roadmap/index.html",
@@ -154,7 +945,53 @@
       "section": "06-roadmap",
       "status": "amber",
       "summary": "The harness-first build sequence in eight gated stages, the pilot scoped by capability rather than headcount, the build-versus-buy table with what each purchase commits us to, and the three-part playbook for entering a country.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-14",
+      "words": 5985,
+      "sections": [
+        {
+          "id": "sequence",
+          "title": "The harness-first build sequence",
+          "words": 1939,
+          "owner": "ceo",
+          "readers": [
+            "cto"
+          ]
+        },
+        {
+          "id": "pilot",
+          "title": "Pilot scope in capability terms",
+          "words": 986,
+          "owner": "ceo",
+          "readers": [
+            "coo"
+          ]
+        },
+        {
+          "id": "build-buy",
+          "title": "Build versus buy",
+          "words": 1471,
+          "owner": "ceo",
+          "readers": [
+            "cto"
+          ]
+        },
+        {
+          "id": "expansion",
+          "title": "The country-expansion playbook",
+          "words": 1119,
+          "owner": "ceo",
+          "readers": [
+            "cfo"
+          ]
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 178,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "07-open/index.html",
@@ -162,7 +999,31 @@
       "section": "07-open",
       "status": "amber",
       "summary": "Every open item with an owner and a trigger: the channel amber, first-cohort sequencing, the legal to-verifies, Netlify access, naming, the make-good policy, remote-safe operations, vendor choices, and the objections formed against fixed decisions during the build.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-14",
+      "words": 5195,
+      "sections": [
+        {
+          "id": "items",
+          "title": "Every open item, with an owner and a trigger",
+          "words": 4428,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "objections",
+          "title": "Objections formed against fixed decisions",
+          "words": 370,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "left-alone",
+          "title": "What was deliberately left alone",
+          "words": 119,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "08-review/index.html",
@@ -170,7 +1031,135 @@
       "section": "08-review",
       "status": "to-verify",
       "summary": "An independent, partner-level review of the venture as the record stood on 11 September 2026: the technology today, the technologies on the horizon, the regulatory landscape in India, the UK and the US, the market, the economics the record defers, the team the plan needs, a red-team read of the trust design, the product and its path to customers, a pre-mortem and what would need to be true before money.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-14",
+      "words": 25872,
+      "sections": [
+        {
+          "id": "executive-verdict",
+          "title": "Executive verdict",
+          "words": 1052,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "the-idea-in-one-page",
+          "title": "The idea in one page",
+          "words": 589,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "technology-today",
+          "title": "Technology today: what exists, what is plausible, what is research",
+          "words": 1713,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "horizon-threats",
+          "title": "Technologies on the horizon, and how each threatens the idea",
+          "words": 1087,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "regulation-india",
+          "title": "The regulatory landscape: India",
+          "words": 1928,
+          "owner": "ceo",
+          "readers": [
+            "counsel"
+          ]
+        },
+        {
+          "id": "regulation-uk",
+          "title": "The regulatory landscape: the United Kingdom",
+          "words": 1317,
+          "owner": "ceo",
+          "readers": [
+            "counsel"
+          ]
+        },
+        {
+          "id": "regulation-us",
+          "title": "The regulatory landscape: the United States",
+          "words": 1537,
+          "owner": "ceo",
+          "readers": [
+            "counsel"
+          ]
+        },
+        {
+          "id": "market-and-competition",
+          "title": "Market, customer and competition",
+          "words": 1752,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "economics",
+          "title": "Business model and unit economics: the numbers the record defers",
+          "words": 1561,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "team-and-execution",
+          "title": "Founder, team shape and execution risk",
+          "words": 1519,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "security-red-team",
+          "title": "Security and trust: a red-team read of the design",
+          "words": 1608,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "product-and-gtm",
+          "title": "Product, go-to-market and retention",
+          "words": 1591,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "pre-mortem",
+          "title": "Pre-mortem: what kills it, ranked",
+          "words": 1329,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "what-we-would-need-to-see",
+          "title": "What we would need to see before money, and what a Series A would need after it",
+          "words": 875,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "questions-for-the-founder",
+          "title": "Questions for the founder",
+          "words": 901,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "what-the-record-should-change",
+          "title": "What the record should change",
+          "words": 1256,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 3634,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-001-channel-gateway.html",
@@ -178,7 +1167,52 @@
       "section": "decisions",
       "status": "amber",
       "summary": "One intake gateway, behind the vault's tokenising edge proxy, normalises every channel into one internal request format; which channel opens the front door in each market is amber until the first US/UK cohort is scoped.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1536,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 679,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 138,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 126,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 111,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "trigger",
+          "title": "Trigger",
+          "words": 72,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 116,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-002-verdict-two-loops.html",
@@ -186,7 +1220,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Structured outcome codes decide whether a step is closed; the user's one-tap verdict, five options and no more, is the only measure of quality and the only thing that closes a task.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1229,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 497,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 278,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 117,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 43,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-003-full-delegation-ceiling.html",
@@ -194,7 +1259,45 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The harness is designed to the full ceiling, identity acts included; a per-jurisdiction policy layer decides at runtime what is delegated, what bounces and what is prohibited. Supersedes the A/B/C capability-tier framing.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1733,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 980,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 198,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 128,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 44,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 91,
+          "owner": "counsel",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-004-authority-envelope.html",
@@ -202,7 +1305,45 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every task carries one authority envelope; delegation is total inside it and impossible outside it, and every step is sorted by a point-of-no-return test into execute, dual control or bounce.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 3114,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 2223,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 208,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 258,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 62,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 81,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-005-state-machine-lapsed.html",
@@ -210,7 +1351,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every task lives in an explicit state machine with live timers and recorded transitions; user silence ends in lapsed through visible nudges, lapsed is not withdrawn, and system silence is an exception the watchdog surfaces.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1418,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 729,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 222,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 131,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 47,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-006-office-mandatory.html",
@@ -218,7 +1390,52 @@
       "section": "decisions",
       "status": "amber",
       "summary": "Workers execute only from premises of ours, on our devices. The attested 24-hour site with three shifts is the shape at scale: a small controlled room carries the pilot, and the site arrives when a foreign market goes live or the floor passes a headcount threshold the founder has yet to set. Site controls remain part of the trust guarantee.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1932,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 986,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 221,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 84,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 149,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "trigger",
+          "title": "Trigger",
+          "words": 83,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 89,
+          "owner": "coo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-007-universal-core-adapters.html",
@@ -226,7 +1443,45 @@
       "section": "decisions",
       "status": "decision",
       "summary": "One country-agnostic harness carries every trust property; each market adds passport adapters to its rails, a legal pack, a data-residency map and a shift, and expansion is that playbook repeated.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1426,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 712,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 158,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 129,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 38,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 102,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-008-vault-bought.html",
@@ -234,7 +1489,45 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Real values live in a bought, regionally hosted tokenisation vault of the Skyflow, VGS and Basis Theory class; everything of ours handles aliases. Why the layer is bought, what buying does not delegate, and why no vendor is chosen yet.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 2212,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 1150,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 206,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 322,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 93,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 135,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-009-evidence-redaction.html",
@@ -242,7 +1535,45 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every screenshot, recording, transcript and DOM capture is redacted inside the harness before it is stored and verified by a second pass that fails closed; no raw artefact is ever human-viewable, and the evidence system is treated as a leak path.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1612,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 806,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 261,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 135,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 46,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 67,
+          "owner": "counsel",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-010-html-no-build-step.html",
@@ -250,7 +1581,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The publication is plain static HTML served straight from GitHub by Netlify with no build command, framework, CDN or external asset. HTML is the single canonical source; a static site generator and Markdown-canonical generation were rejected because two representations drift.",
-      "updated": "2026-09-17"
+      "updated": "2026-09-17",
+      "words": 1397,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 436,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 223,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 198,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 249,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-011-token-and-component-system.html",
@@ -258,7 +1620,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every colour, type role and spacing value is a token defined once; every component is defined once and composed on every page; no page carries styling of its own. A framework and per-page styling were rejected, and the harness enforces the rule.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1203,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 505,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 220,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 101,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 84,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-012-design-plan.html",
@@ -266,7 +1659,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The visual system for the publication: palette, type, numbering voice, page kinds, components, diagram language and print, critiqued against the generic defaults and fixed.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 2087,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 1225,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 368,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 104,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 81,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-013-verification-standard.html",
@@ -274,7 +1698,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "In this edition a verified chip means the claim was checked against a search-engine excerpt of the named, dated source, because the build environment blocked full page reads and capped searches; no page circulates externally before its load-bearing sources are re-read.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1203,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 559,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 193,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 94,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 46,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-014-substitution-framing.html",
@@ -282,7 +1737,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Sections 1 to 4 of 03 are organised as a boundary sequence, one real value followed across five boundaries with Figure 3.2 as the substitution sequence; the ledger-led framing was rejected as the spine and grafted for its best parts.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1330,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 487,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 323,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 79,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 149,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-015-economics-deferred.html",
@@ -290,7 +1776,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Task economics, pricing and unit costs are deferred by the founder's ruling to after a Series A or B. The 05 stub states the deferral and its trigger; no other page carries a price, a cost or a margin. Modelling now was rejected because every number would be invented.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1079,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 340,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 232,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 103,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 104,
+          "owner": "cfo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-016-context-store.html",
@@ -298,7 +1815,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The user's profile is a temporal knowledge graph in the Graphiti style: every fact carries its source, date, validity interval, confidence and whether the user confirmed it; sensitive fields are aliases held in the vault. A flat profile table and a document store without temporal validity were rejected.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1481,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 706,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 231,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 159,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 74,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-017-dependency-map.html",
@@ -306,7 +1854,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The dependencies inside this publication are mapped as one graph of typed edges and faceted nodes, kept as a tool under the repository's tools directory, with two served views of it under docs/depmap/, the record's map and the architecture map, and no other page; a node names a decision, a mechanism, an invariant or a closed list and points at the places the pages state it, and the harness checks every pointer on every pass.",
-      "updated": "2026-09-15"
+      "updated": "2026-09-15",
+      "words": 2033,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 754,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 392,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 251,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 293,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-018-mail-from-the-users-address.html",
@@ -314,7 +1893,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every email a third party receives for a user comes from the user's own address: sent by the relay under a send scope the user grants, or written by the harness and sent by the user from their own mail app; replies reach us by the read connector or the user's forward, and the per-task address at our domain is inbound only.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1840,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 960,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 301,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 174,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 77,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-019-the-endgame.html",
@@ -322,7 +1932,38 @@
       "section": "decisions",
       "status": "assumption",
       "summary": "What the previous record called the endgame is the starting scope: the whole of a personal economic life from the first day, with the consequential tasks as the hook. Data sold as an asset is withdrawn; product improvement and a commerce take rate survive.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 1077,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 430,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 139,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 120,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 81,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-020-everyday-tasks-day-one.html",
@@ -330,7 +1971,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The product serves the user's everyday economic life and their consequential institutional tasks from launch, in one subscription, without staging.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 623,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 114,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 95,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 96,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 39,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-021-no-value-spoken.html",
@@ -338,7 +2010,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "No value held in the vault is ever spoken on a call, in either direction; the audio masking pipeline, the media server and the specialist hire are dropped, and phone work covers non-authenticating calls only.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 788,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 104,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 160,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 170,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 56,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-022-structured-task-cards.html",
@@ -346,7 +2049,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "For modelled workflows the worker is given a structured task card rather than a stream of pixels, with values placed at submit; pixel streaming is deferred as the fallback and the workflow library becomes load-bearing.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 705,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 149,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 118,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 108,
+          "owner": "cto",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 33,
+          "owner": "cto",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-023-geography-sequencing.html",
@@ -354,7 +2088,45 @@
       "section": "decisions",
       "status": "amber",
       "summary": "The United Kingdom opens between months 8 and 14 with acquisition moved there, India is the delivery base, and two gates govern any market: 400 users in the UK and 600 in the US.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-14",
+      "words": 1219,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 202,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 234,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 193,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 132,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "trigger",
+          "title": "Trigger",
+          "words": 156,
+          "owner": "cfo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-024-metered-pricing.html",
@@ -362,7 +2134,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Subscriptions carry a stated monthly allowance rather than an unlimited promise, the consequential tier is priced explicitly, and a merchant may never pay for placement in a recommendation.",
-      "updated": "2026-09-13"
+      "updated": "2026-09-13",
+      "words": 843,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 184,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 138,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 91,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 136,
+          "owner": "cfo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-025-growth-two-mechanisms.html",
@@ -370,7 +2173,38 @@
       "status": "assumption",
       "updated": "2026-09-14",
       "section": "decisions",
-      "summary": "Growth is two mechanisms, word of mouth compounding on the installed base and a media budget across reels, AI-influencer placements and the technology and business papers, with the cost per paid arrival as the first number to measure."
+      "summary": "Growth is two mechanisms, word of mouth compounding on the installed base and a media budget across reels, AI-influencer placements and the technology and business papers, with the cost per paid arrival as the first number to measure.",
+      "words": 1524,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 684,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 373,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 88,
+          "owner": "cfo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 69,
+          "owner": "cfo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-026-telephony-mapping-not-authentication.html",
@@ -378,7 +2212,38 @@
       "status": "decision",
       "updated": "2026-09-14",
       "section": "decisions",
-      "summary": "A call is used only where the institution asks for identity to find the account rather than to open it, recorded as a field in the party register and applied before a script is written."
+      "summary": "A call is used only where the institution asks for identity to find the account rather than to open it, recorded as a field in the party register and applied before a script is written.",
+      "words": 1039,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 382,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 206,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 80,
+          "owner": "counsel",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 71,
+          "owner": "counsel",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-027-no-name-reaches-a-worker.html",
@@ -386,7 +2251,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "A worker never sees or states a name, of the user or of anyone else, on any surface; a task whose party process needs one after the automated account mapping leaves the phone surface rather than moving to a workaround.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-14",
+      "words": 1293,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 487,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 264,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 135,
+          "owner": "coo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 80,
+          "owner": "coo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/dr-028-fragments-and-build.html",
@@ -394,7 +2290,38 @@
       "section": "decisions",
       "status": "decision",
       "summary": "Every page under docs is assembled from HTML fragments under src/pages/ by a dependency-free script, and the harness fails when a committed page differs from what its fragments would produce. DR-010 is amended, not reversed: HTML stays the single canonical source and Netlify still publishes the committed pages with no build command. Markdown canonical, more pages and leaving it were rejected.",
-      "updated": "2026-09-17"
+      "updated": "2026-09-17",
+      "words": 1355,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 513,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 241,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 182,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 83,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "decisions/index.html",
@@ -402,7 +2329,24 @@
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
-      "updated": "2026-09-17"
+      "updated": "2026-09-17",
+      "words": 1390,
+      "sections": [
+        {
+          "id": "ledger",
+          "title": "The ledger",
+          "words": 850,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "how-records-work",
+          "title": "How a record works",
+          "words": 229,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
     },
     {
       "path": "depmap/index.html",
@@ -419,6 +2363,272 @@
       "status": "decision",
       "summary": "The architecture map (DR-017, revised 2026-09-15): the harness alone as a blueprint, every component placed in the zones of Figure 2.1, the invariants it must keep, the closed lists and policy flags it reads, the records that justify it and the stage that builds it, with the cone of change for any node and a link to the section that states it. Generated from tools/depmap/graph.json by the map's own tool, committed, and failed by the harness when stale; the second page outside the page floor, by DR-010's exception.",
       "updated": "2026-09-15"
+    },
+    {
+      "path": "roles/index.html",
+      "title": "Doors",
+      "section": "roles",
+      "status": "decision",
+      "summary": "Five owner doors, one per role, each a page generated from roles.json: what the owner holds, what binds them, their reading path and their key blocks.",
+      "updated": "2026-09-17",
+      "words": 543,
+      "sections": [
+        {
+          "id": "doors",
+          "title": "The five doors",
+          "words": 255,
+          "owner": null,
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "roles/ceo/index.html",
+      "title": "Chief executive",
+      "section": "roles",
+      "status": "amber",
+      "summary": "The owner view for the chief executive: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
+      "updated": "2026-09-17",
+      "words": 9901,
+      "sections": [
+        {
+          "id": "brief",
+          "title": "Your brief",
+          "words": 158,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "own",
+          "title": "What you own",
+          "words": 2538,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "binds",
+          "title": "What binds you",
+          "words": 281,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "path",
+          "title": "Reading path",
+          "words": 1362,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "keys",
+          "title": "Key blocks",
+          "words": 5323,
+          "owner": null,
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "roles/cto/index.html",
+      "title": "Chief technology officer",
+      "section": "roles",
+      "status": "decision",
+      "summary": "The owner view for the chief technology officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
+      "updated": "2026-09-17",
+      "words": 8253,
+      "sections": [
+        {
+          "id": "brief",
+          "title": "Your brief",
+          "words": 167,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "own",
+          "title": "What you own",
+          "words": 2009,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "binds",
+          "title": "What binds you",
+          "words": 124,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "path",
+          "title": "Reading path",
+          "words": 866,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "keys",
+          "title": "Key blocks",
+          "words": 4810,
+          "owner": null,
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "roles/coo/index.html",
+      "title": "Chief operating officer",
+      "section": "roles",
+      "status": "amber",
+      "summary": "The owner view for the chief operating officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
+      "updated": "2026-09-17",
+      "words": 3248,
+      "sections": [
+        {
+          "id": "brief",
+          "title": "Your brief",
+          "words": 159,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "own",
+          "title": "What you own",
+          "words": 522,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "binds",
+          "title": "What binds you",
+          "words": 113,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "path",
+          "title": "Reading path",
+          "words": 432,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "keys",
+          "title": "Key blocks",
+          "words": 1743,
+          "owner": null,
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "roles/cfo/index.html",
+      "title": "Chief financial officer",
+      "section": "roles",
+      "status": "amber",
+      "summary": "The owner view for the chief financial officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
+      "updated": "2026-09-17",
+      "words": 3843,
+      "sections": [
+        {
+          "id": "brief",
+          "title": "Your brief",
+          "words": 151,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "own",
+          "title": "What you own",
+          "words": 532,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "binds",
+          "title": "What binds you",
+          "words": 45,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "path",
+          "title": "Reading path",
+          "words": 537,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "keys",
+          "title": "Key blocks",
+          "words": 2292,
+          "owner": null,
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "roles/counsel/index.html",
+      "title": "General counsel",
+      "section": "roles",
+      "status": "to-verify",
+      "summary": "The owner view for the general counsel: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
+      "updated": "2026-09-17",
+      "words": 4821,
+      "sections": [
+        {
+          "id": "brief",
+          "title": "Your brief",
+          "words": 156,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "own",
+          "title": "What you own",
+          "words": 724,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "binds",
+          "title": "What binds you",
+          "words": 143,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "path",
+          "title": "Reading path",
+          "words": 439,
+          "owner": null,
+          "readers": []
+        },
+        {
+          "id": "keys",
+          "title": "Key blocks",
+          "words": 3058,
+          "owner": null,
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "record/index.html",
+      "title": "Record",
+      "section": "record",
+      "status": "decision",
+      "summary": "The build record door: the independent review, the decision ledger, the two maps, and where the surfacing report and the batches live in the repository.",
+      "updated": "2026-09-17",
+      "words": 426,
+      "sections": [
+        {
+          "id": "what-it-is",
+          "title": "What the build record is",
+          "words": 164,
+          "owner": null,
+          "readers": []
+        }
+      ]
     }
   ]
 }

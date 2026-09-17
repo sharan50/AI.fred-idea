@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -60,13 +71,13 @@
     <div class="doc">
       <section>
         <h2 id="what-it-is"><span class="no">1</span>What the model is</h2>
-        <p>Two instruments sit behind every number in <a href="./">05</a>. The first is a deterministic unit model: set the assumptions, fill the capture sheet from <a href="./measurement-protocol.html">the measurement protocol</a>, and headcount, cost per task and margin fall out, with a thirty-six-month trajectory sheet that applies improving automation, a learning curve and user growth. The second is a Monte Carlo simulation over sixty months, which samples every driver rather than assuming it and reports the share of paths that reach profitability, the cash trough and the peak cash requirement.</p>
+        <p data-key="model.what-it-is.1">Two instruments sit behind every number in <a href="./">05</a>. The first is a deterministic unit model: set the assumptions, fill the capture sheet from <a href="./measurement-protocol.html">the measurement protocol</a>, and headcount, cost per task and margin fall out, with a thirty-six-month trajectory sheet that applies improving automation, a learning curve and user growth. The second is a Monte Carlo simulation over sixty months, which samples every driver rather than assuming it and reports the share of paths that reach profitability, the cash trough and the peak cash requirement.</p>
         <p>Neither is a forecast. A simulation inherits the shape of its priors, and the priors here are informed guesses made by one person with no customers. What the simulation is good for is the ordering of the levers: which parameter, moved by a plausible amount, changes the answer most. That ordering is what section 3 of <a href="./#the-ratio">05</a> reports, and it is stable across seeds even where the levels are not.</p>
       </section>
 
       <section>
         <h2 id="scenarios"><span class="no">2</span>The scenarios</h2>
-        <p>Two configurations of the unit economics, one promotion of the second, and four of the geography, each run as twenty thousand paths. Five of the seven carry the two acquisition mechanisms: the promotion and the four geography scenarios. The other two are organic only by construction, and are the floor rather than the line the publication quotes.</p>
+        <p data-key="model.scenarios.1">Two configurations of the unit economics, one promotion of the second, and four of the geography, each run as twenty thousand paths. Five of the seven carry the two acquisition mechanisms: the promotion and the four geography scenarios. The other two are organic only by construction, and are the floor rather than the line the publication quotes.</p>
         <div class="table-wrap wide">
         <table class="data">
           <caption><span class="tab-no">Table 5.8</span> The scenarios the publication quotes, and what each one holds fixed. <span class="chip chip-assumption">assumption</span></caption>
@@ -86,13 +97,13 @@
 
       <section>
         <h2 id="the-run"><span class="no">3</span>The run the publication quotes</h2>
-        <p>Every figure on <a href="./">05</a> comes from <code>sim_growth.csv</code>, except the India-only reading of it that section 6.5 quotes, which is <code>sim_growth_india_only.csv</code>: a run of twenty thousand paths at seed 20260913 dated 14 September 2026, which is the viable configuration with both acquisition mechanisms in it at $120 a paid arrival and fifteen per cent of revenue in media. The organic-only run it was promoted over is kept as <code>sim_viable.csv</code>, and 05 quotes it only where it names it as the floor. The geography figures of <a href="./#geography">05, 8</a> and the commerce figures of <a href="./#commerce">05, 9</a> come from <code>geo_growth_india_only.csv</code>, <code>geo_growth_expansion.csv</code>, <code>geo_growth_expansion_commerce.csv</code> and, for the sequencing table's third column, <code>geo_growth_foreign_led_nocommerce.csv</code>, with <code>geo_growth_foreign_led.csv</code> beside it for the same scenario carrying its commerce layer, at the same paths, seed and date, with the four organic-only runs kept beside them as <code>geo_*.csv</code>; each of the four is rebuilt character for character with media switched off, which is the self test the geography script runs before it writes anything. The bands move slightly between seeds, so the seed and the date are quoted wherever a number appears, and a figure re-derived from a different run is a different number. <span class="chip chip-assumption">assumption</span></p>
+        <p data-key="model.the-run.1">Every figure on <a href="./">05</a> comes from <code>sim_growth.csv</code>, except the India-only reading of it that section 6.5 quotes, which is <code>sim_growth_india_only.csv</code>: a run of twenty thousand paths at seed 20260913 dated 14 September 2026, which is the viable configuration with both acquisition mechanisms in it at $120 a paid arrival and fifteen per cent of revenue in media. The organic-only run it was promoted over is kept as <code>sim_viable.csv</code>, and 05 quotes it only where it names it as the floor. The geography figures of <a href="./#geography">05, 8</a> and the commerce figures of <a href="./#commerce">05, 9</a> come from <code>geo_growth_india_only.csv</code>, <code>geo_growth_expansion.csv</code>, <code>geo_growth_expansion_commerce.csv</code> and, for the sequencing table's third column, <code>geo_growth_foreign_led_nocommerce.csv</code>, with <code>geo_growth_foreign_led.csv</code> beside it for the same scenario carrying its commerce layer, at the same paths, seed and date, with the four organic-only runs kept beside them as <code>geo_*.csv</code>; each of the four is rebuilt character for character with media switched off, which is the self test the geography script runs before it writes anything. The bands move slightly between seeds, so the seed and the date are quoted wherever a number appears, and a figure re-derived from a different run is a different number. <span class="chip chip-assumption">assumption</span></p>
         <p>The files sit in <code>models/</code> at the root of the repository, outside the publication, because they are working instruments rather than pages: the two workbooks, the two simulation scripts, the rationale that explains why each distribution is shaped the way it is, the geography and data-layer note, and the raw monthly output of each quoted run as comma-separated values. The directory's own readme names each file and carries the command that reproduces a run. The spreadsheets are deliberately not linked from a page and not pasted into one; a number that matters enough to quote is stated here, with its scenario and its seed.</p>
       </section>
 
       <section>
         <h2 id="limits"><span class="no">4</span>The limits</h2>
-        <p>Twelve limits are worth stating plainly, because a model presented without them invites more weight than it can carry. Three of them were found by interrogating the model rather than by reading it, three more by putting the geography scenarios on the published line, which are the sixth, seventh and eighth below, and the fourth and fifth by reviewing that work in turn; the working is in <code>models/AIfred_model_critique.md</code> beside the model itself.</p>
+        <p data-key="model.limits.1">Twelve limits are worth stating plainly, because a model presented without them invites more weight than it can carry. Three of them were found by interrogating the model rather than by reading it, three more by putting the geography scenarios on the published line, which are the sixth, seventh and eighth below, and the fourth and fifth by reviewing that work in turn; the working is in <code>models/AIfred_model_critique.md</code> beside the model itself.</p>
         <dl class="def">
           <dt>The priors are not evidence</dt>
           <dd>No customer has been served. Five measurements replace the priors, in the order the published line&#x27;s own sensitivity puts them, which is the order <a href="./#what-replaces">05, 10</a> carries: what a paid arrival costs, general and administrative cost at a hundred users, twelve-month churn on a paying cohort, minutes per user per month, and whether the engineering headcount exponent falls as the workflow library generalises. Willingness to pay above $50 sits behind them and is the trigger of the pricing decision rather than of the model. Each is an open item with an owner in <a href="../07-open/#items">07</a>.</dd>

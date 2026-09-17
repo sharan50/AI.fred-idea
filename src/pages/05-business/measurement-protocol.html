@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -60,7 +71,7 @@
     <div class="doc">
       <section>
         <h2 id="what-it-measures"><span class="no">1</span>What it measures</h2>
-        <p>Three estimated numbers become three measured ones, at a cost of about a week of one person's time and a few hundred dollars of interface spend, before any floor is leased or any engine is chosen.</p>
+        <p data-key="measurement-protocol.what-it-measures.1">Three estimated numbers become three measured ones, at a cost of about a week of one person's time and a few hundred dollars of interface spend, before any floor is leased or any engine is chosen.</p>
         <ol>
           <li>AI-only completion rate, by task type, scored on real attempts rather than predicted from a description.</li>
           <li>Human minutes per assisted task, including wrap, with hold and menu time recorded separately.</li>
@@ -72,13 +83,13 @@
 
       <section>
         <h2 id="why-the-rubric"><span class="no">2</span>Why the rubric is built this way</h2>
-        <p>The failure mode this protocol exists to avoid is classification by plausibility. A task described as "book a restaurant" looks automatable, so it gets counted as automatable, and the AI-executable share comes out inflated. The correction is positive evidence: a task counts as AI-only when an agent actually completed it and the output passed a stated acceptance test, and not otherwise.</p>
+        <p data-key="measurement-protocol.why-the-rubric.1">The failure mode this protocol exists to avoid is classification by plausibility. A task described as "book a restaurant" looks automatable, so it gets counted as automatable, and the AI-executable share comes out inflated. The correction is positive evidence: a task counts as AI-only when an agent actually completed it and the output passed a stated acceptance test, and not otherwise.</p>
         <p>Two consequences follow. First, no task is scored before it has been attempted. Second, the acceptance artefact is defined in advance, in the task row, and it is external: a confirmation number, a booking reference, an institutional acknowledgement. A model asserting that it has finished is not evidence that it has.</p>
       </section>
 
       <section>
         <h2 id="tiers"><span class="no">3</span>Tiers</h2>
-        <p>Every run resolves to exactly one of five outcomes, the same five the task model in <a href="./#task-model">05, 2</a> costs.</p>
+        <p data-key="measurement-protocol.tiers.1">Every run resolves to exactly one of five outcomes, the same five the task model in <a href="./#task-model">05, 2</a> costs.</p>
         <div class="table-wrap wide">
         <table class="data">
           <caption><span class="tab-no">Table 5.6</span> The five outcomes, their definitions and the human time each records.</caption>
@@ -97,7 +108,7 @@
 
       <section>
         <h2 id="timing"><span class="no">4</span>Timing definitions</h2>
-        <p>These definitions are the whole of the measurement, so they are applied identically on every run.</p>
+        <p data-key="measurement-protocol.timing.1">These definitions are the whole of the measurement, so they are applied identically on every run.</p>
         <dl class="def">
           <dt>Human active minutes</dt>
           <dd>Time the worker is doing the step: talking, typing, deciding.</dd>
@@ -111,7 +122,7 @@
 
       <section>
         <h2 id="task-set"><span class="no">5</span>The task set</h2>
-        <p>Thirty tasks, stratified across the mix the product intends to serve, ten in each expected tier. Expected tier is a prediction recorded before the run; observed tier is the result. The gap between the two columns is itself a finding.</p>
+        <p data-key="measurement-protocol.task-set.1">Thirty tasks, stratified across the mix the product intends to serve, ten in each expected tier. Expected tier is a prediction recorded before the run; observed tier is the result. The gap between the two columns is itself a finding.</p>
         <dl class="def">
           <dt>Expected AI-only</dt>
           <dd>Restaurant shortlist with reasons; mobile plan comparison; spend categorisation and anomalies; purchase research within a budget; gift options for an occasion; complaint letter to an airline; a costed outing plan; visa requirements and document checklist; insurance policy explained with exclusions; flight and hotel shortlist.</dd>
@@ -125,19 +136,19 @@
 
       <section>
         <h2 id="run-protocol"><span class="no">6</span>Run protocol</h2>
-        <p>Three runs per task, on three different counterparties where the task allows it. One run tells you nothing about variance, and variance across counterparties is the thing that decides whether a workflow generalises. Record the average and note the spread where it is wide.</p>
+        <p data-key="measurement-protocol.run-protocol.1">Three runs per task, on three different counterparties where the task allows it. One run tells you nothing about variance, and variance across counterparties is the thing that decides whether a workflow generalises. Record the average and note the spread where it is wide.</p>
         <p>Any off-the-shelf agent with browser access will do as the harness. The point is to measure the shape of the work, not to evaluate a specific engine, so the harness is held constant across all thirty tasks and the comparison between task types stays clean. Capture input tokens, output tokens, tool call count and wall clock per run; most harnesses report the first three, and where one does not, proxy tokens from the transcript length and say so. The founder runs the first pass; a second operator on a subset of ten tasks tells you how much of the measured time is operator skill rather than task difficulty.</p>
       </section>
 
       <section>
         <h2 id="learning-curve"><span class="no">7</span>The learning curve sub-test</h2>
-        <p>The claim that human handling time falls with practice is central to the operating model and is testable cheaply. Take the four highest-volume assisted task types. One operator runs each twenty times against different counterparties, recording handling time on every run, and the mean of runs one to five is compared with the mean of runs sixteen to twenty. Two outcomes matter: handling time roughly halves and is still falling at run twenty, in which case the practice argument holds and the operating model can lean on it; or it flattens at sixty to seventy per cent of the first attempt by run ten, in which case practice is real but bounded and the model must assume the floor rather than the slope. <span class="chip chip-assumption">assumption</span></p>
+        <p data-key="measurement-protocol.learning-curve.1">The claim that human handling time falls with practice is central to the operating model and is testable cheaply. Take the four highest-volume assisted task types. One operator runs each twenty times against different counterparties, recording handling time on every run, and the mean of runs one to five is compared with the mean of runs sixteen to twenty. Two outcomes matter: handling time roughly halves and is still falling at run twenty, in which case the practice argument holds and the operating model can lean on it; or it flattens at sixty to seventy per cent of the first attempt by run ten, in which case practice is real but bounded and the model must assume the floor rather than the slope. <span class="chip chip-assumption">assumption</span></p>
         <p>Whichever it is, the workflows discovered during those twenty runs are the specification for what to encode. That is the real output of this sub-test, and it is the first entry in the workflow library of <a href="../02-architecture/#workflow-library">02</a>.</p>
       </section>
 
       <section>
         <h2 id="thresholds"><span class="no">8</span>Decision thresholds</h2>
-        <p>Set before the data arrives, so the result is read rather than negotiated.</p>
+        <p data-key="measurement-protocol.thresholds.1">Set before the data arrives, so the result is read rather than negotiated.</p>
         <div class="table-wrap wide">
         <table class="data">
           <caption><span class="tab-no">Table 5.7</span> What each measured result means and what changes if it lands there. <span class="chip chip-assumption">assumption</span></caption>
@@ -155,13 +166,13 @@
 
       <section>
         <h2 id="cautions"><span class="no">9</span>Practical and legal cautions</h2>
-        <p>Run the measurement set against your own accounts and your own identity only. Speaking to an institution as another person, even a consenting friend, is the exposure the legal rows of <a href="../03-trust-and-data/#policy-flags">03</a> flag in India, the United Kingdom and the United States, and it is not worth incurring for a measurement exercise. The consequence is that this run does not test the delegation boundary: an operator acting on their own account sees every value and receives their own one-time codes, so the bounce rate cannot rise the way it will on a floor where <a href="../decisions/dr-021-no-value-spoken.html">DR-021</a> and <a href="../decisions/dr-027-no-name-reaches-a-worker.html">DR-027</a> forbid a worker both, and the assisted-minutes floor is measured under a looser operating model than the one it has to hold in. Both readings are therefore optimistic, and the bounce threshold below cannot trip by construction.</p>
+        <p data-key="measurement-protocol.cautions.1">Run the measurement set against your own accounts and your own identity only. Speaking to an institution as another person, even a consenting friend, is the exposure the legal rows of <a href="../03-trust-and-data/#policy-flags">03</a> flag in India, the United Kingdom and the United States, and it is not worth incurring for a measurement exercise. The consequence is that this run does not test the delegation boundary: an operator acting on their own account sees every value and receives their own one-time codes, so the bounce rate cannot rise the way it will on a floor where <a href="../decisions/dr-021-no-value-spoken.html">DR-021</a> and <a href="../decisions/dr-027-no-name-reaches-a-worker.html">DR-027</a> forbid a worker both, and the assisted-minutes floor is measured under a looser operating model than the one it has to hold in. Both readings are therefore optimistic, and the bounce threshold below cannot trip by construction.</p>
         <p>Where a task involves a live institutional line, be straightforward about who is calling. Where it involves recording, several jurisdictions require all-party consent, and the measurement does not need recordings: timestamps are enough. Do not use task data, task taxonomies or automation classifications drawn from any other company's systems in this exercise. The findings need to be the company's own, both because a diligence process will ask and because a borrowed benchmark from a differently shaped service would mislead anyway.</p>
       </section>
 
       <section>
         <h2 id="output"><span class="no">10</span>What comes out of it</h2>
-        <p>A filled capture sheet gives, per task type and in aggregate: automation share on positive evidence, human minutes split into active, wrap and hold, token cost per task, and bounce rate. The model turns those into required headcount, users per generalist, cost per task and gross margin, and the sensitivity grid shows how far the answer moves when the two dominant variables move.</p>
+        <p data-key="measurement-protocol.output.1">A filled capture sheet gives, per task type and in aggregate: automation share on positive evidence, human minutes split into active, wrap and hold, token cost per task, and bounce rate. The model turns those into required headcount, users per generalist, cost per task and gross margin, and the sensitivity grid shows how far the answer moves when the two dominant variables move.</p>
         <p>That is also the evidence base for the engine research the roadmap defers, because it says which capability differences between candidate engines are worth paying for, in rupees per task, rather than in the abstract.</p>
       </section>
     </div>

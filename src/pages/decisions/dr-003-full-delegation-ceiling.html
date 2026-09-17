@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>Full delegation, identity acts included, is the designed capability ceiling of the harness. What a country permits is a runtime matter: a policy layer holds a per-jurisdiction flag table that decides, act type by act type, whether a step is delegated, bounced to the user's own device, or prohibited pending a regulatory answer. Detracting from the ceiling is a flag; adding to it would be a rebuild, so we build the ceiling now and set the flags conservatively. Conservative has one meaning: a lookup that finds no row evaluates to bounce, never to delegated, an unknown step type counts as irreversible and outside the envelope and bounces too, and every such bounce is a request to add a row, which is <a href="../02-architecture/#classifier">the catalogue rule in 02</a>. This record supersedes the earlier A/B/C capability-tier framing.</p>
+          <p data-key="dr-003.decision.1">Full delegation, identity acts included, is the designed capability ceiling of the harness. What a country permits is a runtime matter: a policy layer holds a per-jurisdiction flag table that decides, act type by act type, whether a step is delegated, bounced to the user's own device, or prohibited pending a regulatory answer. Detracting from the ceiling is a flag; adding to it would be a rebuild, so we build the ceiling now and set the flags conservatively. Conservative has one meaning: a lookup that finds no row evaluates to bounce, never to delegated, an unknown step type counts as irreversible and outside the envelope and bounces too, and every such bounce is a request to add a row, which is <a href="../02-architecture/#classifier">the catalogue rule in 02</a>. This record supersedes the earlier A/B/C capability-tier framing.</p>
           <h3 id="ceiling"><span class="no">1.1</span>The ceiling</h3>
           <p>The harness can plan, classify and execute every step type a high-consequence task contains, the identity acts included, which are the closed list in <a href="../01-product/#envelope">01</a>: present a document; state an identity number; answer security questions from the context store; complete a KYC form; use a delegated login to a non-financial portal; sign or e-sign; attest a fact about the user. Delegating an act never means seeing a value: the worker or the model handles <code>{{pan}}</code> while the substitutor places the digits. One thing sits above the ceiling in every jurisdiction: an OTP is never ours, <code>{{otp}}</code> is not an alias, and the step that needs one always bounces.</p>
           <h3 id="policy-layer"><span class="no">1.2</span>The policy layer</h3>

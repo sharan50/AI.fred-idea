@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>The docs directory is plain static HTML and nothing else is served. Netlify publishes it straight from GitHub; the publish directory is pinned in <code>netlify.toml</code> and there is no build command. HTML is the single canonical source of every page, written as semantic HTML so the site stays machine-readable. Vanilla JavaScript is used for navigation only, in one file. Diagrams are inline SVG. Every page exports cleanly to PDF through a print stylesheet. A <code>manifest.json</code> maps the site for humans and machines. The repository is the venture's vault: design documents now, application code later in the same repository, professional setup after the raise.</p>
+          <p data-key="dr-010.decision.1">The docs directory is plain static HTML and nothing else is served. Netlify publishes it straight from GitHub; the publish directory is pinned in <code>netlify.toml</code> and there is no build command. HTML is the single canonical source of every page, written as semantic HTML so the site stays machine-readable. Vanilla JavaScript is used for navigation only, in one file. Diagrams are inline SVG. Every page exports cleanly to PDF through a print stylesheet. A <code>manifest.json</code> maps the site for humans and machines. The repository is the venture's vault: design documents now, application code later in the same repository, professional setup after the raise.</p>
           <h3 id="why-no-build"><span class="no">1.1</span>Why there is no build step</h3>
           <p>A build step is a second thing that has to be correct. With none, the file in the repository is the file the reader receives; a reviewer reads exactly what an investor will open; and the verification harness checks the served artefact itself rather than an input to a generator. The only tool in the publishing path is <code>tools/verify.mjs</code>, which reads and never writes. A page that passes it is published by a commit, and nothing between the commit and the URL can change it.</p>
           <h3 id="why-html"><span class="no">1.2</span>Why HTML is canonical</h3>

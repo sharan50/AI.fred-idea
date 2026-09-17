@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>The publication has one visual system, held in two files and composed everywhere. <code>tokens.css</code> is the only place a colour is defined: paper, ink, line, accent, amber and verified in the roles the brief gives them, with the dark values the founder set on 2026-09-10 (DR-012), two derived neutrals, and the type scale and spacing steps. <code>base.css</code> defines the reset, the typography and every component once: masthead, page header with stamp and control block, rail, status chip, reference and sources list, decision record, figure block, data table, callout, ledger, invariant and footer. <code>print.css</code> carries the print rules. The diagram language is a set of classes in the same stylesheet, so an SVG carries no colour literal and no font attribute; a colour attribute inside an SVG may only be none, currentColor or a token reference. A page is markup plus class names and nothing more. A new layout on a future page means extending tokens and components first, then using them.</p>
+          <p data-key="dr-011.decision.1">The publication has one visual system, held in two files and composed everywhere. <code>tokens.css</code> is the only place a colour is defined: paper, ink, line, accent, amber and verified in the roles the brief gives them, with the dark values the founder set on 2026-09-10 (DR-012), two derived neutrals, and the type scale and spacing steps. <code>base.css</code> defines the reset, the typography and every component once: masthead, page header with stamp and control block, rail, status chip, reference and sources list, decision record, figure block, data table, callout, ledger, invariant and footer. <code>print.css</code> carries the print rules. The diagram language is a set of classes in the same stylesheet, so an SVG carries no colour literal and no font attribute; a colour attribute inside an SVG may only be none, currentColor or a token reference. A page is markup plus class names and nothing more. A new layout on a future page means extending tokens and components first, then using them.</p>
           <h3 id="why-tokens"><span class="no">1.1</span>Why tokens</h3>
           <p>One place to refine a value when contrast demands it, and one place for the harness to look. Because every colour is a named token, <code>tools/verify.mjs</code> can compute AA contrast for each text pair and fail the build when a pair falls short, and it can scan every other file for a hex, rgb or hsl literal and reject it. A page cannot invent a colour, so the accent cannot creep from the stamp into a link, and the brief's rule that the accent is spent on stamps and one stroke per figure is a property of the system rather than a request to writers.</p>
           <h3 id="why-components"><span class="no">1.2</span>Why components once</h3>

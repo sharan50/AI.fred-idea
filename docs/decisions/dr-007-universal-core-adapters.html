@@ -37,6 +37,17 @@
   <div class="body-grid">
     <aside class="rail" id="rail">
       <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
         <p class="rail-title">In this publication</p>
         <ol>
           <li><a href="../"><span class="n">i</span>Index</a></li>
@@ -48,7 +59,6 @@
           <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
           <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
           <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
-          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
           <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
           <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
           <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
@@ -62,7 +72,7 @@
       <article class="dr">
         <section>
           <h2 id="decision"><span class="no">1</span>Decision</h2>
-          <p>We build one universal core and add a thin, named layer per country. The core is country-agnostic, and <a href="../02-architecture/#adapters">02</a> lists its eleven components: the planner, the classifier, task cards, the alias vault and the substitution component, authority envelopes, the state machine, verification, the worker console, the access ledger, the intake gateway and the policy layer's mechanism. Per country we add passport adapters to its identity and financial rails, a legal pack and a data-residency map; operationally, a shift. India is the build base, the US and the UK are the commercial ground, and we build for all three from the first line.</p>
+          <p data-key="dr-007.decision.1">We build one universal core and add a thin, named layer per country. The core is country-agnostic, and <a href="../02-architecture/#adapters">02</a> lists its eleven components: the planner, the classifier, task cards, the alias vault and the substitution component, authority envelopes, the state machine, verification, the worker console, the access ledger, the intake gateway and the policy layer's mechanism. Per country we add passport adapters to its identity and financial rails, a legal pack and a data-residency map; operationally, a shift. India is the build base, the US and the UK are the commercial ground, and we build for all three from the first line.</p>
           <h3 id="core"><span class="no">1.1</span>What lives in the core</h3>
           <p>Everything that makes the two fatal failures structurally impossible, so that each is proven once. The alias type system is universal: <code>{{pan}}</code>, <code>{{ni-number}}</code> and <code>{{ssn}}</code> are three values of one type, so the planner and the substitutor treat an identity number the same way in three countries. The policy layer's mechanism is core; its flag table's content is per country and travels with the legal pack. The rule of classification, the state-machine invariant and the outcome-code vocabulary have one text each, which no country edits.</p>
           <h3 id="adapter"><span class="no">1.2</span>What lives in the adapter</h3>

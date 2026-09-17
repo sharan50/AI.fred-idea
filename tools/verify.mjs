@@ -439,7 +439,7 @@ for (const f of htmlFiles.filter((p) => /[\\/]decisions[\\/]dr-[^\\/]+\.html$/.t
 }
 // Index defines the document-status vocabulary once
 {
-  const idx = join(DOCS, 'index.html');
+  const idx = join(DOCS, 'contents', 'index.html');
   if (existsSync(idx)) {
     const t = read(idx);
     if (!/<h2[^>]*id="how-to-read"/.test(t)) fail(idx, 1, 'index must carry the "How to read this publication" section (id="how-to-read") defining document status');
@@ -547,6 +547,16 @@ for (const v of MAP_VIEWS) {
 // ---------------------------------------------------------------------------
 const build = await import('./build.mjs');
 for (const x of build.check({ root: ROOT })) fail(join(ROOT, x.file), x.line, x.msg);
+
+// ---------------------------------------------------------------------------
+// 10. Ownership and the generated views (roles.json, DR-029): every section
+//     has exactly one owner, every decision and every Table 7.1 owner cell
+//     maps to a role, every key block a view references exists and is
+//     transcluded verbatim, no digit-bearing sentence on the front door sits
+//     outside a key block or a generated count, the front door and the frames
+//     hold their caps, and CODEOWNERS is what roles.json says
+// ---------------------------------------------------------------------------
+for (const x of build.checkViews({ root: ROOT })) fail(join(ROOT, x.file), x.line, x.msg);
 
 // ---------------------------------------------------------------------------
 // Report
