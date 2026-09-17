@@ -541,6 +541,14 @@ for (const v of MAP_VIEWS) {
 }
 
 // ---------------------------------------------------------------------------
+// 9. Freshness of the assembled pages (tools/build.mjs --check, DR-028): every
+//    page under docs/ is what a build from src/pages/ would write, every source
+//    has its page, and every page has a source or is a generated page
+// ---------------------------------------------------------------------------
+const build = await import('./build.mjs');
+for (const x of build.check({ root: ROOT })) fail(join(ROOT, x.file), x.line, x.msg);
+
+// ---------------------------------------------------------------------------
 // Report
 // ---------------------------------------------------------------------------
 if (failures.length) {
