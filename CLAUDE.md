@@ -33,6 +33,12 @@ A longer page is a directory `src/pages/<path minus .html>/` of fragments: `000-
 After an edit: `node tools/build.mjs`, then `node tools/verify.mjs`.
 No em-dashes, no new colour, no new component, no page moved, no anchor renamed.
 
+## The ownership rule
+
+`roles.json` is the source of ownership: every section, decision and open item has one owner, and `node tools/build.mjs --role <id>` (or `/role <id>`) prints what an owner holds.
+A section's owner is who a change to it is discussed with before it is made.
+The front door, the doors and the role pages are generated: edit `roles.json` or the fragments, never `docs/roles/`, `docs/index.html` or `docs/record/`.
+
 ## The reading rule
 
 Read the summaries in `manifest.json` first; they say what each page carries.

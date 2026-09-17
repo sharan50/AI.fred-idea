@@ -12,18 +12,22 @@ find-and-replace pass.
 | Path | What it is |
 |------|------------|
 | `BUILD_BRIEF.md` | The instruction set that produced this repository. Everything binding about the design is in it. |
-| `REBUILD_BRIEF.md` | The instruction set for the fragments, the build and the owner views (DR-028). |
+| `REBUILD_BRIEF.md` | The instruction set for the fragments, the build and the owner views (DR-028, DR-029). |
+| `roles.json` | The source of ownership (DR-029): five roles, what each owns and reads at section level, the layer defaults, the decision overrides, the map of Table 7.1's owner cells, and the front door's picks. |
 | `CLAUDE.md` | What a fresh Claude Code session reads first: the map, the editing rule, the reading rule, the dependency rule. `models/` and `tools/depmap/` carry their own. |
-| `.claude/commands/` | `/impact`, `/section` and `/verify`: an edit plan from the map, one fragment by its anchor, the three checks. |
-| `docs/` | The publication: plain static HTML, inline SVG diagrams, self-hosted fonts. Assembled from `src/pages/` by `tools/build.mjs` and never edited by hand; Netlify serves it with no build command. |
-| `src/pages/` | The source of every page. A page under 3,000 words of prose is one file; a longer page is a directory of fragments, `000-head.html`, one `NNN-<h2 id>.html` per section, `999-foot.html`, concatenated verbatim. |
+| `.claude/commands/` | `/impact`, `/section`, `/verify` and `/role`: an edit plan from the map, one fragment by its anchor, the three checks, one owner's scope. |
+| `docs/` | The publication: plain static HTML, inline SVG diagrams, self-hosted fonts. Assembled from `src/pages/` by `tools/build.mjs` and never edited by hand; Netlify serves it with no build command. Its front door, its doors, the role pages and the record door are generated views (DR-029). |
+| `src/pages/` | The source of every page. A page under 3,000 words of prose is one file; a longer page is a directory of fragments, `000-head.html`, one `NNN-<h2 id>.html` per section, `999-foot.html`, concatenated verbatim. A block marked `data-key` is a key block a view may transclude. |
+| `src/templates/` | The four templates of the generated views. Each carries one capped hand-written frame; everything else in a view is generated or transcluded. |
 | `docs/assets/tokens.css` | Every colour, type and spacing token. The only file that defines a colour. |
 | `docs/assets/base.css` | Reset, typography, layout and the component set. |
 | `docs/assets/print.css` | Print and PDF stylesheet; every page exports cleanly. |
 | `docs/assets/nav.js` | Vanilla JavaScript for navigation only. |
 | `manifest.json` | Machine-readable site map: path, title, section, status, summary, updated. |
-| `tools/build.mjs` | Writes `docs/` from `src/pages/` by verbatim copy or concatenation; `--check` fails when a committed page differs from what a build would write. Never published. |
-| `tools/verify.mjs` | The verification harness, nine sections. Never published. |
+| `tools/build.mjs` | Writes `docs/` from `src/pages/` by verbatim copy or concatenation, then the generated views, the manifest's sections and `CODEOWNERS`; `--check` fails when any of them differs from what a build would write; `--owners`, `--keys` and `--role` print the ownership table, the key blocks and one owner's scope. Never published. |
+| `tools/build-views.mjs` | The view generator the build imports: the rail, transclusion, the templates, the manifest's sections, `CODEOWNERS`, and the checks of harness section 10. |
+| `tools/verify.mjs` | The verification harness, ten sections. Never published. |
+| `.github/CODEOWNERS` | Generated from `roles.json`: one line per owned path under `src/pages/`. |
 | `tools/depmap.mjs` | The dependency map's tool: `extract`, `check`, `impact`, `batch`, `at`, `show`, `list`, `selftest`, `view`. The tool is never published; its served view is (DR-017). |
 | `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `view.src.html` and `view-architecture.src.html` (the two viewer templates), `batches/` (one record per batch of changes, proposed or made). |
 | `spec/` | The executable specification: a schema for every record, the closed lists, and reference implementations of the state machine, the envelope, the classifier, the substitutor, the hash service, the evidence pipeline and the ledger, with tests. Never published; `spec/README.md` explains it. |
@@ -31,6 +35,7 @@ find-and-replace pass.
 | `models/` | The economics models behind 05, with every output under `models/out/`. |
 | `SURFACING_REPORT.md` | The loop's closing report against the founder's bar (written at the end of the build). |
 | `RESTRUCTURE_REPORT.md` | The report of the cut into fragments: what changed, the word counts, the exceptions. |
+| `VIEWS_REPORT.md` | The report of the views: the ownership table, every key block with its text, the text-identity proof, each role's reading path. |
 
 ## Where the site lives
 
@@ -39,6 +44,16 @@ in `netlify.toml` and there is no build command. Every page carries a no-index
 directive and the Netlify configuration adds an `X-Robots-Tag` header, the
 interim mitigation until the access-control item in `docs/07-open/` is
 resolved. Do not share a URL before that item is resolved.
+
+## How to read
+
+Start at the front door, `docs/index.html`, which is generated from the record:
+what is decided, where the record stands, the numbers that matter, what is not
+known, five doors and the full contents. Take the door for what you own; it
+lists your sections, decisions and open items, what binds you, and a reading
+path with its running word count. `docs/contents/` carries the publication's
+own account of how to read it, the status vocabulary and the full map. The full
+review left the rail and is reached from the record door.
 
 ## Running the brief
 
@@ -81,7 +96,8 @@ decision-record structure and the print stylesheet. Its eighth section runs the
 dependency map's own check, so a map pointer that no longer resolves or a
 restated list that has drifted fails the build too. Its ninth runs the build's
 freshness check, so a page under `docs/` that differs from its source under
-`src/pages/` fails as well.
+`src/pages/` fails as well. Its tenth checks ownership against `roles.json`,
+the key blocks a view transcludes, the front door's caps and `CODEOWNERS`.
 
 The dependency map (DR-017) answers "what else changes if this changes" before
 a page is edited. Before editing a fixed decision, a mechanism stated on more
