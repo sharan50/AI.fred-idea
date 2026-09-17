@@ -1,7 +1,7 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "updated": "2026-09-15",
+  "updated": "2026-09-17",
   "statuses": {
     "verified": "never a page status",
     "to-verify": "the page carries external claims not yet verified",
@@ -52,7 +52,7 @@
     },
     {
       "key": "decisions",
-      "pages": 28
+      "pages": 29
     },
     {
       "key": "depmap",
@@ -250,7 +250,7 @@
       "section": "decisions",
       "status": "decision",
       "summary": "The publication is plain static HTML served straight from GitHub by Netlify with no build command, framework, CDN or external asset. HTML is the single canonical source; a static site generator and Markdown-canonical generation were rejected because two representations drift.",
-      "updated": "2026-09-15"
+      "updated": "2026-09-17"
     },
     {
       "path": "decisions/dr-011-token-and-component-system.html",
@@ -389,12 +389,20 @@
       "updated": "2026-09-14"
     },
     {
+      "path": "decisions/dr-028-fragments-and-build.html",
+      "title": "DR-028 Pages assembled from fragments, held fresh by the harness",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "Every page under docs is assembled from HTML fragments under src/pages/ by a dependency-free script, and the harness fails when a committed page differs from what its fragments would produce. DR-010 is amended, not reversed: HTML stays the single canonical source and Netlify still publishes the committed pages with no build command. Markdown canonical, more pages and leaving it were rejected.",
+      "updated": "2026-09-17"
+    },
+    {
       "path": "decisions/index.html",
       "title": "Decisions",
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
-      "updated": "2026-09-14"
+      "updated": "2026-09-17"
     },
     {
       "path": "depmap/index.html",

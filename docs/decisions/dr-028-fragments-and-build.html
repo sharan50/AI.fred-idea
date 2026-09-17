@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>DR-028 Pages assembled from fragments, held fresh by the harness, AI.fred</title>
+<meta name="description" content="Every page under docs is assembled from HTML fragments under src/pages/ by a dependency-free script, and the harness fails when a committed page differs from what its fragments would produce. DR-010 is amended, not reversed: HTML stays the single canonical source and Netlify still publishes the committed pages with no build command.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-record">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">DR-028</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="decision">Fixed decision<small>taken 2026-09-17</small></p>
+    <h1><span class="no"><a href="./">DR-028</a></span><span class="title">Pages assembled from fragments, held fresh by the harness</span></h1>
+    <p class="standfirst">Every page under the docs directory is assembled from HTML fragments kept under the repository's source directory, by a script with no dependency, and the harness fails when a committed page differs by a byte from what its fragments would produce. The reader receives the same page as before; the editor opens one fragment of it. DR-010 is amended, not reversed: HTML remains the single canonical source, the fragments are HTML, the assembled pages stay committed, and Netlify still publishes them straight from GitHub with no build command.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>DR-028</dd></div>
+      <div><dt>Taken</dt><dd>2026-09-17</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-decision">decision</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the next editor</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../08-review/"><span class="n">08</span>Full review</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <article class="dr">
+        <section>
+          <h2 id="decision"><span class="no">1</span>Decision</h2>
+          <p>Every page under the docs directory is assembled from HTML fragments kept under <code>src/pages/</code> by <code>tools/build.mjs</code>, a script with no dependency that runs on the same Node the harness runs on. A page under three thousand words of prose is one file, copied byte for byte. A longer page is a directory of fragments: the head, one fragment per top-level section named for the id of the heading it carries, and the foot, concatenated in filename order and nothing else. The build adds no template, transforms nothing and rewrites no whitespace; the fragments are the page cut at line boundaries, and the page is the fragments joined. The assembled pages stay committed, and Netlify still publishes them straight from GitHub with no build command. What holds the two together is the harness: its ninth section runs the build's check on every pass, and a page under the docs directory that differs by a byte from what its fragments would produce fails in the same <code>file:line message</code> form as every other failure.</p>
+          <h3 id="why-fragments"><span class="no">1.1</span>Why the pages are cut</h3>
+          <p><a href="dr-010-html-no-build-step.html">DR-010</a>, 1.2, rested the authoring discipline on one premise: the page count was small enough that copying a template by hand cost less than machinery. The premise held for a page of two thousand words. It does not hold for the pages the record has grown into: 02 is twenty-two thousand words of prose, 03 twenty-four thousand and 08 twenty-six thousand, each around fifty thousand tokens as HTML. A session that opens two of them has spent its working context before its first edit, and an edit to one section of 03 is made by a tool holding the whole of 03. The cut puts every file a session edits under three thousand words, apart from the ten single sections the restructure report lists as longer on their own; a session opens the fragment its task names and no more.</p>
+          <h3 id="what-does-not-change"><span class="no">1.2</span>What does not change</h3>
+          <p>The canonical source is still HTML: every fragment is a verbatim slice of the page it belongs to, and no fragment exists in any other form. The reader receives the same bytes as before; the assembled page is what is committed, what the harness checks and what Netlify serves. There is still no build command in <code>netlify.toml</code>, no package manifest, no framework and no dependency. The loci of <a href="dr-017-dependency-map.html">DR-017</a> resolve against the assembled pages as they did, so no anchor moves and no locus is renamed. The one thing that changes is where an editor's hand goes: to the fragment, never to the assembled page.</p>
+          <h3 id="where-specified"><span class="no">1.3</span>Where it is specified</h3>
+          <p>The build and its check are <code>tools/build.mjs</code>, and the harness calls the check as its ninth section. The layout of <code>src/pages/</code>, the split threshold and the editing rule are stated in the repository's <code>CLAUDE.md</code>, which a fresh session reads before it opens anything, and in <code>README.md</code>. The record of the cut, with the word counts before and after and the sections that remain over the threshold, is <code>RESTRUCTURE_REPORT.md</code> at the repository root.</p>
+        </section>
+        <section>
+          <h2 id="rejected"><span class="no">2</span>Rejected alternative(s) and their cost</h2>
+          <dl class="def">
+            <dt>Markdown as the canonical source</dt>
+            <dd>The lighter source <a href="dr-010-html-no-build-step.html">DR-010</a> rejected, and its argument has not moved: the chips, the numbered sources, the figure blocks and the stamps the harness reads are not expressible in Markdown without embedding the HTML they were meant to replace, and a generated page acquires hand edits within a month. A fragment costs none of that, because it is the page's own HTML and the check fails the moment the two differ.</dd>
+            <dt>Splitting the long pages into more pages</dt>
+            <dd>Cutting 02, 03 and 08 into a page per section would put every file under the threshold with no build at all. It would also move a hundred and sixty of the map's loci, re-point more than three hundred internal links, and change what a reader receives: a section page of 03 no longer carries the boundary sequence <a href="dr-014-substitution-framing.html">DR-014</a> chose as its spine. The reader's page and the editor's file are different units, and this record keeps the page whole.</dd>
+            <dt>Leaving the pages as they are</dt>
+            <dd>The cost is the one above: a fresh session cannot hold two of the three largest pages, so every edit to them is made without the context to make it well, and each pass over the record costs more than the one before. The discipline DR-010 relied on stops being cheaper than the machinery once a page passes about twenty thousand words, and three pages have.</dd>
+          </dl>
+        </section>
+        <section>
+          <h2 id="closes-off"><span class="no">3</span>What this closes off</h2>
+          <ul>
+            <li>An edit made to a page under the docs directory directly: the next build overwrites it, and until then the harness's ninth section fails on the drift.</li>
+            <li>A page under the docs directory with no source under <code>src/pages/</code>, and a source with no page, other than the generated views the record already admits.</li>
+            <li>A template, a transformation or a whitespace rule in the build; it copies and concatenates, and a fragment set that does not reassemble its page byte for byte is a failure, never something the build repairs.</li>
+            <li>A fragment cut anywhere but at a line boundary, or a section fragment named for anything but the id of the heading it carries.</li>
+            <li>A build command in <code>netlify.toml</code>, a dependency, or a package manager; the build runs on the same Node the harness runs on, and the published directory is still the committed one.</li>
+            <li>A Markdown or other second representation of any fragment; the fragment is the source and the page is its concatenation, and neither is a copy of the other in another form.</li>
+          </ul>
+        </section>
+        <section>
+          <h2 id="record-status"><span class="no">4</span>Status</h2>
+          <p>Fixed decision, taken by the founder on 2026-09-17. It amends <a href="dr-010-html-no-build-step.html">DR-010</a> without reversing it: HTML remains the single canonical source, Netlify still publishes the committed pages with no build command, and DR-010's decision text stands, with its status recording this amendment. The pages were cut by a one-off script that was deleted once the fragments reassembled every page byte for byte, and <code>RESTRUCTURE_REPORT.md</code> holds the counts. The map gains this record as a node justified by DR-010, and no locus moved.</p>
+        </section>
+      </article>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Taken 2026-09-17. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>

@@ -8302,6 +8302,67 @@
       ]
     },
     {
+      "id": "dr-028",
+      "kind": "dr",
+      "label": "Pages assembled from fragments, held fresh by the harness",
+      "facets": {
+        "layer": "publishing",
+        "fixity": "fixed"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-028-fragments-and-build.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"Pages assembled from fragments, held fresh by the harness\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-028-markdown-as-the-canonical-source",
+      "kind": "alt",
+      "label": "Markdown as the canonical source",
+      "facets": {
+        "layer": "publishing"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-028-fragments-and-build.html#rejected!\"Markdown as the canonical source\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-028-splitting-into-more-pages",
+      "kind": "alt",
+      "label": "Splitting the long pages into more pages",
+      "facets": {
+        "layer": "publishing"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-028-fragments-and-build.html#rejected!\"Splitting the long pages into more pages\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-028-leaving-the-pages-as-they-are",
+      "kind": "alt",
+      "label": "Leaving the pages as they are",
+      "facets": {
+        "layer": "publishing"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-028-fragments-and-build.html#rejected!\"Leaving the pages as they are\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
       "id": "open-07-31",
       "kind": "open",
       "label": "The given name, settled by DR-027",
@@ -11437,6 +11498,31 @@
       "dr-026",
       "justifies",
       "dr-027"
+    ],
+    [
+      "dr-010",
+      "justifies",
+      "dr-028"
+    ],
+    [
+      "ledger-1.11.3",
+      "justifies",
+      "dr-028"
+    ],
+    [
+      "dr-028",
+      "rejects",
+      "alt-dr-028-markdown-as-the-canonical-source"
+    ],
+    [
+      "dr-028",
+      "rejects",
+      "alt-dr-028-splitting-into-more-pages"
+    ],
+    [
+      "dr-028",
+      "rejects",
+      "alt-dr-028-leaving-the-pages-as-they-are"
     ],
     [
       "open-07-31",

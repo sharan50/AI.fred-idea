@@ -12941,15 +12941,19 @@
           "to": "decisions/dr-012-design-plan.html"
         },
         {
-          "line": 108,
-          "to": "00-thesis/index.html"
+          "line": 100,
+          "to": "decisions/dr-028-fragments-and-build.html"
         },
         {
           "line": 109,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "00-thesis/index.html"
         },
         {
           "line": 110,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 111,
           "to": "07-open/index.html"
         }
       ]
@@ -15657,6 +15661,161 @@
         }
       ]
     },
+    "decisions/dr-028-fragments-and-build.html": {
+      "title": "DR-028 Pages assembled from fragments, held fresh by the harness, AI.fred",
+      "kind": "record",
+      "status": "decision",
+      "anchors": {
+        "decision": {
+          "kind": "h2",
+          "line": 64,
+          "no": "1",
+          "text": "Decision"
+        },
+        "why-fragments": {
+          "kind": "h3",
+          "line": 66,
+          "no": "1.1",
+          "text": "Why the pages are cut",
+          "under": "decision"
+        },
+        "what-does-not-change": {
+          "kind": "h3",
+          "line": 68,
+          "no": "1.2",
+          "text": "What does not change",
+          "under": "decision"
+        },
+        "where-specified": {
+          "kind": "h3",
+          "line": 70,
+          "no": "1.3",
+          "text": "Where it is specified",
+          "under": "decision"
+        },
+        "rejected": {
+          "kind": "h2",
+          "line": 74,
+          "no": "2",
+          "text": "Rejected alternative(s) and their cost"
+        },
+        "closes-off": {
+          "kind": "h2",
+          "line": 85,
+          "no": "3",
+          "text": "What this closes off"
+        },
+        "record-status": {
+          "kind": "h2",
+          "line": 96,
+          "no": "4",
+          "text": "Status"
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 18,
+          "to": "decisions/dr-028-fragments-and-build.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "decisions/dr-028-fragments-and-build.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 44,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 45,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 46,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 47,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 48,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 49,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 50,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 51,
+          "to": "08-review/index.html"
+        },
+        {
+          "line": 52,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 53,
+          "to": "depmap/index.html"
+        },
+        {
+          "line": 54,
+          "to": "depmap/architecture.html"
+        },
+        {
+          "line": 67,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 69,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 77,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 79,
+          "to": "decisions/dr-014-substitution-framing.html"
+        },
+        {
+          "line": 97,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 106,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 107,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 108,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
     "decisions/index.html": {
       "title": "Decisions, AI.fred",
       "kind": "ledger",
@@ -15670,7 +15829,7 @@
         },
         "how-records-work": {
           "kind": "h2",
-          "line": 103,
+          "line": 104,
           "no": "2",
           "text": "How a record works"
         }
@@ -15868,6 +16027,13 @@
               "",
               "2026-09-14",
               "a name of any person on a card or in a worker&#x27;s mouth, and a task that need"
+            ],
+            [
+              "dr-028",
+              "pages assembled from fragments, held fresh by the harness",
+              "",
+              "2026-09-17",
+              "an edit made to a page under docs directly, which the next build overwrites."
             ]
           ],
           "under": "ledger"
@@ -16047,23 +16213,27 @@
           "to": "decisions/dr-027-no-name-reaches-a-worker.html"
         },
         {
-          "line": 100,
+          "line": 97,
+          "to": "decisions/dr-028-fragments-and-build.html"
+        },
+        {
+          "line": 101,
           "to": "07-open/index.html"
         },
         {
-          "line": 105,
+          "line": 106,
           "to": "07-open/index.html#objections"
         },
         {
-          "line": 114,
+          "line": 115,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 115,
+          "line": 116,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 116,
+          "line": 117,
           "to": "07-open/index.html"
         }
       ]
