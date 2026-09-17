@@ -30,7 +30,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-from aifred_harness import DEFAULT_SEED, HERE, outcomes, run, selftest
+from aifred_harness import DEFAULT_SEED, HERE, OUT, outcomes, run, selftest
 
 N = int(sys.argv[1]) if len(sys.argv) > 1 else 20000
 SEED = int(sys.argv[2]) if len(sys.argv) > 2 else DEFAULT_SEED
@@ -97,9 +97,9 @@ feedback = pd.DataFrame(rows)
 paid = feedback[feedback.get("worse_than_leaving_the_price_at_30") == True]
 break_even = float(paid.penalty.min()) if len(paid) else float("nan")
 
-dependence.to_csv(HERE / "probe_dependence.csv", index=False)
-feedback.to_csv(HERE / "probe_price_feedback.csv", index=False)
-with open(HERE / "summary_probes.json", "w") as f:
+dependence.to_csv(OUT / "probe_dependence.csv", index=False)
+feedback.to_csv(OUT / "probe_price_feedback.csv", index=False)
+with open(OUT / "summary_probes.json", "w") as f:
     json.dump({"paths": N, "seed": SEED,
                "correlations": {f"{a} x {b}": {"rho": r, "because": why}
                                 for (a, b), (r, why) in PAIRS.items()},

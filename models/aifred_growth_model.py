@@ -50,7 +50,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-from aifred_harness import CR, DEFAULT_SEED, HERE, MONTHS, bands, outcomes
+from aifred_harness import CR, DEFAULT_SEED, HERE, MONTHS, OUT, bands, outcomes
 
 # --------------------------------------------------------------- the mechanism
 # Ranges, not point values. Each is a statement someone can argue with, and the
@@ -212,7 +212,7 @@ def run(n, seed=DEFAULT_SEED, scenario="viable", marketing=True, cac_usd=None, s
 def selftest():
     """With marketing off, the published CSV must come back character for character."""
     ns = run(20000, DEFAULT_SEED, marketing=False)
-    published = HERE / "sim_viable.csv"
+    published = OUT / "sim_viable.csv"
     df = bands(ns)
     same = df[[c for c in pd.read_csv(published).columns]].to_csv(index=False) == published.read_text()
     return same
@@ -258,14 +258,14 @@ if __name__ == "__main__":
                              np.median(y["peak_need_cr"]) > np.median(base["peak_need_cr"]))})
         print(f"  swept ${cac} a paid user")
     sweep = pd.DataFrame(rows)
-    sweep.to_csv(HERE / f"growth_sweep_{SCENARIO}.csv", index=False)
+    sweep.to_csv(OUT / f"growth_sweep_{SCENARIO}.csv", index=False)
 
     # The published run opens the United Kingdom around month 20 and the United
     # States around month 36 without charging a foreign entity's standing cost,
     # so this is the same run with both launches suppressed: the India-only
     # reading of the published line, for the comparison 05, 6.5 states.
     india = run(N, SEED, SCENARIO, marketing=True, overrides={"uk_m": 9999, "us_m": 9999})
-    bands(india).to_csv(HERE / f"sim_growth_india_only.csv", index=False)
+    bands(india).to_csv(OUT / f"sim_growth_india_only.csv", index=False)
     di, db = bands(india), bands(with_mk)
     print()
     for tag, d in (("published, UK m20 and US m36", db), ("same run, India only", di)):
@@ -280,7 +280,7 @@ if __name__ == "__main__":
     net = run(N, SEED, SCENARIO, marketing=True,
               overrides={"price_ind": gross["price_ind"] / 1.18,
                          "price_uk": gross["price_uk"] / 1.20})
-    bands(net).to_csv(HERE / "sim_growth_net_of_tax.csv", index=False)
+    bands(net).to_csv(OUT / "sim_growth_net_of_tax.csv", index=False)
     dn = bands(net)
     print(f'{"net of GST at 18 and 20 per cent":34s} trough {-dn.cum_cash_plan.min() / CR:5.2f} cr  '
           f'cons {-dn.cum_cash_cons.min() / CR:5.2f} cr  arpu m36 ${dn.arpu_usd_plan[35]:5.2f}')
@@ -297,9 +297,9 @@ if __name__ == "__main__":
         "marketing_spend_mean": o["marketing_spend"].mean(1),
         "users_mean": o["users"].mean(1),
     })
-    split.to_csv(HERE / f"growth_split_{SCENARIO}.csv", index=False)
+    split.to_csv(OUT / f"growth_split_{SCENARIO}.csv", index=False)
 
-    with open(HERE / f"summary_growth_{SCENARIO}.json", "w") as f:
+    with open(OUT / f"summary_growth_{SCENARIO}.json", "w") as f:
         json.dump({"scenario": SCENARIO, "paths": N, "seed": SEED,
                    "marketing": {k: v for k, v in MARKETING.items()},
                    "organic_only": {k: float(np.median(v)) for k, v in base.items()},

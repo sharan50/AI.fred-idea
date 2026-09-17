@@ -25,6 +25,7 @@ Usage:  python aifred_model.py [scenario] [n_paths] [seed]
 
 import sys
 import json
+import pathlib
 import numpy as np
 import pandas as pd
 
@@ -281,8 +282,10 @@ summary = {
     "funding_conservative": funding_table("cons"),
 }
 
-df.to_csv(f"sim_{SCENARIO}.csv", index=False)
-with open(f"summary_{SCENARIO}.json", "w") as f:
+OUT = pathlib.Path(__file__).resolve().parent / "out"
+OUT.mkdir(exist_ok=True)
+df.to_csv(OUT / f"sim_{SCENARIO}.csv", index=False)
+with open(OUT / f"summary_{SCENARIO}.json", "w") as f:
     json.dump(summary, f, indent=2, default=float)
 
 if __name__ == "__main__":

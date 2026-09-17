@@ -8,13 +8,15 @@ Everything behind the numbers in `/05-business/`. Nothing here is edited by hand
 | `AIfred_task_measurement_protocol.md` | The thirty-task instrument that replaces the priors: rubric, timing definitions, run protocol, decision thresholds. |
 | `aifred_model.py` | Monte Carlo, 60 months. Scenarios: `as_specified`, `viable`. |
 | `aifred_geo_model.py` | As above with geography-specific acquisition cost, churn, night premiums, entity costs and a commerce take rate. Scenarios: `india_only`, `expansion`, `expansion_commerce`, `foreign_led`. |
-| `AIfred_probabilistic_model.xlsx` | Output of `aifred_model.py`: monthly bands, per-month rationale, driver table, funding plan. |
+| `AIfred_probabilistic_model.xlsx` | Kept by hand from the output of `aifred_model.py`, no script writes it: monthly bands, per-month rationale, driver table, funding plan. |
 | `AIfred_model_rationale.md` | Why every distribution is shaped the way it is, phase by phase. |
 | `AIfred_geography_and_data_layer.md` | The four geography scenarios, the entity thresholds, and the staging of the data layer. |
 | `aifred_geo_growth.py` | The four geography scenarios with the two acquisition mechanisms of DR-025 in them, which is the basis the publication now quotes. |
-| `sim_*.csv`, `geo_*.csv`, `geo_growth_*.csv` | Raw monthly output of the runs quoted in the publication. |
+| `out/` | Every file a script writes: `sim_*.csv`, `geo_*.csv`, `geo_growth_*.csv`, the sensitivity, growth and probe tables, and the summary JSON files. A script reads its inputs back from here too, so the two model files run first. |
 
 ## Rerunning
+
+From this directory; every output lands in `out/`.
 
     python aifred_model.py viable 20000 20260913
     python aifred_geo_model.py foreign_led 20000 20260913

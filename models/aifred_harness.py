@@ -26,6 +26,7 @@ import numpy as np
 import pandas as pd
 
 HERE = pathlib.Path(__file__).resolve().parent
+OUT = HERE / "out"  # every file a script writes, and reads back, lives here
 SRC = (HERE / "aifred_model.py").read_text()
 MARK_KEYS = "KEYS = ["
 MARK_BANDS = "# --------------------------------------------------- coherent outcome bands"
@@ -179,7 +180,7 @@ def bands(ns):
 
 def selftest(scenario="viable"):
     """Refuse to be believed unless this rebuilds the published CSV exactly."""
-    published = HERE / f"sim_{scenario}.csv"
+    published = OUT / f"sim_{scenario}.csv"
     df = bands(run(20000, DEFAULT_SEED, scenario=scenario)[1])
     if df.to_csv(index=False) != published.read_text():
         raise SystemExit(f"self test failed: this run does not rebuild {published.name}")

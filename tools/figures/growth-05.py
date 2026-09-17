@@ -1,6 +1,6 @@
 """Figure 5.5 for /05-business/: the two acquisition mechanisms, month by month.
 
-Generated from models/sim_growth.csv, the published run, on its planning line,
+Generated from models/out/sim_growth.csv, the published run, on its planning line,
 which is the basis every other figure on the page uses. Every value is read;
 none is entered by hand. Same diagram language as
 the other figures on the page: classes only, no colour attributes, stroke
@@ -15,7 +15,7 @@ import math
 import pathlib
 
 R = pathlib.Path(__file__).resolve().parents[2]
-rows = list(csv.DictReader(open(R / 'models/sim_growth.csv')))
+rows = list(csv.DictReader(open(R / 'models/out/sim_growth.csv')))
 months = [int(r['month']) for r in rows]
 org = [float(r['adds_organic_plan']) for r in rows]
 paid = [float(r['adds_paid_plan']) for r in rows]

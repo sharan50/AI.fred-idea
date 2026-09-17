@@ -60,7 +60,7 @@ import numpy as np
 import pandas as pd
 
 from aifred_growth_model import MARKETING, paid_arrivals
-from aifred_harness import CR, DEFAULT_SEED, HERE
+from aifred_harness import CR, DEFAULT_SEED, HERE, OUT
 
 SCENARIOS = ("india_only", "expansion", "expansion_commerce", "foreign_led")
 
@@ -68,7 +68,7 @@ SCENARIOS = ("india_only", "expansion", "expansion_commerce", "foreign_led")
 SRC = (HERE / "aifred_geo_model.py").read_text()
 MARK_KEYS = "KEYS = ["
 MARK_BANDS = 'score = out["cum_cash"][-1]'
-MARK_WRITE = 'df.to_csv(f"geo_{SC}.csv"'
+MARK_WRITE = 'OUT = pathlib.Path(__file__)'
 PART_DRIVERS = SRC[: SRC.index(MARK_KEYS)]
 PART_LOOP = SRC[SRC.index(MARK_KEYS) : SRC.index(MARK_BANDS)]
 PART_BANDS = SRC[SRC.index(MARK_BANDS) : SRC.index(MARK_WRITE)]
@@ -265,7 +265,7 @@ def _with_loop(scenario, n, seed, loop, commerce=None):
 def selftest(scenario):
     """With marketing off the published geography CSV must come back exactly."""
     ns = run(scenario, 20000, DEFAULT_SEED, marketing=False)
-    published = HERE / f"geo_{scenario}.csv"
+    published = OUT / f"geo_{scenario}.csv"
     cols = list(pd.read_csv(published).columns)
     return ns["df"][cols].to_csv(index=False) == published.read_text()
 
@@ -334,10 +334,10 @@ if __name__ == "__main__":
     for sc in todo:
         assert selftest(sc), f"self test failed for {sc}"
         ns = run(sc, N, SEED, marketing=True)
-        ns["df"].to_csv(HERE / f"geo_growth_{sc}.csv", index=False)
+        ns["df"].to_csv(OUT / f"geo_growth_{sc}.csv", index=False)
         s = report(ns)
         summaries[sc] = s
-        json.dump(s, open(HERE / f"geogrowthsum_{sc}.json", "w"), indent=2, default=float)
+        json.dump(s, open(OUT / f"geogrowthsum_{sc}.json", "w"), indent=2, default=float)
         print(f"{sc:20s} peak need {s['peak_cash_cr_plan']:6.1f} cr   "
               f"crossover m{s['crossover_month_plan']}   "
               f"users m60 {s['m60']['users']:9,.0f}   "
@@ -350,10 +350,10 @@ if __name__ == "__main__":
     # expansion_commerce and off in the other two, which is not a comparison.
     if not only:
         nc = run("foreign_led", N, SEED, marketing=True, commerce=False)
-        nc["df"].to_csv(HERE / "geo_growth_foreign_led_nocommerce.csv", index=False)
+        nc["df"].to_csv(OUT / "geo_growth_foreign_led_nocommerce.csv", index=False)
         s_nc = report(nc)
         summaries["foreign_led_nocommerce"] = s_nc
-        json.dump(s_nc, open(HERE / "geogrowthsum_foreign_led_nocommerce.json", "w"),
+        json.dump(s_nc, open(OUT / "geogrowthsum_foreign_led_nocommerce.json", "w"),
                   indent=2, default=float)
         print(f'{"foreign_led, commerce off":26s} peak need {s_nc["peak_cash_cr_plan"]:6.1f} cr   '
               f'cons {s_nc["peak_cash_usd_cons"]/1e6:5.2f}m   '
@@ -395,16 +395,16 @@ if __name__ == "__main__":
                               "foreign_share_users_m60":
                                   float(d.users_fgn_plan[59] / max(d.users_plan[59], 1)),
                               "peak_cash_cr_cons": float(-d.cum_cash_cons.min() / CR)})
-        pd.DataFrame(rows).to_csv(HERE / "geo_growth_bounds.csv", index=False)
-        pd.DataFrame(pct).to_csv(HERE / "geo_growth_percentiles.csv", index=False)
-        pd.DataFrame(alloc).to_csv(HERE / "geo_growth_allocation.csv", index=False)
+        pd.DataFrame(rows).to_csv(OUT / "geo_growth_bounds.csv", index=False)
+        pd.DataFrame(pct).to_csv(OUT / "geo_growth_percentiles.csv", index=False)
+        pd.DataFrame(alloc).to_csv(OUT / "geo_growth_allocation.csv", index=False)
         print()
         print(pd.DataFrame(pct).to_string(index=False))
         print()
         print(pd.DataFrame(alloc).to_string(index=False))
 
     if len(todo) > 1:
-        json.dump(summaries, open(HERE / "geogrowthsum_all.json", "w"), indent=2, default=float)
+        json.dump(summaries, open(OUT / "geogrowthsum_all.json", "w"), indent=2, default=float)
         print()
         for sc, s in summaries.items():
             print(f"{sc:20s} m60 revenue {s['m60']['revenue_cr']:6.1f} cr   "

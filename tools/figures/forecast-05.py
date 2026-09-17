@@ -1,4 +1,4 @@
-"""Figures 5.1 to 5.4 for /05-business/, generated from models/sim_growth.csv.
+"""Figures 5.1 to 5.4 for /05-business/, generated from models/out/sim_growth.csv.
 
 Every value is read from the model's own planning line; none is entered by hand. The output is
 the record's diagram language: classes only, no colour attributes, stroke widths from the class
@@ -11,7 +11,7 @@ site is static HTML with no build step (DR-010), so the SVG lives in the page, n
 import csv, math, html, pathlib
 
 R = pathlib.Path(__file__).resolve().parents[2]
-rows = list(csv.DictReader(open(R / 'models/sim_growth.csv')))
+rows = list(csv.DictReader(open(R / 'models/out/sim_growth.csv')))
 CR = 1e7  # one crore
 def col(name): return [float(r[name]) for r in rows]
 months = [int(r['month']) for r in rows]
@@ -42,8 +42,8 @@ SHARE = {m: S['labour_share'][m - 1] for m in (1, 12, 36, 60)}
 # The median path's crossing, and the as-specified labour share, both read from
 # the files that hold them rather than restated.
 import json as _json
-MEDIAN_CROSS = int(_json.load(open(R / 'models/summary_growth_viable.json'))['with_marketing']['crossover_month'])
-_asp = list(csv.DictReader(open(R / 'models/sim_as_specified.csv')))
+MEDIAN_CROSS = int(_json.load(open(R / 'models/out/summary_growth_viable.json'))['with_marketing']['crossover_month'])
+_asp = list(csv.DictReader(open(R / 'models/out/sim_as_specified.csv')))
 AS_SPEC_SHARE_M36 = float(_asp[35]['labour_plan']) / float(_asp[35]['revenue_plan']) * 100
 
 

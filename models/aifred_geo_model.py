@@ -21,6 +21,7 @@ Usage:  python aifred_geo_model.py [scenario] [n_paths] [seed]
 
 import sys
 import json
+import pathlib
 import numpy as np
 import pandas as pd
 
@@ -258,7 +259,9 @@ summary = {
     "rounds_cons": {k: burn("cons", a, b) / 1e7 for k, (a, b) in
                     {"Seed(1-18)": (1, 18), "A(19-36)": (19, 36), "B(37-60)": (37, 60)}.items()},
 }
-df.to_csv(f"geo_{SC}.csv", index=False)
-json.dump(summary, open(f"geosum_{SC}.json", "w"), indent=2, default=float)
+OUT = pathlib.Path(__file__).resolve().parent / "out"
+OUT.mkdir(exist_ok=True)
+df.to_csv(OUT / f"geo_{SC}.csv", index=False)
+json.dump(summary, open(OUT / f"geosum_{SC}.json", "w"), indent=2, default=float)
 if __name__ == "__main__":
     print(json.dumps(summary, indent=2, default=float))

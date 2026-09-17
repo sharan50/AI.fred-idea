@@ -29,7 +29,7 @@ import sys
 import numpy as np
 import pandas as pd
 
-from aifred_harness import (CR, FX_REPORT, HERE, LABELS, LEVERS, MONTHS,
+from aifred_harness import (CR, FX_REPORT, HERE, LABELS, LEVERS, MONTHS, OUT,
                             PLAN_TROUGH_CR, bands, decile, outcomes, rank, run, s1)
 
 SCENARIO = sys.argv[1] if len(sys.argv) > 1 else "viable"
@@ -39,7 +39,7 @@ SEED = int(sys.argv[4]) if len(sys.argv) > 4 else 20260913
 
 # ------------------------------------------------------------------ self test
 drivers, ns = run(N, SEED, scenario=SCENARIO)
-published = HERE / f"sim_{SCENARIO}.csv"
+published = OUT / f"sim_{SCENARIO}.csv"
 if published.exists() and N == 20000 and SEED == 20260913:
     if bands(ns).to_csv(index=False) != published.read_text():
         raise SystemExit(f"self test failed: this run does not rebuild {published.name}")
@@ -198,12 +198,12 @@ summary = {
                                       for q in (50, 75, 90)},
 }
 
-sens.to_csv(HERE / f"sensitivity_{SCENARIO}.csv", index=False)
-thresholds.to_csv(HERE / f"sensitivity_thresholds_{SCENARIO}.csv", index=False)
-two_way.to_csv(HERE / f"sensitivity_two_way_{SCENARIO}.csv", index=False)
-sweeps.to_csv(HERE / f"sensitivity_sweeps_{SCENARIO}.csv", index=False)
-reversion.to_csv(HERE / f"sensitivity_reversion_{SCENARIO}.csv", index=False)
-with open(HERE / f"summary_sensitivity_{SCENARIO}.json", "w") as f:
+sens.to_csv(OUT / f"sensitivity_{SCENARIO}.csv", index=False)
+thresholds.to_csv(OUT / f"sensitivity_thresholds_{SCENARIO}.csv", index=False)
+two_way.to_csv(OUT / f"sensitivity_two_way_{SCENARIO}.csv", index=False)
+sweeps.to_csv(OUT / f"sensitivity_sweeps_{SCENARIO}.csv", index=False)
+reversion.to_csv(OUT / f"sensitivity_reversion_{SCENARIO}.csv", index=False)
+with open(OUT / f"summary_sensitivity_{SCENARIO}.json", "w") as f:
     json.dump(summary, f, indent=2, default=float)
 
 if __name__ == "__main__":
