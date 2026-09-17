@@ -1,0 +1,55 @@
+{
+  "id": "vocab-refusal-codes",
+  "slug": "refusal-codes",
+  "label": "The nine refusal reason codes",
+  "source": "tools/depmap/graph.json",
+  "canonical": "01-product/index.html#refusals",
+  "check": "members",
+  "members": [
+    {
+      "id": "refused-outside-envelope",
+      "word": "refused-outside-envelope",
+      "code": "refused-outside-envelope"
+    },
+    {
+      "id": "refused-real-value",
+      "word": "refused-real-value",
+      "code": "refused-real-value"
+    },
+    {
+      "id": "refused-user-factor",
+      "word": "refused-user-factor",
+      "code": "refused-user-factor"
+    },
+    {
+      "id": "refused-credential",
+      "word": "refused-credential",
+      "code": "refused-credential"
+    },
+    {
+      "id": "refused-reserved-kyc",
+      "word": "refused-reserved-kyc",
+      "code": "refused-reserved-kyc"
+    },
+    {
+      "id": "refused-policy-pending",
+      "word": "refused-policy-pending",
+      "code": "refused-policy-pending"
+    },
+    {
+      "id": "refused-illegal",
+      "word": "refused-illegal",
+      "code": "refused-illegal"
+    },
+    {
+      "id": "refused-advice",
+      "word": "refused-advice",
+      "code": "refused-advice"
+    },
+    {
+      "id": "refused-not-offered",
+      "word": "refused-not-offered",
+      "code": "refused-not-offered"
+    }
+  ]
+}

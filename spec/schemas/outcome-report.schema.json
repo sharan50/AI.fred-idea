@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:outcome-report",
+  "title": "Outcome report",
+  "description": "A record with one version, because once it is sent no step of the task runs again. Delivery is recorded when the bound device returns its signed receipt, and the awaiting-verdict nudge schedule runs from that moment.",
+  "x-locus": "01-product/index.html#control-loop",
+  "type": "object",
+  "properties": {
+    "reference": { "type": "string", "pattern": "^rep_[a-z0-9]+$" },
+    "version": { "const": 1 },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "step_id": { "$ref": "aifred:common#/$defs/step-id" },
+          "purpose": { "type": "string" },
+          "code": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/outcome-codes" }, { "type": "null" }] },
+          "cancelled": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/cancellation-causes" }, { "type": "null" }] },
+          "fields": { "type": "object" },
+          "variance": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+          "closed_by": { "type": "string", "enum": ["the system", "a worker", "you", "nobody"] }
+        },
+        "required": ["step_id", "purpose", "code", "cancelled", "fields", "variance", "closed_by"],
+        "additionalProperties": false
+      }
+    },
+    "irreversible_acts_fired": { "type": "array", "items": { "type": "object", "properties": { "step_id": { "$ref": "aifred:common#/$defs/step-id" }, "envelope_version": { "$ref": "aifred:common#/$defs/envelope-version-ref" }, "action": { "$ref": "aifred:vocab#/$defs/committing-actions" }, "at": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["step_id", "envelope_version", "action", "at"], "additionalProperties": false } },
+    "not_completed": { "type": "array", "items": { "type": "object", "properties": { "step_id": { "$ref": "aifred:common#/$defs/step-id" }, "why": { "type": "string" } }, "required": ["step_id", "why"], "additionalProperties": false } },
+    "facts_learned": { "type": "array", "items": { "$ref": "aifred:common#/$defs/fact-id" } },
+    "ledger": { "type": "array", "items": { "$ref": "aifred:common#/$defs/ledger-id" } },
+    "sent_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "delivered": { "anyOf": [{ "type": "null" }, { "type": "object", "properties": { "at": { "$ref": "aifred:common#/$defs/timestamp" }, "device": { "$ref": "aifred:common#/$defs/device-id" }, "signature": { "$ref": "aifred:common#/$defs/signature" } }, "required": ["at", "device", "signature"], "additionalProperties": false }] }
+  },
+  "required": ["reference", "version", "task_id", "steps", "irreversible_acts_fired", "not_completed", "facts_learned", "ledger", "sent_at", "delivered"],
+  "additionalProperties": false
+}

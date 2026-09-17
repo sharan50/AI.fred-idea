@@ -1,0 +1,22 @@
+{
+  "id": "vocab-shifts",
+  "slug": "shifts",
+  "label": "The three shifts of the wheel",
+  "source": "tools/depmap/graph.json",
+  "canonical": "04-operations/index.html#handover",
+  "check": "members",
+  "members": [
+    {
+      "id": "day-shift",
+      "word": "day shift"
+    },
+    {
+      "id": "night-one",
+      "word": "night one"
+    },
+    {
+      "id": "night-two",
+      "word": "night two"
+    }
+  ]
+}

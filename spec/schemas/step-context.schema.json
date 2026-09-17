@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:step-context",
+  "title": "Signed step context",
+  "description": "Issued by the task service when the step entered running; canonical JSON signed with Ed25519 under the task service's key for the market region. Its validity is no longer than the placement window, it names the envelope version it was issued against, for a dependant's aliases it expires no later than her delegation's validity end, and it dies with any edit to the envelope.",
+  "x-locus": "03-trust-and-data/index.html#substitutor-interface",
+  "type": "object",
+  "properties": {
+    "context_id": { "$ref": "aifred:common#/$defs/context-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "step_id": { "$ref": "aifred:common#/$defs/step-id" },
+    "executor": { "type": "object", "properties": { "kind": { "$ref": "aifred:vocab#/$defs/executor-kinds" }, "pool": { "$ref": "aifred:vocab#/$defs/pools" } }, "required": ["kind"], "additionalProperties": false },
+    "surface": { "$ref": "aifred:vocab#/$defs/surfaces" },
+    "party": { "$ref": "aifred:common#/$defs/party-id" },
+    "act": { "$ref": "aifred:vocab#/$defs/act-types" },
+    "identity_acts": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/identity-acts" } },
+    "fields": { "type": "array", "items": { "$ref": "aifred:common#/$defs/alias" }, "description": "The aliases the step carries: the allow-list." },
+    "reversibility": { "type": "string", "enum": ["reversible", "irreversible"] },
+    "envelope": {
+      "type": "object",
+      "properties": {
+        "version": { "$ref": "aifred:common#/$defs/envelope-version-ref" },
+        "lines": { "type": "array", "items": { "type": "string" } },
+        "validity": { "type": "object", "properties": { "from": { "$ref": "aifred:common#/$defs/timestamp" }, "to": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["from", "to"], "additionalProperties": false },
+        "device_signature": { "anyOf": [{ "$ref": "aifred:common#/$defs/signature" }, { "type": "null" }], "description": "The signature the user's device produced when it confirmed the envelope or its last extension." },
+        "device": { "anyOf": [{ "$ref": "aifred:common#/$defs/device-id" }, { "type": "null" }] }
+      },
+      "required": ["version", "lines", "validity", "device_signature", "device"],
+      "additionalProperties": false
+    },
+    "policy": {
+      "type": "object",
+      "properties": {
+        "act": { "$ref": "aifred:vocab#/$defs/act-types" },
+        "delegator_jurisdiction": { "$ref": "aifred:common#/$defs/market" },
+        "institution_market": { "anyOf": [{ "$ref": "aifred:common#/$defs/market" }, { "type": "null" }] },
+        "under_delegator": { "$ref": "#/$defs/lookup-result" },
+        "under_institution": { "anyOf": [{ "$ref": "#/$defs/lookup-result" }, { "type": "null" }] },
+        "governing": { "$ref": "aifred:vocab#/$defs/flag-values" }
+      },
+      "required": ["act", "delegator_jurisdiction", "institution_market", "under_delegator", "under_institution", "governing"],
+      "additionalProperties": false
+    },
+    "delegation": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "record": { "$ref": "aifred:common#/$defs/delegation-id" }, "delegator": { "$ref": "aifred:common#/$defs/person-ref" }, "validity_end": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["record", "delegator", "validity_end"], "additionalProperties": false }
+      ]
+    },
+    "money": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "amount": { "$ref": "aifred:common#/$defs/money" }, "remaining_cap": { "$ref": "aifred:common#/$defs/money" } }, "required": ["amount", "remaining_cap"], "additionalProperties": false }
+      ]
+    },
+    "approval_token": { "anyOf": [{ "$ref": "aifred:common#/$defs/token-id" }, { "type": "null" }] },
+    "issued_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "expires_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "nonce": { "type": "string", "pattern": "^[0-9a-f]{32}$" },
+    "key_id": { "$ref": "aifred:common#/$defs/key-id" },
+    "signature": { "$ref": "aifred:common#/$defs/signature" }
+  },
+  "required": ["context_id", "task_id", "step_id", "executor", "surface", "party", "act", "identity_acts", "fields", "reversibility", "envelope", "policy", "delegation", "money", "approval_token", "issued_at", "expires_at", "nonce", "key_id", "signature"],
+  "additionalProperties": false,
+  "$defs": {
+    "lookup-result": {
+      "type": "object",
+      "properties": {
+        "jurisdiction": { "$ref": "aifred:common#/$defs/market" },
+        "row": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/flag-rows" }, { "type": "null" }] },
+        "flag": { "$ref": "aifred:vocab#/$defs/flag-values" },
+        "condition": { "anyOf": [{ "type": "array", "items": { "$ref": "aifred:vocab#/$defs/condition-predicates" } }, { "type": "null" }] },
+        "condition_holds": { "anyOf": [{ "type": "boolean" }, { "type": "null" }] },
+        "reads": { "$ref": "aifred:vocab#/$defs/flag-values" }
+      },
+      "required": ["jurisdiction", "row", "flag", "condition", "condition_holds", "reads"],
+      "additionalProperties": false
+    }
+  }
+}

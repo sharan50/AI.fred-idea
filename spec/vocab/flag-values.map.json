@@ -1,0 +1,24 @@
+{
+  "id": "vocab-flag-values",
+  "slug": "flag-values",
+  "label": "The three policy flag values",
+  "source": "tools/depmap/graph.json",
+  "canonical": "03-trust-and-data/index.html#policy-flags",
+  "check": "members",
+  "members": [
+    {
+      "id": "delegated",
+      "word": "delegated",
+      "code": "delegated"
+    },
+    {
+      "id": "bounce",
+      "word": "bounce",
+      "code": "bounce"
+    },
+    {
+      "id": "prohibited-pending",
+      "word": "prohibited pending"
+    }
+  ]
+}

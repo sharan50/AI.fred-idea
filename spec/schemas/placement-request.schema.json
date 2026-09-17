@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:placement-request",
+  "title": "Placement request",
+  "description": "The one message the substitutor accepts, over one authenticated queue that only the browser controller and the mail relay can write to, each acting for a step and never for a person. Aliases, a target descriptor typed per surface and a signed step context go in.",
+  "x-locus": "03-trust-and-data/index.html#substitutor-interface",
+  "type": "object",
+  "properties": {
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "step_id": { "$ref": "aifred:common#/$defs/step-id" },
+    "alias": { "$ref": "aifred:common#/$defs/alias" },
+    "surface": { "type": "string", "enum": ["browser", "relay"] },
+    "caller": { "type": "string", "enum": ["browser-controller", "mail-relay", "telephony-controller", "console", "model-runtime", "person"] },
+    "target": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "session": { "type": "string" },
+            "frame": { "type": "string" },
+            "node": { "type": "string" },
+            "kind": { "type": "string", "enum": ["text", "password", "upload"] },
+            "label": { "type": "string" },
+            "origin": { "type": "string", "pattern": "^https://[a-z0-9.-]+$" },
+            "certificate_valid": { "type": "boolean" },
+            "format": { "type": "string" }
+          },
+          "required": ["session", "frame", "node", "kind", "origin", "certificate_valid"],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "message_id": { "type": "string" },
+            "occurrences": { "type": "array", "items": { "type": "integer", "minimum": 0 }, "minItems": 1 },
+            "recipient_domain": { "type": "string" }
+          },
+          "required": ["message_id", "occurrences", "recipient_domain"],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "context": { "$ref": "aifred:step-context" },
+    "version_stamp": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "task_id": { "$ref": "aifred:common#/$defs/task-id" }, "envelope_version": { "$ref": "aifred:common#/$defs/envelope-version-ref" }, "at": { "$ref": "aifred:common#/$defs/timestamp" }, "key_id": { "$ref": "aifred:common#/$defs/key-id" }, "signature": { "$ref": "aifred:common#/$defs/signature" } }, "required": ["task_id", "envelope_version", "at", "key_id", "signature"], "additionalProperties": false }
+      ],
+      "description": "For a reversible step: a second signed statement of the task id, the envelope version and its time, fetched at request time."
+    },
+    "approval_token": { "anyOf": [{ "$ref": "aifred:approval-token" }, { "type": "null" }] },
+    "retry_token": { "anyOf": [{ "type": "string", "pattern": "^rt_[a-z0-9]+$" }, { "type": "null" }] },
+    "requested_at": { "$ref": "aifred:common#/$defs/timestamp" }
+  },
+  "required": ["task_id", "step_id", "alias", "surface", "caller", "target", "context", "version_stamp", "approval_token", "retry_token", "requested_at"],
+  "additionalProperties": false
+}

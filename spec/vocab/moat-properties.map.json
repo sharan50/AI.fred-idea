@@ -1,0 +1,42 @@
+{
+  "id": "vocab-moat-properties",
+  "slug": "moat-properties",
+  "label": "The eight moat properties",
+  "source": "tools/depmap/graph.json",
+  "canonical": "00-thesis/index.html#moat-made-of",
+  "check": "members",
+  "members": [
+    {
+      "id": "aliases-everywhere",
+      "word": "Aliases everywhere"
+    },
+    {
+      "id": "substitution-last-boundary",
+      "word": "Substitution at the last boundary"
+    },
+    {
+      "id": "surfaces-ours",
+      "word": "Execution surfaces that are ours"
+    },
+    {
+      "id": "evidence-redaction",
+      "word": "Evidence redaction in the harness"
+    },
+    {
+      "id": "envelope-per-task",
+      "word": "An authority envelope per task"
+    },
+    {
+      "id": "state-machine",
+      "word": "A task state machine"
+    },
+    {
+      "id": "office-floor",
+      "word": "An office-mandatory 24/7 floor"
+    },
+    {
+      "id": "access-ledger",
+      "word": "A plain-words access ledger"
+    }
+  ]
+}

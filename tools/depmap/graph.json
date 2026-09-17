@@ -3031,7 +3031,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3055,7 +3056,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "entry"
       },
       "loci": [
         {
@@ -3080,7 +3082,8 @@
         "layer": "trust",
         "fixity": "fixed",
         "fatal": "1",
-        "surface": "all"
+        "surface": "all",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3108,7 +3111,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3132,7 +3136,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "entry"
       },
       "loci": [
         {
@@ -3153,7 +3158,8 @@
         "layer": "trust",
         "fixity": "fixed",
         "fatal": "1",
-        "surface": "browser"
+        "surface": "browser",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3174,7 +3180,8 @@
         "layer": "trust",
         "fixity": "fixed",
         "fatal": "1",
-        "surface": "telephony"
+        "surface": "telephony",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3190,7 +3197,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3211,7 +3219,8 @@
         "layer": "architecture",
         "fixity": "fixed",
         "fatal": "both",
-        "surface": "browser"
+        "surface": "browser",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3236,7 +3245,8 @@
         "layer": "architecture",
         "fixity": "fixed",
         "fatal": "both",
-        "surface": "telephony"
+        "surface": "telephony",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3261,7 +3271,8 @@
         "layer": "architecture",
         "fixity": "fixed",
         "fatal": "both",
-        "surface": "mail"
+        "surface": "mail",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3282,7 +3293,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "both"
+        "fatal": "both",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3302,7 +3314,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3326,7 +3339,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3346,7 +3360,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3370,7 +3385,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3395,7 +3411,8 @@
         "layer": "architecture",
         "fixity": "fixed",
         "fatal": "2",
-        "surface": "device"
+        "surface": "device",
+        "zone": "device"
       },
       "loci": [
         {
@@ -3419,7 +3436,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "both"
+        "fatal": "both",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3439,7 +3457,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3463,7 +3482,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3483,7 +3503,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3503,7 +3524,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "both"
+        "fatal": "both",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3523,7 +3545,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "2"
+        "fatal": "2",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3552,7 +3575,8 @@
         "layer": "trust",
         "fixity": "fixed",
         "fatal": "2",
-        "market": "all"
+        "market": "all",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3580,7 +3604,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "market": "all"
+        "market": "all",
+        "zone": "market"
       },
       "loci": [
         {
@@ -3605,7 +3630,8 @@
         "layer": "architecture",
         "fixity": "fixed",
         "fatal": "1",
-        "market": "all"
+        "market": "all",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3633,7 +3659,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "to-verify",
-        "market": "in"
+        "market": "in",
+        "zone": "market"
       },
       "loci": [
         {
@@ -3653,7 +3680,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "to-verify",
-        "market": "uk"
+        "market": "uk",
+        "zone": "market"
       },
       "loci": [
         {
@@ -3673,7 +3701,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "to-verify",
-        "market": "us"
+        "market": "us",
+        "zone": "market"
       },
       "loci": [
         {
@@ -3693,7 +3722,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "to-verify",
-        "market": "all"
+        "market": "all",
+        "zone": "market"
       },
       "loci": [
         {
@@ -3717,7 +3747,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "none"
+        "fatal": "none",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3745,7 +3776,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "assumption",
-        "fatal": "none"
+        "fatal": "none",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3765,7 +3797,8 @@
       "facets": {
         "layer": "operations",
         "fixity": "fixed",
-        "fatal": "none"
+        "fatal": "none",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3785,7 +3818,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3818,7 +3852,8 @@
         "layer": "operations",
         "fixity": "fixed",
         "fatal": "1",
-        "surface": "console"
+        "surface": "console",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3842,7 +3877,8 @@
       "facets": {
         "layer": "operations",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3870,7 +3906,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3898,7 +3935,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "alias"
       },
       "loci": [
         {
@@ -3922,7 +3960,8 @@
       "facets": {
         "layer": "trust",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "real-value"
       },
       "loci": [
         {
@@ -3969,7 +4008,8 @@
       "label": "The 24/7 shift wheel",
       "facets": {
         "layer": "operations",
-        "fixity": "illustrative"
+        "fixity": "illustrative",
+        "zone": "floor"
       },
       "loci": [
         {
@@ -3993,7 +4033,8 @@
       "facets": {
         "layer": "operations",
         "fixity": "fixed",
-        "fatal": "1"
+        "fatal": "1",
+        "zone": "floor"
       },
       "loci": [
         {
@@ -4016,7 +4057,8 @@
       "label": "Workforce tiers L1, L2, L3, with QA and escalation standalone",
       "facets": {
         "layer": "operations",
-        "fixity": "fixed"
+        "fixity": "fixed",
+        "zone": "floor"
       },
       "loci": [
         {
@@ -7456,7 +7498,8 @@
       "facets": {
         "layer": "architecture",
         "fixity": "fixed",
-        "surface": "browser"
+        "surface": "browser",
+        "zone": "alias"
       },
       "loci": [
         {

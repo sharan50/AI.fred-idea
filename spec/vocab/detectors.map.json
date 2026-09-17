@@ -1,0 +1,41 @@
+{
+  "id": "vocab-detectors",
+  "slug": "detectors",
+  "label": "The four detectors the proxy and the screen run",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#edge-tokenisation",
+  "check": "members",
+  "members": [
+    {
+      "id": "identifier-pattern",
+      "word": "identifier pattern",
+      "alt": [
+        "identifier patterns",
+        "identifier-pattern"
+      ]
+    },
+    {
+      "id": "known-value-digest",
+      "word": "known-value digest",
+      "alt": [
+        "known-value digests",
+        "known-value"
+      ]
+    },
+    {
+      "id": "declaration",
+      "word": "declaration",
+      "alt": [
+        "declared",
+        "declares"
+      ]
+    },
+    {
+      "id": "dictionary",
+      "word": "dictionary",
+      "alt": [
+        "dictionary-based"
+      ]
+    }
+  ]
+}

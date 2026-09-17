@@ -1,0 +1,51 @@
+[
+  {
+    "party_id": "party_max-healthcare",
+    "market": "IN",
+    "name": "Max Healthcare",
+    "domains": ["maxhealthcare.in", "book.maxhealthcare.in", "pay.maxhealthcare.in"],
+    "certificate_pins": ["pin:max-1"],
+    "desks": [
+      { "name": "booking line", "number": "+91 11 2651 5050", "menu_map": { "navigate": ["1", "2", "0"], "commit": ["9"] }, "opening_identity_step": "maps-to-account" }
+    ],
+    "page_map": { "navigation_controls": ["find-a-doctor", "next", "select-slot", "back"] },
+    "mail_domains": ["maxhealthcare.in"],
+    "machine_navigable": { "IN/health/fill-appointment-form": true, "IN/health/check-availability-online": true, "IN/health/pay-consultation-fee": true, "IN/any/status-enquiry": true },
+    "mask_map": [{ "region": "patient-photo", "kind": "image" }],
+    "authenticated_portal": false,
+    "reference_shapes": ["^MH-[0-9]{6}$"],
+    "surfaces": ["browser", "telephony", "relay"]
+  },
+  {
+    "party_id": "party_hdfc-bank",
+    "market": "IN",
+    "name": "HDFC Bank",
+    "domains": ["hdfcbank.com", "netbanking.hdfcbank.com"],
+    "certificate_pins": ["pin:hdfc-1"],
+    "desks": [
+      { "name": "phone banking", "number": "+91 22 6160 6161", "menu_map": { "navigate": ["1", "3"], "commit": ["#"] }, "opening_identity_step": "authenticates-access" }
+    ],
+    "page_map": { "navigation_controls": ["next", "back", "save-draft"] },
+    "mail_domains": ["hdfcbank.com"],
+    "machine_navigable": { "IN/banking/fill-account-opening-form": true, "IN/banking/submit-account-opening-form": true },
+    "mask_map": [{ "region": "signature-canvas", "kind": "canvas" }],
+    "authenticated_portal": true,
+    "reference_shapes": ["^[0-9]{14}$"],
+    "surfaces": ["browser", "telephony", "relay"]
+  },
+  {
+    "party_id": "party_barnet-council",
+    "market": "UK",
+    "name": "Barnet Council",
+    "domains": ["barnet.gov.uk"],
+    "certificate_pins": ["pin:barnet-1"],
+    "desks": [],
+    "page_map": { "navigation_controls": ["next"] },
+    "mail_domains": ["barnet.gov.uk"],
+    "machine_navigable": {},
+    "mask_map": [],
+    "authenticated_portal": false,
+    "reference_shapes": ["^PCN[0-9]{8}$"],
+    "surfaces": ["relay"]
+  }
+]

@@ -1,0 +1,25 @@
+{
+  "id": "vocab-classes",
+  "slug": "classes",
+  "label": "The three step classes",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#classifier",
+  "check": "members",
+  "members": [
+    {
+      "id": "ai",
+      "word": "ai",
+      "code": "ai"
+    },
+    {
+      "id": "human",
+      "word": "human",
+      "code": "human"
+    },
+    {
+      "id": "user",
+      "word": "user",
+      "code": "user"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:verdict",
+  "title": "Verdict record",
+  "description": "The user's one tap. It carries the task, the identifier, the bound device and its signature, the time, and the reference and version of the outcome report it judged, null for a withdrawal from a state before any report existed. Written once and never edited; lapsed is a state and never a verdict.",
+  "x-locus": "01-product/index.html#verdicts",
+  "type": "object",
+  "properties": {
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "verdict": { "$ref": "aifred:vocab#/$defs/verdicts" },
+    "device": { "$ref": "aifred:common#/$defs/device-id" },
+    "signature": { "$ref": "aifred:common#/$defs/signature" },
+    "at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "report": { "anyOf": [{ "type": "null" }, { "type": "object", "properties": { "reference": { "type": "string" }, "version": { "const": 1 } }, "required": ["reference", "version"], "additionalProperties": false }] }
+  },
+  "required": ["task_id", "verdict", "device", "signature", "at", "report"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "verdict": { "not": { "const": "withdrawn" } } } }, "then": { "properties": { "report": { "type": "object" } } } }
+  ]
+}

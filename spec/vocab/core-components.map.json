@@ -1,0 +1,71 @@
+{
+  "id": "vocab-core-components",
+  "slug": "core-components",
+  "label": "The eleven components of the universal core",
+  "source": "tools/depmap/graph.json",
+  "canonical": "index.html#three-markets",
+  "check": "members",
+  "members": [
+    {
+      "id": "planner",
+      "word": "planner"
+    },
+    {
+      "id": "classifier",
+      "word": "classifier"
+    },
+    {
+      "id": "task-cards",
+      "word": "task cards"
+    },
+    {
+      "id": "vault",
+      "word": "alias vault",
+      "alt": [
+        "vault"
+      ]
+    },
+    {
+      "id": "substitution",
+      "word": "substitution"
+    },
+    {
+      "id": "envelopes",
+      "word": "authority envelopes",
+      "alt": [
+        "envelopes",
+        "envelope"
+      ]
+    },
+    {
+      "id": "state-machine",
+      "word": "state machine"
+    },
+    {
+      "id": "verification",
+      "word": "verification"
+    },
+    {
+      "id": "worker-console",
+      "word": "worker console"
+    },
+    {
+      "id": "access-ledger",
+      "word": "access ledger",
+      "alt": [
+        "ledger"
+      ]
+    },
+    {
+      "id": "intake-gateway",
+      "word": "intake gateway",
+      "alt": [
+        "gateway"
+      ]
+    },
+    {
+      "id": "policy-layer",
+      "word": "policy layer"
+    }
+  ]
+}

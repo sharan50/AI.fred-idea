@@ -1,0 +1,39 @@
+{
+  "id": "vocab-bounce-forms",
+  "slug": "bounce-forms",
+  "label": "The four bounce forms",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#class-selection",
+  "check": "members",
+  "members": [
+    {
+      "id": "approval",
+      "word": "approval",
+      "code": "approval"
+    },
+    {
+      "id": "user-act",
+      "word": "user-act",
+      "code": "user-act",
+      "alt": [
+        "user act"
+      ]
+    },
+    {
+      "id": "one-time-code",
+      "word": "one-time-code",
+      "code": "one-time-code",
+      "alt": [
+        "one-time code"
+      ]
+    },
+    {
+      "id": "do-yourself",
+      "word": "do-this-yourself",
+      "code": "do-yourself",
+      "alt": [
+        "do this yourself"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "envelope_id": "env_12",
+  "task_id": "t_12",
+  "version": 1,
+  "spend_cap": { "currency": "INR", "amount": 0 },
+  "sub_caps": {},
+  "contactable_parties": [{ "party": "party_max-healthcare", "scope": "task" }, { "party": "party_referring-clinic", "scope": "task" }],
+  "committable_acts": [{ "act": "schedule", "scope": "task" }, { "act": "cancel", "scope": "task" }],
+  "delegated_identity_acts": [{ "act": "attest-fact", "scope": "task" }, { "act": "present-document", "scope": "task" }],
+  "validity": { "from": "2026-09-02T14:35:00+05:30", "to": "2026-09-09T14:35:00+05:30" },
+  "authorised_by": null,
+  "edits": []
+}

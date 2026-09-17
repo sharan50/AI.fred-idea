@@ -20,7 +20,8 @@ find-and-replace pass.
 | `manifest.json` | Machine-readable site map: path, title, section, status, summary, updated. |
 | `tools/verify.mjs` | The verification harness. Never published. |
 | `tools/depmap.mjs` | The dependency map's tool: `extract`, `check`, `impact`, `batch`, `at`, `show`, `list`, `selftest`, `view`. The tool is never published; its served view is (DR-017). |
-| `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `batches/` (one record per batch of changes, proposed or made). |
+| `tools/depmap/` | The map itself: `graph.json` (curated), `refs.json` (regenerated), `SCHEMA.md` (the vocabularies and the change protocol), `view.src.html` and `view-architecture.src.html` (the two viewer templates), `batches/` (one record per batch of changes, proposed or made). |
+| `spec/` | The executable specification: a schema for every record, the closed lists, and reference implementations of the state machine, the envelope, the classifier, the substitutor, the hash service, the evidence pipeline and the ledger, with tests. Never published; `spec/README.md` explains it. |
 | `netlify.toml` | Publish directory pinned to `docs`; no build command. |
 | `SURFACING_REPORT.md` | The loop's closing report against the founder's bar (written at the end of the build). |
 
@@ -42,6 +43,12 @@ at the top of that file. The loop rules in its section 9 govern.
 
 ```
 node tools/verify.mjs
+```
+
+The executable specification has its own suite, separate from the harness:
+
+```
+node --test 'spec/test/*.test.mjs'
 ```
 
 Node 18 or later, no dependencies. Non-zero exit on any failure; each failure
@@ -67,8 +74,17 @@ The batch output is the edit plan; save it under `tools/depmap/batches/`.
 three-dimensional view of the map to open locally (altitude is causal depth;
 select a node to see its cone and follow its connections). It is generated
 from `view.src.html` and ignored by git. `view --site` writes the same view to
-`docs/depmap/index.html`, which is committed, linked from the index, served with
-the site and failed by the harness when it is stale (DR-017, revised).
+`docs/depmap/index.html`, which is committed, linked from the rail of every page,
+served with the site and failed by the harness when it is stale (DR-017, revised).
+`view --site --scope architecture` writes the second served view,
+`docs/depmap/architecture.html`: the harness alone as a blueprint, its components
+placed in the zones of Figure 2.1, the invariants, lists and records above them,
+the build stages below, every locus linking to the section that states it. Both
+views are renderings of the one graph and are regenerated together:
+
+```
+node tools/depmap.mjs view --site && node tools/depmap.mjs view --site --scope architecture
+```
 After editing, run `node tools/depmap.mjs extract` to refresh the reference
 layer, update `graph.json` for what moved, and run `check`. The vocabularies,
 the locus grammar and the change protocol are in `tools/depmap/SCHEMA.md`.

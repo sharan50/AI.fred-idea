@@ -1,0 +1,22 @@
+{
+  "id": "vocab-doors",
+  "slug": "doors",
+  "label": "The three doors a real value enters by",
+  "source": "tools/depmap/graph.json",
+  "canonical": "03-trust-and-data/index.html#entry-routes",
+  "check": "none",
+  "members": [
+    {
+      "id": "own-input",
+      "word": "the user's own input"
+    },
+    {
+      "id": "passport-adapter",
+      "word": "a passport adapter"
+    },
+    {
+      "id": "third-party-echo",
+      "word": "a third-party echo"
+    }
+  ]
+}

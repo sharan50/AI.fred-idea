@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:common",
+  "title": "Shared definitions",
+  "description": "Identifiers, the alias grammar, timestamps and money, shared by every record schema.",
+  "$defs": {
+    "alias": {
+      "description": "An alias is a typed name, never a disguised value: {{type}} or {{type.qualifier}}, with an optional vault-issued partial suffix .last4 or .masked; lower-case letters, digits and hyphens in each segment. {{otp}} does not exist.",
+      "x-locus": "03-trust-and-data/index.html#alias-types",
+      "type": "string",
+      "pattern": "^\\{\\{[a-z0-9-]+(\\.[a-z0-9-]+)*\\}\\}$",
+      "not": { "enum": ["{{otp}}", "{{pin}}", "{{password}}", "{{biometric}}"] }
+    },
+    "partial-alias": {
+      "description": "A vault-issued partial under a parent alias.",
+      "type": "string",
+      "pattern": "^\\{\\{[a-z0-9-]+(\\.[a-z0-9-]+)*\\.(last4|masked)\\}\\}$"
+    },
+    "timestamp": { "type": "string", "format": "date-time", "description": "RFC 3339 with an offset; the surface's clock where a surface carried the event." },
+    "date": { "type": "string", "format": "date" },
+    "duration": { "type": "string", "format": "duration", "description": "ISO 8601 duration, for example PT40M or P2D." },
+    "market": { "$ref": "aifred:vocab#/$defs/markets" },
+    "task-id": { "type": "string", "pattern": "^t_[a-z0-9]+$" },
+    "step-id": { "type": "string", "pattern": "^s_[a-z0-9]+$" },
+    "plan-id": { "type": "string", "pattern": "^p_[a-z0-9]+(\\.[0-9]+)?$" },
+    "envelope-id": { "type": "string", "pattern": "^env_[a-z0-9]+$" },
+    "envelope-version-ref": { "type": "string", "pattern": "^env_[a-z0-9]+/v[0-9]+$", "description": "An envelope id and a version, env_12/v2." },
+    "event-id": { "type": "string", "pattern": "^e_[a-z0-9]+$" },
+    "ledger-id": { "type": "string", "pattern": "^l_[a-z0-9]+_[a-z0-9]+$" },
+    "request-id": { "type": "string", "pattern": "^req_[a-z0-9]+$" },
+    "fact-id": { "type": "string", "pattern": "^f_[a-z0-9]+$" },
+    "question-id": { "type": "string", "pattern": "^q_[a-z0-9]+$" },
+    "placement-id": { "type": "string", "pattern": "^pl_[a-z0-9]+$" },
+    "artefact-id": { "type": "string", "pattern": "^ev_[a-z0-9]+_[a-z0-9]+_[a-z0-9-]+$", "description": "ev_<task>_<step>_<kind>." },
+    "party-id": { "type": "string", "pattern": "^party_[a-z0-9-]+$" },
+    "user-ref": { "type": "string", "pattern": "^u_[a-z0-9]+$", "description": "Pseudonymous; no name or contact detail ever appears." },
+    "person-ref": { "type": "string", "pattern": "^p_[a-z0-9]+$", "description": "A people node of the context store: a natural person other than the user." },
+    "device-id": { "type": "string", "pattern": "^dev_[a-z0-9]+$" },
+    "check-id": { "type": "string", "pattern": "^chk_[a-z0-9]+$" },
+    "token-id": { "type": "string", "pattern": "^tok_[a-z0-9]+$" },
+    "context-id": { "type": "string", "pattern": "^ctx_[a-z0-9]+$" },
+    "incident-id": { "type": "string", "pattern": "^inc_[a-z0-9]+$" },
+    "delegation-id": { "type": "string", "pattern": "^del_[a-z0-9]+$" },
+    "extension-id": { "type": "string", "pattern": "^ext_[a-z0-9]+$" },
+    "callback-id": { "type": "string", "pattern": "^cb_[a-z0-9_]+$" },
+    "staff-id": { "type": "string", "pattern": "^w_[a-z0-9]+$" },
+    "step-type": { "type": "string", "pattern": "^(IN|UK|US)/[a-z-]+/[a-z0-9-]+$", "description": "market/vertical/name; the market names the legal pack the entry ships in." },
+    "task-type": { "type": "string", "pattern": "^(IN|UK|US)/[a-z-]+/[a-z0-9-]+$" },
+    "template": { "type": "string", "pattern": "^(IN|UK|US)/[a-z-]+/[a-z0-9-]+@v[0-9]+$", "description": "A step type with the template version in force." },
+    "money": {
+      "type": "object",
+      "properties": { "currency": { "type": "string", "pattern": "^[A-Z]{3}$" }, "amount": { "type": "number", "minimum": 0 } },
+      "required": ["currency", "amount"],
+      "additionalProperties": false
+    },
+    "scope": {
+      "description": "Every envelope line carries a scope: task, or one step's id.",
+      "anyOf": [{ "const": "task" }, { "$ref": "#/$defs/step-id" }]
+    },
+    "actor": {
+      "type": "object",
+      "properties": {
+        "kind": { "$ref": "aifred:vocab#/$defs/actor-kinds" },
+        "id": { "type": "string", "minLength": 1 },
+        "role": { "type": "string" }
+      },
+      "required": ["kind", "id"],
+      "additionalProperties": false
+    },
+    "hex-digest": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "signature": { "type": "string", "pattern": "^[A-Za-z0-9+/=]+$", "description": "Base64 Ed25519 signature over the record's canonical JSON." },
+    "key-id": { "type": "string", "pattern": "^k_[a-z0-9-]+$" }
+  }
+}

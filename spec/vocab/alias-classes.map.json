@@ -1,0 +1,42 @@
+{
+  "id": "vocab-alias-classes",
+  "slug": "alias-classes",
+  "label": "The eight alias classes",
+  "source": "tools/depmap/graph.json",
+  "canonical": "03-trust-and-data/index.html#alias-types",
+  "check": "members",
+  "members": [
+    {
+      "id": "identity-number",
+      "word": "identity number"
+    },
+    {
+      "id": "payment-instrument",
+      "word": "payment instrument"
+    },
+    {
+      "id": "financial-fact",
+      "word": "financial fact"
+    },
+    {
+      "id": "personal-fact",
+      "word": "personal fact"
+    },
+    {
+      "id": "document",
+      "word": "document"
+    },
+    {
+      "id": "health-and-legal-matter",
+      "word": "health and legal matter"
+    },
+    {
+      "id": "credential",
+      "word": "credential"
+    },
+    {
+      "id": "never-an-alias",
+      "word": "never an alias"
+    }
+  ]
+}

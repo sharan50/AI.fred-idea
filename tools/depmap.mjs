@@ -22,6 +22,7 @@ const FACETS = {
   fatal: ['1', '2', 'both', 'none'],
   surface: ['browser', 'telephony', 'mail', 'device', 'console', 'all'],
   market: ['in', 'uk', 'us', 'all'],
+  zone: ['device', 'entry', 'alias', 'real-value', 'market', 'floor'],
 };
 const EDGES = {
   'justifies': [['fatal', 'premise', 'ledger', 'dr'], ['ledger', 'dr', 'comp', 'inv', 'vocab', 'stage', 'flag']],
@@ -386,6 +387,7 @@ export function check({ root = DEFAULT_ROOT, warnings = false } = {}) {
     for (const [k, v] of Object.entries(n.facets || {})) {
       if (!FACETS[k]) fail(line, `${n.id}: unknown facet "${k}"`);
       else if (!FACETS[k].includes(String(v))) fail(line, `${n.id}: facet ${k}="${v}" is not in its closed list`);
+      if (k === 'zone' && n.kind !== 'comp') fail(line, `${n.id}: only a component carries a zone`);
     }
     if (n.kind === 'ledger' && !n.source) fail(line, `${n.id}: a ledger node carries a source naming the brief's line`);
     if (n.kind === 'res' && !n.source) fail(line, `${n.id}: a residual carries a source naming the finding in SURFACING_REPORT.md`);
@@ -888,7 +890,9 @@ function usage() {
   at <locus>                           every node carrying the locus, plus inbound links
   show <id>                            a node, its loci and its edges
   list [--kind k] [--facet name=value]
-  view [--out file] [--fragment|--site]  bake graph.json into the 3D viewer (tools/depmap/view.html; --site writes docs/depmap/index.html, the served view)
+  view [--out file] [--fragment|--site] [--scope record|architecture]
+                                       bake graph.json into a viewer: the record's 3D view (tools/depmap/view.html; --site writes docs/depmap/index.html)
+                                       or the architecture blueprint (tools/depmap/view-architecture.html; --site writes docs/depmap/architecture.html)
 Seeds: node ids separated by commas; a member path vocab-x/m seeds vocab-x.`;
 }
 
@@ -923,11 +927,14 @@ function main() {
       // git), the fragment a hosting wrapper supplies the skeleton for, and the served view at docs/depmap/ (--site),
       // committed and checked fresh by the harness (DR-017, revised 2026-09-10).
       const mode = opt.site ? 'site' : opt.fragment ? 'fragment' : 'local';
-      const { page, nodes, edges } = renderView({ root, mode });
-      const outPath = opt.out ? resolve(opt.out) : mode === 'site' ? join(root, 'docs', 'depmap', 'index.html') : join(P.dir, mode === 'fragment' ? 'view.fragment.html' : 'view.html');
+      const scope = opt.scope || 'record';
+      if (!SCOPES.includes(scope)) throw new Error(`--scope is one of ${SCOPES.join(', ')}`);
+      const { page, nodes, edges } = renderView({ root, mode, scope });
+      const stem = scope === 'record' ? 'view' : `view-${scope}`;
+      const outPath = opt.out ? resolve(opt.out) : mode === 'site' ? join(root, 'docs', 'depmap', scope === 'record' ? 'index.html' : `${scope}.html`) : join(P.dir, mode === 'fragment' ? `${stem}.fragment.html` : `${stem}.html`);
       mkdirSync(dirname(outPath), { recursive: true });
       writeFileSync(outPath, page);
-      console.log(`view: ${nodes} nodes, ${edges} edges written to ${rel(root, outPath)}${mode === 'local' ? '' : ` (${mode})`}`);
+      console.log(`view: ${nodes} nodes, ${edges} edges written to ${rel(root, outPath)}${mode === 'local' ? '' : ` (${mode})`}${scope === 'record' ? '' : ` (${scope})`}`);
       return;
     }
     if (cmd === 'selftest') {
@@ -976,20 +983,57 @@ function main() {
 }
 
 
-// The viewer, rendered from view.src.html with graph.json baked in. Modes: local (tools/depmap/view.html, fonts from
-// docs/assets), fragment (body only, fonts from Google, for a hosting wrapper), site (docs/depmap/index.html, the served
-// view: self-hosted fonts, a no-index directive, a link back to the publication). Deterministic, so the harness can
-// compare the committed site view against a fresh rendering and fail when it is stale.
-export function renderView({ root = DEFAULT_ROOT, mode = 'local' } = {}) {
+// The two views, rendered from their templates with graph.json baked in. Scopes: record (view.src.html, the whole
+// graph in three dimensions) and architecture (view-architecture.src.html, the harness alone as a blueprint). Modes:
+// local (tools/depmap/view*.html, fonts from docs/assets), fragment (body only, fonts from Google, for a hosting
+// wrapper), site (docs/depmap/index.html and docs/depmap/architecture.html, the served views: self-hosted fonts, a
+// no-index directive, links back to the publication and to each other). Deterministic, so the harness can compare
+// each committed site view against a fresh rendering and fail when it is stale.
+const SCOPES = ['record', 'architecture'];
+const TECH_LAYERS = new Set(['architecture', 'trust', 'operations', 'product']);
+
+// The architecture scope is a query of the one graph, never a second map: the components, the invariants, lists
+// and flag rows of the harness's own layers, whatever a kept node depends on, the records that justify or close
+// off a kept node, the stages, and the open items and residual findings that land in any of those. The fatal
+// failures, the premises, the ledger, the rejected alternatives and every node of the business, publishing, open
+// and index layers stay in the record's view.
+export function architectureSubgraph(g) {
+  const byId = new Map(g.nodes.map((n) => [n.id, n]));
+  const keep = new Set();
+  for (const n of g.nodes) if (n.kind === 'stage' || (['comp', 'inv', 'vocab', 'flag'].includes(n.kind) && TECH_LAYERS.has((n.facets || {}).layer))) keep.add(n.id);
+  for (const [a, k, b] of g.edges) if (k === 'depends-on' && keep.has(a) && ['inv', 'vocab', 'flag'].includes(byId.get(b)?.kind)) keep.add(b);
+  for (const [a, k, b] of g.edges) if ((k === 'justifies' || k === 'closes-off') && keep.has(b) && byId.get(a)?.kind === 'dr') keep.add(a);
+  for (const [a, k, b] of g.edges) if ((k === 'lands-in' || k === 'conflicts-with') && keep.has(b) && ['open', 'res'].includes(byId.get(a)?.kind)) keep.add(a);
+  return {
+    nodes: g.nodes.filter((n) => keep.has(n.id)),
+    edges: g.edges.filter(([a, k, b]) => keep.has(a) && keep.has(b) && k !== 'rejects'),
+  };
+}
+
+export function renderView({ root = DEFAULT_ROOT, mode = 'local', scope = 'record' } = {}) {
   const P = paths(root);
-  const tpl = readFileSync(join(P.dir, 'view.src.html'), 'utf8');
+  if (!SCOPES.includes(scope)) throw new Error(`scope is one of ${SCOPES.join(', ')}`);
+  const arch = scope === 'architecture';
+  const tpl = readFileSync(join(P.dir, arch ? 'view-architecture.src.html' : 'view.src.html'), 'utf8');
   const g = readJson(P.graph);
   const refs = buildRefs(root);
+  const sub = arch ? architectureSubgraph(g) : { nodes: g.nodes, edges: g.edges };
+  const titleOf = (p) => (refs.pages[p]?.title || p).replace(/, AI\.fred$/, '');
+  // The architecture view links every locus to the section that states it, so an engineer reads the page, not the map.
+  const locusLink = (at) => {
+    const l = parseLocus(at);
+    if (!l || !refs.pages[l.page]) return {};
+    const pg = refs.pages[l.page];
+    if (l.table) { const tb = pg.tables[l.table]; return { href: `../${l.page}${tb?.id ? '#' + tb.id : ''}`, text: `${titleOf(l.page)}: Table ${l.table}` }; }
+    if (l.anchor) { const a = pg.anchors[l.anchor]; return { href: `../${l.page}#${l.anchor}`, text: `${titleOf(l.page)}: ${a ? [a.no, a.text].filter(Boolean).join(' ') : l.anchor}` }; }
+    return { href: `../${l.page}`, text: titleOf(l.page) };
+  };
   const data = {
     edition: g.edition,
-    nodes: g.nodes.map((n) => ({ id: n.id, kind: n.kind, label: n.label, facets: n.facets || {}, loci: (n.loci || []).map((l) => ({ at: l.at, role: l.role })), note: n.note, source: n.source })),
-    edges: g.edges,
-    pages: Object.fromEntries(Object.entries(refs.pages).filter(([p]) => p !== 'depmap/index.html').map(([p, pg]) => [p, pg.title.replace(/, AI\.fred$/, '')])),
+    scope,
+    nodes: sub.nodes.map((n) => ({ id: n.id, kind: n.kind, label: n.label, facets: n.facets || {}, loci: (n.loci || []).map((l) => ({ at: l.at, role: l.role, ...(arch ? locusLink(l.at) : {}) })), note: n.note, source: n.source })),
+    edges: sub.edges,
+    pages: Object.fromEntries(Object.entries(refs.pages).filter(([p]) => !p.startsWith('depmap/')).map(([p, pg]) => [p, pg.title.replace(/, AI\.fred$/, '')])),
   };
   const json = JSON.stringify(data).replace(/<\//g, '<\\/');
   const faces = [['Inter', '100 900', 'inter-latin-wght-normal', 'woff2-variations'], ['IBM Plex Mono', 400, 'IBMPlexMono-Regular', 'woff2'], ['IBM Plex Mono', 500, 'IBMPlexMono-Medium', 'woff2']];
@@ -997,12 +1041,16 @@ export function renderView({ root = DEFAULT_ROOT, mode = 'local' } = {}) {
   const fonts = mode === 'fragment'
     ? '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">'
     : `<style>\n${faces.map(([f, w, file, fmt]) => `@font-face { font-family: "${f}"; font-weight: ${w}; font-style: normal; font-display: swap; src: url("${fontBase}/${file}.woff2") format("${fmt}"); }`).join('\n')}\n</style>`;
-  const back = mode === 'site' ? '<a class="back" href="../">Back to the publication</a>' : '';
+  const other = arch ? '<a class="back" href="./">The record\'s map</a>' : '<a class="back" href="architecture.html">The architecture map</a>';
+  const back = mode === 'site' ? `<a class="back" href="../">Back to the publication</a>${other}` : '';
   const body = tpl.replace('<!--__FONTS__-->', fonts).replace('<!--__BACK__-->', back).replace('/*__GRAPH__*/', json);
   let page = body;
   if (mode !== 'fragment') {
+    const description = arch
+      ? 'The architecture map of the AI.fred harness (DR-017): every component placed in the zones of the component map, the invariants it must keep, the closed lists and policy flags it reads, the records that justify it and the stage that builds it, with the cone of change for any node and a link to the section that states it. Generated from tools/depmap/graph.json and never edited by hand.'
+      : 'The dependency map of the AI.fred record (DR-017) as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json and never edited by hand.';
     const head = mode === 'site'
-      ? '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<meta name="description" content="The dependency map of the AI.fred record (DR-017) as a three-dimensional view: every decision, mechanism, invariant and closed list, with the cone of change for any node. Generated from tools/depmap/graph.json and never edited by hand.">'
+      ? `<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n<meta name="robots" content="noindex, nofollow">\n<meta name="description" content="${description}">`
       : '<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">';
     page = `<!doctype html>\n<html lang="en-GB"${mode === 'site' ? ' data-theme="dark"' : ''}>\n<head>\n${head}\n</head>\n<body>\n${body}\n</body>\n</html>\n`;
   }

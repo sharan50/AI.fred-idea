@@ -1,0 +1,281 @@
+{
+  "note": "Closed lists the pages state but the dependency map does not carry as vocabulary nodes. Each names the locus it was read from. They are not map-checked; when a page changes, change the list here and record the batch.",
+  "vocabularies": {
+    "act-types": {
+      "label": "The sixteen act types of Table 2.5: seven committable, seven identity, two reserved to the user by design",
+      "canonical": "02-architecture/index.html#table:2.5",
+      "members": [
+        { "id": "book", "kind": "committable", "flag_row": "book-or-cancel" },
+        { "id": "cancel", "kind": "committable", "flag_row": "book-or-cancel" },
+        { "id": "schedule", "kind": "committable", "flag_row": "book-or-cancel" },
+        { "id": "submit-application", "kind": "committable", "flag_row": "book-or-cancel", "irreversible_by_design": true },
+        { "id": "accept-terms", "kind": "committable", "flag_row": "book-or-cancel", "irreversible_by_design": true },
+        { "id": "file-document", "kind": "committable", "flag_row": "book-or-cancel", "irreversible_by_design": true },
+        { "id": "pay-under-cap", "kind": "committable", "flag_row": "pay-under-cap" },
+        { "id": "present-document", "kind": "identity", "flag_row": "present-document", "flag_row_for_health_record": "share-health-record" },
+        { "id": "state-identity-number", "kind": "identity", "flag_row": "state-identity-number" },
+        { "id": "answer-security-questions", "kind": "identity", "flag_row": "answer-security-questions" },
+        { "id": "complete-kyc-form", "kind": "identity", "flag_row": "complete-kyc-form" },
+        { "id": "use-delegated-login", "kind": "identity", "flag_row": "use-delegated-login" },
+        { "id": "sign", "kind": "identity", "flag_row": "sign" },
+        { "id": "attest-fact", "kind": "identity", "flag_row": "attest-fact" },
+        { "id": "undergo-identification", "kind": "user-only", "flag_row": "undergo-identification" },
+        { "id": "enter-one-time-code", "kind": "user-only", "flag_row": null }
+      ]
+    },
+    "flag-rows": {
+      "label": "The eleven keyed rows of the policy flag table; the basis row is not a key",
+      "canonical": "03-trust-and-data/index.html#table:3.5",
+      "members": [
+        { "id": "present-document" },
+        { "id": "state-identity-number" },
+        { "id": "complete-kyc-form" },
+        { "id": "undergo-identification" },
+        { "id": "answer-security-questions" },
+        { "id": "attest-fact" },
+        { "id": "use-delegated-login" },
+        { "id": "pay-under-cap" },
+        { "id": "sign" },
+        { "id": "book-or-cancel" },
+        { "id": "share-health-record" }
+      ]
+    },
+    "condition-predicates": {
+      "label": "The named predicates a flag condition may conjoin",
+      "canonical": "03-trust-and-data/index.html#policy-flags",
+      "members": [
+        { "id": "portal-non-financial", "word": "the portal is non-financial" },
+        { "id": "login-delegated-in-envelope", "word": "the login is delegated in the envelope" },
+        { "id": "consent-in-envelope", "word": "explicit consent for that record is in the envelope" },
+        { "id": "fact-user-confirmed", "word": "the fact is user-confirmed in the context store" },
+        { "id": "mandate-names-payee", "word": "a variable recurring payment mandate the user set up names the payee" },
+        { "id": "network-token-bound", "word": "a network token bound to this task and its cap exists for the merchant" }
+      ]
+    },
+    "markets": {
+      "label": "The three markets of the pilot and the flag table",
+      "canonical": "03-trust-and-data/index.html#table:3.5",
+      "members": [ { "id": "IN" }, { "id": "UK" }, { "id": "US" } ]
+    },
+    "step-states": {
+      "label": "The seven step states",
+      "canonical": "02-architecture/index.html#step-states",
+      "members": [
+        { "id": "pending" }, { "id": "ready" }, { "id": "running" }, { "id": "checking" },
+        { "id": "bounced" }, { "id": "closed" }, { "id": "cancelled" }
+      ]
+    },
+    "cancellation-causes": {
+      "label": "The three causes a cancelled step carries",
+      "canonical": "02-architecture/index.html#step-states",
+      "members": [ { "id": "withdrawn" }, { "id": "lapsed" }, { "id": "superseded" } ]
+    },
+    "event-kinds": {
+      "label": "The event log's kinds, Table 2.9",
+      "canonical": "02-architecture/index.html#table:2.9",
+      "members": [
+        { "id": "transition", "level": "task" },
+        { "id": "timer-set", "level": "task-or-step" },
+        { "id": "timer-expired", "level": "task-or-step" },
+        { "id": "nudge", "level": "task" },
+        { "id": "nudge-reset", "level": "task" },
+        { "id": "plan-produced", "level": "task" },
+        { "id": "plan-rejected", "level": "task" },
+        { "id": "plan-superseded", "level": "task" },
+        { "id": "step-state", "level": "step" },
+        { "id": "outcome", "level": "step" },
+        { "id": "check-requested", "level": "step" },
+        { "id": "check-decided", "level": "step" },
+        { "id": "token-issued", "level": "step" },
+        { "id": "token-voided", "level": "step" },
+        { "id": "context-issued", "level": "step" },
+        { "id": "context-voided", "level": "step" },
+        { "id": "placement", "level": "step" },
+        { "id": "question-asked", "level": "task" },
+        { "id": "question-answered", "level": "task" },
+        { "id": "extend-window", "level": "task" },
+        { "id": "extend-planning", "level": "task" },
+        { "id": "catalogue-request", "level": "task" },
+        { "id": "board-entry", "level": "task" },
+        { "id": "board-action", "level": "task" },
+        { "id": "incident", "level": "task-or-step" }
+      ]
+    },
+    "actor-kinds": {
+      "label": "Who an event's actor can be",
+      "canonical": "02-architecture/index.html#table:2.9",
+      "members": [ { "id": "system" }, { "id": "person" }, { "id": "device" }, { "id": "component" } ]
+    },
+    "surfaces": {
+      "label": "The four surfaces a step type may name",
+      "canonical": "02-architecture/index.html#table:2.6",
+      "members": [ { "id": "browser" }, { "id": "telephony" }, { "id": "relay" }, { "id": "device" } ]
+    },
+    "executor-kinds": {
+      "label": "Who executes a step that is not the user's",
+      "canonical": "02-architecture/index.html#step-record",
+      "members": [ { "id": "worker", "class": "human" }, { "id": "harness", "class": "ai" } ]
+    },
+    "pools": {
+      "label": "The routing key of 04",
+      "canonical": "02-architecture/index.html#table:2.6",
+      "members": [ { "id": "L1" }, { "id": "L2:vertical", "pattern": "^L2:[a-z-]+$" }, { "id": "L3" } ]
+    },
+    "on-timeout": {
+      "label": "What a step type does at its deadline",
+      "canonical": "02-architecture/index.html#table:2.8",
+      "members": [ { "id": "requeue" }, { "id": "replan" }, { "id": "escalate" } ]
+    },
+    "evidence-kinds": {
+      "label": "The seven kinds of evidence a step type may expect",
+      "canonical": "02-architecture/index.html#table:2.6",
+      "members": [
+        { "id": "frame-before-submit" }, { "id": "frame-after-response" }, { "id": "dom-capture" },
+        { "id": "recording" }, { "id": "transcript" }, { "id": "delivery-receipt" }, { "id": "device-response" }
+      ]
+    },
+    "channels": {
+      "label": "The five front-door channels and mail",
+      "canonical": "02-architecture/index.html#table:2.3",
+      "members": [
+        { "id": "whatsapp" }, { "id": "app" }, { "id": "sms" }, { "id": "imessage" }, { "id": "web" },
+        { "id": "mail", "front_door": false }
+      ]
+    },
+    "fact-sources": {
+      "label": "The five source kinds of a fact",
+      "canonical": "02-architecture/index.html#fact-schema",
+      "members": [
+        { "id": "onboarding", "starts_at": "high" }, { "id": "connector", "starts_at": null },
+        { "id": "task-outcome", "starts_at": "medium" }, { "id": "user-statement", "starts_at": "high" },
+        { "id": "passport-adapter", "starts_at": "high" }
+      ]
+    },
+    "confidence": {
+      "label": "The four-point confidence scale, highest first",
+      "canonical": "02-architecture/index.html#fact-schema",
+      "members": [ { "id": "confirmed" }, { "id": "high" }, { "id": "medium" }, { "id": "low" } ]
+    },
+    "answer-kinds": {
+      "label": "The three answer kinds of a question",
+      "canonical": "02-architecture/index.html#questions",
+      "members": [ { "id": "choice" }, { "id": "date" }, { "id": "free-line" } ]
+    },
+    "placement-statuses": {
+      "label": "The four receipt statuses of a placement",
+      "canonical": "03-trust-and-data/index.html#substitutor-interface",
+      "members": [ { "id": "placed" }, { "id": "not-confirmed" }, { "id": "refused" }, { "id": "failed" } ]
+    },
+    "ledger-outcomes": {
+      "label": "The six outcomes a ledger line carries",
+      "canonical": "03-trust-and-data/index.html#ledger-fields",
+      "members": [
+        { "id": "placing" }, { "id": "placed" }, { "id": "not-confirmed" }, { "id": "refused" }, { "id": "masked" }, { "id": "withheld" }
+      ]
+    },
+    "ledger-writers": {
+      "label": "The components that write ledger lines",
+      "canonical": "02-architecture/index.html#envelope-record",
+      "members": [
+        { "id": "substitution-component" }, { "id": "vault-edge-proxy" }, { "id": "hash-service" },
+        { "id": "browser-controller" }, { "id": "telephony-controller" }, { "id": "mail-relay" },
+        { "id": "evidence-pipeline" }, { "id": "evidence-store" }, { "id": "task-service" }, { "id": "device-surface" }
+      ]
+    },
+    "placed-by": {
+      "label": "Who placed a value",
+      "canonical": "03-trust-and-data/index.html#ledger-fields",
+      "members": [ { "id": "system" }, { "id": "user" }, { "id": "component" } ]
+    },
+    "board-columns": {
+      "label": "The four columns of the exceptions board",
+      "canonical": "02-architecture/worker-console.html#exceptions-board",
+      "members": [
+        { "id": "no-live-timer", "word": "no live timer" },
+        { "id": "check-pending", "word": "check pending past its deadline" },
+        { "id": "no-route", "word": "no route on re-plan" },
+        { "id": "nudges-exhausted", "word": "nudges exhausted with no lapse event" }
+      ]
+    },
+    "board-actions": {
+      "label": "What a person may do to a board card; there is no dismiss",
+      "canonical": "02-architecture/index.html#watchdog",
+      "members": [
+        { "id": "set-timer" }, { "id": "reassign-check" }, { "id": "withdraw-prepared-act" }, { "id": "extend-window" },
+        { "id": "resume" }, { "id": "escalate-resume" }, { "id": "add-alternative" }, { "id": "close-nudge-schedule" }
+      ]
+    },
+    "board-roles": {
+      "label": "The roles authorised to act on the board",
+      "canonical": "02-architecture/index.html#watchdog",
+      "members": [ { "id": "shift-lead" }, { "id": "escalation-desk" } ]
+    },
+    "watchdog-questions": {
+      "label": "The four questions the watchdog asks of every record",
+      "canonical": "02-architecture/index.html#watchdog",
+      "members": [
+        { "id": "live-task-has-future-timer", "column": "no-live-timer" },
+        { "id": "checking-step-has-checker-and-deadline", "column": "check-pending" },
+        { "id": "expired-window-followed-within-one-cycle", "column": "no-route" },
+        { "id": "exhausted-schedule-followed-by-lapse", "column": "nudges-exhausted" }
+      ]
+    },
+    "replan-triggers": {
+      "label": "The closed list of eight re-plan triggers",
+      "canonical": "02-architecture/index.html#planner",
+      "members": [
+        { "id": "failed-final" }, { "id": "refused-policy" }, { "id": "checker-declined-route-wrong" },
+        { "id": "extension-approved" }, { "id": "flag-flip-or-narrowing" }, { "id": "response-window-expired" },
+        { "id": "revive" }, { "id": "fact-contradicted-or-expired" }
+      ]
+    },
+    "extension-answers": {
+      "label": "The three answers to an extension request, and the fourth offered where the catalogue names a user-act form",
+      "canonical": "01-product/index.html#envelope-edits",
+      "members": [ { "id": "approve" }, { "id": "approve-narrower" }, { "id": "decline" }, { "id": "do-this-yourself", "offered_only_with_user_act_form": true } ]
+    },
+    "envelope-line-kinds": {
+      "label": "The kinds of line an envelope carries",
+      "canonical": "02-architecture/index.html#envelope-record",
+      "members": [ { "id": "spend-cap" }, { "id": "sub-cap" }, { "id": "party" }, { "id": "act" }, { "id": "identity-act" }, { "id": "validity-window" } ]
+    },
+    "viewer-roles": {
+      "label": "Who may open a stored artefact, Table 3.3",
+      "canonical": "03-trust-and-data/index.html#table:3.3",
+      "members": [
+        { "id": "worker", "may_open": false },
+        { "id": "checker", "may_open": true, "when": "during a dual-control check" },
+        { "id": "qa", "may_open": true, "when": "dispute, audit or review" },
+        { "id": "escalation", "may_open": true, "when": "dispute, audit or review" },
+        { "id": "user", "may_open": true, "when": "own task, masked artefacts" },
+        { "id": "engineering", "may_open": false, "manifests_only": true },
+        { "id": "legal", "may_open": true, "when": "a legal request, which writes a released line" }
+      ]
+    },
+    "substitutor-checks": {
+      "label": "The substitutor's ten ordered checks; the first failure names the check",
+      "canonical": "03-trust-and-data/index.html#substitutor-interface",
+      "members": [
+        { "id": "context-signature", "n": 1, "word": "the context signature is valid and inside its short validity" },
+        { "id": "step-running-and-caller", "n": 2, "word": "the step is running and the caller is the controller of its executor's surface" },
+        { "id": "alias-in-field-list", "n": 3, "word": "the alias is in the step record's field list carried by the context" },
+        { "id": "delegations-live", "n": 4, "word": "every delegation record the alias's owner references is live" },
+        { "id": "class-and-flag", "n": 5, "word": "the alias's class admits the surface and the flag for the act reads delegated under both jurisdictions" },
+        { "id": "envelope-admits", "n": 6, "word": "the envelope admits the act, its window is open, a money act is within the remaining cap and the target belongs to a contactable party" },
+        { "id": "version-signed", "n": 7, "word": "the envelope version the context names carries the user's device signature" },
+        { "id": "reversible-or-token", "n": 8, "word": "the step is reversible or the approval token is present, current, names this version and is unconsumed" },
+        { "id": "target-plausible", "n": 9, "word": "the target is plausible for the type" },
+        { "id": "first-or-retry-token", "n": 10, "word": "the placement is the first for this step, alias and target, or carries the runner's retry token" }
+      ]
+    },
+    "incident-classes": {
+      "label": "The classes an incident event may carry",
+      "canonical": "02-architecture/index.html#table:2.9",
+      "members": [
+        { "id": "value-in-alias-zone" }, { "id": "mask-missed" }, { "id": "verifier-detection" }, { "id": "worker-asked-for-value" },
+        { "id": "rate-limit-breach" }, { "id": "reconciliation-mismatch" }, { "id": "exposure-on-call" }, { "id": "region-unavailable" },
+        { "id": "party-stopped-answering" }, { "id": "break-glass" }, { "id": "nudge-schedule-closed-early" }
+      ]
+    }
+  }
+}

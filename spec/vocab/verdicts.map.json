@@ -1,0 +1,35 @@
+{
+  "id": "vocab-verdicts",
+  "slug": "verdicts",
+  "label": "The five user verdicts",
+  "source": "tools/depmap/graph.json",
+  "canonical": "01-product/index.html#improvement-loop",
+  "check": "verbatim",
+  "members": [
+    {
+      "id": "done-satisfied",
+      "word": "done, satisfied",
+      "code": "done-satisfied"
+    },
+    {
+      "id": "done-rough",
+      "word": "done, but rough",
+      "code": "done-rough"
+    },
+    {
+      "id": "wrong-outcome",
+      "word": "wrong outcome, needs redoing",
+      "code": "wrong-outcome"
+    },
+    {
+      "id": "could-not-complete",
+      "word": "we couldn't complete it",
+      "code": "could-not-complete"
+    },
+    {
+      "id": "withdrawn",
+      "word": "withdrawn by me",
+      "code": "withdrawn"
+    }
+  ]
+}

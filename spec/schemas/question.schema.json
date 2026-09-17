@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:question",
+  "title": "Question record",
+  "description": "A task-level record, not a step. A question never asks for a value of an alias class; the three answer kinds are for non-sensitive task facts, and every answer is screened by the hash service before it is stored.",
+  "x-locus": "02-architecture/index.html#questions",
+  "type": "object",
+  "properties": {
+    "question_id": { "$ref": "aifred:common#/$defs/question-id" },
+    "task_id": { "$ref": "aifred:common#/$defs/task-id" },
+    "step_blocked": { "anyOf": [{ "$ref": "aifred:common#/$defs/step-id" }, { "type": "null" }] },
+    "text": { "type": "string", "minLength": 1 },
+    "predicate": { "type": "string", "pattern": "^[a-z][a-z0-9-]*$" },
+    "answer_kind": { "$ref": "aifred:vocab#/$defs/answer-kinds" },
+    "choices": { "type": "array", "items": { "type": "string" } },
+    "asked_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "expires_at": { "$ref": "aifred:common#/$defs/timestamp" },
+    "answer": {
+      "anyOf": [
+        { "type": "null" },
+        { "type": "object", "properties": { "value": { "type": "string" }, "at": { "$ref": "aifred:common#/$defs/timestamp" }, "device": { "$ref": "aifred:common#/$defs/device-id" }, "fact_id": { "$ref": "aifred:common#/$defs/fact-id" } }, "required": ["value", "at", "device", "fact_id"], "additionalProperties": false }
+      ]
+    }
+  },
+  "required": ["question_id", "task_id", "step_blocked", "text", "predicate", "answer_kind", "asked_at", "expires_at", "answer"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "answer_kind": { "const": "choice" } } }, "then": { "required": ["choices"], "properties": { "choices": { "minItems": 2 } } } }
+  ]
+}

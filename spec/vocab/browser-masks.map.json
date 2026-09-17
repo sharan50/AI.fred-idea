@@ -1,0 +1,30 @@
+{
+  "id": "vocab-browser-masks",
+  "slug": "browser-masks",
+  "label": "The five stream masks of the browser masker",
+  "source": "tools/depmap/graph.json",
+  "canonical": "03-trust-and-data/index.html#managed-browser",
+  "check": "members",
+  "members": [
+    {
+      "id": "coordinate",
+      "word": "coordinate masks"
+    },
+    {
+      "id": "field-type",
+      "word": "field-type masks"
+    },
+    {
+      "id": "digest",
+      "word": "digest masks"
+    },
+    {
+      "id": "format",
+      "word": "format masks"
+    },
+    {
+      "id": "region",
+      "word": "region masks"
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:catalogue-entry",
+  "title": "Step-type catalogue entry",
+  "description": "The catalogue's step-type schema: the fields every entry carries. The schema is core; entries per market ship in the legal pack. An entry names only its act type and carries no policy flag of its own. Four columns of the previous edition (spoken_format, tts_voice, commitment_dictionary, non_committing_lexicon) are withdrawn with DR-021 and must be null; menu_map and page_map live in the party directory.",
+  "x-locus": "02-architecture/index.html#table:2.6",
+  "type": "object",
+  "properties": {
+    "step_type": { "$ref": "aifred:common#/$defs/step-type" },
+    "template_version": { "type": "integer", "minimum": 1 },
+    "act_type": { "$ref": "aifred:vocab#/$defs/act-types" },
+    "identity_acts": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/identity-acts" }, "uniqueItems": true },
+    "reversibility_default": {
+      "type": "object",
+      "properties": {
+        "kind": { "type": "string", "enum": ["reversible", "irreversible"] },
+        "undo": {
+          "anyOf": [
+            { "type": "null" },
+            { "type": "object", "properties": { "act": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/committable-acts" }, { "type": "null" }] }, "route": { "type": "string", "minLength": 1 } }, "required": ["act", "route"], "additionalProperties": false }
+          ],
+          "description": "The undo route named, with the act it needs the envelope to admit; null where none. An undo counts only where the envelope admits its act."
+        }
+      },
+      "required": ["kind", "undo"],
+      "additionalProperties": false
+    },
+    "executor_classes": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/classes" }, "uniqueItems": true, "minItems": 1 },
+    "surfaces": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/surfaces" }, "uniqueItems": true, "minItems": 1 },
+    "alias_classes": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/alias-classes", "not": { "const": "never-an-alias" } }, "uniqueItems": true },
+    "consumed_on_placement": { "type": "boolean" },
+    "evidence_expected": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/evidence-kinds" }, "uniqueItems": true },
+    "envelope_lines": { "type": "array", "items": { "$ref": "aifred:vocab#/$defs/envelope-line-kinds" }, "uniqueItems": true },
+    "fact_threshold": { "$ref": "aifred:vocab#/$defs/confidence" },
+    "verifier": { "anyOf": [{ "type": "string", "minLength": 1 }, { "type": "null" }] },
+    "pool": { "$ref": "aifred:vocab#/$defs/pools" },
+    "bounce_form": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/bounce-forms" }, { "type": "null" }] },
+    "script_template": { "type": "array", "items": { "type": "string" } },
+    "expected_outcome_template": { "type": "string" },
+    "placement_cues": { "type": "array", "items": { "type": "string" } },
+    "alternatives_checklist": { "type": "array", "items": { "type": "string" } },
+    "response_windows": { "type": "array", "items": { "$ref": "aifred:common#/$defs/duration" } },
+    "deadline_default": { "$ref": "aifred:common#/$defs/duration" },
+    "retry_cap": { "type": "integer", "minimum": 0 },
+    "on_timeout": { "$ref": "aifred:vocab#/$defs/on-timeout" },
+    "surface_settings": { "type": "string", "description": "A reference into the market's surface settings, never a value of the catalogue's own." },
+    "spoken_format": { "type": "null" },
+    "tts_voice": { "type": "null" },
+    "commitment_dictionary": { "type": "null" },
+    "non_committing_lexicon": { "type": "null" },
+    "amount_field": { "anyOf": [{ "type": "string" }, { "type": "null" }] },
+    "mail_template": { "anyOf": [{ "type": "string" }, { "type": "null" }] }
+  },
+  "required": ["step_type", "template_version", "act_type", "identity_acts", "reversibility_default", "executor_classes", "surfaces", "alias_classes", "consumed_on_placement", "evidence_expected", "envelope_lines", "fact_threshold", "verifier", "pool", "bounce_form", "script_template", "expected_outcome_template", "placement_cues", "alternatives_checklist", "response_windows", "deadline_default", "retry_cap", "on_timeout", "surface_settings", "amount_field", "mail_template"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "executor_classes": { "contains": { "const": "ai" } } } }, "then": { "properties": { "verifier": { "type": "string" } } }, "$comment": "For ai steps, the check that closes the step from the surface's state." },
+    { "if": { "properties": { "surfaces": { "const": ["telephony"] } } }, "then": { "properties": { "alias_classes": { "maxItems": 0 } }, "$comment": "A call carries no value (DR-021)." } },
+    { "if": { "properties": { "surfaces": { "const": ["relay"] } } }, "then": { "properties": { "mail_template": { "type": "string" } } } },
+    { "if": { "properties": { "act_type": { "enum": ["submit-application", "accept-terms", "file-document"] } } }, "then": { "properties": { "reversibility_default": { "properties": { "kind": { "const": "irreversible" } } } } } },
+    { "if": { "properties": { "act_type": { "enum": ["undergo-identification", "enter-one-time-code"] } } }, "then": { "properties": { "executor_classes": { "const": ["user"] }, "surfaces": { "const": ["device"] } } } }
+  ]
+}

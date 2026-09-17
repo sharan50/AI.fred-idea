@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:placement-receipt",
+  "title": "Placement receipt",
+  "description": "A placement id and one of placed, not-confirmed, refused or failed, with the failed check or the reason class. It never carries the value, its length, a partial, a digest or a rendering of it.",
+  "x-locus": "03-trust-and-data/index.html#substitutor-interface",
+  "type": "object",
+  "properties": {
+    "placement_id": { "$ref": "aifred:common#/$defs/placement-id" },
+    "status": { "$ref": "aifred:vocab#/$defs/placement-statuses" },
+    "check": { "anyOf": [{ "$ref": "aifred:vocab#/$defs/substitutor-checks" }, { "type": "null" }] },
+    "reason": { "anyOf": [{ "type": "string", "enum": ["window-expired", "driver-error", "region-unavailable", "format-rejected", "ledger-unavailable"] }, { "type": "null" }] },
+    "committing": { "type": "boolean" },
+    "at": { "$ref": "aifred:common#/$defs/timestamp" }
+  },
+  "required": ["placement_id", "status", "check", "reason", "committing", "at"],
+  "additionalProperties": false,
+  "allOf": [
+    { "if": { "properties": { "status": { "const": "refused" } } }, "then": { "properties": { "check": { "$ref": "aifred:vocab#/$defs/substitutor-checks" } } } },
+    { "if": { "properties": { "status": { "const": "failed" } } }, "then": { "properties": { "reason": { "type": "string" } } } }
+  ]
+}

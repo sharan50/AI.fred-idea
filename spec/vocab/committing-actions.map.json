@@ -1,0 +1,34 @@
+{
+  "id": "vocab-committing-actions",
+  "slug": "committing-actions",
+  "label": "The six committing actions",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#surface-controllers",
+  "check": "verbatim",
+  "members": [
+    {
+      "id": "form-submit",
+      "word": "a form submit"
+    },
+    {
+      "id": "committing-click",
+      "word": "a committing click"
+    },
+    {
+      "id": "committing-sentence",
+      "word": "a committing sentence on a call"
+    },
+    {
+      "id": "keypad-press",
+      "word": "a keypad press outside the navigation map"
+    },
+    {
+      "id": "relay-release",
+      "word": "a relay release"
+    },
+    {
+      "id": "committing-placement",
+      "word": "a committing placement"
+    }
+  ]
+}

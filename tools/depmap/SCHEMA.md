@@ -71,6 +71,7 @@ Facets and their closed lists:
 | `fatal` | `1`, `2`, `both`, `none` |
 | `surface` | `browser`, `telephony`, `mail`, `device`, `console`, `all` |
 | `market` | `in`, `uk`, `us`, `all` |
+| `zone` | `device`, `entry`, `alias`, `real-value`, `market`, `floor`; components only: where the component sits in the zones of Figure 2.1 in 02, the floor being people and site, the market the per-country tables and adapters. Omitted for an artefact that cuts across the zones, such as the threat model. The architecture view lays its components out by this facet |
 
 ## Locus grammar
 
@@ -146,7 +147,8 @@ node tools/depmap.mjs batch <plan.json>       the same from a file: { "changes":
 node tools/depmap.mjs at <locus>              every node carrying the locus, by role, plus inbound links
 node tools/depmap.mjs show <id>               a node with its loci resolved and its edges both ways
 node tools/depmap.mjs list [--kind k] [--facet name=value]
-node tools/depmap.mjs view [--out file] [--fragment | --site]   bake graph.json into the viewer page; --site writes docs/depmap/index.html, the served view
+node tools/depmap.mjs view [--out file] [--fragment | --site] [--scope record|architecture]
+                                              bake graph.json into a viewer page; --site writes the served view, docs/depmap/index.html for the record and docs/depmap/architecture.html for the architecture
 ```
 
 `view` writes `view.html`, a single self-contained page that draws the graph in
@@ -155,8 +157,18 @@ ledger and the records below them, the harness and the closed lists in the
 middle, the open items and residuals at the floor), so up on the screen is
 always upstream. Selecting a node draws its cone by the same direction rules as
 `impact`, and the inspector lists its connections to follow. The page is
-generated from `view.src.html`, is never committed; the served copy at `docs/depmap/index.html`, written by `view --site` and linked from the index, is committed and the harness fails when it is stale; it
+generated from `view.src.html`, is never committed; the served copy at `docs/depmap/index.html`, written by `view --site` and linked from the rail of every page, is committed and the harness fails when it is stale; it
 opens from the file system with no server and no dependency.
+
+`view --scope architecture` renders the second view from `view-architecture.src.html`: the harness alone, as a
+blueprint. It keeps the components, the invariants they must keep, the closed lists and policy flag rows they
+read, the records that justify or close them off, the stages that build them, and the open items and residual
+findings that land in any of those; it drops the fatal failures, the premises, the ledger, the rejected
+alternatives and every node of the business, publishing, open and index layers. Components are placed in the
+zones of Figure 2.1 by the `zone` facet, records, invariants and lists in bands above, stages below; every locus
+links to the section that states it. It is a query of the one graph, never a second map: it adds no node and no
+edge, and `view --site --scope architecture` writes it to `docs/depmap/architecture.html`, committed and held
+fresh by the harness exactly as the record's view is.
 
 Seeds are node ids, separated by commas; a member path seeds its vocabulary and records the member as the reason.
 

@@ -1,0 +1,206 @@
+{
+  "id": "vocab-open-items",
+  "slug": "open-items",
+  "label": "The open items of Table 7.1",
+  "source": "tools/depmap/graph.json",
+  "canonical": "07-open/index.html#table:7.1",
+  "check": "none",
+  "members": [
+    {
+      "id": "open-07-01",
+      "word": "the front door per market"
+    },
+    {
+      "id": "open-07-02",
+      "word": "first-cohort market sequencing"
+    },
+    {
+      "id": "open-07-03",
+      "word": "pilot vertical sequencing"
+    },
+    {
+      "id": "open-07-04",
+      "word": "the kyc last mile per jurisdiction"
+    },
+    {
+      "id": "open-07-05",
+      "word": "privacy law and cross-border transfer"
+    },
+    {
+      "id": "open-07-06",
+      "word": "night-shift labour law"
+    },
+    {
+      "id": "open-07-07",
+      "word": "netlify access control"
+    },
+    {
+      "id": "open-07-08",
+      "word": "naming, domain and trademark"
+    },
+    {
+      "id": "open-07-09",
+      "word": "make-good policy"
+    },
+    {
+      "id": "open-07-10",
+      "word": "remote-safe operations"
+    },
+    {
+      "id": "open-07-11",
+      "word": "vault vendor choice"
+    },
+    {
+      "id": "open-07-12",
+      "word": "browser sandbox and model vendors"
+    },
+    {
+      "id": "open-07-13",
+      "word": "re-verification of every external claim"
+    },
+    {
+      "id": "open-07-14",
+      "word": "manifest.json sits at the repository root"
+    },
+    {
+      "id": "open-07-15",
+      "word": "nudge schedules and every state-machine timer"
+    },
+    {
+      "id": "open-07-16",
+      "word": "lapsed covers both"
+    },
+    {
+      "id": "open-07-17",
+      "word": "delegation by a family member"
+    },
+    {
+      "id": "open-07-18",
+      "word": "identity acts outside india"
+    },
+    {
+      "id": "open-07-19",
+      "word": "residual findings of the seventh"
+    },
+    {
+      "id": "open-07-20",
+      "word": "delegated send scope"
+    },
+    {
+      "id": "open-07-21",
+      "word": "the data story is settled by"
+    },
+    {
+      "id": "open-07-22",
+      "word": "the thirty-task measurement"
+    },
+    {
+      "id": "open-07-23",
+      "word": "twelve-month churn on a paying cohort"
+    },
+    {
+      "id": "open-07-24",
+      "word": "willingness to pay above $50 in india"
+    },
+    {
+      "id": "open-07-25",
+      "word": "blended acquisition cost in the united kingdom"
+    },
+    {
+      "id": "open-07-26",
+      "word": "whether the engineering headcount exponent falls"
+    },
+    {
+      "id": "open-07-27",
+      "word": "the headcount threshold at which the attested"
+    },
+    {
+      "id": "open-07-28",
+      "word": "the founder's position at faff"
+    },
+    {
+      "id": "open-07-29",
+      "word": "what a paid arrival costs"
+    },
+    {
+      "id": "open-07-30",
+      "word": "the three mechanisms the trajectory model does not have"
+    },
+    {
+      "id": "open-07-32",
+      "word": "a fee quoted on a call has nothing to compare it with"
+    },
+    {
+      "id": "open-07-33",
+      "word": "at most once, on a call step that never receives a marker"
+    },
+    {
+      "id": "open-07-34",
+      "word": "a dependant's delegation record, which nothing creates"
+    },
+    {
+      "id": "open-07-35",
+      "word": "three findings of the review that the record contradicts"
+    },
+    {
+      "id": "open-07-36",
+      "word": "a party-issued reference, heard on a call"
+    },
+    {
+      "id": "open-07-37",
+      "word": "only one act type per step is flag-checked"
+    },
+    {
+      "id": "open-07-38",
+      "word": "a withdrawal that lands inside a placement window"
+    },
+    {
+      "id": "open-07-39",
+      "word": "two external facts the review dates past the record"
+    },
+    {
+      "id": "open-07-31",
+      "word": "the given-name exception is withdrawn by"
+    },
+    {
+      "id": "open-07-40",
+      "word": "how a media budget is allocated across live markets"
+    },
+    {
+      "id": "open-07-41",
+      "word": "general and administrative cost at a hundred users"
+    },
+    {
+      "id": "open-07-42",
+      "word": "the entity gates against the cost model behind them"
+    },
+    {
+      "id": "open-07-43",
+      "word": "the step cost of serving a foreign market at night"
+    },
+    {
+      "id": "open-07-44",
+      "word": "which run is the plan of record"
+    },
+    {
+      "id": "open-07-45",
+      "word": "whether a media budget held at a share of revenue should be capped"
+    },
+    {
+      "id": "open-07-46",
+      "word": "routed spend per subscriber, and the foreign basket"
+    },
+    {
+      "id": "open-07-47",
+      "word": "whether the quoted prices are gross or net of consumption tax"
+    },
+    {
+      "id": "open-07-48",
+      "word": "the step cost of the floor"
+    },
+    {
+      "id": "open-07-49",
+      "word": "tasks a user a month, which is the other half of the governing ratio"
+    }
+  ]
+}

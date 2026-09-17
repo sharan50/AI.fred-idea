@@ -1,0 +1,836 @@
+<title>AI.fred Architecture Map</title>
+<!--__FONTS__-->
+<style>
+/* Tokens. The same two palettes as the record's map, so the two views read as one instrument. The category hues
+   are shared with it too: a record is blue, an invariant green, a list amber, a component teal, a stage violet,
+   an open item pink; the accent is reserved for selection. */
+:root {
+  color-scheme: light;
+  --paper: #fbfaf7; --paper-2: #f3f1ea; --ink: #17150e; --ink-soft: #4f4b40; --muted: #8a8578; --line: #d8d4c8;
+  --accent: #a8321a; --panel: rgba(251, 250, 247, 0.94); --pill: rgba(251, 250, 247, 0.9);
+  --node-stroke: rgba(23, 21, 14, 0.55); --edge: 23, 21, 14; --guide: rgba(23, 21, 14, 0.14); --zone: rgba(23, 21, 14, 0.035);
+  --c-dr: #2a78d6; --c-comp: #1baf7a; --c-list: #eda100; --c-open: #e87ba4; --c-inv: #008300; --c-stage: #4a3aa7;
+  --up: #a8321a; --down: #17150e; --lat: #b0407a;
+  --sans: "Inter", system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #15140f; --paper-2: #1f1d17; --ink: #f1eee6; --ink-soft: #b8b2a4; --muted: #7f7a6d; --line: #3a3730;
+    --accent: #e86a4c; --panel: rgba(21, 20, 15, 0.92); --pill: rgba(21, 20, 15, 0.88);
+    --node-stroke: rgba(241, 238, 230, 0.35); --edge: 241, 238, 230; --guide: rgba(241, 238, 230, 0.14); --zone: rgba(241, 238, 230, 0.035);
+    --c-dr: #3987e5; --c-comp: #199e70; --c-list: #c98500; --c-open: #d55181; --c-inv: #3fa04a; --c-stage: #9085e9;
+    --up: #e86a4c; --down: #f1eee6; --lat: #d55181;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #15140f; --paper-2: #1f1d17; --ink: #f1eee6; --ink-soft: #b8b2a4; --muted: #7f7a6d; --line: #3a3730;
+  --accent: #e86a4c; --panel: rgba(21, 20, 15, 0.92); --pill: rgba(21, 20, 15, 0.88);
+  --node-stroke: rgba(241, 238, 230, 0.35); --edge: 241, 238, 230; --guide: rgba(241, 238, 230, 0.14); --zone: rgba(241, 238, 230, 0.035);
+  --c-dr: #3987e5; --c-comp: #199e70; --c-list: #c98500; --c-open: #d55181; --c-inv: #3fa04a; --c-stage: #9085e9;
+  --up: #e86a4c; --down: #f1eee6; --lat: #d55181;
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; margin: 0; }
+body { background: var(--paper); color: var(--ink); font: 14px/1.45 var(--sans); overflow: hidden; }
+button, input { font: inherit; color: inherit; }
+button { background: var(--paper-2); border: 1px solid var(--line); border-radius: 4px; padding: 5px 10px; cursor: pointer; }
+button:hover { border-color: var(--ink-soft); }
+.back { margin-left: 12px; font-size: 12px; color: var(--muted); text-decoration: underline; text-underline-offset: 2px; white-space: nowrap; }
+.back:hover { color: var(--ink); }
+button:focus-visible, input:focus-visible, .row:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+button[aria-pressed="true"] { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+button:disabled { opacity: 0.45; cursor: default; }
+
+.app { position: fixed; inset: 0; display: grid; grid-template-rows: auto 1fr; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; padding: 10px 16px; border-bottom: 1px solid var(--line); background: var(--panel); z-index: 3; }
+.brand { display: flex; align-items: baseline; gap: 10px; white-space: nowrap; }
+.brand .mark { font-weight: 600; font-size: 16px; letter-spacing: 0.01em; }
+.brand .sub { color: var(--ink-soft); font-size: 12.5px; }
+.search { position: relative; flex: 1 1 220px; max-width: 360px; }
+.search input { width: 100%; padding: 6px 10px; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
+.results { position: absolute; top: calc(100% + 4px); left: 0; right: 0; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; max-height: 320px; overflow: auto; z-index: 5; }
+.results button { display: flex; width: 100%; gap: 8px; align-items: center; text-align: left; border: 0; border-radius: 0; background: transparent; padding: 7px 10px; }
+.results button:hover, .results button.active { background: var(--paper-2); }
+.results .id { font-family: var(--mono); font-size: 11.5px; color: var(--muted); margin-left: auto; }
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 9px 3px 7px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper); font-size: 12.5px; }
+.chip[aria-pressed="false"] { opacity: 0.45; }
+.chip[aria-pressed="true"] { background: var(--paper); color: var(--ink); border-color: var(--line); }
+.sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px; }
+.tools { display: flex; gap: 6px; margin-left: auto; }
+
+.stage-wrap { position: relative; overflow: hidden; }
+canvas#stage { display: block; width: 100%; height: 100%; touch-action: none; cursor: grab; }
+canvas#stage.grabbing { cursor: grabbing; }
+canvas#stage.pointing { cursor: pointer; }
+.glyph { width: 16px; height: 16px; flex: none; display: inline-block; vertical-align: middle; }
+
+.legend { position: absolute; left: 16px; bottom: 16px; background: var(--panel); border: 1px solid var(--line); border-radius: 6px; padding: 10px 12px; font-size: 12.5px; max-width: 262px; z-index: 2; }
+.legend-toggle { display: none; }
+.legend h2 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 6px; font-weight: 500; }
+.legend .lrows + h2 { margin-top: 10px; }
+.lrows { display: grid; gap: 3px; }
+.lrow { display: flex; align-items: center; gap: 8px; }
+.lrow canvas { width: 16px; height: 16px; flex: none; cursor: default; }
+.lrow button { border: 0; background: transparent; color: var(--ink); padding: 0; text-align: left; display: flex; align-items: center; gap: 8px; }
+.lrow button[aria-pressed="false"] { opacity: 0.4; text-decoration: line-through; }
+.lrow .k { color: var(--ink-soft); }
+.fatals { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+.fatals button { font-size: 12px; padding: 3px 8px; }
+.alt-note { color: var(--muted); font-size: 11.5px; margin: 6px 0 0; }
+.hint { position: absolute; right: 16px; bottom: 16px; margin: 0; color: var(--muted); font-size: 12px; max-width: 340px; text-align: right; z-index: 2; }
+
+.inspector { position: absolute; top: 12px; right: 12px; bottom: 12px; width: 350px; max-width: calc(100% - 24px); background: var(--panel); border: 1px solid var(--line); border-radius: 6px; display: flex; flex-direction: column; z-index: 4; overflow: hidden; }
+.inspector[hidden] { display: none; }
+.ihead { display: flex; align-items: flex-start; gap: 8px; padding: 12px 12px 8px; border-bottom: 1px solid var(--line); }
+.ihead .kind { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ink-soft); }
+.ihead h2 { font-size: 16px; line-height: 1.3; margin: 4px 0 2px; font-weight: 600; text-wrap: balance; }
+.ihead .id { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+.ihead .close { margin-left: auto; padding: 2px 8px; }
+.facets { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+.facets span { font-family: var(--mono); font-size: 11px; color: var(--ink-soft); border: 1px solid var(--line); border-radius: 3px; padding: 1px 5px; }
+.trail { display: flex; flex-wrap: wrap; gap: 4px; padding: 8px 12px; border-bottom: 1px solid var(--line); font-size: 12px; }
+.trail:empty { display: none; }
+.trail button { padding: 1px 7px; font-size: 12px; border-radius: 999px; }
+.trail button.here { background: var(--ink); color: var(--paper); border-color: var(--ink); }
+.ibody { overflow: auto; padding: 4px 0 12px; }
+.grp { padding: 8px 12px 2px; }
+.grp h3 { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 4px; font-weight: 500; display: flex; align-items: baseline; gap: 8px; }
+.grp h3 .n { font-family: var(--mono); letter-spacing: 0; color: var(--ink-soft); }
+.grp h3 .dir { display: inline-block; width: 10px; height: 3px; border-radius: 2px; }
+.rows { display: grid; gap: 1px; }
+.row { display: grid; grid-template-columns: 18px 1fr auto; align-items: center; gap: 8px; width: 100%; text-align: left; border: 0; background: transparent; padding: 5px 4px; border-radius: 4px; }
+.row:hover { background: var(--paper-2); }
+.row .lbl { line-height: 1.3; }
+.row .via { font-family: var(--mono); font-size: 10.5px; color: var(--muted); white-space: nowrap; }
+.reopens { padding: 8px 12px; margin: 0 12px; background: var(--paper-2); border-radius: 4px; font-size: 12.5px; }
+.reopens b { font-weight: 600; }
+.reopens ul { margin: 4px 0 0; padding-left: 16px; }
+.reopens li { margin: 1px 0; }
+.reopens .id { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.loci { list-style: none; padding: 0 12px; margin: 0; font-size: 12.5px; display: grid; gap: 4px; }
+.loci li { display: grid; grid-template-columns: 66px 1fr; gap: 8px; align-items: baseline; }
+.loci .role { font-family: var(--mono); font-size: 11px; color: var(--muted); }
+.loci a { color: var(--ink); text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 2px; }
+.loci a:hover { text-decoration-color: var(--ink); }
+.loci .at { font-family: var(--mono); font-size: 10.5px; color: var(--muted); display: block; overflow-wrap: anywhere; }
+.note { padding: 6px 12px 0; font-size: 12.5px; color: var(--ink-soft); }
+.empty { padding: 4px 12px; color: var(--muted); font-size: 12.5px; }
+
+@media (max-width: 720px) {
+  .bar { gap: 8px 12px; }
+  .brand .sub { display: none; }
+  .tools { margin-left: 0; }
+  .inspector { top: auto; left: 12px; right: 12px; bottom: 12px; width: auto; max-width: none; max-height: 48vh; }
+  .legend { display: none; bottom: auto; top: 12px; max-width: 240px; max-height: calc(100% - 24px); overflow: auto; font-size: 11.5px; }
+  .legend.open { display: block; }
+  .legend-toggle { display: inline-block; }
+  .hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="app">
+  <header class="bar">
+    <div class="brand"><span class="mark">AI.fred</span><span class="sub" id="sub">Architecture map</span><!--__BACK__--></div>
+    <div class="search">
+      <label for="q" class="sr" hidden>Find a node</label>
+      <input id="q" type="search" placeholder="Find a component, invariant, list or record" autocomplete="off" spellcheck="false">
+      <div class="results" id="results" hidden></div>
+    </div>
+    <div class="chips" id="kind-chips" aria-label="Show or hide kinds"></div>
+    <div class="tools">
+      <button id="btn-fit" title="Fit the whole blueprint to the window (key 0)">Fit</button>
+      <button id="btn-labels" aria-pressed="false" title="Label every invariant, list and stage, not only the ones near the selection (key L)">Labels</button>
+      <button id="btn-edges" aria-pressed="false" title="Draw every edge at rest, not only the wiring between components (key E)">All edges</button>
+      <button id="btn-focus" aria-pressed="false" disabled title="Hide everything outside the selected node's cone (key F)">Focus cone</button>
+      <button id="btn-legend" class="legend-toggle" aria-pressed="false" aria-controls="legend" title="Show or hide the legend">Legend</button>
+    </div>
+  </header>
+  <div class="stage-wrap">
+    <canvas id="stage" tabindex="0" role="img" aria-label="A blueprint of the AI.fred harness: its components placed in the zones of the component map, the invariants and closed lists above them, the build stages below, and the edges between them. Select a node to read its dependencies in the panel."></canvas>
+    <div class="legend" id="legend"></div>
+    <p class="hint" id="hint">Drag to pan, scroll to zoom, 0 fits. Click a component for what it depends on, what it must keep, and where the pages specify it. Arrows point at what depends.</p>
+    <aside class="inspector" id="inspector" hidden aria-label="Selected node">
+      <div class="ihead" id="ihead"></div>
+      <div class="trail" id="trail"></div>
+      <div class="ibody" id="ibody"></div>
+    </aside>
+  </div>
+</div>
+
+<script id="graph" type="application/json">/*__GRAPH__*/</script>
+<script>
+(() => {
+'use strict';
+const DATA = JSON.parse(document.getElementById('graph').textContent);
+
+// ----------------------------------------------------------------- vocabulary of the drawing
+// This view is the harness alone: the components of the component map (02, Figure 2.1), placed in its zones;
+// above them the records that justify them, the invariants they must keep and the closed lists they read;
+// below them the eight build stages. Open items and residual findings ride as badges on the node they land in.
+const KIND = {
+  dr:    { g: 'dr',    shape: 'circle',   r: 7,   name: 'decision record' },
+  inv:   { g: 'inv',   shape: 'triangle', r: 5.5, name: 'invariant' },
+  vocab: { g: 'list',  shape: 'hexagon',  r: 5.5, name: 'closed list' },
+  flag:  { g: 'list',  shape: 'hexagon',  r: 4.5, name: 'policy flag row' },
+  comp:  { g: 'comp',  shape: 'box',      r: 6,   name: 'component' },
+  stage: { g: 'stage', shape: 'pentagon', r: 8,   name: 'roadmap stage' },
+  open:  { g: 'open',  shape: 'ring',     r: 4,   name: 'open item' },
+  res:   { g: 'open',  shape: 'ring',     r: 4,   name: 'residual finding' },
+};
+const GROUP = {
+  dr:    { tok: '--c-dr',    name: 'Why: the records that justify the harness', kinds: ['dr'] },
+  inv:   { tok: '--c-inv',   name: 'What must always hold: the invariants', kinds: ['inv'] },
+  list:  { tok: '--c-list',  name: 'What the harness reads: closed lists and policy flag rows', kinds: ['vocab', 'flag'] },
+  comp:  { tok: '--c-comp',  name: 'The components, in the zones of Figure 2.1', kinds: ['comp'] },
+  stage: { tok: '--c-stage', name: 'Build order: the eight gated stages', kinds: ['stage'] },
+  open:  { tok: '--c-open',  name: 'Open items and residual findings that land here', kinds: ['open', 'res'] },
+};
+const EDGE = {
+  'justifies':      { dir: 'down', dash: [],     w: 1.0, arrow: 'to',   name: 'justifies (a record gives the reason)' },
+  'depends-on':     { dir: 'up',   dash: [],     w: 1.0, arrow: 'from', name: 'depends on (the arrow points at what depends)' },
+  'closes-off':     { dir: 'down', dash: [4, 3], w: 1.0, arrow: 'to',   name: 'closes off (a record forbids)' },
+  'conflicts-with': { dir: 'lat',  dash: [6, 3], w: 1.1, arrow: null,   name: 'conflicts with (a residual finding)' },
+  'lands-in':       { dir: 'lat',  dash: [2, 3], w: 0.9, arrow: null,   name: 'lands in (an open item)' },
+};
+const ZONES = [
+  { id: 'device',     name: "The user's device",                                   cols: 1 },
+  { id: 'entry',      name: "The entry boundary: the vault's edge proxy, the provider's", cols: 2 },
+  { id: 'alias',      name: 'The alias zone: aliases only, no vault SDK',          cols: 4 },
+  { id: 'real-value', name: 'The real-value zone: one detokenise right',           cols: 3 },
+  { id: 'market',     name: 'Per market: adapters, the legal pack, residency',     cols: 2 },
+  { id: 'floor',      name: 'The floor: people and site',                          cols: 3 },
+  { id: 'cross',      name: 'Cross-cutting',                                        cols: 1 },
+];
+// Names for the boxes; everything else is derived from the node's label by dropping the article and any subtitle.
+const SHORT = {
+  'comp-adapter-in': 'India adapter', 'comp-adapter-uk': 'UK adapter', 'comp-adapter-us': 'US adapter',
+  'comp-adapters': 'Passport adapters', 'comp-ai-executor': 'ai executor', 'comp-channel-connector': 'Channel connector',
+  'comp-device-surface': 'Device surface and bounce-back', 'comp-legal-pack': 'Legal pack', 'comp-policy-layer': 'Policy layer and flag table',
+  'comp-site-controls': 'Site controls', 'comp-state-machine': 'Task state machine', 'comp-surface-controllers': 'Surface controllers and step runner',
+  'comp-task-cards': 'Task cards and card generator', 'comp-threat-model': 'Threat model', 'comp-tiers': 'Workforce tiers',
+  'comp-watchdog': 'Timers, nudges, watchdog', 'comp-workflow-library': 'Workflow library', 'comp-vault': 'Tokenisation vault (bought)',
+};
+const HUB_DEPTH = 2;
+const BOX = { w: 150, h: 46 }, GAP = 16, PAD = 18, TITLE = 26, ZGAP = 40;
+
+// ----------------------------------------------------------------- data
+const nodes = DATA.nodes.map((n) => ({ ...n, facets: n.facets || {}, loci: n.loci || [], k: KIND[n.kind] || KIND.comp, x: 0, y: 0, deg: 0, sx: 0, sy: 0 }));
+const byId = new Map(nodes.map((n) => [n.id, n]));
+const edges = DATA.edges.filter((e) => byId.has(e[0]) && byId.has(e[2]) && EDGE[e[1]]).map(([a, kind, b]) => ({ a: byId.get(a), b: byId.get(b), kind, e: EDGE[kind] }));
+const upOf = new Map(), downOf = new Map(), latOf = new Map(), allOf = new Map();
+const push = (m, k, v) => { if (!m.has(k)) m.set(k, []); m.get(k).push(v); };
+for (const ed of edges) {
+  ed.a.deg++; ed.b.deg++;
+  push(allOf, ed.a.id, { n: ed.b, ed }); push(allOf, ed.b.id, { n: ed.a, ed });
+  if (ed.e.dir === 'down') { push(downOf, ed.a.id, { n: ed.b, ed }); push(upOf, ed.b.id, { n: ed.a, ed }); }
+  else if (ed.e.dir === 'up') { push(upOf, ed.a.id, { n: ed.b, ed }); push(downOf, ed.b.id, { n: ed.a, ed }); }
+  else { push(latOf, ed.a.id, { n: ed.b, ed }); push(latOf, ed.b.id, { n: ed.a, ed }); }
+}
+const count = (k) => nodes.filter((n) => n.kind === k).length;
+document.getElementById('sub').textContent = `Architecture map, edition ${DATA.edition}: ${count('comp')} components, ${count('inv')} invariants, ${count('vocab') + count('flag')} lists and flag rows, ${count('dr')} records`;
+
+// The stage that builds a component: the lowest-numbered stage that depends on it.
+const stageNo = new Map();
+for (const ed of edges) if (ed.kind === 'depends-on' && ed.a.kind === 'stage' && ed.b.kind === 'comp') {
+  const n = Number(ed.a.id.split('-')[1]);
+  if (!stageNo.has(ed.b.id) || n < stageNo.get(ed.b.id)) stageNo.set(ed.b.id, n);
+}
+function shortLabel(n) {
+  if (SHORT[n.id]) return SHORT[n.id];
+  let s = n.label.replace(/^The /, '').split(':')[0].trim();
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+// ----------------------------------------------------------------- layout: the zones of Figure 2.1, bands above and below
+const zones = ZONES.map((z) => ({ ...z, comps: [] }));
+const Z = Object.fromEntries(zones.map((z) => [z.id, z]));
+for (const n of nodes) if (n.kind === 'comp') (Z[n.facets.zone] || Z.cross).comps.push(n);
+for (const z of zones) {
+  z.comps.sort((a, b) => (stageNo.get(a.id) ?? 99) - (stageNo.get(b.id) ?? 99) || a.label.localeCompare(b.label));
+  z.cols = Math.max(1, Math.min(z.cols, z.comps.length));
+  z.rows = Math.max(1, Math.ceil(z.comps.length / z.cols));
+  z.w = z.cols * BOX.w + (z.cols - 1) * GAP + 2 * PAD;
+  z.h = z.rows * BOX.h + (z.rows - 1) * GAP + TITLE + 2 * PAD;
+}
+const X0 = Z.device.w + ZGAP;
+Z.entry.x = X0; Z.entry.y = 0; Z.entry.w = Z.alias.w + ZGAP + Z['real-value'].w;
+Z.alias.x = X0; Z.alias.y = Z.entry.h + ZGAP;
+Z['real-value'].x = Z.alias.x + Z.alias.w + ZGAP; Z['real-value'].y = Z.alias.y;
+Z.market.x = Z['real-value'].x + Z['real-value'].w + ZGAP; Z.market.y = Z.alias.y;
+const rowBottom = Math.max(Z.alias.y + Z.alias.h, Z['real-value'].y + Z['real-value'].h, Z.market.y + Z.market.h);
+Z.floor.x = X0; Z.floor.y = rowBottom + ZGAP;
+Z.cross.x = Z.floor.x + Z.floor.w + ZGAP; Z.cross.y = Z.floor.y;
+Z.device.x = 0; Z.device.y = Z.alias.y + Math.max(0, (Z.alias.h - Z.device.h) / 2);
+const fieldLeft = 0, fieldRight = Z.market.x + Z.market.w, fieldTop = 0;
+const fieldBottom = Math.max(Z.floor.y + (Z.floor.comps.length ? Z.floor.h : 0), Z.cross.y + (Z.cross.comps.length ? Z.cross.h : 0), rowBottom);
+function slot(z, i) {
+  const gridW = z.cols * BOX.w + (z.cols - 1) * GAP;
+  const left = z.x + (z.w - gridW) / 2;
+  const col = i % z.cols, row = Math.floor(i / z.cols);
+  return { x: left + col * (BOX.w + GAP) + BOX.w / 2, y: z.y + TITLE + PAD + row * (BOX.h + GAP) + BOX.h / 2 };
+}
+function placeZone(z) { z.comps.forEach((n, i) => { const p = slot(z, i); n.x = p.x; n.y = p.y; }); }
+for (const z of zones) placeZone(z);
+// Two sweeps of a barycentre sort inside each zone, column-major by the mean x of a component's wired neighbours,
+// so the wiring between zones runs as straight as a grid allows. Ties keep the build order.
+const compNeighbours = (n) => (allOf.get(n.id) || []).filter((x) => x.ed.kind === 'depends-on' && x.n.kind === 'comp').map((x) => x.n);
+for (let sweep = 0; sweep < 2; sweep++) for (const z of zones) {
+  if (z.comps.length < 3) continue;
+  const key = new Map();
+  for (const n of z.comps) { const xs = compNeighbours(n).filter((m) => (Z[m.facets.zone] || Z.cross) !== z).map((m) => m.x); key.set(n.id, xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : n.x); }
+  const order = [...z.comps].sort((a, b) => key.get(a.id) - key.get(b.id) || (stageNo.get(a.id) ?? 99) - (stageNo.get(b.id) ?? 99) || a.label.localeCompare(b.label));
+  // column-major: the leftmost neighbours fill the left column top to bottom
+  const slots = [];
+  for (let c = 0; c < z.cols; c++) for (let r = 0; r < z.rows; r++) if (r * z.cols + c < z.comps.length) slots.push(r * z.cols + c);
+  z.comps = new Array(z.comps.length);
+  order.forEach((n, i) => { z.comps[slots[i]] = n; });
+  placeZone(z);
+}
+
+// Bands. Each is ordered by the mean x of the neighbours already placed, then spread evenly across the field.
+const placed = new Set(nodes.filter((n) => n.kind === 'comp').map((n) => n.id));
+function orderBand(list) {
+  const key = new Map();
+  for (const n of list) {
+    const xs = (allOf.get(n.id) || []).filter((x) => placed.has(x.n.id)).map((x) => x.n.x);
+    key.set(n.id, xs.length ? xs.reduce((a, b) => a + b, 0) / xs.length : Infinity);
+  }
+  list.sort((a, b) => { const d = key.get(a.id) - key.get(b.id); return Number.isNaN(d) || d === 0 ? a.id.localeCompare(b.id) : d; });
+}
+function spread(list, y) {
+  const left = fieldLeft + 30, width = fieldRight - fieldLeft - 60;
+  list.forEach((n, i) => { n.x = left + (i + 0.5) * width / list.length; n.y = y; placed.add(n.id); });
+}
+const bandList = [
+  { key: 'list',  kinds: ['vocab', 'flag'], y: fieldTop - 96,  label: 'closed lists and policy flag rows: what the harness reads' },
+  { key: 'inv',   kinds: ['inv'],           y: fieldTop - 176, label: 'invariants: what must always hold' },
+  { key: 'dr',    kinds: ['dr'],            y: fieldTop - 262, label: 'why: the decision records that justify the harness' },
+  { key: 'stage', kinds: ['stage'],         y: fieldBottom + 96, label: 'build order: eight gated stages, each arrow a gate' },
+];
+for (const b of bandList) {
+  const list = nodes.filter((n) => b.kinds.includes(n.kind));
+  if (b.key === 'stage') list.sort((a, c) => Number(a.id.split('-')[1]) - Number(c.id.split('-')[1]));
+  else orderBand(list);
+  spread(list, b.y);
+  b.nodes = list;
+}
+// Open items and residual findings: a badge on each node they land in or conflict with.
+const badges = [];
+const badgeCount = new Map();
+for (const n of nodes) if (n.kind === 'open' || n.kind === 'res') {
+  const targets = (latOf.get(n.id) || []).map((x) => x.n).filter((m) => m.kind !== 'open' && m.kind !== 'res');
+  for (const t of targets) { const i = badgeCount.get(t.id) || 0; badgeCount.set(t.id, i + 1); badges.push({ n, t, i }); }
+  n.x = targets[0] ? targets[0].x : fieldRight; n.y = targets[0] ? targets[0].y : fieldBottom;
+}
+for (const bd of badges) { const t = bd.t; bd.x = t.kind === 'comp' ? t.x + BOX.w / 2 - 8 - bd.i * 11 : t.x + t.k.r + 3 + bd.i * 10; bd.y = t.kind === 'comp' ? t.y - BOX.h / 2 - 1 : t.y - t.k.r - 4; }
+const bounds = { x0: fieldLeft - 20, y0: bandList[2].y - 40, x1: fieldRight + 20, y1: bandList[3].y + 60 };
+
+// ----------------------------------------------------------------- camera
+const canvas = document.getElementById('stage');
+const ctx = canvas.getContext('2d');
+const cam = { x: (bounds.x0 + bounds.x1) / 2, y: (bounds.y0 + bounds.y1) / 2, z: 0.8 };
+let W = 0, H = 0, dpr = 1, userMoved = false;
+function resize() {
+  const r = canvas.parentElement.getBoundingClientRect();
+  dpr = Math.min(2, window.devicePixelRatio || 1);
+  W = Math.max(200, r.width); H = Math.max(200, r.height);
+  canvas.width = Math.round(W * dpr); canvas.height = Math.round(H * dpr);
+}
+const toScreen = (x, y) => ({ sx: (x - cam.x) * cam.z + W / 2, sy: (y - cam.y) * cam.z + H / 2 });
+const toWorld = (sx, sy) => ({ x: (sx - W / 2) / cam.z + cam.x, y: (sy - H / 2) / cam.z + cam.y });
+function fit() {
+  const freeW = W - (W > 900 ? 300 : 0) - (selected && W > 900 ? 360 : 0) - 40, freeH = H - (W > 900 ? 130 : 260);
+  cam.z = Math.max(0.2, Math.min(1.4, Math.min(freeW / (bounds.x1 - bounds.x0), freeH / (bounds.y1 - bounds.y0))));
+  cam.x = (bounds.x0 + bounds.x1) / 2 + (W > 900 ? (selected ? 180 : 0) - 150 : 0) / cam.z;
+  cam.y = (bounds.y0 + bounds.y1) / 2 + (W > 900 ? 40 : 60) / cam.z;
+  invalidate();
+}
+
+// ----------------------------------------------------------------- state
+let selected = null, hovered = null, hoverRow = null, cone = null;
+let hiddenKinds = new Set(), hiddenEdges = new Set();
+let focus = false, allEdges = false, allLabels = false, fatalFilter = null, dirty = true;
+const trail = [];
+function computeCone(seed) {
+  const up = new Set(), down = new Set(), lat = new Set(), upE = new Set(), downE = new Set(), latE = new Set();
+  const dist = new Map([[seed.id, 0]]);
+  let frontier = [seed];
+  while (frontier.length) {
+    const next = [];
+    for (const n of frontier) for (const { n: m, ed } of upOf.get(n.id) || []) {
+      if (hiddenKinds.has(m.kind)) continue;
+      upE.add(ed);
+      if (dist.has(m.id)) continue;
+      dist.set(m.id, dist.get(n.id) + 1); up.add(m.id); next.push(m);
+    }
+    frontier = next;
+  }
+  frontier = [seed];
+  for (let d = 0; d < HUB_DEPTH && frontier.length; d++) {
+    const next = [];
+    for (const n of frontier) for (const { n: m, ed } of downOf.get(n.id) || []) {
+      if (hiddenKinds.has(m.kind)) continue;
+      downE.add(ed);
+      if (dist.has(m.id)) continue;
+      dist.set(m.id, d + 1); down.add(m.id); next.push(m);
+    }
+    frontier = next;
+  }
+  for (const id of [seed.id, ...up, ...down]) for (const { n: m, ed } of latOf.get(id) || []) {
+    if (hiddenKinds.has(m.kind)) continue;
+    latE.add(ed);
+    if (!dist.has(m.id)) lat.add(m.id);
+  }
+  return { up, down, lat, upE, downE, latE, dist };
+}
+const inCone = (n) => !cone || n === selected || cone.up.has(n.id) || cone.down.has(n.id) || cone.lat.has(n.id);
+const visible = (n) => !hiddenKinds.has(n.kind) && !(focus && cone && !inCone(n));
+const passesFatal = (n) => !fatalFilter || n.facets.fatal === fatalFilter || n.facets.fatal === 'both';
+
+// ----------------------------------------------------------------- drawing
+const tokens = {};
+function readTokens() {
+  const cs = getComputedStyle(document.documentElement);
+  for (const t of ['--paper', '--paper-2', '--ink', '--ink-soft', '--muted', '--line', '--accent', '--pill', '--node-stroke', '--edge', '--guide', '--zone', '--up', '--down', '--lat', '--sans', '--mono', ...Object.values(GROUP).map((g) => g.tok)]) tokens[t] = cs.getPropertyValue(t).trim();
+}
+const colourOf = (n) => tokens[GROUP[n.k.g].tok];
+function shape(c, sh, x, y, r) {
+  c.beginPath();
+  if (sh === 'circle' || sh === 'ring') c.arc(x, y, r, 0, Math.PI * 2);
+  else if (sh === 'box') { const w = r * 1.5, h = r; c.roundRect ? c.roundRect(x - w, y - h, w * 2, h * 2, 2) : c.rect(x - w, y - h, w * 2, h * 2); }
+  else if (sh === 'triangle') { c.moveTo(x, y - r * 1.15); c.lineTo(x + r * 1.05, y + r * 0.75); c.lineTo(x - r * 1.05, y + r * 0.75); c.closePath(); }
+  else { const k = sh === 'hexagon' ? 6 : 5; for (let i = 0; i < k; i++) { const a = -Math.PI / 2 + i * Math.PI * 2 / k; const px = x + Math.cos(a) * r * 1.08, py = y + Math.sin(a) * r * 1.08; i ? c.lineTo(px, py) : c.moveTo(px, py); } c.closePath(); }
+}
+function drawGlyph(c, kind, x, y, r, fill, alpha) {
+  const k = KIND[kind];
+  c.globalAlpha = alpha;
+  shape(c, k.shape, x, y, r);
+  if (k.shape === 'ring') { c.fillStyle = tokens['--paper']; c.fill(); c.lineWidth = Math.max(1.5, r * 0.55); c.strokeStyle = fill; c.stroke(); }
+  else { c.fillStyle = fill; c.fill(); c.lineWidth = 1; c.strokeStyle = tokens['--node-stroke']; c.stroke(); }
+}
+function legendGlyph(cv, kind) {
+  const c = cv.getContext('2d'); const s = 16 * dpr; cv.width = s; cv.height = s; c.scale(dpr, dpr); c.clearRect(0, 0, 16, 16);
+  drawGlyph(c, kind, 8, 8, kind === 'comp' ? 4.5 : 5, tokens[GROUP[KIND[kind].g].tok], 1);
+}
+function wrap(c, text, maxW, maxLines) {
+  const words = text.split(' '); const lines = []; let cur = '';
+  for (const w of words) { const t = cur ? cur + ' ' + w : w; if (c.measureText(t).width <= maxW || !cur) cur = t; else { lines.push(cur); cur = w; } }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) { const keep = lines.slice(0, maxLines); let last = keep[maxLines - 1]; while (last.length > 1 && c.measureText(last + '…').width > maxW) last = last.slice(0, -1); keep[maxLines - 1] = last + '…'; return keep; }
+  return lines;
+}
+// Where an edge meets a node: a box is entered at the middle of the side that faces the other end.
+function anchor(n, other) {
+  if (n.kind !== 'comp') return { x: n.x, y: n.y };
+  const dx = other.x - n.x, dy = other.y - n.y;
+  if (Math.abs(dy) > BOX.h / 2 + 6 && Math.abs(dy) * BOX.w > Math.abs(dx) * BOX.h) return { x: n.x + Math.max(-BOX.w / 2 + 12, Math.min(BOX.w / 2 - 12, dx * 0.15)), y: n.y + (dy > 0 ? BOX.h / 2 : -BOX.h / 2) };
+  return { x: n.x + (dx > 0 ? BOX.w / 2 : -BOX.w / 2), y: n.y };
+}
+function edgePath(c, ed) {
+  const a = anchor(ed.a, ed.b), b = anchor(ed.b, ed.a);
+  const pa = toScreen(a.x, a.y), pb = toScreen(b.x, b.y);
+  c.beginPath(); c.moveTo(pa.sx, pa.sy);
+  const sameBand = ed.a.kind === ed.b.kind || (ed.a.kind === 'comp' && ed.b.kind === 'comp');
+  if (sameBand && ed.a.kind === 'comp') {
+    // a bulge perpendicular to the wire, so a wire between two boxes in one grid clears the boxes between them
+    const mx = (pa.sx + pb.sx) / 2, my = (pa.sy + pb.sy) / 2, dx = pb.sx - pa.sx, dy = pb.sy - pa.sy, d = Math.hypot(dx, dy) || 1;
+    const bulge = Math.min(70 * cam.z, d * 0.18);
+    c.quadraticCurveTo(mx - dy / d * bulge, my + dx / d * bulge, pb.sx, pb.sy);
+  } else if (Math.abs(pb.sy - pa.sy) > 30) {
+    const k = (pb.sy - pa.sy) * 0.45;
+    c.bezierCurveTo(pa.sx, pa.sy + k, pb.sx, pb.sy - k, pb.sx, pb.sy);
+  } else c.lineTo(pb.sx, pb.sy);
+  return { pa, pb, a, b };
+}
+function arrowHead(c, from, to, size) {
+  const dx = to.sx - from.sx, dy = to.sy - from.sy, d = Math.hypot(dx, dy) || 1, ux = dx / d, uy = dy / d;
+  c.beginPath(); c.moveTo(to.sx, to.sy); c.lineTo(to.sx - ux * size - uy * size * 0.5, to.sy - uy * size + ux * size * 0.5); c.lineTo(to.sx - ux * size + uy * size * 0.5, to.sy - uy * size - ux * size * 0.5); c.closePath(); c.fill();
+}
+function render() {
+  readTokens();
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  ctx.clearRect(0, 0, W, H);
+  ctx.fillStyle = tokens['--paper']; ctx.fillRect(0, 0, W, H);
+  const z = cam.z;
+  const mono = tokens['--mono'], sans = tokens['--sans'];
+  // zones
+  for (const zn of zones) {
+    if (!zn.comps.length) continue;
+    const p = toScreen(zn.x, zn.y);
+    ctx.globalAlpha = 1; ctx.fillStyle = tokens['--zone']; ctx.fillRect(p.sx, p.sy, zn.w * z, zn.h * z);
+    ctx.setLineDash([6 * z, 4 * z]); ctx.lineWidth = 1; ctx.strokeStyle = tokens['--line']; ctx.strokeRect(p.sx, p.sy, zn.w * z, zn.h * z); ctx.setLineDash([]);
+    const fs = Math.max(7, 11 * z);
+    ctx.font = `500 ${fs}px ${mono}`; ctx.fillStyle = tokens['--muted']; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    ctx.fillText(zn.name, p.sx + 10 * z, p.sy + 17 * z);
+  }
+  // band captions and guide lines
+  for (const b of bandList) {
+    const p = toScreen(fieldLeft, b.y);
+    const q = toScreen(fieldRight, b.y);
+    ctx.globalAlpha = 1; ctx.font = `500 ${Math.max(7, 10.5 * z)}px ${mono}`; ctx.fillStyle = tokens['--muted']; ctx.textAlign = 'left'; ctx.textBaseline = 'alphabetic';
+    ctx.fillText(b.label, p.sx, p.sy - 20 * z);
+    ctx.strokeStyle = tokens['--guide']; ctx.setLineDash([2, 5]); ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(p.sx, p.sy + 16 * z); ctx.lineTo(q.sx, q.sy + 16 * z); ctx.stroke(); ctx.setLineDash([]);
+  }
+  // project
+  for (const n of nodes) { const p = toScreen(n.x, n.y); n.sx = p.sx; n.sy = p.sy; }
+  const hi = hovered || hoverRow;
+  const emphasis = !!selected;
+  // edges: at rest the wiring between components, and every edge on demand; a hover or a selection lights its own
+  for (const ed of edges) {
+    if (!visible(ed.a) || !visible(ed.b) || hiddenEdges.has(ed.kind)) continue;
+    const touchesHi = !!hi && (ed.a === hi || ed.b === hi);
+    const wiring = ed.kind === 'depends-on' && ed.a.kind === 'comp' && ed.b.kind === 'comp';
+    let coneDir = null;
+    if (cone) { if (cone.upE.has(ed)) coneDir = 'up'; else if (cone.downE.has(ed)) coneDir = 'down'; else if (cone.latE.has(ed)) coneDir = 'lat'; }
+    const stageArrow = ed.kind === 'depends-on' && ed.a.kind === 'stage' && ed.b.kind === 'stage';
+    if (!wiring && !allEdges && !touchesHi && !coneDir && !stageArrow) continue;
+    let alpha = wiring || stageArrow ? 0.32 : 0.16, w = ed.e.w, colour = `rgba(${tokens['--edge']},1)`;
+    if (fatalFilter && !(passesFatal(ed.a) && passesFatal(ed.b))) alpha *= 0.25;
+    if (coneDir) { alpha = 0.95; w = ed.e.w + 0.9; colour = tokens[`--${coneDir}`]; }
+    else if (emphasis) alpha *= 0.15;
+    else if (hi && !touchesHi) alpha *= 0.4;
+    if (touchesHi) { alpha = Math.max(alpha, 0.9); w = ed.e.w + 0.7; }
+    ctx.globalAlpha = alpha; ctx.strokeStyle = colour; ctx.fillStyle = colour; ctx.lineWidth = w; ctx.setLineDash(ed.e.dash.map((d) => d * Math.max(0.7, z)));
+    const { pa, pb } = edgePath(ctx, ed);
+    ctx.stroke(); ctx.setLineDash([]);
+    if (ed.e.arrow) { const size = Math.max(4, 7 * Math.min(1.2, z)); if (ed.e.arrow === 'to') arrowHead(ctx, pa, pb, size); else arrowHead(ctx, pb, pa, size); }
+  }
+  // nodes
+  const labelPills = [];
+  const fsBox = 12.5 * z;
+  for (const n of nodes) {
+    if (!visible(n) || n.kind === 'open' || n.kind === 'res') continue;
+    const isSel = n === selected, isHi = n === hi;
+    let alpha = 1;
+    if (emphasis && !inCone(n)) alpha = 0.16;
+    if (!passesFatal(n)) alpha = Math.min(alpha, 0.16);
+    if (isSel || isHi) alpha = 1;
+    const col = colourOf(n);
+    if (n.kind === 'comp') {
+      const w = BOX.w * z, h = BOX.h * z, x = n.sx - w / 2, y = n.sy - h / 2;
+      ctx.globalAlpha = alpha;
+      ctx.fillStyle = tokens['--paper-2']; ctx.beginPath(); ctx.roundRect ? ctx.roundRect(x, y, w, h, 4 * z) : ctx.rect(x, y, w, h); ctx.fill();
+      ctx.lineWidth = isSel ? 2.5 : 1.5; ctx.strokeStyle = isSel ? tokens['--accent'] : isHi ? tokens['--ink'] : col; ctx.stroke();
+      if (fsBox >= 6.5) {
+        ctx.fillStyle = tokens['--ink']; ctx.font = `500 ${fsBox}px ${sans}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle';
+        const lines = wrap(ctx, shortLabel(n), w - 20 * z, 2);
+        lines.forEach((ln, i) => ctx.fillText(ln, n.sx, n.sy + (i - (lines.length - 1) / 2) * fsBox * 1.2));
+        const st = stageNo.get(n.id);
+        if (st) { ctx.font = `500 ${Math.max(6, 8.5 * z)}px ${mono}`; ctx.fillStyle = tokens['--muted']; ctx.textAlign = 'right'; ctx.textBaseline = 'alphabetic'; ctx.fillText(`S${st}`, x + w - 5 * z, y + 10 * z); }
+      }
+    } else {
+      const r = Math.max(2.5, n.k.r * Math.min(1.5, Math.max(0.65, z)));
+      drawGlyph(ctx, n.kind, n.sx, n.sy, r, col, alpha);
+      if (n.kind === 'stage') { ctx.globalAlpha = alpha; ctx.fillStyle = tokens['--paper']; ctx.font = `600 ${Math.max(6, 9 * Math.min(1.5, Math.max(0.65, z)))}px ${mono}`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(n.id.split('-')[1], n.sx, n.sy + 0.5); }
+      if (isSel) { ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(n.sx, n.sy, r + 4, 0, Math.PI * 2); ctx.lineWidth = 2; ctx.strokeStyle = tokens['--accent']; ctx.stroke(); }
+      else if (isHi) { ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(n.sx, n.sy, r + 3, 0, Math.PI * 2); ctx.lineWidth = 1.5; ctx.strokeStyle = tokens['--ink']; ctx.stroke(); }
+      const always = n.kind === 'dr' || n.kind === 'stage';
+      const near = cone && (cone.up.has(n.id) || (cone.down.has(n.id) && cone.dist.get(n.id) <= 1) || cone.lat.has(n.id));
+      if (isSel || isHi || always || near || allLabels || z >= 1.7) labelPills.push({ n, r, rank: isSel || isHi ? 0 : always ? 1 : near ? 2 : 3, alpha });
+    }
+  }
+  // badges: open items and residual findings on the node they land in
+  for (const bd of badges) {
+    if (!visible(bd.t) || hiddenKinds.has(bd.n.kind) || (focus && cone && !inCone(bd.n) && !inCone(bd.t))) continue;
+    const p = toScreen(bd.x, bd.y);
+    const r = Math.max(2.5, 4 * Math.min(1.4, Math.max(0.7, z)));
+    let alpha = emphasis && !inCone(bd.n) && !inCone(bd.t) ? 0.18 : 0.95;
+    if (bd.n === selected || bd.n === hi) alpha = 1;
+    drawGlyph(ctx, bd.n.kind, p.sx, p.sy, r, tokens['--c-open'], alpha);
+    if (bd.n === selected) { ctx.globalAlpha = 1; ctx.beginPath(); ctx.arc(p.sx, p.sy, r + 3.5, 0, Math.PI * 2); ctx.lineWidth = 2; ctx.strokeStyle = tokens['--accent']; ctx.stroke(); }
+    bd.sx = p.sx; bd.sy = p.sy; bd.sr = r;
+  }
+  // labels: strongest first; a label that would sit on another is dropped rather than drawn over it
+  ctx.globalAlpha = 1; ctx.textBaseline = 'middle';
+  const placedBoxes = [];
+  for (const { n, r, rank, alpha } of labelPills.sort((a, b) => a.rank - b.rank)) {
+    const isDr = n.kind === 'dr', isStage = n.kind === 'stage';
+    const strong = rank === 0 || rank === 2 || allLabels;
+    const text = isDr ? (strong ? `${n.id.toUpperCase()} ${n.label}` : n.id.toUpperCase()) : isStage ? (strong ? n.label : n.label.split(':')[0]) : n.label;
+    const fs = isDr && !strong ? 10 : 11;
+    ctx.font = `${isDr || isStage ? '500' : '400'} ${fs}px ${isDr && !strong ? tokens['--mono'] : sans}`;
+    const tw = ctx.measureText(text).width;
+    const below = isDr || isStage;
+    const x = below ? n.sx - tw / 2 : n.sx + r + 6, y = below ? n.sy + r + 10 : n.sy;
+    const box = [x - 3, y - 8, tw + 6, 16];
+    if (rank > 0 && placedBoxes.some((b) => box[0] < b[0] + b[2] && box[0] + box[2] > b[0] && box[1] < b[1] + b[3] && box[1] + box[3] > b[1])) continue;
+    placedBoxes.push(box);
+    ctx.globalAlpha = Math.max(0.3, alpha);
+    ctx.fillStyle = tokens['--pill']; ctx.fillRect(...box);
+    ctx.fillStyle = rank === 0 ? tokens['--ink'] : tokens['--ink-soft']; ctx.textAlign = 'left'; ctx.fillText(text, x, y);
+  }
+  // hover pill for a component or a badge
+  if (hi && hi.kind === 'comp' && hi !== selected) {
+    const st = stageNo.get(hi.id);
+    const text = `${hi.label}${st ? `, built in stage ${st}` : ''}`;
+    ctx.font = `400 11px ${sans}`; const tw = ctx.measureText(text).width;
+    const x = Math.min(W - tw - 10, hi.sx - tw / 2), y = hi.sy - BOX.h * z / 2 - 14;
+    ctx.globalAlpha = 1; ctx.fillStyle = tokens['--pill']; ctx.fillRect(x - 4, y - 8, tw + 8, 16); ctx.fillStyle = tokens['--ink']; ctx.textAlign = 'left'; ctx.fillText(text, x, y);
+  }
+  if (hoveredBadge) {
+    const text = hoveredBadge.n.label;
+    ctx.font = `400 11px ${sans}`; const tw = ctx.measureText(text).width;
+    const x = Math.min(W - tw - 10, hoveredBadge.sx + 8), y = hoveredBadge.sy - 12;
+    ctx.globalAlpha = 1; ctx.fillStyle = tokens['--pill']; ctx.fillRect(x - 4, y - 8, tw + 8, 16); ctx.fillStyle = tokens['--ink']; ctx.textAlign = 'left'; ctx.fillText(text, x, y);
+  }
+  ctx.globalAlpha = 1;
+}
+let raf = null;
+function invalidate() { dirty = true; if (!raf) raf = requestAnimationFrame(() => { raf = null; if (dirty) { render(); dirty = false; } }); }
+
+// ----------------------------------------------------------------- selection and the inspector
+const inspector = document.getElementById('inspector'), ihead = document.getElementById('ihead'), ibody = document.getElementById('ibody'), trailEl = document.getElementById('trail');
+const btnFocus = document.getElementById('btn-focus'), hintEl = document.getElementById('hint');
+function el(tag, attrs, ...kids) { const e = document.createElement(tag); for (const [k, v] of Object.entries(attrs || {})) { if (k === 'class') e.className = v; else if (k.startsWith('on')) e.addEventListener(k.slice(2), v); else e.setAttribute(k, v); } for (const kd of kids) if (kd != null) e.append(kd); return e; }
+function glyph(kind) { const cv = el('canvas', { class: 'glyph', width: 16, height: 16, 'aria-hidden': 'true' }); legendGlyph(cv, kind); return cv; }
+function select(n, { push: pushTrail = true, flyTo = false } = {}) {
+  selected = n;
+  cone = n ? computeCone(n) : null;
+  btnFocus.disabled = !n;
+  if (!n) { focus = false; btnFocus.setAttribute('aria-pressed', 'false'); }
+  if (n && pushTrail && trail[trail.length - 1] !== n.id) { trail.push(n.id); if (trail.length > 10) trail.shift(); }
+  try { history.replaceState(null, '', n ? `#${n.id}` : location.pathname + location.search); } catch (e) { /* file: pages may refuse */ }
+  renderInspector();
+  if (n && flyTo) flyToNode(n);
+  invalidate();
+}
+function flyToNode(n) {
+  const p = toScreen(n.x, n.y);
+  const margin = W > 900 ? 380 : 40;
+  if (p.sx < 40 || p.sx > W - margin || p.sy < 60 || p.sy > H - 60 || cam.z < 0.55) { cam.x = n.x + (W > 900 ? 170 / cam.z : 0); cam.y = n.y; if (cam.z < 0.55) cam.z = 0.9; userMoved = true; }
+}
+// The groups a node's edges fall into, named for an engineer rather than by edge kind.
+const TITLES = {
+  'comp|depends-on|inv|out':   ['Must keep', '--up'],
+  'comp|depends-on|vocab|out': ['Reads', '--up'],
+  'comp|depends-on|flag|out':  ['Reads', '--up'],
+  'comp|depends-on|comp|out':  ['Depends on', '--up'],
+  'comp|depends-on|dr|out':    ['Rests on the record', '--up'],
+  'comp|depends-on|stage|out': ['After the stage', '--up'],
+  'comp|depends-on|comp|in':   ['Depended on by', '--down'],
+  'comp|depends-on|stage|in':  ['Built in', '--down'],
+  'comp|depends-on|flag|in':   ['Read by the flag row', '--down'],
+  'stage|depends-on|comp|out': ['Builds', '--up'],
+  'stage|depends-on|stage|out': ['After', '--up'],
+  'stage|depends-on|stage|in': ['Before', '--down'],
+  'inv|depends-on|*|in':       ['Kept by', '--down'],
+  'vocab|depends-on|*|in':     ['Read by', '--down'],
+  'flag|depends-on|*|in':      ['Read by', '--down'],
+  'vocab|depends-on|*|out':    ['Depends on', '--up'],
+  'flag|depends-on|*|out':     ['Depends on', '--up'],
+  '*|justifies|*|in':          ['Justified by', '--up'],
+  '*|justifies|*|out':         ['Justifies', '--down'],
+  '*|closes-off|*|in':         ['Closed off by', '--up'],
+  '*|closes-off|*|out':        ['Closes off', '--down'],
+  '*|lands-in|*|in':           ['Open items that land here', '--lat'],
+  '*|lands-in|*|out':          ['Lands in', '--lat'],
+  '*|conflicts-with|*|in':     ['Residual findings that conflict', '--lat'],
+  '*|conflicts-with|*|out':    ['Conflicts with', '--lat'],
+};
+const ORDER = ['Must keep', 'Reads', 'Depends on', 'Rests on the record', 'After the stage', 'After', 'Builds', 'Justified by', 'Closed off by', 'Kept by', 'Read by', 'Read by the flag row', 'Depended on by', 'Built in', 'Before', 'Justifies', 'Closes off', 'Open items that land here', 'Residual findings that conflict', 'Lands in', 'Conflicts with'];
+function titleFor(n, ed, dir) {
+  const other = dir === 'out' ? ed.b : ed.a;
+  for (const key of [`${n.kind}|${ed.kind}|${other.kind}|${dir}`, `${n.kind}|${ed.kind}|*|${dir}`, `*|${ed.kind}|${other.kind}|${dir}`, `*|${ed.kind}|*|${dir}`]) if (TITLES[key]) return TITLES[key];
+  return [dir === 'out' ? 'Upstream' : 'Downstream', dir === 'out' ? '--up' : '--down'];
+}
+function rowFor(n, via) {
+  return el('button', { class: 'row', type: 'button', onclick: () => select(n, { flyTo: true }), onmouseenter: () => { hoverRow = n; invalidate(); }, onmouseleave: () => { hoverRow = null; invalidate(); } },
+    glyph(n.kind), el('span', { class: 'lbl' }, n.kind === 'dr' ? `${n.id.toUpperCase()} ${n.label}` : n.label), el('span', { class: 'via' }, via));
+}
+function renderInspector() {
+  ihead.replaceChildren(); ibody.replaceChildren(); trailEl.replaceChildren();
+  if (!selected) { inspector.hidden = true; return; }
+  inspector.hidden = false;
+  const n = selected;
+  const facets = { ...n.facets };
+  const st = stageNo.get(n.id);
+  if (n.kind === 'comp' && st) facets.stage = String(st);
+  ihead.append(
+    el('div', null,
+      el('span', { class: 'kind' }, glyph(n.kind), n.k.name),
+      el('h2', null, n.kind === 'dr' ? `${n.id.toUpperCase()} ${n.label}` : n.label),
+      el('span', { class: 'id' }, n.id),
+      Object.keys(facets).length ? el('div', { class: 'facets' }, ...Object.entries(facets).map(([k, v]) => el('span', null, `${k}: ${v}`))) : null),
+    el('button', { class: 'close', type: 'button', 'aria-label': 'Clear the selection', onclick: () => select(null) }, '×'));
+  for (const id of trail) trailEl.append(el('button', { type: 'button', class: id === n.id ? 'here' : '', onclick: () => select(byId.get(id), { push: false, flyTo: true }) }, byId.get(id).kind === 'dr' ? id.toUpperCase() : (byId.get(id).kind === 'comp' ? shortLabel(byId.get(id)) : byId.get(id).label).slice(0, 26)));
+  const reopen = [...cone.up].map((id) => byId.get(id)).filter((m) => m.kind === 'dr').sort((a, b) => cone.dist.get(a.id) - cone.dist.get(b.id));
+  if (n.kind === 'dr' || reopen.length) {
+    const items = [n.kind === 'dr' ? n : null, ...reopen].filter(Boolean).slice(0, 8);
+    ibody.append(el('div', { class: 'reopens' }, el('b', null, 'A change here reopens'), el('ul', null, ...items.map((m) => el('li', null, el('span', { class: 'id' }, m.id.toUpperCase()), ' ', m.label))), reopen.length > 7 ? el('div', { class: 'id' }, `and ${reopen.length - 7} more upstream`) : null));
+  }
+  const groups = new Map();
+  for (const ed of edges) {
+    let dir = null;
+    if (ed.a === n) dir = 'out'; else if (ed.b === n) dir = 'in'; else continue;
+    const other = dir === 'out' ? ed.b : ed.a;
+    if (hiddenKinds.has(other.kind)) continue;
+    const [title, tok] = titleFor(n, ed, dir);
+    if (!groups.has(title)) groups.set(title, { tok, rows: [] });
+    groups.get(title).rows.push(rowFor(other, other.kind === 'comp' && stageNo.get(other.id) ? `S${stageNo.get(other.id)}` : other.kind === 'stage' ? '' : ed.kind));
+  }
+  const titles = [...groups.keys()].sort((a, b) => (ORDER.indexOf(a) + 1 || 99) - (ORDER.indexOf(b) + 1 || 99));
+  for (const t of titles) { const g = groups.get(t); ibody.append(el('div', { class: 'grp' }, el('h3', null, el('span', { class: 'dir', style: `background:${tokens[g.tok] || tokens['--ink-soft']}` }), t, el('span', { class: 'n' }, String(g.rows.length))), el('div', { class: 'rows' }, ...g.rows))); }
+  if (!titles.length) ibody.append(el('p', { class: 'empty' }, 'No edge touches this node.'));
+  const far = [...cone.down].map((id) => byId.get(id)).filter((m) => cone.dist.get(m.id) === 2);
+  if (far.length) ibody.append(el('div', { class: 'grp' }, el('h3', null, el('span', { class: 'dir', style: `background:${tokens['--down']}` }), 'Two steps downstream', el('span', { class: 'n' }, String(far.length))), el('div', { class: 'rows' }, ...far.slice(0, 40).map((m) => rowFor(m, 'via ' + m.kind)))));
+  if (n.note) ibody.append(el('p', { class: 'note' }, n.note));
+  if (n.source) ibody.append(el('p', { class: 'note' }, n.source));
+  if (n.loci.length) ibody.append(el('div', { class: 'grp' }, el('h3', null, 'Where the pages state it'), el('ul', { class: 'loci' }, ...n.loci.map((l) => el('li', null, el('span', { class: 'role' }, l.role), el('span', null, l.href ? el('a', { href: l.href }, l.text || l.at) : (l.text || l.at), el('span', { class: 'at' }, l.at)))))));
+}
+
+// ----------------------------------------------------------------- chips, legend, search, buttons
+const chips = document.getElementById('kind-chips');
+readTokens();
+for (const [g, def] of Object.entries(GROUP)) {
+  const b = el('button', { class: 'chip', type: 'button', 'aria-pressed': 'true', title: def.name, onclick: () => {
+    const on = b.getAttribute('aria-pressed') === 'true';
+    b.setAttribute('aria-pressed', on ? 'false' : 'true');
+    for (const k of def.kinds) on ? hiddenKinds.add(k) : hiddenKinds.delete(k);
+    if (selected && hiddenKinds.has(selected.kind)) select(null); else if (selected) select(selected, { push: false });
+    invalidate();
+  } }, el('span', { class: 'sw', style: `background:${tokens[def.tok]}` }), def.kinds.map((k) => KIND[k].name).join(', '));
+  chips.append(b);
+}
+const legend = document.getElementById('legend');
+const btnFatal = {};
+function buildLegend() {
+  readTokens();
+  legend.replaceChildren(el('h2', null, 'Nodes'));
+  const rows = el('div', { class: 'lrows' });
+  for (const [g, def] of Object.entries(GROUP)) for (const k of def.kinds) rows.append(el('div', { class: 'lrow' }, glyph(k), el('span', null, KIND[k].name, ' ', el('span', { class: 'k' }, `(${nodes.filter((n) => n.kind === k).length})`))));
+  legend.append(rows, el('h2', null, 'Edges (click to hide)'));
+  const erows = el('div', { class: 'lrows' });
+  for (const [kind, def] of Object.entries(EDGE)) {
+    const cv = el('canvas', { class: 'glyph', width: 16, height: 16, 'aria-hidden': 'true' }); const c = cv.getContext('2d'); cv.width = 16 * dpr; cv.height = 16 * dpr; c.scale(dpr, dpr);
+    c.strokeStyle = tokens['--ink']; c.fillStyle = tokens['--ink']; c.lineWidth = def.w + 0.4; c.setLineDash(def.dash); c.beginPath(); c.moveTo(1, 8); c.lineTo(15, 8); c.stroke();
+    if (def.arrow) { c.setLineDash([]); c.beginPath(); c.moveTo(15, 8); c.lineTo(10, 5.5); c.lineTo(10, 10.5); c.closePath(); c.fill(); }
+    const b = el('button', { type: 'button', 'aria-pressed': hiddenEdges.has(kind) ? 'false' : 'true', onclick: () => { hiddenEdges.has(kind) ? hiddenEdges.delete(kind) : hiddenEdges.add(kind); b.setAttribute('aria-pressed', hiddenEdges.has(kind) ? 'false' : 'true'); invalidate(); } }, cv, el('span', null, def.name));
+    erows.append(el('div', { class: 'lrow' }, b));
+  }
+  legend.append(erows, el('h2', null, 'Which fatal failure a node guards'));
+  const fat = el('div', { class: 'fatals' });
+  for (const [f, name] of [['1', 'Fatal one: a person sees a value'], ['2', 'Fatal two: an act the user did not want']]) {
+    const b = el('button', { type: 'button', 'aria-pressed': String(fatalFilter === f), onclick: () => { fatalFilter = fatalFilter === f ? null : f; for (const [k, bb] of Object.entries(btnFatal)) bb.setAttribute('aria-pressed', String(fatalFilter === k)); invalidate(); } }, name);
+    btnFatal[f] = b; fat.append(b);
+  }
+  legend.append(fat, el('p', { class: 'alt-note' }, 'At rest only the wiring between components is drawn; hover or select for the rest. Selected: upstream in the accent, downstream in ink, sideways in magenta. The tag S4 on a box is the stage that builds it.'));
+}
+buildLegend();
+const q = document.getElementById('q'), results = document.getElementById('results');
+let resultIds = [], active = 0;
+const KIND_RANK = ['comp', 'inv', 'vocab', 'flag', 'dr', 'stage', 'open', 'res'];
+function search() {
+  const s = q.value.trim().toLowerCase();
+  results.replaceChildren(); resultIds = []; active = 0;
+  if (!s) { results.hidden = true; return; }
+  const hits = nodes.filter((n) => !hiddenKinds.has(n.kind) && (n.label.toLowerCase().includes(s) || n.id.includes(s))).sort((a, b) => KIND_RANK.indexOf(a.kind) - KIND_RANK.indexOf(b.kind) || b.deg - a.deg).slice(0, 14);
+  for (const n of hits) { resultIds.push(n.id); results.append(el('button', { type: 'button', onclick: () => { select(n, { flyTo: true }); results.hidden = true; q.value = ''; } }, glyph(n.kind), el('span', null, n.kind === 'dr' ? `${n.id.toUpperCase()} ${n.label}` : n.label), el('span', { class: 'id' }, n.id))); }
+  if (!hits.length) results.append(el('div', { class: 'empty' }, 'Nothing matches.'));
+  results.hidden = false;
+  markActive();
+}
+function markActive() { [...results.querySelectorAll('button')].forEach((b, i) => b.classList.toggle('active', i === active)); }
+q.addEventListener('input', search);
+q.addEventListener('keydown', (e) => {
+  if (e.key === 'ArrowDown') { active = Math.min(resultIds.length - 1, active + 1); markActive(); e.preventDefault(); }
+  else if (e.key === 'ArrowUp') { active = Math.max(0, active - 1); markActive(); e.preventDefault(); }
+  else if (e.key === 'Enter' && resultIds[active]) { select(byId.get(resultIds[active]), { flyTo: true }); results.hidden = true; q.value = ''; }
+  else if (e.key === 'Escape') { results.hidden = true; q.blur(); }
+});
+document.addEventListener('click', (e) => { if (!e.target.closest('.search')) results.hidden = true; });
+const btnLabels = document.getElementById('btn-labels'), btnEdges = document.getElementById('btn-edges');
+btnFocus.addEventListener('click', () => { focus = !focus; btnFocus.setAttribute('aria-pressed', String(focus)); invalidate(); });
+btnLabels.addEventListener('click', () => { allLabels = !allLabels; btnLabels.setAttribute('aria-pressed', String(allLabels)); invalidate(); });
+btnEdges.addEventListener('click', () => { allEdges = !allEdges; btnEdges.setAttribute('aria-pressed', String(allEdges)); invalidate(); });
+document.getElementById('btn-fit').addEventListener('click', () => { userMoved = false; fit(); });
+const btnLegend = document.getElementById('btn-legend');
+btnLegend.addEventListener('click', () => { const open = legend.classList.toggle('open'); btnLegend.setAttribute('aria-pressed', String(open)); });
+
+// ----------------------------------------------------------------- pointer, wheel, keys
+let drag = null, hoveredBadge = null; const pointers = new Map(); let pinch = null;
+function hit(x, y) {
+  for (const bd of badges) if (bd.sr && visible(bd.t) && !hiddenKinds.has(bd.n.kind) && Math.hypot(bd.sx - x, bd.sy - y) < bd.sr + 4) return { node: bd.n, badge: bd };
+  let best = null, bd = 1e9;
+  for (const n of nodes) {
+    if (!visible(n) || n.kind === 'open' || n.kind === 'res') continue;
+    if (n.kind === 'comp') { if (Math.abs(n.sx - x) <= BOX.w * cam.z / 2 && Math.abs(n.sy - y) <= BOX.h * cam.z / 2) return { node: n, badge: null }; continue; }
+    const r = Math.max(2.5, n.k.r * Math.min(1.5, Math.max(0.65, cam.z))) + 5;
+    const d = Math.hypot(n.sx - x, n.sy - y);
+    if (d < r && d < bd) { best = n; bd = d; }
+  }
+  return best ? { node: best, badge: null } : null;
+}
+const pos = (e) => { const r = canvas.getBoundingClientRect(); return { x: e.clientX - r.left, y: e.clientY - r.top }; };
+canvas.addEventListener('pointerdown', (e) => {
+  canvas.setPointerCapture(e.pointerId);
+  pointers.set(e.pointerId, pos(e));
+  if (pointers.size === 2) { const [a, b] = [...pointers.values()]; pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), z: cam.z }; drag = null; return; }
+  const p = pos(e);
+  drag = { x: p.x, y: p.y, moved: false };
+  hintEl.hidden = true;
+  canvas.classList.add('grabbing');
+});
+canvas.addEventListener('pointermove', (e) => {
+  const p = pos(e);
+  if (pointers.has(e.pointerId)) pointers.set(e.pointerId, p);
+  if (pinch && pointers.size === 2) { const [a, b] = [...pointers.values()]; const d = Math.hypot(a.x - b.x, a.y - b.y); cam.z = Math.max(0.2, Math.min(3, pinch.z * d / Math.max(1, pinch.d))); userMoved = true; invalidate(); return; }
+  if (drag) {
+    const dx = p.x - drag.x, dy = p.y - drag.y;
+    if (Math.abs(dx) + Math.abs(dy) > 3) drag.moved = true;
+    cam.x -= dx / cam.z; cam.y -= dy / cam.z;
+    if (drag.moved) userMoved = true;
+    drag.x = p.x; drag.y = p.y; invalidate(); return;
+  }
+  const h = hit(p.x, p.y);
+  const node = h ? h.node : null, badge = h ? h.badge : null;
+  if (node !== hovered || badge !== hoveredBadge) { hovered = node; hoveredBadge = badge; canvas.classList.toggle('pointing', !!node); canvas.title = node ? `${node.label} (${node.k.name})` : ''; invalidate(); }
+});
+function endPointer(e) {
+  pointers.delete(e.pointerId);
+  if (pointers.size < 2) pinch = null;
+  canvas.classList.remove('grabbing');
+  if (!drag) return;
+  const p = pos(e);
+  if (!drag.moved && e.type === 'pointerup') { const h = hit(p.x, p.y); select(h ? h.node : null); }
+  drag = null;
+}
+canvas.addEventListener('pointerup', endPointer);
+canvas.addEventListener('pointercancel', endPointer);
+canvas.addEventListener('dblclick', (e) => { const p = pos(e); const h = hit(p.x, p.y); if (h) { const w = toWorld(p.x, p.y); cam.z = Math.min(3, Math.max(cam.z, 1.5)); cam.x = h.node.x; cam.y = h.node.y; userMoved = true; select(h.node); } });
+canvas.addEventListener('contextmenu', (e) => e.preventDefault());
+canvas.addEventListener('wheel', (e) => {
+  e.preventDefault(); userMoved = true; hintEl.hidden = true;
+  const p = pos(e); const before = toWorld(p.x, p.y);
+  cam.z = Math.max(0.2, Math.min(3, cam.z * Math.exp(-e.deltaY * 0.0012)));
+  const after = toWorld(p.x, p.y);
+  cam.x += before.x - after.x; cam.y += before.y - after.y;
+  invalidate();
+}, { passive: false });
+canvas.addEventListener('keydown', (e) => {
+  const k = e.key, step = 60 / cam.z;
+  if (k === 'ArrowLeft') cam.x -= step; else if (k === 'ArrowRight') cam.x += step; else if (k === 'ArrowUp') cam.y -= step; else if (k === 'ArrowDown') cam.y += step;
+  else if (k === '+' || k === '=') cam.z = Math.min(3, cam.z * 1.15); else if (k === '-') cam.z = Math.max(0.2, cam.z / 1.15);
+  else if (k === '0') { userMoved = false; fit(); return; }
+  else if (k === 'l' || k === 'L') { btnLabels.click(); return; } else if (k === 'e' || k === 'E') { btnEdges.click(); return; } else if ((k === 'f' || k === 'F') && !btnFocus.disabled) { btnFocus.click(); return; }
+  else if (k === 'Escape') { select(null); return; } else return;
+  userMoved = true;
+  e.preventDefault(); invalidate();
+});
+window.addEventListener('resize', () => { resize(); if (!userMoved) fit(); else invalidate(); });
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => { buildLegend(); renderInspector(); invalidate(); });
+new MutationObserver(() => { buildLegend(); renderInspector(); invalidate(); }).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+document.fonts && document.fonts.ready.then(() => invalidate());
+
+// ----------------------------------------------------------------- start: fit, then open the node the address names
+resize();
+fit();
+const wanted = decodeURIComponent(location.hash.slice(1));
+if (wanted && byId.has(wanted)) select(byId.get(wanted), { flyTo: true });
+window.addEventListener('hashchange', () => { const id = decodeURIComponent(location.hash.slice(1)); if (id && byId.has(id) && byId.get(id) !== selected) select(byId.get(id), { flyTo: true }); });
+})();
+</script>

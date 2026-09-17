@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "aifred:delegation",
+  "title": "Delegation record",
+  "description": "A dependant's delegation: the jurisdiction her aliases are flagged under, the aliases it covers, its validity, and revocation from her device at once. Its end voids the context and token of every step that names her aliases and re-classifies them; it cancels nothing and is not an expire-authority.",
+  "x-locus": "01-product/index.html#journeys",
+  "type": "object",
+  "properties": {
+    "delegation_id": { "$ref": "aifred:common#/$defs/delegation-id" },
+    "delegator": { "$ref": "aifred:common#/$defs/person-ref" },
+    "user_ref": { "$ref": "aifred:common#/$defs/user-ref" },
+    "jurisdiction": { "$ref": "aifred:common#/$defs/market" },
+    "aliases": { "type": "array", "items": { "$ref": "aifred:common#/$defs/alias" }, "minItems": 1 },
+    "validity": { "type": "object", "properties": { "from": { "$ref": "aifred:common#/$defs/timestamp" }, "to": { "$ref": "aifred:common#/$defs/timestamp" } }, "required": ["from", "to"], "additionalProperties": false },
+    "revoked_at": { "anyOf": [{ "$ref": "aifred:common#/$defs/timestamp" }, { "type": "null" }] },
+    "device": { "$ref": "aifred:common#/$defs/device-id" }
+  },
+  "required": ["delegation_id", "delegator", "user_ref", "jurisdiction", "aliases", "validity", "revoked_at", "device"],
+  "additionalProperties": false
+}

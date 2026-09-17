@@ -1,0 +1,36 @@
+{
+  "id": "vocab-routes",
+  "slug": "routes",
+  "label": "The four classifier routes",
+  "source": "tools/depmap/graph.json",
+  "canonical": "02-architecture/index.html#classifier",
+  "check": "members",
+  "members": [
+    {
+      "id": "execute",
+      "word": "execute",
+      "code": "execute"
+    },
+    {
+      "id": "extension-request",
+      "word": "extension-request",
+      "code": "extension-request",
+      "alt": [
+        "extension request"
+      ]
+    },
+    {
+      "id": "dual-control",
+      "word": "dual-control",
+      "code": "dual-control",
+      "alt": [
+        "dual control"
+      ]
+    },
+    {
+      "id": "bounce",
+      "word": "bounce",
+      "code": "bounce"
+    }
+  ]
+}

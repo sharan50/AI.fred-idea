@@ -1,0 +1,45 @@
+{
+  "id": "vocab-committable-acts",
+  "slug": "committable-acts",
+  "label": "The seven committable acts",
+  "source": "tools/depmap/graph.json",
+  "canonical": "01-product/index.html#envelope-setup",
+  "check": "members",
+  "members": [
+    {
+      "id": "book",
+      "word": "book",
+      "code": "book"
+    },
+    {
+      "id": "cancel",
+      "word": "cancel",
+      "code": "cancel"
+    },
+    {
+      "id": "submit-application",
+      "word": "submit an application",
+      "code": "submit-application"
+    },
+    {
+      "id": "accept-terms",
+      "word": "accept terms",
+      "code": "accept-terms"
+    },
+    {
+      "id": "pay-under-cap",
+      "word": "make a payment under the cap",
+      "code": "pay-under-cap"
+    },
+    {
+      "id": "file-document",
+      "word": "file a document",
+      "code": "file-document"
+    },
+    {
+      "id": "schedule",
+      "word": "schedule",
+      "code": "schedule"
+    }
+  ]
+}
