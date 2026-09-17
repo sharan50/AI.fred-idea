@@ -5,7 +5,7 @@
     "index.html": {
       "title": "AI.fred, AI.fred",
       "kind": "ledger",
-      "status": "decision",
+      "status": "assumption",
       "anchors": {
         "venture": {
           "kind": "h2",
@@ -33,19 +33,19 @@
         },
         "unknown": {
           "kind": "h2",
-          "line": 120,
+          "line": 147,
           "no": "5",
           "text": "What is not known"
         },
         "doors": {
           "kind": "h2",
-          "line": 133,
+          "line": 160,
           "no": "6",
           "text": "Doors"
         },
         "contents": {
           "kind": "h2",
-          "line": 143,
+          "line": 170,
           "no": "7",
           "text": "Contents"
         }
@@ -189,279 +189,331 @@
           "to": "decisions/dr-019-the-endgame.html"
         },
         {
+          "line": 118,
+          "to": "05-business/index.html#the-ratio"
+        },
+        {
           "line": 122,
-          "to": "07-open/index.html#open-07-01"
-        },
-        {
-          "line": 123,
-          "to": "07-open/index.html#open-07-02"
-        },
-        {
-          "line": 124,
-          "to": "07-open/index.html#open-07-04"
-        },
-        {
-          "line": 125,
-          "to": "07-open/index.html#open-07-07"
+          "to": "05-business/index.html#task-model"
         },
         {
           "line": 126,
-          "to": "07-open/index.html#open-07-08"
+          "to": "05-business/index.html#trajectory"
         },
         {
           "line": 127,
-          "to": "07-open/index.html#open-07-09"
+          "to": "05-business/index.html#fig-revenue-cost"
         },
         {
-          "line": 128,
-          "to": "07-open/index.html#open-07-22"
+          "line": 127,
+          "to": "05-business/index.html#fig-labour-share"
         },
         {
-          "line": 129,
-          "to": "07-open/index.html#open-07-44"
+          "line": 127,
+          "to": "05-business/index.html#fig-cumulative-cash"
+        },
+        {
+          "line": 130,
+          "to": "05-business/index.html#geography"
+        },
+        {
+          "line": 134,
+          "to": "06-roadmap/index.html#build-buy"
         },
         {
           "line": 135,
-          "to": "roles/ceo/index.html"
-        },
-        {
-          "line": 136,
-          "to": "roles/cto/index.html"
-        },
-        {
-          "line": 137,
-          "to": "roles/coo/index.html"
+          "to": "06-roadmap/index.html#tab-build-buy"
         },
         {
           "line": 138,
-          "to": "roles/cfo/index.html"
+          "to": "05-business/measurement-protocol.html#what-it-measures"
         },
         {
-          "line": 139,
-          "to": "roles/counsel/index.html"
+          "line": 142,
+          "to": "01-product/index.html#verdicts"
         },
         {
-          "line": 145,
-          "to": "index.html"
-        },
-        {
-          "line": 146,
-          "to": "contents/index.html"
-        },
-        {
-          "line": 147,
-          "to": "00-thesis/index.html"
-        },
-        {
-          "line": 148,
-          "to": "01-product/index.html"
-        },
-        {
-          "line": 149,
-          "to": "02-architecture/index.html"
-        },
-        {
-          "line": 150,
-          "to": "02-architecture/worker-console.html"
-        },
-        {
-          "line": 151,
-          "to": "03-trust-and-data/index.html"
-        },
-        {
-          "line": 152,
-          "to": "03-trust-and-data/trust-story.html"
-        },
-        {
-          "line": 153,
-          "to": "04-operations/index.html"
-        },
-        {
-          "line": 154,
-          "to": "05-business/index.html"
-        },
-        {
-          "line": 155,
-          "to": "05-business/measurement-protocol.html"
-        },
-        {
-          "line": 156,
-          "to": "05-business/model.html"
-        },
-        {
-          "line": 157,
-          "to": "06-roadmap/index.html"
-        },
-        {
-          "line": 158,
-          "to": "07-open/index.html"
-        },
-        {
-          "line": 159,
-          "to": "08-review/index.html"
-        },
-        {
-          "line": 160,
-          "to": "decisions/dr-001-channel-gateway.html"
-        },
-        {
-          "line": 161,
+          "line": 143,
           "to": "decisions/dr-002-verdict-two-loops.html"
         },
         {
+          "line": 149,
+          "to": "07-open/index.html#open-07-01"
+        },
+        {
+          "line": 150,
+          "to": "07-open/index.html#open-07-02"
+        },
+        {
+          "line": 151,
+          "to": "07-open/index.html#open-07-04"
+        },
+        {
+          "line": 152,
+          "to": "07-open/index.html#open-07-07"
+        },
+        {
+          "line": 153,
+          "to": "07-open/index.html#open-07-08"
+        },
+        {
+          "line": 154,
+          "to": "07-open/index.html#open-07-09"
+        },
+        {
+          "line": 155,
+          "to": "07-open/index.html#open-07-22"
+        },
+        {
+          "line": 156,
+          "to": "07-open/index.html#open-07-44"
+        },
+        {
           "line": 162,
-          "to": "decisions/dr-003-full-delegation-ceiling.html"
-        },
-        {
-          "line": 163,
-          "to": "decisions/dr-004-authority-envelope.html"
-        },
-        {
-          "line": 164,
-          "to": "decisions/dr-005-state-machine-lapsed.html"
-        },
-        {
-          "line": 165,
-          "to": "decisions/dr-006-office-mandatory.html"
-        },
-        {
-          "line": 166,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 167,
-          "to": "decisions/dr-008-vault-bought.html"
-        },
-        {
-          "line": 168,
-          "to": "decisions/dr-009-evidence-redaction.html"
-        },
-        {
-          "line": 169,
-          "to": "decisions/dr-010-html-no-build-step.html"
-        },
-        {
-          "line": 170,
-          "to": "decisions/dr-011-token-and-component-system.html"
-        },
-        {
-          "line": 171,
-          "to": "decisions/dr-012-design-plan.html"
-        },
-        {
-          "line": 172,
-          "to": "decisions/dr-013-verification-standard.html"
-        },
-        {
-          "line": 173,
-          "to": "decisions/dr-014-substitution-framing.html"
-        },
-        {
-          "line": 174,
-          "to": "decisions/dr-015-economics-deferred.html"
-        },
-        {
-          "line": 175,
-          "to": "decisions/dr-016-context-store.html"
-        },
-        {
-          "line": 176,
-          "to": "decisions/dr-017-dependency-map.html"
-        },
-        {
-          "line": 177,
-          "to": "decisions/dr-018-mail-from-the-users-address.html"
-        },
-        {
-          "line": 178,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 179,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html"
-        },
-        {
-          "line": 180,
-          "to": "decisions/dr-021-no-value-spoken.html"
-        },
-        {
-          "line": 181,
-          "to": "decisions/dr-022-structured-task-cards.html"
-        },
-        {
-          "line": 182,
-          "to": "decisions/dr-023-geography-sequencing.html"
-        },
-        {
-          "line": 183,
-          "to": "decisions/dr-024-metered-pricing.html"
-        },
-        {
-          "line": 184,
-          "to": "decisions/dr-025-growth-two-mechanisms.html"
-        },
-        {
-          "line": 185,
-          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
-        },
-        {
-          "line": 186,
-          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
-        },
-        {
-          "line": 187,
-          "to": "decisions/dr-028-fragments-and-build.html"
-        },
-        {
-          "line": 188,
-          "to": "decisions/index.html"
-        },
-        {
-          "line": 189,
-          "to": "depmap/index.html"
-        },
-        {
-          "line": 190,
-          "to": "depmap/architecture.html"
-        },
-        {
-          "line": 191,
-          "to": "roles/index.html"
-        },
-        {
-          "line": 192,
           "to": "roles/ceo/index.html"
         },
         {
-          "line": 193,
+          "line": 163,
           "to": "roles/cto/index.html"
         },
         {
-          "line": 194,
+          "line": 164,
           "to": "roles/coo/index.html"
         },
         {
-          "line": 195,
+          "line": 165,
           "to": "roles/cfo/index.html"
         },
         {
-          "line": 196,
+          "line": 166,
           "to": "roles/counsel/index.html"
         },
         {
-          "line": 197,
-          "to": "record/index.html"
+          "line": 172,
+          "to": "index.html"
         },
         {
-          "line": 206,
+          "line": 173,
+          "to": "contents/index.html"
+        },
+        {
+          "line": 174,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 207,
+          "line": 175,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 176,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 177,
+          "to": "02-architecture/worker-console.html"
+        },
+        {
+          "line": 178,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 179,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
+          "line": 180,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 181,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 182,
+          "to": "05-business/measurement-protocol.html"
+        },
+        {
+          "line": 183,
+          "to": "05-business/model.html"
+        },
+        {
+          "line": 184,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 185,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 186,
+          "to": "08-review/index.html"
+        },
+        {
+          "line": 187,
+          "to": "decisions/dr-001-channel-gateway.html"
+        },
+        {
+          "line": 188,
+          "to": "decisions/dr-002-verdict-two-loops.html"
+        },
+        {
+          "line": 189,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 190,
+          "to": "decisions/dr-004-authority-envelope.html"
+        },
+        {
+          "line": 191,
+          "to": "decisions/dr-005-state-machine-lapsed.html"
+        },
+        {
+          "line": 192,
+          "to": "decisions/dr-006-office-mandatory.html"
+        },
+        {
+          "line": 193,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 194,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 195,
+          "to": "decisions/dr-009-evidence-redaction.html"
+        },
+        {
+          "line": 196,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 197,
+          "to": "decisions/dr-011-token-and-component-system.html"
+        },
+        {
+          "line": 198,
+          "to": "decisions/dr-012-design-plan.html"
+        },
+        {
+          "line": 199,
+          "to": "decisions/dr-013-verification-standard.html"
+        },
+        {
+          "line": 200,
+          "to": "decisions/dr-014-substitution-framing.html"
+        },
+        {
+          "line": 201,
+          "to": "decisions/dr-015-economics-deferred.html"
+        },
+        {
+          "line": 202,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 203,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 204,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 205,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 206,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html"
+        },
+        {
+          "line": 207,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
           "line": 208,
+          "to": "decisions/dr-022-structured-task-cards.html"
+        },
+        {
+          "line": 209,
+          "to": "decisions/dr-023-geography-sequencing.html"
+        },
+        {
+          "line": 210,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 211,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 212,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
+        },
+        {
+          "line": 213,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 214,
+          "to": "decisions/dr-028-fragments-and-build.html"
+        },
+        {
+          "line": 215,
+          "to": "decisions/dr-029-owner-views.html"
+        },
+        {
+          "line": 216,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 217,
+          "to": "depmap/index.html"
+        },
+        {
+          "line": 218,
+          "to": "depmap/architecture.html"
+        },
+        {
+          "line": 219,
+          "to": "roles/index.html"
+        },
+        {
+          "line": 220,
+          "to": "roles/ceo/index.html"
+        },
+        {
+          "line": 221,
+          "to": "roles/cto/index.html"
+        },
+        {
+          "line": 222,
+          "to": "roles/coo/index.html"
+        },
+        {
+          "line": 223,
+          "to": "roles/cfo/index.html"
+        },
+        {
+          "line": 224,
+          "to": "roles/counsel/index.html"
+        },
+        {
+          "line": 225,
+          "to": "record/index.html"
+        },
+        {
+          "line": 234,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 235,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 236,
           "to": "07-open/index.html"
         }
       ]
@@ -17790,6 +17842,177 @@
         }
       ]
     },
+    "decisions/dr-029-owner-views.html": {
+      "title": "DR-029 A generated front door and one generated page per owner, AI.fred",
+      "kind": "record",
+      "status": "decision",
+      "anchors": {
+        "decision": {
+          "kind": "h2",
+          "line": 74,
+          "no": "1",
+          "text": "Decision"
+        },
+        "why-views": {
+          "kind": "h3",
+          "line": 76,
+          "no": "1.1",
+          "text": "Why views, and not copies",
+          "under": "decision"
+        },
+        "what-the-build-writes": {
+          "kind": "h3",
+          "line": 78,
+          "no": "1.2",
+          "text": "What the build writes",
+          "under": "decision"
+        },
+        "what-a-view-may-not-do": {
+          "kind": "h3",
+          "line": 80,
+          "no": "1.3",
+          "text": "What a view may not do",
+          "under": "decision"
+        },
+        "rejected": {
+          "kind": "h2",
+          "line": 84,
+          "no": "2",
+          "text": "Rejected alternative(s) and their cost"
+        },
+        "closes-off": {
+          "kind": "h2",
+          "line": 95,
+          "no": "3",
+          "text": "What this closes off"
+        },
+        "record-status": {
+          "kind": "h2",
+          "line": 106,
+          "no": "4",
+          "text": "Status"
+        }
+      },
+      "tables": {},
+      "links": [
+        {
+          "line": 18,
+          "to": "decisions/dr-029-owner-views.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "decisions/dr-029-owner-views.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "roles/ceo/index.html"
+        },
+        {
+          "line": 44,
+          "to": "roles/cto/index.html"
+        },
+        {
+          "line": 45,
+          "to": "roles/coo/index.html"
+        },
+        {
+          "line": 46,
+          "to": "roles/cfo/index.html"
+        },
+        {
+          "line": 47,
+          "to": "roles/counsel/index.html"
+        },
+        {
+          "line": 48,
+          "to": "contents/index.html"
+        },
+        {
+          "line": 49,
+          "to": "record/index.html"
+        },
+        {
+          "line": 53,
+          "to": "index.html"
+        },
+        {
+          "line": 54,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 55,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 56,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 57,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 58,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 59,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 60,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 61,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 62,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 63,
+          "to": "depmap/index.html"
+        },
+        {
+          "line": 64,
+          "to": "depmap/architecture.html"
+        },
+        {
+          "line": 77,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 107,
+          "to": "decisions/dr-028-fragments-and-build.html"
+        },
+        {
+          "line": 116,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 117,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 118,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
     "decisions/index.html": {
       "title": "Decisions, AI.fred",
       "kind": "ledger",
@@ -17803,7 +18026,7 @@
         },
         "how-records-work": {
           "kind": "h2",
-          "line": 114,
+          "line": 115,
           "no": "2",
           "text": "How a record works"
         }
@@ -18008,6 +18231,13 @@
               "",
               "2026-09-17",
               "an edit made to a page under docs directly, which the next build overwrites."
+            ],
+            [
+              "dr-029",
+              "a generated front door and one generated page per owner",
+              "",
+              "2026-09-17",
+              "a prose edit made in a generated page, which the next build overwrites."
             ]
           ],
           "under": "ledger"
@@ -18219,23 +18449,27 @@
           "to": "decisions/dr-028-fragments-and-build.html"
         },
         {
-          "line": 111,
+          "line": 108,
+          "to": "decisions/dr-029-owner-views.html"
+        },
+        {
+          "line": 112,
           "to": "07-open/index.html"
         },
         {
-          "line": 116,
+          "line": 117,
           "to": "07-open/index.html#objections"
         },
         {
-          "line": 125,
+          "line": 126,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 126,
+          "line": 127,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 127,
+          "line": 128,
           "to": "07-open/index.html"
         }
       ]
@@ -18602,40 +18836,40 @@
         },
         "own-decisions": {
           "kind": "h3",
-          "line": 179,
+          "line": 183,
           "no": "2.2",
           "text": "Decisions",
           "under": "own"
         },
         "own-open": {
           "kind": "h3",
-          "line": 192,
+          "line": 197,
           "no": "2.3",
           "text": "Open items",
           "under": "own"
         },
         "own-components": {
           "kind": "h3",
-          "line": 237,
+          "line": 242,
           "no": "2.4",
           "text": "Components and invariants",
           "under": "own"
         },
         "binds": {
           "kind": "h2",
-          "line": 260,
+          "line": 265,
           "no": "3",
           "text": "What binds you"
         },
         "path": {
           "kind": "h2",
-          "line": 283,
+          "line": 288,
           "no": "4",
           "text": "Reading path"
         },
         "keys": {
           "kind": "h2",
-          "line": 402,
+          "line": 411,
           "no": "5",
           "text": "Key blocks"
         }
@@ -19096,9 +19330,29 @@
               "83"
             ],
             [
+              "dr-029 a generated front door and one generated page per owner",
+              "1 decision",
+              "579"
+            ],
+            [
+              "dr-029 a generated front door and one generated page per owner",
+              "2 rejected alternative(s) and their cost",
+              "253"
+            ],
+            [
+              "dr-029 a generated front door and one generated page per owner",
+              "3 what this closes off",
+              "164"
+            ],
+            [
+              "dr-029 a generated front door and one generated page per owner",
+              "4 status",
+              "106"
+            ],
+            [
               "decisions",
               "1 the ledger",
-              "850"
+              "876"
             ],
             [
               "decisions",
@@ -19109,7 +19363,7 @@
           "under": "own-sections"
         },
         "ceo.2": {
-          "line": 285,
+          "line": 290,
           "caption": "Owned sections in publication order, then the sections this role reads, with the running word count.",
           "rows": [
             [
@@ -19654,111 +19908,135 @@
             ],
             [
               "91",
-              "decisions, 1 the ledger",
-              "850",
-              "67,641"
+              "dr-029 a generated front door and one generated page per owner, 1 decision",
+              "579",
+              "67,370"
             ],
             [
               "92",
-              "decisions, 2 how a record works",
-              "229",
-              "67,870"
+              "dr-029 a generated front door and one generated page per owner, 2 rejected alter",
+              "253",
+              "67,623"
             ],
             [
               "93",
-              "architecture, 1 overview (read)",
-              "791",
-              "68,661"
+              "dr-029 a generated front door and one generated page per owner, 3 what this clos",
+              "164",
+              "67,787"
             ],
             [
               "94",
-              "the trust story, 1 the promise (read)",
-              "443",
-              "69,104"
+              "dr-029 a generated front door and one generated page per owner, 4 status",
+              "106",
+              "67,893"
             ],
             [
               "95",
-              "the trust story, 2 what your ledger looks like (read)",
-              "143",
-              "69,247"
+              "decisions, 1 the ledger",
+              "876",
+              "68,769"
             ],
             [
               "96",
-              "the trust story, 3 where the line actually falls (read)",
-              "257",
-              "69,504"
+              "decisions, 2 how a record works",
+              "229",
+              "68,998"
             ],
             [
               "97",
-              "the trust story, 4 what we never do (read)",
-              "300",
-              "69,804"
+              "architecture, 1 overview (read)",
+              "791",
+              "69,789"
             ],
             [
               "98",
-              "04 operations, 2 the shift design, staged (read)",
-              "1,007",
-              "70,811"
+              "the trust story, 1 the promise (read)",
+              "443",
+              "70,232"
             ],
             [
               "99",
-              "05 business, 1 why this page exists now (read)",
-              "173",
-              "70,984"
+              "the trust story, 2 what your ledger looks like (read)",
+              "143",
+              "70,375"
             ],
             [
               "100",
-              "05 business, 2 the task model (read)",
-              "153",
-              "71,137"
+              "the trust story, 3 where the line actually falls (read)",
+              "257",
+              "70,632"
             ],
             [
               "101",
-              "05 business, 3 the one ratio that decides everything (read)",
-              "290",
-              "71,427"
+              "the trust story, 4 what we never do (read)",
+              "300",
+              "70,932"
             ],
             [
               "102",
-              "05 business, 4 the cost split (read)",
-              "564",
-              "71,991"
+              "04 operations, 2 the shift design, staged (read)",
+              "1,007",
+              "71,939"
             ],
             [
               "103",
-              "05 business, 5 the trajectory (read)",
-              "829",
-              "72,820"
+              "05 business, 1 why this page exists now (read)",
+              "173",
+              "72,112"
             ],
             [
               "104",
-              "05 business, 6 how users arrive (read)",
-              "2,174",
-              "74,994"
+              "05 business, 2 the task model (read)",
+              "153",
+              "72,265"
             ],
             [
               "105",
-              "05 business, 7 funding (read)",
-              "564",
-              "75,558"
+              "05 business, 3 the one ratio that decides everything (read)",
+              "290",
+              "72,555"
             ],
             [
               "106",
-              "05 business, 8 geography (read)",
-              "1,377",
-              "76,935"
+              "05 business, 4 the cost split (read)",
+              "564",
+              "73,119"
             ],
             [
               "107",
-              "05 business, 9 the commerce layer (read)",
-              "514",
-              "77,449"
+              "05 business, 5 the trajectory (read)",
+              "829",
+              "73,948"
             ],
             [
               "108",
+              "05 business, 6 how users arrive (read)",
+              "2,174",
+              "76,122"
+            ],
+            [
+              "109",
+              "05 business, 7 funding (read)",
+              "564",
+              "76,686"
+            ],
+            [
+              "110",
+              "05 business, 8 geography (read)",
+              "1,377",
+              "78,063"
+            ],
+            [
+              "111",
+              "05 business, 9 the commerce layer (read)",
+              "514",
+              "78,577"
+            ],
+            [
+              "112",
               "05 business, 10 what replaces this page (read)",
               "371",
-              "77,820"
+              "78,948"
             ]
           ],
           "under": "path"
@@ -20219,1146 +20497,1186 @@
         },
         {
           "line": 174,
-          "to": "decisions/index.html#ledger"
+          "to": "decisions/dr-029-owner-views.html#decision"
         },
         {
           "line": 175,
+          "to": "decisions/dr-029-owner-views.html#rejected"
+        },
+        {
+          "line": 176,
+          "to": "decisions/dr-029-owner-views.html#closes-off"
+        },
+        {
+          "line": 177,
+          "to": "decisions/dr-029-owner-views.html#record-status"
+        },
+        {
+          "line": 178,
+          "to": "decisions/index.html#ledger"
+        },
+        {
+          "line": 179,
           "to": "decisions/index.html#how-records-work"
-        },
-        {
-          "line": 181,
-          "to": "decisions/dr-001-channel-gateway.html"
-        },
-        {
-          "line": 182,
-          "to": "decisions/dr-002-verdict-two-loops.html"
-        },
-        {
-          "line": 183,
-          "to": "decisions/dr-010-html-no-build-step.html"
-        },
-        {
-          "line": 184,
-          "to": "decisions/dr-011-token-and-component-system.html"
         },
         {
           "line": 185,
-          "to": "decisions/dr-012-design-plan.html"
-        },
-        {
-          "line": 186,
-          "to": "decisions/dr-013-verification-standard.html"
-        },
-        {
-          "line": 187,
-          "to": "decisions/dr-017-dependency-map.html"
-        },
-        {
-          "line": 188,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 189,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html"
-        },
-        {
-          "line": 190,
-          "to": "decisions/dr-028-fragments-and-build.html"
-        },
-        {
-          "line": 194,
-          "to": "07-open/index.html#open-07-01"
-        },
-        {
-          "line": 195,
-          "to": "07-open/index.html#open-07-02"
-        },
-        {
-          "line": 196,
-          "to": "07-open/index.html#open-07-03"
-        },
-        {
-          "line": 197,
-          "to": "07-open/index.html#open-07-07"
-        },
-        {
-          "line": 198,
-          "to": "07-open/index.html#open-07-08"
-        },
-        {
-          "line": 199,
-          "to": "07-open/index.html#open-07-09"
-        },
-        {
-          "line": 200,
-          "to": "07-open/index.html#open-07-13"
-        },
-        {
-          "line": 201,
-          "to": "07-open/index.html#open-07-14"
-        },
-        {
-          "line": 202,
-          "to": "07-open/index.html#open-07-15"
-        },
-        {
-          "line": 203,
-          "to": "07-open/index.html#open-07-16"
-        },
-        {
-          "line": 204,
-          "to": "07-open/index.html#open-07-17"
-        },
-        {
-          "line": 205,
-          "to": "07-open/index.html#open-07-18"
-        },
-        {
-          "line": 206,
-          "to": "07-open/index.html#open-07-19"
-        },
-        {
-          "line": 207,
-          "to": "07-open/index.html#open-07-22"
-        },
-        {
-          "line": 208,
-          "to": "07-open/index.html#open-07-23"
-        },
-        {
-          "line": 209,
-          "to": "07-open/index.html#open-07-24"
-        },
-        {
-          "line": 210,
-          "to": "07-open/index.html#open-07-25"
-        },
-        {
-          "line": 211,
-          "to": "07-open/index.html#open-07-47"
-        },
-        {
-          "line": 212,
-          "to": "07-open/index.html#open-07-48"
-        },
-        {
-          "line": 213,
-          "to": "07-open/index.html#open-07-49"
-        },
-        {
-          "line": 214,
-          "to": "07-open/index.html#open-07-44"
-        },
-        {
-          "line": 215,
-          "to": "07-open/index.html#open-07-45"
-        },
-        {
-          "line": 216,
-          "to": "07-open/index.html#open-07-46"
-        },
-        {
-          "line": 217,
-          "to": "07-open/index.html#open-07-41"
-        },
-        {
-          "line": 218,
-          "to": "07-open/index.html#open-07-42"
-        },
-        {
-          "line": 219,
-          "to": "07-open/index.html#open-07-40"
-        },
-        {
-          "line": 220,
-          "to": "07-open/index.html#open-07-27"
-        },
-        {
-          "line": 221,
-          "to": "07-open/index.html#open-07-28"
-        },
-        {
-          "line": 222,
-          "to": "07-open/index.html#open-07-39"
-        },
-        {
-          "line": 223,
-          "to": "07-open/index.html#open-07-36"
-        },
-        {
-          "line": 224,
-          "to": "07-open/index.html#open-07-37"
-        },
-        {
-          "line": 225,
-          "to": "07-open/index.html#open-07-38"
-        },
-        {
-          "line": 226,
-          "to": "07-open/index.html#open-07-31"
-        },
-        {
-          "line": 227,
-          "to": "07-open/index.html#open-07-32"
-        },
-        {
-          "line": 228,
-          "to": "07-open/index.html#open-07-33"
-        },
-        {
-          "line": 229,
-          "to": "07-open/index.html#open-07-34"
-        },
-        {
-          "line": 230,
-          "to": "07-open/index.html#open-07-35"
-        },
-        {
-          "line": 231,
-          "to": "07-open/index.html#open-07-29"
-        },
-        {
-          "line": 232,
-          "to": "07-open/index.html#open-07-30"
-        },
-        {
-          "line": 233,
-          "to": "07-open/index.html#open-07-20"
-        },
-        {
-          "line": 234,
-          "to": "07-open/index.html#open-07-21"
-        },
-        {
-          "line": 236,
-          "to": "07-open/index.html#open-07-04"
-        },
-        {
-          "line": 236,
-          "to": "07-open/index.html#open-07-05"
-        },
-        {
-          "line": 236,
-          "to": "07-open/index.html#open-07-06"
-        },
-        {
-          "line": 236,
-          "to": "07-open/index.html#open-07-10"
-        },
-        {
-          "line": 236,
-          "to": "07-open/index.html#open-07-43"
-        },
-        {
-          "line": 236,
-          "to": "07-open/index.html#open-07-26"
-        },
-        {
-          "line": 239,
-          "to": "00-thesis/index.html#what-consequence-means"
-        },
-        {
-          "line": 240,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 241,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 242,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 243,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 244,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 245,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 246,
-          "to": "01-product/index.html#refusals"
-        },
-        {
-          "line": 247,
-          "to": "decisions/dr-018-mail-from-the-users-address.html#closes-off"
-        },
-        {
-          "line": 248,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
-        },
-        {
-          "line": 249,
-          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
-        },
-        {
-          "line": 250,
-          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
-        },
-        {
-          "line": 251,
-          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
-        },
-        {
-          "line": 252,
-          "to": "decisions/dr-012-design-plan.html#closes-off"
-        },
-        {
-          "line": 253,
-          "to": "decisions/dr-013-verification-standard.html#closes-off"
-        },
-        {
-          "line": 254,
-          "to": "decisions/dr-013-verification-standard.html#closes-off"
-        },
-        {
-          "line": 255,
-          "to": "decisions/dr-019-the-endgame.html#closes-off"
-        },
-        {
-          "line": 256,
-          "to": "decisions/dr-023-geography-sequencing.html#closes-off"
-        },
-        {
-          "line": 262,
-          "to": "decisions/dr-003-full-delegation-ceiling.html"
-        },
-        {
-          "line": 263,
-          "to": "decisions/dr-004-authority-envelope.html"
-        },
-        {
-          "line": 264,
-          "to": "decisions/dr-005-state-machine-lapsed.html"
-        },
-        {
-          "line": 265,
-          "to": "decisions/dr-006-office-mandatory.html"
-        },
-        {
-          "line": 266,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 267,
-          "to": "decisions/dr-008-vault-bought.html"
-        },
-        {
-          "line": 268,
-          "to": "decisions/dr-009-evidence-redaction.html"
-        },
-        {
-          "line": 269,
-          "to": "decisions/dr-014-substitution-framing.html"
-        },
-        {
-          "line": 270,
-          "to": "decisions/dr-015-economics-deferred.html"
-        },
-        {
-          "line": 271,
-          "to": "decisions/dr-016-context-store.html"
-        },
-        {
-          "line": 272,
-          "to": "decisions/dr-018-mail-from-the-users-address.html"
-        },
-        {
-          "line": 273,
-          "to": "decisions/dr-021-no-value-spoken.html"
-        },
-        {
-          "line": 274,
-          "to": "decisions/dr-022-structured-task-cards.html"
-        },
-        {
-          "line": 275,
-          "to": "decisions/dr-023-geography-sequencing.html"
-        },
-        {
-          "line": 276,
-          "to": "decisions/dr-024-metered-pricing.html"
-        },
-        {
-          "line": 277,
-          "to": "decisions/dr-025-growth-two-mechanisms.html"
-        },
-        {
-          "line": 278,
-          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
-        },
-        {
-          "line": 279,
-          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
-        },
-        {
-          "line": 289,
-          "to": "contents/index.html#promise"
-        },
-        {
-          "line": 290,
-          "to": "contents/index.html#human-in-the-gap"
-        },
-        {
-          "line": 291,
-          "to": "contents/index.html#two-fatals"
-        },
-        {
-          "line": 292,
-          "to": "contents/index.html#three-markets"
-        },
-        {
-          "line": 293,
-          "to": "contents/index.html#what-exists"
-        },
-        {
-          "line": 294,
-          "to": "contents/index.html#how-to-read"
-        },
-        {
-          "line": 295,
-          "to": "contents/index.html#publication-map"
-        },
-        {
-          "line": 296,
-          "to": "00-thesis/index.html#customer-and-wedge"
-        },
-        {
-          "line": 297,
-          "to": "00-thesis/index.html#context-profile"
-        },
-        {
-          "line": 298,
-          "to": "00-thesis/index.html#why-now"
-        },
-        {
-          "line": 299,
-          "to": "00-thesis/index.html#markets"
-        },
-        {
-          "line": 300,
-          "to": "00-thesis/index.html#landscape"
-        },
-        {
-          "line": 301,
-          "to": "00-thesis/index.html#moat"
-        },
-        {
-          "line": 302,
-          "to": "00-thesis/index.html#endgame"
-        },
-        {
-          "line": 303,
-          "to": "00-thesis/index.html#sources"
-        },
-        {
-          "line": 304,
-          "to": "01-product/index.html#journeys"
-        },
-        {
-          "line": 305,
-          "to": "01-product/index.html#taxonomy"
-        },
-        {
-          "line": 306,
-          "to": "01-product/index.html#intake"
-        },
-        {
-          "line": 307,
-          "to": "01-product/index.html#envelope"
-        },
-        {
-          "line": 308,
-          "to": "01-product/index.html#verdicts"
-        },
-        {
-          "line": 309,
-          "to": "01-product/index.html#onboarding"
-        },
-        {
-          "line": 310,
-          "to": "01-product/index.html#refusals"
-        },
-        {
-          "line": 311,
-          "to": "01-product/index.html#sources"
-        },
-        {
-          "line": 312,
-          "to": "06-roadmap/index.html#sequence"
-        },
-        {
-          "line": 313,
-          "to": "06-roadmap/index.html#pilot"
-        },
-        {
-          "line": 314,
-          "to": "06-roadmap/index.html#build-buy"
-        },
-        {
-          "line": 315,
-          "to": "06-roadmap/index.html#expansion"
-        },
-        {
-          "line": 316,
-          "to": "06-roadmap/index.html#sources"
-        },
-        {
-          "line": 317,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 318,
-          "to": "07-open/index.html#objections"
-        },
-        {
-          "line": 319,
-          "to": "07-open/index.html#left-alone"
-        },
-        {
-          "line": 320,
-          "to": "08-review/index.html#executive-verdict"
-        },
-        {
-          "line": 321,
-          "to": "08-review/index.html#the-idea-in-one-page"
-        },
-        {
-          "line": 322,
-          "to": "08-review/index.html#technology-today"
-        },
-        {
-          "line": 323,
-          "to": "08-review/index.html#horizon-threats"
-        },
-        {
-          "line": 324,
-          "to": "08-review/index.html#regulation-india"
-        },
-        {
-          "line": 325,
-          "to": "08-review/index.html#regulation-uk"
-        },
-        {
-          "line": 326,
-          "to": "08-review/index.html#regulation-us"
-        },
-        {
-          "line": 327,
-          "to": "08-review/index.html#market-and-competition"
-        },
-        {
-          "line": 328,
-          "to": "08-review/index.html#economics"
-        },
-        {
-          "line": 329,
-          "to": "08-review/index.html#team-and-execution"
-        },
-        {
-          "line": 330,
-          "to": "08-review/index.html#security-red-team"
-        },
-        {
-          "line": 331,
-          "to": "08-review/index.html#product-and-gtm"
-        },
-        {
-          "line": 332,
-          "to": "08-review/index.html#pre-mortem"
-        },
-        {
-          "line": 333,
-          "to": "08-review/index.html#what-we-would-need-to-see"
-        },
-        {
-          "line": 334,
-          "to": "08-review/index.html#questions-for-the-founder"
-        },
-        {
-          "line": 335,
-          "to": "08-review/index.html#what-the-record-should-change"
-        },
-        {
-          "line": 336,
-          "to": "08-review/index.html#sources"
-        },
-        {
-          "line": 337,
-          "to": "decisions/dr-001-channel-gateway.html#decision"
-        },
-        {
-          "line": 338,
-          "to": "decisions/dr-001-channel-gateway.html#rejected"
-        },
-        {
-          "line": 339,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 340,
-          "to": "decisions/dr-001-channel-gateway.html#record-status"
-        },
-        {
-          "line": 341,
-          "to": "decisions/dr-001-channel-gateway.html#trigger"
-        },
-        {
-          "line": 342,
-          "to": "decisions/dr-001-channel-gateway.html#sources"
-        },
-        {
-          "line": 343,
-          "to": "decisions/dr-002-verdict-two-loops.html#decision"
-        },
-        {
-          "line": 344,
-          "to": "decisions/dr-002-verdict-two-loops.html#rejected"
-        },
-        {
-          "line": 345,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 346,
-          "to": "decisions/dr-002-verdict-two-loops.html#record-status"
-        },
-        {
-          "line": 347,
-          "to": "decisions/dr-010-html-no-build-step.html#decision"
-        },
-        {
-          "line": 348,
-          "to": "decisions/dr-010-html-no-build-step.html#rejected"
-        },
-        {
-          "line": 349,
-          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
-        },
-        {
-          "line": 350,
-          "to": "decisions/dr-010-html-no-build-step.html#record-status"
-        },
-        {
-          "line": 351,
-          "to": "decisions/dr-011-token-and-component-system.html#decision"
-        },
-        {
-          "line": 352,
-          "to": "decisions/dr-011-token-and-component-system.html#rejected"
-        },
-        {
-          "line": 353,
-          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
-        },
-        {
-          "line": 354,
-          "to": "decisions/dr-011-token-and-component-system.html#record-status"
-        },
-        {
-          "line": 355,
-          "to": "decisions/dr-012-design-plan.html#decision"
-        },
-        {
-          "line": 356,
-          "to": "decisions/dr-012-design-plan.html#rejected"
-        },
-        {
-          "line": 357,
-          "to": "decisions/dr-012-design-plan.html#closes-off"
-        },
-        {
-          "line": 358,
-          "to": "decisions/dr-012-design-plan.html#record-status"
-        },
-        {
-          "line": 359,
-          "to": "decisions/dr-013-verification-standard.html#decision"
-        },
-        {
-          "line": 360,
-          "to": "decisions/dr-013-verification-standard.html#rejected"
-        },
-        {
-          "line": 361,
-          "to": "decisions/dr-013-verification-standard.html#closes-off"
-        },
-        {
-          "line": 362,
-          "to": "decisions/dr-013-verification-standard.html#record-status"
-        },
-        {
-          "line": 363,
-          "to": "decisions/dr-017-dependency-map.html#decision"
-        },
-        {
-          "line": 364,
-          "to": "decisions/dr-017-dependency-map.html#rejected"
-        },
-        {
-          "line": 365,
-          "to": "decisions/dr-017-dependency-map.html#closes-off"
-        },
-        {
-          "line": 366,
-          "to": "decisions/dr-017-dependency-map.html#record-status"
-        },
-        {
-          "line": 367,
-          "to": "decisions/dr-019-the-endgame.html#decision"
-        },
-        {
-          "line": 368,
-          "to": "decisions/dr-019-the-endgame.html#rejected"
-        },
-        {
-          "line": 369,
-          "to": "decisions/dr-019-the-endgame.html#closes-off"
-        },
-        {
-          "line": 370,
-          "to": "decisions/dr-019-the-endgame.html#record-status"
-        },
-        {
-          "line": 371,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#decision"
-        },
-        {
-          "line": 372,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#rejected"
-        },
-        {
-          "line": 373,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
-        },
-        {
-          "line": 374,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#record-status"
-        },
-        {
-          "line": 375,
-          "to": "decisions/dr-028-fragments-and-build.html#decision"
-        },
-        {
-          "line": 376,
-          "to": "decisions/dr-028-fragments-and-build.html#rejected"
-        },
-        {
-          "line": 377,
-          "to": "decisions/dr-028-fragments-and-build.html#closes-off"
-        },
-        {
-          "line": 378,
-          "to": "decisions/dr-028-fragments-and-build.html#record-status"
-        },
-        {
-          "line": 379,
-          "to": "decisions/index.html#ledger"
-        },
-        {
-          "line": 380,
-          "to": "decisions/index.html#how-records-work"
-        },
-        {
-          "line": 381,
-          "to": "02-architecture/index.html#overview"
-        },
-        {
-          "line": 382,
-          "to": "03-trust-and-data/trust-story.html#promise"
-        },
-        {
-          "line": 383,
-          "to": "03-trust-and-data/trust-story.html#ledger-example"
-        },
-        {
-          "line": 384,
-          "to": "03-trust-and-data/trust-story.html#the-boundary"
-        },
-        {
-          "line": 385,
-          "to": "03-trust-and-data/trust-story.html#what-we-never-do"
-        },
-        {
-          "line": 386,
-          "to": "04-operations/index.html#shifts"
-        },
-        {
-          "line": 387,
-          "to": "05-business/index.html#why-this-page"
-        },
-        {
-          "line": 388,
-          "to": "05-business/index.html#task-model"
-        },
-        {
-          "line": 389,
-          "to": "05-business/index.html#the-ratio"
-        },
-        {
-          "line": 390,
-          "to": "05-business/index.html#cost-split"
-        },
-        {
-          "line": 391,
-          "to": "05-business/index.html#trajectory"
-        },
-        {
-          "line": 392,
-          "to": "05-business/index.html#how-users-arrive"
-        },
-        {
-          "line": 393,
-          "to": "05-business/index.html#funding"
-        },
-        {
-          "line": 394,
-          "to": "05-business/index.html#geography"
-        },
-        {
-          "line": 395,
-          "to": "05-business/index.html#commerce"
-        },
-        {
-          "line": 396,
-          "to": "05-business/index.html#what-replaces"
-        },
-        {
-          "line": 404,
-          "to": "contents/index.html#promise"
-        },
-        {
-          "line": 408,
-          "to": "contents/index.html#human-in-the-gap"
-        },
-        {
-          "line": 409,
-          "to": "02-architecture/index.html"
-        },
-        {
-          "line": 412,
-          "to": "contents/index.html#two-fatals"
-        },
-        {
-          "line": 413,
-          "to": "decisions/dr-021-no-value-spoken.html"
-        },
-        {
-          "line": 413,
-          "to": "03-trust-and-data/index.html"
-        },
-        {
-          "line": 416,
-          "to": "contents/index.html#three-markets"
-        },
-        {
-          "line": 417,
-          "to": "02-architecture/index.html#adapters"
-        },
-        {
-          "line": 417,
-          "to": "02-architecture/index.html#adapters"
-        },
-        {
-          "line": 417,
-          "to": "06-roadmap/index.html#expansion"
-        },
-        {
-          "line": 420,
-          "to": "contents/index.html#what-exists"
-        },
-        {
-          "line": 421,
-          "to": "decisions/index.html"
-        },
-        {
-          "line": 421,
-          "to": "07-open/index.html"
-        },
-        {
-          "line": 424,
-          "to": "00-thesis/index.html#customer-and-wedge"
-        },
-        {
-          "line": 428,
-          "to": "00-thesis/index.html#context-profile"
-        },
-        {
-          "line": 432,
-          "to": "00-thesis/index.html#why-now"
-        },
-        {
-          "line": 433,
-          "to": "00-thesis/index.html#tab-why-now"
-        },
-        {
-          "line": 436,
-          "to": "00-thesis/index.html#markets"
-        },
-        {
-          "line": 437,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 437,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 437,
-          "to": "06-roadmap/index.html#pilot"
-        },
-        {
-          "line": 440,
-          "to": "00-thesis/index.html#landscape"
-        },
-        {
-          "line": 441,
-          "to": "00-thesis/index.html#tab-landscape"
-        },
-        {
-          "line": 441,
-          "to": "decisions/dr-013-verification-standard.html"
-        },
-        {
-          "line": 444,
-          "to": "00-thesis/index.html#moat"
-        },
-        {
-          "line": 448,
-          "to": "00-thesis/index.html#endgame"
-        },
-        {
-          "line": 449,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 452,
-          "to": "01-product/index.html#journeys"
-        },
-        {
-          "line": 456,
-          "to": "01-product/index.html#taxonomy"
-        },
-        {
-          "line": 460,
-          "to": "01-product/index.html#intake"
-        },
-        {
-          "line": 461,
           "to": "decisions/dr-001-channel-gateway.html"
         },
         {
-          "line": 461,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 464,
-          "to": "01-product/index.html#envelope"
-        },
-        {
-          "line": 465,
-          "to": "decisions/dr-004-authority-envelope.html"
-        },
-        {
-          "line": 465,
-          "to": "decisions/dr-003-full-delegation-ceiling.html"
-        },
-        {
-          "line": 468,
-          "to": "01-product/index.html#verdicts"
-        },
-        {
-          "line": 469,
+          "line": 186,
           "to": "decisions/dr-002-verdict-two-loops.html"
         },
         {
-          "line": 472,
-          "to": "01-product/index.html#onboarding"
-        },
-        {
-          "line": 473,
-          "to": "02-architecture/index.html#context-store"
-        },
-        {
-          "line": 473,
-          "to": "decisions/dr-016-context-store.html"
-        },
-        {
-          "line": 476,
-          "to": "01-product/index.html#refusals"
-        },
-        {
-          "line": 480,
-          "to": "06-roadmap/index.html#sequence"
-        },
-        {
-          "line": 481,
-          "to": "06-roadmap/index.html#fig-sequence"
-        },
-        {
-          "line": 484,
-          "to": "06-roadmap/index.html#pilot"
-        },
-        {
-          "line": 485,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 488,
-          "to": "06-roadmap/index.html#build-buy"
-        },
-        {
-          "line": 489,
-          "to": "06-roadmap/index.html#tab-build-buy"
-        },
-        {
-          "line": 492,
-          "to": "06-roadmap/index.html#expansion"
-        },
-        {
-          "line": 493,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 496,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 500,
-          "to": "07-open/index.html#objections"
-        },
-        {
-          "line": 504,
-          "to": "07-open/index.html#left-alone"
-        },
-        {
-          "line": 514,
-          "to": "08-review/index.html#executive-verdict"
-        },
-        {
-          "line": 518,
-          "to": "08-review/index.html#the-idea-in-one-page"
-        },
-        {
-          "line": 519,
-          "to": "00-thesis/index.html#customer-and-wedge"
-        },
-        {
-          "line": 519,
-          "to": "00-thesis/index.html#labs-ceiling"
-        },
-        {
-          "line": 519,
-          "to": "00-thesis/index.html#moat"
-        },
-        {
-          "line": 522,
-          "to": "08-review/index.html#team-and-execution"
-        },
-        {
-          "line": 523,
-          "to": "index.html"
-        },
-        {
-          "line": 526,
-          "to": "08-review/index.html#security-red-team"
-        },
-        {
-          "line": 527,
-          "to": "03-trust-and-data/index.html#threat-model"
-        },
-        {
-          "line": 530,
-          "to": "08-review/index.html#pre-mortem"
-        },
-        {
-          "line": 534,
-          "to": "08-review/index.html#what-we-would-need-to-see"
-        },
-        {
-          "line": 538,
-          "to": "08-review/index.html#questions-for-the-founder"
-        },
-        {
-          "line": 542,
-          "to": "08-review/index.html#what-the-record-should-change"
-        },
-        {
-          "line": 546,
-          "to": "decisions/dr-001-channel-gateway.html#decision"
-        },
-        {
-          "line": 550,
-          "to": "decisions/dr-002-verdict-two-loops.html#decision"
-        },
-        {
-          "line": 554,
-          "to": "decisions/dr-010-html-no-build-step.html#decision"
-        },
-        {
-          "line": 558,
-          "to": "decisions/dr-011-token-and-component-system.html#decision"
-        },
-        {
-          "line": 562,
-          "to": "decisions/dr-012-design-plan.html#decision"
-        },
-        {
-          "line": 566,
-          "to": "decisions/dr-017-dependency-map.html#decision"
-        },
-        {
-          "line": 567,
+          "line": 187,
           "to": "decisions/dr-010-html-no-build-step.html"
         },
         {
-          "line": 567,
-          "to": "07-open/index.html#items"
+          "line": 188,
+          "to": "decisions/dr-011-token-and-component-system.html"
         },
         {
-          "line": 570,
-          "to": "decisions/dr-019-the-endgame.html#decision"
+          "line": 189,
+          "to": "decisions/dr-012-design-plan.html"
         },
         {
-          "line": 571,
-          "to": "00-thesis/index.html#context-profile"
+          "line": 190,
+          "to": "decisions/dr-013-verification-standard.html"
         },
         {
-          "line": 571,
+          "line": 191,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 192,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 193,
           "to": "decisions/dr-020-everyday-tasks-day-one.html"
         },
         {
-          "line": 574,
+          "line": 194,
+          "to": "decisions/dr-028-fragments-and-build.html"
+        },
+        {
+          "line": 195,
+          "to": "decisions/dr-029-owner-views.html"
+        },
+        {
+          "line": 199,
+          "to": "07-open/index.html#open-07-01"
+        },
+        {
+          "line": 200,
+          "to": "07-open/index.html#open-07-02"
+        },
+        {
+          "line": 201,
+          "to": "07-open/index.html#open-07-03"
+        },
+        {
+          "line": 202,
+          "to": "07-open/index.html#open-07-07"
+        },
+        {
+          "line": 203,
+          "to": "07-open/index.html#open-07-08"
+        },
+        {
+          "line": 204,
+          "to": "07-open/index.html#open-07-09"
+        },
+        {
+          "line": 205,
+          "to": "07-open/index.html#open-07-13"
+        },
+        {
+          "line": 206,
+          "to": "07-open/index.html#open-07-14"
+        },
+        {
+          "line": 207,
+          "to": "07-open/index.html#open-07-15"
+        },
+        {
+          "line": 208,
+          "to": "07-open/index.html#open-07-16"
+        },
+        {
+          "line": 209,
+          "to": "07-open/index.html#open-07-17"
+        },
+        {
+          "line": 210,
+          "to": "07-open/index.html#open-07-18"
+        },
+        {
+          "line": 211,
+          "to": "07-open/index.html#open-07-19"
+        },
+        {
+          "line": 212,
+          "to": "07-open/index.html#open-07-22"
+        },
+        {
+          "line": 213,
+          "to": "07-open/index.html#open-07-23"
+        },
+        {
+          "line": 214,
+          "to": "07-open/index.html#open-07-24"
+        },
+        {
+          "line": 215,
+          "to": "07-open/index.html#open-07-25"
+        },
+        {
+          "line": 216,
+          "to": "07-open/index.html#open-07-47"
+        },
+        {
+          "line": 217,
+          "to": "07-open/index.html#open-07-48"
+        },
+        {
+          "line": 218,
+          "to": "07-open/index.html#open-07-49"
+        },
+        {
+          "line": 219,
+          "to": "07-open/index.html#open-07-44"
+        },
+        {
+          "line": 220,
+          "to": "07-open/index.html#open-07-45"
+        },
+        {
+          "line": 221,
+          "to": "07-open/index.html#open-07-46"
+        },
+        {
+          "line": 222,
+          "to": "07-open/index.html#open-07-41"
+        },
+        {
+          "line": 223,
+          "to": "07-open/index.html#open-07-42"
+        },
+        {
+          "line": 224,
+          "to": "07-open/index.html#open-07-40"
+        },
+        {
+          "line": 225,
+          "to": "07-open/index.html#open-07-27"
+        },
+        {
+          "line": 226,
+          "to": "07-open/index.html#open-07-28"
+        },
+        {
+          "line": 227,
+          "to": "07-open/index.html#open-07-39"
+        },
+        {
+          "line": 228,
+          "to": "07-open/index.html#open-07-36"
+        },
+        {
+          "line": 229,
+          "to": "07-open/index.html#open-07-37"
+        },
+        {
+          "line": 230,
+          "to": "07-open/index.html#open-07-38"
+        },
+        {
+          "line": 231,
+          "to": "07-open/index.html#open-07-31"
+        },
+        {
+          "line": 232,
+          "to": "07-open/index.html#open-07-32"
+        },
+        {
+          "line": 233,
+          "to": "07-open/index.html#open-07-33"
+        },
+        {
+          "line": 234,
+          "to": "07-open/index.html#open-07-34"
+        },
+        {
+          "line": 235,
+          "to": "07-open/index.html#open-07-35"
+        },
+        {
+          "line": 236,
+          "to": "07-open/index.html#open-07-29"
+        },
+        {
+          "line": 237,
+          "to": "07-open/index.html#open-07-30"
+        },
+        {
+          "line": 238,
+          "to": "07-open/index.html#open-07-20"
+        },
+        {
+          "line": 239,
+          "to": "07-open/index.html#open-07-21"
+        },
+        {
+          "line": 241,
+          "to": "07-open/index.html#open-07-04"
+        },
+        {
+          "line": 241,
+          "to": "07-open/index.html#open-07-05"
+        },
+        {
+          "line": 241,
+          "to": "07-open/index.html#open-07-06"
+        },
+        {
+          "line": 241,
+          "to": "07-open/index.html#open-07-10"
+        },
+        {
+          "line": 241,
+          "to": "07-open/index.html#open-07-43"
+        },
+        {
+          "line": 241,
+          "to": "07-open/index.html#open-07-26"
+        },
+        {
+          "line": 244,
+          "to": "00-thesis/index.html#what-consequence-means"
+        },
+        {
+          "line": 245,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 246,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 247,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 248,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 249,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 250,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 251,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 252,
+          "to": "decisions/dr-018-mail-from-the-users-address.html#closes-off"
+        },
+        {
+          "line": 253,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
+        },
+        {
+          "line": 254,
+          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
+        },
+        {
+          "line": 255,
+          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
+        },
+        {
+          "line": 256,
+          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
+        },
+        {
+          "line": 257,
+          "to": "decisions/dr-012-design-plan.html#closes-off"
+        },
+        {
+          "line": 258,
+          "to": "decisions/dr-013-verification-standard.html#closes-off"
+        },
+        {
+          "line": 259,
+          "to": "decisions/dr-013-verification-standard.html#closes-off"
+        },
+        {
+          "line": 260,
+          "to": "decisions/dr-019-the-endgame.html#closes-off"
+        },
+        {
+          "line": 261,
+          "to": "decisions/dr-023-geography-sequencing.html#closes-off"
+        },
+        {
+          "line": 267,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 268,
+          "to": "decisions/dr-004-authority-envelope.html"
+        },
+        {
+          "line": 269,
+          "to": "decisions/dr-005-state-machine-lapsed.html"
+        },
+        {
+          "line": 270,
+          "to": "decisions/dr-006-office-mandatory.html"
+        },
+        {
+          "line": 271,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 272,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 273,
+          "to": "decisions/dr-009-evidence-redaction.html"
+        },
+        {
+          "line": 274,
+          "to": "decisions/dr-014-substitution-framing.html"
+        },
+        {
+          "line": 275,
+          "to": "decisions/dr-015-economics-deferred.html"
+        },
+        {
+          "line": 276,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 277,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 278,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 279,
+          "to": "decisions/dr-022-structured-task-cards.html"
+        },
+        {
+          "line": 280,
+          "to": "decisions/dr-023-geography-sequencing.html"
+        },
+        {
+          "line": 281,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 282,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 283,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
+        },
+        {
+          "line": 284,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 294,
+          "to": "contents/index.html#promise"
+        },
+        {
+          "line": 295,
+          "to": "contents/index.html#human-in-the-gap"
+        },
+        {
+          "line": 296,
+          "to": "contents/index.html#two-fatals"
+        },
+        {
+          "line": 297,
+          "to": "contents/index.html#three-markets"
+        },
+        {
+          "line": 298,
+          "to": "contents/index.html#what-exists"
+        },
+        {
+          "line": 299,
+          "to": "contents/index.html#how-to-read"
+        },
+        {
+          "line": 300,
+          "to": "contents/index.html#publication-map"
+        },
+        {
+          "line": 301,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 302,
+          "to": "00-thesis/index.html#context-profile"
+        },
+        {
+          "line": 303,
+          "to": "00-thesis/index.html#why-now"
+        },
+        {
+          "line": 304,
+          "to": "00-thesis/index.html#markets"
+        },
+        {
+          "line": 305,
+          "to": "00-thesis/index.html#landscape"
+        },
+        {
+          "line": 306,
+          "to": "00-thesis/index.html#moat"
+        },
+        {
+          "line": 307,
+          "to": "00-thesis/index.html#endgame"
+        },
+        {
+          "line": 308,
+          "to": "00-thesis/index.html#sources"
+        },
+        {
+          "line": 309,
+          "to": "01-product/index.html#journeys"
+        },
+        {
+          "line": 310,
+          "to": "01-product/index.html#taxonomy"
+        },
+        {
+          "line": 311,
+          "to": "01-product/index.html#intake"
+        },
+        {
+          "line": 312,
+          "to": "01-product/index.html#envelope"
+        },
+        {
+          "line": 313,
+          "to": "01-product/index.html#verdicts"
+        },
+        {
+          "line": 314,
+          "to": "01-product/index.html#onboarding"
+        },
+        {
+          "line": 315,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 316,
+          "to": "01-product/index.html#sources"
+        },
+        {
+          "line": 317,
+          "to": "06-roadmap/index.html#sequence"
+        },
+        {
+          "line": 318,
+          "to": "06-roadmap/index.html#pilot"
+        },
+        {
+          "line": 319,
+          "to": "06-roadmap/index.html#build-buy"
+        },
+        {
+          "line": 320,
+          "to": "06-roadmap/index.html#expansion"
+        },
+        {
+          "line": 321,
+          "to": "06-roadmap/index.html#sources"
+        },
+        {
+          "line": 322,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 323,
+          "to": "07-open/index.html#objections"
+        },
+        {
+          "line": 324,
+          "to": "07-open/index.html#left-alone"
+        },
+        {
+          "line": 325,
+          "to": "08-review/index.html#executive-verdict"
+        },
+        {
+          "line": 326,
+          "to": "08-review/index.html#the-idea-in-one-page"
+        },
+        {
+          "line": 327,
+          "to": "08-review/index.html#technology-today"
+        },
+        {
+          "line": 328,
+          "to": "08-review/index.html#horizon-threats"
+        },
+        {
+          "line": 329,
+          "to": "08-review/index.html#regulation-india"
+        },
+        {
+          "line": 330,
+          "to": "08-review/index.html#regulation-uk"
+        },
+        {
+          "line": 331,
+          "to": "08-review/index.html#regulation-us"
+        },
+        {
+          "line": 332,
+          "to": "08-review/index.html#market-and-competition"
+        },
+        {
+          "line": 333,
+          "to": "08-review/index.html#economics"
+        },
+        {
+          "line": 334,
+          "to": "08-review/index.html#team-and-execution"
+        },
+        {
+          "line": 335,
+          "to": "08-review/index.html#security-red-team"
+        },
+        {
+          "line": 336,
+          "to": "08-review/index.html#product-and-gtm"
+        },
+        {
+          "line": 337,
+          "to": "08-review/index.html#pre-mortem"
+        },
+        {
+          "line": 338,
+          "to": "08-review/index.html#what-we-would-need-to-see"
+        },
+        {
+          "line": 339,
+          "to": "08-review/index.html#questions-for-the-founder"
+        },
+        {
+          "line": 340,
+          "to": "08-review/index.html#what-the-record-should-change"
+        },
+        {
+          "line": 341,
+          "to": "08-review/index.html#sources"
+        },
+        {
+          "line": 342,
+          "to": "decisions/dr-001-channel-gateway.html#decision"
+        },
+        {
+          "line": 343,
+          "to": "decisions/dr-001-channel-gateway.html#rejected"
+        },
+        {
+          "line": 344,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 345,
+          "to": "decisions/dr-001-channel-gateway.html#record-status"
+        },
+        {
+          "line": 346,
+          "to": "decisions/dr-001-channel-gateway.html#trigger"
+        },
+        {
+          "line": 347,
+          "to": "decisions/dr-001-channel-gateway.html#sources"
+        },
+        {
+          "line": 348,
+          "to": "decisions/dr-002-verdict-two-loops.html#decision"
+        },
+        {
+          "line": 349,
+          "to": "decisions/dr-002-verdict-two-loops.html#rejected"
+        },
+        {
+          "line": 350,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 351,
+          "to": "decisions/dr-002-verdict-two-loops.html#record-status"
+        },
+        {
+          "line": 352,
+          "to": "decisions/dr-010-html-no-build-step.html#decision"
+        },
+        {
+          "line": 353,
+          "to": "decisions/dr-010-html-no-build-step.html#rejected"
+        },
+        {
+          "line": 354,
+          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
+        },
+        {
+          "line": 355,
+          "to": "decisions/dr-010-html-no-build-step.html#record-status"
+        },
+        {
+          "line": 356,
+          "to": "decisions/dr-011-token-and-component-system.html#decision"
+        },
+        {
+          "line": 357,
+          "to": "decisions/dr-011-token-and-component-system.html#rejected"
+        },
+        {
+          "line": 358,
+          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
+        },
+        {
+          "line": 359,
+          "to": "decisions/dr-011-token-and-component-system.html#record-status"
+        },
+        {
+          "line": 360,
+          "to": "decisions/dr-012-design-plan.html#decision"
+        },
+        {
+          "line": 361,
+          "to": "decisions/dr-012-design-plan.html#rejected"
+        },
+        {
+          "line": 362,
+          "to": "decisions/dr-012-design-plan.html#closes-off"
+        },
+        {
+          "line": 363,
+          "to": "decisions/dr-012-design-plan.html#record-status"
+        },
+        {
+          "line": 364,
+          "to": "decisions/dr-013-verification-standard.html#decision"
+        },
+        {
+          "line": 365,
+          "to": "decisions/dr-013-verification-standard.html#rejected"
+        },
+        {
+          "line": 366,
+          "to": "decisions/dr-013-verification-standard.html#closes-off"
+        },
+        {
+          "line": 367,
+          "to": "decisions/dr-013-verification-standard.html#record-status"
+        },
+        {
+          "line": 368,
+          "to": "decisions/dr-017-dependency-map.html#decision"
+        },
+        {
+          "line": 369,
+          "to": "decisions/dr-017-dependency-map.html#rejected"
+        },
+        {
+          "line": 370,
+          "to": "decisions/dr-017-dependency-map.html#closes-off"
+        },
+        {
+          "line": 371,
+          "to": "decisions/dr-017-dependency-map.html#record-status"
+        },
+        {
+          "line": 372,
+          "to": "decisions/dr-019-the-endgame.html#decision"
+        },
+        {
+          "line": 373,
+          "to": "decisions/dr-019-the-endgame.html#rejected"
+        },
+        {
+          "line": 374,
+          "to": "decisions/dr-019-the-endgame.html#closes-off"
+        },
+        {
+          "line": 375,
+          "to": "decisions/dr-019-the-endgame.html#record-status"
+        },
+        {
+          "line": 376,
           "to": "decisions/dr-020-everyday-tasks-day-one.html#decision"
         },
         {
-          "line": 578,
+          "line": 377,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#rejected"
+        },
+        {
+          "line": 378,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
+        },
+        {
+          "line": 379,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#record-status"
+        },
+        {
+          "line": 380,
           "to": "decisions/dr-028-fragments-and-build.html#decision"
         },
         {
-          "line": 582,
+          "line": 381,
+          "to": "decisions/dr-028-fragments-and-build.html#rejected"
+        },
+        {
+          "line": 382,
+          "to": "decisions/dr-028-fragments-and-build.html#closes-off"
+        },
+        {
+          "line": 383,
+          "to": "decisions/dr-028-fragments-and-build.html#record-status"
+        },
+        {
+          "line": 384,
+          "to": "decisions/dr-029-owner-views.html#decision"
+        },
+        {
+          "line": 385,
+          "to": "decisions/dr-029-owner-views.html#rejected"
+        },
+        {
+          "line": 386,
+          "to": "decisions/dr-029-owner-views.html#closes-off"
+        },
+        {
+          "line": 387,
+          "to": "decisions/dr-029-owner-views.html#record-status"
+        },
+        {
+          "line": 388,
           "to": "decisions/index.html#ledger"
         },
         {
-          "line": 586,
+          "line": 389,
           "to": "decisions/index.html#how-records-work"
         },
         {
-          "line": 596,
+          "line": 390,
+          "to": "02-architecture/index.html#overview"
+        },
+        {
+          "line": 391,
+          "to": "03-trust-and-data/trust-story.html#promise"
+        },
+        {
+          "line": 392,
+          "to": "03-trust-and-data/trust-story.html#ledger-example"
+        },
+        {
+          "line": 393,
+          "to": "03-trust-and-data/trust-story.html#the-boundary"
+        },
+        {
+          "line": 394,
+          "to": "03-trust-and-data/trust-story.html#what-we-never-do"
+        },
+        {
+          "line": 395,
+          "to": "04-operations/index.html#shifts"
+        },
+        {
+          "line": 396,
+          "to": "05-business/index.html#why-this-page"
+        },
+        {
+          "line": 397,
+          "to": "05-business/index.html#task-model"
+        },
+        {
+          "line": 398,
+          "to": "05-business/index.html#the-ratio"
+        },
+        {
+          "line": 399,
+          "to": "05-business/index.html#cost-split"
+        },
+        {
+          "line": 400,
+          "to": "05-business/index.html#trajectory"
+        },
+        {
+          "line": 401,
+          "to": "05-business/index.html#how-users-arrive"
+        },
+        {
+          "line": 402,
+          "to": "05-business/index.html#funding"
+        },
+        {
+          "line": 403,
+          "to": "05-business/index.html#geography"
+        },
+        {
+          "line": 404,
+          "to": "05-business/index.html#commerce"
+        },
+        {
+          "line": 405,
+          "to": "05-business/index.html#what-replaces"
+        },
+        {
+          "line": 413,
+          "to": "contents/index.html#promise"
+        },
+        {
+          "line": 417,
+          "to": "contents/index.html#human-in-the-gap"
+        },
+        {
+          "line": 418,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 421,
+          "to": "contents/index.html#two-fatals"
+        },
+        {
+          "line": 422,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 422,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 425,
+          "to": "contents/index.html#three-markets"
+        },
+        {
+          "line": 426,
+          "to": "02-architecture/index.html#adapters"
+        },
+        {
+          "line": 426,
+          "to": "02-architecture/index.html#adapters"
+        },
+        {
+          "line": 426,
+          "to": "06-roadmap/index.html#expansion"
+        },
+        {
+          "line": 429,
+          "to": "contents/index.html#what-exists"
+        },
+        {
+          "line": 430,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 430,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 433,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 437,
+          "to": "00-thesis/index.html#context-profile"
+        },
+        {
+          "line": 441,
+          "to": "00-thesis/index.html#why-now"
+        },
+        {
+          "line": 442,
+          "to": "00-thesis/index.html#tab-why-now"
+        },
+        {
+          "line": 445,
+          "to": "00-thesis/index.html#markets"
+        },
+        {
+          "line": 446,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 446,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 446,
+          "to": "06-roadmap/index.html#pilot"
+        },
+        {
+          "line": 449,
+          "to": "00-thesis/index.html#landscape"
+        },
+        {
+          "line": 450,
+          "to": "00-thesis/index.html#tab-landscape"
+        },
+        {
+          "line": 450,
+          "to": "decisions/dr-013-verification-standard.html"
+        },
+        {
+          "line": 453,
+          "to": "00-thesis/index.html#moat"
+        },
+        {
+          "line": 457,
+          "to": "00-thesis/index.html#endgame"
+        },
+        {
+          "line": 458,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 461,
+          "to": "01-product/index.html#journeys"
+        },
+        {
+          "line": 465,
+          "to": "01-product/index.html#taxonomy"
+        },
+        {
+          "line": 469,
+          "to": "01-product/index.html#intake"
+        },
+        {
+          "line": 470,
+          "to": "decisions/dr-001-channel-gateway.html"
+        },
+        {
+          "line": 470,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 473,
+          "to": "01-product/index.html#envelope"
+        },
+        {
+          "line": 474,
+          "to": "decisions/dr-004-authority-envelope.html"
+        },
+        {
+          "line": 474,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 477,
+          "to": "01-product/index.html#verdicts"
+        },
+        {
+          "line": 478,
+          "to": "decisions/dr-002-verdict-two-loops.html"
+        },
+        {
+          "line": 481,
+          "to": "01-product/index.html#onboarding"
+        },
+        {
+          "line": 482,
+          "to": "02-architecture/index.html#context-store"
+        },
+        {
+          "line": 482,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 485,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 489,
+          "to": "06-roadmap/index.html#sequence"
+        },
+        {
+          "line": 490,
+          "to": "06-roadmap/index.html#fig-sequence"
+        },
+        {
+          "line": 493,
+          "to": "06-roadmap/index.html#pilot"
+        },
+        {
+          "line": 494,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 497,
+          "to": "06-roadmap/index.html#build-buy"
+        },
+        {
+          "line": 498,
+          "to": "06-roadmap/index.html#tab-build-buy"
+        },
+        {
+          "line": 501,
+          "to": "06-roadmap/index.html#expansion"
+        },
+        {
+          "line": 502,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 505,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 509,
+          "to": "07-open/index.html#objections"
+        },
+        {
+          "line": 513,
+          "to": "07-open/index.html#left-alone"
+        },
+        {
+          "line": 523,
+          "to": "08-review/index.html#executive-verdict"
+        },
+        {
+          "line": 527,
+          "to": "08-review/index.html#the-idea-in-one-page"
+        },
+        {
+          "line": 528,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 528,
+          "to": "00-thesis/index.html#labs-ceiling"
+        },
+        {
+          "line": 528,
+          "to": "00-thesis/index.html#moat"
+        },
+        {
+          "line": 531,
+          "to": "08-review/index.html#team-and-execution"
+        },
+        {
+          "line": 532,
+          "to": "index.html"
+        },
+        {
+          "line": 535,
+          "to": "08-review/index.html#security-red-team"
+        },
+        {
+          "line": 536,
+          "to": "03-trust-and-data/index.html#threat-model"
+        },
+        {
+          "line": 539,
+          "to": "08-review/index.html#pre-mortem"
+        },
+        {
+          "line": 543,
+          "to": "08-review/index.html#what-we-would-need-to-see"
+        },
+        {
+          "line": 547,
+          "to": "08-review/index.html#questions-for-the-founder"
+        },
+        {
+          "line": 551,
+          "to": "08-review/index.html#what-the-record-should-change"
+        },
+        {
+          "line": 555,
+          "to": "decisions/dr-001-channel-gateway.html#decision"
+        },
+        {
+          "line": 559,
+          "to": "decisions/dr-002-verdict-two-loops.html#decision"
+        },
+        {
+          "line": 563,
+          "to": "decisions/dr-010-html-no-build-step.html#decision"
+        },
+        {
+          "line": 567,
+          "to": "decisions/dr-011-token-and-component-system.html#decision"
+        },
+        {
+          "line": 571,
+          "to": "decisions/dr-012-design-plan.html#decision"
+        },
+        {
+          "line": 575,
+          "to": "decisions/dr-017-dependency-map.html#decision"
+        },
+        {
+          "line": 576,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 576,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 579,
+          "to": "decisions/dr-019-the-endgame.html#decision"
+        },
+        {
+          "line": 580,
+          "to": "00-thesis/index.html#context-profile"
+        },
+        {
+          "line": 580,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html"
+        },
+        {
+          "line": 583,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#decision"
+        },
+        {
+          "line": 587,
+          "to": "decisions/dr-028-fragments-and-build.html#decision"
+        },
+        {
+          "line": 591,
+          "to": "decisions/dr-029-owner-views.html#decision"
+        },
+        {
+          "line": 595,
+          "to": "decisions/index.html#ledger"
+        },
+        {
+          "line": 599,
+          "to": "decisions/index.html#how-records-work"
+        },
+        {
+          "line": 609,
           "to": "00-thesis/index.html"
         },
         {
-          "line": 597,
+          "line": 610,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
-          "line": 598,
+          "line": 611,
           "to": "07-open/index.html"
         }
       ]

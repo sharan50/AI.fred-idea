@@ -56,7 +56,7 @@
     },
     {
       "key": "decisions",
-      "pages": 29
+      "pages": 30
     },
     {
       "key": "depmap",
@@ -76,10 +76,10 @@
       "path": "index.html",
       "title": "AI.fred",
       "section": "index",
-      "status": "decision",
+      "status": "assumption",
       "summary": "The front door: what is decided, where the record stands, the numbers that matter, what is not known, five owner doors and the full contents. Generated from roles.json, the manifest and the map; edit those, never this page.",
       "updated": "2026-09-17",
-      "words": 974,
+      "words": 1315,
       "sections": [
         {
           "id": "venture",
@@ -105,7 +105,7 @@
         {
           "id": "numbers",
           "title": "The numbers that matter",
-          "words": 7,
+          "words": 347,
           "owner": null,
           "readers": []
         },
@@ -126,7 +126,7 @@
         {
           "id": "contents",
           "title": "Contents",
-          "words": 84,
+          "words": 85,
           "owner": null,
           "readers": []
         }
@@ -2324,18 +2324,57 @@
       ]
     },
     {
+      "path": "decisions/dr-029-owner-views.html",
+      "title": "DR-029 A generated front door and one generated page per owner",
+      "section": "decisions",
+      "status": "decision",
+      "summary": "The publication has a generated front door and one generated page per owner; ownership is set at section level in roles.json; a fact reaches a view only by transcluding a block marked in the canonical fragment. Hand-written role pages, page-level ownership and whole fragments in role pages were rejected.",
+      "updated": "2026-09-17",
+      "words": 1437,
+      "sections": [
+        {
+          "id": "decision",
+          "title": "Decision",
+          "words": 579,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "rejected",
+          "title": "Rejected alternative(s) and their cost",
+          "words": 253,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "closes-off",
+          "title": "What this closes off",
+          "words": 164,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "record-status",
+          "title": "Status",
+          "words": 106,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
+    },
+    {
       "path": "decisions/index.html",
       "title": "Decisions",
       "section": "decisions",
       "status": "amber",
       "summary": "The ledger of decision records: every decision that shapes AI.fred, with what was rejected, what each closes off, its status and its trigger where it is amber.",
       "updated": "2026-09-17",
-      "words": 1390,
+      "words": 1416,
       "sections": [
         {
           "id": "ledger",
           "title": "The ledger",
-          "words": 850,
+          "words": 876,
           "owner": "ceo",
           "readers": []
         },
@@ -2389,7 +2428,7 @@
       "status": "amber",
       "summary": "The owner view for the chief executive: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
       "updated": "2026-09-17",
-      "words": 9901,
+      "words": 10249,
       "sections": [
         {
           "id": "brief",
@@ -2401,7 +2440,7 @@
         {
           "id": "own",
           "title": "What you own",
-          "words": 2538,
+          "words": 2612,
           "owner": null,
           "readers": []
         },
@@ -2415,14 +2454,14 @@
         {
           "id": "path",
           "title": "Reading path",
-          "words": 1362,
+          "words": 1433,
           "owner": null,
           "readers": []
         },
         {
           "id": "keys",
           "title": "Key blocks",
-          "words": 5323,
+          "words": 5526,
           "owner": null,
           "readers": []
         }

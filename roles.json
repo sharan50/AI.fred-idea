@@ -138,8 +138,27 @@
     "growth": "cfo"
   },
   "summary": {
-    "decisions": ["dr-008", "dr-004", "dr-003", "dr-009", "dr-005", "dr-007", "dr-006", "dr-022", "dr-021", "dr-019"],
-    "keys": [],
+    "decisions": [
+      "dr-008",
+      "dr-004",
+      "dr-003",
+      "dr-009",
+      "dr-005",
+      "dr-007",
+      "dr-006",
+      "dr-022",
+      "dr-021",
+      "dr-019"
+    ],
+    "keys": [
+      "05-business.the-ratio.1",
+      "05-business.task-model.1",
+      "05-business.trajectory.1",
+      "05-business.geography.1",
+      "06-roadmap.build-buy.1",
+      "measurement-protocol.what-it-measures.1",
+      "01-product.verdicts.1"
+    ],
     "unknowns": [
       "The front door per market (the channel amber)",
       "First-cohort market sequencing",

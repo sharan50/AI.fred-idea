@@ -438,6 +438,22 @@ function keysReport(M) {
   return L.join('\n');
 }
 
+// One owner's scope: the fragments that hold their sections, their decisions, their open items, what they read.
+function roleReport(M, id) {
+  const r = (M.roles ? M.roles.roles : []).find((x) => x.id === id);
+  if (!r) return `no role "${id}" in roles.json; roles are ${(M.roles ? M.roles.roles : []).map((x) => x.id).join(', ')}`;
+  const L = [`${r.id}: ${r.title}`, '', 'Owned sections and the source that holds each:'];
+  const fragmentOf = (p, s) => (p.entry.kind === 'file' ? rel(M.root, p.entry.files[0]) : rel(M.root, p.entry.files.find((f) => basename(f).endsWith(`-${s.id}.html`)) || p.entry.files.find((f, i) => i > 0 && read(f).includes(`id="${s.id}"`)) || p.entry.files[0]));
+  for (const p of M.pages) for (const s of p.sections) if (s.owner === id) L.push(`  ${p.path}#${s.id}  (${s.words} words)  ${fragmentOf(p, s)}`);
+  L.push('', 'Decisions:');
+  for (const [d, o] of M.decisionOwner) if (o === id) L.push(`  ${d}  decisions/${(M.manifest.pages.find((e) => e.path.startsWith(`decisions/${d}-`)) || { path: '' }).path.replace(/^decisions\//, '')}`);
+  L.push('', 'Open items (Table 7.1), with triggers:');
+  for (const row of M.opens) if (row.role === id) L.push(`  ${row.node ? row.node.id : '?'}  ${row.node ? row.node.label : row.label}  |  ${row.trigger}`);
+  L.push('', 'Reads:');
+  for (const at of r.reads || []) L.push(`  ${at}`);
+  return L.join('\n');
+}
+
 // ---------------------------------------------------------------------------
 // Command line
 // ---------------------------------------------------------------------------
@@ -449,13 +465,14 @@ function main() {
       'node tools/build.mjs --check    exit 1 if any page under docs/ or any generated file differs from what a build would write',
       'node tools/build.mjs --owners   print the ownership table from roles.json (every section, decision and open item)',
       'node tools/build.mjs --keys     print every key block with its text',
+      'node tools/build.mjs --role id  print one owner\'s scope: their fragments, decisions, open items and reads',
     ].join('\n'));
     return;
   }
-  if (argv.includes('--owners') || argv.includes('--keys')) {
+  if (argv.includes('--owners') || argv.includes('--keys') || argv.includes('--role')) {
     const M = model();
     for (const p of M.problems) console.log(`${p.file}:${p.line}: ${p.msg}`);
-    console.log(argv.includes('--owners') ? ownersReport(M) : keysReport(M));
+    console.log(argv.includes('--owners') ? ownersReport(M) : argv.includes('--keys') ? keysReport(M) : roleReport(M, argv[argv.indexOf('--role') + 1] || ''));
     if (M.problems.length) { console.log(`\n${M.problems.length} problem(s).`); process.exit(1); }
     return;
   }

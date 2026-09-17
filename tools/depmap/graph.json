@@ -8363,6 +8363,67 @@
       ]
     },
     {
+      "id": "dr-029",
+      "kind": "dr",
+      "label": "A generated front door and one generated page per owner",
+      "facets": {
+        "layer": "publishing",
+        "fixity": "fixed"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-029-owner-views.html#decision",
+          "role": "canonical"
+        },
+        {
+          "at": "decisions/index.html#ledger!\"A generated front door and one generated page per owner\"",
+          "role": "mentions"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-029-hand-written-role-pages",
+      "kind": "alt",
+      "label": "Hand-written role pages",
+      "facets": {
+        "layer": "publishing"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-029-owner-views.html#rejected!\"Hand-written role pages\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-029-page-level-ownership",
+      "kind": "alt",
+      "label": "Page-level ownership",
+      "facets": {
+        "layer": "publishing"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-029-owner-views.html#rejected!\"Page-level ownership\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
+      "id": "alt-dr-029-whole-fragments-in-role-pages",
+      "kind": "alt",
+      "label": "Whole fragments in role pages",
+      "facets": {
+        "layer": "publishing"
+      },
+      "loci": [
+        {
+          "at": "decisions/dr-029-owner-views.html#rejected!\"Whole fragments in role pages\"",
+          "role": "canonical"
+        }
+      ]
+    },
+    {
       "id": "open-07-31",
       "kind": "open",
       "label": "The given name, settled by DR-027",
@@ -11523,6 +11584,31 @@
       "dr-028",
       "rejects",
       "alt-dr-028-leaving-the-pages-as-they-are"
+    ],
+    [
+      "dr-010",
+      "justifies",
+      "dr-029"
+    ],
+    [
+      "dr-028",
+      "justifies",
+      "dr-029"
+    ],
+    [
+      "dr-029",
+      "rejects",
+      "alt-dr-029-hand-written-role-pages"
+    ],
+    [
+      "dr-029",
+      "rejects",
+      "alt-dr-029-page-level-ownership"
+    ],
+    [
+      "dr-029",
+      "rejects",
+      "alt-dr-029-whole-fragments-in-role-pages"
     ],
     [
       "open-07-31",
