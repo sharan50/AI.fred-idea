@@ -1,0 +1,63 @@
+{
+  "scenario": "as_specified",
+  "paths": 20000,
+  "share_profitable_by_m60": 0.12875,
+  "share_profitable_by_m36": 0.0086,
+  "peak_cash_need_usd": {
+    "conservative": 31752946.293879207,
+    "plan": 23474116.97157046,
+    "optimistic": 8099148.230139925
+  },
+  "users_m36": {
+    "cons": 16012.636825999733,
+    "plan": 12759.198665623753,
+    "opt": 6717.099224925503
+  },
+  "min_per_user_month_m36": {
+    "cons": 172.77367618295582,
+    "plan": 158.48645732189075
+  },
+  "arpu_usd_m36": {
+    "plan": 37.41857665523077
+  },
+  "funding_plan": {
+    "Seed": {
+      "months": "1-18",
+      "burn_inr": 199072743.25947377,
+      "raise_inr": 258794566.23731592,
+      "raise_usd": 2907804.1150260214
+    },
+    "Series A": {
+      "months": "19-36",
+      "burn_inr": 551387264.3790206,
+      "raise_inr": 716803443.6927267,
+      "raise_usd": 8053971.277446368
+    },
+    "Series B": {
+      "months": "37-60",
+      "burn_inr": 1338736402.8312764,
+      "raise_inr": 1740357323.6806593,
+      "raise_usd": 19554576.670569204
+    }
+  },
+  "funding_conservative": {
+    "Seed": {
+      "months": "1-18",
+      "burn_inr": 234549374.24805912,
+      "raise_inr": 304914186.52247685,
+      "raise_usd": 3426002.095758167
+    },
+    "Series A": {
+      "months": "19-36",
+      "burn_inr": 701978088.7791244,
+      "raise_inr": 912571515.4128617,
+      "raise_usd": 10253612.532728784
+    },
+    "Series B": {
+      "months": "37-60",
+      "burn_inr": 1889484757.128066,
+      "raise_inr": 2456330184.266486,
+      "raise_usd": 27599215.553556025
+    }
+  }
+}
