@@ -3,7 +3,7 @@
   "slug": "core-components",
   "label": "The eleven components of the universal core",
   "source": "tools/depmap/graph.json",
-  "canonical": "index.html#three-markets",
+  "canonical": "contents/index.html#three-markets",
   "check": "members",
   "members": [
     {

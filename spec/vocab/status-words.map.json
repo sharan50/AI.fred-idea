@@ -3,7 +3,7 @@
   "slug": "status-words",
   "label": "The five status words",
   "source": "tools/depmap/graph.json",
-  "canonical": "index.html#how-to-read",
+  "canonical": "contents/index.html#how-to-read",
   "check": "members",
   "members": [
     {

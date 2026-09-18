@@ -1,7 +1,7 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "updated": "2026-09-17",
+  "updated": "2026-09-18",
   "statuses": {
     "verified": "never a page status",
     "to-verify": "the page carries external claims not yet verified",
@@ -52,7 +52,7 @@
     },
     {
       "key": "08-review",
-      "pages": 1
+      "pages": 2
     },
     {
       "key": "decisions",
@@ -78,8 +78,8 @@
       "section": "index",
       "status": "assumption",
       "summary": "The front door: what is decided, where the record stands, the numbers that matter, what is not known, five owner doors and the full contents. Generated from roles.json, the manifest and the map; edit those, never this page.",
-      "updated": "2026-09-17",
-      "words": 1315,
+      "updated": "2026-09-18",
+      "words": 1318,
       "sections": [
         {
           "id": "venture",
@@ -126,7 +126,7 @@
         {
           "id": "contents",
           "title": "Contents",
-          "words": 85,
+          "words": 88,
           "owner": null,
           "readers": []
         }
@@ -139,7 +139,7 @@
       "status": "decision",
       "summary": "The venture in two pages: the promise, the human-in-the-gap model, the two fatal failures and how the design makes them structurally impossible, the three-market shape, what exists today, and how to read this publication.",
       "updated": "2026-09-15",
-      "words": 2613,
+      "words": 2683,
       "sections": [
         {
           "id": "promise",
@@ -186,7 +186,7 @@
         {
           "id": "publication-map",
           "title": "The publication",
-          "words": 859,
+          "words": 929,
           "owner": "ceo",
           "readers": []
         }
@@ -1031,8 +1031,8 @@
       "section": "08-review",
       "status": "to-verify",
       "summary": "An independent, partner-level review of the venture as the record stood on 11 September 2026: the technology today, the technologies on the horizon, the regulatory landscape in India, the UK and the US, the market, the economics the record defers, the team the plan needs, a red-team read of the trust design, the product and its path to customers, a pre-mortem and what would need to be true before money.",
-      "updated": "2026-09-14",
-      "words": 25872,
+      "updated": "2026-09-18",
+      "words": 25918,
       "sections": [
         {
           "id": "executive-verdict",
@@ -1156,6 +1156,150 @@
           "id": "sources",
           "title": "Sources",
           "words": 3634,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "08-review/full-review-18-09.html",
+      "title": "Full Review 18/09",
+      "section": "08-review",
+      "status": "to-verify",
+      "summary": "A second independent, partner-level review of the venture as the record stood on 15 September 2026, after the revision that answered the review of 11 September: what changed and what it costs, the technology and the vendors, the horizon, the rules in India, the UK and the US read at source where a mirror exists, the market and the comparables that died, the economics interrogated, the team, a red-team read, the pre-mortem, the gates, the questions for the founder and the evidence ledger.",
+      "updated": "2026-09-18",
+      "words": 28879,
+      "sections": [
+        {
+          "id": "verdict",
+          "title": "Executive verdict",
+          "words": 1880,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "idea",
+          "title": "The idea in one page, at its strongest",
+          "words": 957,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "since",
+          "title": "What changed since 11 September, and what the change costs",
+          "words": 1259,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "technology",
+          "title": "Technology today: what exists, what is plausible, what is research",
+          "words": 1848,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "horizon",
+          "title": "Technologies on the horizon, and who owns their distribution",
+          "words": 1489,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "india",
+          "title": "Regulatory position: India",
+          "words": 2110,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "uk",
+          "title": "Regulatory position: the United Kingdom",
+          "words": 1275,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "us",
+          "title": "Regulatory position: the United States",
+          "words": 1754,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "market",
+          "title": "Market, customer and competition",
+          "words": 1688,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "economics",
+          "title": "Business model and unit economics",
+          "words": 2140,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "team",
+          "title": "Founder, team shape and execution risk",
+          "words": 1086,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "security",
+          "title": "Security, trust and safety: a red-team read",
+          "words": 1929,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "product",
+          "title": "Product, go-to-market and retention",
+          "words": 1002,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "premortem",
+          "title": "Pre-mortem: it is dead in three years, ranked causes",
+          "words": 1040,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "gates",
+          "title": "What we would need to see before money, and what the next round would need",
+          "words": 654,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "questions",
+          "title": "Questions for the founder",
+          "words": 584,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "changes",
+          "title": "What the record should change",
+          "words": 818,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "evidence",
+          "title": "The evidence ledger: what was read, how, and what could not be",
+          "words": 723,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 3970,
           "owner": "ceo",
           "readers": []
         }
@@ -2409,7 +2553,7 @@
       "section": "roles",
       "status": "decision",
       "summary": "Five owner doors, one per role, each a page generated from roles.json: what the owner holds, what binds them, their reading path and their key blocks.",
-      "updated": "2026-09-17",
+      "updated": "2026-09-18",
       "words": 543,
       "sections": [
         {
@@ -2427,8 +2571,8 @@
       "section": "roles",
       "status": "amber",
       "summary": "The owner view for the chief executive: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-17",
-      "words": 10249,
+      "updated": "2026-09-18",
+      "words": 10723,
       "sections": [
         {
           "id": "brief",
@@ -2440,7 +2584,7 @@
         {
           "id": "own",
           "title": "What you own",
-          "words": 2612,
+          "words": 2830,
           "owner": null,
           "readers": []
         },
@@ -2454,7 +2598,7 @@
         {
           "id": "path",
           "title": "Reading path",
-          "words": 1433,
+          "words": 1689,
           "owner": null,
           "readers": []
         },
@@ -2473,7 +2617,7 @@
       "section": "roles",
       "status": "decision",
       "summary": "The owner view for the chief technology officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-17",
+      "updated": "2026-09-18",
       "words": 8253,
       "sections": [
         {
@@ -2519,7 +2663,7 @@
       "section": "roles",
       "status": "amber",
       "summary": "The owner view for the chief operating officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-17",
+      "updated": "2026-09-18",
       "words": 3248,
       "sections": [
         {
@@ -2565,7 +2709,7 @@
       "section": "roles",
       "status": "amber",
       "summary": "The owner view for the chief financial officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-17",
+      "updated": "2026-09-18",
       "words": 3843,
       "sections": [
         {
@@ -2611,7 +2755,7 @@
       "section": "roles",
       "status": "to-verify",
       "summary": "The owner view for the general counsel: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-17",
+      "updated": "2026-09-18",
       "words": 4821,
       "sections": [
         {
@@ -2657,7 +2801,7 @@
       "section": "record",
       "status": "decision",
       "summary": "The build record door: the independent review, the decision ledger, the two maps, and where the surfacing report and the batches live in the repository.",
-      "updated": "2026-09-17",
+      "updated": "2026-09-18",
       "words": 426,
       "sections": [
         {

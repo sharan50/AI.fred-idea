@@ -369,7 +369,7 @@
     },
     "core-components": {
       "description": "The eleven components of the universal core",
-      "x-locus": "index.html#three-markets",
+      "x-locus": "contents/index.html#three-markets",
       "type": "string",
       "enum": [
         "planner",
@@ -388,7 +388,7 @@
     },
     "status-words": {
       "description": "The five status words",
-      "x-locus": "index.html#how-to-read",
+      "x-locus": "contents/index.html#how-to-read",
       "type": "string",
       "enum": [
         "verified",
