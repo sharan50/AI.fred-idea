@@ -9,6 +9,7 @@
       "frame": "You hold the thesis and the scope. The publication argues that a personal assistant can be trusted with the tasks that carry real consequence because the design makes the two fatal failures structurally impossible, and that the flat-fee players cannot follow because the trust architecture, not price or channel, is the moat. You own that argument, the product as the user meets it, the roadmap that sequences the build, the open items with their triggers, the ledger of decisions and the independent review. Every decision in the ledger is fixed unless its record says amber; an objection goes to the open items and the build complies. Your reading path starts with the thesis and ends with the review, which is the record read by someone who did not write it. What you are asked most often is what is not known, so read the open items with their triggers before anything else on the path.",
       "owns": [
         "00-thesis/index.html",
+        "00-thesis/instinct.html",
         "01-product/index.html",
         "06-roadmap/index.html",
         "07-open/index.html",

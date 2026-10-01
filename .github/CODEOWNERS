@@ -2,6 +2,7 @@
 # Page-level lines first, then section-level lines, so the more specific line wins.
 /src/pages/contents/index.html @sharan50
 /src/pages/00-thesis/index/ @sharan50
+/src/pages/00-thesis/instinct/ @sharan50
 /src/pages/01-product/index/ @sharan50
 /src/pages/02-architecture/index/ @sharan50
 /src/pages/02-architecture/worker-console/ @sharan50

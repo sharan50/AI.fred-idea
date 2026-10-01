@@ -1,0 +1,66 @@
+      <section>
+        <h2 id="how-it-works"><span class="no">2</span>How it works</h2>
+        <p>Instinct has three layers, and <a href="#fig-instinct-architecture">Figure 0.2</a> draws them. The first is the conversation: the user texts it on iMessage or WhatsApp or calls it, and it texts or calls the user first when something in their life needs attention. The second is a persistent cloud computer, one per user, that keeps running between messages: a model, a browser logged into the user's accounts, from 16 September a phone line of its own for outbound calls, and from 9 September an email address of its own at mail.instinct.com so that it can open accounts, write to restaurants and take forwarded threads without touching the user's inbox <span class="chip chip-verified">verified</span> <a class="ref" href="#src-11">[11]</a> <a class="ref" href="#src-12">[12]</a>. The third is the set of connections the user grants: Google Workspace through its official interfaces (Gmail, Calendar, Drive, Docs, Sheets, Slides, Tasks), the messaging thread, a Mac app for the screen, audio and location, and a Vault into which the user puts logins and a card so that the agent can sign in and pay as them <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-18">[18]</a> <a class="ref" href="#src-19">[19]</a>. There is no iOS or Android app; the product is the thread, the web workspace at app.instinct.co and the Mac app <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-19">[19]</a>.</p>
+        <p>The execution model is the point. Instinct does not call an airline's interface or a restaurant's booking rail; it drives a browser as the user, with the user's own password, from a machine it owns. That is why it can do anything a person at a laptop can do, and why the sites it visits cannot tell it from a person until it behaves like a machine. Where a site needs a password it does not hold, it has been reported to reset the password itself and carry on, including to complete a purchase <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-3">[3]</a> <a class="ref" href="#src-19">[19]</a>. Because the machine keeps state, a task can run for hours: research, an email to a vendor, a wait for the reply, a confirmation, all without the user. On 4 September the founder said Instinct would broker credentials through 1Password rather than only through its own Vault <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-22">[22]</a>.</p>
+        <figure class="fig" id="fig-instinct-architecture">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 0.2, Instinct's three layers as reported, scrollable">
+          <svg viewBox="0 0 720 440" role="img" aria-labelledby="fig-instinct-architecture-title fig-instinct-architecture-desc">
+            <title id="fig-instinct-architecture-title">Instinct's three layers, as reported</title>
+            <desc id="fig-instinct-architecture-desc">On the left, the user on their own phone, texting on iMessage or WhatsApp or calling. In the middle, a dashed zone: Instinct's cloud computer, one per user and always on. Inside it an agent at the top, a row of three executors below it, a browser holding the user's logins, a phone line and an email address of its own, and below those the Vault holding the user's logins and card, and the connections to Gmail, Calendar, Drive and the Mac screen. The accent arrow runs from the Vault up into the browser: the user's real password and card are in the agent's hands. Arrows leave the zone to the right, to the user's accounts and the web, where it acts as the user, and to vendors and clinics, which it calls for the user.</desc>
+            <defs>
+              <marker id="fig-instinct-architecture-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+              <marker id="fig-instinct-architecture-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-zone" x="168" y="24" width="352" height="376" rx="2"/>
+            <text class="fg-label-small fg-label-soft" x="344" y="44" text-anchor="middle">Instinct's cloud computer: one per user, always on</text>
+            <rect class="fg-box" x="192" y="56" width="304" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="344" y="78" text-anchor="middle">The agent</text>
+            <text class="fg-label-small" x="344" y="96" text-anchor="middle">a model that reads your inbox and acts as you</text>
+            <rect class="fg-box" x="192" y="144" width="100" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="242" y="166" text-anchor="middle">A browser</text>
+            <text class="fg-label-small" x="242" y="184" text-anchor="middle">your logins</text>
+            <rect class="fg-box" x="294" y="144" width="100" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="344" y="166" text-anchor="middle">A phone line</text>
+            <text class="fg-label-small" x="344" y="184" text-anchor="middle">from 16 Sept</text>
+            <rect class="fg-box" x="396" y="144" width="100" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="446" y="166" text-anchor="middle">Own email</text>
+            <text class="fg-label-small" x="446" y="184" text-anchor="middle">from 9 Sept</text>
+            <line class="fg-line" x1="242" y1="112" x2="242" y2="144" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <line class="fg-line" x1="344" y1="112" x2="344" y2="144" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <line class="fg-line" x1="446" y1="112" x2="446" y2="144" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <rect class="fg-box-2" x="192" y="248" width="144" height="64" rx="2"/>
+            <text class="fg-label fg-label-strong" x="264" y="272" text-anchor="middle">The Vault</text>
+            <text class="fg-label-small" x="264" y="292" text-anchor="middle">logins and card</text>
+            <rect class="fg-box" x="352" y="248" width="144" height="64" rx="2"/>
+            <text class="fg-label fg-label-strong" x="424" y="270" text-anchor="middle">Connections</text>
+            <text class="fg-label-small" x="424" y="288" text-anchor="middle">Gmail, Calendar,</text>
+            <text class="fg-label-small" x="424" y="302" text-anchor="middle">Drive, Mac screen</text>
+            <line class="fg-accent" x1="242" y1="248" x2="242" y2="200" marker-end="url(#fig-instinct-architecture-arrow-accent)"/>
+            <text class="fg-label-small" x="250" y="222">your real password</text>
+            <text class="fg-label-small" x="250" y="236">and card, in its hands</text>
+            <line class="fg-line" x1="480" y1="248" x2="480" y2="200" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <text class="fg-label-small fg-label-soft" x="192" y="344">State is kept between messages:</text>
+            <text class="fg-label-small fg-label-soft" x="192" y="360">a task runs for hours or days, and it texts</text>
+            <text class="fg-label-small fg-label-soft" x="192" y="376">or calls you first when something needs you</text>
+            <rect class="fg-device" x="8" y="176" width="144" height="64" rx="8"/>
+            <text class="fg-label fg-label-strong" x="80" y="200" text-anchor="middle">You</text>
+            <text class="fg-label-small" x="80" y="218" text-anchor="middle">iMessage, WhatsApp,</text>
+            <text class="fg-label-small" x="80" y="232" text-anchor="middle">or a call</text>
+            <path class="fg-line" d="M152,208 H160 V84 H192" fill="none" marker-start="url(#fig-instinct-architecture-arrow)" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <text class="fg-label-small" x="16" y="152">a text or a call,</text>
+            <text class="fg-label-small" x="16" y="166">both ways</text>
+            <rect class="fg-box" x="560" y="144" width="152" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="636" y="166" text-anchor="middle">Your accounts</text>
+            <text class="fg-label-small" x="636" y="184" text-anchor="middle">it acts as you there</text>
+            <line class="fg-line" x1="520" y1="172" x2="560" y2="172" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <rect class="fg-actor" x="560" y="252" width="152" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="636" y="274" text-anchor="middle">Vendors, clinics</text>
+            <text class="fg-label-small" x="636" y="292" text-anchor="middle">it calls for you</text>
+            <line class="fg-line" x1="520" y1="280" x2="560" y2="280" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <text class="fg-label-small fg-label-soft" x="8" y="424">dashed: Instinct's machine; rounded: your phone; dotted: people; accent: where your real values sit</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 0.2</span> Instinct is a model on a machine of its own that holds the user's real passwords and card and acts as the user, by browser, by phone and by its own email; the conversation is only the front.</figcaption>
+        </figure>
+        <p>Two things about the model of control are published, and both are terms rather than mechanisms. The terms of service appoint Instinct as the user's agent, authorised to enter into agreements, commitments and transactions on the user's behalf, and say that the company may implement confirmation requirements on certain actions but makes no representation that such safeguards will prevent unintended or erroneous ones <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-17">[17]</a> <a class="ref" href="#src-19">[19]</a>. No published page says it asks before it buys; where most agents stop to confirm, Instinct continues, and early testers reported an email it sent that nobody had approved <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-19">[19]</a> <a class="ref" href="#src-27">[27]</a>. On data, TechCrunch reported on 24 August that the first terms granted a perpetual training licence over user materials and that email was being stored in plain text <span class="chip chip-verified">verified</span> <a class="ref" href="#src-3">[3]</a>; the terms were rewritten two days later and the perpetual licence was dropped, but training stays on by default, the opt-out applies only from the day it is set, Google Workspace data is exempt from training while screen, audio, location and messaging data are not, and the Vault is excluded <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-20">[20]</a> <a class="ref" href="#src-21">[21]</a>. In our vocabulary: the model sees every real value, the authority is unbounded, and the surface is borrowed.</p>
+      </section>

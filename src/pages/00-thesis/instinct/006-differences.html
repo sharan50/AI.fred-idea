@@ -1,0 +1,89 @@
+      <section>
+        <h2 id="differences"><span class="no">6</span>Where we differ</h2>
+        <p>The differences are not in what the product does but in who holds what while it does it. <a href="#fig-instinct-vs-fred">Figure 0.5</a> draws the two paths side by side and <a href="#tab-instinct-differences">Table 0.6</a> lists ten differences with the record that fixes each. Three are structural and the rest follow from them. Instinct's model holds every real value and ours holds labels, with one isolated component placing the value once (<a href="../03-trust-and-data/#substitution">03</a>). Instinct's authority is whatever the user's credentials allow, under terms that promise no confirmation; ours is one envelope the user confirmed, with a point-of-no-return test on every step and dual control inside it (<a href="../decisions/dr-004-authority-envelope.html">DR-004</a>). And Instinct has no people at all, fourteen employees and a machine per user, where we put a person in the gap on a task card that names nobody and shows no value (<a href="../04-operations/#task-cards">04</a>). Everything else, the refusals, the ledger, the verdict, the subscription, the markets, is downstream of those three.</p>
+        <figure class="fig" id="fig-instinct-vs-fred">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 0.5, the two paths side by side, who holds the value and who holds the authority, scrollable">
+          <svg viewBox="0 0 720 400" role="img" aria-labelledby="fig-instinct-vs-fred-title fig-instinct-vs-fred-desc">
+            <title id="fig-instinct-vs-fred-title">Two paths from the user to the institution: who holds the value and who holds the authority</title>
+            <desc id="fig-instinct-vs-fred-desc">Two columns. On the left, Instinct: the user on their phone sends a text to a cloud computer, drawn inside an amber dashed box, in which the agent holds the inbox, the passwords and the card in the clear and trains on most of it; from there it logs in and pays as the user at sites and with people, which can refuse an agent, and may reset a password to get there. Its authority is the terms, with no promise it asks first. On the right, AI.fred: the user's device sends a request that is tokenised at the gateway's edge; a planner and workers hold labels only inside a dashed envelope the user confirmed with one tap; a substitution component takes the value from the vault and places it once, and that accent arrow into the institution is the one place a value appears. Its authority is one envelope, bounded in spend, parties, acts and time; outside it, the user's tap.</desc>
+            <defs>
+              <marker id="fig-instinct-vs-fred-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+              <marker id="fig-instinct-vs-fred-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <text class="fg-label fg-label-strong" x="176" y="24" text-anchor="middle">Instinct</text>
+            <text class="fg-label fg-label-strong" x="544" y="24" text-anchor="middle">AI.fred</text>
+            <line class="fg-rule" x1="360" y1="8" x2="360" y2="392"/>
+            <rect class="fg-device" x="124" y="40" width="104" height="48" rx="8"/>
+            <text class="fg-label fg-label-strong" x="176" y="60" text-anchor="middle">You</text>
+            <text class="fg-label-small" x="176" y="76" text-anchor="middle">your phone</text>
+            <line class="fg-line" x1="176" y1="88" x2="176" y2="120" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <text class="fg-label-small" x="184" y="104">a text</text>
+            <rect class="fg-amber" x="64" y="108" width="224" height="144" rx="2"/>
+            <rect class="fg-box" x="76" y="120" width="200" height="120" rx="2"/>
+            <text class="fg-label fg-label-strong" x="176" y="142" text-anchor="middle">The cloud computer</text>
+            <text class="fg-label-small" x="176" y="162" text-anchor="middle">it holds, in the clear:</text>
+            <text class="fg-label-small" x="176" y="178" text-anchor="middle">your inbox</text>
+            <text class="fg-label-small" x="176" y="192" text-anchor="middle">your passwords</text>
+            <text class="fg-label-small" x="176" y="206" text-anchor="middle">your card</text>
+            <text class="fg-label-small fg-label-soft" x="176" y="228" text-anchor="middle">and trains on most of it</text>
+            <line class="fg-line" x1="176" y1="252" x2="176" y2="312" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <text class="fg-label-small" x="184" y="276">logs in and pays as you;</text>
+            <text class="fg-label-small" x="184" y="290">may reset a password</text>
+            <rect class="fg-box" x="76" y="312" width="200" height="48" rx="2"/>
+            <text class="fg-label fg-label-strong" x="176" y="332" text-anchor="middle">Sites and people</text>
+            <text class="fg-label-small" x="176" y="348" text-anchor="middle">which can refuse an agent</text>
+            <text class="fg-label-small fg-label-strong" x="8" y="380">Authority: the terms</text>
+            <text class="fg-label-small" x="8" y="394">your agent for binding acts; no promise it asks</text>
+            <rect class="fg-device" x="492" y="40" width="104" height="48" rx="8"/>
+            <text class="fg-label fg-label-strong" x="544" y="60" text-anchor="middle">You</text>
+            <text class="fg-label-small" x="544" y="76" text-anchor="middle">your own device</text>
+            <line class="fg-line" x1="544" y1="88" x2="544" y2="120" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <text class="fg-label-small" x="552" y="108">a request, one tap</text>
+            <rect class="fg-box" x="452" y="120" width="184" height="40" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="138" text-anchor="middle">Gateway</text>
+            <text class="fg-label-small" x="544" y="153" text-anchor="middle">tokenised at the edge</text>
+            <rect class="fg-zone" x="440" y="168" width="208" height="116" rx="2"/>
+            <text class="fg-label-small fg-label-soft" x="640" y="182" text-anchor="end">the envelope</text>
+            <rect class="fg-box" x="452" y="188" width="184" height="40" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="206" text-anchor="middle">Planner, workers</text>
+            <text class="fg-label-small" x="544" y="221" text-anchor="middle">labels only: {{pan}}</text>
+            <line class="fg-line" x1="544" y1="160" x2="544" y2="188" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <rect class="fg-box" x="452" y="236" width="184" height="40" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="254" text-anchor="middle">Substitution</text>
+            <text class="fg-label-small" x="544" y="269" text-anchor="middle">places the value once</text>
+            <line class="fg-line" x1="544" y1="228" x2="544" y2="236" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <rect class="fg-box-2" x="656" y="236" width="56" height="40" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="684" y="254" text-anchor="middle">Vault</text>
+            <text class="fg-label-small" x="684" y="269" text-anchor="middle">holds it</text>
+            <line class="fg-line" x1="656" y1="256" x2="636" y2="256" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <line class="fg-accent" x1="544" y1="284" x2="544" y2="312" marker-end="url(#fig-instinct-vs-fred-arrow-accent)"/>
+            <text class="fg-label-small" x="552" y="296">the one place</text>
+            <text class="fg-label-small" x="552" y="310">a value appears</text>
+            <rect class="fg-box" x="452" y="312" width="184" height="48" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="332" text-anchor="middle">The institution</text>
+            <text class="fg-label-small" x="544" y="348" text-anchor="middle">by our surface or its rail</text>
+            <text class="fg-label-small fg-label-strong" x="376" y="380">Authority: one envelope</text>
+            <text class="fg-label-small" x="376" y="394">spend, parties, acts, window; outside it, your tap</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 0.5</span> Instinct puts the real values and an unbounded authority in one machine that acts as the user; AI.fred keeps the values in a vault nobody on our side sees and the authority in an envelope the user confirmed, with one seam where a value is placed.</figcaption>
+        </figure>
+        <div class="table-wrap wide" id="tab-instinct-differences">
+        <table class="data">
+          <caption><span class="tab-no">Table 0.6</span> Ten differences: the first three are structural and the other seven follow from them.</caption>
+          <thead><tr><th>Difference</th><th>Instinct, as reported</th><th>AI.fred, as recorded</th></tr></thead>
+          <tbody>
+            <tr><td class="key">Who holds the real value</td><td>The agent and its machine: inbox, passwords, card, screen</td><td>Nobody on our side; labels everywhere, one substitution component places the value (<a href="../03-trust-and-data/#alias-model">03</a>)</td></tr>
+            <tr><td class="key">What bounds the authority</td><td>The user's credentials and the terms; no confirmation promised</td><td>One envelope per task; point-of-no-return test; dual control inside, bounce outside (DR-004)</td></tr>
+            <tr><td class="key">People</td><td>None; fourteen employees and a machine per user</td><td>Human in the gap: workers on task cards with a pseudonym and labels, dual control (<a href="../04-operations/">04</a>)</td></tr>
+            <tr><td class="key">Identity acts and user factors</td><td>Logs in as the user; has reset a password to proceed</td><td>OTPs, PINs, bank passwords and biometrics are never ours; the step bounces to the user's device (<a href="../01-product/#refusals">01</a>)</td></tr>
+            <tr><td class="key">The surface</td><td>A browser pretending to be a person inside platforms that may ban it</td><td>Our own surfaces plus passport adapters to each market's official rails (<a href="../02-architecture/#adapters">02</a>)</td></tr>
+            <tr><td class="key">The record the user reads</td><td>The thread; no ledger of what was used where</td><td>An access ledger, one line per use of a value, written by the machine (<a href="../03-trust-and-data/#access-ledger">03</a>)</td></tr>
+            <tr><td class="key">How a task closes</td><td>A message saying done</td><td>A one-tap verdict from a fixed vocabulary; the verdict drives the make-good (<a href="../01-product/#verdicts">01</a>)</td></tr>
+            <tr><td class="key">Data</td><td>Trains by default outside Workspace and the Vault; revoke is not delete</td><td>Data sold as an asset withdrawn; product improvement only (DR-019)</td></tr>
+            <tr><td class="key">Price and cost line</td><td>Free; a compute cost per user; a fee on transactions to come</td><td>A metered subscription with a priced consequential tier plus the take (DR-024); human minutes per user per month as the governing ratio (<a href="../05-business/#the-ratio">05</a>)</td></tr>
+            <tr><td class="key">Markets and stage</td><td>US only, invite-only, 100,000 users, $1.35 billion raised, no revenue</td><td>India as build base, the US and the UK as commercial ground; a design record, no code, no customer (<a href="../06-roadmap/">06</a>)</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
