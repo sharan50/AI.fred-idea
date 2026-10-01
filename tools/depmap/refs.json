@@ -302,222 +302,226 @@
         },
         {
           "line": 175,
-          "to": "01-product/index.html"
+          "to": "00-thesis/instinct.html"
         },
         {
           "line": 176,
-          "to": "02-architecture/index.html"
+          "to": "01-product/index.html"
         },
         {
           "line": 177,
-          "to": "02-architecture/worker-console.html"
+          "to": "02-architecture/index.html"
         },
         {
           "line": 178,
-          "to": "03-trust-and-data/index.html"
+          "to": "02-architecture/worker-console.html"
         },
         {
           "line": 179,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "03-trust-and-data/index.html"
         },
         {
           "line": 180,
-          "to": "04-operations/index.html"
-        },
-        {
-          "line": 181,
-          "to": "05-business/index.html"
-        },
-        {
-          "line": 182,
-          "to": "05-business/measurement-protocol.html"
-        },
-        {
-          "line": 183,
-          "to": "05-business/model.html"
-        },
-        {
-          "line": 184,
-          "to": "06-roadmap/index.html"
-        },
-        {
-          "line": 185,
-          "to": "07-open/index.html"
-        },
-        {
-          "line": 186,
-          "to": "08-review/index.html"
-        },
-        {
-          "line": 187,
-          "to": "08-review/full-review-18-09.html"
-        },
-        {
-          "line": 188,
-          "to": "decisions/dr-001-channel-gateway.html"
-        },
-        {
-          "line": 189,
-          "to": "decisions/dr-002-verdict-two-loops.html"
-        },
-        {
-          "line": 190,
-          "to": "decisions/dr-003-full-delegation-ceiling.html"
-        },
-        {
-          "line": 191,
-          "to": "decisions/dr-004-authority-envelope.html"
-        },
-        {
-          "line": 192,
-          "to": "decisions/dr-005-state-machine-lapsed.html"
-        },
-        {
-          "line": 193,
-          "to": "decisions/dr-006-office-mandatory.html"
-        },
-        {
-          "line": 194,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 195,
-          "to": "decisions/dr-008-vault-bought.html"
-        },
-        {
-          "line": 196,
-          "to": "decisions/dr-009-evidence-redaction.html"
-        },
-        {
-          "line": 197,
-          "to": "decisions/dr-010-html-no-build-step.html"
-        },
-        {
-          "line": 198,
-          "to": "decisions/dr-011-token-and-component-system.html"
-        },
-        {
-          "line": 199,
-          "to": "decisions/dr-012-design-plan.html"
-        },
-        {
-          "line": 200,
-          "to": "decisions/dr-013-verification-standard.html"
-        },
-        {
-          "line": 201,
-          "to": "decisions/dr-014-substitution-framing.html"
-        },
-        {
-          "line": 202,
-          "to": "decisions/dr-015-economics-deferred.html"
-        },
-        {
-          "line": 203,
-          "to": "decisions/dr-016-context-store.html"
-        },
-        {
-          "line": 204,
-          "to": "decisions/dr-017-dependency-map.html"
-        },
-        {
-          "line": 205,
-          "to": "decisions/dr-018-mail-from-the-users-address.html"
-        },
-        {
-          "line": 206,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 207,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html"
-        },
-        {
-          "line": 208,
-          "to": "decisions/dr-021-no-value-spoken.html"
-        },
-        {
-          "line": 209,
-          "to": "decisions/dr-022-structured-task-cards.html"
-        },
-        {
-          "line": 210,
-          "to": "decisions/dr-023-geography-sequencing.html"
-        },
-        {
-          "line": 211,
-          "to": "decisions/dr-024-metered-pricing.html"
-        },
-        {
-          "line": 212,
-          "to": "decisions/dr-025-growth-two-mechanisms.html"
-        },
-        {
-          "line": 213,
-          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
-        },
-        {
-          "line": 214,
-          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
-        },
-        {
-          "line": 215,
-          "to": "decisions/dr-028-fragments-and-build.html"
-        },
-        {
-          "line": 216,
-          "to": "decisions/dr-029-owner-views.html"
-        },
-        {
-          "line": 217,
-          "to": "decisions/index.html"
-        },
-        {
-          "line": 218,
-          "to": "depmap/index.html"
-        },
-        {
-          "line": 219,
-          "to": "depmap/architecture.html"
-        },
-        {
-          "line": 220,
-          "to": "roles/index.html"
-        },
-        {
-          "line": 221,
-          "to": "roles/ceo/index.html"
-        },
-        {
-          "line": 222,
-          "to": "roles/cto/index.html"
-        },
-        {
-          "line": 223,
-          "to": "roles/coo/index.html"
-        },
-        {
-          "line": 224,
-          "to": "roles/cfo/index.html"
-        },
-        {
-          "line": 225,
-          "to": "roles/counsel/index.html"
-        },
-        {
-          "line": 226,
-          "to": "record/index.html"
-        },
-        {
-          "line": 235,
-          "to": "00-thesis/index.html"
-        },
-        {
-          "line": 236,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
+          "line": 181,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 182,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 183,
+          "to": "05-business/measurement-protocol.html"
+        },
+        {
+          "line": 184,
+          "to": "05-business/model.html"
+        },
+        {
+          "line": 185,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 186,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 187,
+          "to": "08-review/index.html"
+        },
+        {
+          "line": 188,
+          "to": "08-review/full-review-18-09.html"
+        },
+        {
+          "line": 189,
+          "to": "decisions/dr-001-channel-gateway.html"
+        },
+        {
+          "line": 190,
+          "to": "decisions/dr-002-verdict-two-loops.html"
+        },
+        {
+          "line": 191,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 192,
+          "to": "decisions/dr-004-authority-envelope.html"
+        },
+        {
+          "line": 193,
+          "to": "decisions/dr-005-state-machine-lapsed.html"
+        },
+        {
+          "line": 194,
+          "to": "decisions/dr-006-office-mandatory.html"
+        },
+        {
+          "line": 195,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 196,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 197,
+          "to": "decisions/dr-009-evidence-redaction.html"
+        },
+        {
+          "line": 198,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 199,
+          "to": "decisions/dr-011-token-and-component-system.html"
+        },
+        {
+          "line": 200,
+          "to": "decisions/dr-012-design-plan.html"
+        },
+        {
+          "line": 201,
+          "to": "decisions/dr-013-verification-standard.html"
+        },
+        {
+          "line": 202,
+          "to": "decisions/dr-014-substitution-framing.html"
+        },
+        {
+          "line": 203,
+          "to": "decisions/dr-015-economics-deferred.html"
+        },
+        {
+          "line": 204,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 205,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 206,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 207,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 208,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html"
+        },
+        {
+          "line": 209,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 210,
+          "to": "decisions/dr-022-structured-task-cards.html"
+        },
+        {
+          "line": 211,
+          "to": "decisions/dr-023-geography-sequencing.html"
+        },
+        {
+          "line": 212,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 213,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 214,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
+        },
+        {
+          "line": 215,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 216,
+          "to": "decisions/dr-028-fragments-and-build.html"
+        },
+        {
+          "line": 217,
+          "to": "decisions/dr-029-owner-views.html"
+        },
+        {
+          "line": 218,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 219,
+          "to": "depmap/index.html"
+        },
+        {
+          "line": 220,
+          "to": "depmap/architecture.html"
+        },
+        {
+          "line": 221,
+          "to": "roles/index.html"
+        },
+        {
+          "line": 222,
+          "to": "roles/ceo/index.html"
+        },
+        {
+          "line": 223,
+          "to": "roles/cto/index.html"
+        },
+        {
+          "line": 224,
+          "to": "roles/coo/index.html"
+        },
+        {
+          "line": 225,
+          "to": "roles/cfo/index.html"
+        },
+        {
+          "line": 226,
+          "to": "roles/counsel/index.html"
+        },
+        {
+          "line": 227,
+          "to": "record/index.html"
+        },
+        {
+          "line": 236,
+          "to": "00-thesis/index.html"
+        },
+        {
           "line": 237,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 238,
           "to": "07-open/index.html"
         }
       ]
@@ -634,6 +638,13 @@
               "why ai.fred wins where the flat-fee concierge players cannot follow: the custome",
               "",
               "2026-09-13"
+            ],
+            [
+              "00",
+              "instinct",
+              "instinct, the personal ai agent valued at $10 billion in september 2026: how it ",
+              "",
+              "2026-10-01"
             ],
             [
               "01",
@@ -918,82 +929,86 @@
         },
         {
           "line": 183,
-          "to": "01-product/index.html"
+          "to": "00-thesis/instinct.html"
         },
         {
           "line": 184,
-          "to": "02-architecture/index.html"
+          "to": "01-product/index.html"
         },
         {
           "line": 185,
-          "to": "02-architecture/worker-console.html"
+          "to": "02-architecture/index.html"
         },
         {
           "line": 186,
-          "to": "03-trust-and-data/index.html"
+          "to": "02-architecture/worker-console.html"
         },
         {
           "line": 187,
-          "to": "03-trust-and-data/trust-story.html"
+          "to": "03-trust-and-data/index.html"
         },
         {
           "line": 188,
-          "to": "04-operations/index.html"
-        },
-        {
-          "line": 189,
-          "to": "05-business/index.html"
-        },
-        {
-          "line": 190,
-          "to": "05-business/measurement-protocol.html"
-        },
-        {
-          "line": 191,
-          "to": "05-business/model.html"
-        },
-        {
-          "line": 192,
-          "to": "06-roadmap/index.html"
-        },
-        {
-          "line": 193,
-          "to": "07-open/index.html"
-        },
-        {
-          "line": 194,
-          "to": "08-review/index.html"
-        },
-        {
-          "line": 195,
-          "to": "08-review/full-review-18-09.html"
-        },
-        {
-          "line": 196,
-          "to": "decisions/index.html"
-        },
-        {
-          "line": 197,
-          "to": "depmap/index.html"
-        },
-        {
-          "line": 198,
-          "to": "depmap/architecture.html"
-        },
-        {
-          "line": 203,
-          "to": "decisions/dr-017-dependency-map.html"
-        },
-        {
-          "line": 211,
-          "to": "00-thesis/index.html"
-        },
-        {
-          "line": 212,
           "to": "03-trust-and-data/trust-story.html"
         },
         {
+          "line": 189,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 190,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 191,
+          "to": "05-business/measurement-protocol.html"
+        },
+        {
+          "line": 192,
+          "to": "05-business/model.html"
+        },
+        {
+          "line": 193,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 194,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 195,
+          "to": "08-review/index.html"
+        },
+        {
+          "line": 196,
+          "to": "08-review/full-review-18-09.html"
+        },
+        {
+          "line": 197,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 198,
+          "to": "depmap/index.html"
+        },
+        {
+          "line": 199,
+          "to": "depmap/architecture.html"
+        },
+        {
+          "line": 204,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 212,
+          "to": "00-thesis/index.html"
+        },
+        {
           "line": 213,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 214,
           "to": "07-open/index.html"
         }
       ]
@@ -1774,6 +1789,10 @@
           "to": "00-thesis/index.html#labs-ceiling"
         },
         {
+          "line": 222,
+          "to": "00-thesis/instinct.html"
+        },
+        {
           "line": 228,
           "to": "00-thesis/index.html#src-23"
         },
@@ -2063,6 +2082,944 @@
         },
         {
           "line": 373,
+          "to": "07-open/index.html"
+        }
+      ]
+    },
+    "00-thesis/instinct.html": {
+      "title": "Instinct, read against AI.fred",
+      "kind": "report",
+      "status": "to-verify",
+      "anchors": {
+        "what-it-is": {
+          "kind": "h2",
+          "line": 73,
+          "no": "1",
+          "text": "What Instinct is"
+        },
+        "tab-instinct-record": {
+          "kind": "table-wrap",
+          "line": 77,
+          "no": "Table 0.3",
+          "text": "The record in numbers, as reported to 30 September 2026: a free product with a hundred thousand users, a billion dollars",
+          "under": "what-it-is"
+        },
+        "how-it-works": {
+          "kind": "h2",
+          "line": 95,
+          "no": "2",
+          "text": "How it works"
+        },
+        "fig-instinct-architecture": {
+          "kind": "figure",
+          "line": 98,
+          "no": "Figure 0.2",
+          "text": "Instinct is a model on a machine of its own that holds the user's real passwords and card and acts as the user, by brows",
+          "under": "how-it-works"
+        },
+        "user-experience": {
+          "kind": "h2",
+          "line": 161,
+          "no": "3",
+          "text": "The user experience"
+        },
+        "fig-instinct-day": {
+          "kind": "figure",
+          "line": 173,
+          "no": "Figure 0.3",
+          "text": "The user is in the thread at the start and the end; the hours between belong to the machine, and the one irreversible st",
+          "under": "user-experience"
+        },
+        "where-it-strains": {
+          "kind": "h2",
+          "line": 225,
+          "no": "4",
+          "text": "Where it strains"
+        },
+        "strain-authority": {
+          "kind": "h3",
+          "line": 227,
+          "no": "4.1",
+          "text": "Authority without an envelope",
+          "under": "where-it-strains"
+        },
+        "strain-exposure": {
+          "kind": "h3",
+          "line": 229,
+          "no": "4.2",
+          "text": "Exposure by design",
+          "under": "where-it-strains"
+        },
+        "strain-surface": {
+          "kind": "h3",
+          "line": 231,
+          "no": "4.3",
+          "text": "A borrowed surface and a scarce one",
+          "under": "where-it-strains"
+        },
+        "fig-instinct-timeline": {
+          "kind": "figure",
+          "line": 233,
+          "no": "Figure 0.4",
+          "text": "Thirty-seven days hold a privacy backlash, a rewrite of the terms, a rival from Meta, two new surfaces, a capacity crunc",
+          "under": "strain-surface"
+        },
+        "tab-instinct-incidents": {
+          "kind": "table-wrap",
+          "line": 283,
+          "no": "Table 0.4",
+          "text": "The dated record, August to September 2026: every incident is the design choice working as designed, and every fix so fa",
+          "under": "strain-surface"
+        },
+        "similarities": {
+          "kind": "h2",
+          "line": 305,
+          "no": "5",
+          "text": "What we share"
+        },
+        "tab-instinct-shared": {
+          "kind": "table-wrap",
+          "line": 307,
+          "no": "Table 0.5",
+          "text": "Nine things Instinct and AI.fred agree on: the shape of the product, the surface, the memory, the money and the rule abo",
+          "under": "similarities"
+        },
+        "differences": {
+          "kind": "h2",
+          "line": 326,
+          "no": "6",
+          "text": "Where we differ"
+        },
+        "fig-instinct-vs-fred": {
+          "kind": "figure",
+          "line": 328,
+          "no": "Figure 0.5",
+          "text": "Instinct puts the real values and an unbounded authority in one machine that acts as the user; AI.fred keeps the values ",
+          "under": "differences"
+        },
+        "tab-instinct-differences": {
+          "kind": "table-wrap",
+          "line": 395,
+          "no": "Table 0.6",
+          "text": "Ten differences: the first three are structural and the other seven follow from them.",
+          "under": "differences"
+        },
+        "who-wins": {
+          "kind": "h2",
+          "line": 415,
+          "no": "7",
+          "text": "Who wins, and why"
+        },
+        "sources": {
+          "kind": "h2",
+          "line": 423,
+          "text": "Sources"
+        }
+      },
+      "tables": {
+        "0.3": {
+          "line": 78,
+          "caption": "The record in numbers, as reported to 30 September 2026: a free product with a hundred thousand users, a billion dollars",
+          "rows": [
+            [
+              "company",
+              "spear street technology inc., san francisco, founded 2025 by noah shinn",
+              ""
+            ],
+            [
+              "launch",
+              "private beta february 2026; invite-only beta from august 2026; still invite-only",
+              ""
+            ],
+            [
+              "funding",
+              "seed $25 million (conviction, greenoaks); series a $75 million (kleiner perkins)",
+              ""
+            ],
+            [
+              "users",
+              "more than 100,000 by 15 september; invites handed out by users and investors; gr",
+              "; the growth rate"
+            ],
+            [
+              "volume",
+              "approaching $1 billion a year in transactions, half of it travel; four in ten us",
+              "; the card and retention figures"
+            ],
+            [
+              "team",
+              "fourteen employees at the series c",
+              ""
+            ],
+            [
+              "price",
+              "free; the founder does not want to charge users, rejects advertising, and has sp",
+              "; the fee model"
+            ],
+            [
+              "constraint",
+              "compute: users reported slowdowns and outages from 21 to 24 september with no st",
+              ""
+            ]
+          ],
+          "id": "tab-instinct-record",
+          "under": "what-it-is"
+        },
+        "0.4": {
+          "line": 284,
+          "caption": "The dated record, August to September 2026: every incident is the design choice working as designed, and every fix so fa",
+          "rows": [
+            [
+              "24 aug",
+              "techcrunch reports privacy and security concerns: a perpetual training licence i",
+              "fatal failure one accepted by design",
+              ""
+            ],
+            [
+              "26 aug",
+              "$350 million raised at $2.5 billion; terms rewritten the same day, the perpetual",
+              "the fix is a term, not a mechanism",
+              "; the rewrite"
+            ],
+            [
+              "aug",
+              "reported: the agent resets a password on its own to complete a purchase a site h",
+              "fatal failure two accepted by design",
+              ""
+            ],
+            [
+              "4 sept",
+              "founder announces credential brokering through 1password beside the vault",
+              "credentials move to a specialist, but the agent still uses them in the clear",
+              ""
+            ],
+            [
+              "8 sept",
+              "meta launches muse: a dedicated virtual machine per user, placeholder credential",
+              "the incumbent ships the envelope and the substitution instinct lacks",
+              ""
+            ],
+            [
+              "9 sept",
+              "instinct gets its own email addresses at mail.instinct.com, to open accounts and",
+              "a surface of its own, for the first time",
+              ""
+            ],
+            [
+              "15 sept",
+              "the information: more than 100,000 users; compute short; a $10 billion round in ",
+              "growth outruns the cost line",
+              ""
+            ],
+            [
+              "16 sept",
+              "concierge: outbound phone calls in early access, the same week muse adds calling",
+              "a second surface of its own; a live call cannot be reduced to one approval",
+              ""
+            ],
+            [
+              "21 to 24 sept",
+              "slow responses, delayed email alerts, the agent unresponsive for many users on t",
+              "a per-user machine is a per-user cost",
+              ""
+            ],
+            [
+              "23 sept",
+              "resy deactivates an investor's account after his agent made about 200 requests a",
+              "a borrowed surface can be withdrawn",
+              ""
+            ],
+            [
+              "28 sept",
+              "$1 billion series c at $10 billion from sequoia, benchmark and coatue; approachi",
+              "the market prices the race, not the trust",
+              ""
+            ],
+            [
+              "30 sept",
+              "users put off by product suggestions drawn from their email and upcoming trips",
+              "the first pull from the free model towards the agent not being the user's",
+              ""
+            ]
+          ],
+          "id": "tab-instinct-incidents",
+          "under": "strain-surface"
+        },
+        "0.5": {
+          "line": 308,
+          "caption": "Nine things Instinct and AI.fred agree on: the shape of the product, the surface, the memory, the money and the rule abo",
+          "rows": [
+            [
+              "an agent that acts",
+              "does the task end to end; a chatbot is what it is not",
+              "every request becomes an ordered plan the harness executes ( 01 )"
+            ],
+            [
+              "everyday life, hard tasks as the draw",
+              "groceries, trips and subscriptions beside medical paperwork and bill disputes",
+              "everyday economic life from day one, consequential tasks as the hook (dr-019, dr"
+            ],
+            [
+              "messaging-native intake",
+              "imessage, whatsapp, a phone call; no app of its own",
+              "one channel-agnostic gateway; which channel opens the door in each market is amb"
+            ],
+            [
+              "a surface of its own",
+              "a persistent cloud computer per user with a browser, a phone line and an email a",
+              "a managed browser, our phone line and our mail relay; a worker never uses their "
+            ],
+            [
+              "phone work",
+              "concierge calls restaurants, clinics and call centres from 16 september",
+              "non-authenticating calls by our people or our ai; no vault value ever spoken ( d"
+            ],
+            [
+              "a vault",
+              "the vault, excluded from training; 1password beside it",
+              "a tokenisation vault bought, not built ( dr-008 )"
+            ],
+            [
+              "context that compounds",
+              "state kept across days; it acts on what it has read and learned",
+              "a temporal knowledge graph, every fact with source, date and validity ( dr-016 )"
+            ],
+            [
+              "proactive, in both directions",
+              "texts or calls the user first; flags clashes and dropped threads",
+              "reminds, marks lapsed, revives on one message; never quietly forgets ( trust sto"
+            ],
+            [
+              "a take on transactions, never paid placement",
+              "a fee on purchases rather than ads; the founder rejects an agent that sways its ",
+              "a commerce take of about 1.2 per cent of routed spend; a merchant may never pay "
+            ]
+          ],
+          "id": "tab-instinct-shared",
+          "under": "similarities"
+        },
+        "0.6": {
+          "line": 396,
+          "caption": "Ten differences: the first three are structural and the other seven follow from them.",
+          "rows": [
+            [
+              "who holds the real value",
+              "the agent and its machine: inbox, passwords, card, screen",
+              "nobody on our side; labels everywhere, one substitution component places the val"
+            ],
+            [
+              "what bounds the authority",
+              "the user's credentials and the terms; no confirmation promised",
+              "one envelope per task; point-of-no-return test; dual control inside, bounce outs"
+            ],
+            [
+              "people",
+              "none; fourteen employees and a machine per user",
+              "human in the gap: workers on task cards with a pseudonym and labels, dual contro"
+            ],
+            [
+              "identity acts and user factors",
+              "logs in as the user; has reset a password to proceed",
+              "otps, pins, bank passwords and biometrics are never ours; the step bounces to th"
+            ],
+            [
+              "the surface",
+              "a browser pretending to be a person inside platforms that may ban it",
+              "our own surfaces plus passport adapters to each market's official rails ( 02 )"
+            ],
+            [
+              "the record the user reads",
+              "the thread; no ledger of what was used where",
+              "an access ledger, one line per use of a value, written by the machine ( 03 )"
+            ],
+            [
+              "how a task closes",
+              "a message saying done",
+              "a one-tap verdict from a fixed vocabulary; the verdict drives the make-good ( 01"
+            ],
+            [
+              "data",
+              "trains by default outside workspace and the vault; revoke is not delete",
+              "data sold as an asset withdrawn; product improvement only (dr-019)"
+            ],
+            [
+              "price and cost line",
+              "free; a compute cost per user; a fee on transactions to come",
+              "a metered subscription with a priced consequential tier plus the take (dr-024); "
+            ],
+            [
+              "markets and stage",
+              "us only, invite-only, 100,000 users, $1.35 billion raised, no revenue",
+              "india as build base, the us and the uk as commercial ground; a design record, no"
+            ]
+          ],
+          "id": "tab-instinct-differences",
+          "under": "differences"
+        }
+      },
+      "links": [
+        {
+          "line": 18,
+          "to": "00-thesis/instinct.html#main"
+        },
+        {
+          "line": 20,
+          "to": "index.html"
+        },
+        {
+          "line": 23,
+          "to": "00-thesis/instinct.html#publication"
+        },
+        {
+          "line": 28,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 42,
+          "to": "index.html"
+        },
+        {
+          "line": 43,
+          "to": "roles/ceo/index.html"
+        },
+        {
+          "line": 44,
+          "to": "roles/cto/index.html"
+        },
+        {
+          "line": 45,
+          "to": "roles/coo/index.html"
+        },
+        {
+          "line": 46,
+          "to": "roles/cfo/index.html"
+        },
+        {
+          "line": 47,
+          "to": "roles/counsel/index.html"
+        },
+        {
+          "line": 48,
+          "to": "contents/index.html"
+        },
+        {
+          "line": 49,
+          "to": "record/index.html"
+        },
+        {
+          "line": 53,
+          "to": "index.html"
+        },
+        {
+          "line": 54,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 55,
+          "to": "01-product/index.html"
+        },
+        {
+          "line": 56,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 57,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 58,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 59,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 60,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 61,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 62,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 63,
+          "to": "depmap/index.html"
+        },
+        {
+          "line": 64,
+          "to": "depmap/architecture.html"
+        },
+        {
+          "line": 74,
+          "to": "00-thesis/instinct.html#src-1"
+        },
+        {
+          "line": 74,
+          "to": "00-thesis/instinct.html#src-5"
+        },
+        {
+          "line": 74,
+          "to": "00-thesis/instinct.html#src-6"
+        },
+        {
+          "line": 74,
+          "to": "00-thesis/instinct.html#src-2"
+        },
+        {
+          "line": 74,
+          "to": "00-thesis/instinct.html#src-8"
+        },
+        {
+          "line": 74,
+          "to": "00-thesis/instinct.html#src-1"
+        },
+        {
+          "line": 75,
+          "to": "00-thesis/instinct.html#src-4"
+        },
+        {
+          "line": 75,
+          "to": "00-thesis/instinct.html#src-9"
+        },
+        {
+          "line": 76,
+          "to": "00-thesis/instinct.html#tab-instinct-record"
+        },
+        {
+          "line": 76,
+          "to": "00-thesis/instinct.html#src-7"
+        },
+        {
+          "line": 76,
+          "to": "00-thesis/instinct.html#src-1"
+        },
+        {
+          "line": 76,
+          "to": "00-thesis/instinct.html#src-6"
+        },
+        {
+          "line": 76,
+          "to": "00-thesis/instinct.html#src-10"
+        },
+        {
+          "line": 76,
+          "to": "00-thesis/instinct.html#src-23"
+        },
+        {
+          "line": 82,
+          "to": "00-thesis/instinct.html#src-5"
+        },
+        {
+          "line": 83,
+          "to": "00-thesis/instinct.html#src-5"
+        },
+        {
+          "line": 83,
+          "to": "00-thesis/instinct.html#src-16"
+        },
+        {
+          "line": 84,
+          "to": "00-thesis/instinct.html#src-1"
+        },
+        {
+          "line": 84,
+          "to": "00-thesis/instinct.html#src-2"
+        },
+        {
+          "line": 84,
+          "to": "00-thesis/instinct.html#src-8"
+        },
+        {
+          "line": 85,
+          "to": "00-thesis/instinct.html#src-7"
+        },
+        {
+          "line": 85,
+          "to": "00-thesis/instinct.html#src-10"
+        },
+        {
+          "line": 86,
+          "to": "00-thesis/instinct.html#src-1"
+        },
+        {
+          "line": 86,
+          "to": "00-thesis/instinct.html#src-6"
+        },
+        {
+          "line": 86,
+          "to": "00-thesis/instinct.html#src-23"
+        },
+        {
+          "line": 87,
+          "to": "00-thesis/instinct.html#src-23"
+        },
+        {
+          "line": 88,
+          "to": "00-thesis/instinct.html#src-1"
+        },
+        {
+          "line": 88,
+          "to": "00-thesis/instinct.html#src-24"
+        },
+        {
+          "line": 89,
+          "to": "00-thesis/instinct.html#src-7"
+        },
+        {
+          "line": 89,
+          "to": "00-thesis/instinct.html#src-16"
+        },
+        {
+          "line": 96,
+          "to": "00-thesis/instinct.html#fig-instinct-architecture"
+        },
+        {
+          "line": 96,
+          "to": "00-thesis/instinct.html#src-11"
+        },
+        {
+          "line": 96,
+          "to": "00-thesis/instinct.html#src-12"
+        },
+        {
+          "line": 96,
+          "to": "00-thesis/instinct.html#src-18"
+        },
+        {
+          "line": 96,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 96,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 97,
+          "to": "00-thesis/instinct.html#src-3"
+        },
+        {
+          "line": 97,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 97,
+          "to": "00-thesis/instinct.html#src-22"
+        },
+        {
+          "line": 158,
+          "to": "00-thesis/instinct.html#src-17"
+        },
+        {
+          "line": 158,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 158,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 158,
+          "to": "00-thesis/instinct.html#src-27"
+        },
+        {
+          "line": 158,
+          "to": "00-thesis/instinct.html#src-3"
+        },
+        {
+          "line": 158,
+          "to": "00-thesis/instinct.html#src-20"
+        },
+        {
+          "line": 158,
+          "to": "00-thesis/instinct.html#src-21"
+        },
+        {
+          "line": 162,
+          "to": "00-thesis/instinct.html#src-18"
+        },
+        {
+          "line": 162,
+          "to": "00-thesis/instinct.html#src-18"
+        },
+        {
+          "line": 162,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 162,
+          "to": "00-thesis/instinct.html#src-5"
+        },
+        {
+          "line": 163,
+          "to": "00-thesis/instinct.html#src-12"
+        },
+        {
+          "line": 163,
+          "to": "00-thesis/instinct.html#fig-instinct-day"
+        },
+        {
+          "line": 222,
+          "to": "00-thesis/instinct.html#src-18"
+        },
+        {
+          "line": 222,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 222,
+          "to": "00-thesis/instinct.html#src-13"
+        },
+        {
+          "line": 222,
+          "to": "00-thesis/instinct.html#src-16"
+        },
+        {
+          "line": 222,
+          "to": "00-thesis/instinct.html#src-14"
+        },
+        {
+          "line": 222,
+          "to": "00-thesis/instinct.html#src-15"
+        },
+        {
+          "line": 226,
+          "to": "00-thesis/instinct.html#fig-instinct-timeline"
+        },
+        {
+          "line": 226,
+          "to": "00-thesis/instinct.html#tab-instinct-incidents"
+        },
+        {
+          "line": 230,
+          "to": "00-thesis/instinct.html#src-20"
+        },
+        {
+          "line": 230,
+          "to": "00-thesis/instinct.html#src-21"
+        },
+        {
+          "line": 230,
+          "to": "00-thesis/instinct.html#src-17"
+        },
+        {
+          "line": 230,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 232,
+          "to": "00-thesis/instinct.html#src-15"
+        },
+        {
+          "line": 232,
+          "to": "00-thesis/instinct.html#src-7"
+        },
+        {
+          "line": 232,
+          "to": "00-thesis/instinct.html#src-24"
+        },
+        {
+          "line": 288,
+          "to": "00-thesis/instinct.html#src-3"
+        },
+        {
+          "line": 289,
+          "to": "00-thesis/instinct.html#src-2"
+        },
+        {
+          "line": 289,
+          "to": "00-thesis/instinct.html#src-20"
+        },
+        {
+          "line": 290,
+          "to": "00-thesis/instinct.html#src-19"
+        },
+        {
+          "line": 290,
+          "to": "00-thesis/instinct.html#src-27"
+        },
+        {
+          "line": 291,
+          "to": "00-thesis/instinct.html#src-22"
+        },
+        {
+          "line": 292,
+          "to": "00-thesis/instinct.html#src-25"
+        },
+        {
+          "line": 293,
+          "to": "00-thesis/instinct.html#src-11"
+        },
+        {
+          "line": 294,
+          "to": "00-thesis/instinct.html#src-7"
+        },
+        {
+          "line": 295,
+          "to": "00-thesis/instinct.html#src-12"
+        },
+        {
+          "line": 296,
+          "to": "00-thesis/instinct.html#src-16"
+        },
+        {
+          "line": 297,
+          "to": "00-thesis/instinct.html#src-14"
+        },
+        {
+          "line": 297,
+          "to": "00-thesis/instinct.html#src-15"
+        },
+        {
+          "line": 298,
+          "to": "00-thesis/instinct.html#src-1"
+        },
+        {
+          "line": 299,
+          "to": "00-thesis/instinct.html#src-13"
+        },
+        {
+          "line": 306,
+          "to": "00-thesis/instinct.html#tab-instinct-shared"
+        },
+        {
+          "line": 306,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 306,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html"
+        },
+        {
+          "line": 306,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 312,
+          "to": "01-product/index.html#journeys"
+        },
+        {
+          "line": 314,
+          "to": "decisions/dr-001-channel-gateway.html"
+        },
+        {
+          "line": 315,
+          "to": "02-architecture/index.html#surfaces"
+        },
+        {
+          "line": 316,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 317,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 318,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 319,
+          "to": "03-trust-and-data/trust-story.html#what-we-never-do"
+        },
+        {
+          "line": 320,
+          "to": "05-business/index.html#commerce"
+        },
+        {
+          "line": 327,
+          "to": "00-thesis/instinct.html#fig-instinct-vs-fred"
+        },
+        {
+          "line": 327,
+          "to": "00-thesis/instinct.html#tab-instinct-differences"
+        },
+        {
+          "line": 327,
+          "to": "03-trust-and-data/index.html#substitution"
+        },
+        {
+          "line": 327,
+          "to": "decisions/dr-004-authority-envelope.html"
+        },
+        {
+          "line": 327,
+          "to": "04-operations/index.html#task-cards"
+        },
+        {
+          "line": 400,
+          "to": "03-trust-and-data/index.html#alias-model"
+        },
+        {
+          "line": 402,
+          "to": "04-operations/index.html"
+        },
+        {
+          "line": 403,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 404,
+          "to": "02-architecture/index.html#adapters"
+        },
+        {
+          "line": 405,
+          "to": "03-trust-and-data/index.html#access-ledger"
+        },
+        {
+          "line": 406,
+          "to": "01-product/index.html#verdicts"
+        },
+        {
+          "line": 408,
+          "to": "05-business/index.html#the-ratio"
+        },
+        {
+          "line": 409,
+          "to": "06-roadmap/index.html"
+        },
+        {
+          "line": 417,
+          "to": "00-thesis/index.html#none-can-safely-do"
+        },
+        {
+          "line": 418,
+          "to": "00-thesis/instinct.html#src-23"
+        },
+        {
+          "line": 420,
+          "to": "05-business/measurement-protocol.html"
+        },
+        {
+          "line": 420,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 420,
+          "to": "05-business/index.html"
+        },
+        {
+          "line": 420,
+          "to": "00-thesis/instinct.html#src-28"
+        },
+        {
+          "line": 424,
+          "to": "decisions/dr-013-verification-standard.html"
+        },
+        {
+          "line": 462,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 463,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 464,
           "to": "07-open/index.html"
         }
       ]
@@ -22029,40 +22986,40 @@
         },
         "own-decisions": {
           "kind": "h3",
-          "line": 202,
+          "line": 210,
           "no": "2.2",
           "text": "Decisions",
           "under": "own"
         },
         "own-open": {
           "kind": "h3",
-          "line": 216,
+          "line": 224,
           "no": "2.3",
           "text": "Open items",
           "under": "own"
         },
         "own-components": {
           "kind": "h3",
-          "line": 261,
+          "line": 269,
           "no": "2.4",
           "text": "Components and invariants",
           "under": "own"
         },
         "binds": {
           "kind": "h2",
-          "line": 284,
+          "line": 292,
           "no": "3",
           "text": "What binds you"
         },
         "path": {
           "kind": "h2",
-          "line": 307,
+          "line": 315,
           "no": "4",
           "text": "Reading path"
         },
         "keys": {
           "kind": "h2",
-          "line": 449,
+          "line": 465,
           "no": "5",
           "text": "Key blocks"
         }
@@ -22105,7 +23062,7 @@
             [
               "contents",
               "7 the publication",
-              "929"
+              "972"
             ],
             [
               "00 thesis",
@@ -22130,7 +23087,7 @@
             [
               "00 thesis",
               "5 the competitive landscape",
-              "1,740"
+              "1,761"
             ],
             [
               "00 thesis",
@@ -22146,6 +23103,46 @@
               "00 thesis",
               "sources",
               "1,040"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "1 what instinct is",
+              "634"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "2 how it works",
+              "591"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "3 the user experience",
+              "677"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "4 where it strains",
+              "1,045"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "5 what we share",
+              "454"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "6 where we differ",
+              "531"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "7 who wins, and why",
+              "720"
+            ],
+            [
+              "instinct, read against ai.fred",
+              "sources",
+              "529"
             ],
             [
               "01 product",
@@ -22651,7 +23648,7 @@
           "under": "own-sections"
         },
         "ceo.2": {
-          "line": 309,
+          "line": 317,
           "caption": "Owned sections in publication order, then the sections this role reads, with the running word count.",
           "rows": [
             [
@@ -22693,752 +23690,800 @@
             [
               "7",
               "contents, 7 the publication",
-              "929",
-              "2,397"
+              "972",
+              "2,440"
             ],
             [
               "8",
               "00 thesis, 1 customer and scope",
               "857",
-              "3,254"
+              "3,297"
             ],
             [
               "9",
               "00 thesis, 2 the context profile",
               "252",
-              "3,506"
+              "3,549"
             ],
             [
               "10",
               "00 thesis, 3 why now",
               "1,310",
-              "4,816"
+              "4,859"
             ],
             [
               "11",
               "00 thesis, 4 markets",
               "675",
-              "5,491"
+              "5,534"
             ],
             [
               "12",
               "00 thesis, 5 the competitive landscape",
-              "1,740",
-              "7,231"
+              "1,761",
+              "7,295"
             ],
             [
               "13",
               "00 thesis, 6 the moat",
               "778",
-              "8,009"
+              "8,073"
             ],
             [
               "14",
               "00 thesis, 7 the scope, and what it gives up",
               "526",
-              "8,535"
+              "8,599"
             ],
             [
               "15",
               "00 thesis, sources",
               "1,040",
-              "9,575"
+              "9,639"
             ],
             [
               "16",
-              "01 product, 1 user journeys across the six verticals",
-              "3,279",
-              "12,854"
+              "instinct, read against ai.fred, 1 what instinct is",
+              "634",
+              "10,273"
             ],
             [
               "17",
-              "01 product, 2 the task taxonomy",
-              "854",
-              "13,708"
+              "instinct, read against ai.fred, 2 how it works",
+              "591",
+              "10,864"
             ],
             [
               "18",
-              "01 product, 3 intake and the channel-agnostic gateway",
-              "1,020",
-              "14,728"
+              "instinct, read against ai.fred, 3 the user experience",
+              "677",
+              "11,541"
             ],
             [
               "19",
-              "01 product, 4 the authority envelope from the user's point of view",
-              "1,787",
-              "16,515"
+              "instinct, read against ai.fred, 4 where it strains",
+              "1,045",
+              "12,586"
             ],
             [
               "20",
-              "01 product, 5 the verdict system",
-              "891",
-              "17,406"
+              "instinct, read against ai.fred, 5 what we share",
+              "454",
+              "13,040"
             ],
             [
               "21",
-              "01 product, 6 onboarding and context capture",
-              "1,307",
-              "18,713"
+              "instinct, read against ai.fred, 6 where we differ",
+              "531",
+              "13,571"
             ],
             [
               "22",
-              "01 product, 7 what we refuse to do",
-              "1,366",
-              "20,079"
+              "instinct, read against ai.fred, 7 who wins, and why",
+              "720",
+              "14,291"
             ],
             [
               "23",
-              "01 product, sources",
-              "237",
-              "20,316"
+              "instinct, read against ai.fred, sources",
+              "529",
+              "14,820"
             ],
             [
               "24",
-              "06 roadmap, 1 the harness-first build sequence",
-              "1,939",
-              "22,255"
+              "01 product, 1 user journeys across the six verticals",
+              "3,279",
+              "18,099"
             ],
             [
               "25",
-              "06 roadmap, 2 pilot scope in capability terms",
-              "986",
-              "23,241"
+              "01 product, 2 the task taxonomy",
+              "854",
+              "18,953"
             ],
             [
               "26",
-              "06 roadmap, 3 build versus buy",
-              "1,471",
-              "24,712"
+              "01 product, 3 intake and the channel-agnostic gateway",
+              "1,020",
+              "19,973"
             ],
             [
               "27",
-              "06 roadmap, 4 the country-expansion playbook",
-              "1,119",
-              "25,831"
+              "01 product, 4 the authority envelope from the user's point of view",
+              "1,787",
+              "21,760"
             ],
             [
               "28",
-              "06 roadmap, sources",
-              "178",
-              "26,009"
+              "01 product, 5 the verdict system",
+              "891",
+              "22,651"
             ],
             [
               "29",
-              "07 open items, 1 every open item, with an owner and a trigger",
-              "4,428",
-              "30,437"
+              "01 product, 6 onboarding and context capture",
+              "1,307",
+              "23,958"
             ],
             [
               "30",
-              "07 open items, 2 objections formed against fixed decisions",
-              "370",
-              "30,807"
+              "01 product, 7 what we refuse to do",
+              "1,366",
+              "25,324"
             ],
             [
               "31",
-              "07 open items, 3 what was deliberately left alone",
-              "119",
-              "30,926"
+              "01 product, sources",
+              "237",
+              "25,561"
             ],
             [
               "32",
-              "full review 11/09, 1 executive verdict",
-              "1,052",
-              "31,978"
+              "06 roadmap, 1 the harness-first build sequence",
+              "1,939",
+              "27,500"
             ],
             [
               "33",
-              "full review 11/09, 2 the idea in one page",
-              "589",
-              "32,567"
+              "06 roadmap, 2 pilot scope in capability terms",
+              "986",
+              "28,486"
             ],
             [
               "34",
-              "full review 11/09, 3 technology today: what exists, what is plausible, what is r",
-              "1,713",
-              "34,280"
+              "06 roadmap, 3 build versus buy",
+              "1,471",
+              "29,957"
             ],
             [
               "35",
-              "full review 11/09, 4 technologies on the horizon, and how each threatens the ide",
-              "1,087",
-              "35,367"
+              "06 roadmap, 4 the country-expansion playbook",
+              "1,119",
+              "31,076"
             ],
             [
               "36",
-              "full review 11/09, 5 the regulatory landscape: india",
-              "1,928",
-              "37,295"
+              "06 roadmap, sources",
+              "178",
+              "31,254"
             ],
             [
               "37",
-              "full review 11/09, 6 the regulatory landscape: the united kingdom",
-              "1,317",
-              "38,612"
+              "07 open items, 1 every open item, with an owner and a trigger",
+              "4,428",
+              "35,682"
             ],
             [
               "38",
-              "full review 11/09, 7 the regulatory landscape: the united states",
-              "1,537",
-              "40,149"
+              "07 open items, 2 objections formed against fixed decisions",
+              "370",
+              "36,052"
             ],
             [
               "39",
-              "full review 11/09, 8 market, customer and competition",
-              "1,752",
-              "41,901"
+              "07 open items, 3 what was deliberately left alone",
+              "119",
+              "36,171"
             ],
             [
               "40",
-              "full review 11/09, 9 business model and unit economics: the numbers the record d",
-              "1,561",
-              "43,462"
+              "full review 11/09, 1 executive verdict",
+              "1,052",
+              "37,223"
             ],
             [
               "41",
-              "full review 11/09, 10 founder, team shape and execution risk",
-              "1,519",
-              "44,981"
+              "full review 11/09, 2 the idea in one page",
+              "589",
+              "37,812"
             ],
             [
               "42",
-              "full review 11/09, 11 security and trust: a red-team read of the design",
-              "1,608",
-              "46,589"
+              "full review 11/09, 3 technology today: what exists, what is plausible, what is r",
+              "1,713",
+              "39,525"
             ],
             [
               "43",
-              "full review 11/09, 12 product, go-to-market and retention",
-              "1,591",
-              "48,180"
+              "full review 11/09, 4 technologies on the horizon, and how each threatens the ide",
+              "1,087",
+              "40,612"
             ],
             [
               "44",
-              "full review 11/09, 13 pre-mortem: what kills it, ranked",
-              "1,329",
-              "49,509"
+              "full review 11/09, 5 the regulatory landscape: india",
+              "1,928",
+              "42,540"
             ],
             [
               "45",
-              "full review 11/09, 14 what we would need to see before money, and what a series ",
-              "875",
-              "50,384"
+              "full review 11/09, 6 the regulatory landscape: the united kingdom",
+              "1,317",
+              "43,857"
             ],
             [
               "46",
-              "full review 11/09, 15 questions for the founder",
-              "901",
-              "51,285"
+              "full review 11/09, 7 the regulatory landscape: the united states",
+              "1,537",
+              "45,394"
             ],
             [
               "47",
-              "full review 11/09, 16 what the record should change",
-              "1,256",
-              "52,541"
+              "full review 11/09, 8 market, customer and competition",
+              "1,752",
+              "47,146"
             ],
             [
               "48",
-              "full review 11/09, sources",
-              "3,634",
-              "56,175"
+              "full review 11/09, 9 business model and unit economics: the numbers the record d",
+              "1,561",
+              "48,707"
             ],
             [
               "49",
-              "full review 18/09, 1 executive verdict",
-              "1,880",
-              "58,055"
+              "full review 11/09, 10 founder, team shape and execution risk",
+              "1,519",
+              "50,226"
             ],
             [
               "50",
-              "full review 18/09, 2 the idea in one page, at its strongest",
-              "957",
-              "59,012"
+              "full review 11/09, 11 security and trust: a red-team read of the design",
+              "1,608",
+              "51,834"
             ],
             [
               "51",
-              "full review 18/09, 3 what changed since 11 september, and what the change costs",
-              "1,259",
-              "60,271"
+              "full review 11/09, 12 product, go-to-market and retention",
+              "1,591",
+              "53,425"
             ],
             [
               "52",
-              "full review 18/09, 4 technology today: what exists, what is plausible, what is r",
-              "1,848",
-              "62,119"
+              "full review 11/09, 13 pre-mortem: what kills it, ranked",
+              "1,329",
+              "54,754"
             ],
             [
               "53",
-              "full review 18/09, 5 technologies on the horizon, and who owns their distributio",
-              "1,489",
-              "63,608"
+              "full review 11/09, 14 what we would need to see before money, and what a series ",
+              "875",
+              "55,629"
             ],
             [
               "54",
-              "full review 18/09, 6 regulatory position: india",
-              "2,110",
-              "65,718"
+              "full review 11/09, 15 questions for the founder",
+              "901",
+              "56,530"
             ],
             [
               "55",
-              "full review 18/09, 7 regulatory position: the united kingdom",
-              "1,275",
-              "66,993"
+              "full review 11/09, 16 what the record should change",
+              "1,256",
+              "57,786"
             ],
             [
               "56",
-              "full review 18/09, 8 regulatory position: the united states",
-              "1,754",
-              "68,747"
+              "full review 11/09, sources",
+              "3,634",
+              "61,420"
             ],
             [
               "57",
-              "full review 18/09, 9 market, customer and competition",
-              "1,688",
-              "70,435"
+              "full review 18/09, 1 executive verdict",
+              "1,880",
+              "63,300"
             ],
             [
               "58",
-              "full review 18/09, 10 business model and unit economics",
-              "2,140",
-              "72,575"
+              "full review 18/09, 2 the idea in one page, at its strongest",
+              "957",
+              "64,257"
             ],
             [
               "59",
-              "full review 18/09, 11 founder, team shape and execution risk",
-              "1,086",
-              "73,661"
+              "full review 18/09, 3 what changed since 11 september, and what the change costs",
+              "1,259",
+              "65,516"
             ],
             [
               "60",
-              "full review 18/09, 12 security, trust and safety: a red-team read",
-              "1,929",
-              "75,590"
+              "full review 18/09, 4 technology today: what exists, what is plausible, what is r",
+              "1,848",
+              "67,364"
             ],
             [
               "61",
-              "full review 18/09, 13 product, go-to-market and retention",
-              "1,002",
-              "76,592"
+              "full review 18/09, 5 technologies on the horizon, and who owns their distributio",
+              "1,489",
+              "68,853"
             ],
             [
               "62",
-              "full review 18/09, 14 pre-mortem: it is dead in three years, ranked causes",
-              "1,040",
-              "77,632"
+              "full review 18/09, 6 regulatory position: india",
+              "2,110",
+              "70,963"
             ],
             [
               "63",
-              "full review 18/09, 15 what we would need to see before money, and what the next ",
-              "654",
-              "78,286"
+              "full review 18/09, 7 regulatory position: the united kingdom",
+              "1,275",
+              "72,238"
             ],
             [
               "64",
-              "full review 18/09, 16 questions for the founder",
-              "584",
-              "78,870"
+              "full review 18/09, 8 regulatory position: the united states",
+              "1,754",
+              "73,992"
             ],
             [
               "65",
-              "full review 18/09, 17 what the record should change",
-              "818",
-              "79,688"
+              "full review 18/09, 9 market, customer and competition",
+              "1,688",
+              "75,680"
             ],
             [
               "66",
-              "full review 18/09, 18 the evidence ledger: what was read, how, and what could no",
-              "723",
-              "80,411"
+              "full review 18/09, 10 business model and unit economics",
+              "2,140",
+              "77,820"
             ],
             [
               "67",
-              "full review 18/09, sources",
-              "3,970",
-              "84,381"
+              "full review 18/09, 11 founder, team shape and execution risk",
+              "1,086",
+              "78,906"
             ],
             [
               "68",
-              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 1 decision",
-              "679",
-              "85,060"
+              "full review 18/09, 12 security, trust and safety: a red-team read",
+              "1,929",
+              "80,835"
             ],
             [
               "69",
-              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 2 rejected al",
-              "138",
-              "85,198"
+              "full review 18/09, 13 product, go-to-market and retention",
+              "1,002",
+              "81,837"
             ],
             [
               "70",
-              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 3 what this c",
-              "126",
-              "85,324"
+              "full review 18/09, 14 pre-mortem: it is dead in three years, ranked causes",
+              "1,040",
+              "82,877"
             ],
             [
               "71",
-              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 4 status",
-              "111",
-              "85,435"
+              "full review 18/09, 15 what we would need to see before money, and what the next ",
+              "654",
+              "83,531"
             ],
             [
               "72",
-              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 5 trigger",
-              "72",
-              "85,507"
+              "full review 18/09, 16 questions for the founder",
+              "584",
+              "84,115"
             ],
             [
               "73",
-              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, sources",
-              "116",
-              "85,623"
+              "full review 18/09, 17 what the record should change",
+              "818",
+              "84,933"
             ],
             [
               "74",
-              "dr-002 verdict system split into a control loop and an improvement loop, 1 decis",
-              "497",
-              "86,120"
+              "full review 18/09, 18 the evidence ledger: what was read, how, and what could no",
+              "723",
+              "85,656"
             ],
             [
               "75",
-              "dr-002 verdict system split into a control loop and an improvement loop, 2 rejec",
-              "278",
-              "86,398"
+              "full review 18/09, sources",
+              "3,970",
+              "89,626"
             ],
             [
               "76",
-              "dr-002 verdict system split into a control loop and an improvement loop, 3 what ",
-              "117",
-              "86,515"
+              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 1 decision",
+              "679",
+              "90,305"
             ],
             [
               "77",
-              "dr-002 verdict system split into a control loop and an improvement loop, 4 statu",
-              "43",
-              "86,558"
+              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 2 rejected al",
+              "138",
+              "90,443"
             ],
             [
               "78",
-              "dr-010 plain html with no build step, 1 decision",
-              "436",
-              "86,994"
+              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 3 what this c",
+              "126",
+              "90,569"
             ],
             [
               "79",
-              "dr-010 plain html with no build step, 2 rejected alternative(s) and their cost",
-              "223",
-              "87,217"
+              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 4 status",
+              "111",
+              "90,680"
             ],
             [
               "80",
-              "dr-010 plain html with no build step, 3 what this closes off",
-              "198",
-              "87,415"
+              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, 5 trigger",
+              "72",
+              "90,752"
             ],
             [
               "81",
-              "dr-010 plain html with no build step, 4 status",
-              "249",
-              "87,664"
+              "dr-001 channel-agnostic intake gateway; whatsapp front door amber, sources",
+              "116",
+              "90,868"
             ],
             [
               "82",
-              "dr-011 a visual token-and-component system, 1 decision",
-              "505",
-              "88,169"
+              "dr-002 verdict system split into a control loop and an improvement loop, 1 decis",
+              "497",
+              "91,365"
             ],
             [
               "83",
-              "dr-011 a visual token-and-component system, 2 rejected alternative(s) and their ",
-              "220",
-              "88,389"
+              "dr-002 verdict system split into a control loop and an improvement loop, 2 rejec",
+              "278",
+              "91,643"
             ],
             [
               "84",
-              "dr-011 a visual token-and-component system, 3 what this closes off",
-              "101",
-              "88,490"
+              "dr-002 verdict system split into a control loop and an improvement loop, 3 what ",
+              "117",
+              "91,760"
             ],
             [
               "85",
-              "dr-011 a visual token-and-component system, 4 status",
-              "84",
-              "88,574"
+              "dr-002 verdict system split into a control loop and an improvement loop, 4 statu",
+              "43",
+              "91,803"
             ],
             [
               "86",
-              "dr-012 the design plan: an engineering dossier, 1 decision",
-              "1,225",
-              "89,799"
+              "dr-010 plain html with no build step, 1 decision",
+              "436",
+              "92,239"
             ],
             [
               "87",
-              "dr-012 the design plan: an engineering dossier, 2 rejected alternative(s) and th",
-              "368",
-              "90,167"
+              "dr-010 plain html with no build step, 2 rejected alternative(s) and their cost",
+              "223",
+              "92,462"
             ],
             [
               "88",
-              "dr-012 the design plan: an engineering dossier, 3 what this closes off",
-              "104",
-              "90,271"
+              "dr-010 plain html with no build step, 3 what this closes off",
+              "198",
+              "92,660"
             ],
             [
               "89",
-              "dr-012 the design plan: an engineering dossier, 4 status",
-              "81",
-              "90,352"
+              "dr-010 plain html with no build step, 4 status",
+              "249",
+              "92,909"
             ],
             [
               "90",
-              "dr-013 the verification standard for this edition, 1 decision",
-              "559",
-              "90,911"
+              "dr-011 a visual token-and-component system, 1 decision",
+              "505",
+              "93,414"
             ],
             [
               "91",
-              "dr-013 the verification standard for this edition, 2 rejected alternative(s) and",
-              "193",
-              "91,104"
+              "dr-011 a visual token-and-component system, 2 rejected alternative(s) and their ",
+              "220",
+              "93,634"
             ],
             [
               "92",
-              "dr-013 the verification standard for this edition, 3 what this closes off",
-              "94",
-              "91,198"
+              "dr-011 a visual token-and-component system, 3 what this closes off",
+              "101",
+              "93,735"
             ],
             [
               "93",
-              "dr-013 the verification standard for this edition, 4 status",
-              "46",
-              "91,244"
+              "dr-011 a visual token-and-component system, 4 status",
+              "84",
+              "93,819"
             ],
             [
               "94",
-              "dr-017 a dependency map of the record, kept as a tool, 1 decision",
-              "754",
-              "91,998"
+              "dr-012 the design plan: an engineering dossier, 1 decision",
+              "1,225",
+              "95,044"
             ],
             [
               "95",
-              "dr-017 a dependency map of the record, kept as a tool, 2 rejected alternative(s)",
-              "392",
-              "92,390"
+              "dr-012 the design plan: an engineering dossier, 2 rejected alternative(s) and th",
+              "368",
+              "95,412"
             ],
             [
               "96",
-              "dr-017 a dependency map of the record, kept as a tool, 3 what this closes off",
-              "251",
-              "92,641"
+              "dr-012 the design plan: an engineering dossier, 3 what this closes off",
+              "104",
+              "95,516"
             ],
             [
               "97",
-              "dr-017 a dependency map of the record, kept as a tool, 4 status",
-              "293",
-              "92,934"
+              "dr-012 the design plan: an engineering dossier, 4 status",
+              "81",
+              "95,597"
             ],
             [
               "98",
-              "dr-019 the endgame is the starting scope, 1 decision",
-              "430",
-              "93,364"
+              "dr-013 the verification standard for this edition, 1 decision",
+              "559",
+              "96,156"
             ],
             [
               "99",
-              "dr-019 the endgame is the starting scope, 2 rejected alternative(s) and their co",
-              "139",
-              "93,503"
+              "dr-013 the verification standard for this edition, 2 rejected alternative(s) and",
+              "193",
+              "96,349"
             ],
             [
               "100",
-              "dr-019 the endgame is the starting scope, 3 what this closes off",
-              "120",
-              "93,623"
+              "dr-013 the verification standard for this edition, 3 what this closes off",
+              "94",
+              "96,443"
             ],
             [
               "101",
-              "dr-019 the endgame is the starting scope, 4 status",
-              "81",
-              "93,704"
+              "dr-013 the verification standard for this edition, 4 status",
+              "46",
+              "96,489"
             ],
             [
               "102",
-              "dr-020 everyday tasks in scope from day one, 1 decision",
-              "114",
-              "93,818"
+              "dr-017 a dependency map of the record, kept as a tool, 1 decision",
+              "754",
+              "97,243"
             ],
             [
               "103",
-              "dr-020 everyday tasks in scope from day one, 2 rejected alternative(s) and their",
-              "95",
-              "93,913"
+              "dr-017 a dependency map of the record, kept as a tool, 2 rejected alternative(s)",
+              "392",
+              "97,635"
             ],
             [
               "104",
-              "dr-020 everyday tasks in scope from day one, 3 what this closes off",
-              "96",
-              "94,009"
+              "dr-017 a dependency map of the record, kept as a tool, 3 what this closes off",
+              "251",
+              "97,886"
             ],
             [
               "105",
-              "dr-020 everyday tasks in scope from day one, 4 status",
-              "39",
-              "94,048"
+              "dr-017 a dependency map of the record, kept as a tool, 4 status",
+              "293",
+              "98,179"
             ],
             [
               "106",
-              "dr-028 pages assembled from fragments, held fresh by the harness, 1 decision",
-              "513",
-              "94,561"
+              "dr-019 the endgame is the starting scope, 1 decision",
+              "430",
+              "98,609"
             ],
             [
               "107",
-              "dr-028 pages assembled from fragments, held fresh by the harness, 2 rejected alt",
-              "241",
-              "94,802"
+              "dr-019 the endgame is the starting scope, 2 rejected alternative(s) and their co",
+              "139",
+              "98,748"
             ],
             [
               "108",
-              "dr-028 pages assembled from fragments, held fresh by the harness, 3 what this cl",
-              "182",
-              "94,984"
+              "dr-019 the endgame is the starting scope, 3 what this closes off",
+              "120",
+              "98,868"
             ],
             [
               "109",
-              "dr-028 pages assembled from fragments, held fresh by the harness, 4 status",
-              "83",
-              "95,067"
+              "dr-019 the endgame is the starting scope, 4 status",
+              "81",
+              "98,949"
             ],
             [
               "110",
-              "dr-029 a generated front door and one generated page per owner, 1 decision",
-              "579",
-              "95,646"
+              "dr-020 everyday tasks in scope from day one, 1 decision",
+              "114",
+              "99,063"
             ],
             [
               "111",
-              "dr-029 a generated front door and one generated page per owner, 2 rejected alter",
-              "253",
-              "95,899"
+              "dr-020 everyday tasks in scope from day one, 2 rejected alternative(s) and their",
+              "95",
+              "99,158"
             ],
             [
               "112",
-              "dr-029 a generated front door and one generated page per owner, 3 what this clos",
-              "164",
-              "96,063"
+              "dr-020 everyday tasks in scope from day one, 3 what this closes off",
+              "96",
+              "99,254"
             ],
             [
               "113",
-              "dr-029 a generated front door and one generated page per owner, 4 status",
-              "106",
-              "96,169"
+              "dr-020 everyday tasks in scope from day one, 4 status",
+              "39",
+              "99,293"
             ],
             [
               "114",
-              "decisions, 1 the ledger",
-              "876",
-              "97,045"
+              "dr-028 pages assembled from fragments, held fresh by the harness, 1 decision",
+              "513",
+              "99,806"
             ],
             [
               "115",
-              "decisions, 2 how a record works",
-              "229",
-              "97,274"
+              "dr-028 pages assembled from fragments, held fresh by the harness, 2 rejected alt",
+              "241",
+              "100,047"
             ],
             [
               "116",
-              "architecture, 1 overview (read)",
-              "791",
-              "98,065"
+              "dr-028 pages assembled from fragments, held fresh by the harness, 3 what this cl",
+              "182",
+              "100,229"
             ],
             [
               "117",
-              "the trust story, 1 the promise (read)",
-              "443",
-              "98,508"
+              "dr-028 pages assembled from fragments, held fresh by the harness, 4 status",
+              "83",
+              "100,312"
             ],
             [
               "118",
-              "the trust story, 2 what your ledger looks like (read)",
-              "143",
-              "98,651"
+              "dr-029 a generated front door and one generated page per owner, 1 decision",
+              "579",
+              "100,891"
             ],
             [
               "119",
-              "the trust story, 3 where the line actually falls (read)",
-              "257",
-              "98,908"
+              "dr-029 a generated front door and one generated page per owner, 2 rejected alter",
+              "253",
+              "101,144"
             ],
             [
               "120",
-              "the trust story, 4 what we never do (read)",
-              "300",
-              "99,208"
+              "dr-029 a generated front door and one generated page per owner, 3 what this clos",
+              "164",
+              "101,308"
             ],
             [
               "121",
-              "04 operations, 2 the shift design, staged (read)",
-              "1,007",
-              "100,215"
+              "dr-029 a generated front door and one generated page per owner, 4 status",
+              "106",
+              "101,414"
             ],
             [
               "122",
-              "05 business, 1 why this page exists now (read)",
-              "173",
-              "100,388"
+              "decisions, 1 the ledger",
+              "876",
+              "102,290"
             ],
             [
               "123",
-              "05 business, 2 the task model (read)",
-              "153",
-              "100,541"
+              "decisions, 2 how a record works",
+              "229",
+              "102,519"
             ],
             [
               "124",
-              "05 business, 3 the one ratio that decides everything (read)",
-              "290",
-              "100,831"
+              "architecture, 1 overview (read)",
+              "791",
+              "103,310"
             ],
             [
               "125",
-              "05 business, 4 the cost split (read)",
-              "564",
-              "101,395"
+              "the trust story, 1 the promise (read)",
+              "443",
+              "103,753"
             ],
             [
               "126",
-              "05 business, 5 the trajectory (read)",
-              "829",
-              "102,224"
+              "the trust story, 2 what your ledger looks like (read)",
+              "143",
+              "103,896"
             ],
             [
               "127",
-              "05 business, 6 how users arrive (read)",
-              "2,174",
-              "104,398"
+              "the trust story, 3 where the line actually falls (read)",
+              "257",
+              "104,153"
             ],
             [
               "128",
-              "05 business, 7 funding (read)",
-              "564",
-              "104,962"
+              "the trust story, 4 what we never do (read)",
+              "300",
+              "104,453"
             ],
             [
               "129",
-              "05 business, 8 geography (read)",
-              "1,377",
-              "106,339"
+              "04 operations, 2 the shift design, staged (read)",
+              "1,007",
+              "105,460"
             ],
             [
               "130",
-              "05 business, 9 the commerce layer (read)",
-              "514",
-              "106,853"
+              "05 business, 1 why this page exists now (read)",
+              "173",
+              "105,633"
             ],
             [
               "131",
+              "05 business, 2 the task model (read)",
+              "153",
+              "105,786"
+            ],
+            [
+              "132",
+              "05 business, 3 the one ratio that decides everything (read)",
+              "290",
+              "106,076"
+            ],
+            [
+              "133",
+              "05 business, 4 the cost split (read)",
+              "564",
+              "106,640"
+            ],
+            [
+              "134",
+              "05 business, 5 the trajectory (read)",
+              "829",
+              "107,469"
+            ],
+            [
+              "135",
+              "05 business, 6 how users arrive (read)",
+              "2,174",
+              "109,643"
+            ],
+            [
+              "136",
+              "05 business, 7 funding (read)",
+              "564",
+              "110,207"
+            ],
+            [
+              "137",
+              "05 business, 8 geography (read)",
+              "1,377",
+              "111,584"
+            ],
+            [
+              "138",
+              "05 business, 9 the commerce layer (read)",
+              "514",
+              "112,098"
+            ],
+            [
+              "139",
               "05 business, 10 what replaces this page (read)",
               "371",
-              "107,224"
+              "112,469"
             ]
           ],
           "under": "path"
@@ -23599,1638 +24644,1702 @@
         },
         {
           "line": 99,
-          "to": "01-product/index.html#journeys"
+          "to": "00-thesis/instinct.html#what-it-is"
         },
         {
           "line": 100,
-          "to": "01-product/index.html#taxonomy"
+          "to": "00-thesis/instinct.html#how-it-works"
         },
         {
           "line": 101,
-          "to": "01-product/index.html#intake"
+          "to": "00-thesis/instinct.html#user-experience"
         },
         {
           "line": 102,
-          "to": "01-product/index.html#envelope"
+          "to": "00-thesis/instinct.html#where-it-strains"
         },
         {
           "line": 103,
-          "to": "01-product/index.html#verdicts"
+          "to": "00-thesis/instinct.html#similarities"
         },
         {
           "line": 104,
-          "to": "01-product/index.html#onboarding"
+          "to": "00-thesis/instinct.html#differences"
         },
         {
           "line": 105,
-          "to": "01-product/index.html#refusals"
+          "to": "00-thesis/instinct.html#who-wins"
         },
         {
           "line": 106,
-          "to": "01-product/index.html#sources"
+          "to": "00-thesis/instinct.html#sources"
         },
         {
           "line": 107,
-          "to": "06-roadmap/index.html#sequence"
+          "to": "01-product/index.html#journeys"
         },
         {
           "line": 108,
-          "to": "06-roadmap/index.html#pilot"
+          "to": "01-product/index.html#taxonomy"
         },
         {
           "line": 109,
-          "to": "06-roadmap/index.html#build-buy"
+          "to": "01-product/index.html#intake"
         },
         {
           "line": 110,
-          "to": "06-roadmap/index.html#expansion"
+          "to": "01-product/index.html#envelope"
         },
         {
           "line": 111,
-          "to": "06-roadmap/index.html#sources"
+          "to": "01-product/index.html#verdicts"
         },
         {
           "line": 112,
-          "to": "07-open/index.html#items"
+          "to": "01-product/index.html#onboarding"
         },
         {
           "line": 113,
-          "to": "07-open/index.html#objections"
+          "to": "01-product/index.html#refusals"
         },
         {
           "line": 114,
-          "to": "07-open/index.html#left-alone"
-        },
-        {
-          "line": 115,
-          "to": "08-review/index.html#executive-verdict"
-        },
-        {
-          "line": 116,
-          "to": "08-review/index.html#the-idea-in-one-page"
-        },
-        {
-          "line": 117,
-          "to": "08-review/index.html#technology-today"
-        },
-        {
-          "line": 118,
-          "to": "08-review/index.html#horizon-threats"
-        },
-        {
-          "line": 119,
-          "to": "08-review/index.html#regulation-india"
-        },
-        {
-          "line": 120,
-          "to": "08-review/index.html#regulation-uk"
-        },
-        {
-          "line": 121,
-          "to": "08-review/index.html#regulation-us"
-        },
-        {
-          "line": 122,
-          "to": "08-review/index.html#market-and-competition"
-        },
-        {
-          "line": 123,
-          "to": "08-review/index.html#economics"
-        },
-        {
-          "line": 124,
-          "to": "08-review/index.html#team-and-execution"
-        },
-        {
-          "line": 125,
-          "to": "08-review/index.html#security-red-team"
-        },
-        {
-          "line": 126,
-          "to": "08-review/index.html#product-and-gtm"
-        },
-        {
-          "line": 127,
-          "to": "08-review/index.html#pre-mortem"
-        },
-        {
-          "line": 128,
-          "to": "08-review/index.html#what-we-would-need-to-see"
-        },
-        {
-          "line": 129,
-          "to": "08-review/index.html#questions-for-the-founder"
-        },
-        {
-          "line": 130,
-          "to": "08-review/index.html#what-the-record-should-change"
-        },
-        {
-          "line": 131,
-          "to": "08-review/index.html#sources"
-        },
-        {
-          "line": 132,
-          "to": "08-review/full-review-18-09.html#verdict"
-        },
-        {
-          "line": 133,
-          "to": "08-review/full-review-18-09.html#idea"
-        },
-        {
-          "line": 134,
-          "to": "08-review/full-review-18-09.html#since"
-        },
-        {
-          "line": 135,
-          "to": "08-review/full-review-18-09.html#technology"
-        },
-        {
-          "line": 136,
-          "to": "08-review/full-review-18-09.html#horizon"
-        },
-        {
-          "line": 137,
-          "to": "08-review/full-review-18-09.html#india"
-        },
-        {
-          "line": 138,
-          "to": "08-review/full-review-18-09.html#uk"
-        },
-        {
-          "line": 139,
-          "to": "08-review/full-review-18-09.html#us"
-        },
-        {
-          "line": 140,
-          "to": "08-review/full-review-18-09.html#market"
-        },
-        {
-          "line": 141,
-          "to": "08-review/full-review-18-09.html#economics"
-        },
-        {
-          "line": 142,
-          "to": "08-review/full-review-18-09.html#team"
-        },
-        {
-          "line": 143,
-          "to": "08-review/full-review-18-09.html#security"
-        },
-        {
-          "line": 144,
-          "to": "08-review/full-review-18-09.html#product"
-        },
-        {
-          "line": 145,
-          "to": "08-review/full-review-18-09.html#premortem"
-        },
-        {
-          "line": 146,
-          "to": "08-review/full-review-18-09.html#gates"
-        },
-        {
-          "line": 147,
-          "to": "08-review/full-review-18-09.html#questions"
-        },
-        {
-          "line": 148,
-          "to": "08-review/full-review-18-09.html#changes"
-        },
-        {
-          "line": 149,
-          "to": "08-review/full-review-18-09.html#evidence"
-        },
-        {
-          "line": 150,
-          "to": "08-review/full-review-18-09.html#sources"
-        },
-        {
-          "line": 151,
-          "to": "decisions/dr-001-channel-gateway.html#decision"
-        },
-        {
-          "line": 152,
-          "to": "decisions/dr-001-channel-gateway.html#rejected"
-        },
-        {
-          "line": 153,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 154,
-          "to": "decisions/dr-001-channel-gateway.html#record-status"
-        },
-        {
-          "line": 155,
-          "to": "decisions/dr-001-channel-gateway.html#trigger"
-        },
-        {
-          "line": 156,
-          "to": "decisions/dr-001-channel-gateway.html#sources"
-        },
-        {
-          "line": 157,
-          "to": "decisions/dr-002-verdict-two-loops.html#decision"
-        },
-        {
-          "line": 158,
-          "to": "decisions/dr-002-verdict-two-loops.html#rejected"
-        },
-        {
-          "line": 159,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 160,
-          "to": "decisions/dr-002-verdict-two-loops.html#record-status"
-        },
-        {
-          "line": 161,
-          "to": "decisions/dr-010-html-no-build-step.html#decision"
-        },
-        {
-          "line": 162,
-          "to": "decisions/dr-010-html-no-build-step.html#rejected"
-        },
-        {
-          "line": 163,
-          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
-        },
-        {
-          "line": 164,
-          "to": "decisions/dr-010-html-no-build-step.html#record-status"
-        },
-        {
-          "line": 165,
-          "to": "decisions/dr-011-token-and-component-system.html#decision"
-        },
-        {
-          "line": 166,
-          "to": "decisions/dr-011-token-and-component-system.html#rejected"
-        },
-        {
-          "line": 167,
-          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
-        },
-        {
-          "line": 168,
-          "to": "decisions/dr-011-token-and-component-system.html#record-status"
-        },
-        {
-          "line": 169,
-          "to": "decisions/dr-012-design-plan.html#decision"
-        },
-        {
-          "line": 170,
-          "to": "decisions/dr-012-design-plan.html#rejected"
-        },
-        {
-          "line": 171,
-          "to": "decisions/dr-012-design-plan.html#closes-off"
-        },
-        {
-          "line": 172,
-          "to": "decisions/dr-012-design-plan.html#record-status"
-        },
-        {
-          "line": 173,
-          "to": "decisions/dr-013-verification-standard.html#decision"
-        },
-        {
-          "line": 174,
-          "to": "decisions/dr-013-verification-standard.html#rejected"
-        },
-        {
-          "line": 175,
-          "to": "decisions/dr-013-verification-standard.html#closes-off"
-        },
-        {
-          "line": 176,
-          "to": "decisions/dr-013-verification-standard.html#record-status"
-        },
-        {
-          "line": 177,
-          "to": "decisions/dr-017-dependency-map.html#decision"
-        },
-        {
-          "line": 178,
-          "to": "decisions/dr-017-dependency-map.html#rejected"
-        },
-        {
-          "line": 179,
-          "to": "decisions/dr-017-dependency-map.html#closes-off"
-        },
-        {
-          "line": 180,
-          "to": "decisions/dr-017-dependency-map.html#record-status"
-        },
-        {
-          "line": 181,
-          "to": "decisions/dr-019-the-endgame.html#decision"
-        },
-        {
-          "line": 182,
-          "to": "decisions/dr-019-the-endgame.html#rejected"
-        },
-        {
-          "line": 183,
-          "to": "decisions/dr-019-the-endgame.html#closes-off"
-        },
-        {
-          "line": 184,
-          "to": "decisions/dr-019-the-endgame.html#record-status"
-        },
-        {
-          "line": 185,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#decision"
-        },
-        {
-          "line": 186,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#rejected"
-        },
-        {
-          "line": 187,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
-        },
-        {
-          "line": 188,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#record-status"
-        },
-        {
-          "line": 189,
-          "to": "decisions/dr-028-fragments-and-build.html#decision"
-        },
-        {
-          "line": 190,
-          "to": "decisions/dr-028-fragments-and-build.html#rejected"
-        },
-        {
-          "line": 191,
-          "to": "decisions/dr-028-fragments-and-build.html#closes-off"
-        },
-        {
-          "line": 192,
-          "to": "decisions/dr-028-fragments-and-build.html#record-status"
-        },
-        {
-          "line": 193,
-          "to": "decisions/dr-029-owner-views.html#decision"
-        },
-        {
-          "line": 194,
-          "to": "decisions/dr-029-owner-views.html#rejected"
-        },
-        {
-          "line": 195,
-          "to": "decisions/dr-029-owner-views.html#closes-off"
-        },
-        {
-          "line": 196,
-          "to": "decisions/dr-029-owner-views.html#record-status"
-        },
-        {
-          "line": 197,
-          "to": "decisions/index.html#ledger"
-        },
-        {
-          "line": 198,
-          "to": "decisions/index.html#how-records-work"
-        },
-        {
-          "line": 204,
-          "to": "decisions/dr-001-channel-gateway.html"
-        },
-        {
-          "line": 205,
-          "to": "decisions/dr-002-verdict-two-loops.html"
-        },
-        {
-          "line": 206,
-          "to": "decisions/dr-010-html-no-build-step.html"
-        },
-        {
-          "line": 207,
-          "to": "decisions/dr-011-token-and-component-system.html"
-        },
-        {
-          "line": 208,
-          "to": "decisions/dr-012-design-plan.html"
-        },
-        {
-          "line": 209,
-          "to": "decisions/dr-013-verification-standard.html"
-        },
-        {
-          "line": 210,
-          "to": "decisions/dr-017-dependency-map.html"
-        },
-        {
-          "line": 211,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 212,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html"
-        },
-        {
-          "line": 213,
-          "to": "decisions/dr-028-fragments-and-build.html"
-        },
-        {
-          "line": 214,
-          "to": "decisions/dr-029-owner-views.html"
-        },
-        {
-          "line": 218,
-          "to": "07-open/index.html#open-07-01"
-        },
-        {
-          "line": 219,
-          "to": "07-open/index.html#open-07-02"
-        },
-        {
-          "line": 220,
-          "to": "07-open/index.html#open-07-03"
-        },
-        {
-          "line": 221,
-          "to": "07-open/index.html#open-07-07"
-        },
-        {
-          "line": 222,
-          "to": "07-open/index.html#open-07-08"
-        },
-        {
-          "line": 223,
-          "to": "07-open/index.html#open-07-09"
-        },
-        {
-          "line": 224,
-          "to": "07-open/index.html#open-07-13"
-        },
-        {
-          "line": 225,
-          "to": "07-open/index.html#open-07-14"
-        },
-        {
-          "line": 226,
-          "to": "07-open/index.html#open-07-15"
-        },
-        {
-          "line": 227,
-          "to": "07-open/index.html#open-07-16"
-        },
-        {
-          "line": 228,
-          "to": "07-open/index.html#open-07-17"
-        },
-        {
-          "line": 229,
-          "to": "07-open/index.html#open-07-18"
-        },
-        {
-          "line": 230,
-          "to": "07-open/index.html#open-07-19"
-        },
-        {
-          "line": 231,
-          "to": "07-open/index.html#open-07-22"
-        },
-        {
-          "line": 232,
-          "to": "07-open/index.html#open-07-23"
-        },
-        {
-          "line": 233,
-          "to": "07-open/index.html#open-07-24"
-        },
-        {
-          "line": 234,
-          "to": "07-open/index.html#open-07-25"
-        },
-        {
-          "line": 235,
-          "to": "07-open/index.html#open-07-47"
-        },
-        {
-          "line": 236,
-          "to": "07-open/index.html#open-07-48"
-        },
-        {
-          "line": 237,
-          "to": "07-open/index.html#open-07-49"
-        },
-        {
-          "line": 238,
-          "to": "07-open/index.html#open-07-44"
-        },
-        {
-          "line": 239,
-          "to": "07-open/index.html#open-07-45"
-        },
-        {
-          "line": 240,
-          "to": "07-open/index.html#open-07-46"
-        },
-        {
-          "line": 241,
-          "to": "07-open/index.html#open-07-41"
-        },
-        {
-          "line": 242,
-          "to": "07-open/index.html#open-07-42"
-        },
-        {
-          "line": 243,
-          "to": "07-open/index.html#open-07-40"
-        },
-        {
-          "line": 244,
-          "to": "07-open/index.html#open-07-27"
-        },
-        {
-          "line": 245,
-          "to": "07-open/index.html#open-07-28"
-        },
-        {
-          "line": 246,
-          "to": "07-open/index.html#open-07-39"
-        },
-        {
-          "line": 247,
-          "to": "07-open/index.html#open-07-36"
-        },
-        {
-          "line": 248,
-          "to": "07-open/index.html#open-07-37"
-        },
-        {
-          "line": 249,
-          "to": "07-open/index.html#open-07-38"
-        },
-        {
-          "line": 250,
-          "to": "07-open/index.html#open-07-31"
-        },
-        {
-          "line": 251,
-          "to": "07-open/index.html#open-07-32"
-        },
-        {
-          "line": 252,
-          "to": "07-open/index.html#open-07-33"
-        },
-        {
-          "line": 253,
-          "to": "07-open/index.html#open-07-34"
-        },
-        {
-          "line": 254,
-          "to": "07-open/index.html#open-07-35"
-        },
-        {
-          "line": 255,
-          "to": "07-open/index.html#open-07-29"
-        },
-        {
-          "line": 256,
-          "to": "07-open/index.html#open-07-30"
-        },
-        {
-          "line": 257,
-          "to": "07-open/index.html#open-07-20"
-        },
-        {
-          "line": 258,
-          "to": "07-open/index.html#open-07-21"
-        },
-        {
-          "line": 260,
-          "to": "07-open/index.html#open-07-04"
-        },
-        {
-          "line": 260,
-          "to": "07-open/index.html#open-07-05"
-        },
-        {
-          "line": 260,
-          "to": "07-open/index.html#open-07-06"
-        },
-        {
-          "line": 260,
-          "to": "07-open/index.html#open-07-10"
-        },
-        {
-          "line": 260,
-          "to": "07-open/index.html#open-07-43"
-        },
-        {
-          "line": 260,
-          "to": "07-open/index.html#open-07-26"
-        },
-        {
-          "line": 263,
-          "to": "00-thesis/index.html#what-consequence-means"
-        },
-        {
-          "line": 264,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 265,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 266,
-          "to": "decisions/dr-001-channel-gateway.html#closes-off"
-        },
-        {
-          "line": 267,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 268,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 269,
-          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
-        },
-        {
-          "line": 270,
-          "to": "01-product/index.html#refusals"
-        },
-        {
-          "line": 271,
-          "to": "decisions/dr-018-mail-from-the-users-address.html#closes-off"
-        },
-        {
-          "line": 272,
-          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
-        },
-        {
-          "line": 273,
-          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
-        },
-        {
-          "line": 274,
-          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
-        },
-        {
-          "line": 275,
-          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
-        },
-        {
-          "line": 276,
-          "to": "decisions/dr-012-design-plan.html#closes-off"
-        },
-        {
-          "line": 277,
-          "to": "decisions/dr-013-verification-standard.html#closes-off"
-        },
-        {
-          "line": 278,
-          "to": "decisions/dr-013-verification-standard.html#closes-off"
-        },
-        {
-          "line": 279,
-          "to": "decisions/dr-019-the-endgame.html#closes-off"
-        },
-        {
-          "line": 280,
-          "to": "decisions/dr-023-geography-sequencing.html#closes-off"
-        },
-        {
-          "line": 286,
-          "to": "decisions/dr-003-full-delegation-ceiling.html"
-        },
-        {
-          "line": 287,
-          "to": "decisions/dr-004-authority-envelope.html"
-        },
-        {
-          "line": 288,
-          "to": "decisions/dr-005-state-machine-lapsed.html"
-        },
-        {
-          "line": 289,
-          "to": "decisions/dr-006-office-mandatory.html"
-        },
-        {
-          "line": 290,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 291,
-          "to": "decisions/dr-008-vault-bought.html"
-        },
-        {
-          "line": 292,
-          "to": "decisions/dr-009-evidence-redaction.html"
-        },
-        {
-          "line": 293,
-          "to": "decisions/dr-014-substitution-framing.html"
-        },
-        {
-          "line": 294,
-          "to": "decisions/dr-015-economics-deferred.html"
-        },
-        {
-          "line": 295,
-          "to": "decisions/dr-016-context-store.html"
-        },
-        {
-          "line": 296,
-          "to": "decisions/dr-018-mail-from-the-users-address.html"
-        },
-        {
-          "line": 297,
-          "to": "decisions/dr-021-no-value-spoken.html"
-        },
-        {
-          "line": 298,
-          "to": "decisions/dr-022-structured-task-cards.html"
-        },
-        {
-          "line": 299,
-          "to": "decisions/dr-023-geography-sequencing.html"
-        },
-        {
-          "line": 300,
-          "to": "decisions/dr-024-metered-pricing.html"
-        },
-        {
-          "line": 301,
-          "to": "decisions/dr-025-growth-two-mechanisms.html"
-        },
-        {
-          "line": 302,
-          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
-        },
-        {
-          "line": 303,
-          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
-        },
-        {
-          "line": 313,
-          "to": "contents/index.html#promise"
-        },
-        {
-          "line": 314,
-          "to": "contents/index.html#human-in-the-gap"
-        },
-        {
-          "line": 315,
-          "to": "contents/index.html#two-fatals"
-        },
-        {
-          "line": 316,
-          "to": "contents/index.html#three-markets"
-        },
-        {
-          "line": 317,
-          "to": "contents/index.html#what-exists"
-        },
-        {
-          "line": 318,
-          "to": "contents/index.html#how-to-read"
-        },
-        {
-          "line": 319,
-          "to": "contents/index.html#publication-map"
-        },
-        {
-          "line": 320,
-          "to": "00-thesis/index.html#customer-and-wedge"
-        },
-        {
-          "line": 321,
-          "to": "00-thesis/index.html#context-profile"
-        },
-        {
-          "line": 322,
-          "to": "00-thesis/index.html#why-now"
-        },
-        {
-          "line": 323,
-          "to": "00-thesis/index.html#markets"
-        },
-        {
-          "line": 324,
-          "to": "00-thesis/index.html#landscape"
-        },
-        {
-          "line": 325,
-          "to": "00-thesis/index.html#moat"
-        },
-        {
-          "line": 326,
-          "to": "00-thesis/index.html#endgame"
-        },
-        {
-          "line": 327,
-          "to": "00-thesis/index.html#sources"
-        },
-        {
-          "line": 328,
-          "to": "01-product/index.html#journeys"
-        },
-        {
-          "line": 329,
-          "to": "01-product/index.html#taxonomy"
-        },
-        {
-          "line": 330,
-          "to": "01-product/index.html#intake"
-        },
-        {
-          "line": 331,
-          "to": "01-product/index.html#envelope"
-        },
-        {
-          "line": 332,
-          "to": "01-product/index.html#verdicts"
-        },
-        {
-          "line": 333,
-          "to": "01-product/index.html#onboarding"
-        },
-        {
-          "line": 334,
-          "to": "01-product/index.html#refusals"
-        },
-        {
-          "line": 335,
           "to": "01-product/index.html#sources"
         },
         {
-          "line": 336,
+          "line": 115,
           "to": "06-roadmap/index.html#sequence"
         },
         {
-          "line": 337,
+          "line": 116,
           "to": "06-roadmap/index.html#pilot"
         },
         {
-          "line": 338,
+          "line": 117,
           "to": "06-roadmap/index.html#build-buy"
         },
         {
-          "line": 339,
+          "line": 118,
           "to": "06-roadmap/index.html#expansion"
         },
         {
-          "line": 340,
+          "line": 119,
           "to": "06-roadmap/index.html#sources"
         },
         {
-          "line": 341,
+          "line": 120,
           "to": "07-open/index.html#items"
         },
         {
-          "line": 342,
+          "line": 121,
           "to": "07-open/index.html#objections"
         },
         {
-          "line": 343,
+          "line": 122,
           "to": "07-open/index.html#left-alone"
         },
         {
-          "line": 344,
+          "line": 123,
           "to": "08-review/index.html#executive-verdict"
         },
         {
-          "line": 345,
+          "line": 124,
           "to": "08-review/index.html#the-idea-in-one-page"
         },
         {
-          "line": 346,
+          "line": 125,
           "to": "08-review/index.html#technology-today"
         },
         {
-          "line": 347,
+          "line": 126,
           "to": "08-review/index.html#horizon-threats"
         },
         {
-          "line": 348,
+          "line": 127,
           "to": "08-review/index.html#regulation-india"
         },
         {
-          "line": 349,
+          "line": 128,
           "to": "08-review/index.html#regulation-uk"
         },
         {
-          "line": 350,
+          "line": 129,
           "to": "08-review/index.html#regulation-us"
         },
         {
-          "line": 351,
+          "line": 130,
           "to": "08-review/index.html#market-and-competition"
         },
         {
-          "line": 352,
+          "line": 131,
           "to": "08-review/index.html#economics"
         },
         {
-          "line": 353,
+          "line": 132,
           "to": "08-review/index.html#team-and-execution"
         },
         {
-          "line": 354,
+          "line": 133,
           "to": "08-review/index.html#security-red-team"
         },
         {
-          "line": 355,
+          "line": 134,
           "to": "08-review/index.html#product-and-gtm"
         },
         {
-          "line": 356,
+          "line": 135,
           "to": "08-review/index.html#pre-mortem"
         },
         {
-          "line": 357,
+          "line": 136,
           "to": "08-review/index.html#what-we-would-need-to-see"
         },
         {
-          "line": 358,
+          "line": 137,
           "to": "08-review/index.html#questions-for-the-founder"
         },
         {
-          "line": 359,
+          "line": 138,
           "to": "08-review/index.html#what-the-record-should-change"
         },
         {
-          "line": 360,
+          "line": 139,
           "to": "08-review/index.html#sources"
         },
         {
-          "line": 361,
+          "line": 140,
           "to": "08-review/full-review-18-09.html#verdict"
         },
         {
-          "line": 362,
+          "line": 141,
           "to": "08-review/full-review-18-09.html#idea"
         },
         {
-          "line": 363,
+          "line": 142,
           "to": "08-review/full-review-18-09.html#since"
         },
         {
-          "line": 364,
+          "line": 143,
           "to": "08-review/full-review-18-09.html#technology"
         },
         {
-          "line": 365,
+          "line": 144,
           "to": "08-review/full-review-18-09.html#horizon"
         },
         {
-          "line": 366,
+          "line": 145,
           "to": "08-review/full-review-18-09.html#india"
         },
         {
-          "line": 367,
+          "line": 146,
           "to": "08-review/full-review-18-09.html#uk"
         },
         {
-          "line": 368,
+          "line": 147,
           "to": "08-review/full-review-18-09.html#us"
         },
         {
-          "line": 369,
+          "line": 148,
           "to": "08-review/full-review-18-09.html#market"
         },
         {
-          "line": 370,
+          "line": 149,
           "to": "08-review/full-review-18-09.html#economics"
         },
         {
-          "line": 371,
+          "line": 150,
           "to": "08-review/full-review-18-09.html#team"
         },
         {
-          "line": 372,
+          "line": 151,
           "to": "08-review/full-review-18-09.html#security"
         },
         {
-          "line": 373,
+          "line": 152,
           "to": "08-review/full-review-18-09.html#product"
         },
         {
-          "line": 374,
+          "line": 153,
           "to": "08-review/full-review-18-09.html#premortem"
         },
         {
-          "line": 375,
+          "line": 154,
           "to": "08-review/full-review-18-09.html#gates"
         },
         {
-          "line": 376,
+          "line": 155,
           "to": "08-review/full-review-18-09.html#questions"
         },
         {
-          "line": 377,
+          "line": 156,
           "to": "08-review/full-review-18-09.html#changes"
         },
         {
-          "line": 378,
+          "line": 157,
           "to": "08-review/full-review-18-09.html#evidence"
         },
         {
-          "line": 379,
+          "line": 158,
           "to": "08-review/full-review-18-09.html#sources"
         },
         {
-          "line": 380,
+          "line": 159,
           "to": "decisions/dr-001-channel-gateway.html#decision"
         },
         {
-          "line": 381,
+          "line": 160,
           "to": "decisions/dr-001-channel-gateway.html#rejected"
         },
         {
-          "line": 382,
+          "line": 161,
           "to": "decisions/dr-001-channel-gateway.html#closes-off"
         },
         {
-          "line": 383,
+          "line": 162,
           "to": "decisions/dr-001-channel-gateway.html#record-status"
         },
         {
-          "line": 384,
+          "line": 163,
           "to": "decisions/dr-001-channel-gateway.html#trigger"
         },
         {
-          "line": 385,
+          "line": 164,
           "to": "decisions/dr-001-channel-gateway.html#sources"
         },
         {
-          "line": 386,
+          "line": 165,
           "to": "decisions/dr-002-verdict-two-loops.html#decision"
         },
         {
-          "line": 387,
+          "line": 166,
           "to": "decisions/dr-002-verdict-two-loops.html#rejected"
         },
         {
-          "line": 388,
+          "line": 167,
           "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
         },
         {
-          "line": 389,
+          "line": 168,
           "to": "decisions/dr-002-verdict-two-loops.html#record-status"
         },
         {
-          "line": 390,
+          "line": 169,
           "to": "decisions/dr-010-html-no-build-step.html#decision"
         },
         {
-          "line": 391,
+          "line": 170,
           "to": "decisions/dr-010-html-no-build-step.html#rejected"
         },
         {
-          "line": 392,
+          "line": 171,
           "to": "decisions/dr-010-html-no-build-step.html#closes-off"
         },
         {
-          "line": 393,
+          "line": 172,
           "to": "decisions/dr-010-html-no-build-step.html#record-status"
         },
         {
-          "line": 394,
+          "line": 173,
           "to": "decisions/dr-011-token-and-component-system.html#decision"
         },
         {
-          "line": 395,
+          "line": 174,
           "to": "decisions/dr-011-token-and-component-system.html#rejected"
         },
         {
-          "line": 396,
+          "line": 175,
           "to": "decisions/dr-011-token-and-component-system.html#closes-off"
         },
         {
-          "line": 397,
+          "line": 176,
           "to": "decisions/dr-011-token-and-component-system.html#record-status"
         },
         {
-          "line": 398,
+          "line": 177,
           "to": "decisions/dr-012-design-plan.html#decision"
         },
         {
-          "line": 399,
+          "line": 178,
           "to": "decisions/dr-012-design-plan.html#rejected"
         },
         {
-          "line": 400,
+          "line": 179,
           "to": "decisions/dr-012-design-plan.html#closes-off"
         },
         {
-          "line": 401,
+          "line": 180,
           "to": "decisions/dr-012-design-plan.html#record-status"
         },
         {
-          "line": 402,
+          "line": 181,
           "to": "decisions/dr-013-verification-standard.html#decision"
         },
         {
-          "line": 403,
+          "line": 182,
           "to": "decisions/dr-013-verification-standard.html#rejected"
         },
         {
-          "line": 404,
+          "line": 183,
           "to": "decisions/dr-013-verification-standard.html#closes-off"
         },
         {
-          "line": 405,
+          "line": 184,
           "to": "decisions/dr-013-verification-standard.html#record-status"
         },
         {
-          "line": 406,
+          "line": 185,
           "to": "decisions/dr-017-dependency-map.html#decision"
         },
         {
-          "line": 407,
+          "line": 186,
           "to": "decisions/dr-017-dependency-map.html#rejected"
         },
         {
-          "line": 408,
+          "line": 187,
           "to": "decisions/dr-017-dependency-map.html#closes-off"
         },
         {
-          "line": 409,
+          "line": 188,
           "to": "decisions/dr-017-dependency-map.html#record-status"
         },
         {
-          "line": 410,
+          "line": 189,
           "to": "decisions/dr-019-the-endgame.html#decision"
         },
         {
-          "line": 411,
+          "line": 190,
           "to": "decisions/dr-019-the-endgame.html#rejected"
         },
         {
-          "line": 412,
+          "line": 191,
           "to": "decisions/dr-019-the-endgame.html#closes-off"
         },
         {
-          "line": 413,
+          "line": 192,
           "to": "decisions/dr-019-the-endgame.html#record-status"
         },
         {
-          "line": 414,
+          "line": 193,
           "to": "decisions/dr-020-everyday-tasks-day-one.html#decision"
         },
         {
-          "line": 415,
+          "line": 194,
           "to": "decisions/dr-020-everyday-tasks-day-one.html#rejected"
         },
         {
-          "line": 416,
+          "line": 195,
           "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
         },
         {
-          "line": 417,
+          "line": 196,
           "to": "decisions/dr-020-everyday-tasks-day-one.html#record-status"
         },
         {
-          "line": 418,
+          "line": 197,
           "to": "decisions/dr-028-fragments-and-build.html#decision"
         },
         {
-          "line": 419,
+          "line": 198,
           "to": "decisions/dr-028-fragments-and-build.html#rejected"
         },
         {
-          "line": 420,
+          "line": 199,
           "to": "decisions/dr-028-fragments-and-build.html#closes-off"
         },
         {
-          "line": 421,
+          "line": 200,
           "to": "decisions/dr-028-fragments-and-build.html#record-status"
         },
         {
-          "line": 422,
+          "line": 201,
           "to": "decisions/dr-029-owner-views.html#decision"
         },
         {
-          "line": 423,
+          "line": 202,
           "to": "decisions/dr-029-owner-views.html#rejected"
         },
         {
-          "line": 424,
+          "line": 203,
           "to": "decisions/dr-029-owner-views.html#closes-off"
         },
         {
-          "line": 425,
+          "line": 204,
           "to": "decisions/dr-029-owner-views.html#record-status"
         },
         {
-          "line": 426,
+          "line": 205,
           "to": "decisions/index.html#ledger"
         },
         {
-          "line": 427,
+          "line": 206,
           "to": "decisions/index.html#how-records-work"
         },
         {
-          "line": 428,
-          "to": "02-architecture/index.html#overview"
-        },
-        {
-          "line": 429,
-          "to": "03-trust-and-data/trust-story.html#promise"
-        },
-        {
-          "line": 430,
-          "to": "03-trust-and-data/trust-story.html#ledger-example"
-        },
-        {
-          "line": 431,
-          "to": "03-trust-and-data/trust-story.html#the-boundary"
-        },
-        {
-          "line": 432,
-          "to": "03-trust-and-data/trust-story.html#what-we-never-do"
-        },
-        {
-          "line": 433,
-          "to": "04-operations/index.html#shifts"
-        },
-        {
-          "line": 434,
-          "to": "05-business/index.html#why-this-page"
-        },
-        {
-          "line": 435,
-          "to": "05-business/index.html#task-model"
-        },
-        {
-          "line": 436,
-          "to": "05-business/index.html#the-ratio"
-        },
-        {
-          "line": 437,
-          "to": "05-business/index.html#cost-split"
-        },
-        {
-          "line": 438,
-          "to": "05-business/index.html#trajectory"
-        },
-        {
-          "line": 439,
-          "to": "05-business/index.html#how-users-arrive"
-        },
-        {
-          "line": 440,
-          "to": "05-business/index.html#funding"
-        },
-        {
-          "line": 441,
-          "to": "05-business/index.html#geography"
-        },
-        {
-          "line": 442,
-          "to": "05-business/index.html#commerce"
-        },
-        {
-          "line": 443,
-          "to": "05-business/index.html#what-replaces"
-        },
-        {
-          "line": 451,
-          "to": "contents/index.html#promise"
-        },
-        {
-          "line": 455,
-          "to": "contents/index.html#human-in-the-gap"
-        },
-        {
-          "line": 456,
-          "to": "02-architecture/index.html"
-        },
-        {
-          "line": 459,
-          "to": "contents/index.html#two-fatals"
-        },
-        {
-          "line": 460,
-          "to": "decisions/dr-021-no-value-spoken.html"
-        },
-        {
-          "line": 460,
-          "to": "03-trust-and-data/index.html"
-        },
-        {
-          "line": 463,
-          "to": "contents/index.html#three-markets"
-        },
-        {
-          "line": 464,
-          "to": "02-architecture/index.html#adapters"
-        },
-        {
-          "line": 464,
-          "to": "02-architecture/index.html#adapters"
-        },
-        {
-          "line": 464,
-          "to": "06-roadmap/index.html#expansion"
-        },
-        {
-          "line": 467,
-          "to": "contents/index.html#what-exists"
-        },
-        {
-          "line": 468,
-          "to": "decisions/index.html"
-        },
-        {
-          "line": 468,
-          "to": "07-open/index.html"
-        },
-        {
-          "line": 471,
-          "to": "00-thesis/index.html#customer-and-wedge"
-        },
-        {
-          "line": 475,
-          "to": "00-thesis/index.html#context-profile"
-        },
-        {
-          "line": 479,
-          "to": "00-thesis/index.html#why-now"
-        },
-        {
-          "line": 480,
-          "to": "00-thesis/index.html#tab-why-now"
-        },
-        {
-          "line": 483,
-          "to": "00-thesis/index.html#markets"
-        },
-        {
-          "line": 484,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 484,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 484,
-          "to": "06-roadmap/index.html#pilot"
-        },
-        {
-          "line": 487,
-          "to": "00-thesis/index.html#landscape"
-        },
-        {
-          "line": 488,
-          "to": "00-thesis/index.html#tab-landscape"
-        },
-        {
-          "line": 488,
-          "to": "decisions/dr-013-verification-standard.html"
-        },
-        {
-          "line": 491,
-          "to": "00-thesis/index.html#moat"
-        },
-        {
-          "line": 495,
-          "to": "00-thesis/index.html#endgame"
-        },
-        {
-          "line": 496,
-          "to": "decisions/dr-019-the-endgame.html"
-        },
-        {
-          "line": 499,
-          "to": "01-product/index.html#journeys"
-        },
-        {
-          "line": 503,
-          "to": "01-product/index.html#taxonomy"
-        },
-        {
-          "line": 507,
-          "to": "01-product/index.html#intake"
-        },
-        {
-          "line": 508,
+          "line": 212,
           "to": "decisions/dr-001-channel-gateway.html"
         },
         {
-          "line": 508,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 511,
-          "to": "01-product/index.html#envelope"
-        },
-        {
-          "line": 512,
-          "to": "decisions/dr-004-authority-envelope.html"
-        },
-        {
-          "line": 512,
-          "to": "decisions/dr-003-full-delegation-ceiling.html"
-        },
-        {
-          "line": 515,
-          "to": "01-product/index.html#verdicts"
-        },
-        {
-          "line": 516,
+          "line": 213,
           "to": "decisions/dr-002-verdict-two-loops.html"
         },
         {
-          "line": 519,
-          "to": "01-product/index.html#onboarding"
-        },
-        {
-          "line": 520,
-          "to": "02-architecture/index.html#context-store"
-        },
-        {
-          "line": 520,
-          "to": "decisions/dr-016-context-store.html"
-        },
-        {
-          "line": 523,
-          "to": "01-product/index.html#refusals"
-        },
-        {
-          "line": 527,
-          "to": "06-roadmap/index.html#sequence"
-        },
-        {
-          "line": 528,
-          "to": "06-roadmap/index.html#fig-sequence"
-        },
-        {
-          "line": 531,
-          "to": "06-roadmap/index.html#pilot"
-        },
-        {
-          "line": 532,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 535,
-          "to": "06-roadmap/index.html#build-buy"
-        },
-        {
-          "line": 536,
-          "to": "06-roadmap/index.html#tab-build-buy"
-        },
-        {
-          "line": 539,
-          "to": "06-roadmap/index.html#expansion"
-        },
-        {
-          "line": 540,
-          "to": "decisions/dr-007-universal-core-adapters.html"
-        },
-        {
-          "line": 543,
-          "to": "07-open/index.html#items"
-        },
-        {
-          "line": 547,
-          "to": "07-open/index.html#objections"
-        },
-        {
-          "line": 551,
-          "to": "07-open/index.html#left-alone"
-        },
-        {
-          "line": 561,
-          "to": "08-review/index.html#executive-verdict"
-        },
-        {
-          "line": 565,
-          "to": "08-review/index.html#the-idea-in-one-page"
-        },
-        {
-          "line": 566,
-          "to": "00-thesis/index.html#customer-and-wedge"
-        },
-        {
-          "line": 566,
-          "to": "00-thesis/index.html#labs-ceiling"
-        },
-        {
-          "line": 566,
-          "to": "00-thesis/index.html#moat"
-        },
-        {
-          "line": 569,
-          "to": "08-review/index.html#team-and-execution"
-        },
-        {
-          "line": 570,
-          "to": "index.html"
-        },
-        {
-          "line": 573,
-          "to": "08-review/index.html#security-red-team"
-        },
-        {
-          "line": 574,
-          "to": "03-trust-and-data/index.html#threat-model"
-        },
-        {
-          "line": 577,
-          "to": "08-review/index.html#pre-mortem"
-        },
-        {
-          "line": 581,
-          "to": "08-review/index.html#what-we-would-need-to-see"
-        },
-        {
-          "line": 585,
-          "to": "08-review/index.html#questions-for-the-founder"
-        },
-        {
-          "line": 589,
-          "to": "08-review/index.html#what-the-record-should-change"
-        },
-        {
-          "line": 593,
-          "to": "decisions/dr-001-channel-gateway.html#decision"
-        },
-        {
-          "line": 597,
-          "to": "decisions/dr-002-verdict-two-loops.html#decision"
-        },
-        {
-          "line": 601,
-          "to": "decisions/dr-010-html-no-build-step.html#decision"
-        },
-        {
-          "line": 605,
-          "to": "decisions/dr-011-token-and-component-system.html#decision"
-        },
-        {
-          "line": 609,
-          "to": "decisions/dr-012-design-plan.html#decision"
-        },
-        {
-          "line": 613,
-          "to": "decisions/dr-017-dependency-map.html#decision"
-        },
-        {
-          "line": 614,
+          "line": 214,
           "to": "decisions/dr-010-html-no-build-step.html"
         },
         {
-          "line": 614,
-          "to": "07-open/index.html#items"
+          "line": 215,
+          "to": "decisions/dr-011-token-and-component-system.html"
         },
         {
-          "line": 617,
-          "to": "decisions/dr-019-the-endgame.html#decision"
+          "line": 216,
+          "to": "decisions/dr-012-design-plan.html"
         },
         {
-          "line": 618,
-          "to": "00-thesis/index.html#context-profile"
+          "line": 217,
+          "to": "decisions/dr-013-verification-standard.html"
         },
         {
-          "line": 618,
+          "line": 218,
+          "to": "decisions/dr-017-dependency-map.html"
+        },
+        {
+          "line": 219,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 220,
           "to": "decisions/dr-020-everyday-tasks-day-one.html"
         },
         {
-          "line": 621,
+          "line": 221,
+          "to": "decisions/dr-028-fragments-and-build.html"
+        },
+        {
+          "line": 222,
+          "to": "decisions/dr-029-owner-views.html"
+        },
+        {
+          "line": 226,
+          "to": "07-open/index.html#open-07-01"
+        },
+        {
+          "line": 227,
+          "to": "07-open/index.html#open-07-02"
+        },
+        {
+          "line": 228,
+          "to": "07-open/index.html#open-07-03"
+        },
+        {
+          "line": 229,
+          "to": "07-open/index.html#open-07-07"
+        },
+        {
+          "line": 230,
+          "to": "07-open/index.html#open-07-08"
+        },
+        {
+          "line": 231,
+          "to": "07-open/index.html#open-07-09"
+        },
+        {
+          "line": 232,
+          "to": "07-open/index.html#open-07-13"
+        },
+        {
+          "line": 233,
+          "to": "07-open/index.html#open-07-14"
+        },
+        {
+          "line": 234,
+          "to": "07-open/index.html#open-07-15"
+        },
+        {
+          "line": 235,
+          "to": "07-open/index.html#open-07-16"
+        },
+        {
+          "line": 236,
+          "to": "07-open/index.html#open-07-17"
+        },
+        {
+          "line": 237,
+          "to": "07-open/index.html#open-07-18"
+        },
+        {
+          "line": 238,
+          "to": "07-open/index.html#open-07-19"
+        },
+        {
+          "line": 239,
+          "to": "07-open/index.html#open-07-22"
+        },
+        {
+          "line": 240,
+          "to": "07-open/index.html#open-07-23"
+        },
+        {
+          "line": 241,
+          "to": "07-open/index.html#open-07-24"
+        },
+        {
+          "line": 242,
+          "to": "07-open/index.html#open-07-25"
+        },
+        {
+          "line": 243,
+          "to": "07-open/index.html#open-07-47"
+        },
+        {
+          "line": 244,
+          "to": "07-open/index.html#open-07-48"
+        },
+        {
+          "line": 245,
+          "to": "07-open/index.html#open-07-49"
+        },
+        {
+          "line": 246,
+          "to": "07-open/index.html#open-07-44"
+        },
+        {
+          "line": 247,
+          "to": "07-open/index.html#open-07-45"
+        },
+        {
+          "line": 248,
+          "to": "07-open/index.html#open-07-46"
+        },
+        {
+          "line": 249,
+          "to": "07-open/index.html#open-07-41"
+        },
+        {
+          "line": 250,
+          "to": "07-open/index.html#open-07-42"
+        },
+        {
+          "line": 251,
+          "to": "07-open/index.html#open-07-40"
+        },
+        {
+          "line": 252,
+          "to": "07-open/index.html#open-07-27"
+        },
+        {
+          "line": 253,
+          "to": "07-open/index.html#open-07-28"
+        },
+        {
+          "line": 254,
+          "to": "07-open/index.html#open-07-39"
+        },
+        {
+          "line": 255,
+          "to": "07-open/index.html#open-07-36"
+        },
+        {
+          "line": 256,
+          "to": "07-open/index.html#open-07-37"
+        },
+        {
+          "line": 257,
+          "to": "07-open/index.html#open-07-38"
+        },
+        {
+          "line": 258,
+          "to": "07-open/index.html#open-07-31"
+        },
+        {
+          "line": 259,
+          "to": "07-open/index.html#open-07-32"
+        },
+        {
+          "line": 260,
+          "to": "07-open/index.html#open-07-33"
+        },
+        {
+          "line": 261,
+          "to": "07-open/index.html#open-07-34"
+        },
+        {
+          "line": 262,
+          "to": "07-open/index.html#open-07-35"
+        },
+        {
+          "line": 263,
+          "to": "07-open/index.html#open-07-29"
+        },
+        {
+          "line": 264,
+          "to": "07-open/index.html#open-07-30"
+        },
+        {
+          "line": 265,
+          "to": "07-open/index.html#open-07-20"
+        },
+        {
+          "line": 266,
+          "to": "07-open/index.html#open-07-21"
+        },
+        {
+          "line": 268,
+          "to": "07-open/index.html#open-07-04"
+        },
+        {
+          "line": 268,
+          "to": "07-open/index.html#open-07-05"
+        },
+        {
+          "line": 268,
+          "to": "07-open/index.html#open-07-06"
+        },
+        {
+          "line": 268,
+          "to": "07-open/index.html#open-07-10"
+        },
+        {
+          "line": 268,
+          "to": "07-open/index.html#open-07-43"
+        },
+        {
+          "line": 268,
+          "to": "07-open/index.html#open-07-26"
+        },
+        {
+          "line": 271,
+          "to": "00-thesis/index.html#what-consequence-means"
+        },
+        {
+          "line": 272,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 273,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 274,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 275,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 276,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 277,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 278,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 279,
+          "to": "decisions/dr-018-mail-from-the-users-address.html#closes-off"
+        },
+        {
+          "line": 280,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
+        },
+        {
+          "line": 281,
+          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
+        },
+        {
+          "line": 282,
+          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
+        },
+        {
+          "line": 283,
+          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
+        },
+        {
+          "line": 284,
+          "to": "decisions/dr-012-design-plan.html#closes-off"
+        },
+        {
+          "line": 285,
+          "to": "decisions/dr-013-verification-standard.html#closes-off"
+        },
+        {
+          "line": 286,
+          "to": "decisions/dr-013-verification-standard.html#closes-off"
+        },
+        {
+          "line": 287,
+          "to": "decisions/dr-019-the-endgame.html#closes-off"
+        },
+        {
+          "line": 288,
+          "to": "decisions/dr-023-geography-sequencing.html#closes-off"
+        },
+        {
+          "line": 294,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 295,
+          "to": "decisions/dr-004-authority-envelope.html"
+        },
+        {
+          "line": 296,
+          "to": "decisions/dr-005-state-machine-lapsed.html"
+        },
+        {
+          "line": 297,
+          "to": "decisions/dr-006-office-mandatory.html"
+        },
+        {
+          "line": 298,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 299,
+          "to": "decisions/dr-008-vault-bought.html"
+        },
+        {
+          "line": 300,
+          "to": "decisions/dr-009-evidence-redaction.html"
+        },
+        {
+          "line": 301,
+          "to": "decisions/dr-014-substitution-framing.html"
+        },
+        {
+          "line": 302,
+          "to": "decisions/dr-015-economics-deferred.html"
+        },
+        {
+          "line": 303,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 304,
+          "to": "decisions/dr-018-mail-from-the-users-address.html"
+        },
+        {
+          "line": 305,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 306,
+          "to": "decisions/dr-022-structured-task-cards.html"
+        },
+        {
+          "line": 307,
+          "to": "decisions/dr-023-geography-sequencing.html"
+        },
+        {
+          "line": 308,
+          "to": "decisions/dr-024-metered-pricing.html"
+        },
+        {
+          "line": 309,
+          "to": "decisions/dr-025-growth-two-mechanisms.html"
+        },
+        {
+          "line": 310,
+          "to": "decisions/dr-026-telephony-mapping-not-authentication.html"
+        },
+        {
+          "line": 311,
+          "to": "decisions/dr-027-no-name-reaches-a-worker.html"
+        },
+        {
+          "line": 321,
+          "to": "contents/index.html#promise"
+        },
+        {
+          "line": 322,
+          "to": "contents/index.html#human-in-the-gap"
+        },
+        {
+          "line": 323,
+          "to": "contents/index.html#two-fatals"
+        },
+        {
+          "line": 324,
+          "to": "contents/index.html#three-markets"
+        },
+        {
+          "line": 325,
+          "to": "contents/index.html#what-exists"
+        },
+        {
+          "line": 326,
+          "to": "contents/index.html#how-to-read"
+        },
+        {
+          "line": 327,
+          "to": "contents/index.html#publication-map"
+        },
+        {
+          "line": 328,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 329,
+          "to": "00-thesis/index.html#context-profile"
+        },
+        {
+          "line": 330,
+          "to": "00-thesis/index.html#why-now"
+        },
+        {
+          "line": 331,
+          "to": "00-thesis/index.html#markets"
+        },
+        {
+          "line": 332,
+          "to": "00-thesis/index.html#landscape"
+        },
+        {
+          "line": 333,
+          "to": "00-thesis/index.html#moat"
+        },
+        {
+          "line": 334,
+          "to": "00-thesis/index.html#endgame"
+        },
+        {
+          "line": 335,
+          "to": "00-thesis/index.html#sources"
+        },
+        {
+          "line": 336,
+          "to": "00-thesis/instinct.html#what-it-is"
+        },
+        {
+          "line": 337,
+          "to": "00-thesis/instinct.html#how-it-works"
+        },
+        {
+          "line": 338,
+          "to": "00-thesis/instinct.html#user-experience"
+        },
+        {
+          "line": 339,
+          "to": "00-thesis/instinct.html#where-it-strains"
+        },
+        {
+          "line": 340,
+          "to": "00-thesis/instinct.html#similarities"
+        },
+        {
+          "line": 341,
+          "to": "00-thesis/instinct.html#differences"
+        },
+        {
+          "line": 342,
+          "to": "00-thesis/instinct.html#who-wins"
+        },
+        {
+          "line": 343,
+          "to": "00-thesis/instinct.html#sources"
+        },
+        {
+          "line": 344,
+          "to": "01-product/index.html#journeys"
+        },
+        {
+          "line": 345,
+          "to": "01-product/index.html#taxonomy"
+        },
+        {
+          "line": 346,
+          "to": "01-product/index.html#intake"
+        },
+        {
+          "line": 347,
+          "to": "01-product/index.html#envelope"
+        },
+        {
+          "line": 348,
+          "to": "01-product/index.html#verdicts"
+        },
+        {
+          "line": 349,
+          "to": "01-product/index.html#onboarding"
+        },
+        {
+          "line": 350,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 351,
+          "to": "01-product/index.html#sources"
+        },
+        {
+          "line": 352,
+          "to": "06-roadmap/index.html#sequence"
+        },
+        {
+          "line": 353,
+          "to": "06-roadmap/index.html#pilot"
+        },
+        {
+          "line": 354,
+          "to": "06-roadmap/index.html#build-buy"
+        },
+        {
+          "line": 355,
+          "to": "06-roadmap/index.html#expansion"
+        },
+        {
+          "line": 356,
+          "to": "06-roadmap/index.html#sources"
+        },
+        {
+          "line": 357,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 358,
+          "to": "07-open/index.html#objections"
+        },
+        {
+          "line": 359,
+          "to": "07-open/index.html#left-alone"
+        },
+        {
+          "line": 360,
+          "to": "08-review/index.html#executive-verdict"
+        },
+        {
+          "line": 361,
+          "to": "08-review/index.html#the-idea-in-one-page"
+        },
+        {
+          "line": 362,
+          "to": "08-review/index.html#technology-today"
+        },
+        {
+          "line": 363,
+          "to": "08-review/index.html#horizon-threats"
+        },
+        {
+          "line": 364,
+          "to": "08-review/index.html#regulation-india"
+        },
+        {
+          "line": 365,
+          "to": "08-review/index.html#regulation-uk"
+        },
+        {
+          "line": 366,
+          "to": "08-review/index.html#regulation-us"
+        },
+        {
+          "line": 367,
+          "to": "08-review/index.html#market-and-competition"
+        },
+        {
+          "line": 368,
+          "to": "08-review/index.html#economics"
+        },
+        {
+          "line": 369,
+          "to": "08-review/index.html#team-and-execution"
+        },
+        {
+          "line": 370,
+          "to": "08-review/index.html#security-red-team"
+        },
+        {
+          "line": 371,
+          "to": "08-review/index.html#product-and-gtm"
+        },
+        {
+          "line": 372,
+          "to": "08-review/index.html#pre-mortem"
+        },
+        {
+          "line": 373,
+          "to": "08-review/index.html#what-we-would-need-to-see"
+        },
+        {
+          "line": 374,
+          "to": "08-review/index.html#questions-for-the-founder"
+        },
+        {
+          "line": 375,
+          "to": "08-review/index.html#what-the-record-should-change"
+        },
+        {
+          "line": 376,
+          "to": "08-review/index.html#sources"
+        },
+        {
+          "line": 377,
+          "to": "08-review/full-review-18-09.html#verdict"
+        },
+        {
+          "line": 378,
+          "to": "08-review/full-review-18-09.html#idea"
+        },
+        {
+          "line": 379,
+          "to": "08-review/full-review-18-09.html#since"
+        },
+        {
+          "line": 380,
+          "to": "08-review/full-review-18-09.html#technology"
+        },
+        {
+          "line": 381,
+          "to": "08-review/full-review-18-09.html#horizon"
+        },
+        {
+          "line": 382,
+          "to": "08-review/full-review-18-09.html#india"
+        },
+        {
+          "line": 383,
+          "to": "08-review/full-review-18-09.html#uk"
+        },
+        {
+          "line": 384,
+          "to": "08-review/full-review-18-09.html#us"
+        },
+        {
+          "line": 385,
+          "to": "08-review/full-review-18-09.html#market"
+        },
+        {
+          "line": 386,
+          "to": "08-review/full-review-18-09.html#economics"
+        },
+        {
+          "line": 387,
+          "to": "08-review/full-review-18-09.html#team"
+        },
+        {
+          "line": 388,
+          "to": "08-review/full-review-18-09.html#security"
+        },
+        {
+          "line": 389,
+          "to": "08-review/full-review-18-09.html#product"
+        },
+        {
+          "line": 390,
+          "to": "08-review/full-review-18-09.html#premortem"
+        },
+        {
+          "line": 391,
+          "to": "08-review/full-review-18-09.html#gates"
+        },
+        {
+          "line": 392,
+          "to": "08-review/full-review-18-09.html#questions"
+        },
+        {
+          "line": 393,
+          "to": "08-review/full-review-18-09.html#changes"
+        },
+        {
+          "line": 394,
+          "to": "08-review/full-review-18-09.html#evidence"
+        },
+        {
+          "line": 395,
+          "to": "08-review/full-review-18-09.html#sources"
+        },
+        {
+          "line": 396,
+          "to": "decisions/dr-001-channel-gateway.html#decision"
+        },
+        {
+          "line": 397,
+          "to": "decisions/dr-001-channel-gateway.html#rejected"
+        },
+        {
+          "line": 398,
+          "to": "decisions/dr-001-channel-gateway.html#closes-off"
+        },
+        {
+          "line": 399,
+          "to": "decisions/dr-001-channel-gateway.html#record-status"
+        },
+        {
+          "line": 400,
+          "to": "decisions/dr-001-channel-gateway.html#trigger"
+        },
+        {
+          "line": 401,
+          "to": "decisions/dr-001-channel-gateway.html#sources"
+        },
+        {
+          "line": 402,
+          "to": "decisions/dr-002-verdict-two-loops.html#decision"
+        },
+        {
+          "line": 403,
+          "to": "decisions/dr-002-verdict-two-loops.html#rejected"
+        },
+        {
+          "line": 404,
+          "to": "decisions/dr-002-verdict-two-loops.html#closes-off"
+        },
+        {
+          "line": 405,
+          "to": "decisions/dr-002-verdict-two-loops.html#record-status"
+        },
+        {
+          "line": 406,
+          "to": "decisions/dr-010-html-no-build-step.html#decision"
+        },
+        {
+          "line": 407,
+          "to": "decisions/dr-010-html-no-build-step.html#rejected"
+        },
+        {
+          "line": 408,
+          "to": "decisions/dr-010-html-no-build-step.html#closes-off"
+        },
+        {
+          "line": 409,
+          "to": "decisions/dr-010-html-no-build-step.html#record-status"
+        },
+        {
+          "line": 410,
+          "to": "decisions/dr-011-token-and-component-system.html#decision"
+        },
+        {
+          "line": 411,
+          "to": "decisions/dr-011-token-and-component-system.html#rejected"
+        },
+        {
+          "line": 412,
+          "to": "decisions/dr-011-token-and-component-system.html#closes-off"
+        },
+        {
+          "line": 413,
+          "to": "decisions/dr-011-token-and-component-system.html#record-status"
+        },
+        {
+          "line": 414,
+          "to": "decisions/dr-012-design-plan.html#decision"
+        },
+        {
+          "line": 415,
+          "to": "decisions/dr-012-design-plan.html#rejected"
+        },
+        {
+          "line": 416,
+          "to": "decisions/dr-012-design-plan.html#closes-off"
+        },
+        {
+          "line": 417,
+          "to": "decisions/dr-012-design-plan.html#record-status"
+        },
+        {
+          "line": 418,
+          "to": "decisions/dr-013-verification-standard.html#decision"
+        },
+        {
+          "line": 419,
+          "to": "decisions/dr-013-verification-standard.html#rejected"
+        },
+        {
+          "line": 420,
+          "to": "decisions/dr-013-verification-standard.html#closes-off"
+        },
+        {
+          "line": 421,
+          "to": "decisions/dr-013-verification-standard.html#record-status"
+        },
+        {
+          "line": 422,
+          "to": "decisions/dr-017-dependency-map.html#decision"
+        },
+        {
+          "line": 423,
+          "to": "decisions/dr-017-dependency-map.html#rejected"
+        },
+        {
+          "line": 424,
+          "to": "decisions/dr-017-dependency-map.html#closes-off"
+        },
+        {
+          "line": 425,
+          "to": "decisions/dr-017-dependency-map.html#record-status"
+        },
+        {
+          "line": 426,
+          "to": "decisions/dr-019-the-endgame.html#decision"
+        },
+        {
+          "line": 427,
+          "to": "decisions/dr-019-the-endgame.html#rejected"
+        },
+        {
+          "line": 428,
+          "to": "decisions/dr-019-the-endgame.html#closes-off"
+        },
+        {
+          "line": 429,
+          "to": "decisions/dr-019-the-endgame.html#record-status"
+        },
+        {
+          "line": 430,
           "to": "decisions/dr-020-everyday-tasks-day-one.html#decision"
         },
         {
-          "line": 625,
+          "line": 431,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#rejected"
+        },
+        {
+          "line": 432,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#closes-off"
+        },
+        {
+          "line": 433,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#record-status"
+        },
+        {
+          "line": 434,
           "to": "decisions/dr-028-fragments-and-build.html#decision"
         },
         {
-          "line": 629,
+          "line": 435,
+          "to": "decisions/dr-028-fragments-and-build.html#rejected"
+        },
+        {
+          "line": 436,
+          "to": "decisions/dr-028-fragments-and-build.html#closes-off"
+        },
+        {
+          "line": 437,
+          "to": "decisions/dr-028-fragments-and-build.html#record-status"
+        },
+        {
+          "line": 438,
           "to": "decisions/dr-029-owner-views.html#decision"
         },
         {
-          "line": 633,
+          "line": 439,
+          "to": "decisions/dr-029-owner-views.html#rejected"
+        },
+        {
+          "line": 440,
+          "to": "decisions/dr-029-owner-views.html#closes-off"
+        },
+        {
+          "line": 441,
+          "to": "decisions/dr-029-owner-views.html#record-status"
+        },
+        {
+          "line": 442,
           "to": "decisions/index.html#ledger"
         },
         {
-          "line": 637,
+          "line": 443,
           "to": "decisions/index.html#how-records-work"
         },
         {
-          "line": 647,
-          "to": "00-thesis/index.html"
+          "line": 444,
+          "to": "02-architecture/index.html#overview"
         },
         {
-          "line": 648,
-          "to": "03-trust-and-data/trust-story.html"
+          "line": 445,
+          "to": "03-trust-and-data/trust-story.html#promise"
+        },
+        {
+          "line": 446,
+          "to": "03-trust-and-data/trust-story.html#ledger-example"
+        },
+        {
+          "line": 447,
+          "to": "03-trust-and-data/trust-story.html#the-boundary"
+        },
+        {
+          "line": 448,
+          "to": "03-trust-and-data/trust-story.html#what-we-never-do"
+        },
+        {
+          "line": 449,
+          "to": "04-operations/index.html#shifts"
+        },
+        {
+          "line": 450,
+          "to": "05-business/index.html#why-this-page"
+        },
+        {
+          "line": 451,
+          "to": "05-business/index.html#task-model"
+        },
+        {
+          "line": 452,
+          "to": "05-business/index.html#the-ratio"
+        },
+        {
+          "line": 453,
+          "to": "05-business/index.html#cost-split"
+        },
+        {
+          "line": 454,
+          "to": "05-business/index.html#trajectory"
+        },
+        {
+          "line": 455,
+          "to": "05-business/index.html#how-users-arrive"
+        },
+        {
+          "line": 456,
+          "to": "05-business/index.html#funding"
+        },
+        {
+          "line": 457,
+          "to": "05-business/index.html#geography"
+        },
+        {
+          "line": 458,
+          "to": "05-business/index.html#commerce"
+        },
+        {
+          "line": 459,
+          "to": "05-business/index.html#what-replaces"
+        },
+        {
+          "line": 467,
+          "to": "contents/index.html#promise"
+        },
+        {
+          "line": 471,
+          "to": "contents/index.html#human-in-the-gap"
+        },
+        {
+          "line": 472,
+          "to": "02-architecture/index.html"
+        },
+        {
+          "line": 475,
+          "to": "contents/index.html#two-fatals"
+        },
+        {
+          "line": 476,
+          "to": "decisions/dr-021-no-value-spoken.html"
+        },
+        {
+          "line": 476,
+          "to": "03-trust-and-data/index.html"
+        },
+        {
+          "line": 479,
+          "to": "contents/index.html#three-markets"
+        },
+        {
+          "line": 480,
+          "to": "02-architecture/index.html#adapters"
+        },
+        {
+          "line": 480,
+          "to": "02-architecture/index.html#adapters"
+        },
+        {
+          "line": 480,
+          "to": "06-roadmap/index.html#expansion"
+        },
+        {
+          "line": 483,
+          "to": "contents/index.html#what-exists"
+        },
+        {
+          "line": 484,
+          "to": "decisions/index.html"
+        },
+        {
+          "line": 484,
+          "to": "07-open/index.html"
+        },
+        {
+          "line": 487,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 491,
+          "to": "00-thesis/index.html#context-profile"
+        },
+        {
+          "line": 495,
+          "to": "00-thesis/index.html#why-now"
+        },
+        {
+          "line": 496,
+          "to": "00-thesis/index.html#tab-why-now"
+        },
+        {
+          "line": 499,
+          "to": "00-thesis/index.html#markets"
+        },
+        {
+          "line": 500,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 500,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 500,
+          "to": "06-roadmap/index.html#pilot"
+        },
+        {
+          "line": 503,
+          "to": "00-thesis/index.html#landscape"
+        },
+        {
+          "line": 504,
+          "to": "00-thesis/index.html#tab-landscape"
+        },
+        {
+          "line": 504,
+          "to": "decisions/dr-013-verification-standard.html"
+        },
+        {
+          "line": 507,
+          "to": "00-thesis/index.html#moat"
+        },
+        {
+          "line": 511,
+          "to": "00-thesis/index.html#endgame"
+        },
+        {
+          "line": 512,
+          "to": "decisions/dr-019-the-endgame.html"
+        },
+        {
+          "line": 515,
+          "to": "01-product/index.html#journeys"
+        },
+        {
+          "line": 519,
+          "to": "01-product/index.html#taxonomy"
+        },
+        {
+          "line": 523,
+          "to": "01-product/index.html#intake"
+        },
+        {
+          "line": 524,
+          "to": "decisions/dr-001-channel-gateway.html"
+        },
+        {
+          "line": 524,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 527,
+          "to": "01-product/index.html#envelope"
+        },
+        {
+          "line": 528,
+          "to": "decisions/dr-004-authority-envelope.html"
+        },
+        {
+          "line": 528,
+          "to": "decisions/dr-003-full-delegation-ceiling.html"
+        },
+        {
+          "line": 531,
+          "to": "01-product/index.html#verdicts"
+        },
+        {
+          "line": 532,
+          "to": "decisions/dr-002-verdict-two-loops.html"
+        },
+        {
+          "line": 535,
+          "to": "01-product/index.html#onboarding"
+        },
+        {
+          "line": 536,
+          "to": "02-architecture/index.html#context-store"
+        },
+        {
+          "line": 536,
+          "to": "decisions/dr-016-context-store.html"
+        },
+        {
+          "line": 539,
+          "to": "01-product/index.html#refusals"
+        },
+        {
+          "line": 543,
+          "to": "06-roadmap/index.html#sequence"
+        },
+        {
+          "line": 544,
+          "to": "06-roadmap/index.html#fig-sequence"
+        },
+        {
+          "line": 547,
+          "to": "06-roadmap/index.html#pilot"
+        },
+        {
+          "line": 548,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 551,
+          "to": "06-roadmap/index.html#build-buy"
+        },
+        {
+          "line": 552,
+          "to": "06-roadmap/index.html#tab-build-buy"
+        },
+        {
+          "line": 555,
+          "to": "06-roadmap/index.html#expansion"
+        },
+        {
+          "line": 556,
+          "to": "decisions/dr-007-universal-core-adapters.html"
+        },
+        {
+          "line": 559,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 563,
+          "to": "07-open/index.html#objections"
+        },
+        {
+          "line": 567,
+          "to": "07-open/index.html#left-alone"
+        },
+        {
+          "line": 577,
+          "to": "08-review/index.html#executive-verdict"
+        },
+        {
+          "line": 581,
+          "to": "08-review/index.html#the-idea-in-one-page"
+        },
+        {
+          "line": 582,
+          "to": "00-thesis/index.html#customer-and-wedge"
+        },
+        {
+          "line": 582,
+          "to": "00-thesis/index.html#labs-ceiling"
+        },
+        {
+          "line": 582,
+          "to": "00-thesis/index.html#moat"
+        },
+        {
+          "line": 585,
+          "to": "08-review/index.html#team-and-execution"
+        },
+        {
+          "line": 586,
+          "to": "index.html"
+        },
+        {
+          "line": 589,
+          "to": "08-review/index.html#security-red-team"
+        },
+        {
+          "line": 590,
+          "to": "03-trust-and-data/index.html#threat-model"
+        },
+        {
+          "line": 593,
+          "to": "08-review/index.html#pre-mortem"
+        },
+        {
+          "line": 597,
+          "to": "08-review/index.html#what-we-would-need-to-see"
+        },
+        {
+          "line": 601,
+          "to": "08-review/index.html#questions-for-the-founder"
+        },
+        {
+          "line": 605,
+          "to": "08-review/index.html#what-the-record-should-change"
+        },
+        {
+          "line": 609,
+          "to": "decisions/dr-001-channel-gateway.html#decision"
+        },
+        {
+          "line": 613,
+          "to": "decisions/dr-002-verdict-two-loops.html#decision"
+        },
+        {
+          "line": 617,
+          "to": "decisions/dr-010-html-no-build-step.html#decision"
+        },
+        {
+          "line": 621,
+          "to": "decisions/dr-011-token-and-component-system.html#decision"
+        },
+        {
+          "line": 625,
+          "to": "decisions/dr-012-design-plan.html#decision"
+        },
+        {
+          "line": 629,
+          "to": "decisions/dr-017-dependency-map.html#decision"
+        },
+        {
+          "line": 630,
+          "to": "decisions/dr-010-html-no-build-step.html"
+        },
+        {
+          "line": 630,
+          "to": "07-open/index.html#items"
+        },
+        {
+          "line": 633,
+          "to": "decisions/dr-019-the-endgame.html#decision"
+        },
+        {
+          "line": 634,
+          "to": "00-thesis/index.html#context-profile"
+        },
+        {
+          "line": 634,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html"
+        },
+        {
+          "line": 637,
+          "to": "decisions/dr-020-everyday-tasks-day-one.html#decision"
+        },
+        {
+          "line": 641,
+          "to": "decisions/dr-028-fragments-and-build.html#decision"
+        },
+        {
+          "line": 645,
+          "to": "decisions/dr-029-owner-views.html#decision"
         },
         {
           "line": 649,
+          "to": "decisions/index.html#ledger"
+        },
+        {
+          "line": 653,
+          "to": "decisions/index.html#how-records-work"
+        },
+        {
+          "line": 663,
+          "to": "00-thesis/index.html"
+        },
+        {
+          "line": 664,
+          "to": "03-trust-and-data/trust-story.html"
+        },
+        {
+          "line": 665,
           "to": "07-open/index.html"
         }
       ]

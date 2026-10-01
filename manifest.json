@@ -1,7 +1,7 @@
 {
   "site": "AI.fred design and planning publication",
   "publish": "docs",
-  "updated": "2026-09-18",
+  "updated": "2026-10-01",
   "statuses": {
     "verified": "never a page status",
     "to-verify": "the page carries external claims not yet verified",
@@ -20,7 +20,7 @@
     },
     {
       "key": "00-thesis",
-      "pages": 1
+      "pages": 2
     },
     {
       "key": "01-product",
@@ -78,8 +78,8 @@
       "section": "index",
       "status": "assumption",
       "summary": "The front door: what is decided, where the record stands, the numbers that matter, what is not known, five owner doors and the full contents. Generated from roles.json, the manifest and the map; edit those, never this page.",
-      "updated": "2026-09-18",
-      "words": 1318,
+      "updated": "2026-10-01",
+      "words": 1322,
       "sections": [
         {
           "id": "venture",
@@ -126,7 +126,7 @@
         {
           "id": "contents",
           "title": "Contents",
-          "words": 88,
+          "words": 92,
           "owner": null,
           "readers": []
         }
@@ -139,7 +139,7 @@
       "status": "decision",
       "summary": "The venture in two pages: the promise, the human-in-the-gap model, the two fatal failures and how the design makes them structurally impossible, the three-market shape, what exists today, and how to read this publication.",
       "updated": "2026-09-15",
-      "words": 2683,
+      "words": 2726,
       "sections": [
         {
           "id": "promise",
@@ -186,7 +186,7 @@
         {
           "id": "publication-map",
           "title": "The publication",
-          "words": 929,
+          "words": 972,
           "owner": "ceo",
           "readers": []
         }
@@ -199,7 +199,7 @@
       "status": "to-verify",
       "summary": "Why AI.fred wins where the flat-fee concierge players cannot follow: the customer and the high-consequence wedge, why now, India as build base with the US and UK as commercial ground, the researched landscape in India, the US and the UK, and the trust architecture as the moat.",
       "updated": "2026-09-13",
-      "words": 7497,
+      "words": 7518,
       "sections": [
         {
           "id": "customer-and-wedge",
@@ -234,7 +234,7 @@
         {
           "id": "landscape",
           "title": "The competitive landscape",
-          "words": 1740,
+          "words": 1761,
           "owner": "ceo",
           "readers": []
         },
@@ -256,6 +256,73 @@
           "id": "sources",
           "title": "Sources",
           "words": 1040,
+          "owner": "ceo",
+          "readers": []
+        }
+      ]
+    },
+    {
+      "path": "00-thesis/instinct.html",
+      "title": "Instinct, read against AI.fred",
+      "section": "00-thesis",
+      "status": "to-verify",
+      "summary": "Instinct, the personal AI agent valued at $10 billion in September 2026: how it is built, what its users meet, where it strains, what it shares with AI.fred, where the two designs part, and which one wins which race.",
+      "updated": "2026-10-01",
+      "words": 5518,
+      "sections": [
+        {
+          "id": "what-it-is",
+          "title": "What Instinct is",
+          "words": 634,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "how-it-works",
+          "title": "How it works",
+          "words": 591,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "user-experience",
+          "title": "The user experience",
+          "words": 677,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "where-it-strains",
+          "title": "Where it strains",
+          "words": 1045,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "similarities",
+          "title": "What we share",
+          "words": 454,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "differences",
+          "title": "Where we differ",
+          "words": 531,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "who-wins",
+          "title": "Who wins, and why",
+          "words": 720,
+          "owner": "ceo",
+          "readers": []
+        },
+        {
+          "id": "sources",
+          "title": "Sources",
+          "words": 529,
           "owner": "ceo",
           "readers": []
         }
@@ -2553,7 +2620,7 @@
       "section": "roles",
       "status": "decision",
       "summary": "Five owner doors, one per role, each a page generated from roles.json: what the owner holds, what binds them, their reading path and their key blocks.",
-      "updated": "2026-09-18",
+      "updated": "2026-10-01",
       "words": 543,
       "sections": [
         {
@@ -2571,8 +2638,8 @@
       "section": "roles",
       "status": "amber",
       "summary": "The owner view for the chief executive: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-18",
-      "words": 10723,
+      "updated": "2026-10-01",
+      "words": 10879,
       "sections": [
         {
           "id": "brief",
@@ -2584,7 +2651,7 @@
         {
           "id": "own",
           "title": "What you own",
-          "words": 2830,
+          "words": 2900,
           "owner": null,
           "readers": []
         },
@@ -2598,7 +2665,7 @@
         {
           "id": "path",
           "title": "Reading path",
-          "words": 1689,
+          "words": 1775,
           "owner": null,
           "readers": []
         },
@@ -2617,7 +2684,7 @@
       "section": "roles",
       "status": "decision",
       "summary": "The owner view for the chief technology officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-18",
+      "updated": "2026-10-01",
       "words": 8253,
       "sections": [
         {
@@ -2663,7 +2730,7 @@
       "section": "roles",
       "status": "amber",
       "summary": "The owner view for the chief operating officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-18",
+      "updated": "2026-10-01",
       "words": 3248,
       "sections": [
         {
@@ -2709,7 +2776,7 @@
       "section": "roles",
       "status": "amber",
       "summary": "The owner view for the chief financial officer: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-18",
+      "updated": "2026-10-01",
       "words": 3843,
       "sections": [
         {
@@ -2755,7 +2822,7 @@
       "section": "roles",
       "status": "to-verify",
       "summary": "The owner view for the general counsel: the sections, decisions, open items, components and invariants they own, the decisions of others that bind them, their reading path with its running word count, and the key blocks of their sections. Generated from roles.json; edit that file or the fragments, never this page.",
-      "updated": "2026-09-18",
+      "updated": "2026-10-01",
       "words": 4821,
       "sections": [
         {
@@ -2801,7 +2868,7 @@
       "section": "record",
       "status": "decision",
       "summary": "The build record door: the independent review, the decision ledger, the two maps, and where the surfacing report and the batches live in the repository.",
-      "updated": "2026-09-18",
+      "updated": "2026-10-01",
       "words": 426,
       "sections": [
         {

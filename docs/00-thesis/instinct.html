@@ -1,0 +1,469 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="dark">
+<title>Instinct, read against AI.fred</title>
+<meta name="description" content="Instinct, the personal AI agent valued at $10 billion in September 2026: how it is built, what its users meet, where it strains, what it shares with AI.fred, where the two designs part, and which one wins which race.">
+<link rel="preload" href="../assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../assets/fonts/IBMPlexMono-Regular.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../assets/tokens.css">
+<link rel="stylesheet" href="../assets/base.css">
+<link rel="stylesheet" href="../assets/print.css" media="print">
+<script src="../assets/nav.js" defer></script>
+</head>
+<body class="kind-report">
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+  <p class="brand"><a class="wordmark" href="../">AI.fred</a><span class="pub">Design and planning publication</span></p>
+  <p class="doc-id">00 Instinct</p>
+  <p class="tagline">A high-trust, human-in-the-gap AI assistant for tasks that carry real consequence.</p>
+  <p class="pub-link"><a href="#publication">In this publication</a></p>
+</header>
+<main id="main" class="page">
+  <header class="page-header">
+    <p class="stamp" data-status="to-verify">to-verify<small>written 2026-10-01</small></p>
+    <h1><span class="no"><a href="./">00</a></span><span class="title">Instinct, read against AI.fred</span></h1>
+    <p class="standfirst">Instinct is the first consumer agent to reach a $10 billion valuation: fourteen people, a free product, and a cloud computer per user that holds the user's passwords and card and acts inside the user's own accounts. Head to head on the everyday tasks it wins, and it is not close. On the consequential tasks its own terms and its own incidents show why it cannot enter safely, and that is the only race we can win: not by being earlier, but by being different in the three places Instinct cannot cheaply copy.</p>
+    <dl class="meta">
+      <div><dt>Document</dt><dd>00 Instinct, a companion to the thesis</dd></div>
+      <div><dt>Written</dt><dd>2026-10-01</dd></div>
+      <div><dt>Status</dt><dd><span class="chip chip-to-verify">to-verify</span></dd></div>
+      <div><dt>Reader</dt><dd class="sans">For the founder and the board</dd></div>
+    </dl>
+  </header>
+  <div class="body-grid">
+    <aside class="rail" id="rail">
+      <nav class="site-nav" id="publication" aria-label="In this publication">
+        <p class="rail-title">Doors</p>
+        <ol>
+          <li><a href="../"><span class="n">s</span>Summary</a></li>
+          <li><a href="../roles/ceo/"><span class="n">ceo</span>Chief executive</a></li>
+          <li><a href="../roles/cto/"><span class="n">cto</span>Chief technology officer</a></li>
+          <li><a href="../roles/coo/"><span class="n">coo</span>Chief operating officer</a></li>
+          <li><a href="../roles/cfo/"><span class="n">cfo</span>Chief financial officer</a></li>
+          <li><a href="../roles/counsel/"><span class="n">counsel</span>General counsel</a></li>
+          <li><a href="../contents/"><span class="n">c</span>Contents</a></li>
+          <li><a href="../record/"><span class="n">r</span>Record</a></li>
+        </ol>
+        <p class="rail-title">In this publication</p>
+        <ol>
+          <li><a href="../"><span class="n">i</span>Index</a></li>
+          <li><a href="../00-thesis/"><span class="n">00</span>Thesis</a></li>
+          <li><a href="../01-product/"><span class="n">01</span>Product</a></li>
+          <li><a href="../02-architecture/"><span class="n">02</span>Architecture</a></li>
+          <li><a href="../03-trust-and-data/"><span class="n">03</span>Trust and data</a></li>
+          <li><a href="../04-operations/"><span class="n">04</span>Operations</a></li>
+          <li><a href="../05-business/"><span class="n">05</span>Business</a></li>
+          <li><a href="../06-roadmap/"><span class="n">06</span>Roadmap</a></li>
+          <li><a href="../07-open/"><span class="n">07</span>Open items</a></li>
+          <li><a href="../decisions/"><span class="n">DR</span>Decisions</a></li>
+          <li><a href="../depmap/"><span class="n">map</span>Dependency map</a></li>
+          <li><a href="../depmap/architecture.html"><span class="n">map</span>Architecture map</a></li>
+        </ol>
+      </nav>
+      <nav class="contents" aria-label="On this page" data-contents hidden>
+        <p class="rail-title">On this page</p>
+      </nav>
+    </aside>
+    <div class="doc">
+      <section>
+        <h2 id="what-it-is"><span class="no">1</span>What Instinct is</h2>
+        <p>Instinct is a personal AI agent you text or call, built by Spear Street Technology Inc. of San Francisco. It went into private beta in February 2026, opened an invite-only beta in August, and on 28 September 2026 announced a $1 billion Series C at a $10 billion valuation from Sequoia Capital, Benchmark and Coatue, four times the $2.5 billion it was valued at thirty-three days earlier <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a> <a class="ref" href="#src-5">[5]</a> <a class="ref" href="#src-6">[6]</a>. The four rounds, a $25 million seed from Conviction and Greenoaks, a $75 million Series A led by Kleiner Perkins, a $250 million Series B and the Series C, sum to about $1.35 billion raised in under a year <span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a> <a class="ref" href="#src-8">[8]</a>. It is free, and its founder has said he does not want to charge users <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>.</p>
+        <p>The founder is Noah Shinn, 23. Fortune describes him as a college dropout whose assistant has become a challenger to Meta, whose AI chief Alexandr Wang has taken to mocking it on X since Meta launched its own agent, Muse <span class="chip chip-verified">verified</span> <a class="ref" href="#src-4">[4]</a>. At 20 he co-wrote Reflexion, one of the early papers on agents that learn from their own mistakes, and in 2023 he left Northeastern to be one of the first employees at Sierra, the customer-service agent company, where he spent two and a half years before founding Spear Street in 2025 <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-9">[9]</a>. That history matters for what follows: Instinct is built by someone whose whole career is agents that act, not by a concierge business adding a model.</p>
+        <p>The numbers that describe it are in <a href="#tab-instinct-record">Table 0.3</a>. Three carry the argument of this page. The Information reported on 15 September that the user base had passed 100,000 and that compute capacity was already running short, so most of the new money goes to compute, which the founder spends two-fifths of his time acquiring <span class="chip chip-verified">verified</span> <a class="ref" href="#src-7">[7]</a>. Transaction volume through the agent is approaching $1 billion a year, half of it travel <span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a> <a class="ref" href="#src-6">[6]</a>. And the company is fourteen people, growing roughly ten per cent a day on no marketing spend, by invites that users and investors hand out <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-10">[10]</a> <a class="ref" href="#src-23">[23]</a>.</p>
+        <div class="table-wrap" id="tab-instinct-record">
+        <table class="data">
+          <caption><span class="tab-no">Table 0.3</span> The record in numbers, as reported to 30 September 2026: a free product with a hundred thousand users, a billion dollars of annual transactions and fourteen people, funded to ten billion dollars in under a year.</caption>
+          <thead><tr><th>Item</th><th>As reported</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="key">Company</td><td>Spear Street Technology Inc., San Francisco, founded 2025 by Noah Shinn</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-5">[5]</a></td></tr>
+            <tr><td class="key">Launch</td><td>Private beta February 2026; invite-only beta from August 2026; still invite-only at 30 September</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-5">[5]</a> <a class="ref" href="#src-16">[16]</a></td></tr>
+            <tr><td class="key">Funding</td><td>Seed $25 million (Conviction, Greenoaks); Series A $75 million (Kleiner Perkins); Series B $250 million at $2.5 billion, announced 26 August; Series C $1 billion at $10 billion, 28 September (Sequoia, Benchmark, Coatue); about $1.35 billion in all</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a> <a class="ref" href="#src-2">[2]</a> <a class="ref" href="#src-8">[8]</a></td></tr>
+            <tr><td class="key">Users</td><td>More than 100,000 by 15 September; invites handed out by users and investors; growth of about ten per cent a day on no marketing spend</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-7">[7]</a>; the growth rate <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-10">[10]</a></td></tr>
+            <tr><td class="key">Volume</td><td>Approaching $1 billion a year in transactions, half of it travel; four in ten users hand it a card within three weeks; users who share sensitive data retain at about eighty per cent</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a> <a class="ref" href="#src-6">[6]</a>; the card and retention figures <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-23">[23]</a></td></tr>
+            <tr><td class="key">Team</td><td>Fourteen employees at the Series C</td><td><span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-23">[23]</a></td></tr>
+            <tr><td class="key">Price</td><td>Free; the founder does not want to charge users, rejects advertising, and has spoken of a transaction fee on purchases the agent makes</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a>; the fee model <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-24">[24]</a></td></tr>
+            <tr><td class="key">Constraint</td><td>Compute: users reported slowdowns and outages from 21 to 24 September with no status page; the beta stays closed "while we're actively bringing up more compute"</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-7">[7]</a> <a class="ref" href="#src-16">[16]</a></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+      <section>
+        <h2 id="how-it-works"><span class="no">2</span>How it works</h2>
+        <p>Instinct has three layers, and <a href="#fig-instinct-architecture">Figure 0.2</a> draws them. The first is the conversation: the user texts it on iMessage or WhatsApp or calls it, and it texts or calls the user first when something in their life needs attention. The second is a persistent cloud computer, one per user, that keeps running between messages: a model, a browser logged into the user's accounts, from 16 September a phone line of its own for outbound calls, and from 9 September an email address of its own at mail.instinct.com so that it can open accounts, write to restaurants and take forwarded threads without touching the user's inbox <span class="chip chip-verified">verified</span> <a class="ref" href="#src-11">[11]</a> <a class="ref" href="#src-12">[12]</a>. The third is the set of connections the user grants: Google Workspace through its official interfaces (Gmail, Calendar, Drive, Docs, Sheets, Slides, Tasks), the messaging thread, a Mac app for the screen, audio and location, and a Vault into which the user puts logins and a card so that the agent can sign in and pay as them <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-18">[18]</a> <a class="ref" href="#src-19">[19]</a>. There is no iOS or Android app; the product is the thread, the web workspace at app.instinct.co and the Mac app <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-19">[19]</a>.</p>
+        <p>The execution model is the point. Instinct does not call an airline's interface or a restaurant's booking rail; it drives a browser as the user, with the user's own password, from a machine it owns. That is why it can do anything a person at a laptop can do, and why the sites it visits cannot tell it from a person until it behaves like a machine. Where a site needs a password it does not hold, it has been reported to reset the password itself and carry on, including to complete a purchase <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-3">[3]</a> <a class="ref" href="#src-19">[19]</a>. Because the machine keeps state, a task can run for hours: research, an email to a vendor, a wait for the reply, a confirmation, all without the user. On 4 September the founder said Instinct would broker credentials through 1Password rather than only through its own Vault <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-22">[22]</a>.</p>
+        <figure class="fig" id="fig-instinct-architecture">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 0.2, Instinct's three layers as reported, scrollable">
+          <svg viewBox="0 0 720 440" role="img" aria-labelledby="fig-instinct-architecture-title fig-instinct-architecture-desc">
+            <title id="fig-instinct-architecture-title">Instinct's three layers, as reported</title>
+            <desc id="fig-instinct-architecture-desc">On the left, the user on their own phone, texting on iMessage or WhatsApp or calling. In the middle, a dashed zone: Instinct's cloud computer, one per user and always on. Inside it an agent at the top, a row of three executors below it, a browser holding the user's logins, a phone line and an email address of its own, and below those the Vault holding the user's logins and card, and the connections to Gmail, Calendar, Drive and the Mac screen. The accent arrow runs from the Vault up into the browser: the user's real password and card are in the agent's hands. Arrows leave the zone to the right, to the user's accounts and the web, where it acts as the user, and to vendors and clinics, which it calls for the user.</desc>
+            <defs>
+              <marker id="fig-instinct-architecture-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+              <marker id="fig-instinct-architecture-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <rect class="fg-zone" x="168" y="24" width="352" height="376" rx="2"/>
+            <text class="fg-label-small fg-label-soft" x="344" y="44" text-anchor="middle">Instinct's cloud computer: one per user, always on</text>
+            <rect class="fg-box" x="192" y="56" width="304" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="344" y="78" text-anchor="middle">The agent</text>
+            <text class="fg-label-small" x="344" y="96" text-anchor="middle">a model that reads your inbox and acts as you</text>
+            <rect class="fg-box" x="192" y="144" width="100" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="242" y="166" text-anchor="middle">A browser</text>
+            <text class="fg-label-small" x="242" y="184" text-anchor="middle">your logins</text>
+            <rect class="fg-box" x="294" y="144" width="100" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="344" y="166" text-anchor="middle">A phone line</text>
+            <text class="fg-label-small" x="344" y="184" text-anchor="middle">from 16 Sept</text>
+            <rect class="fg-box" x="396" y="144" width="100" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="446" y="166" text-anchor="middle">Own email</text>
+            <text class="fg-label-small" x="446" y="184" text-anchor="middle">from 9 Sept</text>
+            <line class="fg-line" x1="242" y1="112" x2="242" y2="144" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <line class="fg-line" x1="344" y1="112" x2="344" y2="144" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <line class="fg-line" x1="446" y1="112" x2="446" y2="144" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <rect class="fg-box-2" x="192" y="248" width="144" height="64" rx="2"/>
+            <text class="fg-label fg-label-strong" x="264" y="272" text-anchor="middle">The Vault</text>
+            <text class="fg-label-small" x="264" y="292" text-anchor="middle">logins and card</text>
+            <rect class="fg-box" x="352" y="248" width="144" height="64" rx="2"/>
+            <text class="fg-label fg-label-strong" x="424" y="270" text-anchor="middle">Connections</text>
+            <text class="fg-label-small" x="424" y="288" text-anchor="middle">Gmail, Calendar,</text>
+            <text class="fg-label-small" x="424" y="302" text-anchor="middle">Drive, Mac screen</text>
+            <line class="fg-accent" x1="242" y1="248" x2="242" y2="200" marker-end="url(#fig-instinct-architecture-arrow-accent)"/>
+            <text class="fg-label-small" x="250" y="222">your real password</text>
+            <text class="fg-label-small" x="250" y="236">and card, in its hands</text>
+            <line class="fg-line" x1="480" y1="248" x2="480" y2="200" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <text class="fg-label-small fg-label-soft" x="192" y="344">State is kept between messages:</text>
+            <text class="fg-label-small fg-label-soft" x="192" y="360">a task runs for hours or days, and it texts</text>
+            <text class="fg-label-small fg-label-soft" x="192" y="376">or calls you first when something needs you</text>
+            <rect class="fg-device" x="8" y="176" width="144" height="64" rx="8"/>
+            <text class="fg-label fg-label-strong" x="80" y="200" text-anchor="middle">You</text>
+            <text class="fg-label-small" x="80" y="218" text-anchor="middle">iMessage, WhatsApp,</text>
+            <text class="fg-label-small" x="80" y="232" text-anchor="middle">or a call</text>
+            <path class="fg-line" d="M152,208 H160 V84 H192" fill="none" marker-start="url(#fig-instinct-architecture-arrow)" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <text class="fg-label-small" x="16" y="152">a text or a call,</text>
+            <text class="fg-label-small" x="16" y="166">both ways</text>
+            <rect class="fg-box" x="560" y="144" width="152" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="636" y="166" text-anchor="middle">Your accounts</text>
+            <text class="fg-label-small" x="636" y="184" text-anchor="middle">it acts as you there</text>
+            <line class="fg-line" x1="520" y1="172" x2="560" y2="172" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <rect class="fg-actor" x="560" y="252" width="152" height="56" rx="2"/>
+            <text class="fg-label fg-label-strong" x="636" y="274" text-anchor="middle">Vendors, clinics</text>
+            <text class="fg-label-small" x="636" y="292" text-anchor="middle">it calls for you</text>
+            <line class="fg-line" x1="520" y1="280" x2="560" y2="280" marker-end="url(#fig-instinct-architecture-arrow)"/>
+            <text class="fg-label-small fg-label-soft" x="8" y="424">dashed: Instinct's machine; rounded: your phone; dotted: people; accent: where your real values sit</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 0.2</span> Instinct is a model on a machine of its own that holds the user's real passwords and card and acts as the user, by browser, by phone and by its own email; the conversation is only the front.</figcaption>
+        </figure>
+        <p>Two things about the model of control are published, and both are terms rather than mechanisms. The terms of service appoint Instinct as the user's agent, authorised to enter into agreements, commitments and transactions on the user's behalf, and say that the company may implement confirmation requirements on certain actions but makes no representation that such safeguards will prevent unintended or erroneous ones <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-17">[17]</a> <a class="ref" href="#src-19">[19]</a>. No published page says it asks before it buys; where most agents stop to confirm, Instinct continues, and early testers reported an email it sent that nobody had approved <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-19">[19]</a> <a class="ref" href="#src-27">[27]</a>. On data, TechCrunch reported on 24 August that the first terms granted a perpetual training licence over user materials and that email was being stored in plain text <span class="chip chip-verified">verified</span> <a class="ref" href="#src-3">[3]</a>; the terms were rewritten two days later and the perpetual licence was dropped, but training stays on by default, the opt-out applies only from the day it is set, Google Workspace data is exempt from training while screen, audio, location and messaging data are not, and the Vault is excluded <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-20">[20]</a> <a class="ref" href="#src-21">[21]</a>. In our vocabulary: the model sees every real value, the authority is unbounded, and the surface is borrowed.</p>
+      </section>
+      <section>
+        <h2 id="user-experience"><span class="no">3</span>The user experience</h2>
+        <p>Onboarding is three steps and under a minute: a phone number, permission for Google Workspace, and iMessage or WhatsApp; the workspace at app.instinct.co is where the user adds the Mac app, the Vault and a card later <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-18">[18]</a>. Because it has read the inbox and the calendar before the first message, it acts with context from the first exchange, and reviewers describe the first day as the product's best: it flags a meeting someone declined, notices a clash, follows up a thread the user dropped, and arranges the ride to the airport for the flight it found in email <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-18">[18]</a> <a class="ref" href="#src-19">[19]</a>. The reported task range is the life admin our product also names: reservations, appointments, cancelling subscriptions, bill negotiation, vendor coordination across time zones, medical paperwork, inbox triage, groceries, flights and the ride to them; the founder's examples are a cross-country road trip, the weekly groceries and forgotten subscriptions <span class="chip chip-verified">verified</span> <a class="ref" href="#src-5">[5]</a>.</p>
+        <p>The shape of a task is a thread that goes quiet and comes back. The user sends a line; the agent replies with what it will do and starts; the thread goes silent while the machine works, for minutes or for hours when a vendor has to answer; then one message arrives with the outcome. Where a thing can only be done by phone, a restaurant without online booking, a dentist's cancellation list, a dispute with a cable company, the agent calls, in early access from 16 September <span class="chip chip-verified">verified</span> <a class="ref" href="#src-12">[12]</a>. The user can forward it an email to handle a return, add it to a group thread, or call it. <a href="#fig-instinct-day">Figure 0.3</a> draws one task across a day and the transcript below it reads the same task as the user would, both composed from the reported behaviour rather than taken from a session.</p>
+        <aside class="callout"><p><span class="label">Illustrative</span>The transcript and the times are a worked example composed from the capabilities reported in the sources on this page, not a record of a live session. The one step to notice is the purchase: nothing in the reporting says a tap of the user's is asked for.</p></aside>
+        <ol class="ledger">
+          <li><span class="t">08:10</span><span class="e">You: my Friday flight got cancelled. Rebook me on the earliest one and tell the hotel I'll be late.</span></li>
+          <li><span class="t">08:11</span><span class="e">Instinct: On it. I'll look for the earliest seat on your booking and email the hotel from my address so your inbox stays clean.</span></li>
+          <li><span class="t">08:30</span><span class="e">(the browser is logged into the airline as you; the fare is found; the hotel is emailed from mail.instinct.com)</span></li>
+          <li><span class="t">13:40</span><span class="e">(the hotel replies; the agent confirms the late arrival)</span></li>
+          <li><span class="t">13:42</span><span class="e">(the fare is bought with the card from the Vault)</span></li>
+          <li><span class="t">13:43</span><span class="e">Instinct: Done. You're on the 09:15 on Friday, confirmation in your inbox, and the hotel has your late check-in. Want me to move the airport ride?</span></li>
+        </ol>
+        <figure class="fig" id="fig-instinct-day">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 0.3, one task across a working day, illustrative, scrollable">
+          <svg viewBox="0 0 720 280" role="img" aria-labelledby="fig-instinct-day-title fig-instinct-day-desc">
+            <title id="fig-instinct-day-title">One task across a working day, from the user's side</title>
+            <desc id="fig-instinct-day-desc">A horizontal timeline from eight in the morning to two in the afternoon. At 08:10 the user texts; at 08:11 Instinct replies with a plan and starts; at 08:30 it searches fares in its browser, logged in as the user; at 09:05 it emails the hotel from its own address and waits; at 13:40 the hotel replies and it confirms; at 13:42 it buys the fare with the user's card, with no tap of the user's, which is the accent mark; at 13:43 it texts the user that it is done. The user is in the thread twice, at the start and at the end.</desc>
+            <text class="fg-label-small fg-label-soft" x="8" y="24">Illustrative: one task across a working day, composed from reported behaviour</text>
+            <line class="fg-rule" x1="40" y1="150" x2="700" y2="150"/>
+            <line class="fg-line" x1="100" y1="150" x2="100" y2="112"/>
+            <circle class="fg-fill-ink" cx="100" cy="150" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="100" y="72" text-anchor="middle">08:10</text>
+            <text class="fg-label-small" x="100" y="88" text-anchor="middle">you text: rebook</text>
+            <text class="fg-label-small" x="100" y="102" text-anchor="middle">Friday, tell the hotel</text>
+            <line class="fg-line" x1="190" y1="150" x2="190" y2="188"/>
+            <circle class="fg-fill-ink" cx="190" cy="150" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="190" y="206" text-anchor="middle">08:11</text>
+            <text class="fg-label-small" x="190" y="222" text-anchor="middle">it replies with a plan</text>
+            <text class="fg-label-small" x="190" y="236" text-anchor="middle">and starts</text>
+            <line class="fg-line" x1="280" y1="150" x2="280" y2="112"/>
+            <circle class="fg-fill-ink" cx="280" cy="150" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="280" y="72" text-anchor="middle">08:30</text>
+            <text class="fg-label-small" x="280" y="88" text-anchor="middle">fares searched in its</text>
+            <text class="fg-label-small" x="280" y="102" text-anchor="middle">browser, logged in as you</text>
+            <line class="fg-line" x1="370" y1="150" x2="370" y2="188"/>
+            <circle class="fg-fill-ink" cx="370" cy="150" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="370" y="206" text-anchor="middle">09:05</text>
+            <text class="fg-label-small" x="370" y="222" text-anchor="middle">hotel emailed from its</text>
+            <text class="fg-label-small" x="370" y="236" text-anchor="middle">own address; it waits</text>
+            <line class="fg-line" x1="460" y1="150" x2="460" y2="112"/>
+            <circle class="fg-fill-ink" cx="460" cy="150" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="460" y="72" text-anchor="middle">13:40</text>
+            <text class="fg-label-small" x="460" y="88" text-anchor="middle">the hotel replies;</text>
+            <text class="fg-label-small" x="460" y="102" text-anchor="middle">it confirms</text>
+            <line class="fg-accent" x1="550" y1="150" x2="550" y2="188"/>
+            <circle class="fg-fill-accent" cx="550" cy="150" r="5"/>
+            <text class="fg-label-small fg-label-strong" x="550" y="206" text-anchor="middle">13:42</text>
+            <text class="fg-label-small" x="550" y="222" text-anchor="middle">it buys the fare with</text>
+            <text class="fg-label-small" x="550" y="236" text-anchor="middle">your card: no tap of yours</text>
+            <line class="fg-line" x1="640" y1="150" x2="640" y2="112"/>
+            <circle class="fg-fill-ink" cx="640" cy="150" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="640" y="72" text-anchor="middle">13:43</text>
+            <text class="fg-label-small" x="640" y="88" text-anchor="middle">it texts you:</text>
+            <text class="fg-label-small" x="640" y="102" text-anchor="middle">done, confirmation sent</text>
+            <text class="fg-label-small fg-label-soft" x="40" y="166">08:00</text>
+            <text class="fg-label-small fg-label-soft" x="700" y="166" text-anchor="end">14:00</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="268">the user is in the thread twice; the five hours between are the machine's; accent: the irreversible step, taken without a tap</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 0.3</span> The user is in the thread at the start and the end; the hours between belong to the machine, and the one irreversible step fires without a tap. Illustrative.</figcaption>
+        </figure>
+        <p>What users report back has two registers. The first is delight: an early investor called it as close to the personal assistant everyone has been waiting for, with a jaw-dropping experience, and users describe bills negotiated, vendors coordinated and medical forms filled without being asked twice <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-18">[18]</a> <a class="ref" href="#src-19">[19]</a>. The second is the ick. On 30 September TechCrunch reported users put off by product suggestions the agent had started making from what it saw in their email and their upcoming trips <span class="chip chip-verified">verified</span> <a class="ref" href="#src-13">[13]</a>. In the week before, responses slowed and email alerts lagged, the agent stopped answering many users on 21 and 22 September with no status page to check <span class="chip chip-verified">verified</span> <a class="ref" href="#src-16">[16]</a>, and Resy deactivated a venture investor's account after his agent made about two hundred reservation requests an hour; Resy said it does not permit third-party agents on its platform, and Amex, Amazon and Uber were reported to have flagged or blocked the agent too <span class="chip chip-verified">verified</span> <a class="ref" href="#src-14">[14]</a> <a class="ref" href="#src-15">[15]</a>. Both registers come from the same design choice: a machine that acts as you, everywhere, without asking.</p>
+      </section>
+      <section>
+        <h2 id="where-it-strains"><span class="no">4</span>Where it strains</h2>
+        <p>Read against the two fatal failures the thesis is built around, Instinct has chosen to accept both. The first, a person or a model on the vendor's side seeing a real value, is the architecture: the agent holds the user's passwords and card and reads the whole inbox, and until 26 August the terms claimed a perpetual licence over all of it. The second, an irreversible act the user did not want, is the terms: the company is appointed the user's agent for binding transactions and promises no confirmation. Three strains follow, and <a href="#fig-instinct-timeline">Figure 0.4</a> and <a href="#tab-instinct-incidents">Table 0.4</a> date them.</p>
+        <h3 id="strain-authority"><span class="no">4.1</span>Authority without an envelope</h3>
+        <p>There is no spend cap, no list of parties it may contact, no list of acts it may commit the user to, and no validity window, because there is no object in the product that holds them. The agent's authority is whatever the user's credentials can do. A reset password to finish a purchase and an email nobody approved are not bugs in that model; they are the model working. The product's answer so far is speed and memory: ask it to stop and it stops, and it learns what you dislike. That is a learned preference, not a bound, and the terms say so.</p>
+        <h3 id="strain-exposure"><span class="no">4.2</span>Exposure by design</h3>
+        <p>The Vault is excluded from training and Google Workspace data is exempt, which is more than the first terms offered. Everything else, the screen, audio, location and messaging, trains the model by default, the opt-out works only from the day it is set, and revoking a connection does not delete what was already taken <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-20">[20]</a> <a class="ref" href="#src-21">[21]</a>. More important for our comparison, the model itself sees every value: there is no label, no substitution component and no machine without a screen, because the whole machine is the executor. A compromise of one user's cloud computer is a compromise of that user's accounts; a prompt injected into a web page the browser visits speaks with the user's own authority. Reviewers raised both and the company has not published a threat model <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-17">[17]</a> <a class="ref" href="#src-19">[19]</a>.</p>
+        <h3 id="strain-surface"><span class="no">4.3</span>A borrowed surface and a scarce one</h3>
+        <p>Instinct executes inside other people's platforms as the user, and those platforms can refuse it. Resy did, and said it does not permit agents at all <span class="chip chip-verified">verified</span> <a class="ref" href="#src-15">[15]</a>. The thesis names this as the trait every rival shares, "no surface of its own", and Instinct is the strongest case of it: its surface is a browser pretending to be a person, and every site that detects the pretence can close the door. The second scarcity is compute. A persistent cloud computer per user is a cost of goods that scales with users, not with tasks, and the company's own account is that compute, not product, is what the Series C buys and what the founder spends two-fifths of his time on <span class="chip chip-verified">verified</span> <a class="ref" href="#src-7">[7]</a>. A free product with that cost line has to find revenue on the transactions; the founder has said he wants a fee on purchases and not advertising, and that an agent smarter than its user, used to sway purchases, would be dangerous <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-24">[24]</a>. The recommendations users found unwelcome on 30 September are the first visible pull in the other direction.</p>
+        <figure class="fig" id="fig-instinct-timeline">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 0.4, thirty-seven days from the privacy report to the ick, scrollable">
+          <svg viewBox="0 0 720 240" role="img" aria-labelledby="fig-instinct-timeline-title fig-instinct-timeline-desc">
+            <title id="fig-instinct-timeline-title">Thirty-seven days, 24 August to 30 September 2026</title>
+            <desc id="fig-instinct-timeline-desc">A timeline from 24 August to 30 September 2026. On 24 to 26 August, the privacy report, the $350 million round at $2.5 billion and the rewritten terms. On 4 September, the 1Password partnership. On 8 and 9 September, Meta launches Muse and Instinct gets its own email address. On 15 and 16 September, 100,000 users and Concierge phone calls. From 21 to 24 September, slowdowns and the Resy ban. On 28 September, the $1 billion round at $10 billion, which is the accent. On 30 September, the product recommendations that put users off.</desc>
+            <line class="fg-rule" x1="40" y1="130" x2="690" y2="130"/>
+            <text class="fg-label-small fg-label-soft" x="40" y="148">24 Aug</text>
+            <text class="fg-label-small fg-label-soft" x="690" y="148" text-anchor="end">30 Sept</text>
+            <line class="fg-line" x1="76" y1="130" x2="76" y2="96"/>
+            <circle class="fg-fill-ink" cx="76" cy="130" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="76" y="46" text-anchor="middle">24 to 26 Aug</text>
+            <text class="fg-label-small" x="76" y="62" text-anchor="middle">privacy report;</text>
+            <text class="fg-label-small" x="76" y="76" text-anchor="middle">$350m at $2.5bn;</text>
+            <text class="fg-label-small" x="76" y="90" text-anchor="middle">terms rewritten</text>
+            <line class="fg-line" x1="238" y1="130" x2="238" y2="164"/>
+            <circle class="fg-fill-ink" cx="238" cy="130" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="238" y="182" text-anchor="middle">4 Sept</text>
+            <text class="fg-label-small" x="238" y="198" text-anchor="middle">1Password to hold</text>
+            <text class="fg-label-small" x="238" y="212" text-anchor="middle">credentials</text>
+            <line class="fg-line" x1="311" y1="130" x2="311" y2="96"/>
+            <circle class="fg-fill-ink" cx="311" cy="130" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="311" y="46" text-anchor="middle">8 to 9 Sept</text>
+            <text class="fg-label-small" x="311" y="62" text-anchor="middle">Meta launches Muse;</text>
+            <text class="fg-label-small" x="311" y="76" text-anchor="middle">Instinct gets its</text>
+            <text class="fg-label-small" x="311" y="90" text-anchor="middle">own email address</text>
+            <line class="fg-line" x1="424" y1="130" x2="424" y2="164"/>
+            <circle class="fg-fill-ink" cx="424" cy="130" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="424" y="182" text-anchor="middle">15 to 16 Sept</text>
+            <text class="fg-label-small" x="424" y="198" text-anchor="middle">100,000 users;</text>
+            <text class="fg-label-small" x="424" y="212" text-anchor="middle">Concierge calls</text>
+            <line class="fg-line" x1="530" y1="130" x2="530" y2="96"/>
+            <circle class="fg-fill-ink" cx="530" cy="130" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="530" y="46" text-anchor="middle">21 to 24 Sept</text>
+            <text class="fg-label-small" x="530" y="62" text-anchor="middle">slowdowns, outages;</text>
+            <text class="fg-label-small" x="530" y="76" text-anchor="middle">Resy bans a user's</text>
+            <text class="fg-label-small" x="530" y="90" text-anchor="middle">agent on the 23rd</text>
+            <line class="fg-accent" x1="627" y1="130" x2="627" y2="164"/>
+            <circle class="fg-fill-accent" cx="627" cy="130" r="5"/>
+            <text class="fg-label-small fg-label-strong" x="627" y="182" text-anchor="middle">28 Sept</text>
+            <text class="fg-label-small" x="627" y="198" text-anchor="middle">$1bn at $10bn</text>
+            <line class="fg-line" x1="660" y1="130" x2="660" y2="96"/>
+            <circle class="fg-fill-ink" cx="660" cy="130" r="4"/>
+            <text class="fg-label-small fg-label-strong" x="668" y="62" text-anchor="middle">30 Sept</text>
+            <text class="fg-label-small" x="668" y="78" text-anchor="middle">the ick:</text>
+            <text class="fg-label-small" x="668" y="92" text-anchor="middle">recommendations</text>
+            <text class="fg-label-small fg-label-soft" x="8" y="232">thirty-three days between the two rounds; accent: the valuation</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 0.4</span> Thirty-seven days hold a privacy backlash, a rewrite of the terms, a rival from Meta, two new surfaces, a capacity crunch, a platform ban and a fourfold valuation; the strains and the money arrived together.</figcaption>
+        </figure>
+        <div class="table-wrap" id="tab-instinct-incidents">
+        <table class="data">
+          <caption><span class="tab-no">Table 0.4</span> The dated record, August to September 2026: every incident is the design choice working as designed, and every fix so far is a term or a partner, not a mechanism.</caption>
+          <thead><tr><th>Date</th><th>What happened</th><th>What it shows</th><th>Status</th></tr></thead>
+          <tbody>
+            <tr><td class="key">24 Aug</td><td>TechCrunch reports privacy and security concerns: a perpetual training licence in the terms, email stored in plain text, broad device access</td><td>Fatal failure one accepted by design</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-3">[3]</a></td></tr>
+            <tr><td class="key">26 Aug</td><td>$350 million raised at $2.5 billion; terms rewritten the same day, the perpetual licence dropped, training still on by default with a go-forward opt-out</td><td>The fix is a term, not a mechanism</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-2">[2]</a>; the rewrite <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-20">[20]</a></td></tr>
+            <tr><td class="key">Aug</td><td>Reported: the agent resets a password on its own to complete a purchase a site had blocked; testers report an email sent without approval</td><td>Fatal failure two accepted by design</td><td><span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-19">[19]</a> <a class="ref" href="#src-27">[27]</a></td></tr>
+            <tr><td class="key">4 Sept</td><td>Founder announces credential brokering through 1Password beside the Vault</td><td>Credentials move to a specialist, but the agent still uses them in the clear</td><td><span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-22">[22]</a></td></tr>
+            <tr><td class="key">8 Sept</td><td>Meta launches Muse: a dedicated virtual machine per user, placeholder credentials swapped in at the network boundary, single-use card numbers and explicit approval on every purchase; free tier, then $20 and $100 a month; US first, in its own app and inside WhatsApp</td><td>The incumbent ships the envelope and the substitution Instinct lacks</td><td><span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-25">[25]</a></td></tr>
+            <tr><td class="key">9 Sept</td><td>Instinct gets its own email addresses at mail.instinct.com, to open accounts and write to vendors without the user's inbox</td><td>A surface of its own, for the first time</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-11">[11]</a></td></tr>
+            <tr><td class="key">15 Sept</td><td>The Information: more than 100,000 users; compute short; a $10 billion round in talks</td><td>Growth outruns the cost line</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-7">[7]</a></td></tr>
+            <tr><td class="key">16 Sept</td><td>Concierge: outbound phone calls in early access, the same week Muse adds calling</td><td>A second surface of its own; a live call cannot be reduced to one approval</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-12">[12]</a></td></tr>
+            <tr><td class="key">21 to 24 Sept</td><td>Slow responses, delayed email alerts, the agent unresponsive for many users on the 21st and 22nd, no status page</td><td>A per-user machine is a per-user cost</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-16">[16]</a></td></tr>
+            <tr><td class="key">23 Sept</td><td>Resy deactivates an investor's account after his agent made about 200 requests an hour; Resy permits no third-party agents; Amex, Amazon and Uber reported to flag or block the agent</td><td>A borrowed surface can be withdrawn</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-14">[14]</a> <a class="ref" href="#src-15">[15]</a></td></tr>
+            <tr><td class="key">28 Sept</td><td>$1 billion Series C at $10 billion from Sequoia, Benchmark and Coatue; approaching $1 billion a year in transactions; free, and the founder does not want to charge</td><td>The market prices the race, not the trust</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-1">[1]</a></td></tr>
+            <tr><td class="key">30 Sept</td><td>Users put off by product suggestions drawn from their email and upcoming trips</td><td>The first pull from the free model towards the agent not being the user's</td><td><span class="chip chip-verified">verified</span> <a class="ref" href="#src-13">[13]</a></td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+      <section>
+        <h2 id="similarities"><span class="no">5</span>What we share</h2>
+        <p>More than the thesis's landscape table allows for. Instinct is not a chat-plus-people concierge and not a model inside the user's own browser; it is a machine of its own that acts, and that is the shape we chose too. <a href="#tab-instinct-shared">Table 0.5</a> sets the nine points of agreement against the record that fixes each on our side. Two of them are worth saying in prose. Instinct's scope is the whole of everyday life with the hard tasks as the draw, which is exactly what <a href="../decisions/dr-019-the-endgame.html">DR-019</a> and <a href="../decisions/dr-020-everyday-tasks-day-one.html">DR-020</a> record for us; its founder calls it "everyday intelligence for everyone". And its founder's stated rule, that an agent must never use its intelligence to sway what its user buys, is <a href="../decisions/dr-024-metered-pricing.html">DR-024</a>'s no-paid-placement rule in other words, said by someone who has a billion dollars of transactions to be tempted by.</p>
+        <div class="table-wrap wide" id="tab-instinct-shared">
+        <table class="data">
+          <caption><span class="tab-no">Table 0.5</span> Nine things Instinct and AI.fred agree on: the shape of the product, the surface, the memory, the money and the rule about recommendations.</caption>
+          <thead><tr><th>Point</th><th>Instinct, as reported</th><th>AI.fred, as recorded</th></tr></thead>
+          <tbody>
+            <tr><td class="key">An agent that acts</td><td>Does the task end to end; a chatbot is what it is not</td><td>Every request becomes an ordered plan the harness executes (<a href="../01-product/#journeys">01</a>)</td></tr>
+            <tr><td class="key">Everyday life, hard tasks as the draw</td><td>Groceries, trips and subscriptions beside medical paperwork and bill disputes</td><td>Everyday economic life from day one, consequential tasks as the hook (DR-019, DR-020)</td></tr>
+            <tr><td class="key">Messaging-native intake</td><td>iMessage, WhatsApp, a phone call; no app of its own</td><td>One channel-agnostic gateway; which channel opens the door in each market is amber (<a href="../decisions/dr-001-channel-gateway.html">DR-001</a>)</td></tr>
+            <tr><td class="key">A surface of its own</td><td>A persistent cloud computer per user with a browser, a phone line and an email address</td><td>A managed browser, our phone line and our mail relay; a worker never uses their own tools (<a href="../02-architecture/#surfaces">02</a>)</td></tr>
+            <tr><td class="key">Phone work</td><td>Concierge calls restaurants, clinics and call centres from 16 September</td><td>Non-authenticating calls by our people or our AI; no vault value ever spoken (<a href="../decisions/dr-021-no-value-spoken.html">DR-021</a>)</td></tr>
+            <tr><td class="key">A vault</td><td>The Vault, excluded from training; 1Password beside it</td><td>A tokenisation vault bought, not built (<a href="../decisions/dr-008-vault-bought.html">DR-008</a>)</td></tr>
+            <tr><td class="key">Context that compounds</td><td>State kept across days; it acts on what it has read and learned</td><td>A temporal knowledge graph, every fact with source, date and validity (<a href="../decisions/dr-016-context-store.html">DR-016</a>)</td></tr>
+            <tr><td class="key">Proactive, in both directions</td><td>Texts or calls the user first; flags clashes and dropped threads</td><td>Reminds, marks lapsed, revives on one message; never quietly forgets (<a href="../03-trust-and-data/trust-story.html#what-we-never-do">trust story</a>)</td></tr>
+            <tr><td class="key">A take on transactions, never paid placement</td><td>A fee on purchases rather than ads; the founder rejects an agent that sways its user</td><td>A commerce take of about 1.2 per cent of routed spend; a merchant may never pay for placement (<a href="../05-business/#commerce">05</a>, DR-024)</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+      <section>
+        <h2 id="differences"><span class="no">6</span>Where we differ</h2>
+        <p>The differences are not in what the product does but in who holds what while it does it. <a href="#fig-instinct-vs-fred">Figure 0.5</a> draws the two paths side by side and <a href="#tab-instinct-differences">Table 0.6</a> lists ten differences with the record that fixes each. Three are structural and the rest follow from them. Instinct's model holds every real value and ours holds labels, with one isolated component placing the value once (<a href="../03-trust-and-data/#substitution">03</a>). Instinct's authority is whatever the user's credentials allow, under terms that promise no confirmation; ours is one envelope the user confirmed, with a point-of-no-return test on every step and dual control inside it (<a href="../decisions/dr-004-authority-envelope.html">DR-004</a>). And Instinct has no people at all, fourteen employees and a machine per user, where we put a person in the gap on a task card that names nobody and shows no value (<a href="../04-operations/#task-cards">04</a>). Everything else, the refusals, the ledger, the verdict, the subscription, the markets, is downstream of those three.</p>
+        <figure class="fig" id="fig-instinct-vs-fred">
+          <div class="fig-scroll" tabindex="0" role="region" aria-label="Figure 0.5, the two paths side by side, who holds the value and who holds the authority, scrollable">
+          <svg viewBox="0 0 720 400" role="img" aria-labelledby="fig-instinct-vs-fred-title fig-instinct-vs-fred-desc">
+            <title id="fig-instinct-vs-fred-title">Two paths from the user to the institution: who holds the value and who holds the authority</title>
+            <desc id="fig-instinct-vs-fred-desc">Two columns. On the left, Instinct: the user on their phone sends a text to a cloud computer, drawn inside an amber dashed box, in which the agent holds the inbox, the passwords and the card in the clear and trains on most of it; from there it logs in and pays as the user at sites and with people, which can refuse an agent, and may reset a password to get there. Its authority is the terms, with no promise it asks first. On the right, AI.fred: the user's device sends a request that is tokenised at the gateway's edge; a planner and workers hold labels only inside a dashed envelope the user confirmed with one tap; a substitution component takes the value from the vault and places it once, and that accent arrow into the institution is the one place a value appears. Its authority is one envelope, bounded in spend, parties, acts and time; outside it, the user's tap.</desc>
+            <defs>
+              <marker id="fig-instinct-vs-fred-arrow" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-ink" d="M0,0 L8,3 L0,6 z"/></marker>
+              <marker id="fig-instinct-vs-fred-arrow-accent" viewBox="0 0 8 6" refX="8" refY="3" markerWidth="8" markerHeight="6" orient="auto-start-reverse"><path class="fg-fill-accent" d="M0,0 L8,3 L0,6 z"/></marker>
+            </defs>
+            <text class="fg-label fg-label-strong" x="176" y="24" text-anchor="middle">Instinct</text>
+            <text class="fg-label fg-label-strong" x="544" y="24" text-anchor="middle">AI.fred</text>
+            <line class="fg-rule" x1="360" y1="8" x2="360" y2="392"/>
+            <rect class="fg-device" x="124" y="40" width="104" height="48" rx="8"/>
+            <text class="fg-label fg-label-strong" x="176" y="60" text-anchor="middle">You</text>
+            <text class="fg-label-small" x="176" y="76" text-anchor="middle">your phone</text>
+            <line class="fg-line" x1="176" y1="88" x2="176" y2="120" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <text class="fg-label-small" x="184" y="104">a text</text>
+            <rect class="fg-amber" x="64" y="108" width="224" height="144" rx="2"/>
+            <rect class="fg-box" x="76" y="120" width="200" height="120" rx="2"/>
+            <text class="fg-label fg-label-strong" x="176" y="142" text-anchor="middle">The cloud computer</text>
+            <text class="fg-label-small" x="176" y="162" text-anchor="middle">it holds, in the clear:</text>
+            <text class="fg-label-small" x="176" y="178" text-anchor="middle">your inbox</text>
+            <text class="fg-label-small" x="176" y="192" text-anchor="middle">your passwords</text>
+            <text class="fg-label-small" x="176" y="206" text-anchor="middle">your card</text>
+            <text class="fg-label-small fg-label-soft" x="176" y="228" text-anchor="middle">and trains on most of it</text>
+            <line class="fg-line" x1="176" y1="252" x2="176" y2="312" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <text class="fg-label-small" x="184" y="276">logs in and pays as you;</text>
+            <text class="fg-label-small" x="184" y="290">may reset a password</text>
+            <rect class="fg-box" x="76" y="312" width="200" height="48" rx="2"/>
+            <text class="fg-label fg-label-strong" x="176" y="332" text-anchor="middle">Sites and people</text>
+            <text class="fg-label-small" x="176" y="348" text-anchor="middle">which can refuse an agent</text>
+            <text class="fg-label-small fg-label-strong" x="8" y="380">Authority: the terms</text>
+            <text class="fg-label-small" x="8" y="394">your agent for binding acts; no promise it asks</text>
+            <rect class="fg-device" x="492" y="40" width="104" height="48" rx="8"/>
+            <text class="fg-label fg-label-strong" x="544" y="60" text-anchor="middle">You</text>
+            <text class="fg-label-small" x="544" y="76" text-anchor="middle">your own device</text>
+            <line class="fg-line" x1="544" y1="88" x2="544" y2="120" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <text class="fg-label-small" x="552" y="108">a request, one tap</text>
+            <rect class="fg-box" x="452" y="120" width="184" height="40" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="138" text-anchor="middle">Gateway</text>
+            <text class="fg-label-small" x="544" y="153" text-anchor="middle">tokenised at the edge</text>
+            <rect class="fg-zone" x="440" y="168" width="208" height="116" rx="2"/>
+            <text class="fg-label-small fg-label-soft" x="640" y="182" text-anchor="end">the envelope</text>
+            <rect class="fg-box" x="452" y="188" width="184" height="40" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="206" text-anchor="middle">Planner, workers</text>
+            <text class="fg-label-small" x="544" y="221" text-anchor="middle">labels only: {{pan}}</text>
+            <line class="fg-line" x1="544" y1="160" x2="544" y2="188" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <rect class="fg-box" x="452" y="236" width="184" height="40" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="254" text-anchor="middle">Substitution</text>
+            <text class="fg-label-small" x="544" y="269" text-anchor="middle">places the value once</text>
+            <line class="fg-line" x1="544" y1="228" x2="544" y2="236" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <rect class="fg-box-2" x="656" y="236" width="56" height="40" rx="2"/>
+            <text class="fg-label-small fg-label-strong" x="684" y="254" text-anchor="middle">Vault</text>
+            <text class="fg-label-small" x="684" y="269" text-anchor="middle">holds it</text>
+            <line class="fg-line" x1="656" y1="256" x2="636" y2="256" marker-end="url(#fig-instinct-vs-fred-arrow)"/>
+            <line class="fg-accent" x1="544" y1="284" x2="544" y2="312" marker-end="url(#fig-instinct-vs-fred-arrow-accent)"/>
+            <text class="fg-label-small" x="552" y="296">the one place</text>
+            <text class="fg-label-small" x="552" y="310">a value appears</text>
+            <rect class="fg-box" x="452" y="312" width="184" height="48" rx="2"/>
+            <text class="fg-label fg-label-strong" x="544" y="332" text-anchor="middle">The institution</text>
+            <text class="fg-label-small" x="544" y="348" text-anchor="middle">by our surface or its rail</text>
+            <text class="fg-label-small fg-label-strong" x="376" y="380">Authority: one envelope</text>
+            <text class="fg-label-small" x="376" y="394">spend, parties, acts, window; outside it, your tap</text>
+          </svg>
+          </div>
+          <figcaption><span class="fig-no">Figure 0.5</span> Instinct puts the real values and an unbounded authority in one machine that acts as the user; AI.fred keeps the values in a vault nobody on our side sees and the authority in an envelope the user confirmed, with one seam where a value is placed.</figcaption>
+        </figure>
+        <div class="table-wrap wide" id="tab-instinct-differences">
+        <table class="data">
+          <caption><span class="tab-no">Table 0.6</span> Ten differences: the first three are structural and the other seven follow from them.</caption>
+          <thead><tr><th>Difference</th><th>Instinct, as reported</th><th>AI.fred, as recorded</th></tr></thead>
+          <tbody>
+            <tr><td class="key">Who holds the real value</td><td>The agent and its machine: inbox, passwords, card, screen</td><td>Nobody on our side; labels everywhere, one substitution component places the value (<a href="../03-trust-and-data/#alias-model">03</a>)</td></tr>
+            <tr><td class="key">What bounds the authority</td><td>The user's credentials and the terms; no confirmation promised</td><td>One envelope per task; point-of-no-return test; dual control inside, bounce outside (DR-004)</td></tr>
+            <tr><td class="key">People</td><td>None; fourteen employees and a machine per user</td><td>Human in the gap: workers on task cards with a pseudonym and labels, dual control (<a href="../04-operations/">04</a>)</td></tr>
+            <tr><td class="key">Identity acts and user factors</td><td>Logs in as the user; has reset a password to proceed</td><td>OTPs, PINs, bank passwords and biometrics are never ours; the step bounces to the user's device (<a href="../01-product/#refusals">01</a>)</td></tr>
+            <tr><td class="key">The surface</td><td>A browser pretending to be a person inside platforms that may ban it</td><td>Our own surfaces plus passport adapters to each market's official rails (<a href="../02-architecture/#adapters">02</a>)</td></tr>
+            <tr><td class="key">The record the user reads</td><td>The thread; no ledger of what was used where</td><td>An access ledger, one line per use of a value, written by the machine (<a href="../03-trust-and-data/#access-ledger">03</a>)</td></tr>
+            <tr><td class="key">How a task closes</td><td>A message saying done</td><td>A one-tap verdict from a fixed vocabulary; the verdict drives the make-good (<a href="../01-product/#verdicts">01</a>)</td></tr>
+            <tr><td class="key">Data</td><td>Trains by default outside Workspace and the Vault; revoke is not delete</td><td>Data sold as an asset withdrawn; product improvement only (DR-019)</td></tr>
+            <tr><td class="key">Price and cost line</td><td>Free; a compute cost per user; a fee on transactions to come</td><td>A metered subscription with a priced consequential tier plus the take (DR-024); human minutes per user per month as the governing ratio (<a href="../05-business/#the-ratio">05</a>)</td></tr>
+            <tr><td class="key">Markets and stage</td><td>US only, invite-only, 100,000 users, $1.35 billion raised, no revenue</td><td>India as build base, the US and the UK as commercial ground; a design record, no code, no customer (<a href="../06-roadmap/">06</a>)</td></tr>
+          </tbody>
+        </table>
+        </div>
+      </section>
+      <section>
+        <h2 id="who-wins"><span class="no">7</span>Who wins, and why</h2>
+        <p>Instinct, on the race it is running, and it is not close. It has a working product, a hundred thousand users compounding at a rate no marketing budget buys, $1.35 billion against our nothing, fourteen people led by someone who wrote one of the agent papers, and a year's head start on the everyday tasks that are the bulk of any assistant's volume. Its rival there is Meta's Muse, which ships inside WhatsApp with a free tier and an approval on every purchase, not us. If the question is who the general consumer agent in the US will be in two years, we are not on the list, and the thesis never claimed we were.</p>
+        <p>On the race we chose, the consequential tasks with money, identity and institutions in them, Instinct as built cannot enter safely, and its own record says why. A product whose terms disclaim confirmation, whose machine holds the user's passwords in the clear and has reset one to finish a purchase, and whose surface is a browser that platforms are already banning, is exactly the posture the thesis's <a href="./#none-can-safely-do">section 5.3</a> describes as exposure: under the RBI's liability framework a customer who shares payment credentials bears the loss, and the UIDAI rules make a model that reads Aadhaar from a screen a liability the vendor cannot insure. That is why Instinct is a travel-and-dining product today, half its volume in travel, and why it is in one country. The gap is real.</p>
+        <p>But the gap is a choice, not a capability, and that cuts both ways. Everything structural that Instinct lacks on authority is a design decision it could take in a quarter: a spend cap and a party list, a confirmation on irreversible steps, credentials brokered through 1Password and swapped in at the network edge, which Meta has already shipped in Muse. Meanwhile, Instinct's own users tell us something the thesis assumes the other way. Four in ten hand it a card within three weeks, and the ones who share the most sensitive data are the ones who stay <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-23">[23]</a>. The backlash came from reporters and a minority of users, the company moved its terms in two days, and growth did not pause. The demand side is not waiting for a trust architecture; it is trading trust for speed, at least in the US, at least on tasks where the loss is a dinner. Our moat is proven on the supply side, in what regulators and institutions will allow an agent to do, and in the loss cases that have not happened yet. It is unproven on the demand side, and Instinct is the first evidence against it.</p>
+        <p>So the honest verdict is in two parts, and both are assumptions until the pilot measures them <span class="chip chip-assumption">assumption</span>. First, head to head on the same tasks in the same market, Instinct wins, today and for as long as it keeps its compute; the only thing that changes that is a loss event large enough to make a bounded authority the price of entry, and the regulator decides when. Second, we can win only by not being head to head: the consequential tasks first, in India first, where the law already makes Instinct's posture untenable and the rails (DigiLocker, UPI, the account aggregator) reward a surface of our own, and with an everyday product fast enough that the context compounds, because the thesis is explicit that the wedge alone does not. The three things Instinct cannot cheaply copy are the three we should build first: people in the gap, a published masking policy with a ledger behind it, and the passport adapters to the institutions. Those are where we are different, not merely earlier.</p>
+        <p>What this page should change on our side is small and specific, and recording it is the founder's call. The assumption that customers pay for trust needs a question in the <a href="../05-business/measurement-protocol.html">measurement protocol</a>, since Instinct's figures are the first data against it. The channel amber in <a href="../07-open/#items">07</a> now has a hundred thousand users' worth of evidence that the thread wins in the US. And the cost model in <a href="../05-business/">05</a> should carry a line for a persistent execution surface per user, because Instinct's compute crunch is the first public measure of what that costs <span class="chip chip-to-verify">to-verify</span> <a class="ref" href="#src-28">[28]</a>.</p>
+      </section>
+      <section>
+        <h2 class="unnumbered" id="sources">Sources</h2>
+        <p class="small">Verified means, by <a href="../decisions/dr-013-verification-standard.html">DR-013</a>, that the claim's text was found in a search-engine excerpt attributed to the named source or in a named and reputable third party's report of it; every host on this list refused a page fetch on 1 October 2026. Claims resting only on a product blog or a social post are marked to-verify with the source given.</p>
+        <ol class="sources">
+          <li id="src-1">TechCrunch, <cite>Viral AI agent Instinct raises $1B Series C at a $10B valuation</cite>, 28 September 2026. <a class="url" href="https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/">https://techcrunch.com/2026/09/28/viral-ai-agent-instinct-raises-1b-series-c-at-a-10b-valuation/</a></li>
+          <li id="src-2">TechCrunch, <cite>Viral AI startup Instinct has raised $350 million at a $2.5 billion valuation</cite>, 26 August 2026. <a class="url" href="https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/">https://techcrunch.com/2026/08/26/viral-ai-startup-instinct-has-raised-350-million-at-a-2-5-billion-valuation/</a></li>
+          <li id="src-3">TechCrunch, <cite>Instinct's powerful AI assistant is raising privacy and security concerns</cite>, 24 August 2026. <a class="url" href="https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/">https://techcrunch.com/2026/08/24/instincts-powerful-ai-assistant-is-raising-privacy-and-security-concerns/</a></li>
+          <li id="src-4">Fortune, <cite>Meet Noah Shinn: the 23-year-old college dropout whose viral AI assistant is emerging as a new challenger to Mark Zuckerberg's Meta</cite>, 30 September 2026. <a class="url" href="https://fortune.com/2026/09/30/noah-shinn-instinct-ai-assistant-meta-muse-alexandr-wang-tech-series-c-ai-agent-mark-zuckerberg/">https://fortune.com/2026/09/30/noah-shinn-instinct-ai-assistant-meta-muse-alexandr-wang-tech-series-c-ai-agent-mark-zuckerberg/</a></li>
+          <li id="src-5">SiliconANGLE, <cite>Everyday personal AI assistant startup Instinct raises $1B at $10B valuation</cite>, 28 September 2026. <a class="url" href="https://siliconangle.com/2026/09/28/everyday-personal-ai-assistant-startup-instinct-raises-1b-at-10b-valuation/">https://siliconangle.com/2026/09/28/everyday-personal-ai-assistant-startup-instinct-raises-1b-at-10b-valuation/</a></li>
+          <li id="src-6">PYMNTS, <cite>Personal AI agent Instinct quadruples valuation to $10 billion in 1 month</cite>, September 2026. <a class="url" href="https://www.pymnts.com/news/artificial-intelligence/2026/personal-ai-agent-instinct-quadruples-valuation-to-10-billion-in-1-month/">https://www.pymnts.com/news/artificial-intelligence/2026/personal-ai-agent-instinct-quadruples-valuation-to-10-billion-in-1-month/</a></li>
+          <li id="src-7">Dealroom, <cite>AI assistant Instinct in talks to raise $1B at $10B valuation</cite>, reporting The Information of 15 September 2026, September 2026. <a class="url" href="https://dealroom.co/news/151170-ai-assistant-instinct-in-talks-to-raise-1b-at-10b-valuation/">https://dealroom.co/news/151170-ai-assistant-instinct-in-talks-to-raise-1b-at-10b-valuation/</a></li>
+          <li id="src-8">Yahoo Finance (TechCrunch), <cite>Instinct AI assistant raises $250 million Series B at $2.5B valuation</cite>, August 2026. <a class="url" href="https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html">https://finance.yahoo.com/technology/ai/articles/instinct-ai-assistant-raises-250-173454497.html</a></li>
+          <li id="src-9">Invest Like the Best, <cite>Noah Shinn is only 23</cite>, post on X, September 2026. <a class="url" href="https://x.com/InvestLikeBest/status/2104666159899693365">https://x.com/InvestLikeBest/status/2104666159899693365</a></li>
+          <li id="src-10">Patrick O'Shaughnessy, <cite>My conversation with Noah Shinn, founder of Instinct</cite>, post on X, September 2026. <a class="url" href="https://x.com/patrick_oshag/status/2104542892073095398">https://x.com/patrick_oshag/status/2104542892073095398</a></li>
+          <li id="src-11">TechCrunch, <cite>Viral AI assistant Instinct now has its own email address</cite>, 9 September 2026. <a class="url" href="https://techcrunch.com/2026/09/09/viral-ai-assistant-instinct-now-has-its-own-email-address/">https://techcrunch.com/2026/09/09/viral-ai-assistant-instinct-now-has-its-own-email-address/</a></li>
+          <li id="src-12">Yahoo Tech (TechCrunch), <cite>Rival AI agents, Instinct and Meta's Muse, both add the ability to make calls</cite>, September 2026. <a class="url" href="https://tech.yahoo.com/ai/meta-ai/articles/rival-ai-agents-instinct-meta-134616537.html">https://tech.yahoo.com/ai/meta-ai/articles/rival-ai-agents-instinct-meta-134616537.html</a></li>
+          <li id="src-13">TechCrunch, <cite>Instinct's new product recommendations are giving some users the ick</cite>, 30 September 2026. <a class="url" href="https://techcrunch.com/2026/09/30/instincts-new-product-recommendations-are-giving-some-users-the-ick/">https://techcrunch.com/2026/09/30/instincts-new-product-recommendations-are-giving-some-users-the-ick/</a></li>
+          <li id="src-14">CNN, <cite>AI is trying to gobble up dinner reservations</cite>, 23 September 2026. <a class="url" href="https://www.cnn.com/2026/09/23/tech/ai-agent-restaurant-reservations-instinct-resy-cec">https://www.cnn.com/2026/09/23/tech/ai-agent-restaurant-reservations-instinct-resy-cec</a></li>
+          <li id="src-15">Inc., <cite>Resy deactivated a user after his automated assistant made 200 requests an hour</cite>, September 2026. <a class="url" href="https://www.inc.com/victoria-salves/resy-deactivated-user-after-automated-assistant-made-200-requests-an-hour/91402131">https://www.inc.com/victoria-salves/resy-deactivated-user-after-automated-assistant-made-200-requests-an-hour/91402131</a></li>
+          <li id="src-16">Yahoo News (TechCrunch), <cite>Instinct users say they've noticed a slowdown with the buzzy AI agent</cite>, September 2026. <a class="url" href="https://sg.news.yahoo.com/instinct-users-theyve-noticed-slowdown-163111405.html">https://sg.news.yahoo.com/instinct-users-theyve-noticed-slowdown-163111405.html</a></li>
+          <li id="src-17">Norton, <cite>Is Instinct safe to use? Three things to know before you sign up</cite>, 2026. <a class="url" href="https://us.norton.com/blog/ai/is-instinct-safe">https://us.norton.com/blog/ai/is-instinct-safe</a></li>
+          <li id="src-18">eesel, <cite>Instinct AI review 2026: what the texting agent does and the catch</cite>, 2026. <a class="url" href="https://www.eesel.ai/blog/instinct-ai-review">https://www.eesel.ai/blog/instinct-ai-review</a></li>
+          <li id="src-19">Vellum, <cite>Official Instinct breakdown (2026)</cite>, 2026. <a class="url" href="https://www.vellum.ai/blog/official-instinct-breakdown">https://www.vellum.ai/blog/official-instinct-breakdown</a></li>
+          <li id="src-20">Carly, <cite>What is Instinct AI? What early users actually found</cite>, 2026. <a class="url" href="https://www.usecarly.com/blog/what-is-instinct-ai/">https://www.usecarly.com/blog/what-is-instinct-ai/</a></li>
+          <li id="src-21">ecorpit, <cite>Instinct terms 2026: Gmail exempt, screen data trained</cite>, 2026. <a class="url" href="https://ecorpit.com/instinct-ai-assistant-workspace-limited-use-training-split-2026/">https://ecorpit.com/instinct-ai-assistant-workspace-limited-use-training-split-2026/</a></li>
+          <li id="src-22">explainx, <cite>Instinct and 1Password: AI agent vault access explained</cite>, September 2026. <a class="url" href="https://www.explainx.ai/blog/instinct-1password-ai-agent-account-vaults-2026">https://www.explainx.ai/blog/instinct-1password-ai-agent-account-vaults-2026</a></li>
+          <li id="src-23">FourWeekMBA, <cite>Instinct raises $1B Series C at $10B after 33 days at $2.5B</cite>, September 2026. <a class="url" href="https://fourweekmba.com/ai-instinct-series-c-1b-valuation-10b-sequoia-benchmark-coatue/">https://fourweekmba.com/ai-instinct-series-c-1b-valuation-10b-sequoia-benchmark-coatue/</a></li>
+          <li id="src-24">Hyper.ai, <cite>Instinct creator opposes AI swaying user purchases</cite>, 2026. <a class="url" href="https://hyper.ai/en/stories/7351198c2e4d72e497992cec0c97af42">https://hyper.ai/en/stories/7351198c2e4d72e497992cec0c97af42</a></li>
+          <li id="src-25">eesel, <cite>Meta Muse review: what the personal AI agent can and can't do</cite>, 2026. <a class="url" href="https://www.eesel.ai/blog/meta-muse-agent-review">https://www.eesel.ai/blog/meta-muse-agent-review</a></li>
+          <li id="src-26">Layer3 Labs, <cite>Is Instinct AI free? What it costs now and what may change</cite>, 2026. <a class="url" href="https://www.layer3labs.io/guides/is-instinct-ai-free">https://www.layer3labs.io/guides/is-instinct-ai-free</a></li>
+          <li id="src-27">Startup Fortune, <cite>Instinct's AI assistant sent an email without asking and testers are furious</cite>, 2026. <a class="url" href="https://startupfortune.com/instincts-ai-assistant-sent-an-email-without-asking-and-testers-are-furious/">https://startupfortune.com/instincts-ai-assistant-sent-an-email-without-asking-and-testers-are-furious/</a></li>
+          <li id="src-28">FourWeekMBA, <cite>Instinct and Spear Street Technology: when consumer software runs into a cost-of-goods problem</cite>, 2026. <a class="url" href="https://fourweekmba.com/ai-instinct-spear-street-consumer-ai-agent-cogs/">https://fourweekmba.com/ai-instinct-spear-street-consumer-ai-agent-cogs/</a></li>
+        </ol>
+      </section>
+    </div>
+  </div>
+</main>
+<footer class="page-footer">
+  <p>AI.fred is a personal AI that builds your context, task by task, until it can act in your personal life the way someone who has known you for years would. It handles the ordinary things, a table, a return, a rental search, a trip, and it is built so that it can also be trusted with the ones you dread: the bank, the visa, the claim, the admission. The dreaded tasks are why people come. The ordinary ones are why they stay, and why the context compounds fast enough to be worth anything. AI.fred is a working title. This publication is a design record, not an offer.</p>
+  <ul class="fixed-links">
+    <li><a href="../00-thesis/">Start with the thesis</a></li>
+    <li><a href="../03-trust-and-data/trust-story.html">Read the trust story</a></li>
+    <li><a href="../07-open/">See the open items</a></li>
+  </ul>
+  <p>Written 2026-10-01. This page prints clean to A4 or Letter.</p>
+</footer>
+</body>
+</html>
